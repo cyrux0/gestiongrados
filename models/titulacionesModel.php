@@ -12,13 +12,18 @@ class TitulacionesModel extends ModelBase
     return $consulta;	
   }
 
-  public function newelem($params){
+  public function create($params){
     $paramsnames = implode(",", array_keys($params));
     $paramscolon = implode(",", array_map(create_function('$a','return ":".$a;'),array_keys($params)));
     
     $sql = "INSERT INTO titulaciones (".$paramsnames.") VALUES (".$paramscolon.")";
+    echo $sql;
     $query = $this->db->prepare($sql);
-    $query->execute();
+    $inserciones=array();
+    foreach($params as $key, $value){
+      $inserciones[':'.$key] = $value;
+    }
+    $query->execute($inserciones);
   }
 }
 ?>
