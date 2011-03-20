@@ -17,10 +17,9 @@ class TitulacionesModel extends ModelBase
     $paramscolon = implode(",", array_map(create_function('$a','return ":".$a;'),array_keys($params)));
     
     $sql = "INSERT INTO titulaciones (".$paramsnames.") VALUES (".$paramscolon.")";
-    echo $sql;
     $query = $this->db->prepare($sql);
     $inserciones=array();
-    foreach($params as $key, $value){
+    foreach($params as $key => $value){
       $inserciones[':'.$key] = $value;
     }
     $query->execute($inserciones);
