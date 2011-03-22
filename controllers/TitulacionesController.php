@@ -1,15 +1,13 @@
 ﻿<?php
+require_once 'models/titulacionesModel.php';
+
 class TitulacionesController extends ControllerBase
 {
   
   public function index(){
-    require 'models/titulacionesModel.php';
-    
-    //Instancia del modelo
-    $titulaciones = new TitulacionesModel();
     
     //Conseguimos los items
-    $array_titulaciones = $titulaciones->listadoTotal();
+    $array_titulaciones = TitulacionesModel::listadoTotal();
     
     //Pasamos a la vista los datos en el array data
     $data['titulaciones'] = $array_titulaciones;
@@ -33,26 +31,33 @@ class TitulacionesController extends ControllerBase
   
   public function create()
   {
-    require 'models/titulacionesModel.php';
+    require_once 'models/titulacionesModel.php';
 
-    //Creamos una instancia del modelo
-    $titulaciones = new TitulacionesModel();
+    //Averiguamos que botón se ha pulsado
     $accion = $_POST['button_action'];
-    //echo $accion.'asd';
     if($accion == 'Cancelar'){
-      $data['titulaciones'] = $titulaciones->listadoTotal();
-      $this->view->show("indexTitulaciones.php",$data);
+      //Si el botón pulsado fue cancelar, redireccionamos al index
+      header('Location: index.php?controller=Titulaciones&action=index');
     }else{
+      //Creamos un vector con los parámetros que se usarán para crear el objeto
       $params = array();
       $params['codigo'] = $_POST['codigo'];
       $params['nombre'] = $_POST['nombre'];
       $params['creditos'] = $_POST['creditos'];
-      $titulaciones->create($params);
-      $data['titulaciones'] = $titulaciones->listadoTotal();
-      $this->view->show("indexTitulaciones.php",$data);
-      $this->index();
+      //Llamamos a la función create del modelo
+      Titulaciones::create($params);
+      //Hacemos la redirección al index
+      header('Location: index.php?controller=Titulaciones&action=index');
     }
   }
+
+  public function edit($id){
+    //Extraemos el elemento
+    $titulacion = TitulacionesModel::find($id); //TO-DO Refactorizar para que TitulacionesModel se llame simplemente Titulacion (inglés)
+    $data['titulacion']=$titulacion;
+    $this->view->show('editTitulaciones.php', $data);
+  }
+    
 }
 
 ?>
