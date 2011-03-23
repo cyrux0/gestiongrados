@@ -6,8 +6,9 @@
 	<title>EDIT TITULACIONES</title>	
 </head>
 <body>
-
-  <form action="?controller=Titulaciones&action=update" method="post" enctype="multipart/form-data">
+  <?php $action = "?controller=Titulaciones&action=update&id=".$id; ?>
+  
+  <form action="<?= $action ?>" method="post" enctype="multipart/form-data">
     Código: <input type="text" name="codigo" value="<?=$titulacion['codigo'] ?>" /><br />
     Nombre: <input type="text" name="nombre" size="50" value="<?= $titulacion['nombre'] ?>" /><br />
     Créditos: <input type="text" name="creditos" value="<?=$titulacion['creditos']?>" /><br />

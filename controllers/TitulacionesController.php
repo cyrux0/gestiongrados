@@ -63,9 +63,12 @@ class TitulacionesController extends ControllerBase
     
   public function update($params){
     $id = $params['id'];
-    //echo array_keys($_POST);
-    
-    
+    $attributes = array();
+    $attributes['codigo'] = $_POST['codigo'];
+    $attributes['nombre'] = $_POST['nombre'];
+    $attributes['creditos'] = $_POST['creditos'];
+    TitulacionesModel::update($id, $attributes);
+    header('Location: index.php?controller=Titulaciones&action=index');
   }
 }
 
