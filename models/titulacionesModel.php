@@ -27,7 +27,7 @@ class TitulacionesModel extends ModelBase
   }
 
   public static function find($id){
-    $sql = "SELECT * FROM titulaciones WHERE titulaciones_id = ".$id;
+    $sql = "SELECT * FROM titulaciones WHERE id_titulacion = ".$id;
     $query = self::db()->prepare($sql);
     $query->execute();
     return $query->fetch(PDO::FETCH_ASSOC);

@@ -4,7 +4,7 @@ require_once 'models/titulacionesModel.php';
 class TitulacionesController extends ControllerBase
 {
   
-  public function index(){
+  public function index($params){
     
     //Conseguimos los items
     $array_titulaciones = TitulacionesModel::listadoTotal();
@@ -15,7 +15,7 @@ class TitulacionesController extends ControllerBase
     
   }
   
-  public function add()
+  public function add($params)
   {
     //require 'models/titulacionesModel.php';
     
@@ -29,7 +29,7 @@ class TitulacionesController extends ControllerBase
     $this->view->show("addTitulaciones.php",array());
   }
   
-  public function create()
+  public function create($params)
   {
     require_once 'models/titulacionesModel.php';
 
@@ -51,9 +51,12 @@ class TitulacionesController extends ControllerBase
     }
   }
 
-  public function edit($id){
+  public function edit($params){
     //Extraemos el elemento
+    $id = $params['id'];
+    
     $titulacion = TitulacionesModel::find($id); //TO-DO Refactorizar para que TitulacionesModel se llame simplemente Titulacion (inglés)
+    
     $data['titulacion']=$titulacion;
     $this->view->show('editTitulaciones.php', $data);
   }

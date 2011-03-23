@@ -32,9 +32,9 @@ class ApplicationController{
       trigger_error($controllerName . '->' . $actionName . ' no existe', E_USER_NOTICE);
       return false;
     }
-    
+    $params = $_GET;
     $controller = new $controllerName();
-    $controller->$actionName();
+    $controller->$actionName($params);
   }
 }
 
