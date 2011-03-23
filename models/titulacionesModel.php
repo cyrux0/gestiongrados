@@ -26,6 +26,12 @@ class TitulacionesModel extends ModelBase
     $query->execute($inserciones);
   }
 
+  public static function update($id, $params){
+    $sql = "UPDATE titulaciones SET ".implode(",",array_map(create_function('$a','return $a."=?";'),array_keys($params))) . "WHERE id_titulacion = " . $id;
+
+
+  }
+
   public static function find($id){
     $sql = "SELECT * FROM titulaciones WHERE id_titulacion = ".$id;
     $query = self::db()->prepare($sql);

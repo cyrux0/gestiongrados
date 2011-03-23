@@ -31,7 +31,6 @@ class TitulacionesController extends ControllerBase
   
   public function create($params)
   {
-    require_once 'models/titulacionesModel.php';
 
     //Averiguamos que botón se ha pulsado
     $accion = $_POST['button_action'];
@@ -45,7 +44,7 @@ class TitulacionesController extends ControllerBase
       $params['nombre'] = $_POST['nombre'];
       $params['creditos'] = $_POST['creditos'];
       //Llamamos a la función create del modelo
-      Titulaciones::create($params);
+      TitulacionesModel::create($params);
       //Hacemos la redirección al index
       header('Location: index.php?controller=Titulaciones&action=index');
     }
@@ -58,9 +57,16 @@ class TitulacionesController extends ControllerBase
     $titulacion = TitulacionesModel::find($id); //TO-DO Refactorizar para que TitulacionesModel se llame simplemente Titulacion (inglés)
     
     $data['titulacion']=$titulacion;
+    $data['id']=$id;
     $this->view->show('editTitulaciones.php', $data);
   }
     
+  public function update($params){
+    $id = $params['id'];
+    //echo array_keys($_POST);
+    
+    
+  }
 }
 
 ?>
