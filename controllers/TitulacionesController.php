@@ -70,6 +70,14 @@ class TitulacionesController extends ControllerBase
     TitulacionesModel::update($id, $attributes);
     header('Location: index.php?controller=Titulaciones&action=index');
   }
+
+  public function delete($params){
+    $id = $params['id'];
+    TitulacionesModel::delete($id);
+    header('Location: index.php?controller=Titulaciones&action=index');
+  }
+  
+
 }
 
 ?>

@@ -38,6 +38,11 @@ class TitulacionesModel extends ModelBase
     $query->execute();
     return $query->fetch(PDO::FETCH_ASSOC);
   }
-
+  
+  public static function delete($id){
+    $sql = "DELETE FROM titulaciones WHERE id_titulacion = ".$id;
+    $query = self::db()->prepare($sql);
+    $query->execute();
+  }
 }
 ?>
