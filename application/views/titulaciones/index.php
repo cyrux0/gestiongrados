@@ -11,8 +11,14 @@
 		<th>ID</th><th>NOMBRE</th><th>CRÉDITOS</th>
 	</tr>
 	<?php 
-		foreach($titulaciones as $item): ?>
-		<tr><td><?= $item->codigo ?></td><td><?= $item->nombre ?></td></tr>
+	foreach($titulaciones as $item): ?>
+	<tr>
+	  <td><?= $item->codigo ?></td>
+	  <td><?= $item->nombre ?></td>
+	  <td><?= $item->creditos ?></td>
+	  <td><?= anchor('titulaciones/delete/'.$item->id_titulacion, 'Borrar', ''); ?></td>
+	  <td><?= anchor('titulaciones/edit/'.$item->id_titulacion, 'Editar', ''); ?></td>
+</tr>
 	<?php endforeach; ?>
 
 	
