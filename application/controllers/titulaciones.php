@@ -1,13 +1,15 @@
 <?php
-class Titulaciones_Controller extends CI_Controller{
+class Titulaciones extends CI_Controller{
   public function index(){
+    //Cargamos el modelo
+    $this->load->model('Titulaciones_model','',TRUE);
     //Conseguimos los items mediante el modelo
-    
-    //Pasamos los datos a la vista
-
+    $data['titulaciones'] = $this->Titulaciones_model->list_all();
     //Mostramos
-    
+    $this->load->view('titulaciones/index', $data);
   }
+
+
 }
 
 ?>
