@@ -6,13 +6,12 @@
 	<title>ADD TITULACIONES</title>	
 </head>
 <body>
-  <form action="?controller=Titulaciones&action=create" method="post" enctype="multipart/form-data">
+  <?php echo form_open('titulaciones/create'); ?>
     Código: <input type="text" name="codigo" value="" /><br />
     Nombre: <input type="text" name="nombre" value="" /><br />
     Créditos: <input type="text" name="creditos" value="" /><br />
     <input type="submit" name="button_action" value="Enviar" /><br />
-    <input type="submit" name="button_action" value="Cancelar" /><br />
     
-  </form>
+    <?php echo form_close(); ?>
 </body>
 </html>

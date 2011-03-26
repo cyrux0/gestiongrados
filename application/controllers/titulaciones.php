@@ -9,6 +9,17 @@ class Titulaciones extends CI_Controller{
     $this->load->view('titulaciones/index', $data);
   }
 
+  public function add(){
+    //Mostramos vista
+    $this->load->helper('form');
+    $this->load->view('titulaciones/add');
+  }
+
+  public function create(){
+    $this->load->model('Titulaciones_model','',TRUE);    
+    $this->Titulaciones_model->insert_new();
+    $this->index();//Esto hace que en la url se muestre /create, hay que cambiarlo
+  }
 
 }
 

@@ -17,6 +17,6 @@
 
 	
 </table>
-<a href="index.php?controller=Titulaciones&action=add">Añadir una nueva titulación</a>
+<a href="add">Añadir una nueva titulación</a>
 </body>
 </html>
