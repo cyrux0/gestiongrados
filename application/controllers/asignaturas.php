@@ -4,21 +4,26 @@ class Asignaturas extends CI_Controller{
   function __construct(){
     parent::__construct();
     $this->load->model('Asignatura_model');
+    $this->load->model('Titulacion_model');
   }
 
-  public function index(){
-    //
-    // Falta:
-    //  -Crear el modelo
-    //  -Crear la tabla en la BD
-    //  -Crear la vista
-    //
+  public function add_to($id){
+    $data['nombre_titulacion'] = $this->Titulacion_model->find($id)->nombre;
 
-    //$this->load->model('Asignaturas_model','',TRUE);
-    //$data['asignaturas'] = $this->Titulaciones_model->list_all();
+    //Esto hay que hacerlo de otra forma
+    $data['data'] = array('result' => array('nombre' => '',
+					    'creditos' => '',
+					    'codigo' => '',
+					    'materia' => '',
+					    'departamento' => '',
+					    'horas_presen' => '',
+					    'horas_no_presen' => ''),
+			  'hidden' => $id,
+			  'action' => 'asignaturas/create');
 
-    //$this->load->view('asignaturas/index', $data);
+    $this->load->view('asignaturas/add', $data);
   }
+
 
   public function create(){
     $this->Asignatura_model->insert_new();
@@ -27,17 +32,23 @@ class Asignaturas extends CI_Controller{
 
   public function edit($id){
     $result = $this->Asignatura_model->find($id);
-    $data['asignatura'] = $result;
-    $data['codigo'] = 123;
-    $data['hidden'] = array('id_titulacion' => $result->id_titulacion);
-    $data2['asignatura_form'] = $this->load->view('asignaturas/_form', $data, TRUE);
+    $action = 'asignaturas/update/'.$result->id_asignatura;    
+    $data['data'] = array('result' => $result, 'action' => $action);
+    $data['nombre_asignatura'] = $result->nombre;
     
-    $data2['nombre_asignatura'] = $result->nombre;
-    $this->load->view('asignaturas/edit', $data2);
+    $this->load->view('asignaturas/edit', $data);
   }
 
-  public function update(){
-    //
+  public function update($id){
+    $record = $this->Asignatura_model->find($id);
+    $this->Asignatura_model->update($id);
+    redirect('titulaciones/show/'.$record->id_titulacion);
+  }
+  
+  public function delete($id){
+    $record = $this->Asignatura_model->find($id);
+    $this->Asignatura_model->delete($id);
+    redirect('titulaciones/show/'.$record->id_titulacion);
   }
 }
 

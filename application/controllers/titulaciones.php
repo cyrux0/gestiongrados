@@ -3,7 +3,7 @@ class Titulaciones extends CI_Controller{
   function __construct(){
     parent::__construct();
     $this->load->model('Titulacion_model');
-    //    $this->load->model('Asignatura_model');
+    $this->load->model('Asignatura_model');
   }
   
   public function index(){
@@ -47,17 +47,13 @@ class Titulaciones extends CI_Controller{
     redirect('titulaciones/index');
   }
 
-  public function asignaturas($id){
-    //    $this->Asignatura_model->find_by_titulacion($id);
-    echo "En construcción";
+  public function show($id){
+    $data['asignaturas'] = $this->Asignatura_model->find_by_titulacion($id);
+    $data['titulacion'] = $this->Titulacion_model->find($id);
+    
+    $this->load->view('titulaciones/show', $data);
   }
 
-  public function add_asig($id){
-    $data['hidden'] = array('id_titulacion' => $id);
-    $data['nombre_titulacion'] = $this->Titulacion_model->find($id)->nombre;
-    $form['asignatura_form'] = $this->load->view('asignaturas/_form',$data,TRUE);
-    $this->load->view('asignaturas/add', $form);
-  }
 
 }
 
