@@ -7,9 +7,9 @@
 </head>
 <body>
   <?php echo form_open('titulaciones/create'); ?>
-  Código: <input type="text" name="codigo" value="" /><br />
-  Nombre: <input type="text" name="nombre" value="" /><br />
-  Créditos: <input type="text" name="creditos" value="" /><br />
+  Código: <input type="text" name="codigo" value="<?= $titulacion->getCodigo() ?>" /><br />
+  Nombre: <input type="text" name="nombre" value="<?= $titulacion->getNombre() ?>" /><br />
+  Créditos: <input type="text" name="creditos" value="<?= $titulacion->getCreditos() ?>" /><br />
   <input type="submit" name="button_action" value="Enviar" /><br />
   
   <?php echo form_close(); ?>

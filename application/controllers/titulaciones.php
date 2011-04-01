@@ -1,9 +1,15 @@
 <?php
 class Titulaciones extends CI_Controller{
+  
+  private $em;
+  private $titulacionRepo;
+
   function __construct(){
     parent::__construct();
-    $this->load->model('Titulacion_model');
+    $this->load->model('Titulacion');
     $this->load->model('Asignatura_model');
+    $this->em = $this->doctrine->em;
+    $this->titulacionRepo = $this->em->getRepository('Titulacion');
   }
   
   public function index(){
@@ -19,13 +25,16 @@ class Titulaciones extends CI_Controller{
 
   public function add(){
     //Mostramos vista
-
-    $this->load->view('titulaciones/add');
+    $titulacion = new Titulacion;
+    $this->load->view('titulaciones/add', array('titulacion' => $titulacion));
   }
 
   public function create(){
-        
-    $this->Titulacion_model->insert_new();
+    $titulacion = new Titulacion;
+    $titulacion->setCreditos($_POST['creditos']);
+    $titulacion->setNombre($_POST['nombre']);
+    $titulacion->setCodigo($_POST['codigo']);
+    $titulacion->save();
     redirect('titulaciones/index');
   }
 
@@ -53,8 +62,7 @@ class Titulaciones extends CI_Controller{
     
     $this->load->view('titulaciones/show', $data);
   }
-
-
+  
 }
 
 ?>

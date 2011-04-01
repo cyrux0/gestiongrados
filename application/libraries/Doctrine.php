@@ -40,18 +40,18 @@ class Doctrine {
     $config->setProxyNamespace('Proxies');
 
     // Set up logger
-    $logger = new EchoSQLLogger;
-    $config->setSQLLogger($logger);
+    //$logger = new EchoSQLLogger;
+    //    $config->setSQLLogger($logger);
 
     $config->setAutoGenerateProxyClasses( TRUE );
 
     // Database connection information
     $connectionOptions = array(
         'driver' => 'pdo_mysql',
-        'user' =>     $db['default']['username'],
-        'password' => $db['default']['password'],
-        'host' =>     $db['default']['hostname'],
-        'dbname' =>   $db['default']['database']
+        'user' =>     'userpfc',
+        'password' => 'pfcpass',
+        'host' =>     'localhost',
+        'dbname' =>   'pfc_development'
     );
 
     // Create EntityManager
