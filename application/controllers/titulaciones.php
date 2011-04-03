@@ -31,9 +31,9 @@ class Titulaciones extends CI_Controller{
 
   public function create(){
     $titulacion = new Titulacion;
-    $titulacion->setCreditos($_POST['creditos']);
-    $titulacion->setNombre($_POST['nombre']);
-    $titulacion->setCodigo($_POST['codigo']);
+    $titulacion->creditos = $_POST['creditos'];
+    $titulacion->nombre = $_POST['nombre'];
+    $titulacion->codigo = $_POST['codigo'];
     $titulacion->save();
     redirect('titulaciones/index');
   }

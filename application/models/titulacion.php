@@ -4,7 +4,7 @@
  * @Entity
  * @Table(name="titulaciones")
  */
-class Titulacion extends CI_Model
+class Titulacion
 {
 
   /**
@@ -17,48 +17,44 @@ class Titulacion extends CI_Model
   /**
    * @Column(type="string", length=20, nullable=false)
    */
-  private $nombre;
+  private $nombre = '';
 
   /**
    * @Column(type="string", length=4, nullable=false, unique=true)
    */
-  private $codigo;
+  private $codigo = '';
 
   /**
    * @Column(type="integer", nullable=false)
    */
-  private $creditos;
+  private $creditos = '';
+  
+  private $em;
+  private $doctrine;
 
-  public function getNombre()
-  {
-    return $this->nombre;
-  }
-  
-  public function getCodigo()
-  {
-    return $this->codigo;
-  }
-  
-  public function getCreditos()
-  {
-    return $this->creditos;
-  }
-  
-  public function setNombre($nombre){
-    $this->nombre = $nombre;
-  }
-  
-  public function setCodigo($codigo){
-    $this->codigo = $codigo;
+  public function __construct(){
+    parent::__construct();
   }
 
-  public function setCreditos($creditos){
-    $this->creditos = $creditos;
+  public function __get($attr)
+  {
+    if(isset($this->$attr))
+      return $this->$attr;
+    else
+      echo "errorget ".$attr; //Lanzar aquí una excepción;
+  }
+
+  public function __set($attr, $value){
+    if(isset($this->$attr))
+      $this->$attr = $value;
+    else
+      echo "errorset ".$attr; //Lanzar aquí una excepción;
   }
 
   public function save(){
-    $this->doctrine->em->persist($this);
-    $this->doctrine->em->flush();
+    $pruebas = new Doctrine;
+    $pruebas->em->persist($this);
+    $pruebas->em->flush();
   }
 /*   public function list_all(){ */
 /*     $query = $this->db->get('titulaciones'); */
