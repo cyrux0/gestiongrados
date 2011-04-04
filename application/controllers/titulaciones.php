@@ -16,7 +16,7 @@ class Titulaciones extends CI_Controller{
     //Cargamos el modelo
     
     //Conseguimos los items mediante el modelo
-    $data['titulaciones'] = $this->Titulacion_model->list_all();
+    $data['titulaciones'] = $this->titulacionRepo->findAll();
 
     //Mostramos
     
@@ -40,25 +40,32 @@ class Titulaciones extends CI_Controller{
 
   public function delete($id){
     
-    $this->Titulacion_model->delete_elem($id);
+    $titulacion = $this->titulacionRepo->find($id);
+    $this->em->remove($titulacion);
+    $this->em->flush();
     redirect('titulaciones/index');
   }
 
   public function edit($id){
-    $result = $this->Titulacion_model->find($id);
+    $result = $this->titulacionRepo->find($id);
     $data['titulacion'] = $result;
    
     $this->load->view('titulaciones/edit', $data);
   }
 
   public function update($id){
-    $this->Titulacion_model->update($id);
+    $titulacion = $this->titulacionRepo->find($id);
+    $titulacion->codigo = $_POST['codigo'];
+    $titulacion->nombre = $_POST['nombre'];
+    $titulacion->creditos = $_POST['creditos'];
+    $this->em->persist($titulacion);
+    $this->em->flush();
     redirect('titulaciones/index');
   }
 
   public function show($id){
     $data['asignaturas'] = $this->Asignatura_model->find_by_titulacion($id);
-    $data['titulacion'] = $this->Titulacion_model->find($id);
+    $data['titulacion'] = $this->titulacionRepo->find($id);
     
     $this->load->view('titulaciones/show', $data);
   }
