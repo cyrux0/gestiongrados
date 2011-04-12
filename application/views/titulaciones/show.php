@@ -24,6 +24,6 @@
 
   
 </table>
-<?= anchor('asignaturas/add_to/'.$titulacion->id_titulacion, 'Añadir una nueva asignatura')?>
+<?= anchor('asignaturas/add_to/'.$titulacion->id_titulacion, 'Añadir una nueva asignatura')?> | <?= anchor('titulaciones/index', 'Volver') ?>
 </body>
 </html>

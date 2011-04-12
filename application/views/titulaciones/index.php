@@ -16,6 +16,7 @@
 	  <td><?= $item->codigo ?></td>
 	  <td><?= $item->nombre ?></td>
 	  <td><?= $item->creditos ?></td>
+	  <td><?= anchor('titulaciones/show/'.$item->id_titulacion, 'Ver Asignaturas') ?></td>
 	  <td><?= anchor('titulaciones/delete/'.$item->id_titulacion, 'Borrar', array('onClick'=>"return confirm('Estás seguro?')")); ?></td>
 	  <td><?= anchor('titulaciones/edit/'.$item->id_titulacion, 'Editar', ''); ?></td>
 </tr>

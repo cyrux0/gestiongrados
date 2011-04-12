@@ -11,7 +11,7 @@
     Código: <input type="text" name="codigo" value="<?=$titulacion->codigo ?>" /><br />
     Nombre: <input type="text" name="nombre" size="50" value="<?= $titulacion->nombre ?>" /><br />
     Créditos: <input type="text" name="creditos" value="<?=$titulacion->creditos ?>" /><br />
-    <input type="submit" name="button_action" value="Enviar" /> | <a href="index.php">Cancelar</a><br />
+    <input type="submit" name="button_action" value="Enviar" /> | <?= anchor('titulaciones/index', 'Cancelar') ?><br />
     <?php echo form_close(); ?>
 </body>
 </html>
