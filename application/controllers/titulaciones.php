@@ -26,7 +26,8 @@ class Titulaciones extends CI_Controller{
   public function add(){
     //Mostramos vista
     $titulacion = new Titulacion;
-    $this->load->view('titulaciones/add', array('titulacion' => $titulacion));
+    
+    $this->load->view('titulaciones/add', array('data' => array('titulacion' => $titulacion)));
   }
 
   public function create(){
