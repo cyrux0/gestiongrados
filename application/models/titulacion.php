@@ -15,7 +15,7 @@ class Titulacion
   private $id_titulacion;
   
   /**
-   * @Column(type="string", length=20, nullable=false)
+   * @Column(type="string", length=200, nullable=false, unique=true)
    */
   private $nombre = '';
 

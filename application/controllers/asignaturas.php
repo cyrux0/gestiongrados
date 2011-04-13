@@ -4,11 +4,11 @@ class Asignaturas extends CI_Controller{
   function __construct(){
     parent::__construct();
     $this->load->model('Asignatura_model');
-    $this->load->model('Titulacion_model');
+    $this->titulaciones = $this->em->getRepository('Titulacion');
   }
 
   public function add_to($id){
-    $data['nombre_titulacion'] = $this->Titulacion_model->find($id)->nombre;
+    $data['nombre_titulacion'] = $this->titulaciones->find($id)->nombre;
 
     //Esto hay que hacerlo de otra forma
     $data['data'] = array('result' => array('nombre' => '',
