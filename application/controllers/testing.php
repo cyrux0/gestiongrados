@@ -3,8 +3,9 @@
 class Testing extends CI_Controller{
   
   public function getpath(){
-    echo Doctrine_Core::getPath();
+    Doctrine_Core::generateModelsFromDb('modelasos', array('default'), array('generateTableClasses' => true));
   }
-
+  
+  
 
 }
