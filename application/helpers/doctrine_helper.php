@@ -1,7 +1,7 @@
 <?php
 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-require_once APPPATH.'libraries/DoctrineClass.php';
+require_once APPPATH.'helpers/Doctrine.php';
 require_once APPPATH.'config/database.php';
 
 // Allow Doctrine to load Model classes automatically:
