@@ -4,8 +4,18 @@
  * @Entity
  * @Table(name="titulaciones")
  */
-class Titulacion
+class Titulacion extends Doctrine_Record
 {
+
+  public function setTableDefinition()
+  {
+    $this->hasColumn('id_titulacion', 'integer');
+    $this->hasColumn('nombre', 'string', 255);
+    $this->hasColumn('codigo', 'string', 4);
+    $this->hasColumn('creditos', 'integer');
+  }
+  
+  
 
   /**
    * @Id
