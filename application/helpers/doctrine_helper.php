@@ -13,8 +13,8 @@ $dsn = 'mysql' .
 '@'   . 'localhost'.
 '/'   . 'pfc_development';
 
-Doctrine_Manager::connection($dsn, 'default');
-
+$conn = Doctrine_Manager::connection($dsn, 'default');
+$conn->setCharset('utf8');
 
 // Load the Model class and tell Doctrine where our models are located:
 require_once BASEPATH.'core/Model.php';
