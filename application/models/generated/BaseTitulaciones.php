@@ -22,7 +22,7 @@ abstract class BaseTitulaciones extends Doctrine_Record
     public function setTableDefinition()
     {
         $this->setTableName('titulaciones');
-        $this->hasColumn('id_titulacion', 'integer', 4, array(
+        $this->hasColumn('id', 'integer', 4, array(
              'type' => 'integer',
              'length' => 4,
              'fixed' => false,

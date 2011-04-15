@@ -26,7 +26,7 @@ abstract class BaseAsignaturas extends Doctrine_Record
     public function setTableDefinition()
     {
         $this->setTableName('asignaturas');
-        $this->hasColumn('id_asignatura', 'integer', 4, array(
+        $this->hasColumn('id', 'integer', 4, array(
              'type' => 'integer',
              'length' => 4,
              'fixed' => false,
@@ -97,6 +97,11 @@ abstract class BaseAsignaturas extends Doctrine_Record
              'notnull' => true,
              'autoincrement' => false,
              ));
+	$this->hasColumn('titulacion_id', 'integer', 4, array(
+             'type' => 'integer',
+             'length' => 4,
+             'fixed' => false,
+             'unsigned' => false));
     }
 
     public function setUp()

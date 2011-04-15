@@ -2,7 +2,7 @@ asignatura:
   connection: default
   tableName: asignaturas
   columns:
-    id_asignatura:
+    id:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -58,11 +58,20 @@ asignatura:
       primary: false
       notnull: true
       autoincrement: false
+    titulacion_id:
+      type: integer(8)
+      notnull: true
+      unsigned: true
+  relations:
+    Titulacion:
+      local: titulacion_id
+      foreign: id
+      type: one
 titulacion:
   connection: default
   tableName: titulaciones
   columns:
-    id_titulacion:
+    id:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -90,3 +99,9 @@ titulacion:
       primary: false
       notnull: true
       autoincrement: false
+  relations:
+    asignaturas:
+      class: Asignatura
+      local: id
+      foreign: titulacion_id
+      type: many

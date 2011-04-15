@@ -12,5 +12,10 @@
  */
 class Asignatura extends BaseAsignaturas
 {
-
+  
+  public function setUp()
+  {
+    parent::setUp();
+    $this->hasOne('Titulacion', array('local' => 'titulacion_id', 'foreign' => 'id'));
+  }
 }
