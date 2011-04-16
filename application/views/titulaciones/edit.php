@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <?php echo form_open('titulaciones/update/'.$titulacion->id_titulacion); ?>
+  <?php echo form_open('titulaciones/update/'.$titulacion->id); ?>
     Código: <input type="text" name="codigo" value="<?=$titulacion->codigo ?>" /><br />
     Nombre: <input type="text" name="nombre" size="50" value="<?= $titulacion->nombre ?>" /><br />
     Créditos: <input type="text" name="creditos" value="<?=$titulacion->creditos ?>" /><br />

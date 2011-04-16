@@ -17,13 +17,13 @@
     <td><?= $item->codigo ?></td>
     <td><?= $item->nombre ?></td>
     <td><?= $item->creditos ?></td>
-    <td><?= anchor('asignaturas/delete/'.$item->id_asignatura, 'Borrar', array('onClick'=>"return confirm('Estás seguro?')")); ?></td>
-    <td><?= anchor('asignaturas/edit/'.$item->id_asignatura, 'Editar', ''); ?></td>
+    <td><?= anchor('asignaturas/delete/'.$item->id, 'Borrar', array('onClick'=>"return confirm('Estás seguro?')")); ?></td>
+    <td><?= anchor('asignaturas/edit/'.$item->id, 'Editar', ''); ?></td>
   </tr>
   <?php endforeach; ?>
 
   
 </table>
-<?= anchor('asignaturas/add_to/'.$titulacion->id_titulacion, 'Añadir una nueva asignatura')?> | <?= anchor('titulaciones/index', 'Volver') ?>
+<?= anchor('asignaturas/add_to/'.$titulacion->id, 'Añadir una nueva asignatura')?> | <?= anchor('titulaciones/index', 'Volver') ?>
 </body>
 </html>
