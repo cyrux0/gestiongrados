@@ -1,42 +1,61 @@
 <?php
-// La idea es, crear un formulario con campo oculto con la id de la titulación, luego en este controlador, existirán las acciones create(), update() y delete() o destroy(). En el controlador de Titulaciones estaría el index de asignaturas, la cosa es, el new y el edit donde ponerlos, seguramente aquí también, ya que no es como en el tutorial de Rails, aquí vamos a tener una página propia para las nuevas asignaturas no va a ser un form generado por jQuery (o sí?).
 class Asignaturas extends CI_Controller{
   function __construct(){
     parent::__construct();
     $this->asignaturas_table = Doctrine::getTable('Asignatura');
+    $this->titulaciones_table = Doctrine::getTable('Titulacion');
   }
 
   public function add_to($id){
-    $data['nombre_titulacion'] = $this->titulaciones->find($id)->nombre;
-
+    $data['nombre_titulacion'] = $this->titulaciones_table->find($id)->nombre;
+    $result = new Asignatura;
+    $action = 'asignaturas/create/'.$result->id;    
+	$data['data'] = array('result' => $result, 'hidden' => array('titulacion' => $id), 'action' => $action );
     $this->load->view('asignaturas/add', $data);
   }
 
 
   public function create(){
-    $this->Asignatura_model->insert_new();
-    redirect('titulaciones/index');
+    $asignatura = new Asignatura;
+    $asignatura->codigo = $this->input->post('codigo');
+    $asignatura->nombre = $this->input->post('nombre');
+    $asignatura->creditos = $this->input->post('creditos');
+    $asignatura->horas_presen = $this->input->post('horas_presen');
+    $asignatura->horas_no_presen = $this->input->post('horas_no_presen');
+    $asignatura->materia = $this->input->post('materia');
+    $asignatura->departamento = $this->input->post('departamento');
+    $titulacion = $this->titulaciones_table->find($this->input->post('titulacion'));
+    $titulacion->asignaturas[] = $asignatura;
+    $titulacion->save();
+    redirect('titulaciones/show/'.$this->input->post('titulacion'));
   }
 
   public function edit($id){
-    $result = $this->Asignatura_model->find($id);
-    $action = 'asignaturas/update/'.$result->id_asignatura;    
+    $result = $this->asignaturas_table->find($id);
+    $action = 'asignaturas/update/'.$result->id;    
     $data['data'] = array('result' => $result, 'action' => $action);
     $data['nombre_asignatura'] = $result->nombre;
-    
     $this->load->view('asignaturas/edit', $data);
   }
 
   public function update($id){
-    $record = $this->Asignatura_model->find($id);
-    $this->Asignatura_model->update($id);
-    redirect('titulaciones/show/'.$record->id_titulacion);
+    $asignatura = $this->asignaturas_table->find($id);
+    $asignatura->codigo = $this->input->post('codigo');
+    $asignatura->nombre = $this->input->post('nombre');
+    $asignatura->creditos = $this->input->post('creditos');
+    $asignatura->horas_presen = $this->input->post('horas_presen');
+    $asignatura->horas_no_presen = $this->input->post('horas_no_presen');
+    $asignatura->materia = $this->input->post('materia');
+    $asignatura->departamento = $this->input->post('departamento');
+    $asignatura->save();
+    redirect('titulaciones/show/'.$asignatura->titulacion_id);
   }
   
   public function delete($id){
-    $record = $this->Asignatura_model->find($id);
-    $this->Asignatura_model->delete($id);
-    redirect('titulaciones/show/'.$record->id_titulacion);
+    $record = $this->asignaturas_table->find($id);
+    $titulacion_id = $record->titulacion_id;
+    $record->delete();
+    redirect('titulaciones/show/'.$titulacion_id);
   }
 }
 

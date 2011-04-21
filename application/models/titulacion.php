@@ -63,6 +63,6 @@ class Titulacion extends Doctrine_Record
   public function setUp()
   {
     parent::setUp();
-    $this->hasMany('Asignatura as asignaturas', array('local' => 'id', 'foreign' => 'titulacion_id'));
+    $this->hasMany('Asignatura as asignaturas', array('local' => 'id', 'foreign' => 'titulacion_id', 'onDelete' => 'CASCADE'));
   }
 }

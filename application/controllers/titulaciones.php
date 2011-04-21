@@ -36,6 +36,7 @@ class Titulaciones extends CI_Controller{
 
   public function delete($id){
     $titulacion = $this->titulaciones_table->find($id);
+    $titulacion->asignaturas->delete();
     $titulacion->delete();
     redirect('titulaciones/index');
   }
