@@ -11,7 +11,7 @@ class Asignaturas extends CI_Controller{
     $result = new Asignatura;
     $result->titulacion_id = $id;
     $action = 'asignaturas/create/'.$result->id;    
-	$data['data'] = array('result' => $result, 'hidden' => array('titulacion' => $id), 'action' => $action );
+    $data['data'] = array('result' => $result, 'action' => $action );
     $this->load->view('asignaturas/add', $data);
   }
 
