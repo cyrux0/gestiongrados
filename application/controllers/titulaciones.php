@@ -8,11 +8,12 @@ class Titulaciones extends CI_Controller{
   }
   
   public function index(){
+    $this->layout = '';
     $titulaciones = $this->titulaciones_table->findAll();
 
     //Conseguimos los items mediante el modelo
     $data['titulaciones'] = $titulaciones;
-
+    
     //Mostramos
     
     $this->load->view('titulaciones/index', $data);

@@ -9,6 +9,11 @@
 |	http://codeigniter.com/user_guide/general/hooks.html
 |
 */
+$hook['display_override'][] = array('class' => 'Yield',
+				    'function' => 'doYield',
+				    'filename' => 'Yield.php',
+				    'filepath' => 'hooks'
+				    );
 
 
 
