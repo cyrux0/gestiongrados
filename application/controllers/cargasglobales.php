@@ -10,7 +10,8 @@ class CargasGlobales extends CI_Controller{
   public function add($asignatura_id){
     $global = new CargaGlobal;
     $global->asignatura_id = $asignatura_id;
-    $data['data'] = $global;
+    $action = 'cargasglobales/create/'.$global->asignatura_id;
+    $data['data'] = array('result' => $global, 'action' => $action);
     $data['nombre_asignatura'] = $this->asignaturas_table->find($asignatura_id)->nombre;
     $this->load->view('cargaglobal/add', $data);
   }

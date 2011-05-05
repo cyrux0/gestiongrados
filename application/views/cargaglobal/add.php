@@ -7,6 +7,6 @@
 </head>
 <body>
   <h1>Añadiendo carga global a <?php echo $nombre_asignatura; ?></h1>
-<!--  <?php $this->load->view('asignaturas/_form', $data); ?> -->
+  <?php $this->load->view('cargaglobal/_form', $data); ?>
 </body>
 </html>
