@@ -1,35 +1,25 @@
 <?php echo form_open($action,''); ?>
   <?php echo form_hidden('asignatura', $result->asignatura_id); ?>
-  <label for="horas_teoria">Horas de teoría:</label>
-  <?php echo form_input('horas_teoria', $result->horas_teoria); ?><br />
   <label for="creditos_teoria">Créditos de teoría:</label>
   <?php echo form_input('creditos_teoria', $result->creditos_teoria); ?><br />
   <label for="grupos_teoria">Grupos de teoría:</label>
   <?php echo form_input('grupos_teoria', $result->grupos_teoria); ?><br />
   
-  <label for="horas_lab">Horas de laboratorio:</label>
-  <?php echo form_input('horas_lab', $result->horas_lab); ?><br />
   <label for="creditos_lab">Créditos de laboratorio:</label>
   <?php echo form_input('creditos_lab', $result->creditos_lab); ?><br />
   <label for="grupos_lab">Grupos de laboratorio:</label>
   <?php echo form_input('grupos_lab', $result->grupos_lab); ?><br />
 
-  <label for="horas_problemas">Horas de problemas:</label>
-  <?php echo form_input('horas_problemas', $result->horas_problemas); ?><br />
   <label for="creditos_problemas">Créditos de problemas:</label>
   <?php echo form_input('creditos_problemas', $result->creditos_problemas); ?><br />
   <label for="grupos_problemas">Grupos de problemas:</label>
   <?php echo form_input('grupos_problemas', $result->grupos_problemas); ?><br />  
 
-  <label for="horas_informatica">Horas de informática:</label>
-  <?php echo form_input('horas_informatica', $result->horas_informatica); ?><br />
   <label for="creditos_informatica">Créditos de informática:</label>
   <?php echo form_input('creditos_informatica', $result->creditos_informatica); ?><br />
   <label for="grupos_informatica">Grupos de informática:</label>
   <?php echo form_input('grupos_informatica', $result->grupos_informatica); ?><br />  
 
-  <label for="horas_campo">Horas de prácticas de campo:</label>
-  <?php echo form_input('horas_campo', $result->horas_campo); ?><br />
   <label for="creditos_campo">Créditos de prácticas de campo:</label>
   <?php echo form_input('creditos_campo', $result->creditos_campo); ?><br />
   <label for="grupos_campo">Grupos de prácticas de campo:</label>
