@@ -4,14 +4,32 @@ class CargasSemanales extends CI_Controller{
   
   function __construct(){
     parent::__construct();
-    $this->asignaturas_table = Doctrine::getTable('Asignatura');
+    $this->semanales_table = Doctrine::getTable('CargaSemanal');
   }
 
-  public function add($id_asig){
-
+  public function add($id_global){
+    $semanal = new CargaSemanal;
+    $semanal->cargaglobal_id = $id_global;
+    $action = 'cargassemanales/create/';
+    $data['data'] = array('result' => $semanal, 'action' => $action);
+    $this->load->view('cargassemanales/add', $data);
   }
 
-  function
+  public function create(){
+    //TO-DO
+  }
+
+  public function edit($id){
+    $semanal = $this->semanales_table->find($id);
+    $action = 'cargassemanales/update/';
+    $data['data'] = array('result' => $semanal, 'action' => $action);
+    $this->load->view('cargassemanales/add', $data);
+  }
+
+  public function update(){
+    //TO-DO
+  }
+  
 
 }
 

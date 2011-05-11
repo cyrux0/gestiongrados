@@ -58,7 +58,7 @@ class CargasGlobales extends CI_Controller{
     $global->grupos_campo = $this->input->post('grupos_campo');
     
     $global->save();
-    redirect('titulaciones/index');
+    redirect('titulaciones/show/' . $global->Asignatura->titulacion_id);
   }
  
  

@@ -70,7 +70,7 @@ class CargaSemanal extends Doctrine_Record
   
   public function setUp()
   {
-    $this->hasOne('CargaGlobal as cargasglobales', array('local' => 'cargaglobal_id', 'foreign' => 'id'));
+    $this->hasOne('CargaGlobal as cargaglobal', array('local' => 'cargaglobal_id', 'foreign' => 'id'));
     // $this->hasMany('CargaSemanal as CargasSemanales', array('local' => 'id', 'foreign' => 'global_id'));
     parent::setUp();
   }

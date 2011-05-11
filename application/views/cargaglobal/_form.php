@@ -25,5 +25,5 @@
   <label for="grupos_campo">Grupos de prácticas de campo:</label>
   <?php echo form_input('grupos_campo', $result->grupos_campo); ?><br />  
 
-  <?php echo form_submit('add_asig_submit', 'Enviar'); ?> | <?= anchor('titulaciones/index', 'Cancelar') ?>  
+  <?php echo form_submit('add_asig_submit', 'Enviar'); ?> | <?= anchor('titulaciones/show/' . $result->Asignatura->titulacion_id, 'Cancelar') ?>  
 <?php echo form_close(); ?>

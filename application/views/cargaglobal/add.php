@@ -6,7 +6,7 @@
 	<title>ADD CARGA GLOBAL</title>	
 </head>
 <body>
-  <h1>Añadiendo carga global a <?php echo $nombre_asignatura; ?></h1>
+  <h1>Añadiendo carga global a <?php echo $data['result']->Asignatura->nombre; ?></h1>
   <?php $this->load->view('cargaglobal/_form', $data); ?>
 </body>
 </html>

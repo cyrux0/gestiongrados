@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>EDIT CARGA GLOBAL</title>	
+	<title>ADD CARGA GLOBAL</title>	
 </head>
 <body>
-  <h1>Editando carga global de <?php echo $data['result']->Asignatura->nombre; ?></h1>
-  <?php $this->load->view('cargaglobal/_form', $data); ?>
+  <h1>Añadiendo carga global a <?php echo $data['result']->cargaglobal->Asignatura->nombre; ?></h1>
+  <?php $this->load->view('cargassemanales/_form', $data); ?>
 </body>
 </html>
