@@ -28,9 +28,7 @@ class Titulaciones extends CI_Controller{
 
   public function create(){
     $titulacion = new Titulacion;
-    $titulacion->creditos = $this->input->post('creditos');
-    $titulacion->nombre = $this->input->post('nombre');
-    $titulacion->codigo = $this->input->post('codigo');
+    $titulacion->fromArray($this->input->post());
     $titulacion->save();
     redirect('titulaciones/index');
   }
@@ -51,9 +49,7 @@ class Titulaciones extends CI_Controller{
 
   public function update($id){
     $titulacion = $this->titulaciones_table->find($id);
-    $titulacion->codigo = $this->input->post('codigo');
-    $titulacion->nombre = $this->input->post('nombre');
-    $titulacion->creditos = $this->input->post('creditos');
+    $titulacion->fromArray($this->input->post());
     $titulacion->save();
     redirect('titulaciones/index');
   }
