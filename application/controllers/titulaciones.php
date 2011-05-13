@@ -63,4 +63,4 @@ class Titulaciones extends CI_Controller{
   
 }
 
-?>
+/* Fin del archivo titulaciones.php */

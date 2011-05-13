@@ -16,23 +16,26 @@ class CargasSemanales extends CI_Controller{
   }
 
   public function create(){
-    //TO-DO
+    $semanal = new CargaSemanal;
+    $semanal->fromArray($this->input->post());
+    $semanal->save();
+    redirect('titulaciones/index');
   }
 
   public function edit($id){
     $semanal = $this->semanales_table->find($id);
-    $action = 'cargassemanales/update/';
+    $action = 'cargassemanales/update/' . $id;
     $data['data'] = array('result' => $semanal, 'action' => $action);
-    $this->load->view('cargassemanales/add', $data);
+    $this->load->view('cargassemanales/edit', $data);
   }
 
-  public function update(){
-    //TO-DO
+  public function update($id){
+    $semanal = $this->semanales_table->find($id);
+    $semanal->fromArray($this->input->post());
+    $semanal->save();
   }
   
 
 }
 
-
-
-?>
+/* Fin del archivo cargassemanales.php */

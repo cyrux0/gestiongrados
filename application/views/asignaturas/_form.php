@@ -1,5 +1,5 @@
 <?php echo form_open($action,''); ?>
-  <?php echo form_hidden('titulacion', $result->titulacion_id); ?>
+  <?php echo form_hidden('titulacion_id', $result->titulacion_id); ?>
   <label for="codigo">Código:</label>
   <?php echo form_input('codigo', $result->codigo); ?><br />
   <label for="nombre">Nombre:</label> 

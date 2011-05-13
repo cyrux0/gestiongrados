@@ -1,5 +1,5 @@
 <?php echo form_open($action,''); ?>
-  <?php echo form_hidden('asignatura', $result->asignatura_id); ?>
+  <?php echo form_hidden('asignatura_id', $result->asignatura_id); ?>
   <label for="creditos_teoria">Créditos de teoría:</label>
   <?php echo form_input('creditos_teoria', $result->creditos_teoria); ?><br />
   <label for="grupos_teoria">Grupos de teoría:</label>
