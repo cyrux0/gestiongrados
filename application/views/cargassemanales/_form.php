@@ -1,5 +1,9 @@
 <?php echo form_open($action,''); ?>
   <?php echo form_hidden('cargaglobal_id', $result->cargaglobal_id); ?>
+
+  <label for="num_semana">Semana:</label>
+  <?php echo form_input('num_semana', $result->num_semana); ?><br />
+
   <label for="horas_teoria">Horas de teoría:</label>
   <?php echo form_input('horas_teoria', $result->horas_teoria); ?><br />
   

@@ -33,6 +33,7 @@ class CargasSemanales extends CI_Controller{
     $semanal = $this->semanales_table->find($id);
     $semanal->fromArray($this->input->post());
     $semanal->save();
+    redirect('titulaciones/show/' . $semanal->cargaglobal->Asignatura->titulacion_id);
   }
   
 

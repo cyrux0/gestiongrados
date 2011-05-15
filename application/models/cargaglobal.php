@@ -23,6 +23,12 @@ class CargaGlobal extends Doctrine_Record
 					       'primary' => true,
 					       'autoincrement' => true,
 					       ));
+    $this->hasColumn('num_semanas', 'integer', 4, array(
+							'type' => 'integer',
+							'length' => 4,
+							'fixed' => false,
+							'unsigned' => true
+							));
     $this->hasColumn('creditos_teoria', 'integer', 4, array(
 							 'type' => 'integer',
 							 'length' => 4,

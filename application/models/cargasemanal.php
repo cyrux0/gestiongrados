@@ -23,6 +23,12 @@ class CargaSemanal extends Doctrine_Record
 					       'primary' => true,
 					       'autoincrement' => true,
 					       ));
+    $this->hasColumn('num_semana', 'integer', 4, array(
+						       'type' => 'integer',
+						       'length' => 4,
+						       'fixed' => false,
+						       'unsigned' => true,
+						       ));
     $this->hasColumn('horas_teoria', 'integer', 4, array(
 							 'type' => 'integer',
 							 'length' => 4,

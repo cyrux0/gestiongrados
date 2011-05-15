@@ -1,5 +1,9 @@
 <?php echo form_open($action,''); ?>
   <?php echo form_hidden('asignatura_id', $result->asignatura_id); ?>
+
+  <label for="num_semanas">Número de semanas en el curso:</label>
+  <?php echo form_input('num_semanas', $result->num_semanas); ?><br />
+
   <label for="creditos_teoria">Créditos de teoría:</label>
   <?php echo form_input('creditos_teoria', $result->creditos_teoria); ?><br />
   <label for="grupos_teoria">Grupos de teoría:</label>
