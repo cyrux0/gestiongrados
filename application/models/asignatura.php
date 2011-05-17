@@ -78,24 +78,7 @@ class Asignatura extends Doctrine_Record
 							  'notnull' => true,
 							  'autoincrement' => false,
 							  ));
-    $this->hasColumn('horas_presen', 'integer', 4, array(
-							 'type' => 'integer',
-							 'length' => 4,
-							 'fixed' => false,
-							 'unsigned' => false,
-							 'primary' => false,
-							 'notnull' => true,
-							 'autoincrement' => false,
-							 ));
-    $this->hasColumn('horas_no_presen', 'integer', 4, array(
-							    'type' => 'integer',
-							    'length' => 4,
-							    'fixed' => false,
-							    'unsigned' => false,
-							    'primary' => false,
-							    'notnull' => true,
-							    'autoincrement' => false,
-							    ));
+
     $this->hasColumn('titulacion_id', 'integer', 4, array(
 							  'type' => 'integer',
 							  'length' => 4,
