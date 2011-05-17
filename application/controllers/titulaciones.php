@@ -1,19 +1,20 @@
 <?php
 class Titulaciones extends CI_Controller{
-  
+
   function __construct(){
     parent::__construct();
     $this->titulaciones_table = Doctrine::getTable('Titulacion');
     $this->asignaturas_table = Doctrine::getTable('Asignatura');
+    $this->layout = '';
   }
   
   public function index(){
-    $this->layout = '';
+    
     $titulaciones = $this->titulaciones_table->findAll();
-
+    
     //Conseguimos los items mediante el modelo
     $data['titulaciones'] = $titulaciones;
-    
+    $data['page_title'] = 'INDEX TITULACIONES';
     //Mostramos
     
     $this->load->view('titulaciones/index', $data);
@@ -23,7 +24,7 @@ class Titulaciones extends CI_Controller{
     //Mostramos vista
     $titulacion = new Titulacion();
     
-    $this->load->view('titulaciones/add', array('data' => array('titulacion' => $titulacion)));
+    $this->load->view('titulaciones/add', array('data' => array('titulacion' => $titulacion), 'page_title' => 'ADD TITULACIONES'));
   }
 
   public function create(){
@@ -42,8 +43,8 @@ class Titulaciones extends CI_Controller{
 
   public function edit($id){
     $titulacion = $this->titulaciones_table->find($id);
-    $data['titulacion'] = $titulacion;
-   
+    $data['data'] = array('titulacion' => $titulacion);
+    $data['page_title'] = 'EDIT TITULACIONES';
     $this->load->view('titulaciones/edit', $data);
   }
 
@@ -57,7 +58,7 @@ class Titulaciones extends CI_Controller{
   public function show($id){
     $data['asignaturas'] = $this->asignaturas_table->findByTitulacion_id($id);
     $data['titulacion'] = $this->titulaciones_table->find($id);
-    
+    $data['page_title'] = 'INDEX ASIGNATURAS';
     $this->load->view('titulaciones/show', $data);
   }
   

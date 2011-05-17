@@ -5,6 +5,7 @@ class CargasSemanales extends CI_Controller{
   function __construct(){
     parent::__construct();
     $this->semanales_table = Doctrine::getTable('CargaSemanal');
+    $this->layout = '';
   }
 
   public function add($id_global){
@@ -12,6 +13,7 @@ class CargasSemanales extends CI_Controller{
     $semanal->cargaglobal_id = $id_global;
     $action = 'cargassemanales/create/';
     $data['data'] = array('result' => $semanal, 'action' => $action);
+    $data['page_title'] = 'Añadiendo carga semanal';
     $this->load->view('cargassemanales/add', $data);
   }
 
@@ -26,6 +28,7 @@ class CargasSemanales extends CI_Controller{
     $semanal = $this->semanales_table->find($id);
     $action = 'cargassemanales/update/' . $id;
     $data['data'] = array('result' => $semanal, 'action' => $action);
+    $data['page_title'] = 'Editando carga semanal';
     $this->load->view('cargassemanales/edit', $data);
   }
 

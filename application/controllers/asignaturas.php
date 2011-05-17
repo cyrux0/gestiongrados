@@ -4,6 +4,7 @@ class Asignaturas extends CI_Controller{
     parent::__construct();
     $this->asignaturas_table = Doctrine::getTable('Asignatura');
     $this->titulaciones_table = Doctrine::getTable('Titulacion');
+    $this->layout = '';
   }
 
   public function add_to($id){
@@ -12,6 +13,7 @@ class Asignaturas extends CI_Controller{
     $asignatura->titulacion_id = $id;
     $action = 'asignaturas/create/' . $asignatura->id;    
     $data['data'] = array('result' => $asignatura, 'action' => $action );
+    $data['page_title'] = 'Añadir asignatura';
     $this->load->view('asignaturas/add', $data);
   }
 
@@ -28,6 +30,7 @@ class Asignaturas extends CI_Controller{
     $action = 'asignaturas/update/' . $asignatura->id;    
     $data['data'] = array('result' => $asignatura, 'action' => $action);
     $data['nombre_asignatura'] = $asignatura->nombre;
+    $data['page_title'] = 'Editando asignatura';
     $this->load->view('asignaturas/edit', $data);
   }
 

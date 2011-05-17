@@ -5,6 +5,7 @@ class CargasGlobales extends CI_Controller{
     parent::__construct();
     $this->globales_table = Doctrine::getTable('CargaGlobal');
     $this->asignaturas_table = Doctrine::getTable('Asignatura');
+    $this->layout = '';
   }
 
   public function add($asignatura_id){
@@ -13,6 +14,7 @@ class CargasGlobales extends CI_Controller{
     $action = 'cargasglobales/create/';
     $data['data'] = array('result' => $global, 'action' => $action);
     $data['nombre_asignatura'] = $this->asignaturas_table->find($asignatura_id)->nombre;
+    $data['page_title'] = 'Añadiendo carga global';
     $this->load->view('cargaglobal/add', $data);
   }
 
@@ -28,6 +30,7 @@ class CargasGlobales extends CI_Controller{
     $action = '/cargasglobales/update/' . $id;
     $data['data'] = array('result' => $global, 'action' => $action);
     $data['nombre_asignatura'] = $this->asignaturas_table->find($global->asignatura_id)->nombre;
+    $data['page_title'] = 'Editando carga global';
     $this->load->view('cargaglobal/edit', $data);
   }
 

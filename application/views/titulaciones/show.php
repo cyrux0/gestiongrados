@@ -1,12 +1,4 @@
-<?php echo doctype(); ?>
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>INDEX ASIGNATURAS</title>
-</head>
-<body>
-  <h1>Asignaturas de <?php echo $titulacion->nombre; ?></h1>
+<h1>Asignaturas de <?php echo $titulacion->nombre; ?></h1>
 <table>
   <tr>
     <th>ID</th><th>NOMBRE</th><th>CRÉDITOS</th>
@@ -25,5 +17,4 @@
   
 </table>
 <?= anchor('asignaturas/add_to/'.$titulacion->id, 'Añadir una nueva asignatura')?> | <?= anchor('titulaciones/index', 'Volver') ?>
-</body>
-</html>
+
