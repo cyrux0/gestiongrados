@@ -1,1 +1,73 @@
-/* prueba */
+* {
+    margin: 0 auto;
+}
+
+body {
+    backgound-color: #fff;
+    color: #333;
+}
+
+body, p, ol, ul, td{
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
+}
+
+p {
+    padding: 5px;
+}
+
+a {
+    color:#D95E16;
+    padding: 0 2px;
+    text-decoration:none;
+}
+
+a:hover {
+    background-color: #FF813C;
+    color: #FFFFFF;
+}
+
+#header, #main, #footer {
+    width: 800px;
+}
+
+#header{
+    font-family:"Myriad Web Pro",Helvetica,Arial,sans-serif;
+    letter-spacing: 1px;
+    border-bottom: 5px solid #333333;
+    color: #333333;
+    padding: 15px 0;
+    height: 35px;
+}
+
+#header #user_bar {
+    float: right;
+    font-size: 10px;
+}
+
+#footer {
+    border-top: 5px solid #C1C1C1;
+    margin-top: 10px;
+    clear: both;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 11px;
+}
+
+#header h1{
+    padding-top: 14px;
+    float: left;
+    font-size: 30px;
+}
+
+#header h1 a{
+    color: black;
+}
+

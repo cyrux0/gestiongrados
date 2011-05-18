@@ -6,6 +6,19 @@
     <title><?php if (isset($page_title)) echo $page_title; else echo 'El título de la web'; ?></title>
   </head>
   <body>
-    {yield}
+    <div id="header">
+      <!-- Cabecera con imagen y link a la página de inicio -->
+      <h1>GESTIÓN de GRADOS</h1>
+      <div id="user_bar">
+	<!-- Aquí irían los links del panel de usuario -->
+      </div>
+    </div>
+    <div id="main">
+      <!-- Aquí irían los notice y los alert -->
+      {yield}
+    </div>
+    <div id="footer">
+      Web para gestión de la planificación docente
+    </div>
   </body>
 </html>
