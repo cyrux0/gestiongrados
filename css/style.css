@@ -71,6 +71,51 @@ a:hover {
     color: black;
 }
 
+#main {
+    padding-top: 10px;
+}
+
+
 table{
     margin: 10px auto;
 }
+
+.listaelems{
+    border-collapse: collapse;
+}
+.listaelems th, .listaelems td{
+    padding: 5px;
+    border: 1px solid #123645;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.listaelems th{
+    background-color: #005476;
+    color: #fff;
+    height: 25px;
+}
+
+.listaelems td{
+    background-color: #CDE5F0;
+    color: #123645;
+}
+
+#main form label{
+    width: 150px;
+    display: block;
+    text-align: right;
+    padding-right: 10px;
+    float: left;
+    line-height: 21px;
+    vertical-align: center;
+    background-color: #F0F0F0;
+    border: 2px solid #ccc;
+    margin-right: 10px;
+}
+
+#main form .field, #main form .actions{
+    padding-top: 10px;
+    clear:both;
+}
+
