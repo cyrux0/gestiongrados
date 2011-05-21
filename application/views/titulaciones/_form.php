@@ -12,6 +12,8 @@
   <input type="text" name="creditos" value="<?= $titulacion->creditos ?>" />
 </div>
 <div class="actions">
-  <input type="submit" name="button_action" value="Enviar" /> | <?= anchor('titulaciones/index', 'Cancelar') ?>
+   <input type="submit" id="submit_titulacion" name="button_action" value="Enviar" /> 
 </div>
+
+
 <?php echo form_close(); ?>
