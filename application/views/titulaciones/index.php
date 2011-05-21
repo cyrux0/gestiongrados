@@ -17,5 +17,4 @@
 	
 </table>
 <?= anchor('titulaciones/add', 'Añadir una nueva titulación', 'id="linknewtitulacion"'); ?>
-<?= anchor('titulaciones/index', 'Cancelar', 'id="canceltitulacion" style="display:none"'); ?>
 

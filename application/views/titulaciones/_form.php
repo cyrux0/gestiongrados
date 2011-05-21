@@ -12,7 +12,8 @@
   <input type="text" name="creditos" value="<?= $titulacion->creditos ?>" />
 </div>
 <div class="actions">
-   <input type="submit" id="submit_titulacion" name="button_action" value="Enviar" /> 
+   <input type="submit" id="submit_titulacion" name="button_action" value="Enviar" /> | <?= anchor('titulaciones/index', 'Cancelar', 'id="canceltitulacion"'); ?>
+   
 </div>
 
 
