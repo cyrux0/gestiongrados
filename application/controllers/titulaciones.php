@@ -23,7 +23,9 @@ class Titulaciones extends CI_Controller{
   public function add(){
     //Mostramos vista
     $titulacion = new Titulacion();
-    
+    if ($this->input->post('js')){
+      unset($this->layout);
+    }
     $this->load->view('titulaciones/add', array('data' => array('titulacion' => $titulacion), 'page_title' => 'ADD TITULACIONES'));
   }
 

@@ -1,4 +1,4 @@
-<table class="listaelems">
+<table class="listaelems" id="listatitulaciones">
 	<tr>
 		<th>ID</th><th>NOMBRE</th><th>CRÉDITOS</th><th colspan="3">Opciones</th>
 	</tr>
@@ -16,4 +16,5 @@
 
 	
 </table>
-<?= anchor('titulaciones/add', 'Añadir una nueva titulación')?>
+<?= anchor('titulaciones/add', 'Añadir una nueva titulación', 'id="linknewtitulacion"'); ?>
+
