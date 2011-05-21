@@ -1,0 +1,13 @@
+$(function(){
+    $('#linknewtitulacion').click(function(event){
+	event.preventDefault();
+	var p = {};
+	p['js'] = 1;
+	$('<div id="nuevatitulacion" style="display:none"></div>').insertAfter('#listatitulaciones');
+	$('#nuevatitulacion').load($(this).attr('href'), p);
+	$('#nuevatitulacion').slideDown();
+	$('#linknewtitulacion').remove();
+	
+    });
+});
+
