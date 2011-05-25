@@ -3,7 +3,7 @@
 }
 
 body {
-    backgound-color: #fff;
+    background-color: #fff;
     color: #333;
 }
 
@@ -35,7 +35,8 @@ a:hover {
 }
 
 #header, #main, #footer {
-    width: 800px;
+    width: 80%;
+    min-width: 800px;
 }
 
 #header{
@@ -43,8 +44,12 @@ a:hover {
     letter-spacing: 1px;
     border-bottom: 5px solid #333333;
     color: #333333;
-    padding: 15px 0;
-    height: 35px;
+    height: auto;
+    min-height: 135px;
+}
+
+#header a:hover {
+	background-color: transparent;
 }
 
 #header #user_bar {
@@ -108,7 +113,7 @@ table{
     padding-right: 10px;
     float: left;
     line-height: 21px;
-    vertical-align: center;
+    vertical-align: auto;
     background-color: #F0F0F0;
     border: 2px solid #ccc;
     margin-right: 10px;
@@ -130,4 +135,24 @@ table{
 
 #main form input[type="submit"]:active{
      border: 1px inset black;
+}
+
+#logoUca{
+	display: block;
+	float:left;
+	width:80%;
+}
+
+#navegacionUca{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	float: right;
+	width:19%;
+	min-height: 125px;
+	border-left: 1px solid #444444;
+}
+
+#enlacesUca{
+	padding-top: 20px;
+	list-style-type: none;
 }

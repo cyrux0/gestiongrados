@@ -13,10 +13,18 @@
   <body>
     <div id="header">
       <!-- Cabecera con imagen y link a la página de inicio -->
-      <h1>GESTIÓN de GRADOS</h1>
-      <div id="user_bar">
-	<!-- Aquí irían los links del panel de usuario -->
+      <a id="logoUca" href="http://www.uca.es"><img alt="Universidad de Cádiz" src="<?= site_url('themes/img/logoEmpresa.gif') ?>" /></a>
+      <div id="navegacionUca">
+      	<ul id="enlacesUca">
+      		<li>Inicio</li>
+      		<li>Intranet</li>
+      		<li>Imprimir</li>
+      		<li>Mapa web</li>
+      	</ul>
       </div>
+      <!--<div id="user_bar">-->
+	<!-- Aquí irían los links del panel de usuario -->
+     <!-- </div>-->
     </div>
     <div id="main">
       <!-- Aquí irían los notice y los alert -->
