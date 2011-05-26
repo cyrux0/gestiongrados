@@ -1,4 +1,4 @@
-<?php echo form_open('titulaciones/create'); ?>
+<?php echo form_open($action); ?>
 <div class="field">
   <label for="codigo">Código:</label>
   <input type="text" name="codigo" value="<?= $titulacion->codigo ?>" />

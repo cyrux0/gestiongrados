@@ -26,7 +26,8 @@ class Titulaciones extends CI_Controller{
     if ($this->input->post('js')){
       unset($this->layout);
     }
-    $this->load->view('titulaciones/add', array('data' => array('titulacion' => $titulacion), 'page_title' => 'ADD TITULACIONES'));
+	$action = 'titulaciones/create';
+    $this->load->view('titulaciones/add', array('data' => array('titulacion' => $titulacion, 'action' => $action ), 'page_title' => 'ADD TITULACIONES'));
   }
 
   public function create(){
@@ -45,7 +46,8 @@ class Titulaciones extends CI_Controller{
 
   public function edit($id){
     $titulacion = $this->titulaciones_table->find($id);
-    $data['data'] = array('titulacion' => $titulacion);
+	$action = 'titulaciones/update/' . $id;
+    $data['data'] = array('titulacion' => $titulacion, 'action' => $action);
     $data['page_title'] = 'EDIT TITULACIONES';
     $this->load->view('titulaciones/edit', $data);
   }

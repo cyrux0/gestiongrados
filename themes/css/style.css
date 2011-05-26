@@ -72,6 +72,10 @@ a:hover {
     font-size: 30px;
 }
 
+#main h1{
+	padding-top: 15px;
+}
+
 #header h1 a{
     color: black;
 }
@@ -117,6 +121,10 @@ table{
     background-color: #F0F0F0;
     border: 2px solid #ccc;
     margin-right: 10px;
+}
+
+#main form{
+	margin-top: 10px;
 }
 
 #main form .field, #main form .actions{

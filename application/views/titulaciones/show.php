@@ -1,7 +1,7 @@
 <h1>Asignaturas de <?php echo $titulacion->nombre; ?></h1>
-<table>
+<table class="listaelems">
   <tr>
-    <th>ID</th><th>NOMBRE</th><th>CRÉDITOS</th>
+    <th>ID</th><th>NOMBRE</th><th>CRÉDITOS</th><th colspan="2">ACCIONES</th>
   </tr>
   <?php 
   foreach($asignaturas as $item): ?>
