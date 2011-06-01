@@ -10,11 +10,13 @@ var titulaciones = {
     displayAdd: function(href) {
         var p = {};
         p['js']=1;
-        $('<div id="nuevatitulacion" style="display:none"></div>').insertAfter('#listatitulaciones')
-        
-        $('#nuevatitulacion').load(href, p, titulaciones.loadAddCallback);
+        if($('#nuevatitulacion').length > 0){
+            $('#nuevatitulacion').slideDown();
+        }else{
+            $('<div id="nuevatitulacion" style="display:none"></div>').insertAfter('#listatitulaciones')
+            $('#nuevatitulacion').load(href, p, titulaciones.loadAddCallback);
+        }
         $('#linknewtitulacion').toggle();
-        $('#canceltitulacion').toggle();
     },
     //Callback de la función load de add para mostrar el formulario y añadir el evento click
     loadAddCallback: function() {
