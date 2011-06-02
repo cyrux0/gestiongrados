@@ -146,17 +146,16 @@ table{
 }
 
 #logoUca{
-	display: block;
+	display: inline;
 	float:left;
 	width:80%;
+	height:125px;
 }
 
 #navegacionUca{
-	margin-top: 5px;
-	margin-bottom: 5px;
 	float: right;
 	width:19%;
-	min-height: 125px;
+	min-height: 135px;
 	border-left: 1px solid #444444;
 }
 
