@@ -34,7 +34,12 @@ class Titulaciones extends CI_Controller{
     $titulacion = new Titulacion;
     $titulacion->fromArray($this->input->post());
     $titulacion->save();
-    redirect('titulaciones/index');
+    
+    if($this->input->post('remote')=="true"){
+        unset($this->layout);
+        $this->load->view('titulaciones/create', array('item' => $titulacion));
+    }else
+        redirect('titulaciones/index');
   }
 
   public function delete($id){

@@ -1,4 +1,7 @@
+
+//Objeto titulaciones para las interacciones AJAX referentes a esta vista
 var titulaciones = {
+    //Función principal para crear los binds de los distintos eventos
     initialize: function() {
         $('#linknewtitulacion').click( function(event) {
             event.preventDefault();
@@ -21,11 +24,39 @@ var titulaciones = {
     //Callback de la función load de add para mostrar el formulario y añadir el evento click
     loadAddCallback: function() {
         $('#nuevatitulacion').slideDown();
+        
         $('#canceltitulacion').click( function(event) {
             event.preventDefault();
-            $('#nuevatitulacion').slideUp();
-            $('#linknewtitulacion').toggle();
+            titulaciones.hideForm();
         });
+        
+        titulaciones.prepareForm();
+        
+
+    },
+    
+    //Preparar el formulario para ser enviado por AJAX
+    prepareForm: function(){
+        var options = {
+            data:    {'remote': 'true'},
+            success:    titulaciones.appendItem
+        }
+        
+        $('#nuevatitulacion form').ajaxForm(options);
+    },
+    
+    //Función para añadir el item a la tabla en el momento de hacer click en submit
+    appendItem: function(response){
+        $('#listatitulaciones').append(response);
+        titulaciones.hideForm();
+    },
+    
+    hideForm: function(){
+        $('#nuevatitulacion').slideUp();
+        $('#nuevatitulacion form').each(function(){
+            this.reset();
+        });
+        $('#linknewtitulacion').toggle();
     }
 }
 

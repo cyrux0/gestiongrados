@@ -8,6 +8,7 @@
     
     <script src="<?= site_url('themes/js/jquery-1.6.1.min.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <script src="<?= site_url('themes/js/functions.js'); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?= site_url('themes/js/jquery.form.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <title><?php if (isset($page_title)) echo $page_title; else echo 'El título de la web'; ?></title>
   </head>
   <body>
