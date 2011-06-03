@@ -111,11 +111,11 @@ table{
 }
 
 #main form label{
-    width: 150px;
-    display: block;
+    min-width: 150px;
+    display: inline-block;
     text-align: right;
+    padding-left: 10px;
     padding-right: 10px;
-    float: left;
     line-height: 21px;
     vertical-align: auto;
     background-color: #F0F0F0;
@@ -132,6 +132,9 @@ table{
     clear:both;
 }
 
+#main form .field{
+    text-align: center;
+}
 
 #main form input[type="submit"]{
     background: url("http://www.uca.es/input_background.gif") repeat-x scroll 0 0 White;

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://dsalazar.no-ip.info';
+$config['base_url']	= 'http://rod.uca.es/gestgrados';
 
 /*
 |--------------------------------------------------------------------------
