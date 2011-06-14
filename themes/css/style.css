@@ -132,8 +132,8 @@ table{
     clear:both;
 }
 
-#main form .field{
-    text-align: center;
+#main form .field label{
+    min-width: 230px;
 }
 
 #main form input[type="submit"]{

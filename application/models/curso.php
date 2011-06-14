@@ -107,3 +107,6 @@ class Curso extends Doctrine_Record
     $this->hasMany('CargaGlobal as cargasglobales', array('local' => 'id', 'foreign' => 'curso_id', 'onDelete' => 'CASCADE'));
   }
 }
+
+/* End of file welcome.php */
+/* Location: ./application/models/curso.php */

@@ -39,3 +39,6 @@ class CargaGlobal extends Doctrine_Record {
     }
 
 }
+
+/* End of file cargaglobal.php */
+/* Location: ./application/models/cargaglobal.php */
