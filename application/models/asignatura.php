@@ -78,7 +78,19 @@ class Asignatura extends Doctrine_Record
 							  'notnull' => true,
 							  'autoincrement' => false,
 							  ));
-
+    $this->hasColumn('curso', 'integer', 4, array(
+                              'type' => 'integer',
+                              'length' => 4,
+                              'fixed' => false,
+                              'unsigned' => true,
+                              'primary' => false,
+                              'notnull' => true,
+                              'autoincrement' => false,
+                              ));
+                              
+    /* Semestre debería ser un enum */                              
+    $this->hasColumn('semestre', 'enum', null, array( 'values' => array('primero', 'segundo') ));
+    
     $this->hasColumn('titulacion_id', 'integer', 4, array(
 							  'type' => 'integer',
 							  'length' => 4,

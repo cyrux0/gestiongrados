@@ -10,19 +10,19 @@
 <table>
     <tr>
         <td>Actividad</td>
-        <td>Horas</td>
+        <td>Créditos</td>
         <td>Número de grupos</td>
     </tr>
     <?php echo form_hidden('asignatura_id', $result -> asignatura_id);?>
 
     <tr>
         <td>
-        <label for="horas_teoria">
+        <label for="creditos_teoria">
             Teoría:
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_teoria', $result -> horas_teoria);?>
+        <?php echo form_input('creditos_teoria', $result -> creditos_teoria);?>
         </td>
         <td>
         <?php echo form_input('grupos_teoria', $result -> grupos_teoria);?>
@@ -30,12 +30,12 @@
     </tr>
     <tr>
         <td>
-        <label for="horas_lab">
+        <label for="creditos_lab">
             Laboratorio:
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_lab', $result -> horas_lab);?>
+        <?php echo form_input('creditos_lab', $result -> creditos_lab);?>
         </td>
         <td>
         <?php echo form_input('grupos_lab', $result -> grupos_lab);?>
@@ -43,12 +43,12 @@
     </tr>
     <tr>
         <td>
-        <label for="horas_problemas">
+        <label for="creditos_problemas">
             Problemas:
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_problemas', $result -> horas_problemas);?>
+        <?php echo form_input('creditos_problemas', $result -> creditos_problemas);?>
         </td>
         <td>
         <?php echo form_input('grupos_problemas', $result -> grupos_problemas);?>
@@ -56,12 +56,12 @@
     </tr>
     <tr>
         <td>
-        <label for="horas_informatica">
+        <label for="creditos_informatica">
             Informática:
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_informatica', $result -> horas_informatica);?>
+        <?php echo form_input('creditos_informatica', $result -> creditos_informatica);?>
         </td>
         <td>
         <?php echo form_input('grupos_informatica', $result -> grupos_informatica);?>
@@ -69,12 +69,12 @@
     </tr>
     <tr>
         <td>
-        <label for="horas_campo">
+        <label for="creditos_campo">
             Prácticas de campo:
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_campo', $result->horas_campo); ?>
+        <?php echo form_input('creditos_campo', $result->creditos_campo); ?>
         </td>
         <td>
         <?php echo form_input('grupos_campo', $result->grupos_campo); ?>

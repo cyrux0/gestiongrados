@@ -57,6 +57,14 @@ class Titulacion extends Doctrine_Record
 						     'notnull' => true,
 						     'autoincrement' => false,
 						     ));
+    $this->hasColumn('num_cursos', 'integer', 4, array(
+                                'type' => 'integer',
+                                'length' => 4,
+                                'fixed' => false,
+                                'unsigned' => true,
+                                'primary' => false,
+                                'notnull' => true,
+                             ));
   }
 
   

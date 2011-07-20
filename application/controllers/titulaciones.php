@@ -15,9 +15,14 @@ class Titulaciones extends CI_Controller{
     //Conseguimos los items mediante el modelo
     $data['titulaciones'] = $titulaciones;
     $data['page_title'] = 'INDEX TITULACIONES';
-    //Mostramos
     
-    $this->load->view('titulaciones/index', $data);
+    if($this->input->post('js') == '1'){
+        unset($this->layout);
+        $this->load->view('titulaciones/_titulaciones', $data);
+    }else{
+        //Mostramos
+        $this->load->view('titulaciones/index', $data);
+    }
   }
 
   public function add(){

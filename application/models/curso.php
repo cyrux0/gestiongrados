@@ -29,24 +29,7 @@ class Curso extends Doctrine_Record
                            'primary' => true,
                            'autoincrement' => true,
                            ));
-    $this->hasColumn('anyo_inicio', 'string', 4, array(
-                          'type' => 'string',
-                          'length' => 4,
-                          'fixed' => false,
-                          'unsigned' => false,
-                          'primary' => false,
-                          'notnull' => true,
-                          'autoincrement' => false,
-                          ));
-    $this->hasColumn('num_semanas', 'integer', 4, array(
-                             'type' => 'integer',
-                             'length' => 4,
-                             'fixed' => false,
-                             'unsigned' => false,
-                             'primary' => false,
-                             'notnull' => true,
-                             'autoincrement' => false,
-                             ));
+    $this->hasColumn('anyo_inicio', 'date');
     $this->hasColumn('num_semanas_teoria', 'integer', 4, array(
                              'type' => 'integer',
                              'length' => 4,

@@ -7,16 +7,36 @@ var titulaciones = {
             event.preventDefault();
             titulaciones.displayAdd($(this).attr('href'));
         });
+        
+        $('#linklistatitulaciones').click( function(event) {
+            event.preventDefault();
+            titulaciones.displayIndex($(this).attr('href'));
+        });
     },
+    
+    
+    displayIndex: function(href) {
+        var p = {};
+        p['js'] = 1;
+        if($('#divtitulaciones').length > 0){
+            $('#divtitulaciones').slideToggle();
+        }else{
+            $('<div id="divtitulaciones" style="display:none"></div>').appendTo('#listatitulaciones');
+            $('#divtitulaciones').load(href, p, function(){
+                $('#divtitulaciones').slideDown();
+            });
+        }
+    },
+    
     //Add controller
     //Carga y muestra el formulario de add
     displayAdd: function(href) {
         var p = {};
-        p['js']=1;
+        p['js'] = 1;
         if($('#nuevatitulacion').length > 0){
             $('#nuevatitulacion').slideDown();
         }else{
-            $('<div id="nuevatitulacion" style="display:none"></div>').insertAfter('#listatitulaciones')
+            $('<div id="nuevatitulacion" style="display:none"></div>').insertAfter('#listatitulaciones');
             $('#nuevatitulacion').load(href, p, titulaciones.loadAddCallback);
         }
         $('#linknewtitulacion').toggle();

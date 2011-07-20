@@ -1,0 +1,1 @@
+<?php $this->load->view('cursos/_form', $data); ?>
