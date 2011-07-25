@@ -14,16 +14,16 @@
 </div>
 
 <div class="field">
-    <label for="fecha_inicio">
+    <label for="fecha_inicial">
         Fecha de inicio:
     </label>
-    <?= form_input(); ?>
+    <?= form_input('fecha_inicial', $evento->fecha_inicial, 'class="datepicker"'); ?>
 </div>
 <div class="field">
-    <label for="fecha_fin">
+    <label for="fecha_final">
         Fecha de finalización:
     </label>
-    <?= form_input(); ?>
+    <?= form_input('fecha_inicial', $evento->fecha_final, 'class="datepicker"'); ?>
 </div>
 <div class="actions">
    <input type="submit" id="submit_titulacion" name="button_action" value="Enviar" /> | <?= anchor('titulaciones/index', 'Cancelar', 'id="canceltitulacion"'); ?>

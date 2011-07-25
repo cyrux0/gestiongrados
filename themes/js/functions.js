@@ -82,4 +82,5 @@ var titulaciones = {
 
 $(document).ready(function(){
     titulaciones.initialize();
+    $('.datepicker').datepicker();
 });
