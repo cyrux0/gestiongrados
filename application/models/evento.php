@@ -21,10 +21,12 @@ class Evento extends Doctrine_Record {
         $this -> hasColumn('rango', 'bool');
         $this -> hasColumn('fecha_inicial', 'date');
         $this -> hasColumn('fecha_final', 'date');
+        //$this -> hasColumn('curso_id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false));
+
     }
 
     public function setUp() {
-        $this -> hasOne('Curso as curso', array('local' => 'curso_id', 'foreign' => 'id'));
+        //$this -> hasOne('Curso as curso', array('local' => 'curso_id', 'foreign' => 'id'));
         parent::setUp();
     }
 

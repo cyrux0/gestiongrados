@@ -23,7 +23,7 @@
     <label for="fecha_final">
         Fecha de finalización:
     </label>
-    <?= form_input('fecha_inicial', $evento->fecha_final, 'class="datepicker"'); ?>
+    <?= form_input('fecha_final', $evento->fecha_final, 'class="datepicker"'); ?>
 </div>
 <div class="actions">
    <input type="submit" id="submit_titulacion" name="button_action" value="Enviar" /> | <?= anchor('titulaciones/index', 'Cancelar', 'id="canceltitulacion"'); ?>

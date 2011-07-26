@@ -20,6 +20,17 @@ class Eventos extends CI_Controller{
         $this->load->view('eventos/add', array('page_title' => 'Nuevo evento', 'data' => array('evento'=> $evento, 'action' => $action, 'options' => $options)));
     }
     
+    public function create(){
+        $evento = new Evento();
+        $evento->fromArray($this->input->post());
+        list($day1, $month1, $year1) = explode('/', $this->input->post('fecha_inicial'));
+        list($day2, $month2, $year2) = explode('/', $this->input->post('fecha_final'));
+        $evento->fecha_inicial = $year1 . '-' . $month1 . '-' . $day1;
+        $evento->fecha_final = $year2 . '-' . $month2 . '-' . $day2;
+        $evento->save();
+        redirect('titulaciones/index');
+    }    
+   
     public function update($id){
         //TO-DO
     }
