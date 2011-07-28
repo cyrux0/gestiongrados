@@ -5,7 +5,7 @@
   <label for="tipo_evento">Tipo de evento:</label>
   <?= form_dropdown('tipo_evento', $options, $evento->tipo_evento); ?>
 </div>
-
+<?= form_hidden('curso_id', $evento->curso_id) ?>
 <div class="field">
     <label for="duracion">
         Duración del evento:

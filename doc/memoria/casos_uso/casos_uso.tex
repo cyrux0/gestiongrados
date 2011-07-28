@@ -1,0 +1,71 @@
+
+\documentclass{book}
+
+% Esto es para poder escribir acentos directamente:
+\usepackage[utf8]{inputenc}
+% Esto es para que el LaTeX sepa que el texto está en español:
+\usepackage[spanish]{babel}
+
+
+\title{Casos de uso de la aplicación para incluir en la memoria
+}
+
+\author{Daniel Ignacio Salazar Recio}
+
+\begin{document}
+\maketitle
+\chapter{DRS}
+\section{Modelo de requisitos}
+\subsection{Modelo de casos de uso}
+\subsubsection*{Gestión de carga de trabajo}
+Esta es la sección de gestión de carga de trabajo.
+
+\subsubsection*{Caso de uso: Registrar titulación}
+\begin{itemize}
+\item{\bf Descripción:} Registra una nueva titulación en el sistema
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:}
+\item{\bf Pasos:}
+\begin{enumerate}
+\item El administrador introduce todos los datos de la titulación.
+\item El sistema comprueba que los datos cumplen el formato
+	\begin{enumerate}
+	\item Alguno de los datos introducidos tiene un formato incorrecto
+		\begin{enumerate}
+		\item El sistema lo indica mostrando un mensaje de error
+		\end{enumerate}
+	\item Falta algún campo obligatorio
+		\begin{enumerate}
+		\item El sistema lo indica mostrando un mensaje de error
+		\end{enumerate}
+	\end{enumerate}
+\item El sistema registra la titulación
+\end{enumerate}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Editar titulación}
+\begin{itemize}
+\item{\bf Descripción:} Edita una titulación existente en el sistema modificando sus datos
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} La titulación existe en el sistema
+\item{\bf Pasos:}
+\begin{enumerate}
+\item El administrador selecciona una titulación para editarla
+\item El sistema muestra sus datos actuales, permitiendo su edición
+\item El administrador modifica los datos
+\item El sistema comprueba que todos los datos son correctos
+	\begin{enumerate}
+	\item Alguno de los datos tiene un formato incorrecto
+		\begin{enumerate}
+		\item El sistema muestra un mensaje de error
+		\end{enumerate}
+	\item Falta algún campo obligatorio
+		\begin{enumerate}
+		\item El sistema muestra un mensaje de error
+		\end{enumerate}
+	\end{enumerate}
+\item El sistema guarda los datos modificados
+\end{enumerate}
+\end{itemize}
+
+\end{document}

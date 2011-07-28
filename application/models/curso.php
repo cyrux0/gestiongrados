@@ -29,7 +29,6 @@ class Curso extends Doctrine_Record
                            'primary' => true,
                            'autoincrement' => true,
                            ));
-    $this->hasColumn('anyo_inicio', 'date');
     $this->hasColumn('num_semanas_teoria', 'integer', 4, array(
                              'type' => 'integer',
                              'length' => 4,
@@ -79,8 +78,16 @@ class Curso extends Doctrine_Record
                              'autoincrement' => false,
                              'default' => '22:00',
                              ));
-                                 
-    
+    $this->hasColumn('inicio_curso','date');
+    $this->hasColumn('fin_curso', 'date');                  
+    $this->hasColumn('inicio_semestre1', 'date');
+    $this->hasColumn('fin_semestre1', 'date');
+    $this->hasColumn('inicio_examenes_enero', 'date');
+    $this->hasColumn('fin_examenes_enero', 'date');
+    $this->hasColumn('inicio_examenes_junio', 'date');
+    $this->hasColumn('fin_examenes_junio', 'date');
+    $this->hasColumn('inicio_examenes_sept', 'date');
+    $this->hasColumn('fin_examenes_sept', 'date');
   }
 
   
@@ -88,8 +95,9 @@ class Curso extends Doctrine_Record
   {
     parent::setUp();
     $this->hasMany('CargaGlobal as cargasglobales', array('local' => 'id', 'foreign' => 'curso_id', 'onDelete' => 'CASCADE'));
+    $this->hasMany('Evento as eventos', array('local' => 'id', 'foreign' => 'curso_id', 'onDelete' => 'CASCADE'));
   }
 }
 
-/* End of file welcome.php */
+/* End of file curso.php */
 /* Location: ./application/models/curso.php */
