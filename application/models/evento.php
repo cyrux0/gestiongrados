@@ -17,6 +17,7 @@ class Evento extends Doctrine_Record {
     public function setTableDefinition() {
         $this -> setTableName('eventos');
         $this -> hasColumn('id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'primary' => true, 'autoincrement' => true, ));
+        $this -> hasColumn('nombre_evento', 'string', 255);
         $this -> hasColumn('tipo_evento', 'enum', null, array( 'values' => $this->tipo_evento_values));
         $this -> hasColumn('fecha_individual', 'bool');
         $this -> hasColumn('fecha_inicial', 'date');

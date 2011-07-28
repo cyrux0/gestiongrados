@@ -2,12 +2,16 @@
 
 <!-- Está todo con inputs de texto, hay que cambiar algunos campos que no tienen sentido con este tipo de inputs -->
 <div class="field">
-  <label for="anyo_inicio">Año de inicio:</label>
-  <input type="text" name="anyo_inicio" value="<?= $curso->anyo_inicio ?>" />
+  <label for="inicio_semestre1">Fechas primer semestre:</label>
+  <input type="text" name="inicio_curso" value="<?= $curso->inicio_semestre1 ?>" class="datepicker"/>
+  -
+  <input type="text" name="inicio_curso" value="<?= $curso->fin_semestre1 ?>" class="datepicker"/>
 </div>
 <div class="field">
-    <label for="num_semanas">Número de semanas</label>
-    <input type="text" name="num_semanas" value="<?= $curso->num_semanas ?>" />
+  <label for="inicio_semestre2">Fechas segundo semestre:</label>
+  <input type="text" name="inicio_curso" value="<?= $curso->inicio_semestre2 ?>" class="datepicker"/>
+  -
+  <input type="text" name="inicio_curso" value="<?= $curso->fin_semestre2 ?>" class="datepicker"/>
 </div>
 <div class="field">
   <label for="num_semanas_teoria">Número de semanas de teoría:</label>

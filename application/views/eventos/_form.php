@@ -1,18 +1,21 @@
 <?php echo form_open($action); ?>
 
-<!-- Está todo con inputs de texto, hay que cambiar algunos campos que no tienen sentido con este tipo de inputs -->
+
+<div class="field">
+  <label for="nombre_evento">Nombre del evento:</label>
+  <?= form_input('nombre_evento', $evento->nombre_evento); ?>
+</div>
 <div class="field">
   <label for="tipo_evento">Tipo de evento:</label>
   <?= form_dropdown('tipo_evento', $options, $evento->tipo_evento); ?>
 </div>
 <?= form_hidden('curso_id', $evento->curso_id) ?>
 <div class="field">
-    <label for="duracion">
-        Duración del evento:
+    <label for="fecha_individual">
+        Feche individual:
     </label>
-    <?= form_dropdown('duracion', array('fecha_individual' => 'Fecha individual', 'rango' => 'Rango de fechas')) ?>
+    <?= form_checkbox('fecha_individual', $evento->fecha_individual); ?>
 </div>
-
 <div class="field">
     <label for="fecha_inicial">
         Fecha de inicio:

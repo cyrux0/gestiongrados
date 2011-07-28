@@ -18,7 +18,7 @@ class Eventos extends CI_Controller{
         //TO-DO Permitir añadir un evento
         $evento = new Evento();
         $evento->curso_id = $curso_id;
-        $options = array_combine($evento->tipo_evento_values, array('Examen', 'Festivo', 'Vacaciones', 'Fecha Especial'));
+        $options = array_combine($evento->tipo_evento_values, array('Festivo', 'Vacaciones', 'Evento especial laborable'));
         $action = 'eventos/create';
         $this->load->view('eventos/add', array('page_title' => 'Nuevo evento', 'data' => array('evento'=> $evento, 'action' => $action, 'options' => $options)));
     }
@@ -29,7 +29,14 @@ class Eventos extends CI_Controller{
         list($day1, $month1, $year1) = explode('/', $this->input->post('fecha_inicial'));
         list($day2, $month2, $year2) = explode('/', $this->input->post('fecha_final'));
         $evento->fecha_inicial = $year1 . '-' . $month1 . '-' . $day1;
-        $evento->fecha_final = $year2 . '-' . $month2 . '-' . $day2;
+        $varpost = $this->input->post();
+        if(isset($varpost['fecha_individual'])){
+            $evento->fecha_individual = TRUE;
+            $evento->fecha_final = $evento->fecha_inicial;
+        }else{
+            $evento->fecha_individual = FALSE;
+            $evento->fecha_final = $year2 . '-' . $month2 . '-' . $day2;
+        }
         $evento->save();
         redirect('eventos/index/' . $evento->curso_id);
     }    
@@ -38,7 +45,7 @@ class Eventos extends CI_Controller{
         $evento = $this->eventos_table->find($id);
         $curso_id = $evento->curso_id;
         $evento->delete();
-        redirect('eventos/index' . $curso_id);
+        redirect('eventos/index/' . $curso_id);
 
     }
 }

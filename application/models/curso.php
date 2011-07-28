@@ -78,10 +78,10 @@ class Curso extends Doctrine_Record
                              'autoincrement' => false,
                              'default' => '22:00',
                              ));
-    $this->hasColumn('inicio_curso','date');
-    $this->hasColumn('fin_curso', 'date');                  
-    $this->hasColumn('inicio_semestre1', 'date');
-    $this->hasColumn('fin_semestre1', 'date');
+    $this->hasColumn('inicio_semestre1','date');
+    $this->hasColumn('fin_semestre1', 'date');                  
+    $this->hasColumn('inicio_semestre2', 'date');
+    $this->hasColumn('fin_semestre2', 'date');
     $this->hasColumn('inicio_examenes_enero', 'date');
     $this->hasColumn('fin_examenes_enero', 'date');
     $this->hasColumn('inicio_examenes_junio', 'date');
