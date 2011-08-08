@@ -3,15 +3,33 @@
 <!-- Está todo con inputs de texto, hay que cambiar algunos campos que no tienen sentido con este tipo de inputs -->
 <div class="field">
   <label for="inicio_semestre1">Fechas primer semestre:</label>
-  <input type="text" name="inicio_curso" value="<?= $curso->inicio_semestre1 ?>" class="datepicker"/>
+  <input type="text" name="fecha_inicio_semestre1" value="<?= $curso->inicio_semestre1 ?>" class="datepicker"/>
   -
-  <input type="text" name="inicio_curso" value="<?= $curso->fin_semestre1 ?>" class="datepicker"/>
+  <input type="text" name="fecha_fin_semestre1" value="<?= $curso->fin_semestre1 ?>" class="datepicker"/>
 </div>
 <div class="field">
   <label for="inicio_semestre2">Fechas segundo semestre:</label>
-  <input type="text" name="inicio_curso" value="<?= $curso->inicio_semestre2 ?>" class="datepicker"/>
+  <input type="text" name="fecha_inicio_semestre2" value="<?= $curso->inicio_semestre2 ?>" class="datepicker"/>
   -
-  <input type="text" name="inicio_curso" value="<?= $curso->fin_semestre2 ?>" class="datepicker"/>
+  <input type="text" name="fecha_fin_semestre2" value="<?= $curso->fin_semestre2 ?>" class="datepicker"/>
+</div>
+<div class="field">
+  <label for="inicio_examenes_enero">Fechas exámenes de enero:</label>
+  <input type="text" name="fecha_inicio_examenes_enero" value="<?= $curso->inicio_examenes_enero ?>" class="datepicker"/>
+  -
+  <input type="text" name="fecha_fin_examenes_enero" value="<?= $curso->fin_examenes_enero ?>" class="datepicker"/>
+</div>
+<div class="field">
+  <label for="inicio_examenes_junio">Fechas exámenes de junio:</label>
+  <input type="text" name="fecha_inicio_examenes_junio" value="<?= $curso->inicio_examenes_junio?>" class="datepicker"/>
+  -
+  <input type="text" name="fecha_fin_examenes_junio" value="<?= $curso->fin_examenes_junio ?>" class="datepicker"/>
+</div>
+<div class="field">
+  <label for="inicio_examenes_sept">Fechas exámenes de septiembre:</label>
+  <input type="text" name="fecha_inicio_examenes_sept" value="<?= $curso->inicio_examenes_sept?>" class="datepicker"/>
+  -
+  <input type="text" name="fecha_fin_examenes_sept" value="<?= $curso->fin_examenes_sept ?>" class="datepicker"/>
 </div>
 <div class="field">
   <label for="num_semanas_teoria">Número de semanas de teoría:</label>

@@ -19,7 +19,15 @@
   <div class="field">
   	<label for="departamento">Departamento:</label>
   	<?php echo form_input('departamento', $result->departamento); ?><br />
-  </div>	
+  </div>
+  <div class="field">
+      <label for="curso">Curso:</label>
+      <?= form_input('curso', $result->curso) ?><br />
+  </div>
+  <div class="field">
+      <label for="semestre">Semestre:</label>
+      <?= form_input('semestre', $result->semestre) ?><br /><!-- Debería ser un form select -->
+  </div>
   <div class="actions">
   	<?php echo form_submit('add_asig_submit', 'Enviar'); ?> | <?= anchor('titulaciones/show/'.$result->titulacion_id, 'Cancelar') ?>
   </div>  

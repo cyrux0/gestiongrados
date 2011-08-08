@@ -1,52 +1,73 @@
 <?php
-class Asignaturas extends CI_Controller{
-  function __construct(){
-    parent::__construct();
-    $this->asignaturas_table = Doctrine::getTable('Asignatura');
-    $this->titulaciones_table = Doctrine::getTable('Titulacion');
-    $this->layout = '';
-  }
+class Asignaturas extends CI_Controller {
+    function __construct() {
+        parent::__construct();
+        $this->asignaturas_table = Doctrine::getTable('Asignatura');
+        $this->titulaciones_table = Doctrine::getTable('Titulacion');
+        $this->cursos_table = Doctrine::getTable('Curso'); 
+        $this -> layout = '';
+    }
 
-  public function add_to($id){
-    $data['nombre_titulacion'] = $this->titulaciones_table->find($id)->nombre;
-    $asignatura = new Asignatura;
-    $asignatura->titulacion_id = $id;
-    $action = 'asignaturas/create/' . $asignatura->id;    
-    $data['data'] = array('result' => $asignatura, 'action' => $action );
-    $data['page_title'] = 'Añadir asignatura';
-    $this->load->view('asignaturas/add', $data);
-  }
+    public function add_to($id) {
+        $data['nombre_titulacion'] = $this -> titulaciones_table -> find($id) -> nombre;
+        $asignatura = new Asignatura;
+        $asignatura -> titulacion_id = $id;
+        $action = 'asignaturas/create/' . $asignatura -> id;
+        $data['data'] = array('result' => $asignatura, 'action' => $action);
+        $data['page_title'] = 'Añadir asignatura';
+        $this -> load -> view('asignaturas/add', $data);
+    }
 
+    public function create() {
+        $asignatura = new Asignatura;
+        $asignatura -> fromArray($this -> input -> post());
+        $asignatura -> save();
+        redirect('titulaciones/show/' . $this -> input -> post('titulacion_id'));
+    }
 
-  public function create(){
-    $asignatura = new Asignatura;
-    $asignatura->fromArray($this->input->post());
-    $asignatura->save();
-    redirect('titulaciones/show/' . $this->input->post('titulacion_id'));
-  }
+    public function show($id){
+        $asignatura = $this->asignaturas_table->find($id);
+        $carga = $asignatura->CargasGlobales[0]; // Esto habrá que cambiarlo para tomar la de un curso dado.
+        $this->load->view('asignaturas/show', array('carga' => $carga, 'asignatura' => $asignatura));
+    }
+    
+    public function edit($id) {
+        $asignatura = $this -> asignaturas_table -> find($id);
+        $action = 'asignaturas/update/' . $asignatura -> id;
+        $data['data'] = array('result' => $asignatura, 'action' => $action);
+        $data['nombre_asignatura'] = $asignatura -> nombre;
+        $data['page_title'] = 'Editando asignatura';
+        $this -> load -> view('asignaturas/edit', $data);
+    }
 
-  public function edit($id){
-    $asignatura = $this->asignaturas_table->find($id);
-    $action = 'asignaturas/update/' . $asignatura->id;    
-    $data['data'] = array('result' => $asignatura, 'action' => $action);
-    $data['nombre_asignatura'] = $asignatura->nombre;
-    $data['page_title'] = 'Editando asignatura';
-    $this->load->view('asignaturas/edit', $data);
-  }
+    public function update($id) {
+        $asignatura = $this -> asignaturas_table -> find($id);
+        $asignatura -> fromArray($this -> input -> post());
+        $asignatura -> save();
+        redirect('titulaciones/show/' . $asignatura -> titulacion_id);
+    }
 
-  public function update($id){
-    $asignatura = $this->asignaturas_table->find($id);
-    $asignatura->fromArray($this->input->post());
-    $asignatura->save();
-    redirect('titulaciones/show/' . $asignatura->titulacion_id);
-  }
-  
-  public function delete($id){
-    $asignatura = $this->asignaturas_table->find($id);
-    $titulacion_id = $asignatura->titulacion_id;
-    $asignatura->delete();
-    redirect('titulaciones/show/' . $titulacion_id);
-  }
-}
+    public function delete($id) {
+        $asignatura = $this -> asignaturas_table -> find($id);
+        $titulacion_id = $asignatura -> titulacion_id;
+        $asignatura -> delete();
+        redirect('titulaciones/show/' . $titulacion_id);
+        }
 
-/* Fin archivo asignaturas.php */
+    public function add_carga($asignatura_id){
+        $global = new CargaGlobal;
+        $global->asignatura_id = $asignatura_id;
+        $cursos = $this->cursos_table->findAll();
+        $options = array();
+        foreach($cursos as $curso){
+            $options[$curso->id] = date_format(date_create($curso->inicio_semestre1), "Y") . '/' . date_format(date_create($curso->fin_semestre2), "Y");
+        }
+        $action = 'cargasglobales/create/';
+        $data['data'] = array('result' => $global, 'action' => $action);
+        $data['nombre_asignatura'] = $this->asignaturas_table->find($asignatura_id)->nombre;
+        $data['page_title'] = 'Añadiendo carga global';
+        $data['options'] = $options;
+        $this->load->view('cargaglobal/add', $data);
+    }
+
+        }/* Fin archivo asignaturas.php */
