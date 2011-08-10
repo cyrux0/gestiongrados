@@ -1,1 +1,0 @@
-<li><span><?= anchor('titulaciones/show/' . $item->id, $item->nombre) ?></span><?= anchor('asignaturas/add_to/' . $item->id, '+'); ?></li>

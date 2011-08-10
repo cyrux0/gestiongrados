@@ -25,10 +25,11 @@ class Asignaturas extends CI_Controller {
         redirect('titulaciones/show/' . $this -> input -> post('titulacion_id'));
     }
 
-    public function show($id){
+    public function show($id, $id_curso){
         $asignatura = $this->asignaturas_table->find($id);
-        $carga = $asignatura->CargasGlobales[0]; // Esto habrá que cambiarlo para tomar la de un curso dado.
-        $this->load->view('asignaturas/show', array('carga' => $carga, 'asignatura' => $asignatura));
+        $q = Doctrine_Query::create()->select('c.*')->from('CargaGlobal c')->where('c.curso_id = ? AND c.asignatura_id = ?', array($id_curso, $id));
+        $resultado = $q->fetchArray();
+        $this->load->view('asignaturas/show', array('carga' => (object) $resultado[0], 'asignatura' => $asignatura));
     }
     
     public function edit($id) {

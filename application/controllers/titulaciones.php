@@ -42,7 +42,7 @@ class Titulaciones extends CI_Controller{
     
     if($this->input->post('remote')=="true"){
         unset($this->layout);
-        $this->load->view('titulaciones/create', array('item' => $titulacion));
+        $this->load->view('titulaciones/_titulacion', array('item' => $titulacion));
     }else
         redirect('titulaciones/index');
   }
