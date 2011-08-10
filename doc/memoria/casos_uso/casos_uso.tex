@@ -292,6 +292,26 @@ Esta es la sección de gestión de carga de trabajo.
 	\end{itemize}
 \end{itemize}
 
+\subsubsection*{Caso de uso: Seleccionar curso}
+\item{\bf Descripción:} Caso de uso abstracto que es incluído en otros casos de uso.
+\item{\bf Actores:} Usuario.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} Queda seleccionado un curso para su uso con algún fin.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El sistema muestra un listado con los cursos disponibles.
+        \item El usuario selecciona un curso.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[1.a.]No hay ningún curso registrado en el sistema.
+	  \begin{enumerate}
+	  \item El sistema indica el error y el caso de uso finaliza.
+	  \end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+
 \subsubsection*{Caso de uso: Añadir carga de trabajo}
 \begin{itemize}
 \item{\bf Descripción:} Se añaden los detalles de la carga de trabajo para una asignatura en un curso determinado.
@@ -301,8 +321,7 @@ Esta es la sección de gestión de carga de trabajo.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
 	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
-	\item El sistema muestra un listado con los cursos disponibles.
-	\item El usuario selecciona el curso para el que desea añadir la carga de trabajo.
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
 	\item El sistema comprueba que no exista ya una carga de trabajo asociada a ese curso.
 	\item El usuario introduce los datos de la carga de trabajo.
 	\item El sistema comprueba que los datos cumplen el formato requerido.
@@ -310,15 +329,15 @@ Esta es la sección de gestión de carga de trabajo.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-	\item[5.a.] Ya existe una carga de trabajo establecida para el curso seleccionado.
+	\item[3.a.] Ya existe una carga de trabajo establecida para el curso seleccionado.
 		\begin{enumerate}
 		\item El sistema indica el error y el caso de uso vuelve al paso anterior.
 		\end{enumerate}
-	\item[7.a.] Alguno de los datos introducidos no cumple el formato correcto.
+	\item[5.a.] Alguno de los datos introducidos no cumple el formato correcto.
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}
-	\item[7.b.] Alguno de los campos obligatorios no ha sido rellenado.
+	\item[5.b.] Alguno de los campos obligatorios no ha sido rellenado.
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}	
@@ -337,10 +356,8 @@ Esta es la sección de gestión de carga de trabajo.
 \item{\bf Postcondiciones:} La carga de trabajo queda modificada en el sistema.
 \item{\bf Pasos:}
 	\begin{enumerate}
-	\item El sistema muestra un listado de las asignaturas disponibles.
-	\item El usuario selecciona la asignatura para la que desea editar la carga de trabajo.
-	\item El sistema muestra un listado de los cursos disponibles.
-	\item El usuario selecciona el curso para el que desea editar la carga de trabajo.
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
 	\item El sistema comprueba que exista una carga asociada a ese curso.
 	\item El sistema muestra los datos de la carga en un formato editable.
 	\item El usuario modifica los datos.
@@ -349,19 +366,15 @@ Esta es la sección de gestión de carga de trabajo.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-	\item[1.a.] No hay asignaturas registradas en el sistema.
-		\begin{enumerate}
-		\item El sistema indica el error y el caso de uso termina.
-		\end{enumerate}
-	\item[5.a.] No existe una carga de trabajo establecida para el curso seleccionado.
+	\item[3.a.] No existe una carga de trabajo establecida para el curso seleccionado.
 		\begin{enumerate}
 		\item El sistema indica el error y el caso de uso vuelve al paso anterior.
 		\end{enumerate}
-	\item[7.a.] Alguno de los datos introducidos no cumple el formato correcto.
+	\item[5.a.] Alguno de los datos introducidos no cumple el formato correcto.
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}
-	\item[7.b.] Alguno de los campos obligatorios no ha sido rellenado.
+	\item[5.b.] Alguno de los campos obligatorios no ha sido rellenado.
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}	
@@ -382,10 +395,8 @@ Esta es la sección de gestión de carga de trabajo.
 \item{\bf Postcondiciones:} La carga de trabajo asociada a la asignatura y curso seleccionados queda. eliminada del sistema.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
-	\item El sistema muestra un listado de las asignaturas disponibles.
-	\item El usuario selecciona la asignatura para la que desea editar la carga de trabajo.
-	\item El sistema muestra un listado de los cursos disponibles.
-	\item El usuario selecciona el curso para el que desea borrar la carga de trabajo.
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
 	\item El sistema comprueba que exista una carga asociada a ese curso.
 	\item El sistema muestra un diálogo de confirmación.
 	\item El usuario confirma que desea borrar la carga.
@@ -393,15 +404,11 @@ Esta es la sección de gestión de carga de trabajo.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-	\item[1.a.] No hay asignaturas registradas en el sistema.
-		\begin{enumerate}
-		\item El sistema indica el error y el caso de uso termina.
-		\end{enumerate}
-	\item[5.a.] No existe una carga de trabajo establecida para el curso seleccionado.
-		\begin{enumerate}
-		\item El sistema indica el error y el caso de uso vuelve al paso anterior.
-		\end{enumerate}
-	\item[7.a.] El administrador selecciona que no desea eliminar la carga.
+	\item[3.a.] No existe una carga de trabajo establecida para el curso seleccionado.
+	  \begin{enumerate}
+	  \item El sistema indica el error y el caso de uso vuelve al paso anterior.
+	  \end{enumerate}
+	\item[5.a.] El administrador selecciona que no desea eliminar la carga.
 		\begin{enumerate}
 		\item El caso de uso se reinicia.
 		\end{enumerate}
@@ -422,20 +429,14 @@ Esta es la sección de gestión de carga de trabajo.
 \item{\bf Postcondiciones:} Se muestran los datos al usuario por pantalla.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
-	\item El sistema muestra una lista de asignaturas disponibles.
-	\item El usuario selecciona la asignatura deseada.
-	\item El sistema muestra una lista de los cursos disponibles.
-	\item El usuario elige el curso para el que quiere consultar la carga de trabajo.
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
 	\item El sistema comprueba que exista una carga asociada a ese curso.
 	\item La carga existe y es mostrada al usuario.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-	\item[1.a.]No hay ninguna asignatura registrada en el sistema.
-		\begin{enumerate}
-		\item El sistema indica el error y el caso de uso se cancela.
-		\end{enumerate}
-	\item[5.a.]No existe ninguna carga asociada a ese curso.
+	\item[3.a.]No existe ninguna carga asociada a ese curso.
 		\begin{enumerate}
 		\item El sistema muestra un mensaje informando del error y vuelve al paso anterior.
 		\end{enumerate}
@@ -446,6 +447,101 @@ Esta es la sección de gestión de carga de trabajo.
 	\end{itemize}
 \end{itemize}
 
+\subsubsection*{Caso de uso: Registrar curso}
+\begin{itemize}
+\item{\bf Descripción:} Se da de alta en el sistema la configuración de un nuevo curso.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} Queda registrado en el sistema el curso.
+\item{\bf Escenario principal:}
+  \begin{enumerate}
+  \item El administrador introduce los datos de configuración del curso, incluyendo fecha de inicio y final de curso.
+  \item El sistema comprueba que los datos sean correctos.
+  \item El sistema informa de que el curso ha sido registrado con éxito.
+  \end{enumerate}
+\item{\bf Escenarios alternativos:}
+  \begin{itemize}
+  \item[2.a.] Alguno de los datos introducidos no cumple el formato correcto.
+    \begin{enumerate}
+    \item El sistema indica el error y se vuelve al paso anterior.
+    \end{enumerate}
+  \item[2.b.] Ya existe un curso registrado que empieza o termina en el mismo año que el introducido.
+    \begin{enumerate}
+    \item El sistema indica el error y se vuelve al paso anterior.
+    \end{enumerate}
+  \item[2.c.] Los años introducidos de inicio y fin del curso no son consecutivos.
+    \begin{enumerate}
+    \item El sistema indica el error y se vuelve al paso anterior.
+    \end{enumerate}
+  \item[2.d.] Alguna de las fechas de exámenes introducidas no están comprendidas entre la duración del curso.
+    \begin{enumerate}
+    \item El sistema indica el error y se vuelve al paso anterior.
+    \end{enumerate}
+  \item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+    \begin{enumerate}
+    \item El caso de uso finaliza.
+    \end{enumerate}
+  \end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Editar curso}
+\begin{itemize}
+\item{\bf Descripción:} Se edita en el sistema la configuración de un curso.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} Quedan registradas en el sistema las modificaciones realizadas.
+\item{\bf Escenario principal:}
+  \begin{enumerate}
+  \item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+  \item El sistema muestra los datos en forma editable.
+  \item El administrador modifica los datos de configuración del curso que considere necesarios.
+  \item El sistema comprueba que los datos sean correctos.
+  \item El sistema informa de que el curso ha sido registrado con éxito.
+  \end{enumerate}
+\item{\bf Escenarios alternativos:}
+  \begin{itemize}
+  \item[4.a.] Alguno de los datos introducidos no cumple el formato correcto.
+    \begin{enumerate}
+    \item El sistema indica el error y se vuelve al paso anterior.
+    \end{enumerate}
+  \item[4.b.] Ya existe un curso registrado que empieza o termina en el mismo año que el introducido.
+    \begin{enumerate}
+    \item El sistema indica el error y se vuelve al paso anterior.
+    \end{enumerate}
+  \item[4.c.] Los años introducidos de inicio y fin del curso no son consecutivos.
+    \begin{enumerate}
+    \item El sistema indica el error y se vuelve al paso anterior.
+    \end{enumerate}
+  \item[4.d.] Alguna de las fechas de exámenes introducidas no están comprendidas entre la duración del curso.
+    \begin{enumerate}
+    \item El sistema indica el error y se vuelve al paso anterior.
+    \end{enumerate}
+  \item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+    \begin{enumerate}
+    \item El caso de uso finaliza.
+    \end{enumerate}
+  \end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Consultar curso}
+\begin{itemize}
+\item{\bf Descripción:} Se consulta la configuración de un curso mostrandola por pantalla
+\item{\bf Actores:} Usuario.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} Se muestra por pantalla la configuración del curso seleccionado.
+\item{\bf Escenario principal:}
+  \begin{enumerate}
+  \item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+  \item El sistema muestra los datos del curso.
+  \end{enumerate}
+\item{\bf Escenarios alternativos:}
+  \begin{itemize}
+  \item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+    \begin{enumerate}
+    \item El caso de uso finaliza.
+    \end{enumerate}
+  \end{itemize}
+\end{itemize}
 
 % Plantilla para CUs
 \begin{comment}
