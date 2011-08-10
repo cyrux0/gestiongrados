@@ -5,10 +5,10 @@
 \usepackage[utf8]{inputenc}
 % Esto es para que el LaTeX sepa que el texto está en español:
 \usepackage[spanish]{babel}
-
-
-\title{Casos de uso de la aplicación para incluir en la memoria
-}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black}
+\title{Casos de uso de la aplicación para incluir en la memoria}
 
 \author{Daniel Ignacio Salazar Recio}
 
@@ -20,52 +20,452 @@
 \subsubsection*{Gestión de carga de trabajo}
 Esta es la sección de gestión de carga de trabajo.
 
+
+\subsubsection*{Caso de uso: Seleccionar titulación}
+\label{select_titulacion}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso abstracto incluído en otros casos de uso para seleccionar una titulación de una lista de disponibles.
+\item{\bf Actores:} Usuario
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} Se selecciona una titulación para su uso en otra finalidad.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El sistema muestra un listado de las titulaciones disponibles.
+	\item El usuario selecciona la titulación deseada.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[1.a.] No hay ninguna titulación registrada.
+		\begin{enumerate}
+			\item El sistema indica el error y el caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
 \subsubsection*{Caso de uso: Registrar titulación}
 \begin{itemize}
-\item{\bf Descripción:} Registra una nueva titulación en el sistema
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:}
-\item{\bf Pasos:}
+\item{\bf Descripción:} Registra una nueva titulación en el sistema.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} La titulación queda registrada.
+\item{\bf Escenario principal:}
 \begin{enumerate}
-\item El administrador introduce todos los datos de la titulación.
-\item El sistema comprueba que los datos cumplen el formato
-	\begin{enumerate}
-	\item Alguno de los datos introducidos tiene un formato incorrecto
-		\begin{enumerate}
-		\item El sistema lo indica mostrando un mensaje de error
-		\end{enumerate}
-	\item Falta algún campo obligatorio
-		\begin{enumerate}
-		\item El sistema lo indica mostrando un mensaje de error
-		\end{enumerate}
-	\end{enumerate}
-\item El sistema registra la titulación
+\item El administrador introduce el código, el nombre y todos los demás datos de la titulación.
+\item El sistema comprueba que los datos cumplen el formato.
+\item El sistema confirma el alta de la titulación mostrando un mensaje.
 \end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[2.a.] Alguno de los datos introducidos tiene un formato incorrecto.
+		\begin{enumerate}
+		\item El sistema lo indica mostrando un mensaje de error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[2.b.] Falta algún campo obligatorio.
+		\begin{enumerate}
+		\item El sistema lo indica mostrando un mensaje de error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[2.c.] Ya existe alguna titulación con ese código o nombre.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[*a.] El administrador decide cancelar el registro en cualquier momento, el caso de uso termina. 
+	\end{itemize}
 \end{itemize}
 
 \subsubsection*{Caso de uso: Editar titulación}
 \begin{itemize}
-\item{\bf Descripción:} Edita una titulación existente en el sistema modificando sus datos
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} La titulación existe en el sistema
-\item{\bf Pasos:}
+\item{\bf Descripción:} Edita una titulación existente en el sistema modificando sus datos.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} La titulacion queda modificada en el sistema.
+\item{\bf Escenario principal:}
 \begin{enumerate}
-\item El administrador selecciona una titulación para editarla
-\item El sistema muestra sus datos actuales, permitiendo su edición
-\item El administrador modifica los datos
-\item El sistema comprueba que todos los datos son correctos
-	\begin{enumerate}
-	\item Alguno de los datos tiene un formato incorrecto
-		\begin{enumerate}
-		\item El sistema muestra un mensaje de error
-		\end{enumerate}
-	\item Falta algún campo obligatorio
-		\begin{enumerate}
-		\item El sistema muestra un mensaje de error
-		\end{enumerate}
-	\end{enumerate}
-\item El sistema guarda los datos modificados
+	\item Se realiza el caso de uso {\em\hyperref[select_titulacion]{Seleccionar titulación}}.
+	\item El sistema muestra sus datos actuales, permitiendo su edición.
+	\item El administrador modifica los datos.
+	\item El sistema comprueba que todos los datos son correctos.
+	\item El sistema muestra un mensaje indicando que la edición se ha completado.
 \end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[4.a.] Alguno de los datos tiene un formato incorrecto.
+		\begin{enumerate}
+		\item El sistema muestra un mensaje de error indicándolo, a continuación se vuelve al paso anterior.
+		\end{enumerate}
+	\item[4.b.] Falta algún campo obligatorio por rellenar.
+		\begin{enumerate}
+		\item El sistema muestra un mensaje de error indicándolo, a continuación se vuelve al paso anterior.
+		\end{enumerate}
+	\item[4.c.] Ya existe alguna titulación con el nombre o código introducidos.
+		\begin{enumerate}
+		\item El sitema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[*a.] En cualquier momento el administrador decide cancelar la edición, el caso de uso se da por terminado.
+	\end{itemize}
 \end{itemize}
+
+\subsubsection*{Caso de uso: Borrar titulación}
+% Tomar este CU como ejemplo
+\begin{itemize}
+\item{\bf Descripción:} Borra una titulación del sistema.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} La titulación existe en el sistema.
+\item{\bf Postcondiciones:} La titulación queda eliminada del sistema.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso  {\em\hyperref[select_titulacion]{Seleccionar titulación}}.
+	\item El sistema muestra un diálogo de confirmación.
+	\item El administrador confirma que quiere eliminar la titulación del sistema.
+	\item El sistema elimina la titulación.
+	\item El sistema muestra un mensaje confirmando que se ha eliminado la titulación.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[3.a.] El administrador selecciona que no desea eliminar la titulación.
+		\begin{enumerate}
+		\item El caso de uso se reinicia.
+		\end{enumerate}
+	\item[*a.] En cualquier momento el administrador decide cancelar la eliminación.
+		\begin{enumerate}
+		\item El caso de uso se termina.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Ver detalles de titulación}
+\begin{itemize}
+\item{\bf Descripción:} Muestra los datos de una titulación en detalle, así como sus asignaturas.
+\item{\bf Actores:} Usuario.
+\item{\bf Precondiciones:} La titulación existe en el sistema.
+\item{\bf Postcondiciones:} Los datos de la titulación se muestran por pantalla.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em\hyperref[select_titulacion]{Seleccionar titulación}}.
+	\item El sistema muestra los datos de la titulación y un listado de sus asignaturas si las tiene.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[*a.] En cualquier momento el usuario decide cancelar el proceso, el caso de uso se termina.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Seleccionar asignatura}
+\label{select_asignatura}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso abstracto incluído por otros casos de uso para seleccionar una asignatura del listado de las que tiene disponibles una titulación concreta.
+\item{\bf Actores:} Usuario
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} Queda seleccionada una asignatura para algún fin concreto de otro caso de uso.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em\hyperref[select_titulacion]{Seleccionar titulación}}.
+	\item El sistema muestra un listado de las asignaturas disponibles asociadas a la titulación seleccionada.
+	\item El usuario selecciona una asignatura de la lista.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[2.a.] No hay ninguna asignatura registrada en esa titulación.
+		\begin{enumerate}
+			\item El sistema indica el error y el caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+% Posible caso de uso Copiar asignatura
+\subsubsection*{Caso de uso: Registrar asignatura}
+\begin{itemize}
+\item{\bf Descripción:} Se da de alta una nueva asignatura en el sistema.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} Existe alguna titulación con la que asociar la asignatura.
+\item{\bf Postcondiciones:} La asignatura queda registrada en el sistema.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+ 	\item Se realiza el caso de uso {\em\hyperref[select_titulacion]{Seleccionar titulación}}.
+	\item El sistema muestra un formulario para introducir los datos.
+	\item El administrador introduce el código, el nombre y todos los demás datos de la asignatura.
+	\item El sistema comprueba que todos los datos cumplen el formato requerido.
+	\item El sistema registra la asignatura y muestra un mensaje confirmándolo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[1.a.] No hay titulaciones registradas en el sistema.
+		\begin{enumerate}
+		\item El sistema indica el error y el caso de uso se cancela.
+		\end{enumerate}
+	\item[5.a.] Alguno de los datos no cumple el formato correcto.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[5.b.] Falta por rellenar algún campo obligatorio.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[5.c.] Ya existe alguna asignatura con ese código o nombre.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso se cancela.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Editar Asignatura}
+\begin{itemize}
+\item{\bf Descripción:} Se modifican los datos de una asignatura existente en el sistema.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} La asignatura queda modificada en el sistema.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
+	\item El sistema muestra los datos de la asignatura en un formato editable.
+	\item El administrador hace las modificaciones que considere necesarias.
+	\item El sistema comprueba que los datos modificados cumplen el formato requerido.
+	\item El sistema guarda la asignatura y muestra un mensaje confirmándolo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[4.a.] Alguno de los datos no cumple el formato correcto.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[4.b.] Falta por rellenar algún campo obligatorio.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[4.c.] Ya existe alguna asignatura con ese código o nombre.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso se cancela.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Borrar asignatura}
+\begin{itemize}
+\item{\bf Descripción:} Se borra una asingatura del sistema.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} La asignatura queda eliminada del sistema.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
+	\item El sistema muestra un diálogo de confirmación.
+	\item El administrador confirma que desea borrar la asignatura.
+	\item El sistema borra la asignatura y muestra un mensaje confirmándolo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[3.a.] El administrador selecciona que no desea eliminar la asignatura.
+		\begin{enumerate}
+		\item El caso de uso se reinicia.
+		\end{enumerate}
+	\item[*a.] En cualquier momento el administrador decide cancelar la eliminación.
+		\begin{enumerate}
+		\item El caso de uso se termina.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Consultar asignatura}
+\begin{itemize}
+\item{\bf Descripción:} Muestra los datos en detalle de una asignatura.
+\item{\bf Actores:} Usuario.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} Se muestran los datos de la asignatura por pantalla.
+\item{\bf Escenario principal:} 
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
+	\item El sistema muestra la información relacionada con la asignatura.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso se termina.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Añadir carga de trabajo}
+\begin{itemize}
+\item{\bf Descripción:} Se añaden los detalles de la carga de trabajo para una asignatura en un curso determinado.
+\item{\bf Actores:} Subdirector.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} La carga de trabajo queda registrada en el sistema asociada a una asignatura y un curso determinado.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
+	\item El sistema muestra un listado con los cursos disponibles.
+	\item El usuario selecciona el curso para el que desea añadir la carga de trabajo.
+	\item El sistema comprueba que no exista ya una carga de trabajo asociada a ese curso.
+	\item El usuario introduce los datos de la carga de trabajo.
+	\item El sistema comprueba que los datos cumplen el formato requerido.
+	\item El sistema guarda la carga de trabajo y muestra un mensaje confirmándolo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[5.a.] Ya existe una carga de trabajo establecida para el curso seleccionado.
+		\begin{enumerate}
+		\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+		\end{enumerate}
+	\item[7.a.] Alguno de los datos introducidos no cumple el formato correcto.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[7.b.] Alguno de los campos obligatorios no ha sido rellenado.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}	
+	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso se termina.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Editar carga de trabajo}
+\begin{itemize}
+\item{\bf Descripción:} Se edita una carga de trabajo existente para un curso determinado.
+\item{\bf Actores:} Subdirector.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} La carga de trabajo queda modificada en el sistema.
+\item{\bf Pasos:}
+	\begin{enumerate}
+	\item El sistema muestra un listado de las asignaturas disponibles.
+	\item El usuario selecciona la asignatura para la que desea editar la carga de trabajo.
+	\item El sistema muestra un listado de los cursos disponibles.
+	\item El usuario selecciona el curso para el que desea editar la carga de trabajo.
+	\item El sistema comprueba que exista una carga asociada a ese curso.
+	\item El sistema muestra los datos de la carga en un formato editable.
+	\item El usuario modifica los datos.
+	\item El sistema comprueba que los datos cumplen el formato requerido.
+	\item El sistema guarda los cambios y muestra un mensaje confirmándolo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[1.a.] No hay asignaturas registradas en el sistema.
+		\begin{enumerate}
+		\item El sistema indica el error y el caso de uso termina.
+		\end{enumerate}
+	\item[5.a.] No existe una carga de trabajo establecida para el curso seleccionado.
+		\begin{enumerate}
+		\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+		\end{enumerate}
+	\item[7.a.] Alguno de los datos introducidos no cumple el formato correcto.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[7.b.] Alguno de los campos obligatorios no ha sido rellenado.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}	
+	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso se termina.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+% Hacer casos de uso selección de titulación y asignatura para incluirlos
+
+\subsubsection*{Caso de uso: Borrar carga de trabajo}
+\begin{itemize}
+\item{\bf Descripción:} Se borra una carga de trabajo existente en el sistema asociada a un curso.
+\item{\bf Actores:} Subdirector.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} La carga de trabajo asociada a la asignatura y curso seleccionados queda. eliminada del sistema.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El sistema muestra un listado de las asignaturas disponibles.
+	\item El usuario selecciona la asignatura para la que desea editar la carga de trabajo.
+	\item El sistema muestra un listado de los cursos disponibles.
+	\item El usuario selecciona el curso para el que desea borrar la carga de trabajo.
+	\item El sistema comprueba que exista una carga asociada a ese curso.
+	\item El sistema muestra un diálogo de confirmación.
+	\item El usuario confirma que desea borrar la carga.
+	\item El sistema muestra un mensaje confirmando la eliminación y borra la carga.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[1.a.] No hay asignaturas registradas en el sistema.
+		\begin{enumerate}
+		\item El sistema indica el error y el caso de uso termina.
+		\end{enumerate}
+	\item[5.a.] No existe una carga de trabajo establecida para el curso seleccionado.
+		\begin{enumerate}
+		\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+		\end{enumerate}
+	\item[7.a.] El administrador selecciona que no desea eliminar la carga.
+		\begin{enumerate}
+		\item El caso de uso se reinicia.
+		\end{enumerate}
+	\item[*a.] En cualquier momento el administrador decide cancelar la eliminación.
+		\begin{enumerate}
+		\item El caso de uso se termina.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+% Posible caso de uso Copiar carga de trabajo
+%% De este subsistema quedaría Consultar carga de trabajo (podría ser un extend de consultar asignatura)
+\subsubsection*{Caso de uso: Consultar carga de trabajo}
+\begin{itemize}
+\item{\bf Descripción:} Se consulta la carga de trabajo de una asignatura para un curso determinado.
+\item{\bf Actores:} Usuario.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} Se muestran los datos al usuario por pantalla.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El sistema muestra una lista de asignaturas disponibles.
+	\item El usuario selecciona la asignatura deseada.
+	\item El sistema muestra una lista de los cursos disponibles.
+	\item El usuario elige el curso para el que quiere consultar la carga de trabajo.
+	\item El sistema comprueba que exista una carga asociada a ese curso.
+	\item La carga existe y es mostrada al usuario.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[1.a.]No hay ninguna asignatura registrada en el sistema.
+		\begin{enumerate}
+		\item El sistema indica el error y el caso de uso se cancela.
+		\end{enumerate}
+	\item[5.a.]No existe ninguna carga asociada a ese curso.
+		\begin{enumerate}
+		\item El sistema muestra un mensaje informando del error y vuelve al paso anterior.
+		\end{enumerate}
+	\item[*a.]En cualquier momento el usuario decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso se cancela.
+		\end{enumerate}		
+	\end{itemize}
+\end{itemize}
+
+
+% Plantilla para CUs
+\begin{comment}
+\begin{itemize}
+\item{\bf Descripción:}
+\item{\bf Actores:}
+\item{\bf Precondiciones:}
+\item{\bf Postcondiciones:}
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[2.a.]
+		\begin{enumerate}
+			\item
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+\end{comment}
 
 \end{document}
