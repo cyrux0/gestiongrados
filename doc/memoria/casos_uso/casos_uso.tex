@@ -188,19 +188,19 @@ Esta es la sección de gestión de carga de trabajo.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-	\item[1.a.] No hay titulaciones registradas en el sistema.
+	\item[3.a.] El administrador selecciona que desea tomar los datos de otra asignatura.
 		\begin{enumerate}
-		\item El sistema indica el error y el caso de uso se cancela.
+		\item Se realiza el caso de uso {\em \hyperref[duplicar_asignatura]{Duplicar asignatura}}.
 		\end{enumerate}
-	\item[5.a.] Alguno de los datos no cumple el formato correcto.
-		\begin{enumerate}
-		\item El sistema indica el error y se vuelve al paso anterior.
-		\end{enumerate}
-	\item[5.b.] Falta por rellenar algún campo obligatorio.
+	\item[4.a.] Alguno de los datos no cumple el formato correcto.
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}
-	\item[5.c.] Ya existe alguna asignatura con ese código o nombre.
+	\item[4.b.] Falta por rellenar algún campo obligatorio.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[4.c.] Ya existe alguna asignatura con ese código o nombre.
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}
@@ -293,6 +293,7 @@ Esta es la sección de gestión de carga de trabajo.
 \end{itemize}
 
 \subsubsection*{Caso de uso: Seleccionar curso}
+\begin{itemize}
 \item{\bf Descripción:} Caso de uso abstracto que es incluído en otros casos de uso.
 \item{\bf Actores:} Usuario.
 \item{\bf Precondiciones:} Ninguna.
@@ -332,6 +333,10 @@ Esta es la sección de gestión de carga de trabajo.
 	\item[3.a.] Ya existe una carga de trabajo establecida para el curso seleccionado.
 		\begin{enumerate}
 		\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+		\end{enumerate}
+	\item[4.a.] El usuario indica que quiere tomar los datos de otra carga de un curso anterior.
+		\begin{enumerate}
+		\item Se realiza el caso de uso {\em \hyperref[duplicar_carga]{Duplicar carga de trabajo}}
 		\end{enumerate}
 	\item[5.a.] Alguno de los datos introducidos no cumple el formato correcto.
 		\begin{enumerate}
@@ -541,6 +546,223 @@ Esta es la sección de gestión de carga de trabajo.
     \item El caso de uso finaliza.
     \end{enumerate}
   \end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Borrar curso}
+\begin{itemize}
+\item{\bf Descripción:} Se elimina un curso registrado en el sistema.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} Ninguna
+\item{\bf Postcondiciones:} El curso seleccionado queda eliminado del sistema
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+	\item El sistema muestra un diálogo pidiendo la confirmación del borrado.
+	\item El administrador selecciona que desea confirmar el borrado.
+	\item El sistema muestra un mensaje confirmando el éxito en la operación.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[3.a.] El administrador selecciona que no desea confirmar el borrado.
+		\begin{enumerate}
+			\item El caso de uso se reinicia.
+		\end{enumerate}
+		\item[*a.] En cualquier momento el administrador cancela el proceso.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Duplicar asignatura}
+\label{duplicar_asignatura}
+\begin{itemize}
+\item{\bf Descripción:} Este caso de uso permite duplicar los datos de una asignatura para crear otra nueva, como por ejemplo para casos de asignaturas iguales en diferentes titulaciones.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} Ninguna
+\item{\bf Postcondiciones:} Se crea una nueva asignatura con los mismos datos de la original, salvo el código que será nuevo.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
+	\item El sistema muestra los datos de la asignatura seleccionada en forma editable.
+	\item El administrador modifica los datos que considere necesarios.
+	\item El sistema comprueba que las datos introducidos son correctos.
+	\item El sistema muestra un mensaje confirmado que se ha creado la nueva asignatura.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[4.a.] Alguno de los datos no cumple el formato correcto.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[4.b.] Falta por rellenar algún campo obligatorio.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[4.c.] Ya existe alguna asignatura con ese código o nombre.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso se cancela.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Duplicar carga de trabajo}
+\label{duplicar_carga}
+\begin{itemize}
+\item{\bf Descripción:} Este caso de uso permite duplicar los datos de una carga de trabajo de un determinado curso para crear otra nueva para otro curso con los mismos datos de la original.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} Ninguna
+\item{\bf Postcondiciones:} Se crea una nueva asignatura con los mismos datos de la original, salvo el código que será nuevo.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+	\item El sistema toma los datos de la carga de trabajo del curso seleccionado y los muestra en forma editable.
+	\item El administrador modifica los datos que considere necesarios.
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+	\item El sistema comprueba que no exista una carga de trabajo ya asignada a ese curso.
+	\item El sistema comprueba que las datos introducidos son correctos.
+	\item El sistema muestra un mensaje confirmado que se ha creado la nueva carga de trabajo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+	\item[1.a.] Ya ha sido seleccionada la asignatura anteriormente en otro caso de uso.
+		\begin{enumerate}
+		\item El caso de uso pasa al siguiente paso.
+		\end{enumerate}
+	\item[3.a.] No existe ninguna carga de trabajo asignada a ese curso.
+		\begin{enumerate}
+		\item El caso de uso vuelve al paso anterior.
+		\end{enumerate}
+	\item[6.a.] Ya existe una carga de trabajo asignada a ese curso.
+		\begin{enumerate}
+		\item El caso de uso vuelve al paso anterior.
+		\end{enumerate}
+	\item[7.a.] Alguno de los datos introducidos no cumple el formato correcto.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[7.b.] Alguno de los campos obligatorios no ha sido rellenado.
+		\begin{enumerate}
+		\item El sistema indica el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso se cancela.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Añadir evento al calendario}
+\begin{itemize}
+\item{\bf Descripción:} Añade un evento de fechas al calendario, que puede ser una festividad o un período de vacaciones.
+\item{\bf Actores:} Subdirector.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} El evento queda registrado para el calendario de un curso concreto.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+	\item El subdirector introduce los datos correspondientes al evento, que serían, el nombre del evento, el tipo de evento, si es una fecha concreta o un rango de ellas, y su fecha de inicio y finalización.
+	\item El sistema comprueba que los datos son correctos y que no se solapen con otros eventos.
+	\item El sistema indica que todo es correcto y muestra un mensaje confirmando el éxito de la operación.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[3.a.] Alguno de los datos tiene un formato incorrecto o algún campo está en blanco.
+		\begin{enumerate}
+			\item El sistema lo indica y vuelve al paso anterior.
+		\end{enumerate}
+		\item[3.b.] Las fechas del evento se solapan con algún otro evento o fecha del curso.
+		\begin{enumerate}
+			\item El sistema lo indica y vuelve al paso anterior.
+		\end{enumerate}
+		\item[*a.] En cualquier momento el usuario decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Borrar evento del calendario}
+\begin{itemize}
+\item{\bf Descripción:} El usuario selecciona alguno de los eventos del calendario para eliminarlo y este queda eliminado del sistema.
+\item{\bf Actores:} Subdirector.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} El evento queda eliminado del calendario del curso concreto.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+	\item El sistema muestra un listado de fechas de eventos.
+	\item El subdirector selecciona la fecha que desea eliminar.
+	\item El sistema muestra un mensaje confirmando que el evento ha sido eliminado.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[2.a.] No hay ningún evento registrado en el calendario de ese curso.
+		\begin{enumerate}
+			\item El sistema lo indica y el caso de uso finaliza.
+		\end{enumerate}
+		\item[*a.] En cualquier momento el subdirector decide cancelar el proceso.
+		\begin{enumerate}
+		\item El caso de uso finaliza sin eliminar el evento.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+
+\subsubsection*{Caso de uso: Visualizar calendario completo}
+\begin{itemize}
+\item{\bf Descripción:} Se muestra un calendario completo con las fechas marcadas.
+\item{\bf Actores:} Usuario.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} Se muestra el calendario por pantalla.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+	\item El sistema muestra un calendario con las fechas de los eventos marcadas.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Configuración de horario}
+\begin{itemize}
+\item{\bf Descripción:} Se realiza la configuración de horario para un curso, semestre y grupo concreto en una titulación.
+\item{\bf Actores:} Subdirector.
+\item{\bf Precondiciones:} Ninguna.
+\item{\bf Postcondiciones:} El horario queda registrado en el sistema.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_titulacion]{Seleccionar titulación}}.
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+	\item El sistema muestra una lista de cada uno de los cursos disponibles para la titulación, según la configuración de ésta.
+	\item El usuario selecciona el curso al que desea asignar un horario.
+	\item El usuario selecciona el semestre y el grupo para el que desea configurar el horario.
+	\item El sistema comprueba que no exista ya un horario para el curso actual en ese grupo concreto.
+	\item El sistema muestra un listado de las asignaturas disponibles junto a su horario preferente (mañana o tarde).
+	\item El usuario selecciona una asignatura y el horario al que se le asigna.
+	\item El sistema comprueba que la asignatura pueda estar en esa hora.
+	\item Se repiten los dos pasos anteriores hasta que no queden asignaturas.
+	\item El sistema hace el cálculo de la carga de trabajo real y la compara con la configurada anteriormente, mostrando al usuario los posibles fallos.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[6.a.] Ya existe un horario asignado para este grupo.
+		\begin{enumerate}
+			\item El caso de uso vuelve al paso anterior.
+		\end{enumerate}
+		\item[7.a] No hay asignaturas registradas para mostrar.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+		\item[9.a] La asignatura no puede estar en ese horario por alguna razón.
+		\begin{enumerate}
+			\item El sistema muestra el error y se vuelve al paso anterior.
+		\end{enumerate}
+	\end{itemize}
 \end{itemize}
 
 % Plantilla para CUs

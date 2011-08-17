@@ -84,4 +84,29 @@ $(document).ready(function(){
     titulaciones.initialize();
     $.datepicker.setDefaults($.datepicker.regional['es']);
     $('.datepicker').datepicker($.datepicker.regional['es']);
+    $("#calendar").fullCalendar({
+        weekends: false,
+        header: {left: 'title', center: '', right: 'prev'},
+        defaultView: 'agendaWeek',
+        titleFormat: false,
+        columnFormat: {week: 'ddd'},
+        allDaySlot: false,
+        minTime: 9,
+        maxTime: 22,
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+        events: [{title: 'prueba', start: new Date(), end: new Date(), allDay:false}]
+         
+    });
+    
+    var url = $('#calendar_eventos_index').html();
+    $('#calendar_eventos_index').html('');
+    $.getJSON(url, function(data){
+        $('#calendar_eventos_index').fullCalendar({
+            firstDay: 1,
+            events: data,
+            editable: true
+        });
+    });
+    
 });

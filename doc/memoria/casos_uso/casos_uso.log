@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.11.26)  10 AUG 2011 17:56
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.11.26)  16 AUG 2011 11:03
 entering extended mode
 **C:/Users/Dani/aptana/gestiongrados/doc/memoria/casos_uso/casos_uso.tex
 (C:/Users/Dani/aptana/gestiongrados/doc/memoria/casos_uso/casos_uso.tex
@@ -467,27 +467,101 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Cap\'{\i }tulo 1.
-[3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
-(C:\Users\Dani\aptana\gestiongrados\doc\memoria\casos_uso\casos_uso.aux) ) 
+[3] [4] [5] [6] [7] [8]
+
+LaTeX Warning: Hyper reference `select_curso' on page 9 undefined on input line
+ 325.
+
+[9]
+
+LaTeX Warning: Hyper reference `select_curso' on page 10 undefined on input lin
+e 365.
+
+[10]
+
+LaTeX Warning: Hyper reference `select_curso' on page 11 undefined on input lin
+e 404.
+
+[11]
+
+LaTeX Warning: Hyper reference `select_curso' on page 12 undefined on input lin
+e 438.
+
+[12]
+
+LaTeX Warning: Hyper reference `select_curso' on page 13 undefined on input lin
+e 500.
+
+[13]
+
+LaTeX Warning: Hyper reference `select_curso' on page 14 undefined on input lin
+e 539.
+
+
+LaTeX Warning: Hyper reference `select_curso' on page 14 undefined on input lin
+e 559.
+
+[14]
+
+LaTeX Warning: Hyper reference `select_curso' on page 15 undefined on input lin
+e 623.
+
+[15]
+
+LaTeX Warning: Hyper reference `select_curso' on page 16 undefined on input lin
+e 626.
+
+
+LaTeX Warning: Hyper reference `select_curso' on page 16 undefined on input lin
+e 668.
+
+[16]
+
+LaTeX Warning: Hyper reference `select_curso' on page 17 undefined on input lin
+e 698.
+
+[17]
+
+LaTeX Warning: Hyper reference `select_curso' on page 18 undefined on input lin
+e 725.
+
+
+Overfull \hbox (2.93205pt too wide) in paragraph at lines 733--734
+[]\OT1/cmr/bx/n/10 Descripcion: \OT1/cmr/m/n/10 Se re-al-iza la con-fig-u-raci
+on de ho-rario para un cur-so, semestre
+ []
+
+
+LaTeX Warning: Hyper reference `select_curso' on page 18 undefined on input lin
+e 740.
+
+[18] [19]
+(C:\Users\Dani\aptana\gestiongrados\doc\memoria\casos_uso\casos_uso.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5026 strings out of 495285
- 71161 string characters out of 3179880
- 145787 words of memory out of 3000000
- 8039 multiletter control sequences out of 15000+200000
+ 5122 strings out of 495285
+ 71976 string characters out of 3179880
+ 146919 words of memory out of 3000000
+ 8043 multiletter control sequences out of 15000+200000
  9507 words of font info for 33 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  38i,6n,36p,355b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/P
-rogram Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files 
-(x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x
-86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on casos_uso.pdf (12 pages, 128848 bytes).
+pdfTeX warning (dest): name{??} has been referenced but does not exist, repla
+ced by a fixed one
+
+<C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
+:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
+Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program F
+iles (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on casos_uso.pdf (19 pages, 159129 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 227 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

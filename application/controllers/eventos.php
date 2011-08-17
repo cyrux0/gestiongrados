@@ -11,7 +11,8 @@ class Eventos extends CI_Controller{
         //Obtener todas las fechas, ordenar por fecha inicial y mostrarlas en una lista, con un botón para borrarlas.
         $q = Doctrine_Query::create()->select('e.*')->from('Evento e')->where('e.curso_id = ' . $curso_id)->orderBy('e.fecha_inicial');
         $eventos = $q->execute();
-        $this->load->view('eventos/index', array('eventos' => $eventos->toArray(), 'curso_id' => $curso_id));
+        $calendar_events = array(); 
+        $this->load->view('eventos/index', array('eventos' => $eventos, 'curso_id' => $curso_id));
     }
     
     public function add($curso_id){
@@ -25,16 +26,18 @@ class Eventos extends CI_Controller{
     
     public function create(){
         $evento = new Evento();
+        if(isset($_POST['fecha_individual'])){
+            $_POST['fecha_individual'] = 1;
+        }else{
+            $_POST['fecha_individual'] = 0;
+        }
         $evento->fromArray($this->input->post());
         list($day1, $month1, $year1) = explode('/', $this->input->post('fecha_inicial'));
         list($day2, $month2, $year2) = explode('/', $this->input->post('fecha_final'));
         $evento->fecha_inicial = $year1 . '-' . $month1 . '-' . $day1;
-        $varpost = $this->input->post();
-        if(isset($varpost['fecha_individual'])){
-            $evento->fecha_individual = TRUE;
+        if($evento->fecha_individual){
             $evento->fecha_final = $evento->fecha_inicial;
         }else{
-            $evento->fecha_individual = FALSE;
             $evento->fecha_final = $year2 . '-' . $month2 . '-' . $day2;
         }
         $evento->save();
@@ -47,5 +50,23 @@ class Eventos extends CI_Controller{
         $evento->delete();
         redirect('eventos/index/' . $curso_id);
 
+    }
+    
+    public function fetch_events($curso_id){
+        unset($this->layout);
+        $q = Doctrine_Query::create()->select('e.*')->from('Evento e')->where('e.curso_id = ' . $curso_id)->orderBy('e.fecha_inicial');
+        $eventos = $q->execute();
+        $calendar_events = array(); 
+        foreach($eventos->toArray() as $evento){
+            $event = array();
+            $evento = (Object) $evento;
+            $event['id'] = $evento->id;
+            $event['title'] = $evento->nombre_evento;
+            $event['start'] = $evento->fecha_inicial;
+            $event['end'] = $evento->fecha_final;
+            $calendar_events[] = $event;
+        }
+        $eventos_json = json_encode($calendar_events);
+        echo $eventos_json;
     }
 }

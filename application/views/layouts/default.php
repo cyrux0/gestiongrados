@@ -6,9 +6,11 @@
     <?php echo meta('Content-type', 'text/html; charset=utf-8', 'equiv'); ?>
     <?php echo link_tag('themes/css/style.css'); ?>
     <?php echo link_tag('themes/css/ui-lightness/jquery-ui-1.8.14.custom.css'); ?>
+    <?php echo link_tag('themes/js/fullcalendar-1.5.1/fullcalendar/fullcalendar.css'); ?>
     <script src="<?= site_url('themes/js/jquery-1.6.1.min.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <script src="<?= site_url('themes/js/jquery-ui-1.8.14.custom.min.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <script src="<?= site_url('themes/js/jquery.ui.datepicker-es.js'); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?= site_url('themes/js/fullcalendar-1.5.1/fullcalendar/fullcalendar.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <script src="<?= site_url('themes/js/functions.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <script src="<?= site_url('themes/js/jquery.form.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <title><?php if (isset($page_title)) echo $page_title; else echo 'El título de la web'; ?></title>
