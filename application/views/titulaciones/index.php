@@ -1,3 +1,5 @@
+
+
 <ul class="listaelems" id="listatitulaciones">
     <? foreach($titulaciones as $item): ?>
         <? $this->load->view('titulaciones/_titulacion.php', array('item' => $item)) ?>

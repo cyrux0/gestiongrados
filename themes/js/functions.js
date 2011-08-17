@@ -59,6 +59,7 @@ var titulaciones = {
     prepareForm: function(){
         var options = {
             data:    {'remote': 'true'},
+            dataType: 'json',
             success:    titulaciones.appendItem
         }
         
@@ -67,8 +68,15 @@ var titulaciones = {
     
     //Función para añadir el item a la tabla en el momento de hacer click en submit
     appendItem: function(response){
-        $('#listatitulaciones').append(response);
-        titulaciones.hideForm();
+        $('.notice').remove();
+        $('.alert').remove();
+        $('#main').prepend(response.messages);
+        if(response.success==1){
+            $('#listatitulaciones').append(response.view);
+            titulaciones.hideForm();
+        }    
+        setTimeout(function(){$(".notice").hide("slow");}, 3000);
+        setTimeout(function(){$(".alert").hide("slow");}, 3000);
     },
     
     hideForm: function(){
@@ -78,6 +86,7 @@ var titulaciones = {
         });
         $('#linknewtitulacion').toggle();
     }
+    
 }
 
 $(document).ready(function(){
@@ -108,5 +117,6 @@ $(document).ready(function(){
             editable: true
         });
     });
-    
+    setTimeout(function(){$(".notice").hide("slow");}, 3000);
+    setTimeout(function(){$(".alert").hide("slow");}, 3000);
 });

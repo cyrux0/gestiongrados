@@ -32,7 +32,9 @@
      <!-- </div>-->
     </div>
     <div id="main">
-      <!-- Aquí irían los notice y los alert -->
+      <?
+        $this->load->view('layouts/notice_and_alerts');
+      ?>
       {yield}
     </div>
     <div id="footer">

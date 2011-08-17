@@ -38,6 +38,7 @@ class Titulacion extends Doctrine_Record
 						  'primary' => false,
 						  'notnull' => true,
 						  'autoincrement' => false,
+						  'unique' => true
 						  ));
     $this->hasColumn('nombre', 'string', 200, array(
 						    'type' => 'string',
@@ -47,12 +48,13 @@ class Titulacion extends Doctrine_Record
 						    'primary' => false,
 						    'notnull' => true,
 						    'autoincrement' => false,
+						    'unique' => true
 						    ));
     $this->hasColumn('creditos', 'integer', 4, array(
 						     'type' => 'integer',
 						     'length' => 4,
 						     'fixed' => false,
-						     'unsigned' => false,
+						     'unsigned' => true,
 						     'primary' => false,
 						     'notnull' => true,
 						     'autoincrement' => false,

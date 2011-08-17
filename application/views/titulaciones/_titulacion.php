@@ -1,4 +1,4 @@
-<li><span><?= anchor('titulaciones/show/' . $item->id, $item->nombre) ?></span><?= anchor('asignaturas/add_to/' . $item->id, '+'); ?></li>
+<li><span><?= anchor('titulaciones/show/' . $item->id, $item->nombre) ?></span><span><?= anchor('asignaturas/add_to/' . $item->id, '+'); ?></span><?= anchor('titulaciones/delete/' . $item->id, 'X') ?></li>
 
 <!--
       <td><?= anchor('titulaciones/show/'.$item->id, 'Ver Asignaturas') ?></td>
