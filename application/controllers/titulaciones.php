@@ -3,9 +3,9 @@ class Titulaciones extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this -> titulaciones_table = Doctrine::getTable('Titulacion');
-        $this -> asignaturas_table = Doctrine::getTable('Asignatura');
-        $this -> layout = '';
+        $this->titulaciones_table = Doctrine::getTable('Titulacion');
+        $this->asignaturas_table = Doctrine::getTable('Asignatura');
+        $this->layout = '';
         $this->form_validation->set_rules('codigo', 'Código', 'required|trim|xss_clean|is_natural|exact_length[4]|unique[titulacion.codigo]');
         $this->form_validation->set_rules('nombre', 'Nombre', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[200]|unique[titulacion.nombre]');
         $this->form_validation->set_rules('creditos', 'Créditos', 'required|trim|xss_clean|is_natural');
@@ -73,7 +73,7 @@ class Titulaciones extends CI_Controller {
                 // echo json_encode($response);
                 $this->output->set_output(json_encode($response));
             } else {
-                $this->session->set_flashdata('notice', $notice);
+                $this->session->set_flashdata('notices', $notice);
                 redirect('titulaciones/index');
             }
         }
@@ -97,10 +97,13 @@ class Titulaciones extends CI_Controller {
     public function update($id) {
         $titulacion = $this -> titulaciones_table -> find($id);
         $titulacion -> fromArray($this -> input -> post());
-        if($this->form_validation->run() == FALSE){
+        if(!$titulacion->isValid()){
+        	$this->alerts = $titulacion->getErrorStackAsString();
             $this->edit($id);
         }else{
             $titulacion -> save();
+			$notice = 'Titulación actualizada correctamente';
+			$this->session->set_flashdata('notices', $notice);
             redirect('titulaciones/index');
         }
     }

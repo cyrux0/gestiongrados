@@ -25,42 +25,42 @@ class Titulacion extends Doctrine_Record
     $this->hasColumn('id', 'integer', 4, array(
 					       'type' => 'integer',
 					       'length' => 4,
-					       'fixed' => false,
-					       'unsigned' => false,
 					       'primary' => true,
 					       'autoincrement' => true,
+					       'unsigned' => false,
+					       'fixed' => false
 					       ));
     $this->hasColumn('codigo', 'string', 4, array(
+    					  'minlength' => 4,	
 						  'length' => 4,
-						  'notnull',						  
-						  'unique'
+						  'notnull',
+						  'notblank',						  
+						  'unique',
+						  'regexp' => '/[0-9]{4}/',
+						  'unsigned' => false
 						  ));
     $this->hasColumn('nombre', 'string', 200, array(
 						    'type' => 'string',
+						    'minlength' => 5,
 						    'length' => 200,
-						    'fixed' => false,
-						    'unsigned' => false,
-						    'primary' => false,
 						    'notnull' => true,
-						    'autoincrement' => false,
-						    'unique' => true
+						    'unique' => true,
+						    'notblank' => true,
+						    'unsigned' => false
 						    ));
     $this->hasColumn('creditos', 'integer', 4, array(
 						     'type' => 'integer',
 						     'length' => 4,
-						     'fixed' => false,
 						     'unsigned' => true,
-						     'primary' => false,
 						     'notnull' => true,
-						     'autoincrement' => false,
+						     'notblank' => true
 						     ));
     $this->hasColumn('num_cursos', 'integer', 4, array(
                                 'type' => 'integer',
                                 'length' => 4,
-                                'fixed' => false,
                                 'unsigned' => true,
-                                'primary' => false,
                                 'notnull' => true,
+                                'notblank' => true
                              ));
   }
 
