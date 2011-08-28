@@ -6,4 +6,14 @@ class Calendar extends CI_Controller{
         $this->load->view('calendar/index');
         
     }   
+    
+    public function create(){
+        $calendario = new Calendario;
+        $calendario->fromArray($this->input->post());
+        if(!$calendario->isValid())
+            echo "error";
+        else
+            echo "bien";
+        
+    }
 }

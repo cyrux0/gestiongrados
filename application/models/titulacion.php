@@ -31,14 +31,9 @@ class Titulacion extends Doctrine_Record
 					       'autoincrement' => true,
 					       ));
     $this->hasColumn('codigo', 'string', 4, array(
-						  'type' => 'string',
 						  'length' => 4,
-						  'fixed' => false,
-						  'unsigned' => false,
-						  'primary' => false,
-						  'notnull' => true,
-						  'autoincrement' => false,
-						  'unique' => true
+						  'notnull',						  
+						  'unique'
 						  ));
     $this->hasColumn('nombre', 'string', 200, array(
 						    'type' => 'string',

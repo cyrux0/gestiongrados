@@ -6,12 +6,12 @@ class Titulaciones extends CI_Controller {
         $this -> titulaciones_table = Doctrine::getTable('Titulacion');
         $this -> asignaturas_table = Doctrine::getTable('Asignatura');
         $this -> layout = '';
-        $this -> load -> library('form_validation');
-        $this->load->library('session');
         $this->form_validation->set_rules('codigo', 'Código', 'required|trim|xss_clean|is_natural|exact_length[4]|unique[titulacion.codigo]');
-        $this->form_validation->set_rules('nombre', 'Nombre', 'required|trim|xss_clean|alpha|min_length[5]|max_length[200]|unique[titulacion.nombre]');
+        $this->form_validation->set_rules('nombre', 'Nombre', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[200]|unique[titulacion.nombre]');
         $this->form_validation->set_rules('creditos', 'Créditos', 'required|trim|xss_clean|is_natural');
         $this->form_validation->set_rules('num_cursos', 'Número de cursos', 'required|trim|xss_clean|is_natural_no_zero');
+        $this->notices = '';
+        $this->alerts = '';
     }
 
     public function index() {
@@ -43,10 +43,10 @@ class Titulaciones extends CI_Controller {
 
     public function create() {
         $titulacion = new Titulacion;
-        if($this -> form_validation -> run() == FALSE) {
+        $titulacion -> fromArray($this -> input -> post());
+        /*if($this -> form_validation -> run() == FALSE ) {
             if($this -> input -> post('remote') == "true") {
                 unset($this->layout);
-                $alert = '';
                 $this->output->set_content_type('application/json');
                 $response['messages'] = $this->load->view('layouts/notice_and_alerts', array('alert' => $alert), TRUE);
                 $response['success'] = 0;
@@ -55,9 +55,13 @@ class Titulaciones extends CI_Controller {
             }else
                 $this->add();
             //$this -> load -> view('titulaciones/add', array('data' => array('action' => 'titulaciones/create', 'titulacion' => $titulacion), 'page_title' => 'ADD TITULACIONES'));
-        } else {
+        } else {*/
 
-            $titulacion -> fromArray($this -> input -> post());
+        if(!$titulacion->isValid()){
+            $this->alerts = $titulacion->getErrorStackAsString();
+            //$this->load->view('titulaciones/add', array('data' => array('titulacion' => $titulacion, 'action' => 'titulaciones/create'), 'page_title' => 'ADD TITULACIONES'));
+            $this->add();
+        }else{
             $titulacion -> save();
             $notice = 'Titulación añadida correctamente';
             if($this -> input -> post('remote') == "true") {

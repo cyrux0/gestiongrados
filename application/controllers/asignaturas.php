@@ -6,6 +6,12 @@ class Asignaturas extends CI_Controller {
         $this->titulaciones_table = Doctrine::getTable('Titulacion');
         $this->cursos_table = Doctrine::getTable('Curso'); 
         $this -> layout = '';
+        $this->form_validation->set_rules('codigo', 'Código', 'required|trim|xss_clean|is_natural|exact_length[3]|unique[asignatura.codigo]');
+        $this->form_validation->set_rules('nombre', 'Nombre', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[200]');
+        $this->form_validation->set_rules('creditos', 'Créditos', 'required|trim|xss_clean|is_natural');
+        $this->form_validation->set_rules('materia', 'Materia', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('departamento', 'Departamento', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[200]');
+        $this->form_validation->set_rules('curso', 'Curso', 'required|trim|xss_clean|is_natural');        
     }
 
     public function add_to($id) {
@@ -18,11 +24,17 @@ class Asignaturas extends CI_Controller {
         $this -> load -> view('asignaturas/add', $data);
     }
 
-    public function create() {
+    public function create(){
         $asignatura = new Asignatura;
-        $asignatura -> fromArray($this -> input -> post());
-        $asignatura -> save();
-        redirect('titulaciones/show/' . $this -> input -> post('titulacion_id'));
+        if($this->form_validation->run() == FALSE){
+            $this->add_to($this->input->post('titulacion_id'));
+        }else{
+            $asignatura->fromArray($this->input->post());
+            $asignatura->save();
+            $notice = 'Asignatura añadida correctamente';
+            $this->session->set_flashdata('notice', $notice);
+            redirect('titulaciones/show/' . $this->input->post('titulacion_id'));
+        }
     }
 
     public function show($id, $id_curso){
@@ -44,8 +56,12 @@ class Asignaturas extends CI_Controller {
     public function update($id) {
         $asignatura = $this -> asignaturas_table -> find($id);
         $asignatura -> fromArray($this -> input -> post());
-        $asignatura -> save();
-        redirect('titulaciones/show/' . $asignatura -> titulacion_id);
+        if($this->form_validation->run() == FALSE){
+            $this->edit($id);
+        }else{
+            $asignatura -> save();
+            redirect('titulaciones/show/' . $asignatura -> titulacion_id);
+        }
     }
 
     public function delete($id) {
