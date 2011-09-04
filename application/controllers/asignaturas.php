@@ -6,12 +6,8 @@ class Asignaturas extends CI_Controller {
         $this->titulaciones_table = Doctrine::getTable('Titulacion');
         $this->cursos_table = Doctrine::getTable('Curso'); 
         $this -> layout = '';
-        $this->form_validation->set_rules('codigo', 'Código', 'required|trim|xss_clean|is_natural|exact_length[3]|unique[asignatura.codigo]');
-        $this->form_validation->set_rules('nombre', 'Nombre', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[200]');
-        $this->form_validation->set_rules('creditos', 'Créditos', 'required|trim|xss_clean|is_natural');
-        $this->form_validation->set_rules('materia', 'Materia', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[100]');
-        $this->form_validation->set_rules('departamento', 'Departamento', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[200]');
-        $this->form_validation->set_rules('curso', 'Curso', 'required|trim|xss_clean|is_natural');        
+        $this->notices = '';
+        $this->alerts = '';
     }
 
     public function add_to($id) {
@@ -26,13 +22,14 @@ class Asignaturas extends CI_Controller {
 
     public function create(){
         $asignatura = new Asignatura;
-        if($this->form_validation->run() == FALSE){
+        $asignatura->fromArray($this->input->post());
+        if(!$asignatura->isValid()){
+            $this->alerts = $asignatura->getErrorStackAsString();
             $this->add_to($this->input->post('titulacion_id'));
         }else{
-            $asignatura->fromArray($this->input->post());
             $asignatura->save();
-            $notice = 'Asignatura añadida correctamente';
-            $this->session->set_flashdata('notice', $notice);
+            $this->notices = 'Asignatura añadida correctamente';
+            $this->session->set_flashdata('notice', $this->notices);
             redirect('titulaciones/show/' . $this->input->post('titulacion_id'));
         }
     }
@@ -56,9 +53,12 @@ class Asignaturas extends CI_Controller {
     public function update($id) {
         $asignatura = $this -> asignaturas_table -> find($id);
         $asignatura -> fromArray($this -> input -> post());
-        if($this->form_validation->run() == FALSE){
+        if(!$asignatura->isValid()){
+            $this->alerts = $asignatura->getErrorStackAsString();    
             $this->edit($id);
         }else{
+            $this->notices = 'Asignatura añadida correctamente';
+            $this->session->set_flashdata('notice', $this->notices);
             $asignatura -> save();
             redirect('titulaciones/show/' . $asignatura -> titulacion_id);
         }
@@ -79,7 +79,7 @@ class Asignaturas extends CI_Controller {
         foreach($cursos as $curso){
             $options[$curso->id] = date_format(date_create($curso->inicio_semestre1), "Y") . '/' . date_format(date_create($curso->fin_semestre2), "Y");
         }
-        $action = 'cargasglobales/create/';
+        $action = 'asignaturas/create_carga/';
         $data['data'] = array('result' => $global, 'action' => $action);
         $data['nombre_asignatura'] = $this->asignaturas_table->find($asignatura_id)->nombre;
         $data['page_title'] = 'Añadiendo carga global';
@@ -87,4 +87,21 @@ class Asignaturas extends CI_Controller {
         $this->load->view('cargaglobal/add', $data);
     }
 
-        }/* Fin archivo asignaturas.php */
+    public function create_carga(){
+        $global = new CargaGlobal;
+        $q = Doctrine_Query::create()->select('c.id')->from('Curso c')->orderBy('c.id desc')->limit(1);
+        $global->curso_id = $q->fetchOne();
+        $global->fromArray($this->input->post());
+        if(!$global->isValid()){
+            $this->alerts = $global->getErrorStackAsString();
+            $this->add_carga($this->input->post('asignatura_id'));
+        }else{
+            $global->save();
+            $this->notices = 'Asignatura añadida correctamente';
+            $this->session->set_flashdata('notice', $this->notices);
+            redirect('titulaciones/index');
+        }
+    }
+}
+
+/* Fin archivo asignaturas.php */

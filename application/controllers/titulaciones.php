@@ -44,33 +44,27 @@ class Titulaciones extends CI_Controller {
     public function create() {
         $titulacion = new Titulacion;
         $titulacion -> fromArray($this -> input -> post());
-        /*if($this -> form_validation -> run() == FALSE ) {
-            if($this -> input -> post('remote') == "true") {
-                unset($this->layout);
-                $this->output->set_content_type('application/json');
-                $response['messages'] = $this->load->view('layouts/notice_and_alerts', array('alert' => $alert), TRUE);
-                $response['success'] = 0;
-                echo json_encode($response);
-                //$this->output->set_output(json_encode($response));                
-            }else
-                $this->add();
-            //$this -> load -> view('titulaciones/add', array('data' => array('action' => 'titulaciones/create', 'titulacion' => $titulacion), 'page_title' => 'ADD TITULACIONES'));
-        } else {*/
 
         if(!$titulacion->isValid()){
             $this->alerts = $titulacion->getErrorStackAsString();
-            //$this->load->view('titulaciones/add', array('data' => array('titulacion' => $titulacion, 'action' => 'titulaciones/create'), 'page_title' => 'ADD TITULACIONES'));
-            $this->add();
+            if($this->input->post('remote') == "true"){
+                unset($this->layout);
+                $this->output->set_content_type('application/json');
+                $response['messages'] = $this->load->view('layouts/notice_and_alerts', null, TRUE);
+                $response['success'] = 0;
+                echo json_encode($response);
+            }else{
+                $this->add();
+            }
         }else{
             $titulacion -> save();
-            $notice = 'Titulación añadida correctamente';
+            $this->notices = 'Titulación añadida correctamente';
             if($this -> input -> post('remote') == "true") {
                 unset($this -> layout);
                 $this->output->set_content_type('application/json');
                 $response['success'] = 1;
                 $response['view'] = $this -> load -> view('titulaciones/_titulacion', array('item' => $titulacion), TRUE);
-                $response['messages'] = $this->load->view('layouts/notice_and_alerts', array('notice' => $notice), TRUE);
-                // echo json_encode($response);
+                $response['messages'] = $this->load->view('layouts/notice_and_alerts', null, TRUE);
                 $this->output->set_output(json_encode($response));
             } else {
                 $this->session->set_flashdata('notices', $notice);
@@ -109,8 +103,8 @@ class Titulaciones extends CI_Controller {
     }
 
     public function show($id) {
-        $data['asignaturas'] = $this -> asignaturas_table -> findByTitulacion_id($id);
-        $data['titulacion'] = $this -> titulaciones_table -> find($id);
+        $data['asignaturas'] = $this->asignaturas_table->findByTitulacion_id($id);
+        $data['titulacion'] = $this->titulaciones_table->find($id);
         $data['page_title'] = 'INDEX ASIGNATURAS';
         $this -> load -> view('titulaciones/show', $data);
     }

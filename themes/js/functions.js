@@ -89,10 +89,32 @@ var titulaciones = {
     
 }
 
+//Objeto cursos para tratar añadir efectos a las vistas referentes a los cursos
+var curso = {
+    initialize: function(){
+        this.setDatepickers();
+    },
+    
+    setDatepickers: function(){
+        $('.datepicker_cursos').each(function(){
+            var dates = $(this).datepicker({
+                dateFormat: "dd/mm/yy",
+                altField: '#' + $(this).next().attr('id'),
+                altFormat: "yy-mm-dd",
+                numberOfMonths: 3
+            });
+            var fecha = $.datepicker.parseDate('yy-mm-dd', $(this).next().val());
+            $(this).datepicker("setDate", fecha);
+        });
+               
+    }
+}
+
 $(document).ready(function(){
     titulaciones.initialize();
-    $.datepicker.setDefaults($.datepicker.regional['es']);
-    $('.datepicker').datepicker($.datepicker.regional['es']);
+    curso.initialize();
+
+    
     $("#calendar").fullCalendar({
         weekends: false,
         header: {left: 'title', center: '', right: 'prev'},
@@ -105,7 +127,6 @@ $(document).ready(function(){
         dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
         dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
         events: [{title: 'prueba', start: new Date(), end: new Date(), allDay:false}]
-         
     });
     
     var url = $('#calendar_eventos_index').html();
@@ -118,5 +139,5 @@ $(document).ready(function(){
         });
     });
     setTimeout(function(){$(".notice").hide("slow");}, 3000);
-    setTimeout(function(){$(".alert").hide("slow");}, 3000);
+
 });

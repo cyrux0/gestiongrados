@@ -41,10 +41,14 @@ class Asignatura extends Doctrine_Record
 						  'primary' => false,
 						  'notnull' => true,
 						  'autoincrement' => false,
+						  'notblank' => true,
+						  'unique' => true,
+						  'regexp' => '/[0-9]{3}/'
 						  ));
     $this->hasColumn('nombre', 'string', 200, array(
 						    'type' => 'string',
 						    'length' => 200,
+						    'minlength' => 5,
 						    'fixed' => false,
 						    'unsigned' => false,
 						    'primary' => false,
@@ -59,6 +63,7 @@ class Asignatura extends Doctrine_Record
 						     'primary' => false,
 						     'notnull' => true,
 						     'autoincrement' => false,
+						     'notblank' => true
 						     ));
     $this->hasColumn('materia', 'string', 100, array(
 						     'type' => 'string',
@@ -68,6 +73,7 @@ class Asignatura extends Doctrine_Record
 						     'primary' => false,
 						     'notnull' => true,
 						     'autoincrement' => false,
+						     'notblank' => true
 						     ));
     $this->hasColumn('departamento', 'string', 200, array(
 							  'type' => 'string',
@@ -77,7 +83,9 @@ class Asignatura extends Doctrine_Record
 							  'primary' => false,
 							  'notnull' => true,
 							  'autoincrement' => false,
+							  'notblank' => true
 							  ));
+  //Añadir validación propia para que el curso esté dentro del número de cursos de la titulación.
     $this->hasColumn('curso', 'integer', 4, array(
                               'type' => 'integer',
                               'length' => 4,
@@ -89,7 +97,9 @@ class Asignatura extends Doctrine_Record
                               ));
                               
     /* Semestre debería ser un enum */                              
-    $this->hasColumn('semestre', 'enum', null, array( 'values' => array('primero', 'segundo') ));
+    $this->hasColumn('semestre', 'enum', null, array( 'values' => array('primero', 'segundo'),
+                                'unsigned' => false
+                              ));
     
     $this->hasColumn('titulacion_id', 'integer', 4, array(
 							  'type' => 'integer',
