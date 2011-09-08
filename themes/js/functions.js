@@ -90,14 +90,16 @@ var titulaciones = {
 }
 
 //Objeto cursos para tratar añadir efectos a las vistas referentes a los cursos
-var curso = {
+var cursos = {
     initialize: function(){
+        $('.datepicker_cursos').show();
+        $('.datepicker_cursos').next().hide();
         this.setDatepickers();
     },
     
     setDatepickers: function(){
         $('.datepicker_cursos').each(function(){
-            var dates = $(this).datepicker({
+            $(this).datepicker({
                 dateFormat: "dd/mm/yy",
                 altField: '#' + $(this).next().attr('id'),
                 altFormat: "yy-mm-dd",
@@ -110,10 +112,75 @@ var curso = {
     }
 }
 
+
+var eventos = {
+    initialize: function(){
+        $('.datepicker_eventos').show();
+        $('.datepicker_eventos').next().hide();
+        $('.datepicker_eventos').each(function(){
+            $(this).datepicker({
+                dateFormat: "dd/mm/yy",
+                altField: '#' + $(this).next().attr('id'),
+                altFormat: "yy-mm-dd",
+                numberOfMonths: 3
+            });
+            var fecha = $.datepicker.parseDate('yy-mm-dd', $(this).next().val());
+            $(this).datepicker("setDate", fecha);
+        });
+    }
+}
+
+var login = {
+    initialize: function(){
+        $('#login-form').dialog({
+               autoOpen: false,
+               height: 250,
+               width: 280,
+               modal: true,
+               buttons: {
+                   'Entrar': function(){
+                        alert('No implementado aún');
+                        $(this).dialog("close");
+                   },
+                   'Cancelar': function(){
+                        $(this).dialog("close");
+                   },
+               },
+               
+               close: function(){
+                   allFields.val("").removeClass("ui-state-error");
+               }
+        });
+        
+        $('#login-button').click(function(event){
+           event.preventDefault();
+           $('#login-form').dialog("open");
+        });
+    }
+}
+
 $(document).ready(function(){
     titulaciones.initialize();
-    curso.initialize();
-
+    cursos.initialize();
+    eventos.initialize();
+    login.initialize();
+    
+    var icons = {
+        header: "ui-icon-circle-arrow-e",
+        headerSelected: "ui-icon-circle-arrow-s"
+    }
+    
+    /*
+    $('#side_bar').accordion({
+        icons: icons,
+        collapsible: true
+    });*/
+    
+    
+    $('#side_bar h3').click(function(){
+        $(this).next().slideToggle("fast");
+        return false;
+    }).next().hide();
     
     $("#calendar").fullCalendar({
         weekends: false,

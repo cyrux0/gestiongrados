@@ -29,7 +29,7 @@ a {
     text-decoration:none;
 }
 
-a:hover {
+#main_content a:hover {
     background-color: #FF813C;
     color: #FFFFFF;
 }
@@ -82,6 +82,7 @@ a:hover {
 
 #main {
     padding-top: 10px;
+    margin-bottom: 50px;
 }
 
 
@@ -165,4 +166,51 @@ table{
 #enlacesUca{
 	padding-top: 20px;
 	list-style-type: none;
+}
+
+#side_bar2{
+    width: 12%;
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+#side_bar h3{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:#ffbb66;
+}
+
+#side_bar div{
+    background-color:#ddd;
+}
+
+#side_bar ul{
+    list-style-type:none;
+    
+}
+
+#main_content{
+    float:left;
+}
+
+fieldset{
+    border:0;
+    padding:0;
+    margin-top: 25px;
+}
+
+#login-form{
+    font-size: 62%;
+}
+
+#login-form label{
+    display: block;
+}
+
+#login-form input{
+    display: block;
+    width: 95%;
+    margin-bottom: 12px;
+    padding: .4em;
 }
