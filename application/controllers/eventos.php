@@ -5,6 +5,8 @@ class Eventos extends CI_Controller{
         parent::__construct();
         $this->layout = '';
         $this->eventos_table = Doctrine::getTable('Evento');
+        $this->alerts = '';
+        $this->notices = '';
     }
         
     public function index($curso_id){
@@ -32,16 +34,15 @@ class Eventos extends CI_Controller{
             $_POST['fecha_individual'] = 0;
         }
         $evento->fromArray($this->input->post());
-        list($day1, $month1, $year1) = explode('/', $this->input->post('fecha_inicial'));
-        list($day2, $month2, $year2) = explode('/', $this->input->post('fecha_final'));
-        $evento->fecha_inicial = $year1 . '-' . $month1 . '-' . $day1;
-        if($evento->fecha_individual){
-            $evento->fecha_final = $evento->fecha_inicial;
+        if(!$evento->isValid()){
+            $this->alerts = $evento->getErrorStackAsString();
+            $this->add($this->input->post('curso_id'));            
         }else{
-            $evento->fecha_final = $year2 . '-' . $month2 . '-' . $day2;
+            $evento->save();
+            $this->notices = 'Evento añadido correctamente';
+            $this->session->set_flashdata('notices', $this->notices);
+            redirect('eventos/index/' . $evento->curso_id);
         }
-        $evento->save();
-        redirect('eventos/index/' . $evento->curso_id);
     }    
    
     public function delete($id){

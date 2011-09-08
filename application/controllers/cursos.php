@@ -75,6 +75,7 @@ class Cursos extends CI_Controller{
     public function delete($id){
         $cursos = $this->cursos_table->find($id);
         $cursos->eventos->delete();
+        $cursos->cargasglobales->delete();
         $cursos->delete();
         redirect('cursos/index');
     }

@@ -7,6 +7,8 @@ class CargasGlobales extends CI_Controller{
     $this->asignaturas_table = Doctrine::getTable('Asignatura');
     $this->cursos_table = Doctrine::getTable('Curso');
     $this->layout = '';
+    $this->alerts = '';
+    $this->notices = '';
   }
 
   public function edit($id){
@@ -21,8 +23,15 @@ class CargasGlobales extends CI_Controller{
    public function update($id){
     $global = $this->globales_table->find($id);
     $global->fromArray($this->input->post());
-    $global->save();
-    redirect('titulaciones/show/' . $global->Asignatura->titulacion_id);
+    if(!$global->isValid()){
+        $this->alerts = $global->getErrorStackAsString();
+        $this->edit($id);
+    }else{
+        $global->save();
+        $this->notices = 'Carga actualizada correctamente';
+        $this->session->set_flashdata('notices', $this->notices);
+        redirect('titulaciones/show/' . $global->Asignatura->titulacion_id);
+    }
   }
 
 }
