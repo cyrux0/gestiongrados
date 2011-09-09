@@ -38,6 +38,8 @@ class Asignaturas extends CI_Controller {
         $asignatura = $this->asignaturas_table->find($id);
         $q = Doctrine_Query::create()->select('c.*')->from('CargaGlobal c')->where('c.curso_id = ? AND c.asignatura_id = ?', array($id_curso, $id));
         $resultado = $q->fetchArray();
+        if($this->input->post('js'))
+            unset($this->layout);
         $this->load->view('asignaturas/show', array('carga' => (object) $resultado[0], 'asignatura' => $asignatura));
     }
     

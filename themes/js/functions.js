@@ -3,53 +3,39 @@
 var titulaciones = {
     //Función principal para crear los binds de los distintos eventos
     initialize: function() {
+        
+        titulaciones.preloadForm($('#linknewtitulacion').attr('href'));
         $('#linknewtitulacion').click( function(event) {
             event.preventDefault();
-            titulaciones.displayAdd($(this).attr('href'));
+            titulaciones.displayAdd();
         });
         
-        $('#linklistatitulaciones').click( function(event) {
-            event.preventDefault();
-            titulaciones.displayIndex($(this).attr('href'));
-        });
+        titulaciones.listadoAsigCargas();
     },
     
-    
-    displayIndex: function(href) {
+    preloadForm: function(href){
         var p = {};
         p['js'] = 1;
-        if($('#divtitulaciones').length > 0){
-            $('#divtitulaciones').slideToggle();
-        }else{
-            $('<div id="divtitulaciones" style="display:none"></div>').appendTo('#listatitulaciones');
-            $('#divtitulaciones').load(href, p, function(){
-                $('#divtitulaciones').slideDown();
-            });
+        if($('#nuevatitulacion').length == 0){
+            $('<div id="nuevatitulacion" style="display:none"></div>').insertAfter('#listatitulaciones');
+            $('#nuevatitulacion').load(href, p, titulaciones.loadAddCallback);
         }
     },
     
     //Add controller
     //Carga y muestra el formulario de add
-    displayAdd: function(href) {
-        var p = {};
-        p['js'] = 1;
-        if($('#nuevatitulacion').length > 0){
-            $('#nuevatitulacion').slideDown();
-        }else{
-            $('<div id="nuevatitulacion" style="display:none"></div>').insertAfter('#listatitulaciones');
-            $('#nuevatitulacion').load(href, p, titulaciones.loadAddCallback);
-        }
+    displayAdd: function() {
+        $('#nuevatitulacion').slideDown();
         $('#linknewtitulacion').toggle();
     },
+    
     //Callback de la función load de add para mostrar el formulario y añadir el evento click
     loadAddCallback: function() {
-        $('#nuevatitulacion').slideDown();
-        
         $('#canceltitulacion').click( function(event) {
             event.preventDefault();
             titulaciones.hideForm();
         });
-        
+
         titulaciones.prepareForm();
         
 
@@ -70,7 +56,7 @@ var titulaciones = {
     appendItem: function(response){
         $('.notice').remove();
         $('.alert').remove();
-        $('#main').prepend(response.messages);
+        $('#main_content').prepend(response.messages);
         if(response.success==1){
             $('#listatitulaciones').append(response.view);
             titulaciones.hideForm();
@@ -85,8 +71,39 @@ var titulaciones = {
             this.reset();
         });
         $('#linknewtitulacion').toggle();
-    }
+    },
     
+    listadoAsigCargas: function(){
+        
+        $('.actrigger').click(function(event){
+            event.preventDefault();
+            var p={'js': 1};
+            var href = $(this).children(0).attr('href'); 
+            if($(this).next().hasClass('accontainer')){
+                if($(this).hasClass("current")){
+                    $(this).next().slideUp();
+                    $(this).removeClass('current');
+                }else{
+                    $('.current').next().slideUp();
+                    $('.current').removeClass('current');
+                    $(this).next().slideDown();
+                    $(this).addClass('current');
+                }
+            }else{
+                $('.current').next().slideUp();
+                $('.current').removeClass('current');
+                $(this).after('<div class="accontainer" style="display:none"></div>');
+                $(this).next().load(href, p, titulaciones.loadAsigCargasCallback);
+            }
+        });
+    },
+    
+    loadAsigCargasCallback: function(){
+        $(this).slideDown();
+        $(this).prev().addClass('current');
+        cargas.initialize();
+        // En principio nada, quizás cargar el form modal
+    }
 }
 
 //Objeto cursos para tratar añadir efectos a las vistas referentes a los cursos
@@ -159,12 +176,35 @@ var login = {
     }
 }
 
+
+var cargas = {
+    initialize: function(){
+        cargas.verCarga();
+    },
+    
+    verCarga: function(){
+        if($('.linkvercarga').length > 0){
+            $('#main_content').append('<div id="ficha_carga"></div>');
+            $('#ficha_carga').dialog({
+                autoOpen: false,
+                height: 250,
+                width: 500,
+                modal: false
+            });
+        }
+        $('.linkvercarga').click(function(event){
+            event.preventDefault();
+            $('#ficha_carga').load($(this).attr('href'), {'js': 1}, null);
+            $('#ficha_carga').dialog("open");
+        });
+    }
+}
 $(document).ready(function(){
     titulaciones.initialize();
     cursos.initialize();
     eventos.initialize();
     login.initialize();
-    
+    cargas.initialize();
     var icons = {
         header: "ui-icon-circle-arrow-e",
         headerSelected: "ui-icon-circle-arrow-s"

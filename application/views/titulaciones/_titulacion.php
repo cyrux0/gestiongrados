@@ -1,5 +1,10 @@
-<li><span><?= anchor('titulaciones/show/' . $item->id, $item->nombre) ?></span><span><?= anchor('asignaturas/add_to/' . $item->id, '+'); ?></span><?= anchor('titulaciones/delete/' . $item->id, 'X') ?></li>
-
+<? if(isset($pretags))
+       echo $pretags;
+?>
+<?= anchor($enlace . $item->id, $item->nombre) ?>
+<? if(isset($posttags))
+       echo $posttags;
+?>
 <!--
       <td><?= anchor('titulaciones/show/'.$item->id, 'Ver Asignaturas') ?></td>
       <td><?= anchor('titulaciones/delete/'.$item->id, 'Borrar', array('onclick'=>"return confirm('Estás seguro?')")); ?></td>

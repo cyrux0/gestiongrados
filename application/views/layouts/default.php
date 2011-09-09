@@ -53,9 +53,10 @@
       -->
       <div id="side_bar2">
           <ul class="menu collapsible">
+              <li><?= anchor('#', 'Inicio') ?></li>
               <li><?= anchor('titulaciones/index', 'Planificación Docente') ?>
                   <ul class="acitem">
-                      <li><?= anchor('titulaciones/index', 'Añadir Cargas') ?></li>
+                      <li><?= anchor('titulaciones/index_cargas', 'Añadir Cargas') ?></li>
                       <li><?= anchor('#', 'Duplicar carga') ?></li>
                   </ul>
               </li>

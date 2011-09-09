@@ -29,10 +29,12 @@ a {
     text-decoration:none;
 }
 
+
 #main_content a:hover {
     background-color: #FF813C;
     color: #FFFFFF;
 }
+
 
 #header, #main, #footer {
     width: 80%;
@@ -87,10 +89,10 @@ a {
 
 
 table{
-    margin: 10px auto;
+    margin: 10px 0 15px 0;
 }
 
-.listaelems{
+table.listaelems{
     border-collapse: collapse;
 }
 .listaelems th, .listaelems td{
@@ -191,6 +193,7 @@ table{
 }
 
 #main_content{
+    width: 75%;
     float:left;
 }
 
@@ -213,4 +216,31 @@ fieldset{
     width: 95%;
     margin-bottom: 12px;
     padding: .4em;
+}
+
+
+h2.actrigger{
+    margin: 0 0 0 0 ;
+    padding:0;
+    background: url("images/h2_trigger_a.gif") no-repeat;
+    line-height: 46px;
+    height: 46px;
+    width: 500px;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+h2.actrigger a{
+    color: #fff;
+    display:block;
+    padding: 0 0 0 50px;
+}
+
+
+h2.current{
+    background-position: left bottom;
+}
+
+#main_content h2.actrigger a:hover{
+    background-color: transparent;
 }
