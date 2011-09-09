@@ -1,7 +1,7 @@
 
 
 <ul class="listaelems" id="listatitulaciones">
-    <? $enlace = 'titulaciones/show_asig'; ?>
+    <? $enlace = 'titulaciones/show/'; ?>
     <? foreach($titulaciones as $item): ?>
         <? $pretags = '<li><span>';
            $posttags = '</span><span>' . anchor('asignaturas/add_to/' . $item->id, '+') . '</span>' . anchor('titulaciones/delete/' . $item->id, 'X') . '</li>';

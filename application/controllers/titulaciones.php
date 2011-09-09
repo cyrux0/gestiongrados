@@ -21,7 +21,7 @@ class Titulaciones extends CI_Controller {
         //Conseguimos los items mediante el modelo
         $data['titulaciones'] = $titulaciones;
         $data['page_title'] = 'INDEX TITULACIONES';
-        
+        $data['enlace'] = 'titulaciones/show/';
         if($this -> input -> post('js') == '1') {
             unset($this -> layout);
             $this -> load -> view('titulaciones/_titulaciones', $data);
@@ -65,7 +65,7 @@ class Titulaciones extends CI_Controller {
                 unset($this -> layout);
                 $this->output->set_content_type('application/json');
                 $response['success'] = 1;
-                $response['view'] = $this->load->view('titulaciones/_titulacion', array('item' => $titulacion, 'pretags' => $pretags, 'posttags' => $posttags), TRUE);
+                $response['view'] = $this->load->view('titulaciones/_titulacion', array('item' => $titulacion, 'pretags' => $pretags, 'posttags' => $posttags, 'enlace' => 'titulaciones/show/'), TRUE);
                 $response['messages'] = $this->load->view('layouts/notice_and_alerts', null, TRUE);
                 $this->output->set_output(json_encode($response));
             } else {
