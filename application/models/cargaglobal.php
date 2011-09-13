@@ -14,16 +14,25 @@ class CargaGlobal extends Doctrine_Record {
     public function setTableDefinition() {
         $this -> setTableName('cargasglobales');
         $this -> hasColumn('id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'primary' => true, 'autoincrement' => true, ));
-        $this -> hasColumn('creditos_teoria', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
+        $this -> hasColumn('horas_teoria', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
         $this -> hasColumn('grupos_teoria', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
-        $this -> hasColumn('creditos_problemas', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true,  'default' => 0, 'notblank' => true));
+        $this -> hasColumn('horas_problemas', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true,  'default' => 0, 'notblank' => true));
         $this -> hasColumn('grupos_problemas', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
-        $this -> hasColumn('creditos_informatica', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
+        $this -> hasColumn('horas_informatica', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
         $this -> hasColumn('grupos_informatica', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
-        $this -> hasColumn('creditos_lab', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
+        $this -> hasColumn('horas_lab', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
         $this -> hasColumn('grupos_lab', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
-        $this -> hasColumn('creditos_campo', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
+        $this -> hasColumn('horas_campo', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
         $this -> hasColumn('grupos_campo', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
+        $this -> hasColumn('horas_semanales_teoria', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
+        $this -> hasColumn('horas_semanales_problemas', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true,  'default' => 0, 'notblank' => true));
+        $this -> hasColumn('alternas_problemas', 'bool', 4, array('type' => 'bool', 'notnull' => false));
+        $this -> hasColumn('horas_semanales_informatica', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
+        $this -> hasColumn('alternas_informatica', 'bool', 4, array('type' => 'bool', 'notnull' => false));
+        $this -> hasColumn('horas_semanales_lab', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
+        $this -> hasColumn('alternas_lab', 'bool', 4, array('type' => 'bool', 'notnull' => false));
+        $this -> hasColumn('horas_semanales_campo', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
+        $this -> hasColumn('alternas_campo', 'bool', 4, array('type' => 'bool', 'notnull' => false));
         $this -> hasColumn('asignatura_id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'notnull' => true));
         $this -> hasColumn('curso_id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'notnull' => true));
         //Totales ¿poner?, ¿como?

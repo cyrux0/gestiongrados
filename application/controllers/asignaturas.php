@@ -97,6 +97,7 @@ class Asignaturas extends CI_Controller {
         if(!$global->isValid()){
             $this->alerts = $global->getErrorStackAsString();
             $this->add_carga($this->input->post('asignatura_id'));
+            
         }else{
             $global->save();
             $this->notices = 'Asignatura añadida correctamente';

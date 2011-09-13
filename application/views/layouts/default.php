@@ -54,7 +54,28 @@
       <div id="side_bar2">
           <ul class="menu collapsible">
               <li><?= anchor('#', 'Inicio') ?></li>
-              <li><?= anchor('titulaciones/index', 'Planificación Docente') ?>
+              <li><?= anchor('#', 'Titulaciones') ?>
+                  <ul class="acitem">
+                      <li><?= anchor('titulaciones/index', 'Ver titulaciones') ?></li>
+                      <li><?= anchor('titulaciones/add', 'Añadir titulaciones') ?></li>
+                  </ul>
+              </li>
+              <li><?= anchor('#', 'Asignaturas') ?>
+                  <ul class="acitem">
+                      <li>
+                          <?= anchor('titulaciones/index', 'Añadir asignaturas') ?>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <?= anchor('#', 'Cursos') ?>
+                  <ul class="acitem">
+                      <li>
+                          <?= anchor('cursos/add', 'Añadir curso') ?>
+                      </li>
+                  </ul>
+              </li>
+              <li><?= anchor('#', 'Planificación Docente') ?>
                   <ul class="acitem">
                       <li><?= anchor('titulaciones/index_cargas', 'Añadir Cargas') ?></li>
                       <li><?= anchor('#', 'Duplicar carga') ?></li>
@@ -71,12 +92,6 @@
                   <a href="#">Horarios</a>
                   <ul class="acitem">
                       <li>
-                          <a href="#">Horario preferente</a>
-                      </li>
-                      <li>
-                          <a href="#">Asignar profesor</a>
-                      </li>
-                      <li>
                           <a href="#">Configurar horario</a>
                       </li>
                       <li>
@@ -87,9 +102,7 @@
               <li>
                   <a href="#">Configuración</a>
                   <ul class="acitem">
-                      <li><?= anchor('titulaciones/index', 'Entidades') ?></a></li>
                       <li><?= anchor('#', 'Usuarios y grupos') ?></li>
-                      <li><?= anchor('cursos/index', 'Cursos') ?></li>
                       <li><?= anchor('#', 'Opciones/reset') ?></li>
                   </ul>
               </li>
