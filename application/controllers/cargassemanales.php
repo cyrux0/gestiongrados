@@ -10,7 +10,7 @@ class CargasSemanales extends CI_Controller{
 
   public function add($id_global){
     $semanal = new CargaSemanal;
-    $semanal->cargaglobal_id = $id_global;
+    $semanal->PlanDocente_id = $id_global;
     $action = 'cargassemanales/create/';
     $data['data'] = array('result' => $semanal, 'action' => $action);
     $data['page_title'] = 'Añadiendo carga semanal';
@@ -36,7 +36,7 @@ class CargasSemanales extends CI_Controller{
     $semanal = $this->semanales_table->find($id);
     $semanal->fromArray($this->input->post());
     $semanal->save();
-    redirect('titulaciones/show/' . $semanal->cargaglobal->Asignatura->titulacion_id);
+    redirect('titulaciones/show/' . $semanal->PlanDocente->Asignatura->titulacion_id);
   }
   
 

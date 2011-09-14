@@ -36,7 +36,7 @@ class Asignaturas extends CI_Controller {
 
     public function show($id, $id_curso){
         $asignatura = $this->asignaturas_table->find($id);
-        $q = Doctrine_Query::create()->select('c.*')->from('CargaGlobal c')->where('c.curso_id = ? AND c.asignatura_id = ?', array($id_curso, $id));
+        $q = Doctrine_Query::create()->select('c.*')->from('PlanDocente c')->where('c.curso_id = ? AND c.asignatura_id = ?', array($id_curso, $id));
         $resultado = $q->fetchArray();
         if($this->input->post('js'))
             unset($this->layout);
@@ -74,7 +74,7 @@ class Asignaturas extends CI_Controller {
         }
 
     public function add_carga($asignatura_id){
-        $global = new CargaGlobal;
+        $global = new PlanDocente;
         $global->asignatura_id = $asignatura_id;
         $cursos = $this->cursos_table->findAll();
         $options = array();
@@ -86,11 +86,11 @@ class Asignaturas extends CI_Controller {
         $data['nombre_asignatura'] = $this->asignaturas_table->find($asignatura_id)->nombre;
         $data['page_title'] = 'Añadiendo carga global';
         $data['options'] = $options;
-        $this->load->view('cargaglobal/add', $data);
+        $this->load->view('PlanDocente/add', $data);
     }
 
     public function create_carga(){
-        $global = new CargaGlobal;
+        $global = new PlanDocente;
         $q = Doctrine_Query::create()->select('c.id')->from('Curso c')->orderBy('c.id desc')->limit(1);
         $global->curso_id = $q->fetchOne();
         $global->fromArray($this->input->post());

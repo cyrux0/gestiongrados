@@ -1,18 +1,18 @@
 <?php
 //Connection Component Binding
-Doctrine_Manager::getInstance() -> bindComponent('CargaGlobal', 'default');
+Doctrine_Manager::getInstance() -> bindComponent('PlanDocente', 'default');
 
 /**
- * CargaGlobal
+ * PlanDocente
  *
  *
  * @property integer $id
  *
  * @author     Daniel Ignacio Salazar Recio <danielsalazarrecio@gmail.com>
  */
-class CargaGlobal extends Doctrine_Record {
+class PlanDocente extends Doctrine_Record {
     public function setTableDefinition() {
-        $this -> setTableName('cargasglobales');
+        $this -> setTableName('planesdocentes');
         $this -> hasColumn('id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'primary' => true, 'autoincrement' => true, ));
         $this -> hasColumn('horas_teoria', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
         $this -> hasColumn('grupos_teoria', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
@@ -48,5 +48,5 @@ class CargaGlobal extends Doctrine_Record {
 
 }
 
-/* End of file cargaglobal.php */
-/* Location: ./application/models/cargaglobal.php */
+/* End of file PlanDocente.php */
+/* Location: ./application/models/PlanDocente.php */

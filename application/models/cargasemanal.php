@@ -64,7 +64,7 @@ class CargaSemanal extends Doctrine_Record
 
     $this->hasColumn('examen', 'boolean');
 
-    $this->hasColumn('cargaglobal_id', 'integer', 4, array(
+    $this->hasColumn('PlanDocente_id', 'integer', 4, array(
 							  'type' => 'integer',
 							  'length' => 4,
 							  'fixed' => false,
@@ -76,7 +76,7 @@ class CargaSemanal extends Doctrine_Record
   
   public function setUp()
   {
-    $this->hasOne('CargaGlobal as cargaglobal', array('local' => 'cargaglobal_id', 'foreign' => 'id'));
+    $this->hasOne('PlanDocente as PlanDocente', array('local' => 'PlanDocente_id', 'foreign' => 'id'));
     // $this->hasMany('CargaSemanal as CargasSemanales', array('local' => 'id', 'foreign' => 'global_id'));
     parent::setUp();
   }

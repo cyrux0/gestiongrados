@@ -1,9 +1,9 @@
 <?php
 
-class CargasGlobales extends CI_Controller{
+class PlanesDocentes extends CI_Controller{
   function __construct(){
     parent::__construct();
-    $this->globales_table = Doctrine::getTable('CargaGlobal');
+    $this->globales_table = Doctrine::getTable('PlanDocente');
     $this->asignaturas_table = Doctrine::getTable('Asignatura');
     $this->cursos_table = Doctrine::getTable('Curso');
     $this->layout = '';
@@ -13,11 +13,11 @@ class CargasGlobales extends CI_Controller{
 
   public function edit($id){
     $global = $this->globales_table->find($id);
-    $action = '/cargasglobales/update/' . $id;
+    $action = '/planesdocentes/update/' . $id;
     $data['data'] = array('result' => $global, 'action' => $action);
     $data['nombre_asignatura'] = $this->asignaturas_table->find($global->asignatura_id)->nombre;
     $data['page_title'] = 'Editando carga global';
-    $this->load->view('cargaglobal/edit', $data);
+    $this->load->view('PlanDocente/edit', $data);
   }
 
    public function update($id){
@@ -36,4 +36,4 @@ class CargasGlobales extends CI_Controller{
 
 }
 
-/* Fin del archivo cargasglobales.php */
+/* Fin del archivo planesdocentes.php */

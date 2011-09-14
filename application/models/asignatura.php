@@ -112,6 +112,6 @@ class Asignatura extends Doctrine_Record
   {
     parent::setUp();
     $this->hasOne('Titulacion', array('local' => 'titulacion_id', 'foreign' => 'id', 'onDelete' => 'CASCADE'));
-    $this->hasMany('CargaGlobal as CargasGlobales', array('local' => 'id', 'foreign' => 'asignatura_id'));
+    $this->hasMany('PlanDocente as PlanesDocentes', array('local' => 'id', 'foreign' => 'asignatura_id'));
   }
 }
