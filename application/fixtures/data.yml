@@ -1,0 +1,70 @@
+User:
+    Admin:
+        username: Administrador
+        password: 123456
+        admin: 1
+        planner: 1
+    Planner:
+        username: planner
+        password: 123456
+        admin: 0
+        planner: 1
+Titulacion:
+    Informatica:
+        codigo: 1714
+        nombre: Grado en Ingeniería Informática
+        creditos: 200
+        num_cursos: 4
+    Industriales:
+        codigo: 1715
+        nombre: Grado en Ingeniería Industrial
+        creditos: 215
+        num_cursos: 4
+Asignatura:
+    ADA1:
+        codigo: 123
+        nombre: Análisis y diseño de algoritmos I
+        creditos: 6
+        materia: Algoritmia
+        departamento: Lenguajes y sistemas
+        curso: 2
+        semestre: primero
+        Titulacion: Informatica
+    EDI:
+        codigo: 124
+        nombre: Estructura de Datos I
+        creditos: 6
+        materia: Programación
+        departamento: Lenguajes y sistemas
+        curso: 1
+        semestre: segundo
+        Titulacion: Informatica
+    FI:
+        codigo: 122
+        nombre: Fundamentos en Informática
+        creditos: 6
+        materia: Porgramación
+        departamento: Lenguajes y sistemas
+        curso: 1
+        semestre: primero
+        Titulacion: Industriales
+Curso:
+    2011:
+        num_semanas_teoria: 3
+        num_semanas_semestre1: 15
+        num_semanas_semestre2: 15
+        horas_por_credito: 10
+        slot_minimo: 01:00
+        hora_inicial: 09:00
+        hora_final: 22:00
+        inicio_semestre1: "2011-09-22"
+        fin_semestre1: "2012-01-10"
+        inicio_semestre2: "2012-02-03"
+        fin_semestre2: "2012-06-04"
+        inicio_examenes_enero: "2012-01-12"
+        fin_examenes_enero: "2012-02-01"
+        inicio_examenes_junio: "2012-06-05"
+        fin_examenes_junio: "2012-07-05"
+        inicio_examenes_sept: "2012-09-01"
+        fin_examenes_sept: "2012-09-20"
+

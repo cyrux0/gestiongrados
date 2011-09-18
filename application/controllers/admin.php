@@ -18,5 +18,9 @@ class Admin extends CI_Controller{
     Doctrine_Core::createTablesFromModels('application/models');
   }
   
-
+    public function load_fixtures(){
+        echo "This will delete all existing data";
+        Doctrine_Manager::connection()->execute('SET FOREIGN_KEY_CHECKS = 0');
+        Doctrine::loadData(APPPATH . '/fixtures');
+    }
 }

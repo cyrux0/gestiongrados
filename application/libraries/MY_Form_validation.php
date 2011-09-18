@@ -4,16 +4,26 @@ class MY_Form_validation extends CI_Form_validation{
     function __construct(){
         parent::__construct();
     }
-    function unique($value, $field){
+  
+    function unique($value, $params){
         $CI =& get_instance();
-        $CI->form_validation->set_message('unique', 'The value given for %s already exists in database');
-        list($table, $column) = explode('.', $field, 2);
-        $c = $column[0];
-        $q = Doctrine_Query::create()->select('*')->from(ucwords($table) . ' ' . $table[0])->where($table[0] . '.' . $column  . ' = ' . '"' . $value . '"');
-        $result = $q->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
-        return empty($result);
+        $current_id = $CI->uri->segment(3);
+        $CI->form_validation->set_message('unique', 'The %s is already being used.');
+        list($model, $field) = explode('.', $params, 2);
+        $where = 'm.' . $field . ' = "' . $value . '"';
+        if($current_id){
+            $where = $where . ' AND ' . 'm.id != ' . $current_id;
+        }
+        
+        $q = Doctrine_Query::create()
+            ->select('m.id')->from($model . ' m')->where($where)->setHydrationMode(Doctrine::HYDRATE_ARRAY);
+        
+        if($q->execute()){
+            return false;
+        }else{
+            return true;
+        }
     }
-
     function alpha_ext($str){
         $str = strtolower($this->CI->config->item('charset')) != 'utf-8' ? utf8_encode($str) : $str;
                 $CI =& get_instance();

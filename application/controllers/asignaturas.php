@@ -105,6 +105,15 @@ class Asignaturas extends CI_Controller {
             redirect('titulaciones/index');
         }
     }
+    
+    private function _submit_validate(){
+        $this->form_validation->set_rules('codigo', 'Código', 'required|exact_length[3]|numeric');
+        $this->form_validation->set_rules('nombre', 'Nombre', 'required|min_length[5]|max_length[200]|alpha_numeric'); // Hay que crear la regla alpha_numeric_ext igual que la alpha_ext pero con números.
+        $this->form_validation->set_rules('creditos', 'Créditos', 'required|numeric|is_natural_no_zero');
+        $this->form_validation->set_rules('materia', 'Materia', 'required|min_length[3]|max_length[100]|alpha_ext');
+        $this->form_validation->set_rules('departamento', 'Departamento', 'required|min_length[3]|max_length[200]|alpha_ext');
+        $this->form_validation->set_rules('curso', 'Curso', 'required|is_natural_no_zero');
+    }
 }
 
 /* Fin archivo asignaturas.php */
