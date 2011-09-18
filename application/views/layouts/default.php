@@ -51,6 +51,14 @@
           </div>
       </div>
       -->
+      <div id="userbar">
+          <? if(!Current_User::loggedIn())
+               echo anchor('#', 'Login', 'id="login-button"');
+             else
+               echo "Logged as <em>" . Current_User::user()->username . "</em> " . anchor('logout', 'Logout');
+          ?>  
+    </div>
+      
       <div id="side_bar2">
           <ul class="menu collapsible">
               <li><?= anchor('#', 'Inicio') ?></li>
@@ -99,6 +107,16 @@
                       </li>
                   </ul>
               </li>
+              <? if(Current_User::loggedIn()): ?>
+              <li>
+                  <a href="#">Usuario</a>
+                  <ul class="acitem">
+                      <li>
+                          <?= anchor('users/edit', 'Cambiar contraseña/email') ?>
+                      </li>
+                  </ul>
+              </li>
+              <? endif; ?>  
               <li>
                   <a href="#">Configuración</a>
                   <ul class="acitem">
@@ -106,17 +124,16 @@
                       <li><?= anchor('#', 'Opciones/reset') ?></li>
                   </ul>
               </li>
-              <li><?= anchor('#', 'Login', 'id="login-button"') ?></li>
           </ul>
       </div>
       <div id="login-form" title="Login">
           <fieldset>
-              <form>
-                  <label for="user">Usuario:</label>
-                  <input name="user" type="text" class="text ui-widget-content ui-corner-all"/>
+              <?= form_open('login/submit') ?>
+                  <label for="username">Usuario:</label>
+                  <input name="username" type="text" class="text ui-widget-content ui-corner-all"/>
                   <label for="password">Password:</label>
                   <input type="password" name="password" class="text ui-widget-content ui-corner-all" />
-              </form>
+                <?= form_close() ?>
           </fieldset>
       </div>
         <div id="main_content">

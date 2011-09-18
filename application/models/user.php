@@ -17,7 +17,7 @@ class User extends Doctrine_Record {
     public function setTableDefinition() {
         $this->setTableName('users');
         $this->hasColumn('id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'primary' => true, 'autoincrement' => true, ));
-        $this->hasColumn('nombre', 'string', 16, array(
+        $this->hasColumn('username', 'string', 16, array(
 					    'type' => 'string',
 					    'length' => 18,
 				        'minlength' => 4,
@@ -28,10 +28,8 @@ class User extends Doctrine_Record {
 					    'autoincrement' => false,
 					    'unique' => true
 					    ));
-        $this->hasColumn('password', 'string', 18, array(
+        $this->hasColumn('password', 'string', 255, array(
 					    'type' => 'string',
-					    'length' => 18,
-				        'minlength' => 6,
 					    'fixed' => false,
 					    'unsigned' => false,
 					    'primary' => false,
@@ -46,6 +44,17 @@ class User extends Doctrine_Record {
         parent::setUp();
 
     }
+    
+    public function setPassword($password){
+        $this->_set('password', $this->encrypt($password));
+    }
 
+    public function isAuthenticated($password){
+        return $this->password == $this->encrypt($password);
+    }
+    
+    protected function encrypt($password){
+        return md5($password);
+    }
 }/* Fin del archivo user.php */
 

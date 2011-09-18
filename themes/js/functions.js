@@ -156,7 +156,7 @@ var login = {
                modal: true,
                buttons: {
                    'Entrar': function(){
-                        alert('No implementado aún');
+                        $('#login-form form').submit();
                         $(this).dialog("close");
                    },
                    'Cancelar': function(){
