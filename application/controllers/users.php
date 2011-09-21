@@ -22,9 +22,9 @@ class Users extends CI_Controller {
             $this->alerts = $user->getErrorStackAsString();
             $this->add();
         }
-         * 
-         * */
-        if($this->_submit_validate() == FALSE){
+         */
+        
+         if($this->_submit_validate() == FALSE){
             $this->add();
             return; 
         }else{
@@ -47,7 +47,7 @@ class Users extends CI_Controller {
             $this->add();
         }
          * */
-         if($this->_submit_validate()==FALSE){
+         if($this->_submit_validate() == FALSE){
              $this->edit();
              return;
          }

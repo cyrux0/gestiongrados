@@ -81,7 +81,7 @@ class Asignaturas extends CI_Controller {
         foreach($cursos as $curso){
             $options[$curso->id] = date_format(date_create($curso->inicio_semestre1), "Y") . '/' . date_format(date_create($curso->fin_semestre2), "Y");
         }
-        $action = 'asignaturas/create_carga/';
+        $action = 'planesdocentes/create/';
         $data['data'] = array('result' => $global, 'action' => $action);
         $data['nombre_asignatura'] = $this->asignaturas_table->find($asignatura_id)->nombre;
         $data['page_title'] = 'Añadiendo carga global';
@@ -89,22 +89,7 @@ class Asignaturas extends CI_Controller {
         $this->load->view('PlanDocente/add', $data);
     }
 
-    public function create_carga(){
-        $global = new PlanDocente;
-        $q = Doctrine_Query::create()->select('c.id')->from('Curso c')->orderBy('c.id desc')->limit(1);
-        $global->curso_id = $q->fetchOne();
-        $global->fromArray($this->input->post());
-        if(!$global->isValid()){
-            $this->alerts = $global->getErrorStackAsString();
-            $this->add_carga($this->input->post('asignatura_id'));
-            
-        }else{
-            $global->save();
-            $this->notices = 'Asignatura añadida correctamente';
-            $this->session->set_flashdata('notice', $this->notices);
-            redirect('titulaciones/index');
-        }
-    }
+
     
     private function _submit_validate(){
         $this->form_validation->set_rules('codigo', 'Código', 'required|exact_length[3]|numeric');

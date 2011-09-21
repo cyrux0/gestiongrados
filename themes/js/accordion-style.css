@@ -18,6 +18,11 @@ ul.menu a {
     text-decoration: none;
     -moz-border-radius-bottomleft: 5px;
     -moz-border-radius-topleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    behavior:url(border-radius.htc);
 }
 
 ul.menu li {

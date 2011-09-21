@@ -6,10 +6,6 @@ class Titulaciones extends CI_Controller {
         $this->titulaciones_table = Doctrine::getTable('Titulacion');
         $this->asignaturas_table = Doctrine::getTable('Asignatura');
         $this->layout = '';
-        $this->form_validation->set_rules('codigo', 'Código', 'required|trim|xss_clean|is_natural|exact_length[4]|unique[titulacion.codigo]');
-        $this->form_validation->set_rules('nombre', 'Nombre', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[200]|unique[titulacion.nombre]');
-        $this->form_validation->set_rules('creditos', 'Créditos', 'required|trim|xss_clean|is_natural');
-        $this->form_validation->set_rules('num_cursos', 'Número de cursos', 'required|trim|xss_clean|is_natural_no_zero');
         $this->notices = '';
         $this->alerts = '';
     }
@@ -45,7 +41,7 @@ class Titulaciones extends CI_Controller {
         $titulacion = new Titulacion;
         $titulacion -> fromArray($this -> input -> post());
 
-        if(!$titulacion->isValid()){
+        if($this->form_validation->_submit_validate()==FALSE or !$titulacion->isValid()){
             $this->alerts = $titulacion->getErrorStackAsString();
             if($this->input->post('remote') == "true"){
                 unset($this->layout);
@@ -93,7 +89,7 @@ class Titulaciones extends CI_Controller {
     public function update($id) {
         $titulacion = $this -> titulaciones_table -> find($id);
         $titulacion -> fromArray($this -> input -> post());
-        if(!$titulacion->isValid()){
+        if($this->form_validation->_submit_validate()==FALSE or !$titulacion->isValid()){
         	$this->alerts = $titulacion->getErrorStackAsString();
             $this->edit($id);
         }else{
@@ -108,6 +104,7 @@ class Titulaciones extends CI_Controller {
         $data['asignaturas'] = $this->asignaturas_table->findByTitulacion_id($id);
         $data['titulacion'] = $this->titulaciones_table->find($id);
         $data['page_title'] = 'INDEX ASIGNATURAS';
+        
         if($this->input->post('js')){
             unset($this->layout);
         }
@@ -120,6 +117,15 @@ class Titulaciones extends CI_Controller {
         $data['titulaciones'] = $titulaciones;
         $data['page_title'] = 'Planificación docente';
         $this->load->view('titulaciones/index_cargas', $data);
+    }
+    
+    private function _submit_validate(){
+        $this->form_validation->set_rules('codigo', 'Código', 'required|trim|xss_clean|is_natural|exact_length[4]|unique[titulacion.codigo]');
+        $this->form_validation->set_rules('nombre', 'Nombre', 'required|trim|xss_clean|alpha_ext|min_length[5]|max_length[200]|unique[titulacion.nombre]');
+        $this->form_validation->set_rules('creditos', 'Créditos', 'required|trim|xss_clean|is_natural');
+        $this->form_validation->set_rules('num_cursos', 'Número de cursos', 'required|trim|xss_clean|is_natural_no_zero');
+        
+        return $this->form_validation->run(); 
     }
 }
 

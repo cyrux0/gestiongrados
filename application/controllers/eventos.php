@@ -70,4 +70,13 @@ class Eventos extends CI_Controller{
         $eventos_json = json_encode($calendar_events);
         echo $eventos_json;
     }
+    
+    private function _submit_validate(){
+        $this->form_validation->set_rule('nombre_evento', 'trim|required|alpha_ext|min_length[5]|max_length[255]');
+        $this->form_validation->set_rule('fecha_inicial', 'trim|required');
+        if($this->input->post('fecha_individual')){
+            $this->form_validation->set_rule('fecha_final', 'trim|required');
+        }
+        return $this->form_validation->run();
+    }
 }

@@ -36,9 +36,13 @@ class PlanDocente extends Doctrine_Record {
         $this -> hasColumn('asignatura_id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'notnull' => true));
         $this -> hasColumn('curso_id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'notnull' => true));
         //Totales ¿poner?, ¿como?
-
-    }
-
+        $this->check('horas_semanales_teoria > horas_teoria');
+        $this->check('horas_semanales_problemas > horas_problemas');
+        $this->check('horas_semanales_informatica > horas_informatica');
+        $this->check('horas_semanales_lab > horas_lab');
+        $this->check('horas_semanales_campo > horas_campo');
+        
+}
     public function setUp() {
         $this -> hasOne('Asignatura', array('local' => 'asignatura_id', 'foreign' => 'id'));
         $this -> hasOne('Curso as curso', array('local' => 'curso_id', 'foreign' => 'id'));

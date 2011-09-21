@@ -4,10 +4,10 @@
 <div class="field">
   <label for="inicio_semestre1">Fechas primer semestre:</label>
   <input type="text" name="inicio_semestre1_format" class="datepicker_cursos" style="display:none" />
-  <input type="text" name="inicio_semestre1" id="inicio_semestre1" value="<?= $curso->inicio_semestre1 ?>" />
+  <input type="text" name="inicio_semestre1" id="inicio_semestre1" value="<?= set_value("inicio_semestre1", $curso->inicio_semestre1) ?>" />
   -
   <input type="text" name="fin_semestre1_format" class="datepicker_cursos" style="display:none"/>
-  <input type="text" name="fin_semestre1" id="fin_semestre1" value="<?= $curso->fin_semestre1 ?>" />
+  <input type="text" name="fin_semestre1" id="fin_semestre1" value="<?= set_value("fin_semestre1", $curso->fin_semestre1) ?>" />
 </div>
 <div class="field">
   <label for="inicio_semestre2">Fechas segundo semestre:</label>
