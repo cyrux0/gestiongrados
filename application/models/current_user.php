@@ -35,13 +35,10 @@ class Current_User{
             return FALSE;
     }
     
-    public static function loggedIn(){
+    public function loggedIn(){
         return self::user() ? TRUE : FALSE;
     }
     
-    public static function isAdmin(){
-        return self::loggedIn() and self::$user->admin == TRUE;
-    }
     
     public function __clone(){
         trigger_error('Clone is not allowed', E_USER_ERROR);

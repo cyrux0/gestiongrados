@@ -1,6 +1,6 @@
 <?php
 
-class PlanesDocentes extends CI_Controller{
+class PlanesDocentes extends MY_Controller{
   function __construct(){
     parent::__construct();
     $this->globales_table = Doctrine::getTable('PlanDocente');

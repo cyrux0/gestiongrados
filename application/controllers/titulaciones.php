@@ -1,5 +1,5 @@
 <?php
-class Titulaciones extends CI_Controller {
+class Titulaciones extends MY_Controller {
 
     function __construct() {
         parent::__construct();

@@ -2,13 +2,11 @@ User:
     Admin:
         username: Administrador
         password: 123456
-        admin: 1
-        planner: 1
+        security_level: 1
     Planner:
         username: planner
         password: 123456
-        admin: 0
-        planner: 1
+        security_level: 2
 Titulacion:
     Informatica:
         codigo: 1714

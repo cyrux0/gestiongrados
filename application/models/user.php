@@ -16,7 +16,15 @@ class User extends Doctrine_Record {
     
     public function setTableDefinition() {
         $this->setTableName('users');
-        $this->hasColumn('id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'primary' => true, 'autoincrement' => true, ));
+
+        $this->hasColumn('id', 'integer', 4, array('type' => 'integer', 
+                        'length' => 4, 
+                        'fixed' => false, 
+                        'unsigned' => false, 
+                        'primary' => true, 
+                        'autoincrement' => true 
+                        ));
+
         $this->hasColumn('username', 'string', 16, array(
 					    'type' => 'string',
 					    'length' => 18,
@@ -28,21 +36,26 @@ class User extends Doctrine_Record {
 					    'autoincrement' => false,
 					    'unique' => true
 					    ));
+
         $this->hasColumn('password', 'string', 255, array(
 					    'type' => 'string',
 					    'fixed' => false,
 					    'unsigned' => false,
 					    'primary' => false,
 		      		    'notnull' => true,
-					    'autoincrement' => false,
+					    'autoincrement' => false
 					    ));
-        $this->hasColumn('admin', 'bool', null, array('notnull' => false));
-        $this->hasColumn('planner', 'bool', null, array('notnull' => false));
+
+        $this->hasColumn('security_level', 'integer', 4, array(
+                        'notnull' => true, 
+                        'default' => 0, 
+                        'range' => array(0, 2)
+                        ));
+
     }
 
     public function setUp() {
         parent::setUp();
-
     }
     
     public function setPassword($password){

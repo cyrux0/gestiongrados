@@ -1,5 +1,5 @@
 <?php
-class Asignaturas extends CI_Controller {
+class Asignaturas extends MY_Controller {
     function __construct() {
         parent::__construct();
         $this->asignaturas_table = Doctrine::getTable('Asignatura');

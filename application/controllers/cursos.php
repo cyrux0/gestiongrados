@@ -1,6 +1,6 @@
 <?php
 
-class Cursos extends CI_Controller{
+class Cursos extends MY_Controller{
     function __construct(){
         parent::__construct();
         $this->layout = '';
