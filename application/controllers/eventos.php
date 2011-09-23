@@ -7,6 +7,7 @@ class Eventos extends MY_Controller{
         $this->eventos_table = Doctrine::getTable('Evento');
         $this->alerts = '';
         $this->notices = '';
+		$this->modelObject = null;
     }
         
     public function index($curso_id){
@@ -27,21 +28,20 @@ class Eventos extends MY_Controller{
     }
     
     public function create(){
-        $evento = new Evento();
+        $this->modelObject = new Evento();
         if(isset($_POST['fecha_individual'])){
             $_POST['fecha_individual'] = 1;
         }else{
             $_POST['fecha_individual'] = 0;
         }
-        $evento->fromArray($this->input->post());
-        if(!$evento->isValid()){
-            $this->alerts = $evento->getErrorStackAsString();
+        $this->modelObject->fromArray($this->input->post());
+        if($this->_submit_validate() == FALSE){
             $this->add($this->input->post('curso_id'));            
         }else{
-            $evento->save();
+            $this->modelObject->save();
             $this->notices = 'Evento añadido correctamente';
             $this->session->set_flashdata('notices', $this->notices);
-            redirect('eventos/index/' . $evento->curso_id);
+            redirect('eventos/index/' . $this->modelObject->curso_id);
         }
     }    
    
@@ -73,7 +73,7 @@ class Eventos extends MY_Controller{
     
     private function _submit_validate(){
         $this->form_validation->set_rule('nombre_evento', 'trim|required|alpha_ext|min_length[5]|max_length[255]');
-        $this->form_validation->set_rule('fecha_inicial', 'trim|required');
+        $this->form_validation->set_rule('fecha_inicial', 'trim|required|callback_doctrine_validation[fecha_inicial]');
         if($this->input->post('fecha_individual')){
             $this->form_validation->set_rule('fecha_final', 'trim|required');
         }
