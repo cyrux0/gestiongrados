@@ -41,8 +41,7 @@ class Titulaciones extends MY_Controller {
         $titulacion = new Titulacion;
         $titulacion -> fromArray($this -> input -> post());
 
-        if($this->form_validation->_submit_validate()==FALSE or !$titulacion->isValid()){
-            $this->alerts = $titulacion->getErrorStackAsString();
+        if($this->form_validation->_submit_validate()==FALSE){
             if($this->input->post('remote') == "true"){
                 unset($this->layout);
                 $this->output->set_content_type('application/json');
@@ -89,7 +88,7 @@ class Titulaciones extends MY_Controller {
     public function update($id) {
         $titulacion = $this -> titulaciones_table -> find($id);
         $titulacion -> fromArray($this -> input -> post());
-        if($this->form_validation->_submit_validate()==FALSE or !$titulacion->isValid()){
+        if($this->form_validation->_submit_validate()==FALSE){
         	$this->alerts = $titulacion->getErrorStackAsString();
             $this->edit($id);
         }else{

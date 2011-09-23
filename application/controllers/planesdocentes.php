@@ -16,10 +16,8 @@ class PlanesDocentes extends MY_Controller{
         $q = Doctrine_Query::create()->select('c.id')->from('Curso c')->orderBy('c.id desc')->limit(1);
         $global->curso_id = $q->fetchOne();
         $global->fromArray($this->input->post());
-        if($this->_submit_validate()==FALSE or !$global->isValid()){
-            $this->alerts = $global->getErrorStackAsString();
+        if($this->_submit_validate()==FALSE){
             $this->add_carga($this->input->post('asignatura_id'));
-            
         }else{
             $global->save();
             $this->notices = 'Asignatura añadida correctamente';
@@ -40,8 +38,7 @@ class PlanesDocentes extends MY_Controller{
     public function update($id){
         $global = $this->globales_table->find($id);
         $global->fromArray($this->input->post());
-        if($this->_submit_validate()==FALSE or !$global->isValid()){
-            $this->alerts = $global->getErrorStackAsString();
+        if($this->_submit_validate()==FALSE){
             $this->edit($id);
         }else{
             $global->save();
