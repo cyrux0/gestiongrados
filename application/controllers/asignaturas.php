@@ -8,6 +8,7 @@ class Asignaturas extends MY_Controller {
         $this -> layout = '';
         $this->notices = '';
         $this->alerts = '';
+        $this->modelObject = null;
     }
 
     public function add_to($id) {
@@ -21,13 +22,12 @@ class Asignaturas extends MY_Controller {
     }
 
     public function create(){
-        $asignatura = new Asignatura;
-        $asignatura->fromArray($this->input->post());
-        if(!$asignatura->isValid()){
-            $this->alerts = $asignatura->getErrorStackAsString();
+        $this->modelObject = new Asignatura;
+        $this->modelObject->fromArray($this->input->post());
+        if(!$this->_submit_validate()){
             $this->add_to($this->input->post('titulacion_id'));
         }else{
-            $asignatura->save();
+            $this->modelObject->save();
             $this->notices = 'Asignatura añadida correctamente';
             $this->session->set_flashdata('notice', $this->notices);
             redirect('titulaciones/show/' . $this->input->post('titulacion_id'));
@@ -53,16 +53,15 @@ class Asignaturas extends MY_Controller {
     }
 
     public function update($id) {
-        $asignatura = $this -> asignaturas_table -> find($id);
-        $asignatura -> fromArray($this -> input -> post());
-        if(!$asignatura->isValid()){
-            $this->alerts = $asignatura->getErrorStackAsString();    
+        $this->modelObject = $this -> asignaturas_table -> find($id);
+        $this->modelObject -> fromArray($this -> input -> post());
+        if(!$this->_submit_validate()){
             $this->edit($id);
         }else{
             $this->notices = 'Asignatura añadida correctamente';
             $this->session->set_flashdata('notice', $this->notices);
-            $asignatura -> save();
-            redirect('titulaciones/show/' . $asignatura -> titulacion_id);
+            $this->modelObject->save();
+            redirect('titulaciones/show/' . $this->modelObject->titulacion_id);
         }
     }
 
@@ -98,6 +97,8 @@ class Asignaturas extends MY_Controller {
         $this->form_validation->set_rules('materia', 'Materia', 'required|min_length[3]|max_length[100]|alpha_ext');
         $this->form_validation->set_rules('departamento', 'Departamento', 'required|min_length[3]|max_length[200]|alpha_ext');
         $this->form_validation->set_rules('curso', 'Curso', 'required|is_natural_no_zero');
+        
+        return $this->form_validation->run() && $this->modelObject->isValid();
     }
 }
 
