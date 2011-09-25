@@ -3,8 +3,12 @@
 class Calendar extends CI_Controller{
     public function index(){
         $this->layout='';
-        
-        $this->load->view('calendar/index', array('fecha_alt' => ''));
+        $prefs = array (
+               'show_next_prev'  => TRUE,
+               'next_prev_url'   => 'http://localhost/gestgrados/calendar/index'
+             );
+        $this->load->library('calendar', $prefs);
+        $this->load->view('calendar/index');
         
     }   
     
