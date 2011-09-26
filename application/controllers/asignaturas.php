@@ -9,6 +9,8 @@ class Asignaturas extends MY_Controller {
         $this->notices = '';
         $this->alerts = '';
         $this->modelObject = null;
+        $this->_filter(array('add_to', 'create', 'edit', 'update', 'delete', 'add_carga'), array($this, 'authenticate'), 1); // Sólo permitimos a un usuario de tipo administrador (1)
+        $this->_filter(array('add_carga'), array($this, 'authenticate'), 2); // Sólo se lo permitimos al usuario de tipo planner (2)
     }
 
     public function add_to($id) {
@@ -29,7 +31,7 @@ class Asignaturas extends MY_Controller {
         }else{
             $this->modelObject->save();
             $this->notices = 'Asignatura añadida correctamente';
-            $this->session->set_flashdata('notice', $this->notices);
+            $this->session->set_flashdata('notices', $this->notices);
             redirect('titulaciones/show/' . $this->input->post('titulacion_id'));
         }
     }

@@ -245,6 +245,6 @@ $(document).ready(function(){
             editable: true
         });
     });
-    setTimeout(function(){$(".notice").hide("slow");}, 3000);
+    
 
 });

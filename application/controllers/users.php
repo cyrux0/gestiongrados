@@ -7,6 +7,7 @@ class Users extends MY_Controller {
         $this->layout = '';
         $this->notices = '';
         $this->alerts = '';
+        $this->_filter(array('add', 'create', 'edit', 'update', 'delete'), array($this, 'authenticate'), 1); // Sólo admins
    }
 
     function add(){

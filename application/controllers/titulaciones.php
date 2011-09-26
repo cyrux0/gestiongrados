@@ -8,6 +8,7 @@ class Titulaciones extends MY_Controller {
         $this->layout = '';
         $this->notices = '';
         $this->alerts = '';
+        $this->_filter(array('add', 'create', 'delete', 'edit', 'update'), array($this, 'authenticate'), 1); // Sólo admin
     }
 
     public function index() {

@@ -8,6 +8,7 @@ class Eventos extends MY_Controller{
         $this->alerts = '';
         $this->notices = '';
 		$this->modelObject = null;
+        $this->_filter(array('add', 'create', 'delete'), array($this, 'authenticate'), 2); // Sólo al planner
     }
         
     public function index($curso_id){

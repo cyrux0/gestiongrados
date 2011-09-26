@@ -16,7 +16,7 @@ class MY_Controller extends CI_Controller{
         }
     }    
     protected function access_denied(){
-        redirect('logout');
+        $this->session->sess_destroy();
         $this->session->set_flashdata('notices', 'Access denied, please log in to continue.');
         redirect('login');
     }
@@ -37,5 +37,11 @@ class MY_Controller extends CI_Controller{
             return TRUE;
         }
         
+    }
+    
+    protected function _filter($actions, $callback, $callback_args){
+        if(in_array($this->router->method, $actions)){
+            call_user_func($callback, $callback_args);
+        }
     }
 }

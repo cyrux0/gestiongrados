@@ -8,6 +8,8 @@ class Cursos extends MY_Controller{
         $this->alerts = '';
         $this->notices = '';
         $this->modelObject = '';
+        $this->_filter(array('add', 'create', 'edit', 'update', 'delete'), array($this, 'authenticate'), array(1)); // Sólo admin
+        
     }
 
     public function add(){

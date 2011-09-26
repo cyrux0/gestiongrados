@@ -9,6 +9,7 @@ class PlanesDocentes extends MY_Controller{
     $this->layout = '';
     $this->alerts = '';
     $this->notices = '';
+    $this->_filter(array('create', 'edit', 'update', 'delete', 'load'), array($this, 'authenticate'), 2); // Sólo al planner 
   }
 
     public function create(){
