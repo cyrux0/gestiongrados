@@ -74,17 +74,24 @@ class Cursos extends MY_Controller{
         }
     }
 
+/*
     public function index(){
         $cursos = $this->cursos_table->findAll();
         $this->load->view('cursos/index', array('cursos' => $cursos));
     }
-
+*/
     public function delete($id){
         $cursos = $this->cursos_table->find($id);
         $cursos->eventos->delete();
         $cursos->planesdocentes->delete();
         $cursos->delete();
         redirect('cursos/index');
+    }
+    
+    public function select_curso($controller, $action){
+        $controller_action = $controller . '/' . $action;
+        $cursos = $this->cursos_table->findAll();
+        $this->load->view('cursos/index', array('cursos' => $cursos, 'action' => $controller_action));
     }
     
     private function _submit_validate(){
