@@ -88,10 +88,10 @@ class Cursos extends MY_Controller{
         redirect('cursos/index');
     }
     
-    public function select_curso($controller, $action){
-        $controller_action = $controller . '/' . $action;
+    public function select_curso(){
+        list($controller, $action, $route) = explode('/', $this->uri->uri_string(), 3);
         $cursos = $this->cursos_table->findAll();
-        $this->load->view('cursos/index', array('cursos' => $cursos, 'action' => $controller_action));
+        $this->load->view('cursos/index', array('cursos' => $cursos, 'action' => $route));
     }
     
     private function _submit_validate(){

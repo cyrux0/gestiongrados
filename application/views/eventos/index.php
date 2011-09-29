@@ -10,5 +10,7 @@
 <?= site_url('eventos/fetch_events/' . $this->uri->segment(3)) ?>
 </div>
 
+<? if(Current_User::logged_in(2)): ?>
 <?= anchor('eventos/add/' . $curso_id, 'Añadir un nuevo evento') ?>
+<? endif; ?>
 

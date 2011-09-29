@@ -100,22 +100,25 @@ class Titulaciones extends MY_Controller {
         }
     }
 
-    public function show($id) {
+    public function show($id, $id_curso = '') {
+        
         $data['asignaturas'] = $this->asignaturas_table->findByTitulacion_id($id);
         $data['titulacion'] = $this->titulaciones_table->find($id);
         $data['page_title'] = 'INDEX ASIGNATURAS';
-        
+        $data['id_curso'] = $id_curso;
         if($this->input->post('js')){
             unset($this->layout);
         }
         $this -> load -> view('titulaciones/show', $data);
     }
     
-    public function index_cargas(){
+    public function index_cargas($id_curso){
+        if(!$id_curso) redirect('cursos/select_curso/titulaciones/index_cargas');
         $titulaciones = $this -> titulaciones_table -> findAll();
         //Conseguimos los items mediante el modelo
         $data['titulaciones'] = $titulaciones;
         $data['page_title'] = 'Planificación docente';
+        $data['id_curso'] = $id_curso;
         $this->load->view('titulaciones/index_cargas', $data);
     }
     

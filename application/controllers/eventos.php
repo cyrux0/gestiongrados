@@ -12,6 +12,7 @@ class Eventos extends MY_Controller{
     }
         
     public function index($curso_id){
+        if(!$curso_id) redirect('cursos/select_curso/eventos/index');
         //Obtener todas las fechas, ordenar por fecha inicial y mostrarlas en una lista, con un botón para borrarlas.
         $q = Doctrine_Query::create()->select('e.*')->from('Evento e')->where('e.curso_id = ' . $curso_id)->orderBy('e.fecha_inicial');
         $eventos = $q->execute();
@@ -20,6 +21,7 @@ class Eventos extends MY_Controller{
     }
     
     public function add($curso_id){
+        if(!$curso_id) redirect('cursos/select_curso/eventos/index');
         //TO-DO Permitir añadir un evento
         $evento = new Evento();
         $evento->curso_id = $curso_id;

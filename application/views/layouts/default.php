@@ -52,7 +52,7 @@
       </div>
       -->
       <div id="userbar">
-          <? if(!Current_User::loggedIn())
+          <? if(!Current_User::logged_in())
                echo anchor('#', 'Login', 'id="login-button"');
              else
                echo "Logged as <em>" . Current_User::user()->username . "</em> " . anchor('logout', 'Logout');
@@ -65,16 +65,19 @@
               <li><?= anchor('#', 'Titulaciones') ?>
                   <ul class="acitem">
                       <li><?= anchor('titulaciones/index', 'Ver titulaciones') ?></li>
-                      <li><?= anchor('titulaciones/add', 'Añadir titulaciones') ?></li>
+                      <? if(Current_User::logged_in(1)): ?>
+                          <li><?= anchor('titulaciones/add', 'Añadir titulaciones') ?></li>
+                      <? endif; ?>
                   </ul>
               </li>
               <li><?= anchor('#', 'Asignaturas') ?>
                   <ul class="acitem">
                       <li>
-                          <?= anchor('titulaciones/index', 'Añadir asignaturas') ?>
+                          <?= anchor('titulaciones/index', 'Asignaturas') ?>
                       </li>
                   </ul>
               </li>
+              <? if(Current_User::logged_in(1)): ?>
               <li>
                   <?= anchor('#', 'Cursos') ?>
                   <ul class="acitem">
@@ -83,17 +86,21 @@
                       </li>
                   </ul>
               </li>
+              <? endif; ?>
+              <? if(Current_User::logged_in(2)): ?>
               <li><?= anchor('#', 'Planificación Docente') ?>
                   <ul class="acitem">
-                      <li><?= anchor('titulaciones/index_cargas', 'Añadir Cargas') ?></li>
-                      <li><?= anchor('#', 'Duplicar carga') ?></li>
+                      <li><?= anchor('cursos/select_curso/titulaciones/index_cargas', 'Añadir Cargas') ?></li>
                   </ul>
               </li>
+              <? endif; ?>
               <li>
                   <a href="#">Calendario</a>
                   <ul class="acitem">
-                      <li><?= anchor('eventos/index', 'Ver calendario') ?></li> <!-- Falta añadir el curso actual -->
-                      <li><?= anchor('eventos/add', 'Añadir Evento') ?></li> <!-- Falta añadir el curso actual -->
+                      <li><?= anchor('cursos/select_curso/eventos/index', 'Ver calendario') ?></li> <!-- Falta añadir el curso actual -->
+                    <? if(Current_User::logged_in(2)): ?>
+                      <li><?= anchor('cursos/select_curso/eventos/add', 'Añadir Evento') ?></li> <!-- Falta añadir el curso actual -->
+                    <? endif; ?>  
                   </ul>
               </li>
               <li>
@@ -107,7 +114,7 @@
                       </li>
                   </ul>
               </li>
-              <? if(Current_User::loggedIn()): ?>
+              <? if(Current_User::logged_in()): ?>
               <li>
                   <a href="#">Usuario</a>
                   <ul class="acitem">

@@ -8,7 +8,7 @@ class MY_Controller extends CI_Controller{
     
     //Usar como filtro
     public function authenticate($security_level){
-        if($u = Current_User::user() and $u->security_level == $security_level){
+        if(Current_User::logged_in($security_level)){
             return true;
         }else{
             $this->access_denied();
