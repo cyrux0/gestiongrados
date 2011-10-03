@@ -11,20 +11,20 @@ class Eventos extends MY_Controller{
         $this->_filter(array('add', 'create', 'delete'), array($this, 'authenticate'), 2); // Sólo al planner
     }
         
-    public function index($curso_id){
-        if(!$curso_id) redirect('cursos/select_curso/eventos/index');
+    public function index($id_curso){
+        if(!$id_curso) redirect('cursos/select_curso/eventos/index');
         //Obtener todas las fechas, ordenar por fecha inicial y mostrarlas en una lista, con un botón para borrarlas.
-        $q = Doctrine_Query::create()->select('e.*')->from('Evento e')->where('e.curso_id = ' . $curso_id)->orderBy('e.fecha_inicial');
+        $q = Doctrine_Query::create()->select('e.*')->from('Evento e')->where('e.curso_id = ' . $id_curso)->orderBy('e.fecha_inicial');
         $eventos = $q->execute();
         $calendar_events = array(); 
-        $this->load->view('eventos/index', array('eventos' => $eventos, 'curso_id' => $curso_id));
+        $this->load->view('eventos/index', array('eventos' => $eventos, 'id_curso' => $id_curso));
     }
     
-    public function add($curso_id){
-        if(!$curso_id) redirect('cursos/select_curso/eventos/index');
+    public function add($id_curso){
+        if(!$id_curso) redirect('cursos/select_curso/eventos/add');
         //TO-DO Permitir añadir un evento
         $evento = new Evento();
-        $evento->curso_id = $curso_id;
+        $evento->curso_id = $id_curso;
         $options = array_combine($evento->tipo_evento_values, array('Festivo', 'Vacaciones', 'Evento especial laborable'));
         $action = 'eventos/create';
         $this->load->view('eventos/add', array('page_title' => 'Nuevo evento', 'data' => array('evento'=> $evento, 'action' => $action, 'options' => $options)));
@@ -38,13 +38,27 @@ class Eventos extends MY_Controller{
             $_POST['fecha_individual'] = 0;
         }
         $this->modelObject->fromArray($this->input->post());
+
         if($this->_submit_validate() == FALSE){
-            $this->add($this->input->post('curso_id'));            
+            if($this->input->post('remote')){
+                unset($this->layout);
+                $data['errors'] = validation_errors('<p class="alert">', '</p>');
+                echo json_encode($data);
+            }else{
+                $this->add($this->input->post('curso_id'));
+            }            
         }else{
             $this->modelObject->save();
-            $this->notices = 'Evento añadido correctamente';
-            $this->session->set_flashdata('notices', $this->notices);
-            redirect('eventos/index/' . $this->modelObject->curso_id);
+            if($this->input->post('remote')){
+                unset($this->layout);
+                $array_event = $this->modelObject->toArray();
+                $array_event['success'] = "true";
+                echo json_encode($array_event);
+            }else{
+                $this->notices = 'Evento añadido correctamente';
+                $this->session->set_flashdata('notices', $this->notices);
+                redirect('eventos/index/' . $this->modelObject->curso_id);
+            }
         }
     }    
    
@@ -75,10 +89,10 @@ class Eventos extends MY_Controller{
     }
     
     private function _submit_validate(){
-        $this->form_validation->set_rule('nombre_evento', 'trim|required|alpha_ext|min_length[5]|max_length[255]');
-        $this->form_validation->set_rule('fecha_inicial', 'trim|required|callback_doctrine_validation[fecha_inicial]');
+        $this->form_validation->set_rules('nombre_evento', 'Nombre del evento', 'trim|required|alpha_ext|min_length[5]|max_length[255]');
+        $this->form_validation->set_rules('fecha_inicial', 'Fecha de inicio del evento', 'trim|required|callback__doctrine_validation[fecha_inicial]');
         if($this->input->post('fecha_individual')){
-            $this->form_validation->set_rule('fecha_final', 'trim|required');
+            $this->form_validation->set_rules('fecha_final', 'Fecha de finalización del evento', 'trim|required');
         }
         return $this->form_validation->run();
     }

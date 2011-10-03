@@ -21,7 +21,7 @@ class MY_Controller extends CI_Controller{
         redirect('login');
     }
     
-    protected function doctrine_validation($value, $field){
+    public function _doctrine_validation($value, $field){
         $this->modelObject->isValid();
         $error_stack = $this->modelObject->getErrorStack();
         $errors = $error_stack->get($field);

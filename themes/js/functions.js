@@ -199,12 +199,184 @@ var cargas = {
         });
     }
 }
+
+var fullcalendar;
+
+var calendar = {
+    initialize: function(){
+
+        $('#form_add_event').hide();
+
+        var url = $('#calendar_eventos_index').html();
+        $('#calendar_eventos_index').html('');
+
+        $.getJSON(url, function(data){
+            fullcalendar = $('#calendar_eventos_index').fullCalendar({
+                height: 400,
+                aspect_ratio: 1,
+                theme: true,
+                selectable: true,
+                firstDay: 1,
+                events: data,
+                editable: true,
+                select: calendar.selectHandler,
+                eventClick: calendar.eventClick
+            });  
+        });
+    },
+    
+    selectHandler: function(start, end, allDay){
+        startDate = new Date(start);
+        endDate = new Date(end);
+        var $dialogContent = $('#form_add_event');
+        var startDay = startDate.getDate();
+        var startMonth = startDate.getMonth()+1; 
+        var startYear = startDate.getFullYear();
+        
+        var endDay= endDate.getDate();
+        var endMonth = endDate.getMonth()+1; 
+        var endYear = endDate.getFullYear();
+        
+        //resetForm($dialogContent); //Crear función resetForm
+        var startField = $dialogContent.find('#start_date_holder').html(startDay + "-" + startMonth + "-" + startYear );
+        var endField = $dialogContent.find('#end_date_holder').html(endDay + "-" + endMonth + "-" + endYear );
+        $dialogContent.find("input[name='fecha_inicial']").val(startYear + "-" + startMonth + "-" + startDay);
+        $dialogContent.find("input[name='fecha_final']").val(endYear + "-" + startMonth + "-" + endDay);
+        $dialogContent.find("input[name='nombre_evento']").val("").removeAttr("disabled");
+        $dialogContent.dialog({
+            modal: true,
+            title: "Nuevo evento",
+            close: function(){
+                $dialogContent.dialog("destroy");
+                $dialogContent.hide();
+                $('.alert').remove();
+               // $('#calendar').fullcalendar(); //BORRAR EVENTOS NO SALVADOS
+            },
+            
+            buttons: {
+                Guardar: function(){
+
+                    var url = $('#form_add_event form').attr("action");
+                    var options = {
+                        data:    {'remote': 'true', 'tipo_evento' : 'festivo'},
+                        dataType: 'json',
+                        success: function(data, textStatus, jqXHR){
+                            if(data.success == "true"){
+                                $dialogContent.dialog("close");
+                                eventObject = {
+                                    id: data.id,
+                                    start: start,
+                                    end: end,
+                                    title: data.nombre_evento
+                                };
+                                fullcalendar.fullCalendar('renderEvent', eventObject, true);
+                            }else{
+                                $('#form_add_event').prepend(data.errors);
+                                
+                            }
+                        },//Función a la que llamar para actualizar el calendario
+                        url: url,
+                        type: 'post'
+                    }
+                    
+                    $('#form_add_event form').ajaxSubmit(options);
+                    
+                },
+                
+                Cancelar: function(){
+                    $dialogContent.dialog("close");
+                }
+            }
+        });
+        
+    },
+    
+    eventClick: function(calEvent, jsEvent, view){
+        startDate = new Date(calEvent.start);
+        endDate = new Date(calEvent.end);
+        var $dialogContent = $('#form_add_event');
+        var startDay = startDate.getDate();
+        var startMonth = startDate.getMonth()+1; 
+        var startYear = startDate.getFullYear();
+        
+        var endDay= endDate.getDate();
+        var endMonth = endDate.getMonth()+1; 
+        var endYear = endDate.getFullYear();
+        
+        //resetForm($dialogContent); //Crear función resetForm
+        var startField = $dialogContent.find('#start_date_holder').html(startDay + "-" + startMonth + "-" + startYear );
+        var endField = $dialogContent.find('#end_date_holder').html(endDay + "-" + endMonth + "-" + endYear );
+        $dialogContent.find("input[name='fecha_inicial']").val(startYear + "-" + startMonth + "-" + startDay);
+        $dialogContent.find("input[name='fecha_final']").val(endYear + "-" + startMonth + "-" + endDay);
+        $dialogContent.find("input[name='nombre_evento']").val(calEvent.title).attr("disabled", "disabled");
+        $dialogContent.dialog({
+            modal: true,
+            title: "Ver evento",
+            close: function(){
+                $dialogContent.dialog("destroy");
+                $dialogContent.hide();
+               // $('#calendar').fullcalendar(); //BORRAR EVENTOS NO SALVADOS
+            },
+            
+            buttons: {
+                Borrar: function(){
+                    var url = $('#delete_url').html();
+                    url = url + '/' + calEvent.id;
+                    var options = {
+                        url: url
+                    };
+                    
+                    $.ajax(options);
+                    fullcalendar.fullCalendar("removeEvents", calEvent.id);
+                    $dialogContent.dialog("close");
+                },
+                
+                Cancelar: function(){
+                    $dialogContent.dialog("close");
+                }
+            }
+        });
+    }
+    
+}
+
+// EN PRUEBAS
+var horarios = {
+    
+    initialize: function(){
+            $("#calendar").fullCalendar({
+            weekends: false,
+            header: {
+                left: 'title',
+                center: '',
+                right: 'prev'
+            },
+            defaultView: 'agendaWeek',
+            titleFormat: false,
+            columnFormat: {
+                week: 'ddd'
+            },
+            allDaySlot: false,
+            minTime: 9,
+            maxTime: 22,
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+            events: [{
+                title: 'prueba',
+                start: new Date(),
+                end: new Date(),
+                allDay:false
+            }]
+        });
+    }
+} 
 $(document).ready(function(){
     titulaciones.initialize();
     cursos.initialize();
     eventos.initialize();
     login.initialize();
     cargas.initialize();
+    calendar.initialize();
     var icons = {
         header: "ui-icon-circle-arrow-e",
         headerSelected: "ui-icon-circle-arrow-s"
@@ -222,29 +394,7 @@ $(document).ready(function(){
         return false;
     }).next().hide();
     
-    $("#calendar").fullCalendar({
-        weekends: false,
-        header: {left: 'title', center: '', right: 'prev'},
-        defaultView: 'agendaWeek',
-        titleFormat: false,
-        columnFormat: {week: 'ddd'},
-        allDaySlot: false,
-        minTime: 9,
-        maxTime: 22,
-        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
-        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-        events: [{title: 'prueba', start: new Date(), end: new Date(), allDay:false}]
-    });
     
-    var url = $('#calendar_eventos_index').html();
-    $('#calendar_eventos_index').html('');
-    $.getJSON(url, function(data){
-        $('#calendar_eventos_index').fullCalendar({
-            firstDay: 1,
-            events: data,
-            editable: true
-        });
-    });
     
 
 });
