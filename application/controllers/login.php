@@ -3,14 +3,15 @@
 class Login extends MY_Controller{
     
     public function index(){
+        $this->session->keep_flashdata('notices');
         $this->load->view('login/form');
         $this->layout = '';
     }
     
     public function submit(){
-        
+        $url = $this->session->userdata('prevurl') ?: '/' ;
         if($this->_authenticate()){
-            redirect('/');
+            redirect($url);
         }else{
             $this->index();
             return FALSE;

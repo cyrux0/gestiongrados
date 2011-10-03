@@ -101,7 +101,7 @@ class Titulaciones extends MY_Controller {
     }
 
     public function show($id, $id_curso = '') {
-        
+        if(!$id_curso) redirect('cursos/select_curso/titulaciones/show/' . $id);
         $data['asignaturas'] = $this->asignaturas_table->findByTitulacion_id($id);
         $data['titulacion'] = $this->titulaciones_table->find($id);
         $data['page_title'] = 'INDEX ASIGNATURAS';

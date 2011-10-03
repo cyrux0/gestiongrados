@@ -1,8 +1,4 @@
 <?php echo form_open($action, '');?>
-<div class="field">
-    <div class="field">
-        <?= form_dropdown('curso_id', $options, $result->curso_id) ?>
-    </div>
 <table>
     <tr>
         <td>Actividad</td>
@@ -106,6 +102,7 @@
         </td>
     </tr>
 </table>
-</div>
+<div class="actions">
 <?php echo form_submit('add_asig_submit', 'Enviar'); ?> | <?= anchor('titulaciones/show/' . $result->Asignatura->titulacion_id, 'Cancelar') ?>
+</div>
 <?php echo form_close(); ?>

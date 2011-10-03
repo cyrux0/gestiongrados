@@ -9,7 +9,7 @@ class Asignaturas extends MY_Controller {
         $this->notices = '';
         $this->alerts = '';
         $this->modelObject = null;
-        $this->_filter(array('add_to', 'create', 'edit', 'update', 'delete', 'add_carga'), array($this, 'authenticate'), 1); // Sólo permitimos a un usuario de tipo administrador (1)
+        $this->_filter(array('add_to', 'create', 'edit', 'update', 'delete'), array($this, 'authenticate'), 1); // Sólo permitimos a un usuario de tipo administrador (1)
         $this->_filter(array('add_carga'), array($this, 'authenticate'), 2); // Sólo se lo permitimos al usuario de tipo planner (2)
     }
 
@@ -75,19 +75,15 @@ class Asignaturas extends MY_Controller {
         redirect('titulaciones/show/' . $titulacion_id);
         }
 
-    public function add_carga($asignatura_id){
+    public function add_carga($asignatura_id, $id_curso = ''){
+        if(!$id_curso) redirect('cursos/select_curso/asignaturas/add_carga/' . $id );
         $global = new PlanDocente;
         $global->asignatura_id = $asignatura_id;
-        $cursos = $this->cursos_table->findAll();
-        $options = array();
-        foreach($cursos as $curso){
-            $options[$curso->id] = date_format(date_create($curso->inicio_semestre1), "Y") . '/' . date_format(date_create($curso->fin_semestre2), "Y");
-        }
+        $global->curso_id = $id_curso;
         $action = 'planesdocentes/create/';
         $data['data'] = array('result' => $global, 'action' => $action);
         $data['nombre_asignatura'] = $this->asignaturas_table->find($asignatura_id)->nombre;
         $data['page_title'] = 'Añadiendo carga global';
-        $data['options'] = $options;
         $this->load->view('PlanDocente/add', $data);
     }
 
