@@ -344,30 +344,59 @@ var calendar = {
 var horarios = {
     
     initialize: function(){
-            $("#calendar").fullCalendar({
-            weekends: false,
-            header: {
-                left: 'title',
-                center: '',
-                right: 'prev'
-            },
-            defaultView: 'agendaWeek',
-            titleFormat: false,
-            columnFormat: {
-                week: 'ddd'
-            },
-            allDaySlot: false,
-            minTime: 9,
-            maxTime: 22,
-            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
-            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-            events: [{
-                title: 'prueba',
-                start: new Date(),
-                end: new Date(),
-                allDay:false
-            }]
+            $("#asignaturas div.external-event").each(function(){
+
+                var eventObject = {
+                    // Aquí habría que llamar a un fetch object o algo así que devolviera la información. Al menos el id y la duración. Aquí es donde hay que tener en cuenta el slot mínimo.
+                    title: $(this).text()
+                };
+                
+                $(this).data('eventObject', eventObject);
+                
+                $(this).draggable({
+                    zIndex: 999,
+                    revert: true,
+                    revertDuration: 0
+                });
+                
+            });
+            
+            $("#horario").fullCalendar({
+                theme: true,
+                weekends: false,
+                header: {
+                    left: 'title',
+                    center: '',
+                    right: ''
+                },
+                defaultView: 'agendaWeek',
+                titleFormat: false,
+                columnFormat: {
+                    week: 'ddd'
+                },
+                editable: true,
+                disableResizing: true,
+                droppable: true,
+                allDaySlot: false,
+                minTime: 9,
+                maxTime: 22,
+                height: 400,
+                aspect_ratio: 1,
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                drop: function(date, allDay){
+                    var originalObject = $(this).data('eventObject');
+                    var copiedEventObject = $.extend({}, originalObject);
+                    copiedEventObject.start = date;
+                    copiedEventObject.allDay = false;
+                    $('#horario').fullCalendar('renderEvent', copiedEventObject, true);
+                    
+                    $(this).remove();
+                }
         });
+        
+        $('#horario').fullCalendar('gotoDate', 1950); // Nos vamos a ese año para no mostrar resaltada la fecha de hoy, luego da igual por que en teoría no se guarda la fecha, solo la hora. Luego claro en el PHP habrá que parsear sólo la hora.
+        // Para salvar los eventos en la BD llamamos a clientEvents y lo mandamos a una acción de un controlador.
     }
 } 
 $(document).ready(function(){
@@ -377,6 +406,7 @@ $(document).ready(function(){
     login.initialize();
     cargas.initialize();
     calendar.initialize();
+    horarios.initialize();
     var icons = {
         header: "ui-icon-circle-arrow-e",
         headerSelected: "ui-icon-circle-arrow-s"

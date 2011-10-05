@@ -244,3 +244,21 @@ h2.current{
 #main_content h2.actrigger a:hover{
     background-color: transparent;
 }
+
+#asignaturas {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #CCCCCC;
+    float: left;
+    padding: 0 10px;
+    text-align: left;
+    width: 150px;
+}
+
+.external-event {
+    background: none repeat scroll 0 0 #3366CC;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin: 10px 0;
+    padding: 2px 4px;
+}
