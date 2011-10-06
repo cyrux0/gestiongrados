@@ -95,7 +95,7 @@ class Curso extends Doctrine_Record {
 
     public function setUp() {
         parent::setUp();
-        $this -> hasMany('PlanDocente as planesdocentes', array('local' => 'id', 'foreign' => 'curso_id', 'onDelete' => 'CASCADE'));
+        $this -> hasMany('PlanDocente as planesdocentes', array('local' => 'id', 'foreign' => 'id_curso', 'onDelete' => 'CASCADE'));
         $this -> hasMany('Evento as eventos', array('local' => 'id', 'foreign' => 'curso_id', 'onDelete' => 'CASCADE'));
     }
 
