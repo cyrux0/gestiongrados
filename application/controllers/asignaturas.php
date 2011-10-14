@@ -75,14 +75,14 @@ class Asignaturas extends MY_Controller {
         redirect('titulaciones/show/' . $titulacion_id);
         }
 
-    public function add_carga($asignatura_id, $id_curso = ''){
-        if(!$id_curso) redirect('cursos/select_curso/asignaturas/add_carga/' . $id );
+    public function add_carga($id_asignatura, $id_curso = ''){
+        if(!$id_curso) redirect('cursos/select_curso/asignaturas/add_carga/' . $id_asignatura );
         $global = new PlanDocente;
-        $global->asignatura_id = $asignatura_id;
-        $global->curso_id = $id_curso;
+        $global->id_asignatura = $id_asignatura;
+        $global->id_curso = $id_curso;
         $action = 'planesdocentes/create/';
         $data['data'] = array('result' => $global, 'action' => $action);
-        $data['nombre_asignatura'] = $this->asignaturas_table->find($asignatura_id)->nombre;
+        $data['nombre_asignatura'] = $this->asignaturas_table->find($id_asignatura)->nombre;
         $data['page_title'] = 'Añadiendo carga global';
         $this->load->view('PlanDocente/add', $data);
     }
@@ -92,6 +92,7 @@ class Asignaturas extends MY_Controller {
     private function _submit_validate(){
         $this->form_validation->set_rules('codigo', 'Código', 'required|exact_length[3]|numeric');
         $this->form_validation->set_rules('nombre', 'Nombre', 'required|min_length[5]|max_length[200]|alpha_numeric'); // Hay que crear la regla alpha_numeric_ext igual que la alpha_ext pero con números.
+        $this->form_validation->set_rules('abreviatura', 'Abreviatura', 'required|min_length[1]|max_length[5]|alpha_numeric');
         $this->form_validation->set_rules('creditos', 'Créditos', 'required|numeric|is_natural_no_zero');
         $this->form_validation->set_rules('materia', 'Materia', 'required|min_length[3]|max_length[100]|alpha_ext');
         $this->form_validation->set_rules('departamento', 'Departamento', 'required|min_length[3]|max_length[200]|alpha_ext');

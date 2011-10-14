@@ -1,4 +1,45 @@
-asignatura:
+CiSessions:
+  connection: default
+  tableName: ci_sessions
+  columns:
+    session_id:
+      type: string(40)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+      notnull: true
+    ip_address:
+      type: string(16)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    user_agent:
+      type: string(120)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    last_activity:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    user_data:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+Asignaturas:
   connection: default
   tableName: asignaturas
   columns:
@@ -44,30 +85,581 @@ asignatura:
       primary: false
       notnull: true
       autoincrement: false
-    horas_presen:
+    curso:
       type: integer(4)
       fixed: false
-      unsigned: false
+      unsigned: true
       primary: false
       notnull: true
       autoincrement: false
-    horas_no_presen:
-      type: integer(4)
+    semestre:
+      type: string(255)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
     titulacion_id:
-      type: integer(8)
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
       notnull: true
-      unsigned: true
+      autoincrement: false
   relations:
-    Titulacion:
+    Titulaciones:
       local: titulacion_id
       foreign: id
       type: one
-titulacion:
+    Lineashorarios:
+      local: id
+      foreign: id_asignatura
+      type: many
+    Planesdocentes:
+      local: id
+      foreign: id_asignatura
+      type: many
+Calendarios:
+  connection: default
+  tableName: calendarios
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      notnull: true
+    codigo:
+      type: string(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+CargasSemanales:
+  connection: default
+  tableName: cargas_semanales
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      notnull: true
+    num_semana:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    horas_teoria:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    horas_problemas:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    horas_informatica:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    horas_lab:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    horas_campo:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    entrega_trabajo:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    examen:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    plandocente_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Planesdocentes:
+      local: plandocente_id
+      foreign: id
+      type: one
+
+Cursos:
+  connection: default
+  tableName: cursos
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      notnull: true
+    num_semanas_teoria:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    num_semanas_semestre1:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    num_semanas_semestre2:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    horas_por_credito:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    slot_minimo:
+      type: time(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '01:00:00'
+      notnull: true
+      autoincrement: false
+    hora_inicial:
+      type: time(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '09:00:00'
+      notnull: true
+      autoincrement: false
+    hora_final:
+      type: time(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '22:00:00'
+      notnull: true
+      autoincrement: false
+    inicio_semestre1:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fin_semestre1:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    inicio_semestre2:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fin_semestre2:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    inicio_examenes_enero:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fin_examenes_enero:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    inicio_examenes_junio:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fin_examenes_junio:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    inicio_examenes_sept:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fin_examenes_sept:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Eventos:
+      local: id
+      foreign: curso_id
+      type: many
+    Horarios:
+      local: id
+      foreign: id_curso
+      type: many
+    Planesdocentes:
+      local: id
+      foreign: id_curso
+      type: many
+Eventos:
+  connection: default
+  tableName: eventos
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      notnull: true
+    nombre_evento:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_evento:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha_individual:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha_inicial:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha_final:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    curso_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Cursos:
+      local: curso_id
+      foreign: id
+      type: one
+Horarios:
+  connection: default
+  tableName: horarios
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      notnull: true
+    id_curso:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    id_titulacion:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    num_curso_titulacion:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    num_grupo_titulacion:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Cursos:
+      local: id_curso
+      foreign: id
+      type: one
+    Titulaciones:
+      local: id_titulacion
+      foreign: id
+      type: one
+    Lineashorarios:
+      local: id
+      foreign: id_horario
+      type: many
+Lineashorarios:
+  connection: default
+  tableName: lineashorarios
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      notnull: true
+    id_horario:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    id_asignatura:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    hora_inicial:
+      type: time(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    hora_final:
+      type: time(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    dia_semana:
+      type: integer(1)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: false
+      autoincrement: false
+    slot_minimo:
+      type: float(18)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    actividad:
+      type: enum(11)
+      fixed: false
+      unsigned: false
+      values:
+        - teoria
+        - lab
+        - problemas
+        - informatica
+        - campo
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Asignaturas:
+      local: id_asignatura
+      foreign: id
+      type: one
+    Horarios:
+      local: id_horario
+      foreign: id
+      type: one
+Planactividades:
+  connection: default
+  tableName: planactividades
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      notnull: true
+    id_plandocente:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    actividad:
+      type: enum(11)
+      fixed: false
+      unsigned: false
+      values:
+        - teoria
+        - lab
+        - problemas
+        - informatica
+        - campo
+      primary: false
+      notnull: true
+      autoincrement: false
+    horas:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    grupos:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    horas_semanales:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    alternas:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Planesdocentes:
+      local: id_plandocente
+      foreign: id
+      type: one
+Planesdocentes:
+  connection: default
+  tableName: planesdocentes
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      notnull: true
+    id_asignatura:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    id_curso:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Asignaturas:
+      local: id_asignatura
+      foreign: id
+      type: one
+    Cursos:
+      local: id_curso
+      foreign: id
+      type: one
+    CargasSemanales:
+      local: id
+      foreign: plandocente_id
+      type: many
+    Planactividades:
+      local: id
+      foreign: id_plandocente
+      type: many
+Titulaciones:
   connection: default
   tableName: titulaciones
   columns:
@@ -95,13 +687,56 @@ titulacion:
     creditos:
       type: integer(4)
       fixed: false
-      unsigned: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    num_cursos:
+      type: integer(4)
+      fixed: false
+      unsigned: true
       primary: false
       notnull: true
       autoincrement: false
   relations:
-    asignaturas:
-      class: Asignatura
+    Asignaturas:
       local: id
       foreign: titulacion_id
       type: many
+    Horarios:
+      local: id
+      foreign: id_titulacion
+      type: many
+Users:
+  connection: default
+  tableName: users
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+      notnull: true
+    username:
+      type: string(16)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    password:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    security_level:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false

@@ -14,9 +14,23 @@ class PlanesDocentes extends MY_Controller{
 
     public function create(){
         $global = new PlanDocente;
-        $q = Doctrine_Query::create()->select('c.id')->from('Curso c')->orderBy('c.id desc')->limit(1);
-        $global->curso_id = $q->fetchOne();
-        $global->fromArray($this->input->post());
+        $global->id_curso = $this->input->post('id_curso');
+        $global->id_asignatura = $this->input->post('id_asignatura');
+        foreach($this->input->post('horas') as $key => $horas){
+            $array_grupos = $this->input->post('grupos');
+            $array_horas_semanales = $this->input->post('horas_semanales');
+            $array_alternas = $this->input->post('alternas');              
+            if($horas){
+                $planactividad = new PlanActividad;
+                $planactividad->horas = $horas;
+                $planactividad->grupos = $array_grupos[$key];
+                $planactividad->horas_semanales = $array_horas_semanales[$key];
+                $planactividad->alternas = isset($array_alternas[$key])? 1:0;
+                $planactividad->actividad = $key;             
+                $global->planactividades[] = $planactividad;
+            }
+        }
+        
         if($this->_submit_validate()==FALSE){
             $this->add_carga($this->input->post('asignatura_id'));
         }else{
@@ -25,6 +39,7 @@ class PlanesDocentes extends MY_Controller{
             $this->session->set_flashdata('notice', $this->notices);
             redirect('titulaciones/index');
         }
+
     }
     
     public function edit($id){

@@ -15,13 +15,7 @@ class PlanDocente extends Doctrine_Record {
         $this->setTableName('planesdocentes');
         $this->hasColumn('id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'primary' => true, 'autoincrement' => true, ));
         $this->hasColumn('id_asignatura', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'notnull' => true));
-        $this->hasColumn('id_curso', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'notnull' => true));
-        $this->hasColumn('horas_problemas', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true,  'default' => 0, 'notblank' => true));
-        $this->hasColumn('grupos_problemas', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true, 'default' => 0, 'notblank' => true));
-        $this->hasColumn('horas_semanales_problemas', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => true,  'default' => 0, 'notblank' => true));
-        $this->hasColumn('alternas_problemas', 'bool', null, array('type' => 'bool', 'notnull' => false)); //Poner default a false
-        $this->check('horas_semanales_campo > horas_campo');
-        
+        $this->hasColumn('id_curso', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'notnull' => true));       
 }
     public function setUp() {
         $this->hasOne('Asignatura', array('local' => 'id_asignatura', 'foreign' => 'id'));

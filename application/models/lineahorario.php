@@ -12,7 +12,7 @@ Doctrine_Manager::getInstance()->bindComponent('LineasHorarios', 'default');
  * @author Daniel Ignacio Salazar Recio <danielsalazarrecio@gmail.com>
  *
  */
-class Horario extends Doctrine_Record{
+class LineaHorario extends Doctrine_Record{
     
     public function setTableDefinition(){
         $this->setTableName('lineashorarios');
@@ -21,8 +21,9 @@ class Horario extends Doctrine_Record{
         $this->hasColumn('id_asignatura', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false));
         $this->hasColumn('hora_inicial', 'time', null, array('type' => 'time', 'primary' => false, 'notnull' => false, 'autoincrement' => false, 'unsigned' => false));
         $this->hasColumn('hora_final', 'time', null, array('type' => 'time', 'primary' => false, 'notnull' => false, 'autoincrement' => false, 'unsigned' => false));
-        $this->hasColumn('dia_semana', 'integet', 1, array('notnull' => false, 'unsigned' => true, 'range' => array(0, 4)));
-        $this->hasColumn('actividad', 'integer', 4, array('notnull' => false, 'unsigned' => true));
+        $this->hasColumn('dia_semana', 'integer', 1, array('notnull' => false, 'unsigned' => true, 'range' => array(0, 4)));
+        $this->hasColumn('actividad', 'enum', null, array('values' => array('teoria', 'lab', 'problemas', 'informatica','campo'), 'unsigned' => false));
+        $this->hasColumn('num_grupo_actividad', 'integer', null, array('unsigned' => true, 'notnull' => true));
         $this->hasColumn('slot_minimo', 'float', null, array('notnull' => true, 'autoincrement' => false, 'unsigned' => true));
     }
     

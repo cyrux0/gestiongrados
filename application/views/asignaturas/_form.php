@@ -9,6 +9,10 @@
   	<?php echo form_input('nombre', set_value('nombre', $result->nombre)); ?><br />
   </div>
   <div class="field">
+  	<label for="abreviatura">Abreviatura:</label> 
+  	<?php echo form_input('abreviatura', set_value('abreviatura', $result->abreviatura)); ?><br />
+  </div>
+  <div class="field">
   	<label for="creditos">Créditos:</label>
   	<?php echo form_input('creditos', set_value('creditos', $result->creditos)); ?><br />
   </div>

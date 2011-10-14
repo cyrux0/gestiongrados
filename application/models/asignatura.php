@@ -55,6 +55,16 @@ class Asignatura extends Doctrine_Record
 						    'notnull' => true,
 						    'autoincrement' => false,
 						    ));
+    $this->hasColumn('abreviatura', 'string', 5, array(
+						    'type' => 'string',
+						    'length' => 5,
+						    'minlength' => 1,
+						    'fixed' => false,
+						    'unsigned' => false,
+						    'primary' => false,
+						    'notnull' => true,
+						    'autoincrement' => false,
+						    ));
     $this->hasColumn('creditos', 'integer', 4, array(
 						     'type' => 'integer',
 						     'length' => 4,

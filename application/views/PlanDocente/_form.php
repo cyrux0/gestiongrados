@@ -7,7 +7,8 @@
         <td>Horas semanales</td>
         <td>Grupos en semanas alternas</td>
     </tr>
-    <?php echo form_hidden('asignatura_id', $result->asignatura_id);?>
+    <?php echo form_hidden('id_asignatura', $result->id_asignatura);?>
+    <?= form_hidden('id_curso', $result->id_curso) ?>
 
     <tr>
         <td>
@@ -16,13 +17,13 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_teoria', $result->horas_teoria);?>
+        <?php echo form_input('horas[teoria]',''); //$result->horas[teoria]);?>
         </td>
         <td>
-        <?php echo form_input('grupos_teoria', $result->grupos_teoria);?>
+        <?php echo form_input('grupos[teoria]',''); //$result->grupos[teoria]);?>
         </td>
         <td>
-            <?= form_input('horas_semanales_teoria', $result->horas_semanales_teoria) ?>
+            <?= form_input('horas_semanales[teoria]','')// $result->horas_semanales[teoria]) ?>
         </td>
     </tr>
     <tr>
@@ -32,16 +33,16 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_lab', $result->horas_lab);?>
+        <?php echo form_input('horas[lab]', '');// $result->horas[lab]);?>
         </td>
         <td>
-        <?php echo form_input('grupos_lab', $result->grupos_lab);?>
+        <?php echo form_input('grupos[lab]','');// $result->grupos[lab]);?>
         </td>
         <td>
-            <?= form_input('horas_semanales_lab', $result->horas_semanales_lab) ?>
+            <?= form_input('horas_semanales[lab]','');// $result->horas_semanales[lab]) ?>
         </td>
         <td>
-            <?= form_checkbox('alternas_lab', '1', FALSE) ?>
+            <?= form_checkbox('alternas[lab]', '1', FALSE) ?>
         </td>
     </tr>
     <tr>
@@ -51,16 +52,16 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_problemas', $result->horas_problemas);?>
+        <?php echo form_input('horas[problemas]','');?>
         </td>
         <td>
-        <?php echo form_input('grupos_problemas', $result->grupos_problemas);?>
+        <?php echo form_input('grupos[problemas]','');?>
         </td>
         <td>
-            <?= form_input('horas_semanales_problemas', $result->horas_semanales_problemas) ?>
+            <?= form_input('horas_semanales[problemas]','') ?>
         </td>
         <td>
-            <?= form_checkbox('alternas_problemas', 'TRUE', FALSE) ?>
+            <?= form_checkbox('alternas[problemas]', 'TRUE', FALSE) ?>
         </td>
     </tr>
     <tr>
@@ -70,16 +71,16 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_informatica', $result->horas_informatica);?>
+        <?php echo form_input('horas[informatica]', '');?>
         </td>
         <td>
-        <?php echo form_input('grupos_informatica', $result->grupos_informatica);?>
+        <?php echo form_input('grupos[informatica]', '');?>
         </td>
         <td>
-            <?= form_input('horas_semanales_informatica', $result->horas_semanales_informatica) ?>
+            <?= form_input('horas_semanales[informatica]', '') ?>
         </td>
         <td>
-            <?= form_checkbox('alternas_informatica', 'TRUE', FALSE) ?>
+            <?= form_checkbox('alternas[informatica]', 'TRUE', FALSE) ?>
         </td>
     </tr>
     <tr>
@@ -89,17 +90,19 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas_campo', $result->horas_campo); ?>
+        <?php echo form_input('horas[campo]', ''); ?>
         </td>
         <td>
-        <?php echo form_input('grupos_campo', $result->grupos_campo); ?>
+        <?php echo form_input('grupos[campo]', ''); ?>
         </td>
         <td>
-            <?= form_input('horas_semanales_campo', $result->horas_semanales_campo) ?>
+            <?= form_input('horas_semanales[campo]', '') ?>
         </td>
         <td>
-            <?= form_checkbox('alternas_campo', 'TRUE', FALSE) ?>
+            <?= form_checkbox('alternas[campo]', 'TRUE', FALSE) ?>
         </td>
+     
+     
     </tr>
 </table>
 <div class="actions">

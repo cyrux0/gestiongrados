@@ -346,12 +346,8 @@ var horarios = {
     initialize: function(){
             $("#asignaturas div.external-event").each(function(){
 
-                var eventObject = {
-                    // Aquí habría que llamar a un fetch object o algo así que devolviera la información. Al menos el id y la duración. Aquí es donde hay que tener en cuenta el slot mínimo.
-                    title: $(this).text()
-                };
-                
-                $(this).data('eventObject', eventObject);
+                var events = eval($(this).find(".hidden-info").text());
+                $(this).data('events', events);
                 
                 $(this).draggable({
                     zIndex: 999,
@@ -361,7 +357,40 @@ var horarios = {
                 
             });
             
+            var savedEvents = eval($('#asignaturas-guardadas').text());
+            
+            for(var i in savedEvents){
+                
+                hora_inicial = savedEvents[i].hora_inicial.split(":");
+                hora_final = savedEvents[i].hora_final.split(":");
+                dia_semana = eval(savedEvents[i].dia_semana);
+                savedEvents[i].start = new Date(1950, 0, 2 + dia_semana, hora_inicial[0], hora_inicial[1]);
+                savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
+                savedEvents[i].title = savedEvents[i].nombre_asignatura;
+                savedEvents[i].allDay = false;
+                switch(savedEvents[i].actividad){
+                    case 'teoria':
+                        savedEvents[i].color = '#3366CC';
+                        break;
+                    case 'lab':
+                        savedEvents[i].color = '#B22222';
+                        break;
+                    case 'problemas':
+                        savedEvents[i].color = '#FFD700';
+                        break;
+                    case 'informatica':
+                        savedEvents[i].color = '#808000';
+                        break;
+                    case 'campo':
+                        savedEvents[i].color = '#696969';
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
             $("#horario").fullCalendar({
+                events: savedEvents,
                 theme: true,
                 weekends: false,
                 header: {
@@ -384,21 +413,79 @@ var horarios = {
                 aspect_ratio: 1,
                 dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
                 dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                eventDrop: function(eventCalendar, dayDelta, minuteDelta, allDay, revertFunc){
+                    horarios.move(eventCalendar);
+                },
+                
                 drop: function(date, allDay){
-                    var originalObject = $(this).data('eventObject');
+
+                    var events = $(this).data('events');
+                    var originalObject = events.shift();
                     var copiedEventObject = $.extend({}, originalObject);
                     copiedEventObject.start = date;
+                    var endDate = new Date(date.valueOf() + 60000 * 60 *copiedEventObject.slot_minimo);
+                    copiedEventObject.end = endDate; 
+                    copiedEventObject.title = copiedEventObject.nombre_asignatura;
                     copiedEventObject.allDay = false;
+                    switch(copiedEventObject.actividad){
+                        case 'teoria':
+                            copiedEventObject.color = '#3366CC';
+                            break;
+                        case 'lab':
+                            copiedEventObject.color = '#B22222';
+                            break;
+                        case 'problemas':
+                            copiedEventObject.color = '#FFD700';
+                            break;
+                        case 'informatica':
+                            copiedEventObject.color = '#808000';
+                            break;
+                        case 'campo':
+                            copiedEventObject.color = '#696969';
+                            break;
+                        default:
+                            break;
+                    }
+                    horarios.move(copiedEventObject);
+
+                    
                     $('#horario').fullCalendar('renderEvent', copiedEventObject, true);
                     
-                    $(this).remove();
+                    if(events.length == 0){
+                        $(this).remove();
+                    }else{
+                        $(this).find(".subject-count").text(events.length);
+                    }
+
+                    
                 }
         });
         
-        $('#horario').fullCalendar('gotoDate', 1950); // Nos vamos a ese año para no mostrar resaltada la fecha de hoy, luego da igual por que en teoría no se guarda la fecha, solo la hora. Luego claro en el PHP habrá que parsear sólo la hora.
+        $('#horario').fullCalendar('gotoDate', 1950); // Mon, 2-ene-1950
+        // Nos vamos a ese año para no mostrar resaltada la fecha de hoy, luego da igual por que en teoría no se guarda la fecha, solo la hora. Luego claro en el PHP habrá que parsear sólo la hora.
         // Para salvar los eventos en la BD llamamos a clientEvents y lo mandamos a una acción de un controlador.
+    },
+    
+    move: function(eventCalendar){
+        var data = { 
+            id: eventCalendar.id,
+            hora_inicial: eventCalendar.start.getHours(),
+            minuto_inicial: eventCalendar.start.getMinutes(),
+            hora_final: eventCalendar.end.getHours(),
+            minuto_final: eventCalendar.end.getMinutes(),
+            dia_semana: eventCalendar.start.getDay() - 1
+        };
+
+        var request = {
+            url: eventCalendar.save_url,
+            data: data,
+            type: "POST",
+        };
+        
+        $.ajax(request);
     }
-} 
+}
+
 $(document).ready(function(){
     titulaciones.initialize();
     cursos.initialize();
