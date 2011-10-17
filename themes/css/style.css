@@ -139,7 +139,7 @@ table.listaelems{
     min-width: 230px;
 }
 
-#main form input[type="submit"]{
+input[type="submit"]{
     background: url("http://www.uca.es/input_background.gif") repeat-x scroll 0 0 White;
     border: 1px solid black;
     cursor: pointer;

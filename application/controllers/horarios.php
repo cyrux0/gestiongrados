@@ -15,6 +15,21 @@ class Horarios extends MY_Controller{
         
     }
     
+    public function select_grupo($id_titulacion, $id_curso = ''){
+        if(!$id_curso) redirect('cursos/select_curso/horarios/select_grupo/' . $id_titulacion . '/');
+        
+        $titulacion = Doctrine::getTable("Titulacion")->find($id_titulacion);
+        $horarios = Doctrine_Query::create()
+            ->select('h.*')
+            ->from('Horario h')
+            ->where('h.id_curso = ?', $id_curso)
+            ->andWhere('h.id_titulacion = ?', $id_titulacion)
+            ->execute();
+        
+        $this->load->view('horarios/select_grupo', array('horarios' => $horarios, 'num_cursos' => $titulacion->num_cursos));
+        
+    }
+    
     public function add_grupo($id_titulacion, $id_curso, $curso_titulacion, $num_grupo){
         $horario = new Horario;
         $horario->id_curso = $id_curso;
@@ -71,7 +86,8 @@ class Horarios extends MY_Controller{
         redirect('/');
     }
 
-    public function edit($id){
+    public function edit(){
+        $id = $this->input->post('grupo');
         $horario = Doctrine::getTable("Horario")->find($id);
         
         $asignaturas_por_asignar = array();
@@ -94,12 +110,35 @@ class Horarios extends MY_Controller{
         $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas));
         
     }
-
+/*
     public function edit_teoria($id_tipo){
         $horario = Doctrine::getTable("Horario")->find($id_tipo);
+        if(!$horario->horario_teoria and $horario->curso->num_semanas_teoria > 0){
+            $horario->horario_teoria = new Horario;
+            foreach($horario->lineashorario as $lineahorario){
+                if($lineahorario->actividad == "teoria"){
+                    $lineahorarioteoria = $lineahorario->copy();
+                    $horario->horario_teoria->lineashorario[] = $lineahorarioteoria;
+                }
+            }
+            $horario->save();
+        }else{
+            //Error
+            echo "Error: este horario ya tiene un horario teoria";
+        }
+    }
+*/
+
+    public function check_horario($id){
+        $horario = Doctrine::getTable("Horario")->find($id);
+        $eventos = Doctrine::getTable("Evento")->findById_curso($horario->id_curso);
+        
+        foreach($eventos as $evento){
+            
+        }
         
     }
-
+    
     public function save_line($id){
         
         $linea = Doctrine::getTable("LineaHorario")->find($id);
