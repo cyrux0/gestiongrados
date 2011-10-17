@@ -130,6 +130,12 @@ class Titulaciones extends MY_Controller {
         
         return $this->form_validation->run(); 
     }
+
+    public function select_titulacion(){
+        list($controller, $action, $route) = explode('/', $this->uri->uri_string(), 3);
+        $titulaciones = $this->titulaciones_table->findAll();
+        $this->load->view('titulaciones/index', array('titulaciones' => $titulaciones, 'action' => $route));
+    }
 }
 
 /* Fin del archivo titulaciones.php */

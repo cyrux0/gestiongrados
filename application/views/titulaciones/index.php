@@ -1,7 +1,7 @@
 
 
 <ul class="listaelems" id="listatitulaciones">
-    <? $enlace = 'titulaciones/show/'; ?>
+    <? $enlace = $action; ?>
     <? foreach($titulaciones as $item): ?>
         <? $pretags = '<li><span>';
            $posttags = '</span>'; 
