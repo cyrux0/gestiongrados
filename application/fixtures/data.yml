@@ -22,6 +22,7 @@ Asignatura:
     ADA1:
         codigo: 123
         nombre: Análisis y diseño de algoritmos I
+        abreviatura: ADAI
         creditos: 6
         materia: Algoritmia
         departamento: Lenguajes y sistemas
@@ -31,6 +32,7 @@ Asignatura:
     EDI:
         codigo: 124
         nombre: Estructura de Datos I
+        abreviatura: EDI
         creditos: 6
         materia: Programación
         departamento: Lenguajes y sistemas
@@ -40,6 +42,7 @@ Asignatura:
     FI:
         codigo: 122
         nombre: Fundamentos en Informática
+        abreviatura: FI
         creditos: 6
         materia: Porgramación
         departamento: Lenguajes y sistemas

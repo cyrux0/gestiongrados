@@ -134,10 +134,29 @@ class Horarios extends MY_Controller{
     public function check_horario($id){
         $horario = Doctrine::getTable("Horario")->find($id);
         $eventos = Doctrine::getTable("Evento")->findById_curso($horario->id_curso);
-        
+        $curso = Doctrine::getTable("Curso")->find($horario->id_curso);
+
+	$dias_totales = array_pad(array(), 5, $curso->num_semanas);
         foreach($eventos as $evento){
-            
+	  $fecha_inicial = date_create_from_format("Y-m-d", $evento->fecha_inicial);
+	  $fecha_final = date_create_from_format("Y-m-d", $evento->fecha_final);
+	  $interval = new DateInterval("P1D");
+	  do{
+	    $dia_semana = $fecha_inicial->format("w");
+	    $dia_semana = intval($dia_semana) - 1;
+	    $dias_totales[$dia_semana] -= 1;
+	    $fecha_inicial->add($interval);
+	  }while($fecha_inicial <= $fecha_final);
         }
+
+	unset($this->layout);
+	foreach($horario->lineashorario as $lineahorario){
+	  echo $lineahorario->actividad . " " . $lineahorario->num_grupo_actividad . " " . $lineahorario->horas_impartidas;
+	  $horas[$lineahorario->asignatura->nombre][$lineahorario->actividad][$lineahorario->num_grupo_actividad] += $lineahorario->horas_impartidas*$dias_totales[$lineahorario->dia_semana];
+	}
+	
+	$this->load->view('horarios/check', array('horas' => $horas));
+
         
     }
     
