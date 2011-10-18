@@ -1,7 +1,7 @@
 <? if(isset($pretags))
        echo $pretags;
 ?>
-<?= anchor($enlace . $item->id, $item->nombre) ?>
+<?= anchor($enlace . '/' . $item->id, $item->nombre) ?>
 <? if(isset($posttags))
        echo $posttags;
 ?>

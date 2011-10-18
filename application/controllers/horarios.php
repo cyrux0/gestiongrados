@@ -15,7 +15,8 @@ class Horarios extends MY_Controller{
         
     }
     
-    public function select_grupo($id_titulacion, $id_curso = ''){
+    public function select_grupo($id_titulacion = '', $id_curso = ''){
+        if(!$id_titulacion) redirect('titulaciones/select_titulacion/horarios/select_grupo/');
         if(!$id_curso) redirect('cursos/select_curso/horarios/select_grupo/' . $id_titulacion . '/');
         
         $titulacion = Doctrine::getTable("Titulacion")->find($id_titulacion);
@@ -24,6 +25,7 @@ class Horarios extends MY_Controller{
             ->from('Horario h')
             ->where('h.id_curso = ?', $id_curso)
             ->andWhere('h.id_titulacion = ?', $id_titulacion)
+            ->orderBy('h.num_curso_titulacion, h.num_grupo_titulacion')
             ->execute();
         
         $this->load->view('horarios/select_grupo', array('horarios' => $horarios, 'num_cursos' => $titulacion->num_cursos));
@@ -83,7 +85,7 @@ class Horarios extends MY_Controller{
         }
 
         $horario->save();
-        redirect('/');
+        redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
     }
 
     public function edit(){
@@ -150,5 +152,12 @@ class Horarios extends MY_Controller{
         $linea->hora_final = $date_final->format("H:i");
         $linea->dia_semana = $this->input->post("dia_semana");
         $linea->save();
+    }
+    
+    public function delete($id_horario){
+        $horario = Doctrine::getTable("Horario")->find($id_horario);
+        $horario->lineashorario->delete();
+        $horario->delete();
+        redirect('/');
     }
 }
