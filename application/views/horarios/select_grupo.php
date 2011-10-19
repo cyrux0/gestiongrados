@@ -11,8 +11,6 @@
     </th>
     </tr>
     <? $ultimo_indice = 0; 
-       $id_titulacion = $horarios[0]->id_titulacion;
-       $id_curso = $horarios[0]->id_curso;
     ?>
     <? for($i = 0; $i < $num_cursos; $i++): ?>
     <?= form_open('horarios/edit') ?>
@@ -35,7 +33,7 @@
                 $num_grupo = count($grupos) + 1; 
                 $disabled = count($grupos)? "false":"true"; ?> 
                 <td><?= anchor('horarios/add_grupo/' . $id_titulacion . '/' . $id_curso . '/' . $curso . '/' . $num_grupo, 'Añadir Grupo') ?></td>
-                <td><div class="actions"><?= form_submit('submit', 'Editar','disabled="'. $disabled .'"') ?></div></td>
+                <td><div class="actions"><?= form_submit('submit', 'Editar','') ?></div></td>
                 <td> horario solo teoría</td>
             <?= form_close(); ?>
         </tr>

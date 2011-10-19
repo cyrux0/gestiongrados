@@ -28,7 +28,7 @@ class Horarios extends MY_Controller{
             ->orderBy('h.num_curso_titulacion, h.num_grupo_titulacion')
             ->execute();
         
-        $this->load->view('horarios/select_grupo', array('horarios' => $horarios, 'num_cursos' => $titulacion->num_cursos));
+        $this->load->view('horarios/select_grupo', array('horarios' => $horarios, 'num_cursos' => $titulacion->num_cursos, 'id_titulacion' => $id_titulacion, 'id_curso' => $id_curso));
         
     }
     
@@ -133,10 +133,14 @@ class Horarios extends MY_Controller{
 
     public function check_horario($id){
         $horario = Doctrine::getTable("Horario")->find($id);
-        $eventos = Doctrine::getTable("Evento")->findById_curso($horario->id_curso);
+        $eventos = Doctrine_Query::create()
+                    ->select("e.*")
+                    ->from("Evento e")
+                    ->where("e.curso_id = ?", $horario->id_curso)
+                    ->execute();
         $curso = Doctrine::getTable("Curso")->find($horario->id_curso);
 
-	$dias_totales = array_pad(array(), 5, $curso->num_semanas);
+	$dias_totales = array_pad(array(), 5, $curso->num_semanas_semestre1);
         foreach($eventos as $evento){
 	  $fecha_inicial = date_create_from_format("Y-m-d", $evento->fecha_inicial);
 	  $fecha_final = date_create_from_format("Y-m-d", $evento->fecha_final);
@@ -150,9 +154,13 @@ class Horarios extends MY_Controller{
         }
 
 	unset($this->layout);
+	$horas = array();
 	foreach($horario->lineashorario as $lineahorario){
-	  echo $lineahorario->actividad . " " . $lineahorario->num_grupo_actividad . " " . $lineahorario->horas_impartidas;
-	  $horas[$lineahorario->asignatura->nombre][$lineahorario->actividad][$lineahorario->num_grupo_actividad] += $lineahorario->horas_impartidas*$dias_totales[$lineahorario->dia_semana];
+	    if(!isset($horas[$lineahorario->asignatura->nombre])) $horas[$lineahorario->asignatura->nombre] = array();
+        if(!isset($horas[$lineahorario->asignatura->nombre][$lineahorario->actividad])) $horas[$lineahorario->asignatura->nombre][$lineahorario->actividad] = array();
+        if(!isset($horas[$lineahorario->asignatura->nombre][$lineahorario->actividad][$lineahorario->num_grupo_actividad])) $horas[$lineahorario->asignatura->nombre][$lineahorario->actividad][$lineahorario->num_grupo_actividad] = 0;
+        
+	  $horas[$lineahorario->asignatura->nombre][$lineahorario->actividad][$lineahorario->num_grupo_actividad] += $lineahorario->slot_minimo*$dias_totales[$lineahorario->dia_semana];
 	}
 	
 	$this->load->view('horarios/check', array('horas' => $horas));
