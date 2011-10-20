@@ -9,6 +9,10 @@
 <div id="asignaturas-guardadas" style="display:none">
     <?= json_encode($asignaturas_asignadas) ?>
 </div>
+
+<div id="check-horario"></div>
+<br/>
+<?= anchor('horarios/check_horario/' . $horario->id, "Hacer comprobación", 'class="button" id="check-button"'); ?>
 <div id="horario">
     
 </div>

@@ -466,6 +466,7 @@ var horarios = {
         // Para salvar los eventos en la BD llamamos a clientEvents y lo mandamos a una acción de un controlador.
         
         horarios.selectGrupo();
+        horarios.makeCheck();
     },
     
     move: function(eventCalendar){
@@ -526,6 +527,17 @@ var horarios = {
                 window.location.href = $(this).data("url");
             });
         });
+    },
+    
+    makeCheck: function(){
+    	$('#check-button').click(function(event){
+    		event.preventDefault();
+    		$('#check-horario').slideToggle();
+    		$('#check-horario').load($('#check-button').attr("href"), function(response){
+    			$('#check-horario').hide();
+    			$('#check-horario').slideDown();
+    		});
+    	});
     }
 }
 
