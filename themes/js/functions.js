@@ -464,6 +464,8 @@ var horarios = {
         $('#horario').fullCalendar('gotoDate', 1950); // Mon, 2-ene-1950
         // Nos vamos a ese año para no mostrar resaltada la fecha de hoy, luego da igual por que en teoría no se guarda la fecha, solo la hora. Luego claro en el PHP habrá que parsear sólo la hora.
         // Para salvar los eventos en la BD llamamos a clientEvents y lo mandamos a una acción de un controlador.
+        
+        horarios.selectGrupo();
     },
     
     move: function(eventCalendar){
@@ -483,6 +485,47 @@ var horarios = {
         };
         
         $.ajax(request);
+    },
+    
+    selectGrupo: function(){
+        var href;
+        var url;
+        $('.fila-grupo').each(function(){
+            var valorSelect = $(this).find("select").val();
+            var button = $(this).find('.button-grupo:first-of-type');
+            var buttonTeoria = $(this).find('.button-teoria:first-of-type');
+            if(valorSelect){
+                href = button.attr("href");
+                hrefTeoria = buttonTeoria.attr("href");
+                url = href+'/'+valorSelect;
+                urlTeoria = hrefTeoria + '/' + valorSelect;
+                button.data("url", url);
+                buttonTeoria.data("url", urlTeoria);
+                $(this).find(".span-button:first-of-type").hide();
+                $(this).find(".span-teoria:first-of-type").hide();
+            }else{
+                buttonTeoria.hide();
+                button.hide();
+            }
+            $(this).find("select").change(function(){
+                valorSelect = $(this).val();
+                href = button.attr("href");
+                hrefTeoria = buttonTeoria.attr("href");
+                url = href+'/'+valorSelect;
+                urlTeoria = hrefTeoria + '/' + valorSelect;
+                button.data("url", url);
+                buttonTeoria.data("url", urlTeoria);
+            });
+            
+            $(this).find(".button-grupo").click(function(event){
+                event.preventDefault();
+                window.location.href = $(this).data("url");
+            });
+            $(this).find(".button-teoria").click(function(event){
+                event.preventDefault();
+                window.location.href = $(this).data("url");
+            });
+        });
     }
 }
 

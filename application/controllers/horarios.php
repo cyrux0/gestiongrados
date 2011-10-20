@@ -88,8 +88,8 @@ class Horarios extends MY_Controller{
         redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
     }
 
-    public function edit(){
-        $id = $this->input->post('grupo');
+    public function edit($id){
+        
         $horario = Doctrine::getTable("Horario")->find($id);
         
         $asignaturas_por_asignar = array();
