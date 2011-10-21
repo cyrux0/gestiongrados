@@ -25,19 +25,20 @@ class Horarios extends MY_Controller{
             ->from('Horario h')
             ->where('h.id_curso = ?', $id_curso)
             ->andWhere('h.id_titulacion = ?', $id_titulacion)
-            ->orderBy('h.num_curso_titulacion, h.num_grupo_titulacion')
+            ->orderBy('h.num_curso_titulacion, h.semestre, h.num_grupo_titulacion')
             ->execute();
         
         $this->load->view('horarios/select_grupo', array('horarios' => $horarios, 'num_cursos' => $titulacion->num_cursos, 'id_titulacion' => $id_titulacion, 'id_curso' => $id_curso));
         
     }
     
-    public function add_grupo($id_titulacion, $id_curso, $curso_titulacion, $num_grupo){
+    public function add_grupo($id_titulacion, $id_curso, $curso_titulacion, $semestre, $num_grupo){
         $horario = new Horario;
         $horario->id_curso = $id_curso;
         $horario->id_titulacion = $id_titulacion;
         $horario->num_curso_titulacion = $curso_titulacion;
         $horario->num_grupo_titulacion = $num_grupo;
+        $horario->semestre = $semestre;
         
         $query_asignaturas = Doctrine_Query::create()
                             ->select('a.id, p.id, c.id, c.horas, c.grupos, c.alternas, c.actividad')
@@ -46,6 +47,7 @@ class Horarios extends MY_Controller{
                             ->innerJoin('p.planactividades c')
                             ->where("a.curso = ?", $curso_titulacion)
                             ->andWhere("a.titulacion_id = ?", $id_titulacion)
+                            ->andWhere("a.semestre = ?", $semestre)
                             ->andWhere("p.id_curso = ?", $id_curso);
                             
         
