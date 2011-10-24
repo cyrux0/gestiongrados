@@ -17,12 +17,10 @@ class Aula extends Doctrine_Record{
         $this->setTableName('aulas');
         $this->hasColumn('id', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'primary' => true, 'autoincrement' => true, ));
         $this->hasColumn('nombre', 'string', 100, array('length' => 100, 'fixed' => false, 'unsigned' => false));
-        $this->hasColumn('id_horario_tipo', 'integer', 4, array('type' => 'integer', 'length' => 4, 'notnull' => false));
-        $this->hasColumn('id_horario_teoria', 'integer', 4, array('type' => 'integer', 'length' => 4, 'notnull' => false));
     }
     
     public function setUp(){
         parent::setUp();
-        $this->hasMany('LineaHorario as lineashorario', array('local' => 'id', 'foreign' => 'id_horario'));
+        $this->hasMany('LineaHorario as lineashorario', array('local' => 'id', 'foreign' => 'id_lineahorario'));
     }
 }
