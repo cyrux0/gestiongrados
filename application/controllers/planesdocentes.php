@@ -82,6 +82,58 @@ class PlanesDocentes extends MY_Controller{
         $this->load->view('PlanDocente/add', $data);
     }
 
+    public function upload_file(){
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'csv|xls';
+		$config['max_size']	= '100';
+        
+        $this->load->library('upload', $config);
+        
+        if(!$this->upload->do_upload()){
+            $error = array('error' => $this->upload->display_errors(), 'id_asignatura' => $this->input->post('id_asignatura'), 'id_curso' => $this->input->post('id_curso'));
+            $this->load->view('PlanDocente/from_file', $error);
+        }else{
+            $data = $this->upload->data();
+            try{
+                _process_data($data['full_path']);
+            }catch(Exception $e){
+                $error = array('error' => $e->getMessage(), 'id_asignatura' => $this->input->post('id_asignatura'), 'id_curso' => $this->input->post('id_curso'));
+                $this->load->view('PlanDocente/from_file', $error);
+            }
+            
+        }
+    }
+    
+    private function _parse_data($filename){
+        
+        $file = fopen($filename, 'rb');
+        $data = fgetcsv($file, 0, ',');
+        if(!$data){
+            throw new Exception("Error en la línea 1: Los campos son incorrectos");
+            return false;
+        }
+        $fields = array();
+        foreach($data as $field)
+            $fields[] = $field;
+        $row = 2;
+        while(($data = fgetcsv($file, 0, ',')) != false){
+            $plandocente = new PlanDocente;
+            if(count($fields) != count($data)){
+                throw new Exception("Error en la línea $row: número incorrecto de valores");
+                return false;
+            }
+            $datarow = array_combine($fields, $values);
+            $plandocente->fromArray($datarow);
+            if(!$plandocente->isValid()){
+                throw new Exception("Error en la línea $row");
+                
+            }
+            //No guardar, solo parsear
+            $plandocente->save();
+            $row ++;
+        }
+    }
+    
     private function _submit_validate(){
         $this->form_validation->set_rules('horas_teoria', 'trim|is_natural');
         $this->form_validation->set_rules('grupos_teoria', 'trim|is_natural');

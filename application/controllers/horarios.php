@@ -90,8 +90,16 @@ class Horarios extends MY_Controller{
         redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
     }
 
-    public function asigna_aula(){
-        
+    public function asignar_aulas($id){
+        $lineas = Doctrine_Query::create()
+            ->select('l.id, l.actividad, l.num_grupo_actividad, l.aula, l.id_asignatura, a.nombre, l.id_horario')
+            ->from('LineaHorario l')
+            ->innerJoin('Asignatura a')
+            ->where('l.id_horario = ?', $id)
+            ->groupBy('l.id_asignatura, l.actividad, l.num_grupo_actividad')
+            ->execute();
+            
+        $this->load->view('horarios/asignar_aulas', array('lineas '=> $lineas));
     }
     
     public function edit($id){

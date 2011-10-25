@@ -87,7 +87,10 @@ class Asignaturas extends MY_Controller {
         $this->load->view('PlanDocente/add', $data);
     }
 
-
+    public function add_carga_from_file($id_asignatura, $id_curso = ''){
+        if(!$id_curso) redirect('cursos/select_curso/asignaturas/add_carga_from_file/' . $id_asignatura );
+        $this->load->view('PlanDocente/from_file', array('id_asignatura' => $id_asignatura, 'id_curso' => $id_curso));
+    }
     
     private function _submit_validate(){
         $this->form_validation->set_rules('codigo', 'Código', 'required|exact_length[3]|numeric');
