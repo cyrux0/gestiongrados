@@ -92,16 +92,43 @@ class Horarios extends MY_Controller{
 
     public function asignar_aulas($id){
         $lineas = Doctrine_Query::create()
-            ->select('l.id, l.actividad, l.num_grupo_actividad, l.aula, l.id_asignatura, a.nombre, l.id_horario')
+            ->select('l.id, l.actividad, l.num_grupo_actividad, l.id_aula, l.id_asignatura, a.nombre, l.id_horario')
             ->from('LineaHorario l')
-            ->innerJoin('Asignatura a')
+            ->innerJoin('l.asignatura a')
             ->where('l.id_horario = ?', $id)
             ->groupBy('l.id_asignatura, l.actividad, l.num_grupo_actividad')
             ->execute();
-            
-        $this->load->view('horarios/asignar_aulas', array('lineas '=> $lineas));
+        
+        $aulas = Doctrine::getTable('Aula')->findAll();
+        $array_aulas = array();
+        foreach($aulas as $aula){
+            $array_aulas[$aula->id] = $aula->nombre;
+        }
+        $this->load->view('horarios/asignar_aulas', array('lineas' => $lineas, 'aulas' => $array_aulas));
     }
     
+    public function guardar_aulas(){
+        $aulas = $this->input->post('aula');
+        
+        foreach($aulas as $key => $aula){
+            list($asignatura, $actividad, $grupo) = explode('/', $key, 3);
+            /*echo $asignatura . "\n";
+            echo $actividad . "\n";
+            echo $grupo . "\n";
+            */
+            $query = Doctrine_Query::create()
+                ->update('LineaHorario')
+                ->set('id_aula', $aula)
+                ->where('id_asignatura = ?', array($asignatura))
+                ->andWhere('actividad = ?', array($actividad))
+                ->andWhere('num_grupo_actividad = ?', array($grupo));
+                
+            $rows = $query->execute();
+        }
+        
+        redirect('horarios/edit/' . $this->input->post('id_horario'));
+    }
+        
     public function edit($id){
         
         $horario = Doctrine::getTable("Horario")->find($id);
@@ -125,6 +152,18 @@ class Horarios extends MY_Controller{
         
         $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas));
         
+    }
+
+    public function ocupacion_aula($id_curso, $id_aula){
+        $lineas_aulas = Doctrine_Query::create()
+            ->select('l.id, l.hora_inicial, l.hora_final, l.dia_semana')
+            ->from('LineaHorario l')
+            ->innerJoin('l.horario h')
+            ->where('h.id_curso = ?', $id_curso)
+            ->andWhere('l.id_aula = ?', $id_aula)
+            ->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+        
+        echo json_encode($lineas_aulas);
     }
 /*
     public function edit_teoria($id_tipo){

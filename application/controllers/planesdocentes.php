@@ -95,16 +95,17 @@ class PlanesDocentes extends MY_Controller{
         }else{
             $data = $this->upload->data();
             try{
-                _process_data($data['full_path']);
+                _parse_data($data['full_path']);
             }catch(Exception $e){
                 $error = array('error' => $e->getMessage(), 'id_asignatura' => $this->input->post('id_asignatura'), 'id_curso' => $this->input->post('id_curso'));
                 $this->load->view('PlanDocente/from_file', $error);
             }
-            
+            $rows = _parse_data($data['full_path'], true);
+            $this->load->view('plandocente/upload_success', array('rows' => $rows));
         }
     }
     
-    private function _parse_data($filename){
+    private function _parse_data($filename, $process = false){
         
         $file = fopen($filename, 'rb');
         $data = fgetcsv($file, 0, ',');
@@ -116,23 +117,34 @@ class PlanesDocentes extends MY_Controller{
         foreach($data as $field)
             $fields[] = $field;
         $row = 2;
+        // fields = asignatura | actividad | horas(totales) | grupos | horas_semanales | alternas
         while(($data = fgetcsv($file, 0, ',')) != false){
-            $plandocente = new PlanDocente;
             if(count($fields) != count($data)){
                 throw new Exception("Error en la línea $row: número incorrecto de valores");
                 return false;
             }
+            $planactividad = new PlanActividad;
             $datarow = array_combine($fields, $values);
-            $plandocente->fromArray($datarow);
-            if(!$plandocente->isValid()){
-                throw new Exception("Error en la línea $row");
-                
+            if(!isset($datarow['id_asignatura'])){
+                throw new Exception("Error en la línea $row: falta el identificador de la asignatura");
+            }else{
+                $plandocente = Doctrine::getTable('PlanDocente')->findById_asignatura($datarow['id_asignatura']);
+                $planactividad->id_plandocente = $plandocente;
             }
-            //No guardar, solo parsear
-            $plandocente->save();
+            $planactividad->fromArray($datarow);
+            if(!$planactividad->isValid()){
+                throw new Exception("Error en la línea $row");
+            }
+            
+            if($process){
+                 $plandocente->save();
+            }
             $row ++;
         }
     }
+    
+    
+    
     
     private function _submit_validate(){
         $this->form_validation->set_rules('horas_teoria', 'trim|is_natural');

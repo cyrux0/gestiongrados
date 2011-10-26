@@ -541,6 +541,25 @@ var horarios = {
     }
 }
 
+aulas = {
+    initialize: function(){
+        $('#link-ocupacion').click(function(event){
+            event.preventDefault();
+            $.getJSON($(this).attr('href'), function(data){
+                $('#aulas').html('');
+                $('#aulas').fullcalendar({
+                    
+                });
+            });
+            //Load los eventos cogiendo el href
+            //Cargarlos en una variable
+            //Settear el div de las aulas como un full-calendar pasándole los eventos
+            //Hacer un slide down de ese div
+        
+        });
+    }
+}
+
 $(document).ready(function(){
     titulaciones.initialize();
     cursos.initialize();
