@@ -16,3 +16,9 @@
 <div id="horario">
     
 </div>
+
+<?= form_dropdown('ocupacion', $aulas) . anchor('horarios/ocupacion_aula/' . $horario->id_curso . '/', 'Ver ocupación del aula', 'id="link-ocupacion"') ?>
+
+<div id="aulas">
+    
+</div>

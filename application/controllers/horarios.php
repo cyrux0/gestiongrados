@@ -149,8 +149,12 @@ class Horarios extends MY_Controller{
                 $asignaturas_asignadas[] = $array_linea_horario;
             }
         }
-        
-        $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas));
+        $aulas = Doctrine::getTable('Aula')->findAll();
+        $array_aulas = array();
+        foreach($aulas as $aula){
+            $array_aulas[$aula->id] = $aula->nombre;
+        }
+        $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas));
         
     }
 
@@ -162,7 +166,7 @@ class Horarios extends MY_Controller{
             ->where('h.id_curso = ?', $id_curso)
             ->andWhere('l.id_aula = ?', $id_aula)
             ->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
-        
+        unset($this->layout);
         echo json_encode($lineas_aulas);
     }
 /*

@@ -545,12 +545,49 @@ aulas = {
     initialize: function(){
         $('#link-ocupacion').click(function(event){
             event.preventDefault();
-            $.getJSON($(this).attr('href'), function(data){
+            var href = $(this).attr('href') + '/' + $('select[name="ocupacion"]').val();
+            $.getJSON(href, function(data){
+            	
+            	savedEvents = data;
+            	for(var i in savedEvents){
+	                hora_inicial = savedEvents[i].hora_inicial.split(":");
+	                hora_final = savedEvents[i].hora_final.split(":");
+	                dia_semana = eval(savedEvents[i].dia_semana);
+	                savedEvents[i].start = new Date(1950, 0, 2 + dia_semana, hora_inicial[0], hora_inicial[1]);
+	                savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
+	                savedEvents[i].title = savedEvents[i].nombre_asignatura;
+	                savedEvents[i].allDay = false;
+            	}
+            	
                 $('#aulas').html('');
-                $('#aulas').fullcalendar({
-                    
+                $('#aulas').fullCalendar({
+                events: savedEvents,
+                theme: true,
+                weekends: false,
+                header: {
+                    left: 'title',
+                    center: '',
+                    right: ''
+                },
+                defaultView: 'agendaWeek',
+                titleFormat: false,
+                columnFormat: {
+                    week: 'ddd'
+                },
+                editable: false,
+                disableResizing: true,
+                droppable: false,
+                allDaySlot: false,
+                minTime: 9,
+                maxTime: 22,
+                height: 400,
+                aspect_ratio: 1,
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
                 });
+                $('#aulas').fullCalendar('gotoDate', 1950);
             });
+
             //Load los eventos cogiendo el href
             //Cargarlos en una variable
             //Settear el div de las aulas como un full-calendar pasándole los eventos
@@ -568,6 +605,7 @@ $(document).ready(function(){
     cargas.initialize();
     calendar.initialize();
     horarios.initialize();
+    aulas.initialize();
     var icons = {
         header: "ui-icon-circle-arrow-e",
         headerSelected: "ui-icon-circle-arrow-s"

@@ -1,6 +1,6 @@
 <table class="listaelems">
   <tr>
-    <th>ID</th><th>NOMBRE</th><th>CRÉDITOS</th><th colspan="3">ACCIONES</th>
+    <th>ID</th><th>NOMBRE</th><th>CRÉDITOS</th><th colspan="4">ACCIONES</th>
   </tr>
   <?php 
   foreach($asignaturas as $item): ?>
