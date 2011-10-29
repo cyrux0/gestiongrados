@@ -4,58 +4,51 @@
         Curso
     </th>
     <th>
-        Grupos
+        Nº Grupos
+    </th>
+    <th>
+        Añadir/Eliminar
     </th>
     <th colspan="3">
-        Acciones
+        Horarios Semestre 1
+    </th>
+    <th colspan="3">
+        Horarios Semestre 2
+    </th>
+    <th>
+        Comprobación
+    </th>
+    <th>
+        Generar Informe
     </th>
     </tr>
     <? $ultimo_indice = 0; 
     ?>
-    <? for($i = 0; $i < $num_cursos; $i++): ?>
+    <? foreach($cursos as $key => $curso): ?>
         <tr class="fila-grupo">
-            <td><?= $i+1 . " semestre 1"?></td>
-            <? $check = 0;
-               $grupos = array(); ?>
-            <? while(!$check): ?>
-            <?
-                if(!isset($horarios[$ultimo_indice]) or $horarios[$ultimo_indice]->num_curso_titulacion != $i+1){
-                    $check = 1;
-                }else{
-                    $grupos[$horarios[$ultimo_indice]->id] = $horarios[$ultimo_indice]->num_grupo_titulacion;  
-                    $ultimo_indice++;
-                }
-                endwhile; ?>
-                <td><?= form_dropdown('grupo', $grupos); ?></td>
-                <? 
-                $curso = $i+1;
-                $num_grupo = count($grupos) + 1; 
-                $disabled = count($grupos)? "false":"true"; ?> 
-                <td><?= anchor('horarios/add_grupo/' . $id_titulacion . '/' . $id_curso . '/' . $curso . '/primero/' . $num_grupo, 'Añadir Grupo') ?></td>
-                <td><div class="actions"><?= anchor('horarios/edit/', 'Editar','class="button-grupo"') ?> <span class="span-button">Editar</span></div></td>
-                <td><?= anchor('horarios/edit_teoria', 'Editar horario teoría', 'class="button-teoria"') ?> <span class="span-teoria">Editar horario teoría</span></td>
+            <? 
+                $num_curso = $key + 1; 
+                $sig_grupo = $curso['num_grupos'] + 1;
+            ?>
+            <td><?= $key + 1 ?></td>
+            <td><?= $curso['num_grupos'] ?></td>
+            <td><?= anchor("horarios/add_grupo/" . $id_titulacion . "/" . $id_curso . "/" . $num_curso . "/primero/" . $sig_grupo, "+") ?>/-</td>
+            <td>Horario Semana 1</td>
+            <td>Horario Semana 2</td>
+            <? if($curso['id_horario_sem1']): ?>
+                <td><?= anchor("horarios/edit/{$curso['id_horario_sem1']}", "Horario tipo")?></td>
+            <? else: ?>
+                <td>Horario tipo</td>
+            <? endif; ?>
+            <td>Horario Semana 1</td>
+            <td>Horario Semana 2</td>
+            <? if($curso['id_horario_sem2']): ?>
+                <td><?= anchor("horarios/edit/{$curso['id_horario_sem2']}", "Horario tipo")?></td>
+            <? else: ?>
+                <td>Horario tipo</td>
+            <? endif; ?>
+            <td>Check</td>
+            <td>Informe</td>
         </tr>
-        <tr class="fila-grupo">
-            <td><?= $i+1 . " semestre 2"?></td>
-            <? $check = 0;
-               $grupos = array(); ?>
-            <? while(!$check): ?>
-            <?
-                if(!isset($horarios[$ultimo_indice]) or $horarios[$ultimo_indice]->num_curso_titulacion != $i+1){
-                    $check = 1;
-                }else{
-                    $grupos[$horarios[$ultimo_indice]->id] = $horarios[$ultimo_indice]->num_grupo_titulacion;  
-                    $ultimo_indice++;
-                }
-                endwhile; ?>
-                <td><?= form_dropdown('grupo', $grupos); ?></td>
-                <? 
-                $curso = $i+1;
-                $num_grupo = count($grupos) + 1; 
-                $disabled = count($grupos)? "false":"true"; ?> 
-                <td><?= anchor('horarios/add_grupo/' . $id_titulacion . '/' . $id_curso . '/' . $curso . '/segundo/' . $num_grupo, 'Añadir Grupo') ?></td>
-                <td><div class="actions"><?= anchor('horarios/edit/', 'Editar','class="button-grupo"') ?> <span class="span-button">Editar</span></div></td>
-                <td><?= anchor('horarios/edit_teoria', 'Editar horario teoría', 'class="button-teoria"') ?> <span class="span-teoria">Editar horario teoría</span></td>
-        </tr>
-    <? endfor; ?>
+    <? endforeach; ?>
 </table>

@@ -28,17 +28,69 @@ class Horarios extends MY_Controller{
             ->orderBy('h.num_curso_titulacion, h.semestre, h.num_grupo_titulacion')
             ->execute();
         
-        $this->load->view('horarios/select_grupo', array('horarios' => $horarios, 'num_cursos' => $titulacion->num_cursos, 'id_titulacion' => $id_titulacion, 'id_curso' => $id_curso));
+        $num_grupos = Doctrine_Query::create()
+            ->select('MAX(h.num_grupo_titulacion) as grupos, num_curso_titulacion')
+            ->from('Horario h')
+            ->where('h.id_curso = ?', $id_curso)
+            ->andWhere('h.id_titulacion = ?', $id_titulacion)
+            ->groupBy('h.num_curso_titulacion')
+            ->execute();
+            
+        $cursos = array();
+        $num_cursos = $titulacion->num_cursos;
+        
+        for($i = 0 ; $i < $num_cursos; $i++)
+        {
+            $cursos[$i] = array();
+            $cursos[$i]['num_grupos'] = isset($num_grupos[$i]) ?  $num_grupos[$i]->grupos : 0;
+            if(isset($num_grupos[$i])){
+                $horarios = Doctrine_Query::create()
+                ->select('h.id')
+                ->from('Horario h')
+                ->where('h.id_curso = ?', $id_curso)
+                ->andWhere('h.id_titulacion = ?', $id_titulacion)
+                ->andWhere('h.num_grupo_titulacion = ?', $num_grupos[$i]->grupos)
+                ->orderBy('h.num_curso_titulacion, h.semestre, h.num_grupo_titulacion')
+                ->execute();
+                
+                $cursos[$i]['id_horario_sem1'] = $horarios[0]->id;
+                $cursos[$i]['id_horario_sem2'] = $horarios[0]->id;
+            }else{
+                $cursos[$i]['id_horario_sem1'] = 0;
+                $cursos[$i]['id_horario_sem2'] = 0;
+            }
+            $cursos[$i]['mas_grupos'] = true; // Esto habría que ponerlo a false si se ha alcanzado el máximo de grupos.
+             
+        }
+        
+        
+        $this->load->view('horarios/select_grupo', array('cursos' => $cursos, 'id_titulacion' => $id_titulacion, 'id_curso' => $id_curso));
+        
+    }
+
+    public function crear_grupos($id_titulacion, $id_curso){
+        $horarios = Doctrine_Query::create()
+            ->select('h.*')
+            ->from('Horario h')
+            ->where('h.id_titulacion = ?', $id_titulacion)
+            ->andWhere('h.id_curso = ?', $id_curso)
+            ->execute();
+        
+        if(count($horarios)) redirect("horarios/select_grupo/$id_titulacion/$id_curso");
+        
+        $titulacion = Doctrine::getTable('Titulacion')->find($id_titulacion);
+        
+        $this->load->view('horarios/configuracion_grupos', array('titulacion' => $titulacion));
         
     }
     
-    public function add_grupo($id_titulacion, $id_curso, $curso_titulacion, $semestre, $num_grupo){
-        $horario = new Horario;
-        $horario->id_curso = $id_curso;
-        $horario->id_titulacion = $id_titulacion;
-        $horario->num_curso_titulacion = $curso_titulacion;
-        $horario->num_grupo_titulacion = $num_grupo;
-        $horario->semestre = $semestre;
+    public function add_grupo($id_titulacion, $id_curso, $curso_titulacion, $num_grupo){
+        $horario_semestre1 = new Horario;
+        $horario_semestre1->id_curso = $id_curso;
+        $horario_semestre1->id_titulacion = $id_titulacion;
+        $horario_semestre1->num_curso_titulacion = $curso_titulacion;
+        $horario_semestre1->num_grupo_titulacion = $num_grupo;
+
         
         $query_asignaturas = Doctrine_Query::create()
                             ->select('a.id, p.id, c.id, c.horas, c.grupos, c.alternas, c.actividad')
@@ -47,19 +99,18 @@ class Horarios extends MY_Controller{
                             ->innerJoin('p.planactividades c')
                             ->where("a.curso = ?", $curso_titulacion)
                             ->andWhere("a.titulacion_id = ?", $id_titulacion)
-                            ->andWhere("a.semestre = ?", $semestre)
                             ->andWhere("p.id_curso = ?", $id_curso);
                             
         
         $asignaturas = $query_asignaturas->execute();
 
-        foreach($asignaturas as $asignatura){
-            foreach($asignatura->PlanesDocentes[0]->planactividades as $planactividad){
-                if($planactividad->actividad == "teoria"){
-                    $grupos_totales_teoria = $planactividad->grupos;
-                }
+        foreach($asignatura->PlanesDocentes[0]->planactividades as $planactividad){
+            if($planactividad->actividad == "teoria"){
+                $grupos_totales_teoria = $planactividad->grupos;
             }
-            
+        }
+        
+        foreach($asignaturas as $asignatura){
             foreach($asignatura->PlanesDocentes[0]->planactividades as $planactividad){
                 if($planactividad->actividad == "teoria"){
                     $linea_horario = new LineaHorario;
