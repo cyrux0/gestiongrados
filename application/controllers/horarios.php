@@ -90,7 +90,14 @@ class Horarios extends MY_Controller{
         $horario_semestre1->id_titulacion = $id_titulacion;
         $horario_semestre1->num_curso_titulacion = $curso_titulacion;
         $horario_semestre1->num_grupo_titulacion = $num_grupo;
+        $horario_semestre1->semestre = "primero";
 
+        $horario_semestre2 = new Horario;
+        $horario_semestre2->id_curso = $id_curso;
+        $horario_semestre2->id_titulacion = $id_titulacion;
+        $horario_semestre2->num_curso_titulacion = $curso_titulacion;
+        $horario_semestre2->num_grupo_titulacion = $num_grupo;
+        $horario_semestre2->semestre = "segundo";
         
         $query_asignaturas = Doctrine_Query::create()
                             ->select('a.id, p.id, c.id, c.horas, c.grupos, c.alternas, c.actividad')
@@ -103,10 +110,12 @@ class Horarios extends MY_Controller{
                             
         
         $asignaturas = $query_asignaturas->execute();
-
+        
+        $asignatura = $asignaturas[0];
+        
         foreach($asignatura->PlanesDocentes[0]->planactividades as $planactividad){
             if($planactividad->actividad == "teoria"){
-                $grupos_totales_teoria = $planactividad->grupos;
+                $grupos_totales_teoria = $planactividad->grupos; // Esto habría que sacarlo de otro sitio pero de momento se deja ahí.
             }
         }
         
@@ -118,7 +127,10 @@ class Horarios extends MY_Controller{
                     $linea_horario->id_asignatura = $asignatura->id;
                     $linea_horario->actividad = $planactividad->actividad;
                     $linea_horario->num_grupo_actividad = $num_grupo;
-                    $horario->lineashorario[] = $linea_horario;
+                    if($asignatura->semestre == "primero")                    
+                        $horario_semestre1->lineashorario[] = $linea_horario;
+                    else
+                        $horario_semestre2->lineashorario[] = $linea_horario;
                 }else{
                     $por_asignar = ($planactividad->grupos - floor($planactividad->grupos/$grupos_totales_teoria)*($num_grupo-1));
                     $asignados = $planactividad->grupos - $por_asignar;
@@ -130,14 +142,19 @@ class Horarios extends MY_Controller{
                             $linea_horario->id_asignatura = $asignatura->id;
                             $linea_horario->actividad = $planactividad->actividad;
                             $linea_horario->num_grupo_actividad = $asignados + $j + 1;
-                            $horario->lineashorario[] = $linea_horario;                        
+                            if($asignatura->semestre=="primero")
+                                $horario_semestre1->lineashorario[] = $linea_horario;
+                            else
+                                $horario_semestre2->lineashorario[] = $linea_horario;
                         }
                     }
                 }
             }
         }
-
-        $horario->save();
+        
+        $horario_semestre1->save();
+        $horario_semestre2->save();
+        
         redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
     }
 
@@ -286,7 +303,31 @@ class Horarios extends MY_Controller{
         $linea->hora_inicial = $date_inicial->format("H:i");
         $linea->hora_final = $date_final->format("H:i");
         $linea->dia_semana = $this->input->post("dia_semana");
-        $linea->save();
+
+        $success = array('success' => 1);
+        
+        if($linea->actividad == "teoria"){
+            $lineas = Doctrine_Query::create()
+                    ->select('l.*')
+                    ->from('LineaHorario l')
+                    ->where('l.hora_inicial BETWEEN ? AND ?', array($linea->hora_inicial, $linea->hora_final))
+                    ->orWhere('l.hora_final BETWEEN ? AND ?', array($linea->hora_inicial, $linea->hora_final))
+                    ->execute();
+            
+            
+
+            if($lineas->count()){
+                $success['success'] = 0;
+            }
+        }
+        
+        if(!$linea->isValid()){
+            $success['success'] = 0;
+        }else
+            $linea->save();
+        unset($this->layout);
+        echo json_encode($success);
+        
     }
     
     public function delete($id_horario){

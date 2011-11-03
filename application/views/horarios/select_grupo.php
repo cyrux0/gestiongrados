@@ -32,7 +32,7 @@
             ?>
             <td><?= $key + 1 ?></td>
             <td><?= $curso['num_grupos'] ?></td>
-            <td><?= anchor("horarios/add_grupo/" . $id_titulacion . "/" . $id_curso . "/" . $num_curso . "/primero/" . $sig_grupo, "+") ?>/-</td>
+            <td><?= anchor("horarios/add_grupo/" . $id_titulacion . "/" . $id_curso . "/" . $num_curso . "/" . $sig_grupo, "+") ?>/-</td>
             <td>Horario Semana 1</td>
             <td>Horario Semana 2</td>
             <? if($curso['id_horario_sem1']): ?>

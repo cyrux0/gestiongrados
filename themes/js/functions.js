@@ -44,7 +44,9 @@ var titulaciones = {
     //Preparar el formulario para ser enviado por AJAX
     prepareForm: function(){
         var options = {
-            data:    {'remote': 'true'},
+            data:    {
+                'remote': 'true'
+            },
             dataType: 'json',
             success:    titulaciones.appendItem
         }
@@ -61,8 +63,12 @@ var titulaciones = {
             $('#listatitulaciones').append(response.view);
             titulaciones.hideForm();
         }    
-        setTimeout(function(){$(".notice").hide("slow");}, 3000);
-        setTimeout(function(){$(".alert").hide("slow");}, 3000);
+        setTimeout(function(){
+            $(".notice").hide("slow");
+        }, 3000);
+        setTimeout(function(){
+            $(".alert").hide("slow");
+        }, 3000);
     },
     
     hideForm: function(){
@@ -77,7 +83,9 @@ var titulaciones = {
         
         $('.actrigger').click(function(event){
             event.preventDefault();
-            var p={'js': 1};
+            var p={
+                'js': 1
+            };
             var href = $(this).children(0).attr('href'); 
             if($(this).next().hasClass('accontainer')){
                 if($(this).hasClass("current")){
@@ -102,7 +110,7 @@ var titulaciones = {
         $(this).slideDown();
         $(this).prev().addClass('current');
         cargas.initialize();
-        // En principio nada, quizás cargar el form modal
+    // En principio nada, quizás cargar el form modal
     }
 }
 
@@ -150,28 +158,28 @@ var eventos = {
 var login = {
     initialize: function(){
         $('#login-form').dialog({
-               autoOpen: false,
-               height: 250,
-               width: 280,
-               modal: true,
-               buttons: {
-                   'Entrar': function(){
-                        $('#login-form form').submit();
-                        $(this).dialog("close");
-                   },
-                   'Cancelar': function(){
-                        $(this).dialog("close");
-                   },
-               },
+            autoOpen: false,
+            height: 250,
+            width: 280,
+            modal: true,
+            buttons: {
+                'Entrar': function(){
+                    $('#login-form form').submit();
+                    $(this).dialog("close");
+                },
+                'Cancelar': function(){
+                    $(this).dialog("close");
+                }
+            },
                
-               close: function(){
-                   allFields.val("").removeClass("ui-state-error");
-               }
+            close: function(){
+                allFields.val("").removeClass("ui-state-error");
+            }
         });
         
         $('#login-button').click(function(event){
-           event.preventDefault();
-           $('#login-form').dialog("open");
+            event.preventDefault();
+            $('#login-form').dialog("open");
         });
     }
 }
@@ -194,7 +202,9 @@ var cargas = {
         }
         $('.linkvercarga').click(function(event){
             event.preventDefault();
-            $('#ficha_carga').load($(this).attr('href'), {'js': 1}, null);
+            $('#ficha_carga').load($(this).attr('href'), {
+                'js': 1
+            }, null);
             $('#ficha_carga').dialog("open");
         });
     }
@@ -250,7 +260,7 @@ var calendar = {
                 $dialogContent.dialog("destroy");
                 $dialogContent.hide();
                 $('.alert').remove();
-               // $('#calendar').fullcalendar(); //BORRAR EVENTOS NO SALVADOS
+            // $('#calendar').fullcalendar(); //BORRAR EVENTOS NO SALVADOS
             },
             
             buttons: {
@@ -258,7 +268,10 @@ var calendar = {
 
                     var url = $('#form_add_event form').attr("action");
                     var options = {
-                        data:    {'remote': 'true', 'tipo_evento' : 'festivo'},
+                        data:    {
+                            'remote': 'true', 
+                            'tipo_evento' : 'festivo'
+                        },
                         dataType: 'json',
                         success: function(data, textStatus, jqXHR){
                             if(data.success == "true"){
@@ -315,7 +328,7 @@ var calendar = {
             close: function(){
                 $dialogContent.dialog("destroy");
                 $dialogContent.hide();
-               // $('#calendar').fullcalendar(); //BORRAR EVENTOS NO SALVADOS
+            // $('#calendar').fullcalendar(); //BORRAR EVENTOS NO SALVADOS
             },
             
             buttons: {
@@ -344,121 +357,152 @@ var calendar = {
 var horarios = {
     
     initialize: function(){
-            $("#asignaturas div.external-event").each(function(){
+        $("#asignaturas div.external-event").each(function(){
 
-                var events = eval($(this).find(".hidden-info").text());
-                $(this).data('events', events);
+            var events = eval($(this).find(".hidden-info").text());
+            $(this).data('events', events);
                 
-                $(this).draggable({
-                    zIndex: 999,
-                    revert: true,
-                    revertDuration: 0
-                });
-                
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,
+                revertDuration: 0
             });
-            
-            var savedEvents = eval($('#asignaturas-guardadas').text());
-            
-            for(var i in savedEvents){
                 
-                hora_inicial = savedEvents[i].hora_inicial.split(":");
-                hora_final = savedEvents[i].hora_final.split(":");
-                dia_semana = eval(savedEvents[i].dia_semana);
-                savedEvents[i].start = new Date(1950, 0, 2 + dia_semana, hora_inicial[0], hora_inicial[1]);
-                savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
-                savedEvents[i].title = savedEvents[i].nombre_asignatura;
-                savedEvents[i].allDay = false;
-                switch(savedEvents[i].actividad){
+        });
+            
+        var savedEvents = eval($('#asignaturas-guardadas').text());
+            
+        for(var i in savedEvents){
+                
+            hora_inicial = savedEvents[i].hora_inicial.split(":");
+            hora_final = savedEvents[i].hora_final.split(":");
+            dia_semana = eval(savedEvents[i].dia_semana);
+            savedEvents[i].start = new Date(1950, 0, 2 + dia_semana, hora_inicial[0], hora_inicial[1]);
+            savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
+            savedEvents[i].title = savedEvents[i].nombre_asignatura;
+            savedEvents[i].allDay = false;
+            switch(savedEvents[i].actividad){
+                case 'teoria':
+                    savedEvents[i].color = '#3366CC';
+                    break;
+                case 'lab':
+                    savedEvents[i].color = '#B22222';
+                    break;
+                case 'problemas':
+                    savedEvents[i].color = '#FFD700';
+                    break;
+                case 'informatica':
+                    savedEvents[i].color = '#808000';
+                    break;
+                case 'campo':
+                    savedEvents[i].color = '#696969';
+                    break;
+                default:
+                    break;
+            }
+        }
+            
+        $("#horario").fullCalendar({
+            events: savedEvents,
+            theme: true,
+            weekends: false,
+            header: {
+                left: 'title',
+                center: '',
+                right: ''
+            },
+            defaultView: 'agendaWeek',
+            titleFormat: false,
+            columnFormat: {
+                week: 'ddd'
+            },
+            editable: true,
+            disableResizing: true,
+            droppable: true,
+            allDaySlot: false,
+            minTime: 9,
+            maxTime: 22,
+            height: 400,
+            aspect_ratio: 1,
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+            eventDrop: function(eventCalendar, dayDelta, minuteDelta, allDay, revertFunc){
+                var data = { 
+                    id: eventCalendar.id,
+                    hora_inicial: eventCalendar.start.getHours(),
+                    minuto_inicial: eventCalendar.start.getMinutes(),
+                    hora_final: eventCalendar.end.getHours(),
+                    minuto_final: eventCalendar.end.getMinutes(),
+                    dia_semana: eventCalendar.start.getDay() - 1
+                };
+
+                    
+                var request = {
+                    url: eventCalendar.save_url,
+                    data: data,
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data){
+                        if(!data.success){
+                            revertFunc();
+                        }
+                    }
+                };
+                
+                $.ajax(request);
+            },
+                
+            drop: function(date, allDay){
+
+                var events = $(this).data('events');
+                var originalObject = events.shift();
+                var copiedEventObject = $.extend({}, originalObject);
+                copiedEventObject.start = date;
+                var endDate = new Date(date.valueOf() + 60000 * 60 *copiedEventObject.slot_minimo);
+                copiedEventObject.end = endDate; 
+                copiedEventObject.title = copiedEventObject.nombre_asignatura;
+                copiedEventObject.allDay = false;
+                switch(copiedEventObject.actividad){
                     case 'teoria':
-                        savedEvents[i].color = '#3366CC';
+                        copiedEventObject.color = '#3366CC';
                         break;
                     case 'lab':
-                        savedEvents[i].color = '#B22222';
+                        copiedEventObject.color = '#B22222';
                         break;
                     case 'problemas':
-                        savedEvents[i].color = '#FFD700';
+                        copiedEventObject.color = '#FFD700';
                         break;
                     case 'informatica':
-                        savedEvents[i].color = '#808000';
+                        copiedEventObject.color = '#808000';
                         break;
                     case 'campo':
-                        savedEvents[i].color = '#696969';
+                        copiedEventObject.color = '#696969';
                         break;
                     default:
                         break;
                 }
+
+                var data = { 
+                    id: copiedEventObject.id,
+                    hora_inicial: copiedEventObject.start.getHours(),
+                    minuto_inicial: copiedEventObject.start.getMinutes(),
+                    hora_final: copiedEventObject.end.getHours(),
+                    minuto_final: copiedEventObject.end.getMinutes(),
+                    dia_semana: copiedEventObject.start.getDay() - 1
+                };
+
+                    
+                var request = {
+                    url: copiedEventObject.save_url,
+                    data: data,
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data){
+                        horarios.updateEvents(data, originalObject, copiedEventObject, $(this));
+                    }
+                };
+                $.ajax(request);                    
             }
-            
-            $("#horario").fullCalendar({
-                events: savedEvents,
-                theme: true,
-                weekends: false,
-                header: {
-                    left: 'title',
-                    center: '',
-                    right: ''
-                },
-                defaultView: 'agendaWeek',
-                titleFormat: false,
-                columnFormat: {
-                    week: 'ddd'
-                },
-                editable: true,
-                disableResizing: true,
-                droppable: true,
-                allDaySlot: false,
-                minTime: 9,
-                maxTime: 22,
-                height: 400,
-                aspect_ratio: 1,
-                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
-                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-                eventDrop: function(eventCalendar, dayDelta, minuteDelta, allDay, revertFunc){
-                    horarios.move(eventCalendar);
-                },
-                
-                drop: function(date, allDay){
-
-                    var events = $(this).data('events');
-                    var originalObject = events.shift();
-                    var copiedEventObject = $.extend({}, originalObject);
-                    copiedEventObject.start = date;
-                    var endDate = new Date(date.valueOf() + 60000 * 60 *copiedEventObject.slot_minimo);
-                    copiedEventObject.end = endDate; 
-                    copiedEventObject.title = copiedEventObject.nombre_asignatura;
-                    copiedEventObject.allDay = false;
-                    switch(copiedEventObject.actividad){
-                        case 'teoria':
-                            copiedEventObject.color = '#3366CC';
-                            break;
-                        case 'lab':
-                            copiedEventObject.color = '#B22222';
-                            break;
-                        case 'problemas':
-                            copiedEventObject.color = '#FFD700';
-                            break;
-                        case 'informatica':
-                            copiedEventObject.color = '#808000';
-                            break;
-                        case 'campo':
-                            copiedEventObject.color = '#696969';
-                            break;
-                        default:
-                            break;
-                    }
-                    horarios.move(copiedEventObject);
-
-                    
-                    $('#horario').fullCalendar('renderEvent', copiedEventObject, true);
-                    
-                    if(events.length == 0){
-                        $(this).remove();
-                    }else{
-                        $(this).find(".subject-count").text(events.length);
-                    }
-
-                    
-                }
         });
         
         $('#horario').fullCalendar('gotoDate', 1950); // Mon, 2-ene-1950
@@ -468,24 +512,22 @@ var horarios = {
         horarios.selectGrupo();
         horarios.makeCheck();
     },
-    
-    move: function(eventCalendar){
-        var data = { 
-            id: eventCalendar.id,
-            hora_inicial: eventCalendar.start.getHours(),
-            minuto_inicial: eventCalendar.start.getMinutes(),
-            hora_final: eventCalendar.end.getHours(),
-            minuto_final: eventCalendar.end.getMinutes(),
-            dia_semana: eventCalendar.start.getDay() - 1
-        };
 
-        var request = {
-            url: eventCalendar.save_url,
-            data: data,
-            type: "POST",
-        };
-        
-        $.ajax(request);
+    updateEvents: function(data, originalEvent, copiedEventObject, container){
+
+        if(data.success == 1){
+            $('#horario').fullCalendar('renderEvent', copiedEventObject, true);
+            var events = $("#asignaturas div.external-event#subject-" + copiedEventObject.id).data('events');
+            if(events.length == 0){
+                $("#asignaturas div.external-event#subject-" + copiedEventObject.id).remove();
+            }else{
+                $("#asignaturas div.external-event#subject-" + copiedEventObject.id).find(".subject-count").text(events.length);
+                $("#asignaturas div.external-event#subject-" + copiedEventObject.id).attr("id", "subject-" + events[0].id);
+            }
+        }else{
+            var events = $(this).data('events');
+            events.unshift(originalEvent);
+        }
     },
     
     selectGrupo: function(){
@@ -530,14 +572,14 @@ var horarios = {
     },
     
     makeCheck: function(){
-    	$('#check-button').click(function(event){
-    		event.preventDefault();
-    		$('#check-horario').slideToggle();
-    		$('#check-horario').load($('#check-button').attr("href"), function(response){
-    			$('#check-horario').hide();
-    			$('#check-horario').slideDown();
-    		});
-    	});
+        $('#check-button').click(function(event){
+            event.preventDefault();
+            $('#check-horario').slideToggle();
+            $('#check-horario').load($('#check-button').attr("href"), function(response){
+                $('#check-horario').hide();
+                $('#check-horario').slideDown();
+            });
+        });
     }
 }
 
@@ -548,50 +590,50 @@ aulas = {
             var href = $(this).attr('href') + '/' + $('select[name="ocupacion"]').val();
             $.getJSON(href, function(data){
             	
-            	savedEvents = data;
-            	for(var i in savedEvents){
-	                hora_inicial = savedEvents[i].hora_inicial.split(":");
-	                hora_final = savedEvents[i].hora_final.split(":");
-	                dia_semana = eval(savedEvents[i].dia_semana);
-	                savedEvents[i].start = new Date(1950, 0, 2 + dia_semana, hora_inicial[0], hora_inicial[1]);
-	                savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
-	                savedEvents[i].title = "-";
-	                savedEvents[i].allDay = false;
-            	}
+                savedEvents = data;
+                for(var i in savedEvents){
+                    hora_inicial = savedEvents[i].hora_inicial.split(":");
+                    hora_final = savedEvents[i].hora_final.split(":");
+                    dia_semana = eval(savedEvents[i].dia_semana);
+                    savedEvents[i].start = new Date(1950, 0, 2 + dia_semana, hora_inicial[0], hora_inicial[1]);
+                    savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
+                    savedEvents[i].title = "-";
+                    savedEvents[i].allDay = false;
+                }
             	
                 $('#aulas').html('');
                 $('#aulas').fullCalendar({
-                events: savedEvents,
-                theme: true,
-                weekends: false,
-                header: {
-                    left: 'title',
-                    center: '',
-                    right: ''
-                },
-                defaultView: 'agendaWeek',
-                titleFormat: false,
-                columnFormat: {
-                    week: 'ddd'
-                },
-                editable: false,
-                disableResizing: true,
-                droppable: false,
-                allDaySlot: false,
-                minTime: 9,
-                maxTime: 22,
-                height: 400,
-                aspect_ratio: 1,
-                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
-                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                    events: savedEvents,
+                    theme: true,
+                    weekends: false,
+                    header: {
+                        left: 'title',
+                        center: '',
+                        right: ''
+                    },
+                    defaultView: 'agendaWeek',
+                    titleFormat: false,
+                    columnFormat: {
+                        week: 'ddd'
+                    },
+                    editable: false,
+                    disableResizing: true,
+                    droppable: false,
+                    allDaySlot: false,
+                    minTime: 9,
+                    maxTime: 22,
+                    height: 400,
+                    aspect_ratio: 1,
+                    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+                    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
                 });
                 $('#aulas').fullCalendar('gotoDate', 1950);
             });
 
-            //Load los eventos cogiendo el href
-            //Cargarlos en una variable
-            //Settear el div de las aulas como un full-calendar pasándole los eventos
-            //Hacer un slide down de ese div
+        //Load los eventos cogiendo el href
+        //Cargarlos en una variable
+        //Settear el div de las aulas como un full-calendar pasándole los eventos
+        //Hacer un slide down de ese div
         
         });
     }
