@@ -26,7 +26,7 @@ class PlanesDocentes extends MY_Controller{
                 $planactividad->grupos = $array_grupos[$key];
                 $planactividad->horas_semanales = $array_horas_semanales[$key];
                 $planactividad->alternas = isset($array_alternas[$key])? 1:0;
-                $planactividad->actividad = $key;             
+                $planactividad->id_actividad = $key;             
                 $global->planactividades[] = $planactividad;
             }
         }
@@ -88,25 +88,26 @@ class PlanesDocentes extends MY_Controller{
 		$config['max_size']	= '100';
         
         $this->load->library('upload', $config);
-        
         if(!$this->upload->do_upload()){
-            $error = array('error' => $this->upload->display_errors(), 'id_asignatura' => $this->input->post('id_asignatura'), 'id_curso' => $this->input->post('id_curso'));
+            $error = array('error' => $this->upload->display_errors());
             $this->load->view('PlanDocente/from_file', $error);
         }else{
             $data = $this->upload->data();
             try{
-                _parse_data($data['full_path']);
+                $this->_parse_data($data['full_path']);
+                $rows = $this->_parse_data($data['full_path'], true);
+                $this->load->view('plandocente/upload_success', array('rows' => $rows));
             }catch(Exception $e){
-                $error = array('error' => $e->getMessage(), 'id_asignatura' => $this->input->post('id_asignatura'), 'id_curso' => $this->input->post('id_curso'));
+                $error = array('error' => $e->getMessage());
                 $this->load->view('PlanDocente/from_file', $error);
             }
-            $rows = _parse_data($data['full_path'], true);
-            $this->load->view('plandocente/upload_success', array('rows' => $rows));
         }
     }
     
+    public function make_upload(){
+        $this->load->view('PlanDocente/from_file', array('error' => ''));
+    }
     private function _parse_data($filename, $process = false){
-        
         $file = fopen($filename, 'rb');
         $data = fgetcsv($file, 0, ',');
         if(!$data){
@@ -115,32 +116,51 @@ class PlanesDocentes extends MY_Controller{
         }
         $fields = array();
         foreach($data as $field)
-            $fields[] = $field;
+            $fields[] = trim($field);
         $row = 2;
-        // fields = asignatura | actividad | horas(totales) | grupos | horas_semanales | alternas
+
+        // fields = asignatura | actividad | horas(totales) | grupos | horas_semanales | alternas | id_curso
         while(($data = fgetcsv($file, 0, ',')) != false){
             if(count($fields) != count($data)){
                 throw new Exception("Error en la línea $row: número incorrecto de valores");
                 return false;
             }
             $planactividad = new PlanActividad;
-            $datarow = array_combine($fields, $values);
+            $datarow = array_combine($fields, $data);
             if(!isset($datarow['id_asignatura'])){
                 throw new Exception("Error en la línea $row: falta el identificador de la asignatura");
             }else{
-                $plandocente = Doctrine::getTable('PlanDocente')->findById_asignatura($datarow['id_asignatura']);
-                $planactividad->id_plandocente = $plandocente;
+                $plandocente = Doctrine_Query::create()
+                                ->select("p.*")
+                                ->from('PlanDocente p')
+                                ->where('id_asignatura = ? AND id_curso = ?', array($datarow['id_asignatura'], $datarow['id_curso']))
+                                ->execute();
+                if(!$plandocente->count()){
+                    $plandocente = new PlanDocente();
+                    $plandocente->id_asignatura = $datarow['id_asignatura'];
+                    $plandocente->id_curso = $datarow['id_curso'];
+                    if(!$plandocente->isValid()){
+                        
+                        throw new Exception("Error en la línea $row | " . $plandocente->getErrorStackAsString());
+                    }else{    
+                        $plandocente->save();    
+                    }
+                }else{
+                    $plandocente = $plandocente->getFirst();
+                }
+                $planactividad->id_plandocente = $plandocente->id;
             }
             $planactividad->fromArray($datarow);
             if(!$planactividad->isValid()){
-                throw new Exception("Error en la línea $row");
-            }
-            
-            if($process){
-                 $plandocente->save();
+                throw new Exception("Error en la línea $row | " . $planactividad->getErrorStackAsString());
+            }else{           
+                if($process){
+                    $planactividad->save();
+                }
             }
             $row ++;
         }
+        return $row;
     }
     
     

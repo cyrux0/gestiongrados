@@ -381,20 +381,20 @@ var horarios = {
             savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
             savedEvents[i].title = savedEvents[i].nombre_asignatura;
             savedEvents[i].allDay = false;
-            switch(savedEvents[i].actividad){
-                case 'teoria':
+            switch(savedEvents[i].id_actividad){
+                case "1":
                     savedEvents[i].color = '#3366CC';
                     break;
-                case 'lab':
+                case "2":
                     savedEvents[i].color = '#B22222';
                     break;
-                case 'problemas':
+                case "3":
                     savedEvents[i].color = '#FFD700';
                     break;
-                case 'informatica':
+                case "4":
                     savedEvents[i].color = '#808000';
                     break;
-                case 'campo':
+                case "5":
                     savedEvents[i].color = '#696969';
                     break;
                 default:
@@ -402,7 +402,7 @@ var horarios = {
             }
         }
             
-        $("#horario").fullCalendar({
+        var fullcalendar = $("#horario").fullCalendar({
             events: savedEvents,
             theme: true,
             weekends: false,
@@ -455,6 +455,8 @@ var horarios = {
             drop: function(date, allDay){
 
                 var events = $(this).data('events');
+                var aula = $('#select-subject-' + events[0].id).val();
+                
                 var originalObject = events.shift();
                 var copiedEventObject = $.extend({}, originalObject);
                 copiedEventObject.start = date;
@@ -462,20 +464,20 @@ var horarios = {
                 copiedEventObject.end = endDate; 
                 copiedEventObject.title = copiedEventObject.nombre_asignatura;
                 copiedEventObject.allDay = false;
-                switch(copiedEventObject.actividad){
-                    case 'teoria':
+                switch(copiedEventObject.id_actividad){
+                    case '1':
                         copiedEventObject.color = '#3366CC';
                         break;
-                    case 'lab':
+                    case '2':
                         copiedEventObject.color = '#B22222';
                         break;
-                    case 'problemas':
+                    case '3':
                         copiedEventObject.color = '#FFD700';
                         break;
-                    case 'informatica':
+                    case '4':
                         copiedEventObject.color = '#808000';
                         break;
-                    case 'campo':
+                    case '5':
                         copiedEventObject.color = '#696969';
                         break;
                     default:
@@ -488,7 +490,8 @@ var horarios = {
                     minuto_inicial: copiedEventObject.start.getMinutes(),
                     hora_final: copiedEventObject.end.getHours(),
                     minuto_final: copiedEventObject.end.getMinutes(),
-                    dia_semana: copiedEventObject.start.getDay() - 1
+                    dia_semana: copiedEventObject.start.getDay() - 1,
+                    aula: aula
                 };
 
                     
@@ -502,7 +505,37 @@ var horarios = {
                     }
                 };
                 $.ajax(request);                    
-            }
+            },
+                eventClick: function(calEvent, jsEvent, view){
+                    var $dialogContent = $('#delete-line');
+                    $dialogContent.dialog({
+                        modal: true,
+                        title: "Borrar " + calEvent.title,
+                        close: function(){
+                            $dialogContent.dialog("destroy");
+                            $dialogContent.hide();
+                        },
+
+                        buttons: {
+                            Borrar: function(){
+                                var url = $('#delete-url').html();
+                                
+                                url = url + '/' + calEvent.id;
+                                var options = {
+                                    url: url
+                                };
+
+                                window.location = url;
+                                fullcalendar.fullCalendar("removeEvents", calEvent.id);
+                                $dialogContent.dialog("close");
+                            },
+
+                            Cancelar: function(){
+                                $dialogContent.dialog("close");
+                            }
+                        }
+                    });
+                }
         });
         
         $('#horario').fullCalendar('gotoDate', 1950); // Mon, 2-ene-1950
@@ -514,14 +547,15 @@ var horarios = {
     },
 
     updateEvents: function(data, originalEvent, copiedEventObject, container){
+        var events = $("#asignaturas div.external-event#subject-" + copiedEventObject.id).data('events');
 
         if(data.success == 1){
             $('#horario').fullCalendar('renderEvent', copiedEventObject, true);
-            var events = $("#asignaturas div.external-event#subject-" + copiedEventObject.id).data('events');
             if(events.length == 0){
-                $("#asignaturas div.external-event#subject-" + copiedEventObject.id).remove();
+                $("#asignaturas div.external-event#subject-" + copiedEventObject.id).parent().parent().remove();
             }else{
-                $("#asignaturas div.external-event#subject-" + copiedEventObject.id).find(".subject-count").text(events.length);
+                $("#asignaturas div.external-event#subject-" + copiedEventObject.id).parent().parent().find(".subject-count").text(events.length);
+                $('#select-subject-' + copiedEventObject.id).attr("id", "select-subject-" + events[0].id);
                 $("#asignaturas div.external-event#subject-" + copiedEventObject.id).attr("id", "subject-" + events[0].id);
             }
         }else{
@@ -625,7 +659,7 @@ aulas = {
                     height: 400,
                     aspect_ratio: 1,
                     dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
-                    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
                 });
                 $('#aulas').fullCalendar('gotoDate', 1950);
             });
@@ -659,7 +693,8 @@ $(document).ready(function(){
         collapsible: true
     });*/
     
-    
+  
+    //$('.colorpicker').farbtastic('.color');
     $('#side_bar h3').click(function(){
         $(this).next().slideToggle("fast");
         return false;

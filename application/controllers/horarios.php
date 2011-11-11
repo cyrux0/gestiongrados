@@ -28,33 +28,37 @@ class Horarios extends MY_Controller{
             ->orderBy('h.num_curso_titulacion, h.semestre, h.num_grupo_titulacion')
             ->execute();
         
-        $num_grupos = Doctrine_Query::create()
-            ->select('MAX(h.num_grupo_titulacion) as grupos, num_curso_titulacion')
-            ->from('Horario h')
-            ->where('h.id_curso = ?', $id_curso)
-            ->andWhere('h.id_titulacion = ?', $id_titulacion)
-            ->groupBy('h.num_curso_titulacion')
-            ->execute();
+
             
         $cursos = array();
         $num_cursos = $titulacion->num_cursos;
         
         for($i = 0 ; $i < $num_cursos; $i++)
         {
+            $num_grupos = Doctrine_Query::create()
+                ->select('MAX(h.num_grupo_titulacion) as grupos')
+                ->from('Horario h')
+                ->where('h.id_curso = ?', $id_curso)
+                ->andWhere('h.id_titulacion = ?', $id_titulacion)
+                ->andWhere('h.num_curso_titulacion = ?', $i+1)
+                ->execute();
+            
             $cursos[$i] = array();
-            $cursos[$i]['num_grupos'] = isset($num_grupos[$i]) ?  $num_grupos[$i]->grupos : 0;
-            if(isset($num_grupos[$i])){
+            $cursos[$i]['num_grupos'] = $num_grupos[0]->grupos ?: 0;
+            
+            if($num_grupos[0]->grupos){
                 $horarios = Doctrine_Query::create()
                 ->select('h.id')
                 ->from('Horario h')
                 ->where('h.id_curso = ?', $id_curso)
                 ->andWhere('h.id_titulacion = ?', $id_titulacion)
-                ->andWhere('h.num_grupo_titulacion = ?', $num_grupos[$i]->grupos)
+                ->andWhere('h.num_grupo_titulacion = ?', $num_grupos[0]->grupos)
+                ->andWhere('h.num_curso_titulacion = ?', $i+1)
                 ->orderBy('h.num_curso_titulacion, h.semestre, h.num_grupo_titulacion')
                 ->execute();
                 
                 $cursos[$i]['id_horario_sem1'] = $horarios[0]->id;
-                $cursos[$i]['id_horario_sem2'] = $horarios[0]->id;
+                $cursos[$i]['id_horario_sem2'] = $horarios[1]->id;
             }else{
                 $cursos[$i]['id_horario_sem1'] = 0;
                 $cursos[$i]['id_horario_sem2'] = 0;
@@ -100,7 +104,7 @@ class Horarios extends MY_Controller{
         $horario_semestre2->semestre = "segundo";
         
         $query_asignaturas = Doctrine_Query::create()
-                            ->select('a.id, p.id, c.id, c.horas, c.grupos, c.alternas, c.actividad')
+                            ->select('a.id, p.id, c.id, c.horas, c.grupos, c.alternas, c.id_actividad')
                             ->from('Asignatura a')
                             ->innerJoin('a.PlanesDocentes p')
                             ->innerJoin('p.planactividades c')
@@ -114,39 +118,40 @@ class Horarios extends MY_Controller{
         $asignatura = $asignaturas[0];
         
         foreach($asignatura->PlanesDocentes[0]->planactividades as $planactividad){
-            if($planactividad->actividad == "teoria"){
+            if($planactividad->id_actividad == 1){
                 $grupos_totales_teoria = $planactividad->grupos; // Esto habría que sacarlo de otro sitio pero de momento se deja ahí.
             }
         }
         
         foreach($asignaturas as $asignatura){
             foreach($asignatura->PlanesDocentes[0]->planactividades as $planactividad){
-                if($planactividad->actividad == "teoria"){
-                    $linea_horario = new LineaHorario;
-                    $linea_horario->slot_minimo = $planactividad->horas_semanales;
-                    $linea_horario->id_asignatura = $asignatura->id;
-                    $linea_horario->actividad = $planactividad->actividad;
-                    $linea_horario->num_grupo_actividad = $num_grupo;
-                    if($asignatura->semestre == "primero")                    
-                        $horario_semestre1->lineashorario[] = $linea_horario;
-                    else
-                        $horario_semestre2->lineashorario[] = $linea_horario;
+                if($planactividad->id_actividad == 1){ // Teoría
+                    for($i = 0; $i < $planactividad->horas_semanales; $i += 0.5){
+                        $linea_horario = new LineaHorario;
+                        $linea_horario->slot_minimo = 0.5;
+                        $linea_horario->id_asignatura = $asignatura->id;
+                        $linea_horario->id_actividad = $planactividad->id_actividad;
+                        $linea_horario->num_grupo_actividad = $num_grupo;
+                        if($asignatura->semestre == "primero")                    
+                            $horario_semestre1->lineashorario[] = $linea_horario;
+                        else
+                            $horario_semestre2->lineashorario[] = $linea_horario;
+                    }
                 }else{
                     $por_asignar = ($planactividad->grupos - floor($planactividad->grupos/$grupos_totales_teoria)*($num_grupo-1));
                     $asignados = $planactividad->grupos - $por_asignar;
                     $grupos_corresp = floor($por_asignar/($grupos_totales_teoria-$num_grupo+1));
-                    for($j = 0; $j < $grupos_corresp; $j++){
-                        for($i = 0; $i < $planactividad->horas_semanales; $i += 0.5){
-                            $linea_horario = new LineaHorario;
-                            $linea_horario->slot_minimo = 0.5;
-                            $linea_horario->id_asignatura = $asignatura->id;
-                            $linea_horario->actividad = $planactividad->actividad;
-                            $linea_horario->num_grupo_actividad = $asignados + $j + 1;
-                            if($asignatura->semestre=="primero")
-                                $horario_semestre1->lineashorario[] = $linea_horario;
-                            else
-                                $horario_semestre2->lineashorario[] = $linea_horario;
-                        }
+                    for($j = 0; $j < $grupos_corresp; $j++){                        
+                        $linea_horario = new LineaHorario;
+                        $linea_horario->slot_minimo = $planactividad->horas_semanales;
+                        $linea_horario->id_asignatura = $asignatura->id;
+                        $linea_horario->id_actividad = $planactividad->id_actividad;
+                        $linea_horario->num_grupo_actividad = $asignados + $j + 1;
+                        if($asignatura->semestre=="primero")
+                            $horario_semestre1->lineashorario[] = $linea_horario;
+                        else
+                            $horario_semestre2->lineashorario[] = $linea_horario;
+                        
                     }
                 }
             }
@@ -160,11 +165,11 @@ class Horarios extends MY_Controller{
 
     public function asignar_aulas($id){
         $lineas = Doctrine_Query::create()
-            ->select('l.id, l.actividad, l.num_grupo_actividad, l.id_aula, l.id_asignatura, a.nombre, l.id_horario')
+            ->select('l.id, l.id_actividad, l.num_grupo_actividad, l.id_aula, l.id_asignatura, a.nombre, l.id_horario')
             ->from('LineaHorario l')
             ->innerJoin('l.asignatura a')
             ->where('l.id_horario = ?', $id)
-            ->groupBy('l.id_asignatura, l.actividad, l.num_grupo_actividad')
+            ->groupBy('l.id_asignatura, l.id_actividad, l.num_grupo_actividad')
             ->execute();
         
         $aulas = Doctrine::getTable('Aula')->findAll();
@@ -188,7 +193,7 @@ class Horarios extends MY_Controller{
                 ->update('LineaHorario')
                 ->set('id_aula', $aula)
                 ->where('id_asignatura = ?', array($asignatura))
-                ->andWhere('actividad = ?', array($actividad))
+                ->andWhere('id_actividad = ?', array($actividad))
                 ->andWhere('num_grupo_actividad = ?', array($grupo));
                 
             $rows = $query->execute();
@@ -207,21 +212,26 @@ class Horarios extends MY_Controller{
         foreach($horario->lineashorario as $lineahorario){
             if(!$lineahorario->hora_inicial){
                 $array_linea_horario = $lineahorario->toArray();
-                $array_linea_horario['nombre_asignatura'] = $lineahorario->asignatura->abreviatura . " (" . $lineahorario->actividad . " - " . $lineahorario->num_grupo_actividad . " ) ";
+                $array_linea_horario['nombre_asignatura'] = $lineahorario->asignatura->abreviatura . " (" . $lineahorario->actividad->identificador . $lineahorario->num_grupo_actividad . " ) ";
                 $array_linea_horario['save_url'] = site_url("horarios/save_line/" . $lineahorario->id);
-                $asignaturas_por_asignar[$lineahorario->id_asignatura . $lineahorario->actividad . $lineahorario->num_grupo_actividad][] = $array_linea_horario;
+                $asignaturas_por_asignar[$lineahorario->id_asignatura . $lineahorario->id_actividad . $lineahorario->num_grupo_actividad][] = $array_linea_horario;
             }else{
                 $array_linea_horario = $lineahorario->toArray();
-                $array_linea_horario['nombre_asignatura'] = $lineahorario->asignatura->abreviatura . " (" . $lineahorario->actividad . " - " . $lineahorario->num_grupo_actividad . " ) ";
+                $array_linea_horario['nombre_asignatura'] = $lineahorario->asignatura->abreviatura . " (" . $lineahorario->actividad->identificador . $lineahorario->num_grupo_actividad . " ) ";
                 $array_linea_horario['save_url'] = site_url("horarios/save_line/" . $lineahorario->id);
                 $asignaturas_asignadas[] = $array_linea_horario;
             }
         }
-        $aulas = Doctrine::getTable('Aula')->findAll();
+        
+        $actividades = Doctrine::getTable('Actividad')->findAll();
         $array_aulas = array();
-        foreach($aulas as $aula){
-            $array_aulas[$aula->id] = $aula->nombre;
+        foreach($actividades as $actividad){
+            $array_aulas[$actividad->id] = array();
+            foreach($actividad->aulas as $aula){
+                $array_aulas[$actividad->id][$aula->id] = $aula->nombre;
+            }
         }
+        
         $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas));
         
     }
@@ -282,10 +292,10 @@ class Horarios extends MY_Controller{
 	$horas = array();
 	foreach($horario->lineashorario as $lineahorario){
 	    if(!isset($horas[$lineahorario->asignatura->nombre])) $horas[$lineahorario->asignatura->nombre] = array();
-        if(!isset($horas[$lineahorario->asignatura->nombre][$lineahorario->actividad])) $horas[$lineahorario->asignatura->nombre][$lineahorario->actividad] = array();
-        if(!isset($horas[$lineahorario->asignatura->nombre][$lineahorario->actividad][$lineahorario->num_grupo_actividad])) $horas[$lineahorario->asignatura->nombre][$lineahorario->actividad][$lineahorario->num_grupo_actividad] = 0;
+        if(!isset($horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad])) $horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad] = array();
+        if(!isset($horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad])) $horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad] = 0;
         
-	  $horas[$lineahorario->asignatura->nombre][$lineahorario->actividad][$lineahorario->num_grupo_actividad] += $lineahorario->slot_minimo*$dias_totales[$lineahorario->dia_semana];
+	  $horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad] += $lineahorario->slot_minimo*$dias_totales[$lineahorario->dia_semana];
 	}
 	
 	$this->load->view('horarios/check', array('horas' => $horas));
@@ -303,28 +313,36 @@ class Horarios extends MY_Controller{
         $linea->hora_inicial = $date_inicial->format("H:i");
         $linea->hora_final = $date_final->format("H:i");
         $linea->dia_semana = $this->input->post("dia_semana");
+        $linea->id_aula = $this->input->post('aula');
 
         $success = array('success' => 1);
         
-        if($linea->actividad == "teoria"){
+        if($linea->id_actividad == 1){
+            // Hora ocupada en el mismo horario
             $lineas = Doctrine_Query::create()
                     ->select('l.*')
                     ->from('LineaHorario l')
-                    ->where('l.hora_inicial BETWEEN ? AND ?', array($linea->hora_inicial, $linea->hora_final))
-                    ->orWhere('l.hora_final BETWEEN ? AND ?', array($linea->hora_inicial, $linea->hora_final))
+                    ->where('l.hora_inicial >= ? AND l.hora_inicial < ?', array($linea->hora_inicial, $linea->hora_final))
+                    ->orWhere('l.hora_final > ? AND l.hora_final <= ?', array($linea->hora_inicial, $linea->hora_final))
+                    ->having('l.dia_semana = ? AND l.id_horario = ?', array($linea->dia_semana, $linea->id_horario))
                     ->execute();
-            
-            
-
-            if($lineas->count()){
-                $success['success'] = 0;
-            }
         }
         
-        if(!$linea->isValid()){
+        // Hora ocupada en el mismo aula
+        $lineas_aula = Doctrine_Query::create()
+            ->select('l.*, h.*')
+            ->from('LineaHorario l')
+            ->innerJoin('l.horario h')
+            ->where('l.hora_inicial >= ? AND l.hora_inicial < ?', array($linea->hora_inicial, $linea->hora_final))
+            ->orWhere('l.hora_final > ? AND l.hora_final <= ?', array($linea->hora_inicial, $linea->hora_final))
+            ->having('l.dia_semana = ? AND h.id_curso = ? AND l.id_aula = ?', array($linea->dia_semana, $linea->horario->id_curso, $linea->id_aula))
+            ->execute();
+
+        if(!$linea->isValid() or (isset($lineas) and $lineas->count()) or $lineas_aula->count()){
             $success['success'] = 0;
-        }else
+        }else{
             $linea->save();
+        }
         unset($this->layout);
         echo json_encode($success);
         
@@ -335,5 +353,16 @@ class Horarios extends MY_Controller{
         $horario->lineashorario->delete();
         $horario->delete();
         redirect('/');
+    }
+    
+    public function delete_line($id_line){
+        $line = Doctrine::getTable("LineaHorario")->find($id_line);
+        $line->hora_inicial = null;
+        $line->hora_final = null;
+        $line->dia_semana = null;
+        $line->save();
+                
+        unset($this->layout);
+        redirect('horarios/edit/' . $line->id_horario);
     }
 }

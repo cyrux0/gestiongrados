@@ -17,13 +17,13 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas[teoria]',''); //$result->horas[teoria]);?>
+        <?php echo form_input('horas[1]',''); //$result->horas[teoria]);?>
         </td>
         <td>
-        <?php echo form_input('grupos[teoria]',''); //$result->grupos[teoria]);?>
+        <?php echo form_input('grupos[1]',''); //$result->grupos[teoria]);?>
         </td>
         <td>
-            <?= form_input('horas_semanales[teoria]','')// $result->horas_semanales[teoria]) ?>
+            <?= form_input('horas_semanales[1]','')// $result->horas_semanales[teoria]) ?>
         </td>
     </tr>
     <tr>
@@ -33,16 +33,16 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas[lab]', '');// $result->horas[lab]);?>
+        <?php echo form_input('horas[2]', '');// $result->horas[lab]);?>
         </td>
         <td>
-        <?php echo form_input('grupos[lab]','');// $result->grupos[lab]);?>
+        <?php echo form_input('grupos[2]','');// $result->grupos[lab]);?>
         </td>
         <td>
-            <?= form_input('horas_semanales[lab]','');// $result->horas_semanales[lab]) ?>
+            <?= form_input('horas_semanales[2]','');// $result->horas_semanales[lab]) ?>
         </td>
         <td>
-            <?= form_checkbox('alternas[lab]', '1', FALSE) ?>
+            <?= form_checkbox('alternas[2]', '1', FALSE) ?>
         </td>
     </tr>
     <tr>
@@ -52,16 +52,16 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas[problemas]','');?>
+        <?php echo form_input('horas[3]','');?>
         </td>
         <td>
-        <?php echo form_input('grupos[problemas]','');?>
+        <?php echo form_input('grupos[3]','');?>
         </td>
         <td>
-            <?= form_input('horas_semanales[problemas]','') ?>
+            <?= form_input('horas_semanales[3]','') ?>
         </td>
         <td>
-            <?= form_checkbox('alternas[problemas]', 'TRUE', FALSE) ?>
+            <?= form_checkbox('alternas[3]', 'TRUE', FALSE) ?>
         </td>
     </tr>
     <tr>
@@ -71,16 +71,16 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas[informatica]', '');?>
+        <?php echo form_input('horas[4]', '');?>
         </td>
         <td>
-        <?php echo form_input('grupos[informatica]', '');?>
+        <?php echo form_input('grupos[4]', '');?>
         </td>
         <td>
-            <?= form_input('horas_semanales[informatica]', '') ?>
+            <?= form_input('horas_semanales[4]', '') ?>
         </td>
         <td>
-            <?= form_checkbox('alternas[informatica]', 'TRUE', FALSE) ?>
+            <?= form_checkbox('alternas[4]', 'TRUE', FALSE) ?>
         </td>
     </tr>
     <tr>
@@ -90,16 +90,16 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas[campo]', ''); ?>
+        <?php echo form_input('horas[5]', ''); ?>
         </td>
         <td>
-        <?php echo form_input('grupos[campo]', ''); ?>
+        <?php echo form_input('grupos[5]', ''); ?>
         </td>
         <td>
-            <?= form_input('horas_semanales[campo]', '') ?>
+            <?= form_input('horas_semanales[5]', '') ?>
         </td>
         <td>
-            <?= form_checkbox('alternas[campo]', 'TRUE', FALSE) ?>
+            <?= form_checkbox('alternas[5]', 'TRUE', FALSE) ?>
         </td>
      
      

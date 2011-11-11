@@ -68,4 +68,20 @@ Curso:
         fin_examenes_junio: "2012-07-05"
         inicio_examenes_sept: "2012-09-01"
         fin_examenes_sept: "2012-09-20"
-
+Actividad:
+    Teoria:
+        descripcion: Teoría
+        identificador: A
+    Laboratorio:
+        descripcion: Laboratorio
+        identificador: B
+    Problemas:
+        descripcion: Problemas
+        identificador: C
+    Infor:
+        descripcion: Informática
+        identificador: D
+    Campo:
+        descripcion: Prácticas de campo
+        identificador: E
+    

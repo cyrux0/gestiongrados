@@ -1,9 +1,26 @@
 <div id="asignaturas">
+    <table class="listaelems">
     <? foreach($asignaturas_por_asignar as $lineahorario): ?>
-        <? $class = "external-event ui-draggable subject-" . $lineahorario[0]['actividad']; ?>
-        <?= "<div class=\"" . $class . "\" id=\"subject-" . $lineahorario[0]['id'] . "\">" . $lineahorario[0]['nombre_asignatura'] . "(<span class=\"subject-count\">" . count($lineahorario) . "</span>)"  ?>
-        <?= "<span class=\"hidden-info\" style=\"display:none\">" . json_encode($lineahorario) . "</span></div>" ?>
+        <tr>
+            <td class="<?= "subject-" . $lineahorario[0]['id_actividad']; ?>">
+                <? $class = "external-event ui-draggable" ?>
+                <?= "<div class=\"" . $class . "\" id=\"subject-" . $lineahorario[0]['id'] . "\">" . $lineahorario[0]['nombre_asignatura'] ?>
+                <?= "<span class=\"hidden-info\" style=\"display:none\">" . json_encode($lineahorario) . "</span></div>" ?>
+            </td>
+            <td>
+                <span class="subject-count"><?= count($lineahorario) ?></span>
+            </td>
+            <td>
+                <? $id_select = "\"select-subject-{$lineahorario[0]['id']}\""; ?>
+                <?= form_dropdown('aula[]', $aulas[$lineahorario[0]['id_actividad']], null, "id=$id_select") ?>
+            </td>
+            <td>
+                <form><input type="text" name="color[]" class="color" value="#123456" /></form>
+                <div class="colorpicker"></div>
+            </td>
+        </tr>
     <? endforeach; ?>
+    </table>
 </div>
 
 <div id="asignaturas-guardadas" style="display:none">
@@ -22,3 +39,6 @@
 <div id="aulas">
     
 </div>
+
+<div id="delete-line"></div>
+<div id="delete-url" style="display:none"><?= site_url('horarios/delete_line/') ?></div>

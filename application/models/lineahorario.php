@@ -22,10 +22,10 @@ class LineaHorario extends Doctrine_Record{
         $this->hasColumn('hora_inicial', 'time', null, array('type' => 'time', 'primary' => false, 'notnull' => false, 'autoincrement' => false, 'unsigned' => false));
         $this->hasColumn('hora_final', 'time', null, array('type' => 'time', 'primary' => false, 'notnull' => false, 'autoincrement' => false, 'unsigned' => false));
         $this->hasColumn('dia_semana', 'integer', 1, array('notnull' => false, 'unsigned' => true, 'range' => array(0, 4)));
-        $this->hasColumn('actividad', 'enum', null, array('values' => array('teoria', 'lab', 'problemas', 'informatica','campo'), 'unsigned' => false));
+        $this->hasColumn('id_actividad', 'integer', null, array('type' => 'integer', 'notnull' => false));
         $this->hasColumn('num_grupo_actividad', 'integer', null, array('unsigned' => true, 'notnull' => true));
         $this->hasColumn('slot_minimo', 'float', null, array('notnull' => true, 'autoincrement' => false, 'unsigned' => true));
-        $this->hasColumn('id_aula', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'notnull' => false));
+        $this->hasColumn('id_aula', 'integer', null, array('type' => 'integer', 'notnull' => false));
     }
     
     public function setUp(){
@@ -33,5 +33,6 @@ class LineaHorario extends Doctrine_Record{
         $this->hasOne('Horario as horario', array('local' => 'id_horario', 'foreign' => 'id'));
         $this->hasOne('Asignatura as asignatura', array('local' => 'id_asignatura', 'foreign' => 'id'));
         $this->hasOne('Aula as aula', array('local' => 'id_aula', 'foreign' => 'id'));
+        $this->hasOne('Actividad as actividad', array('local' => 'id_actividad', 'foreign' => 'id'));
     }
 }

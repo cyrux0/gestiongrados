@@ -9,7 +9,9 @@ class Aulas extends MY_Controller
     
     public function add(){
         $aula = new Aula;
-        $this->load->view('aulas/add', array('aula' => $aula));
+        $tipos = Doctrine::getTable('Actividad')->findAll();
+        
+        $this->load->view('aulas/add', array('aula' => $aula, 'tipos' => $tipos));
     }
     
     public function create(){
@@ -17,6 +19,7 @@ class Aulas extends MY_Controller
         $aula->fromArray($this->input->post());
         $aula->save();
         redirect('aulas');
+        
     }
     
     public function index(){
