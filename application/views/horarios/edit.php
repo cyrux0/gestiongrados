@@ -14,8 +14,8 @@
                 <? $id_select = "\"select-subject-{$lineahorario[0]['id']}\""; ?>
                 <?= form_dropdown('aula[]', $aulas[$lineahorario[0]['id_actividad']], null, "id=$id_select") ?>
             </td>
-            <td>
-                <form><input type="text" name="color[]" class="color" value="#123456" /></form>
+            <td class="td-color" style="width:205px">
+                <form><input type="text" name="color[]" class="inputcolor" id="color-subject-<?= $lineahorario[0]['id'] ?>" value="#123456" /></form>
                 <div class="colorpicker"></div>
             </td>
         </tr>
@@ -34,7 +34,7 @@
     
 </div>
 
-<?= form_dropdown('ocupacion', $aulas) . anchor('horarios/ocupacion_aula/' . $horario->id_curso . '/', 'Ver ocupación del aula', 'id="link-ocupacion"') ?>
+<?= form_dropdown('ocupacion', $aulastotal) . anchor('horarios/ocupacion_aula/' . $horario->id_curso . '/', 'Ver ocupación del aula', 'id="link-ocupacion"') ?>
 
 <div id="aulas">
     

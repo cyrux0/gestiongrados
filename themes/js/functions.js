@@ -381,24 +381,9 @@ var horarios = {
             savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
             savedEvents[i].title = savedEvents[i].nombre_asignatura;
             savedEvents[i].allDay = false;
-            switch(savedEvents[i].id_actividad){
-                case "1":
-                    savedEvents[i].color = '#3366CC';
-                    break;
-                case "2":
-                    savedEvents[i].color = '#B22222';
-                    break;
-                case "3":
-                    savedEvents[i].color = '#FFD700';
-                    break;
-                case "4":
-                    savedEvents[i].color = '#808000';
-                    break;
-                case "5":
-                    savedEvents[i].color = '#696969';
-                    break;
-                default:
-                    break;
+            if(savedEvents[i].evento_especial == "1"){
+                savedEvents[i].editable = false;
+                
             }
         }
             
@@ -433,7 +418,8 @@ var horarios = {
                     minuto_inicial: eventCalendar.start.getMinutes(),
                     hora_final: eventCalendar.end.getHours(),
                     minuto_final: eventCalendar.end.getMinutes(),
-                    dia_semana: eventCalendar.start.getDay() - 1
+                    dia_semana: eventCalendar.start.getDay() - 1,
+                    color: eventCalendar.color
                 };
 
                     
@@ -456,7 +442,7 @@ var horarios = {
 
                 var events = $(this).data('events');
                 var aula = $('#select-subject-' + events[0].id).val();
-                
+                var color = $('#color-subject-' + events[0].id).val();
                 var originalObject = events.shift();
                 var copiedEventObject = $.extend({}, originalObject);
                 copiedEventObject.start = date;
@@ -464,26 +450,8 @@ var horarios = {
                 copiedEventObject.end = endDate; 
                 copiedEventObject.title = copiedEventObject.nombre_asignatura;
                 copiedEventObject.allDay = false;
-                switch(copiedEventObject.id_actividad){
-                    case '1':
-                        copiedEventObject.color = '#3366CC';
-                        break;
-                    case '2':
-                        copiedEventObject.color = '#B22222';
-                        break;
-                    case '3':
-                        copiedEventObject.color = '#FFD700';
-                        break;
-                    case '4':
-                        copiedEventObject.color = '#808000';
-                        break;
-                    case '5':
-                        copiedEventObject.color = '#696969';
-                        break;
-                    default:
-                        break;
-                }
-
+                copiedEventObject.color = color;
+                copiedEventObject.evento_especial = "0";
                 var data = { 
                     id: copiedEventObject.id,
                     hora_inicial: copiedEventObject.start.getHours(),
@@ -491,7 +459,8 @@ var horarios = {
                     hora_final: copiedEventObject.end.getHours(),
                     minuto_final: copiedEventObject.end.getMinutes(),
                     dia_semana: copiedEventObject.start.getDay() - 1,
-                    aula: aula
+                    aula: aula,
+                    color: color
                 };
 
                     
@@ -502,39 +471,42 @@ var horarios = {
                     dataType: "json",
                     success: function(data){
                         horarios.updateEvents(data, originalObject, copiedEventObject, $(this));
+                        fullcalendar.fullCalendar("updateEvent", copiedEventObject);
                     }
                 };
                 $.ajax(request);                    
             },
                 eventClick: function(calEvent, jsEvent, view){
-                    var $dialogContent = $('#delete-line');
-                    $dialogContent.dialog({
-                        modal: true,
-                        title: "Borrar " + calEvent.title,
-                        close: function(){
-                            $dialogContent.dialog("destroy");
-                            $dialogContent.hide();
-                        },
-
-                        buttons: {
-                            Borrar: function(){
-                                var url = $('#delete-url').html();
-                                
-                                url = url + '/' + calEvent.id;
-                                var options = {
-                                    url: url
-                                };
-
-                                window.location = url;
-                                fullcalendar.fullCalendar("removeEvents", calEvent.id);
-                                $dialogContent.dialog("close");
+                    if(calEvent.evento_especial == "0"){
+                        var $dialogContent = $('#delete-line');
+                        $dialogContent.dialog({
+                            modal: true,
+                            title: "Borrar " + calEvent.title,
+                            close: function(){
+                                $dialogContent.dialog("destroy");
+                                $dialogContent.hide();
                             },
 
-                            Cancelar: function(){
-                                $dialogContent.dialog("close");
+                            buttons: {
+                                Borrar: function(){
+                                    var url = $('#delete-url').html();
+
+                                    url = url + '/' + calEvent.id;
+                                    var options = {
+                                        url: url
+                                    };
+
+                                    window.location = url;
+                                    fullcalendar.fullCalendar("removeEvents", calEvent.id);
+                                    $dialogContent.dialog("close");
+                                },
+
+                                Cancelar: function(){
+                                    $dialogContent.dialog("close");
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
         });
         
@@ -556,6 +528,7 @@ var horarios = {
             }else{
                 $("#asignaturas div.external-event#subject-" + copiedEventObject.id).parent().parent().find(".subject-count").text(events.length);
                 $('#select-subject-' + copiedEventObject.id).attr("id", "select-subject-" + events[0].id);
+                $('#color-subject-' + copiedEventObject.id).attr("id", "color-subject-" + events[0].id);
                 $("#asignaturas div.external-event#subject-" + copiedEventObject.id).attr("id", "subject-" + events[0].id);
             }
         }else{
@@ -693,8 +666,19 @@ $(document).ready(function(){
         collapsible: true
     });*/
     
-  
-    //$('.colorpicker').farbtastic('.color');
+    $('.td-color').each(function(){
+        var divPicker = $(this).find('.colorpicker');
+        var inputPicker = $(this).find('.inputcolor');
+        divPicker.hide();
+        divPicker.farbtastic(inputPicker);
+        inputPicker.focus(function(){
+            divPicker.slideToggle();
+        });
+        inputPicker.blur(function(){
+            divPicker.slideUp();
+        });
+    });
+
     $('#side_bar h3').click(function(){
         $(this).next().slideToggle("fast");
         return false;

@@ -25,6 +25,7 @@ class LineaHorario extends Doctrine_Record{
         $this->hasColumn('id_actividad', 'integer', null, array('type' => 'integer', 'notnull' => false));
         $this->hasColumn('num_grupo_actividad', 'integer', null, array('unsigned' => true, 'notnull' => true));
         $this->hasColumn('slot_minimo', 'float', null, array('notnull' => true, 'autoincrement' => false, 'unsigned' => true));
+        $this->hasColumn('color', 'string', 7, array('unsigned' => false, 'notnull' => false));
         $this->hasColumn('id_aula', 'integer', null, array('type' => 'integer', 'notnull' => false));
     }
     
