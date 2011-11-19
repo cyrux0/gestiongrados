@@ -163,9 +163,6 @@ class PlanesDocentes extends MY_Controller{
         return $row;
     }
     
-    
-    
-    
     private function _submit_validate(){
         $this->form_validation->set_rules('horas_teoria', 'trim|is_natural');
         $this->form_validation->set_rules('grupos_teoria', 'trim|is_natural');

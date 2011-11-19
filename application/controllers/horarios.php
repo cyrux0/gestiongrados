@@ -153,9 +153,16 @@ class Horarios extends MY_Controller {
                             $horario_semestre2->lineashorario[] = $linea_horario;
                     }
                 }else {
-                    $por_asignar = ($planactividad->grupos - floor($planactividad->grupos / $grupos_totales_teoria) * ($num_grupo - 1));
-                    $asignados = $planactividad->grupos - $por_asignar;
+                    // Se asigna el número de grupos de esta actividad que tiene la asignatura (Se divide entre 2 si son semanas alternas, ya que los grupos irán de dos en dos)
+                    $grupos = $planactividad->alternas? $planactividad->grupos / 2 : $planactividad->grupos;
+                    // Se calcula el número de grupos por asignar, para ello se usa esta fórmula.
+                    $por_asignar = ($grupos - floor($grupos / $grupos_totales_teoria) * ($num_grupo - 1));
+                    // Aquí se calculan los que están ya asignados.
+                    $asignados = $grupos - $por_asignar;
+                    // Se dividen los que quedan entre el número de grupos de teoría que quedan por llegar todavía.
                     $grupos_corresp = floor($por_asignar / ($grupos_totales_teoria - $num_grupo + 1));
+                    
+                    // Por cada grupo correspondiente a este horario creamos una línea de horario y la asignamos al horario.
                     for ($j = 0; $j < $grupos_corresp; $j++) {
                         $linea_horario = new LineaHorario;
                         $linea_horario->slot_minimo = $planactividad->horas_semanales;
@@ -325,7 +332,7 @@ class Horarios extends MY_Controller {
                         }
 
                         $horario_teoria->lineashorario[] = $lineahorarioteoria;
-                    }
+                   }
                 }
                 $horario->horarioteoria[] = $horario_teoria;
                 $horario_teoria->save();
@@ -341,52 +348,24 @@ class Horarios extends MY_Controller {
     }
 
     public function check_horario($id) {
-        $horario = Doctrine::getTable("Horario")->find($id);
-        $eventos = Doctrine_Query::create()
-                ->select("e.*")
-                ->from("Evento e")
-                ->where("e.curso_id = ?", $horario->id_curso)
+        list($dias_totales, $dias_semanas_impares, $dias_semanas_pares) = $this->_horas_reales_impartidas($id);
+        $horario = Doctrine::getTable('Horario')->find($id);
+        $lineas = Doctrine_Query::create()
+                ->select('l.id_asignatura')
+                ->from('LineaHorario l')
+                ->where('l.id_horario = ?', array($id))
+                ->groupBy('l.id_asignatura')
                 ->execute();
-        $curso = Doctrine::getTable("Curso")->find($horario->id_curso);
 
-        $dias_totales = array_pad(array(), 5, $curso->num_semanas_semestre1);
-        foreach ($eventos as $evento) {
-            $fecha_inicial = date_create_from_format("Y-m-d", $evento->fecha_inicial);
-            $fecha_final = date_create_from_format("Y-m-d", $evento->fecha_final);
-            $interval = new DateInterval("P1D");
-            do {
-                $dia_semana = $fecha_inicial->format("w");
-                $dia_semana = intval($dia_semana) - 1;
-                $dias_totales[$dia_semana] -= 1;
-                $fecha_inicial->add($interval);
-            } while ($fecha_inicial <= $fecha_final);
-        }
-
-        unset($this->layout);
         $horas = array();
-        foreach ($horario->lineashorario as $lineahorario) {
-            if (!isset($horas[$lineahorario->asignatura->nombre]))
-                $horas[$lineahorario->asignatura->nombre] = array();
-            if (!isset($horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad]))
-                $horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad] = array();
-            if (!isset($horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad]))
-                $horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad] = array('reales' => 0, 'planificadas' => 0);
-
-            $horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad]['reales'] += $lineahorario->slot_minimo * $dias_totales[$lineahorario->dia_semana];
-            if (!$horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad]['planificadas']) {
-                $planactividad = Doctrine_Query::create()
-                        ->select('c.*')
-                        ->from('PlanActividad c')
-                        ->innerJoin('c.plandocente p')
-                        ->where('p.id_asignatura = ?', array($lineahorario->id_asignatura))
-                        ->andWhere('p.id_curso = ?', array($horario->id_curso))
-                        ->andWhere('c.id_actividad = ?', array($lineahorario->id_actividad))
-                        ->execute();
-
-                $horas[$lineahorario->asignatura->nombre][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad]['planificadas'] = $planactividad->getFirst()->horas;
-            }
+        
+        foreach($lineas as $asignatura)
+        {
+            $horas[] = $this->_resumen_asignatura($dias_totales, $dias_semanas_impares, $dias_semanas_pares, $asignatura->id_asignatura, $horario->id_curso, $id);
         }
-
+        
+        unset($this->layout);
+        
         $this->load->view('horarios/check', array('horas' => $horas));
     }
 
@@ -505,6 +484,7 @@ class Horarios extends MY_Controller {
                 $dia_semana = $date_sem2->format("N");
                 $fecha_inicial = $date_sem2->add(new DateInterval('P' . (7 - $dia_semana + 1) . 'D'));
             }
+            $fecha_inicial->add(new DateInterval('P' . 7*$num_semana . 'D'));
             $date_lunes = DateTime::createFromFormat("Y-m-d", $fecha_inicial->format("Y-m-d"));
         }
         $fecha_final = DateTime::createFromFormat("Y-m-d", $date_lunes->format("Y-m-d"));
@@ -527,5 +507,121 @@ class Horarios extends MY_Controller {
         return $eventos->count() or $fecha_linea < $fecha_inicial;
     }
     
+    private function _horas_reales_impartidas($id_horario)
+    {
+        $horario = Doctrine::getTable("Horario")->find($id_horario);
+        $eventos = Doctrine_Query::create()
+                ->select("e.*")
+                ->from("Evento e")
+                ->where("e.curso_id = ?", $horario->id_curso)
+                ->execute();
+        $curso = Doctrine::getTable("Curso")->find($horario->id_curso);
+        
+        // Obtenemos las fechas claves del curso
+        list($dummy1, $fecha_lunes, $dummy2) = $this->_dias_iniciales($horario->id_curso, $horario->num_semana, $horario->semestre);
+        // Rellenamos un array de 5 posiciones con el número de semanas totales del semestre (se irá descontando a medida que vayamos encontrando fiestas)
+        if($horario->semestre == "primero"){
+            $semanas = $curso->num_semanas_semestre1;
+            $semanas_no_teoria = $curso->num_semanas_semestre1 - $curso->num_semanas_teoria;
+        }else{
+            $semanas = $curso->num_semanas_semestre2;
+            $semanas_no_teoria = $curso->num_semanas_semestre2 - $curso->num_semanas_teoria;
+        }
+        
+        $dias_totales = array_pad(array(), 5, $semanas);
+        $dias_semanas_impares = array_pad(array(), 5, ceil($semanas_no_teoria/2));
+        $dias_semanas_pares = array_pad(array(), 5, floor($semanas_no_teoria/2));
+        // Aquí falta una cosa importante, y es diferenciar que el evento sea del primer semestre
+        foreach ($eventos as $evento) {
+            $fecha_inicial = date_create_from_format("Y-m-d", $evento->fecha_inicial);
+            $fecha_final = date_create_from_format("Y-m-d", $evento->fecha_final);
+            $interval = new DateInterval("P1D");
+            do {
+                $dia_semana = $fecha_inicial->format("w");
+                $dia_semana = intval($dia_semana) - 1;
+                $interval = date_diff($fecha_inicial, $fecha_lunes, true);
+                $numero_semana = floor(intval($interval->format('%d'))/7);
+                // Si la diferencia es par, estamos en semana impar
+                if($numero_semana % 2 == 0){
+                    if(isset($dias_semanas_impares[$dia_semana])){
+                        $dias_semanas_impares[$dia_semana] -= 1;
+                    }
+                }else{
+                    if(isset($dias_semanas_pares[$dia_semana])){
+                        $dias_semanas_pares[$dia_semana] -= 1;
+                    }
+                }
+                if(isset($dias_totales[$dia_semana])){
+                    $dias_totales[$dia_semana] -= 1;
+                }
+                $fecha_inicial->add($interval);
+            } while ($fecha_inicial <= $fecha_final);
+        }
+        
+        return array($dias_totales, $dias_semanas_impares, $dias_semanas_pares);
+    }
     
+    private function _resumen_asignatura($dias_totales, $dias_semanas_impares, $dias_semanas_pares, $id_asignatura, $id_curso, $id_horario = null)
+    {
+        if($id_horario){
+            $lineashorario = Doctrine_Query::create()
+                                ->select('l.*')
+                                ->from('LineaHorario l')
+                                ->innerJoin('l.horario h')
+                                ->where('h.id = ?', array($id_horario))
+                                ->andWhere('l.id_asignatura = ?', array($id_asignatura))
+                                ->andWhere('l.hora_inicial IS NOT NULL')
+                                ->execute();
+        }else{
+            $lineashorario = Doctrine_Query::create()
+                                ->select('l.*')
+                                ->from('LineaHorario l')
+                                ->innerJoin('l.horario h')
+                                ->where('h.id_curso = ?', array($id_curso))
+                                ->andWhere('l.id_asignatura = ?', array($id_asignatura))
+                                ->andWhere('l.hora_inicial IS NOT NULL')
+                                ->execute();
+        }
+        
+        if(count($lineashorario)){
+            $horas = array('nombre_asignatura' => $lineashorario[0]->asignatura->nombre, 'id_asignatura' => $lineashorario[0]->id_asignatura, 'horas' => array());
+        
+        
+            foreach($lineashorario as $lineahorario)
+            {
+                if (!isset($horas['horas'][$lineahorario->id_actividad]))
+                    $horas['horas'][$lineahorario->id_actividad] = array();
+                if (!isset($horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad]))
+                    $horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad] = array('reales' => 0, 'planificadas' => 0);
+                $planactividad = Doctrine_Query::create()
+                            ->select('c.*')
+                            ->from('PlanActividad c')
+                            ->innerJoin('c.plandocente p')
+                            ->where('p.id_asignatura = ?', array($lineahorario->id_asignatura))
+                            ->andWhere('p.id_curso = ?', array($id_curso))
+                            ->andWhere('c.id_actividad = ?', array($lineahorario->id_actividad))
+                            ->execute();
+                if($planactividad->getFirst()->alternas){
+                    if(!isset($horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad*2-1])) $horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad*2-1] = array('reales' => 0, 'planificadas' => 0);
+                    if(!isset($horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad*2])) $horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad*2] = array('reales' => 0, 'planificadas' => 0);
+                    $horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad*2-1]['reales'] += $lineahorario->slot_minimo * $dias_semanas_impares[$lineahorario->dia_semana];
+                    $horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad*2]['reales'] += $lineahorario->slot_minimo * $dias_semanas_pares[$lineahorario->dia_semana];
+                }else{
+                    $horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad]['reales'] += $lineahorario->slot_minimo * $dias_totales[$lineahorario->dia_semana];
+                }
+
+                if (!$horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad]['planificadas']) {
+
+
+                    $horas['horas'][$lineahorario->id_actividad][$lineahorario->num_grupo_actividad]['planificadas'] = $planactividad->getFirst()->horas;
+                }
+            }
+            /*
+             * @todo Las horas de prácticas no deberían computar todas las semanas, habría que restarles las semanas de solo teoría.
+             */
+            return $horas;
+        }else{
+            return array();
+        }
+    }
 }
