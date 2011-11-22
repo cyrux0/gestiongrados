@@ -27,7 +27,7 @@ $config['base_url']	= 'http://localhost/gestiongrados';
 |
 */
 $config['index_page'] = '';
-
+$config['fonts_path']= "font/";
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL

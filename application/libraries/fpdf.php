@@ -9,7 +9,6 @@
 *******************************************************************************/
 
 define('FPDF_VERSION','1.7');
-
 class FPDF
 {
 var $page;               // current page number
