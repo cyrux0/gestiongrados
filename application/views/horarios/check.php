@@ -1,10 +1,10 @@
 <table class="listaelems">
-<tr><th>Asignatura</th><th>Actividad</th><th>Grupo</th><th>Horas planificadas</th><th>Horas Reales</th></tr>
-<? foreach($horas as $infoasignatura): ?>
-    <? foreach($infoasignatura['horas'] as $actividad => $array_horas_actividad): ?>
-        <?   foreach($array_horas_actividad as $grupo => $horas_resumen): ?>
-            <tr><td><?= $infoasignatura['nombre_asignatura'] ?></td><td><?= $actividad ?></td><td><?= $grupo ?></td><td><?= $horas_resumen['planificadas'] ?></td><td><?= $horas_resumen['reales'] ?></td></tr>
-            <? endforeach;
-       endforeach;
+<tr><th>Asignatura</th><th>Actividad</th><th>Horas planificadas</th><th>Horas Reales</th></tr>
+<? $i = 0;
+foreach($horas as $infoasignatura): ?>
+    <? foreach($infoasignatura as $grupo): ?>
+            <tr><td><?= $asignaturas[$i] ?></td><td><?= $grupo[0] ?></td><td><?= $grupo[1] ?></td><td><?= $grupo[2] ?></td></tr>
+        <? endforeach;
+        $i++;
    endforeach; ?>
 </table>

@@ -302,6 +302,7 @@ class Horarios extends MY_Controller {
     public function edit_teoria($id_tipo, $num_semana) {
         $horario = Doctrine::getTable("Horario")->find($id_tipo);
 
+        // Obtenemos el horario correspondiente a partir del id del horario tipo (si es que se ha creado ya)
         $query = Doctrine_Query::create()
                 ->select('h.*')
                 ->from('Horario h, horarioReference r')
@@ -310,9 +311,12 @@ class Horarios extends MY_Controller {
                 ->andWhere('h.num_semana = ?', array($num_semana))
                 ->execute();
 
+        // Obtenemos las fechas de la semana correspondiente al horario (lunes, fecha de comienzo de curso y fecha de fin de curso
         list($fecha_inicial, $fecha_lunes, $fecha_final) = dias_iniciales($horario->id_curso, $horario->num_semana, $horario->semestre);
 
-        if ($horario->curso->num_semanas_teoria > 0 and $num_semana <= $horario->curso->num_semanas_teoria) {
+        // Nos aseguramos que el número de la semana esté comprendido entre 0 y las semanas de teoría
+        if ($horario->curso->num_semanas_teoria > 0 and $num_semana <= $horario->curso->num_semanas_teoria and $num_semana > 0) {
+            // Si no se ha creado aun el horario lo creamos
             if (!$query->getFirst()) {
                 $horario_teoria = new Horario;
                 $horario_teoria->num_semana = $num_semana;
@@ -322,24 +326,30 @@ class Horarios extends MY_Controller {
                 $horario_teoria->semestre = $horario->semestre;
                 $horario_teoria->num_grupo_titulacion = $horario->num_grupo_titulacion;
 
+                // Copiamos cada una de las líneas de horario de teoría en el nuevo horario
                 foreach ($horario->lineashorario as $lineahorario) {
                     if ($lineahorario->id_actividad == 1) {
                         $lineahorarioteoria = $lineahorario->copy();
                         
+                        // Se comprueba que la fecha está disponible (han empezado las clases y no hay ninguna fiesta)
                         if (comprobar_fecha_linea($fecha_inicial, $fecha_lunes, $lineahorarioteoria->dia_semana, $horario->id_curso)) {
+                            // En caso contrario ponemos los datos de la línea a null, lo que hará que aparezca sin colocar en el horario
                             $lineahorarioteoria->hora_inicial = null;
                             $lineahorarioteoria->hora_final = null;
                             $lineahorarioteoria->dia_semana = null;
                         }
-
+                        // Cargamos la línea en el nuevo horario
                         $horario_teoria->lineashorario[] = $lineahorarioteoria;
                    }
                 }
+                // Asociamos el nuevo horario a su horario tipo.
                 $horario->horarioteoria[] = $horario_teoria;
                 $horario_teoria->save();
                 $horario->save();
+                // Cargamos la vista de edición
                 $this->edit($horario_teoria->id);
             } else {
+                // En caso de que ya esté creado el horario, simplemente cargamos la vista
                 $this->edit($query->getFirst()->id);
             }
         } else {
@@ -348,9 +358,11 @@ class Horarios extends MY_Controller {
         }
     }
 
-    public function check_horario($id) {
+    public function check_grupo($id) {
         $horario = Doctrine::getTable('Horario')->find($id);
-        list($dias_totales, $dias_semanas_impares, $dias_semanas_pares) = horas_reales_impartidas($horario->id_curso, $horario->num_semana, $horario->semestre);
+        //if(count($horario->horariotipo)) redirect('404');
+        $prueba = count($horario->horariotipo);
+        //list($dias_totales, $dias_semanas_impares, $dias_semanas_pares) = horas_reales_impartidas($horario->id_curso, $horario->num_semana, $horario->semestre);
         
         $lineas = Doctrine_Query::create()
                 ->select('l.id_asignatura')
@@ -359,16 +371,35 @@ class Horarios extends MY_Controller {
                 ->groupBy('l.id_asignatura')
                 ->execute();
 
-        $horas = array();
+        $conjuntohoras = array();
+        
+        $this->load->helper('calendar_helper');
         
         foreach($lineas as $asignatura)
         {
-            $horas[] = horas_asignatura($dias_totales, $dias_semanas_impares, $dias_semanas_pares, $asignatura->id_asignatura, $horario->id_curso, $id);
+            list($header, $arraygrupos, $horas) = resumen_asignatura($asignatura->id_asignatura, $horario->id_curso);
+            $i = 0;
+            $suma = array_map('array_sum', $horas);
+            foreach($arraygrupos as $grupo){
+                $planactividad = Doctrine_Query::create()
+                        ->select('c.*')
+                        ->from('PlanActividad c')
+                        ->innerJoin('c.plandocente p')
+                        ->where('p.id_asignatura = ?', array($asignatura->id_asignatura))
+                        ->andWhere('p.id_curso = ?', array($horario->id_curso))
+                        ->andWhere('c.id_actividad = ?', array($grupo[0]))
+                        ->execute();
+                $horas_reales[] = $planactividad->getFirst()->horas;
+            }
+            $horascongrupos = array($header, $suma, $horas_reales);
+            $conjuntohoras[] = call_user_func_array('array_map', array_merge(array(NULL), $horascongrupos));
+            $asignaturas[] = Doctrine::getTable('Asignatura')->find($asignatura->id)->nombre;
+            // $conjuntohoras[] = horas_asignatura($dias_totales, $dias_semanas_impares, $dias_semanas_pares, $asignatura->id_asignatura, $horario->id_curso, $id);
         }
         
         unset($this->layout);
         
-        $this->load->view('horarios/check', array('horas' => $horas));
+        $this->load->view('horarios/check', array('horas' => $conjuntohoras, 'asignaturas' => $asignaturas));
     }
 
     public function save_line($id) {
@@ -458,8 +489,13 @@ class Horarios extends MY_Controller {
         redirect('horarios/edit/' . $line->id_horario);
     }
 
-
-    
-    
-
+    public function exportar_horario($id_horario)
+    {
+        $this->load->helper('importacion_csv_helper');
+        exportar_horario($id_horario);
+        $data = file_get_contents('./application/downloads/temp.csv');
+        $name = 'horario.csv';
+        $this->load->helper('download');
+        force_download($name, $data);
+    }
 }

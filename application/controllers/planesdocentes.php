@@ -94,7 +94,8 @@ class PlanesDocentes extends MY_Controller{
         }else{
             $data = $this->upload->data();
             try{
-                $this->_parse_data($data['full_path']);
+                $this->load->helper('importacion_csv_helper');
+                parse_csv_plandocente($data['full_path']);
                 $rows = $this->_parse_data($data['full_path'], true);
                 $this->load->view('plandocente/upload_success', array('rows' => $rows));
             }catch(Exception $e){
@@ -107,61 +108,7 @@ class PlanesDocentes extends MY_Controller{
     public function make_upload(){
         $this->load->view('PlanDocente/from_file', array('error' => ''));
     }
-    private function _parse_data($filename, $process = false){
-        $file = fopen($filename, 'rb');
-        $data = fgetcsv($file, 0, ',');
-        if(!$data){
-            throw new Exception("Error en la línea 1: Los campos son incorrectos");
-            return false;
-        }
-        $fields = array();
-        foreach($data as $field)
-            $fields[] = trim($field);
-        $row = 2;
-
-        // fields = asignatura | actividad | horas(totales) | grupos | horas_semanales | alternas | id_curso
-        while(($data = fgetcsv($file, 0, ',')) != false){
-            if(count($fields) != count($data)){
-                throw new Exception("Error en la línea $row: número incorrecto de valores");
-                return false;
-            }
-            $planactividad = new PlanActividad;
-            $datarow = array_combine($fields, $data);
-            if(!isset($datarow['id_asignatura'])){
-                throw new Exception("Error en la línea $row: falta el identificador de la asignatura");
-            }else{
-                $plandocente = Doctrine_Query::create()
-                                ->select("p.*")
-                                ->from('PlanDocente p')
-                                ->where('id_asignatura = ? AND id_curso = ?', array($datarow['id_asignatura'], $datarow['id_curso']))
-                                ->execute();
-                if(!$plandocente->count()){
-                    $plandocente = new PlanDocente();
-                    $plandocente->id_asignatura = $datarow['id_asignatura'];
-                    $plandocente->id_curso = $datarow['id_curso'];
-                    if(!$plandocente->isValid()){
-                        
-                        throw new Exception("Error en la línea $row | " . $plandocente->getErrorStackAsString());
-                    }else{    
-                        $plandocente->save();    
-                    }
-                }else{
-                    $plandocente = $plandocente->getFirst();
-                }
-                $planactividad->id_plandocente = $plandocente->id;
-            }
-            $planactividad->fromArray($datarow);
-            if(!$planactividad->isValid()){
-                throw new Exception("Error en la línea $row | " . $planactividad->getErrorStackAsString());
-            }else{           
-                if($process){
-                    $planactividad->save();
-                }
-            }
-            $row ++;
-        }
-        return $row;
-    }
+    
     
     public function informe_asignatura($id_asignatura, $id_curso)
     {
@@ -169,7 +116,7 @@ class PlanesDocentes extends MY_Controller{
         $asignatura = Doctrine::getTable('Asignatura')->find($id_asignatura);
         $this->load->helper('calendar_helper');
         // Obtenemos un array header con las cabeceras y otra array donde cada elemento es un array con las horas de cada semana de ese grupo.
-        list($header, $horas) = resumen_asignatura($id_asignatura, $id_curso);
+        list($header, $arraygrupos, $horas) = resumen_asignatura($id_asignatura, $id_curso);
         
         $horas_traspuesta = call_user_func_array('array_map',array_merge(array(NULL),$horas));
         $this->load->library('fpdf');

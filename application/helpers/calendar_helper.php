@@ -2,8 +2,10 @@
 
 function matriz_producto_calendario($id_curso, $semestre)
 {
+    
     $curso = Doctrine::getTable('Curso')->find($id_curso);
     
+    // Guardamos el número de semanas totales del semestre correspondiente
     if($semestre == "primero")
     {
         $num_semanas = $curso->num_semanas_semestre1;
@@ -13,13 +15,15 @@ function matriz_producto_calendario($id_curso, $semestre)
         $num_semanas = $curso->num_semanas_semestre2;
     }
     
-    
+    // Rellenamos una matriz de num_semanas x 5 de 1's
     $matriz_producto = array_fill(0, $num_semanas, array_fill(0, 5, 1));
     
     $CI = & get_instance();
     $CI->load->helper('resumen_asignatura_helper');
+    // Obtenemos los días correspondientes a la primera semana
     list($fecha_inicial, $fecha_lunes, $fecha_final) = dias_iniciales($id_curso, 1, $semestre);
     
+    // La lista de eventos
     $eventos = Doctrine_Query::create()
                 ->select("e.*")
                 ->from("Evento e")
@@ -27,11 +31,13 @@ function matriz_producto_calendario($id_curso, $semestre)
                 ->andWhere('e.fecha_final < ?', $fecha_final->format('Y-m-d'))
                 ->execute();
     
+    // Los días anteriores a comienzo del curso se ponen a 0
     for($i = 0; $i< intval($fecha_inicial->format("w"))-1; $i++)
     {
         $matriz_producto[0][$i] = 0;
     }
     
+    // Recorremos todos los eventos poniendo a 0 los días que correspondan
     foreach($eventos as $evento)
     {
         $fecha_inicial_evento = date_create_from_format("Y-m-d", $evento->fecha_inicial);
@@ -48,6 +54,7 @@ function matriz_producto_calendario($id_curso, $semestre)
         } while ($fecha_inicial_evento <= $fecha_final_evento);       
     }
     
+    // Ponemos a 0 los días sobrantes de la matriz, desde el fin de curso al viernes siguiente.
     for($i = intval($fecha_final->format("w")); $i<5; $i++)
     {
         $matriz_producto[$num_semanas][$i] = 0;
@@ -76,14 +83,12 @@ function resumen_asignatura($id_asignatura, $id_curso)
             ->orderBy('l.id_actividad, l.num_grupo_actividad');
     $grupos = $grupos_qry->execute();
     
-    // Contamos para hallar el número de columnas que tendrá la matriz resultante
-    $num_columnas = count($grupos);
     // Creamos la matriz vacía
     $matriz_info = array();
     
     // Devolver también las cabeceras con los grupos
-    
     $header = array();
+    $arraygrupos = array();
     
     // Recorremos todos los grupos de la asignatura, de forma que en cada iteración se consiga una columna de la matriz resultado.
     // La columna tendrá {num_semanas} filas y contendrá en cada casilla el número de horas impartidas en la semana correspondiente
@@ -91,7 +96,7 @@ function resumen_asignatura($id_asignatura, $id_curso)
     {
         //Obtenemos el nombre de la actividad para la cabecera
         $actividad = Doctrine::getTable('Actividad')->find($grupo->id_actividad);
-        $header[] = $actividad->descripcion . $grupo->num_grupo_actividad;
+        
         // Creamos un array de 5 ceros que contendrá las horas semanales de la actividad, y el día de la semana en la que se imparte
         $horas_semana = array_fill(0, 5, 0);
         $x = count($matriz_producto);
@@ -137,6 +142,22 @@ function resumen_asignatura($id_asignatura, $id_curso)
                 ->andWhere('l.hora_inicial IS NOT NULL')
                 ->execute();
         
+        // Nos vamos al plan docente para ver si la actividad va en semanas alternas
+        $planactividad = Doctrine_Query::create()
+            ->select('c.*')
+            ->from('PlanActividad c')
+            ->innerJoin('c.plandocente p')
+            ->where('p.id_asignatura = ?', array($lineahorario->id_asignatura))
+            ->andWhere('p.id_curso = ?', array($id_curso))
+            ->andWhere('c.id_actividad = ?', array($lineahorario->id_actividad))
+            ->execute();
+        $alternas = $planactividad->alternas;
+        if($alternas){
+            $header[] = $actividad->descripcion . " " . $grupo->num_grupo_actividad*2-1;
+            $header[] = $actividad->descripcion . " " . $grupo->num_grupo_actividad*2;
+        }else{
+            $header[] = $actividad->descripcion . " " . $grupo->num_grupo_actividad;
+        }
         foreach($lineas as $linea)
         {
             $horas_semana[$linea->dia_semana] += $linea->slot_minimo;
@@ -145,13 +166,42 @@ function resumen_asignatura($id_asignatura, $id_curso)
         foreach($matriz_producto as $semana => $dias){
             if($semana >= $curso->num_semanas_teoria){
                 foreach($dias as $dia => $valor){
-                    $tmp[$dia] = $valor * $horas_semana[$dia];
+                    if($alternas){
+                        if($semana%2 == 0){
+                            $tmp1[$dia] = $valor * $horas_semana[$dia];
+                            $tmp2[$dia] = 0;
+                        }else{
+                            $tmp1[$dia] = 0;
+                            $tmp2[$dia] = $valor * $horas_semana[$dia];
+                        }
+                        
+                    }else{
+                        $tmp[$dia] = $valor * $horas_semana[$dia];
+                    }
                 }
-                $resultado_columna[$semana] = array_sum($tmp);
+                if($alternas){
+                    $resultado_columna_alternas1[$semana] = array_sum($tmp1);
+                    $resultado_columna_alternas2[$semana] = array_sum($tmp2);
+                }else{
+                    $resultado_columna[$semana] = array_sum($tmp);
+                }
             }
         }
-        $matriz_info[] = $resultado_columna;
+        if($alternas)
+        {
+            $matriz_info[] = $resultado_columna_alternas1;
+            $matriz_info[] = $resultado_columna_alternas2;
+        }else{
+            $matriz_info[] = $resultado_columna;
+        }
+        if($alternas)
+        {
+            $arraygrupos[] = array($grupo->id_actividad, $grupo->num_grupo_actividad*2-1);
+            $arraygrupos[] = array($grupo->id_actividad, $grupo->num_grupo_actividad*2);
+        }else{
+            $arraygrupos[] = array($grupo->id_actividad, $grupo->num_grupo_actividad);
+        }
     }
     
-    return array($header, $matriz_info);
+    return array($header, $arraygrupos, $matriz_info);
 }

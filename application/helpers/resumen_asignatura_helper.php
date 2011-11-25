@@ -119,40 +119,31 @@ function horas_reales_impartidas($id_curso, $num_semana, $semestre)
 
 function dias_iniciales($id_curso, $num_semana, $semestre) {
 
-        $curso = Doctrine::getTable('Curso')->find($id_curso);
+    // Obtenemos el curso
+    $curso = Doctrine::getTable('Curso')->find($id_curso);
 
-        $date_sem1 = date_create_from_format("Y-m-d", $curso->inicio_semestre1);
-        $date_sem2 = date_create_from_format("Y-m-d", $curso->inicio_semestre2);
-
-
-// Buscamos la fecha inicial del curso para ver cuantos días hay que bloquear antes del primer día (puede no ser ninguno)(Contando el número de días desde el lunes
-        if ($num_semana == 1) {
-            if ($semestre == "primero") {
-                $dia_semana = $date_sem1->format("N");
-                $fecha_inicial = DateTime::createFromFormat("Y-m-d", $date_sem1->format("Y-m-d"));
-            } else {
-                $dia_semana = $date_sem2->format("N");
-                $fecha_inicial = DateTime::createFromFormat("Y-m-d", $date_sem2->format("Y-m-d"));
-                $date_lunes = DateTime::createFromFormat("Y-m-d", $date_sem2->format("Y-m-d"));
-                $asd = new DateTime;
-            }
-            $date_lunes = $date_lunes->sub(new DateInterval("P" . ($dia_semana - 1) . "D"));
-        } else {
-            if ($semestre == "primero") {
-                $dia_semana = $date_sem1->format("N");
-                $fecha_inicial = $date_sem1->add(new DateInterval('P' . (7 - $dia_semana + 1) . 'D'));
-            } else {
-                $dia_semana = $date_sem2->format("N");
-                $fecha_inicial = $date_sem2->add(new DateInterval('P' . (7 - $dia_semana + 1) . 'D'));
-            }
-            $fecha_inicial->add(new DateInterval('P' . 7*$num_semana . 'D'));
-            $date_lunes = DateTime::createFromFormat("Y-m-d", $fecha_inicial->format("Y-m-d"));
-        }
-        $fecha_final = DateTime::createFromFormat("Y-m-d", $date_lunes->format("Y-m-d"));
-        $fecha_final = $fecha_final->add(new DateInterval('P5D'));
-
-        return array($fecha_inicial, $date_lunes, $fecha_final);
+    // Extraemos las dos fechas iniciales de cada semestre
+    $fecha_inicio_sem1 = date_create_from_format("Y-m-d", $curso->inicio_semestre1);
+    $fecha_inicio_sem2 = date_create_from_format("Y-m-d", $curso->inicio_semestre2);
+    $fecha_fin_sem1 = date_create_from_format("Y-m-d", $curso->fin_semestre1);
+    $fecha_fin_sem2 = date_create_from_format("Y-m-d", $curso->fin_semestre2);
+    // Buscamos la fecha inicial del curso para ver cuantos días hay que bloquear antes del primer día (puede no ser ninguno)(Contando el número de días desde el lunes)
+    if ($semestre == "primero") {
+        $dia_semana = $fecha_inicio_sem1->format("N");
+        $fecha_inicial = DateTime::createFromFormat("Y-m-d", $fecha_inicio_sem1->format("Y-m-d"));
+        $fecha_final = $fecha_fin_sem1;
+    } else {
+        $dia_semana = $fecha_inicio_sem2->format("N");
+        $fecha_inicial = DateTime::createFromFormat("Y-m-d", $fecha_inicio_sem2->format("Y-m-d"));
+        $fecha_final = $fecha_fin_sem2;
     }
+    $date_lunes = DateTime::createFromFormat("Y-m-d", $fecha_inicial->format("Y-m-d"));
+    $date_lunes->sub(new DateInterval("P" . ($dia_semana - 1) . "D"));
+    $date_lunes->add(new DateInterval('P' . 7*($num_semana-1) . 'D'));
+    
+    // Dada una semana, se devuelve, la fecha inicial del curso, el lunes de esa semana, y la fecha final del curso
+    return array($fecha_inicial, $date_lunes, $fecha_final);
+}
     
 function comprobar_fecha_linea($fecha_inicial, $fecha_lunes, $dia_semana, $id_curso) {
         $date_to_add = DateTime::createFromFormat("Y-m-d", $fecha_lunes->format("Y-m-d"));

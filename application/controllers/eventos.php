@@ -88,6 +88,16 @@ class Eventos extends MY_Controller{
         echo $eventos_json;
     }
     
+    public function export_calendar($id_curso)
+    {
+        $this->load->helper('importacion_csv_helper');
+        export_calendar_csv($id_curso);
+        $data = file_get_contents('./application/downloads/temp.csv');
+        $name = 'calendar.csv';
+        $this->load->helper('download');
+        force_download($name, $data);
+    }
+    
     private function _submit_validate(){
         $this->form_validation->set_rules('nombre_evento', 'Nombre del evento', 'trim|required|alpha_ext|min_length[5]|max_length[255]');
         $this->form_validation->set_rules('fecha_inicial', 'Fecha de inicio del evento', 'trim|required|callback__doctrine_validation[fecha_inicial]');
@@ -96,4 +106,8 @@ class Eventos extends MY_Controller{
         }
         return $this->form_validation->run();
     }
+    
+    
+    
+    
 }
