@@ -182,56 +182,12 @@ function export_calendar_csv($id_curso)
     
 }
 
-function exportar_horario($id_horario)
+function exportador_csv($filename, $matriz)
 {
-    $horario = Doctrine::getTable('Horario')->find($id_horario);
-    $id_curso = $horario->id_curso;
-    $hora_inicial = $horario->curso->hora_inicial;
-    $hora_final = $horario->curso->hora_final;
-    $slot_minimo_minutos = $horario->curso->slot_minimo * 60;
-
-    $hora_inicial_date = date_create_from_format("H:i:s", $hora_inicial);
-    $hora_final_date = date_create_from_format("H:i:s", $hora_final);
-    $interval = new DateInterval('PT30M');
+    $file = fopen($filename, 'w');
     
-    for(; $hora_inicial_date->getTimestamp() <= $hora_final_date->getTimestamp(); $hora_inicial_date->add($interval))
-    {
-        $matriz_horario[$hora_inicial_date->format("H:i")] = array('', '', '', '', '');
-    }
-
-
-    foreach(range(0, 4) as $dia_semana)
-    {
-        $lineas = Doctrine_Query::create()
-                ->select('l.*, a.abreviatura, c.identificador')
-                ->from('LineaHorario l')
-                ->innerJoin('l.asignatura a')
-                ->innerJoin('l.actividad c')
-                ->where('l.id_horario = ?', array($id_horario))
-                ->andWhere('l.dia_semana = ?', array($dia_semana))
-                ->andWhere('l.hora_inicial IS NOT NULL')
-                ->execute();
-
-        foreach($lineas as $linea)
-        {
-            $hora_inicial_linea = date_create_from_format('H:i:s', $linea->hora_inicial);
-            $hora_final_linea = date_create_from_format('H:i:s', $linea->hora_final);
-            $slot_linea = $linea->slot_minimo*60;
-            $nombre = $linea->asignatura->abreviatura . " " . $linea->actividad->identificador . $linea->num_grupo_actividad;
-            for(; $hora_inicial_linea->getTimestamp() < $hora_final_linea->getTimestamp(); $hora_inicial_linea->add($interval))
-            {
-                $matriz_horario[$hora_inicial_linea->format("H:i")][$dia_semana] .= $matriz_horario[$hora_inicial_linea->format("H:i")][$dia_semana] != ''? '|':'';
-                $matriz_horario[$hora_inicial_linea->format("H:i")][$dia_semana] .= $nombre;
-            }
-        }
-    }        
-    $file = fopen('./application/downloads/temp.csv', 'w');
-    
-    fputcsv($file, array('','L', 'M', 'X','J','V'), ',');
-    
-    foreach($matriz_horario as $key => $array_asigs){
-        array_unshift($array_asigs, $key);
-        fputcsv($file, $array_asigs, ',');
+    foreach($matriz as $array_values){
+        fputcsv($file, $array_values, ',');
     }
 }
 ?>

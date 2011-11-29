@@ -32,5 +32,16 @@ class Aulas extends MY_Controller
         $aula->delete();
     }
     
-    
+    public function exportar_ocupacion($id, $id_curso, $semestre, $num_semana)
+    {
+        // Extraemos el aula de la bd
+        $curso = Doctrine::getTable('Curso')->find($id_curso);
+        $ocupacion = $curso->getMatrizHorario('id_aula', $id, $semestre, $num_semana);
+        $this->load->helper('importacion_csv_helper');
+        $this->load->helper('download');
+        exportador_csv('./application/downloads/temp.csv', $ocupacion);
+        $data = file_get_contents('./application/downloads/temp.csv');
+        $name = 'aula.csv';
+        force_download($name, $data);
+    }
 }

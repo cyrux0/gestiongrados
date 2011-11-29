@@ -99,6 +99,69 @@ class Curso extends Doctrine_Record {
         $this -> hasMany('Evento as eventos', array('local' => 'id', 'foreign' => 'curso_id', 'onDelete' => 'CASCADE'));
     }
 
+    public function getMatrizHorario($filtro, $valor_filtro, $semestre, $num_semana)
+    {
+        $hora_inicial = $this->hora_inicial;
+        $hora_final = $this->hora_final;
+        $slot_minimo_minutos = $this->slot_minimo * 60;
+        
+        $hora_inicial_date = date_create_from_format("H:i:s", $hora_inicial);
+        $hora_final_date = date_create_from_format("H:i:s", $hora_final);
+        $interval = new DateInterval('PT30M');
+
+        for(; $hora_inicial_date->getTimestamp() <= $hora_final_date->getTimestamp(); $hora_inicial_date->add($interval))
+        {
+            $matriz_horario[$hora_inicial_date->format("H:i")] = array('', '', '', '', '');
+        }
+        
+        foreach(range(0, 4) as $dia_semana)
+        {
+            $lineas = Doctrine_Query::create()
+                    ->select('l.*, a.abreviatura, c.identificador, c.alternas')
+                    ->from('LineaHorario l')
+                    ->innerJoin('l.asignatura a')
+                    ->innerJoin('l.actividad c')
+                    ->innerJoin('l.horario h')
+                    ->where("l.$filtro = ?", array($valor_filtro))
+                    ->andWhere('l.dia_semana = ?', array($dia_semana))
+                    ->andWhere('l.hora_inicial IS NOT NULL')
+                    ->andWhere('h.num_semana = ?', array($num_semana))
+                    ->andWhere('h.semestre = ?', array($semestre))
+                    ->execute();
+
+            foreach($lineas as $linea)
+            {
+                $hora_inicial_linea = date_create_from_format('H:i:s', $linea->hora_inicial);
+                $hora_final_linea = date_create_from_format('H:i:s', $linea->hora_final);
+                $slot_linea = $linea->slot_minimo*60;
+                
+                if($linea->actividad->alternas)
+                    $nombre = $linea->asignatura->abreviatura . " " . $linea->actividad->identificador . $linea->num_grupo_actividad*2-1 . "-" . $linea->actividad->identificador . $linea->num_grupo_actividad*2;
+                else
+                    $nombre = $linea->asignatura->abreviatura . " " . $linea->actividad->identificador . $linea->num_grupo_actividad;
+                
+                for(; $hora_inicial_linea->getTimestamp() < $hora_final_linea->getTimestamp(); $hora_inicial_linea->add($interval))
+                {
+                    $matriz_horario[$hora_inicial_linea->format("H:i")][$dia_semana] .= $matriz_horario[$hora_inicial_linea->format("H:i")][$dia_semana] != ''? '|':'';
+                    $matriz_horario[$hora_inicial_linea->format("H:i")][$dia_semana] .= $nombre;
+                }
+            }
+        }
+        // Extraemos las claves del array (serían las horas del horario)
+        $horas = array_keys($matriz_horario);
+        // Trasponemos
+        $valores = array_values($matriz_horario);
+        array_unshift($valores, array('L', 'M', 'X', 'J', 'V'));
+        $horario_traspuesto = call_user_func_array('array_map',array_merge(array(NULL),$valores));
+        // Insertamos un blanco inicial en las horas y las insertamos de nuevo
+        array_unshift($horas, '');
+        array_unshift($horario_traspuesto, $horas);
+        // Trasponemos de nuevo y tendremos la matriz resultado deseada lista para exportar
+        $matriz_horario = call_user_func_array('array_map',array_merge(array(NULL),array_values($horario_traspuesto)));
+        
+        return $matriz_horario;
+    }
+    
 }
 
 /* End of file curso.php */

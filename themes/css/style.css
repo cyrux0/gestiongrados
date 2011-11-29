@@ -273,3 +273,22 @@ h2.current{
     margin: 10px 0;
     padding: 2px 4px;
 }
+
+.errors{
+    
+    font-style: italic;
+    color: #ffffff;
+    background-color: #cc0000;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-right-color: #ff3333;
+    border-left-color: #ff3333;
+    border-bottom-color: #ff3333;
+    border-top-color: #ff3333;
+}

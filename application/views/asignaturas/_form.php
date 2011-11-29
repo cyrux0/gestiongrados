@@ -26,11 +26,11 @@
   </div>
   <div class="field">
       <label for="curso">Curso:</label>
-      <?= form_input('curso', set_value('curso', $result->curso)) ?><br />
+      <?= form_dropdown('curso', $cursos, $result->curso) ?><br />
   </div>
   <div class="field">
       <label for="semestre">Semestre:</label>
-      <?= form_input('semestre', set_value('semestre', $result->semestre)); ?><br /><!-- Debería ser un form select -->
+      <?= form_dropdown('semestre', array('primero' => 'Primero', 'segundo' => 'Segundo'), $result->semestre) ?><br /><!-- Debería ser un form select -->
   </div>
   <div class="actions">
   	<?php echo form_submit('add_asig_submit', 'Enviar'); ?> | <?= anchor('titulaciones/show/'.$result->titulacion_id, 'Cancelar') ?>

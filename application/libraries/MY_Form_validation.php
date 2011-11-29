@@ -27,7 +27,7 @@ class MY_Form_validation extends CI_Form_validation{
     function alpha_ext($str){
         $str = strtolower($this->CI->config->item('charset')) != 'utf-8' ? utf8_encode($str) : $str;
                 $CI =& get_instance();
-        $CI->form_validation->set_message('alpha_ext', 'The Nombre field may only contain alphabetical characters.');
+        $CI->form_validation->set_message('alpha_ext', 'El campo %s solo debería contener caracteres alfabéticos.');
         return (bool) (preg_match("/^[[:alpha:]- ÀÁÂÃÄÅĀĄĂÆÇĆČĈĊĎĐÈÉÊËĒĘĚĔĖĜĞĠĢĤĦÌÍÎÏĪĨĬĮİĲĴĶŁĽĹĻĿÑŃŇŅŊÒÓÔÕÖØŌŐŎŒŔŘŖŚŠŞŜȘŤŢŦȚÙÚÛÜŪŮŰŬŨŲŴÝŶŸŹŽŻàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿœšß_.]+$/", $str));
     }
 }

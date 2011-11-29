@@ -8,7 +8,7 @@ class Cursos extends MY_Controller{
         $this->alerts = '';
         $this->notices = '';
         $this->modelObject = '';
-        $this->_filter(array('add', 'create', 'edit', 'update', 'delete'), array($this, 'authenticate'), array(1)); // Sólo admin
+        $this->_filter(array('add', 'create', 'edit', 'update', 'delete'), array($this, 'authenticate'), 1); // Sólo admin
         
     }
 
@@ -24,11 +24,11 @@ class Cursos extends MY_Controller{
 
         if($this->modelObject->inicio_semestre1 and $this->modelObject->fin_semestre1){        
             $diferencia1 = date_diff(date_create($this->modelObject->inicio_semestre1), date_create($this->modelObject->fin_semestre1));
-            $this->modelObject->num_semanas_semestre1 = ceil($diferencia1->d / 7);
+            $this->modelObject->num_semanas_semestre1 = ceil($diferencia1->days / 7);
         }
         if($this->modelObject->inicio_semestre2 and $this->modelObject->fin_semestre2){
             $diferencia2 = date_diff(date_create($this->modelObject->inicio_semestre2), date_create($this->modelObject->fin_semestre2));
-            $this->modelObject->num_semanas_semestre2 = ceil($diferencia2->d / 7);
+            $this->modelObject->num_semanas_semestre2 = ceil($diferencia2->days / 7);
         }
         
 
@@ -55,12 +55,12 @@ class Cursos extends MY_Controller{
 
         if($this->modelObject->inicio_semestre1 and $this->modelObject->fin_semestre1){        
             $diferencia1 = date_diff(date_create($this->modelObject->inicio_semestre1), date_create($this->modelObject->fin_semestre1));
-            $this->modelObject->num_semanas_semestre1 = ceil($diferencia1->d / 7);
+            $this->modelObject->num_semanas_semestre1 = ceil($diferencia1->days / 7);
         }
         
         if($this->modelObject->inicio_semestre2 and $this->modelObject->fin_semestre2){
             $diferencia2 = date_diff(date_create($this->modelObject->inicio_semestre2), date_create($this->modelObject->fin_semestre2));
-            $this->modelObject->num_semanas_semestre2 = ceil($diferencia2->d / 7);
+            $this->modelObject->num_semanas_semestre2 = ceil($diferencia2->days / 7);
         }
         
         if($this->_submit_validate() == FALSE){
@@ -74,12 +74,11 @@ class Cursos extends MY_Controller{
         }
     }
 
-/*
     public function index(){
         $cursos = $this->cursos_table->findAll();
         $this->load->view('cursos/index', array('cursos' => $cursos));
     }
-*/
+
     public function delete($id){
         $cursos = $this->cursos_table->find($id);
         $cursos->eventos->delete();
@@ -96,8 +95,6 @@ class Cursos extends MY_Controller{
     
     private function _submit_validate(){
         $this->form_validation->set_rules('num_semanas_teoria', 'Número de semanas de teoría', 'required|is_natural');
-        $this->form_validation->set_rules('num_semanas_semestre1', 'Número de semanas del primer semestre', 'required|is_natural');
-        $this->form_validation->set_rules('num_semanas_semestre2', 'Número de semanas del segundo semestre', 'required|is_natural');
         $this->form_validation->set_rules('horas_por_credito', 'Número de horas por crédito', 'required|is_natural');
         $this->form_validation->set_rules('inicio_semestre1', 'Fecha de inicio del primer semestre', 'required|callback_doctrine_validation[inicio_semestre1]');
         $this->form_validation->set_rules('fin_semestre1', 'Fecha de finalización del primer semestre', 'required|callback_doctrine_validation[fin_semestre1]');

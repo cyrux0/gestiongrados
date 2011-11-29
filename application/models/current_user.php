@@ -36,7 +36,8 @@ class Current_User{
     }
     
     public static function logged_in($security_level = -1){
-        return ($u = self::user() and ($security_level == -1 or $u->security_level >= $security_level) ) ? TRUE : FALSE;
+        $u = self::user();
+        return ($u and ($security_level == -1 or $u->security_level >= $security_level) ) ? TRUE : FALSE;
     }
     
     

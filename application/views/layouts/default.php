@@ -57,7 +57,7 @@
           <? if(!Current_User::logged_in())
                echo anchor('#', 'Login', 'id="login-button"');
              else
-               echo "Logged as <em>" . Current_User::user()->username . "</em> " . anchor('logout', 'Logout');
+               echo "Bienvenido: <em>" . Current_User::user()->username . "</em> " . anchor('logout', 'Logout');
           ?>  
     </div>
       
@@ -86,6 +86,9 @@
                       <li>
                           <?= anchor('cursos/add', 'Añadir curso') ?>
                       </li>
+                      <li>
+                          <?= anchor('cursos/index', 'Ver cursos') ?>
+                      </li>
                   </ul>
               </li>
               <? endif; ?>
@@ -99,9 +102,9 @@
               <li>
                   <a href="#">Calendario</a>
                   <ul class="acitem">
-                      <li><?= anchor('cursos/select_curso/eventos/index', 'Ver calendario') ?></li> <!-- Falta añadir el curso actual -->
+                      <li><?= anchor('cursos/select_curso/eventos/index', 'Ver calendario') ?></li> 
                     <? if(Current_User::logged_in(2)): ?>
-                      <li><?= anchor('cursos/select_curso/eventos/add', 'Añadir Evento') ?></li> <!-- Falta añadir el curso actual -->
+                      <li><?= anchor('cursos/select_curso/eventos/add', 'Añadir Evento') ?></li>
                     <? endif; ?>  
                   </ul>
               </li>
@@ -109,10 +112,7 @@
                   <a href="#">Horarios</a>
                   <ul class="acitem">
                       <li>
-                          <a href="#">Configurar horario</a>
-                      </li>
-                      <li>
-                          <a href="#">Ver horarios</a>
+                          <?= anchor('horarios/select_grupo', 'Grupos y horarios') ?>
                       </li>
                   </ul>
               </li>

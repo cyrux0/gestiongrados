@@ -247,6 +247,37 @@ class Horarios extends MY_Controller {
             }
         }
 
+        // Obtenemos también las líneas compartidas
+        $lineas_compartidas_sql = Doctrine_Query::create()
+                ->select('c.id_plandocente, a.id, p.id, l.*, v.identificador, a.abreviatura')
+                ->from('CursoCompartido c')
+                ->innerJoin('c.plandocente p')
+                ->innerJoin('p.Asignatura a')
+                ->innerJoin('a.lineashorario l')
+                ->innerJoin('l.actividad v')
+                ->where('p.id_curso = ?', array($horario->id_curso))
+                ->andWhere('c.num_curso_compartido = ?', array($horario->num_curso_titulacion));
+        $lineas_sql = $lineas_compartidas_sql->getSqlQuery();
+        $lineas_compartidas = $lineas_compartidas_sql->execute();
+        
+        $lineas_ = $lineas_compartidas[0]->plandocente->Asignatura->lineashorario;
+        foreach($lineas_ as $linea_compartida)
+        {
+            if (!$linea_compartida->hora_inicial) {
+                $array_linea_horario = $linea_compartida->toArray();
+                $array_linea_horario['nombre_asignatura'] = $linea_compartida->asignatura->abreviatura . " (" . $linea_compartida->actividad->identificador . $linea_compartida->num_grupo_actividad . " ) ";
+                $array_linea_horario['save_url'] = site_url("horarios/save_line/" . $linea_compartida->id);
+                $asignaturas_por_asignar[$linea_compartida->id_asignatura . $linea_compartida->id_actividad . $linea_compartida->num_grupo_actividad][] = $array_linea_horario;
+            } else {
+                $array_linea_horario = $linea_compartida->toArray();
+                $array_linea_horario['nombre_asignatura'] = $linea_compartida->asignatura->abreviatura . " (" . $linea_compartida->actividad->identificador . $linea_compartida->num_grupo_actividad . " ) ";
+                $array_linea_horario['save_url'] = site_url("horarios/save_line/" . $linea_compartida->id);
+                $array_linea_horario['evento_especial'] = 0;
+
+                $asignaturas_asignadas[] = $array_linea_horario;
+            }
+        }
+        
         // Si estamos en la primera semana hay que bloquear los días no lectivos en la vista del horario
         if ($horario->num_semana == 1) {
             // Buscamos la fecha inicial del curso para ver cuantos días hay que bloquear antes del primer día (puede no ser ninguno)(Contando el número de días desde el lunes
@@ -489,10 +520,13 @@ class Horarios extends MY_Controller {
         redirect('horarios/edit/' . $line->id_horario);
     }
 
-    public function exportar_horario($id_horario)
+    public function exportar($id_horario)
     {
+        $horario = Doctrine::getTable('Horario')->find($id_horario);
+        $curso = Doctrine::getTable('Curso')->find($horario->id_curso);
+        $matriz = $curso->getMatrizHorario('id_horario', $id_horario, $horario->semestre, $horario->num_semana);
         $this->load->helper('importacion_csv_helper');
-        exportar_horario($id_horario);
+        exportador_csv('./application/downloads/temp.csv', $matriz);
         $data = file_get_contents('./application/downloads/temp.csv');
         $name = 'horario.csv';
         $this->load->helper('download');

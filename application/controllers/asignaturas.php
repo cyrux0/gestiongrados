@@ -14,11 +14,12 @@ class Asignaturas extends MY_Controller {
     }
 
     public function add_to($id) {
-        $data['nombre_titulacion'] = $this -> titulaciones_table -> find($id) -> nombre;
+        $titulacion = $this->titulaciones_table->find($id);
+        $data['nombre_titulacion'] =  $titulacion->nombre;
         $asignatura = new Asignatura;
         $asignatura -> titulacion_id = $id;
         $action = 'asignaturas/create/' . $asignatura -> id;
-        $data['data'] = array('result' => $asignatura, 'action' => $action);
+        $data['data'] = array('result' => $asignatura, 'action' => $action, 'cursos' => array_combine(range(1,$titulacion->num_cursos), range(1,$titulacion->num_cursos)));
         $data['page_title'] = 'Añadir asignatura';
         $this -> load -> view('asignaturas/add', $data);
     }
@@ -49,7 +50,7 @@ class Asignaturas extends MY_Controller {
     public function edit($id) {
         $asignatura = $this -> asignaturas_table -> find($id);
         $action = 'asignaturas/update/' . $asignatura -> id;
-        $data['data'] = array('result' => $asignatura, 'action' => $action);
+        $data['data'] = array('result' => $asignatura, 'action' => $action, 'cursos' => range(1, $asignatura->Titulacion->num_cursos));
         $data['nombre_asignatura'] = $asignatura -> nombre;
         $data['page_title'] = 'Editando asignatura';
         $this -> load -> view('asignaturas/edit', $data);
@@ -80,10 +81,13 @@ class Asignaturas extends MY_Controller {
         $global = new PlanDocente;
         $global->id_asignatura = $id_asignatura;
         $global->id_curso = $id_curso;
+        $asignatura = $this->asignaturas_table->find($id_asignatura);
         $action = 'planesdocentes/create/';
         $data['data'] = array('result' => $global, 'action' => $action);
-        $data['nombre_asignatura'] = $this->asignaturas_table->find($id_asignatura)->nombre;
+        $data['nombre_asignatura'] = $asignatura->nombre;
         $data['page_title'] = 'Añadiendo carga global';
+        $data['data']['curso_asignatura'] = $asignatura->curso;
+        $data['data']['cursos_totales'] = Doctrine::getTable('Titulacion')->find($asignatura->titulacion_id)->num_cursos;
         $this->load->view('PlanDocente/add', $data);
     }
 
@@ -94,8 +98,8 @@ class Asignaturas extends MY_Controller {
     
     private function _submit_validate(){
         $this->form_validation->set_rules('codigo', 'Código', 'required|exact_length[3]|numeric');
-        $this->form_validation->set_rules('nombre', 'Nombre', 'required|min_length[5]|max_length[200]|alpha_numeric'); // Hay que crear la regla alpha_numeric_ext igual que la alpha_ext pero con números.
-        $this->form_validation->set_rules('abreviatura', 'Abreviatura', 'required|min_length[1]|max_length[5]|alpha_numeric');
+        $this->form_validation->set_rules('nombre', 'Nombre', 'required|min_length[5]|max_length[200]|alpha_ext'); // Hay que crear la regla alpha_numeric_ext igual que la alpha_ext pero con números.
+        $this->form_validation->set_rules('abreviatura', 'Abreviatura', 'required|min_length[1]|max_length[5]|alpha_ext');
         $this->form_validation->set_rules('creditos', 'Créditos', 'required|numeric|is_natural_no_zero');
         $this->form_validation->set_rules('materia', 'Materia', 'required|min_length[3]|max_length[100]|alpha_ext');
         $this->form_validation->set_rules('departamento', 'Departamento', 'required|min_length[3]|max_length[200]|alpha_ext');

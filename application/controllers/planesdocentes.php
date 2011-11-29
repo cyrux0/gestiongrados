@@ -29,8 +29,15 @@ class PlanesDocentes extends MY_Controller{
                 $planactividad->id_actividad = $key;             
                 $global->planactividades[] = $planactividad;
             }
+            
         }
         
+        foreach($this->input->post('cursos_compartidos') as $curso)
+        {
+            $cursocompartido = new CursoCompartido;
+            $cursocompartido->num_curso_compartido = $curso['num_curso_compartido'];
+            $global->cursoscompartidos[] = $cursocompartido;
+        }
         if($this->_submit_validate()==FALSE){
             $this->add_carga($this->input->post('asignatura_id'));
         }else{
@@ -44,10 +51,14 @@ class PlanesDocentes extends MY_Controller{
     
     public function edit($id){
         $global = $this->globales_table->find($id);
+        $asignatura = $this->asignaturas_table->find($global->id_asignatura);
         $action = '/planesdocentes/update/' . $id;
         $data['data'] = array('result' => $global, 'action' => $action);
-        $data['nombre_asignatura'] = $this->asignaturas_table->find($global->asignatura_id)->nombre;
+        $data['nombre_asignatura'] = $asignatura->nombre;
         $data['page_title'] = 'Editando carga global';
+        $data['data']['curso_asignatura'] = $asignatura->curso;
+        $data['data']['cursos_totales'] = Doctrine::getTable('Titulacion')->find($asignatura->titulacion_id)->num_cursos;
+        
         $this->load->view('PlanDocente/edit', $data);
     }
 

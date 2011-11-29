@@ -21,7 +21,7 @@ class PlanDocente extends Doctrine_Record {
         $this->hasOne('Asignatura', array('local' => 'id_asignatura', 'foreign' => 'id'));
         $this->hasOne('Curso as curso', array('local' => 'id_curso', 'foreign' => 'id'));
         $this->hasMany('PlanActividad as planactividades', array('local' => 'id', 'foreign' => 'id_plandocente'));
-        // $this->hasMany('CargaSemanal as CargasSemanales', array('local' => 'id', 'foreign' => 'global_id'));
+        $this->hasMany('CursoCompartido as cursoscompartidos', array('local' => 'id', 'foreign' => 'id_plandocente'));
         parent::setUp();
     }
 
