@@ -334,18 +334,18 @@ Esta es la sección de gestión de carga de trabajo.
 
 \pagebreak
 
-\subsubsection*{Caso de uso: Añadir carga de trabajo}
+\subsubsection*{Caso de uso: Añadir plan docente}
 \begin{itemize}
-\item{\bf Descripción:} Se añaden los detalles de la carga de trabajo para una asignatura en un curso determinado.
+\item{\bf Descripción:} Se añaden los detalles del plan docente para una asignatura en un curso determinado.
 \item{\bf Actores:} Subdirector.
 \item{\bf Precondiciones:} Ninguna.
-\item{\bf Postcondiciones:} La carga de trabajo queda registrada en el sistema asociada a una asignatura y un curso determinado.
+\item{\bf Postcondiciones:} El plan docente queda registrado en el sistema, asociado a una asignatura y un curso determinado.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
 	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
 	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
-	\item El sistema comprueba que no exista ya una carga de trabajo asociada a ese curso.
-	\item El usuario introduce los datos de la carga de trabajo.
+	\item El sistema comprueba que no exista ya un plan docente asociado a ese curso.
+	\item El usuario introduce los datos del plan docente.
 	\item El sistema comprueba que los datos cumplen el formato requerido.
 	\item El sistema guarda la carga de trabajo y muestra un mensaje confirmándolo.
 	\end{enumerate}
@@ -376,7 +376,7 @@ Esta es la sección de gestión de carga de trabajo.
 
 \pagebreak
 
-\subsubsection*{Caso de uso: Editar carga de trabajo}
+\subsubsection*{Caso de uso: Editar plan docente}
 \begin{itemize}
 \item{\bf Descripción:} Se edita una carga de trabajo existente para un curso determinado.
 \item{\bf Actores:} Subdirector.
@@ -417,7 +417,7 @@ Esta es la sección de gestión de carga de trabajo.
 
 % Hacer casos de uso selección de titulación y asignatura para incluirlos
 
-\subsubsection*{Caso de uso: Borrar carga de trabajo}
+\subsubsection*{Caso de uso: Borrar plan docente}
 \begin{itemize}
 \item{\bf Descripción:} Se borra una carga de trabajo existente en el sistema asociada a un curso.
 \item{\bf Actores:} Subdirector.
@@ -453,7 +453,7 @@ Esta es la sección de gestión de carga de trabajo.
 
 % Posible caso de uso Copiar carga de trabajo
 %% De este subsistema quedaría Consultar carga de trabajo (podría ser un extend de consultar asignatura)
-\subsubsection*{Caso de uso: Consultar carga de trabajo}
+\subsubsection*{Caso de uso: Consultar plan docente}
 \begin{itemize}
 \item{\bf Descripción:} Se consulta la carga de trabajo de una asignatura para un curso determinado.
 \item{\bf Actores:} Usuario.
@@ -610,7 +610,7 @@ Esta es la sección de gestión de carga de trabajo.
 \end{itemize}
 
 \pagebreak
-
+\begin{comment}
 \subsubsection*{Caso de uso: Duplicar asignatura}
 \label{duplicar_asignatura}
 \begin{itemize}
@@ -697,6 +697,7 @@ Esta es la sección de gestión de carga de trabajo.
 \end{itemize}
 
 \pagebreak
+\end{comment}
 
 \subsubsection*{Caso de uso: Añadir evento al calendario}
 \begin{itemize}
@@ -773,7 +774,7 @@ Esta es la sección de gestión de carga de trabajo.
 \end{itemize}
 
 \pagebreak
-
+\begin{comment}
 \subsubsection*{Caso de uso: Configuración de horario}
 \begin{itemize}
 \item{\bf Descripción:} Se realiza la configuración de horario para un curso, semestre y grupo concreto en una titulación.
@@ -812,8 +813,8 @@ Esta es la sección de gestión de carga de trabajo.
 \end{itemize}
 
 \pagebreak
-
-\subsubsection*{Ver detalle de evento del calendario}
+\end{comment}
+\subsubsection*{Caso de uso: Ver detalle de evento del calendario}
 \begin{itemize}
 \item{\bf Descripción:} Se muestran los datos detallados de un evento del calendario
 \item{\bf Actores:} Usuario
@@ -829,7 +830,10 @@ Esta es la sección de gestión de carga de trabajo.
 \item{\bf Escenarios alternativos:}
 \end{itemize}
 
-\subsubsection*{Seleccionar grupos de teoría}
+\pagebreak
+
+\subsubsection*{Caso de uso: Seleccionar grupos de teoría}
+\label{select_grupo}
 \begin{itemize}
 \item{\bf Descripción:} Se muestran los grupos de teoría de una titulación. Este caso de uso es incluido por más casos de uso.
 \item{\bf Actores:} Administrador
@@ -840,28 +844,442 @@ Esta es la sección de gestión de carga de trabajo.
 	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
 	\item Se realiza el caso de uso {\em \hyperref[select_titulacion]{Seleccionar titulación}}.
 	\item El sistema muestra un listado con los cursos de la titulación y el número de grupos de cada curso.
+	\item El administrador selecciona el grupo deseado.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
+\end{itemize}
 
-\subsubsection*{Editar horario tipo}
+\pagebreak
+
+\subsubsection*{Caso de uso: Ubicar slot de horario}
+\label{guardar_slot}
 \begin{itemize}
-\item{\bf Descripción:} Se muestra el horario de un grupo de teoría en un formato editable.
-\item{\bf Actores:}
-\item{\bf Precondiciones:}
-\item{\bf Postcondiciones:}
+\item{\bf Descripción:} Caso de uso abstracto que es incluído por otros casos de uso. Se utiliza para ubicar en un horario un slot de una actividad de una asignatura.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} La asignatura existe y tiene asignadas horas en el plan docente para esa actividad.
+\item{\bf Postcondiciones:} El slot de la actividad queda guardado en el horario.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
-	\item
+	\item El administrador selecciona una asignatura y su actividad
+	\item El sistema comprueba que tenga asignadas horas en el plan docente
+	\item El administrador selecciona el aula en la que se guardará el slot
+	\item El administrador selecciona el lugar que ocupará en el horario
+	\item El sistema comprueba que el aula no esté ocupada en ese momento y que si el slot es de teoría que no se solape con otros slots.
+	\item El sistema guarda el slot en el horario.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-		\item[2.a.]
+		\item[2.a.] La asignatura no tiene horas asignadas para esa actividad.
 		\begin{enumerate}
-			\item
+			\item El sistema lo indica y se vuelve al paso anterior.
+		\end{enumerate}
+		\item[5.a.] El aula está ocupada en ese horario.
+		\begin{enumerate}
+			\item El sistema lo indica y se vuelve al paso 3.
+		\end{enumerate}
+		\item[5.b.] El slot es de teoría y se solapa con otros slots.
+		\begin{enumerate}
+			\item El sistema lo indica y se vuelve al paso anterior.
 		\end{enumerate}
 	\end{itemize}
 \end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Editar horario tipo}
+\begin{itemize}
+\item{\bf Descripción:} Se muestra el horario de un grupo de teoría en un formato editable.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} Hay algún grupo creado para la titulación, semestre, curso y año académico.
+\item{\bf Postcondiciones:} Se muestran las asignaturas disponibles, permitiendo su edición. Se muestran tanto los slots de teoría como los de las demás actividades
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_grupo]{Seleccionar grupos de teoría}}.
+	\item El administrador selecciona el curso y semestre deseado para editar su horario tipo.
+	\item El sistema comprueba que exista el grupo y se que no exista un horario ya empezado.
+	\item Se realiza el caso de uso {\em \hyperref[guardar_slot]{Ubicar slot de horario}}.
+	\item El administrador realiza el paso anterior las veces que sean necesarias hasta completar el horario.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento el administrador decide parar el proceso.
+		\begin{enumerate}
+			\item El sistema guarda los cambios hechos hasta ahora y el caso de uso finaliza.
+		\end{enumerate}
+		\item[2.a] No ha sido creado ningún grupo para ese curso.
+		\begin{enumerate}
+			\item El sistema indica el error y finaliza el caso de uso.
+		\end{enumerate}
+		\item[3.a] Ya hay un horario empezado para ese grupo y semestre
+		\begin{enumerate}
+			\item El sistema muestra el horario ya empezado ubicando los slots donde estaban en el antiguo horario y el caso de uso continua.
+		\end{enumerate}
+	\end{itemize}
 \end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Editar horario de semana inicial (sólo teoría)}
+\begin{itemize}
+\item{\bf Descripción:} Se muestra para su edición el horario de un grupo de teoría en una semana en la que sólo se imparte teoría
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} Ya ha sido creado el grupo y editado el horario tipo correspondiente
+\item{\bf Postcondiciones:} Se muestra el horario con los slots de teoría del horario tipo ubicados en su sitio, salvo los que no sean posible por no ser día lectivo
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_grupo]{Seleccionar grupo de teoría}}.
+	\item El administrador selecciona el curso y semestre además de la semana que se editará.
+	\item El sistema comprueba que exista el grupo y se que no exista un horario ya empezado.
+	\item El sistema muestra los slots de teoría del horario tipo correspondiente, sacando del horario los que no sean posibles ubicar automáticamente por que el día sea no lectivo.
+	\item Se realiza el caso de uso {\em \hyperref[guardar_slot]{Ubicar slot de horario}}.
+	\item Se realiza el paso anterior las veces que se consideren necesarias hasta completar el horario.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento el administrador decide parar el proceso.
+		\begin{enumerate}
+			\item El sistema guarda los cambios hechos hasta ahora y el caso de uso finaliza.
+		\end{enumerate}
+		\item[2.a] No ha sido creado ningún grupo para ese curso.
+		\begin{enumerate}
+			\item El sistema indica el error y finaliza el caso de uso.
+		\end{enumerate}
+		\item[3.a] Ya hay un horario empezado para ese grupo, semestre y semana
+		\begin{enumerate}
+			\item El sistema muestra el horario ya empezado ubicando los slots donde estaban en el antiguo horario y el caso de uso continua.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Añadir grupo de teoría}
+\begin{itemize}
+\item{\bf Descripción:} Se añade un grupo de teoría a un curso de una titulación para poder editar más adelante su horario
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} La titulación existe y tiene asignaturas con planes docentes creados para el curso actual.
+\item{\bf Postcondiciones:} El grupo se añade al curso correspondiente.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_grupo]{Seleccionar grupo de teoría}}.
+	\item El administrador selecciona el curso de la titulación al que se va a añadir el grupo.
+	\item El sistema comprueba que no se haya sobrepasado el número de grupos indicado en el plan docente y guarda el grupo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[2.a.] Se han sobrepasado el número de grupos indicado en el plan docente.
+		\begin{enumerate}
+			\item El sistema advierte del problema pero el caso de uso continúa.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Eliminar grupo de teoría}
+\begin{itemize}
+\item{\bf Descripción:} Se elimina un grupo de teoría de un curso de una titulación
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} Hay grupos creados para la titulación y curso.
+\item{\bf Postcondiciones:} Se elimina el grupo así como toda su información asociada (horarios, informes, etc).
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_grupo]{Seleccionar grupo de teoría}}.
+	\item El administrador selecciona el curso de la titulación al que se va a eliminar el grupo.
+	\item El sistema pide confirmación de la eliminación.
+	\item El administrador confirma que desea eliminar el grupo.
+	\item Queda borrado el grupo y toda la información asociada y el sistema lo indica.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[4.a.] El administrador cancela el proceso.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Crear aula}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para crear un aula a la que asignar slots de horario
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} Ninguna
+\item{\bf Postcondiciones:} El aula queda creada
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El administrador introduce los datos del aula: nombre y actividades para las que sirve
+	\item El sistema comprueba que no exista ningún aula con ese nombre y el aula queda creada.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+		\item[2.a.] Ya existe un aula con ese nombre.
+		\begin{enumerate}
+			\item El sistema lo indica y se vuelve al paso anterior.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Editar aula}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para editar los datos de un aula ya creada
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} El aula existe.
+\item{\bf Postcondiciones:} El aula queda guardada con los nuevos datos.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El sistema muestra los datos actuales del aula permitiendo su edición
+	\item El administrador edita el nombre y añade o elimina actividades.
+	\item El sistema valida que el nuevo nombre no exista y guarda los datos
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento el administrador decide cancelar el proceso
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+		\item[3.a.] Ya existe un aula con ese nombre
+		\begin{enumerate}
+			\item El sistema lo indica y se vuelve al paso anterior
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Eliminar aula}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para eliminar un aula del sistema.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} El aula existe en el sistema.
+\item{\bf Postcondiciones:} El aula queda eliminada del sistema y todas las referencias a ésta quedan borradas.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se selecciona el aula a eliminar
+	\item El sistema pide confirmación
+	\item El administrador confirma la eliminación
+	\item El sistema elimina el aula y borra todas las referencias a ésta.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[3.a.] El administrador decide que no desea eliminar el aula.
+		\begin{enumerate}
+			\item El caso de uso finaliza
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Ver ocupación de aula}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para ver la ocupación actual de un aula según los horarios creados para el curso actual.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} El aula existe en el sistema.
+\item{\bf Postcondiciones:} Se muestran todos los slots que están asignados a ese aula junto con su horario.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El administrador selecciona el aula para la que desea ver la ocupación.
+	\item El administrador selecciona el semestre y la semana para el que desea ver la ocupación.
+	\item El sistema muestra la ocupación actual.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Exportar horario}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para exportar un horario creado a un formato externo como csv o una hoja de cálculo.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} Existe un grupo creado y está creado el horario.
+\item{\bf Postcondiciones:} Se exporta un archivo con un formato adecuado.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_grupo]{Seleccionar grupo de teoría}}.
+	\item El administrador selecciona la semana, semestre y curso.
+	\item El sistema busca el horario elegido.
+	\item Se muestra y permite descarga del archivo exportado.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+		\item[3.a.] No existe un horario creado para los datos elegidos.
+		\begin{enumerate}
+			\item El sistema lo indica y se vuelve al paso anterior.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Exportar calendario}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para exportar el calendario de un curso a un formato externo como csv o una hoja de cálculo.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} El curso existe y tiene eventos creados.
+\item{\bf Postcondiciones:} Se exporta un archivo con un formato adecuado.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+	\item Se muestra y permite descarga del archivo exportado.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento el administrador decide cancelar el proceso.
+		\begin{enumerate}
+			\item Se finaliza el caso de uso.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Importar plan docente desde archivo}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para importar planes docentes de forma masiva desde un archivo csv con un formato concreto.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} El archivo tiene el formato correcto.
+\item{\bf Postcondiciones:} Se crean los planes docentes indicados en el archivo.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El administrador selecciona el archivo.
+	\item El sistema comprueba que cada línea tenga el formato correcto.
+	\item El sistema crea un plan docente por cada línea con los datos indicados en el archivo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[2.a.] Alguna línea no cumple el formato
+		\begin{enumerate}
+			\item El sistema indica el error y el caso de uso finaliza.
+		\end{enumerate}
+		\item[2.b.] Ya existe un plan docente creado para la asignatura indicada y para ese curso.
+		\begin{enumerate}
+			\item El sistema lo indica y el caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Importar asignatura desde archivo}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para importar asignaturas de forma masiva desde un archivo csv con un formato concreto.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} El archivo tiene el formato correcto.
+\item{\bf Postcondiciones:} Se crean las asignaturas indicadas en el archivo.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El administrador selecciona el archivo.
+	\item El sistema comprueba que cada línea tenga el formato correcto.
+	\item El sistema crea una asignatura por cada línea con los datos indicados en el archivo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[2.a.] Alguna línea no cumple el formato
+		\begin{enumerate}
+			\item El sistema indica el error y el caso de uso finaliza.
+		\end{enumerate}
+		\item[2.b.] Ya existe una asignatura creada con el mismo identificador.
+		\begin{enumerate}
+			\item El sistema lo indica y el caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Importar titulación}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para importar titulaciones de forma masiva desde un archivo csv con un formato concreto.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} El archivo tiene el formato correcto.
+\item{\bf Postcondiciones:} Se crean las titulaciones indicadas en el archivo.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item El administrador selecciona el archivo.
+	\item El sistema comprueba que cada línea tenga el formato correcto.
+	\item El sistema crea una titulación por cada línea con los datos indicados en el archivo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[2.a.] Alguna línea no cumple el formato
+		\begin{enumerate}
+			\item El sistema indica el error y el caso de uso finaliza.
+		\end{enumerate}
+		\item[2.b.] Ya existe una titulación creada con el mismo identificador.
+		\begin{enumerate}
+			\item El sistema lo indica y el caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Comprobar grupo de teoría}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para comprobar que el número de horas introducidas en los horarios de un grupo coincide con lo indicado en el plan docente de cada asignatura.
+\item{\bf Actores:} Administrador.
+\item{\bf Precondiciones:} El grupo existe y tiene horarios creados.
+\item{\bf Postcondiciones:} Se muestra la comprobación indicando si faltan o sobran horas en las asignaturas y actividades.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_grupo]{Seleccionar grupo de teoría}}.
+	\item El sistema muestra el cálculo de horas de un grupo mediante los horarios de esa semana, teniendo en cuenta los eventos asignados en el calendario e indica dónde faltan horas por asignar para que sea solucionado.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento se decide parar el proceso.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection*{Caso de uso: Generación de informe de asignatura}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para generar un informe de las horas asignadas a una asignatura.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} La asignatura tiene un plan docente creado y asignadas horas en los horarios.
+\item{\bf Postcondiciones:} Se genera un informe en pdf permitiendo su descarga.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
+	\item El sistema comprueba el plan docente de la asignatura y las asignaciones en los horarios.
+	\item El sistema muestra un desglose de las horas de cada actividad de la asignatura y de cada semana teniendo en cuenta los eventos del calendario, permitiendo la descarga del archivo.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento se decide parar el proceso.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+		\item[3.a] La asignatura no tiene un plan docente asignado.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
 % Plantilla para CUs
 \begin{comment}
 \begin{itemize}

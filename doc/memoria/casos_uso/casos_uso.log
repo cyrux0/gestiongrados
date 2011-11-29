@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.28)  28 NOV 2011 19:11
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.28)  29 NOV 2011 19:29
 entering extended mode
 **C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/casos_uso.tex
 (C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/casos_uso.tex
@@ -482,6 +482,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
+
+LaTeX Warning: Hyper reference `duplicar_asignatura' on page 9 undefined on inp
+ut line 205.
+
 [9]
 Underfull \vbox (badness 3049) has occurred while \output is active []
 
@@ -498,6 +502,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: Hyper reference `select_curso' on page 14 undefined on input lin
 e 346.
+
+
+LaTeX Warning: Hyper reference `duplicar_carga' on page 14 undefined on input l
+ine 360.
 
 [14]
 
@@ -548,29 +556,33 @@ e 594.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-Underfull \vbox (badness 1502) has occurred while \output is active []
 
- [22]
-
-LaTeX Warning: Hyper reference `select_curso' on page 23 undefined on input lin
-e 662.
-
-
-LaTeX Warning: Hyper reference `select_curso' on page 23 undefined on input lin
-e 665.
-
-[23]
-
-LaTeX Warning: Hyper reference `select_curso' on page 24 undefined on input lin
-e 709.
+LaTeX Warning: Hyper reference `select_curso' on page 22 undefined on input lin
+e 710.
 
 
 Underfull \vbox (badness 2744) has occurred while \output is active []
 
+ [22]
+
+LaTeX Warning: Hyper reference `select_curso' on page 23 undefined on input lin
+e 742.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+
+LaTeX Warning: Hyper reference `select_curso' on page 24 undefined on input lin
+e 770.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [24]
 
 LaTeX Warning: Hyper reference `select_curso' on page 25 undefined on input lin
-e 741.
+e 825.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -578,27 +590,71 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [25]
 
 LaTeX Warning: Hyper reference `select_curso' on page 26 undefined on input lin
-e 769.
+e 844.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26]
+Underfull \vbox (badness 2846) has occurred while \output is active []
 
-LaTeX Warning: Hyper reference `select_curso' on page 27 undefined on input lin
-e 786.
+ [27]
+Underfull \vbox (badness 1231) has occurred while \output is active []
 
-[27]
+ [28]
+[29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Hyper reference `select_curso' on page 28 undefined on input lin
-e 824.
+ [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 852.
-[28]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 852.
+ [31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+
+LaTeX Warning: Hyper reference `select_curso' on page 37 undefined on input lin
+e 1140.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
+
+LaTeX Warning: Hyper reference `select_curso' on page 42 undefined on input lin
+e 1265.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1304.
+[42]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1304.
  (C:\gestiongrados\gestiongrados\doc\memoria\casos_uso\casos_uso.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 852.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 852.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1304.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1304.
+
 Package rerunfilecheck Info: File `casos_uso.out' has not changed.
 (rerunfilecheck)             Checksum: 1385B9AE39774311D01E83983A12EC46;182.
 
@@ -607,13 +663,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5810 strings out of 494045
- 82163 string characters out of 3145971
- 168952 words of memory out of 3000000
- 8843 multiletter control sequences out of 15000+200000
+ 5894 strings out of 494045
+ 82875 string characters out of 3145971
+ 167959 words of memory out of 3000000
+ 8845 multiletter control sequences out of 15000+200000
  9507 words of font info for 33 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 29i,6n,28p,294b,364s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,6n,28p,307b,364s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
@@ -621,9 +677,9 @@ rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on casos_uso.pdf (28 pages, 167850 bytes).
+Output written on casos_uso.pdf (42 pages, 198936 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 240 named destinations out of 1000 (max. 500000)
+ 588 PDF objects out of 1000 (max. 8388607)
+ 322 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
