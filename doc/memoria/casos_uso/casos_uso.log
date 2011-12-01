@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.28)  29 NOV 2011 19:29
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.28)  1 DEC 2011 19:37
 entering extended mode
 **C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/casos_uso.tex
 (C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/casos_uso.tex
@@ -392,24 +392,84 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip43
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 10.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count101
+\Gm@cntv=\count102
+\c@Gm@tempcnt=\count103
+\Gm@bindingoffset=\dimen107
+\Gm@wd@mp=\dimen108
+\Gm@odd@mp=\dimen109
+\Gm@even@mp=\dimen110
+\Gm@layoutwidth=\dimen111
+\Gm@layoutheight=\dimen112
+\Gm@layouthoffset=\dimen113
+\Gm@layoutvoffset=\dimen114
+\Gm@dimlist=\toks20
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count104
+))
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
+)
+(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+Package: caption 2011/11/10 v3.2e Customizing captions (AR)
+
+(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
+\captionmargin=\dimen117
+\captionmargin@=\dimen118
+\captionwidth=\dimen119
+\caption@indent=\dimen120
+\caption@parindent=\dimen121
+\caption@hangindent=\dimen122
+)
+\c@ContinuedFloat=\count105
+Package caption Info: hyperref package is loaded.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count106
+\float@exts=\toks21
+\float@box=\box26
+\@float@everytoks=\toks22
+\@floatcapt=\box27
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 15.
 
 (C:\gestiongrados\gestiongrados\doc\memoria\casos_uso\casos_uso.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-\AtBeginShipoutBox=\box26
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+\AtBeginShipoutBox=\box28
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
@@ -418,47 +478,82 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
+)
+Package hyperref Info: Link coloring ON on input line 20.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count101
-
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen107
-\scratchbox=\box27
-\nofMPsegments=\count103
-\nofMParguments=\count104
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen108
-\MPnumerator=\count106
-\makeMPintoPDFobject=\count107
-\everyMPtoPDFconversion=\toks21
-)))
-Package hyperref Info: Link coloring ON on input line 15.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count108
+\c@section@level=\count107
 )
-LaTeX Info: Redefining \ref on input line 15.
-LaTeX Info: Redefining \pageref on input line 15.
-LaTeX Info: Redefining \nameref on input line 15.
+LaTeX Info: Redefining \ref on input line 20.
+LaTeX Info: Redefining \pageref on input line 20.
+LaTeX Info: Redefining \nameref on input line 20.
 
 (C:\gestiongrados\gestiongrados\doc\memoria\casos_uso\casos_uso.out)
 (C:\gestiongrados\gestiongrados\doc\memoria\casos_uso\casos_uso.out)
 \@outlinefile=\write3
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
+* v-part:(T,H,B)=(99.58464pt, 595.8007pt, 99.58464pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=472.03123pt
+* \textheight=595.8007pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-2.75284pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=125.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count108
+\scratchdimen=\dimen123
+\scratchbox=\box29
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen124
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks24
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 17.
+(Font)              <12> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 17.
+(Font)              <8> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 17.
+(Font)              <6> on input line 22.
  [1
 
 
@@ -466,210 +561,363 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Cap\'{\i }tulo 1.
-[3]
-Underfull \vbox (badness 6396) has occurred while \output is active []
+<./gestiontitulaciones.png, id=115, 616.3025pt x 503.8825pt>
+File: ./gestiontitulaciones.png Graphic file (type png)
 
- [4]
-Underfull \vbox (badness 2261) has occurred while \output is active []
+<use ./gestiontitulaciones.png>
+Package pdftex.def Info: ./gestiontitulaciones.png used on input line 36.
+(pdftex.def)             Requested size: 308.1505pt x 251.94063pt.
 
- [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [3]
+[4 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/gestiontitulaciones.pn
+g (PNG copy)>] [5] [6]
+<./gestionasignaturas.png, id=172, 640.3925pt x 658.46pt>
+File: ./gestionasignaturas.png Graphic file (type png)
 
- [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<use ./gestionasignaturas.png>
+Package pdftex.def Info: ./gestionasignaturas.png used on input line 212.
+(pdftex.def)             Requested size: 320.19547pt x 329.2292pt.
+ [7 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/gestionasignaturas.pn
+g (PNG copy)>]
 
- [8]
+LaTeX Warning: Hyper reference `duplicar_asignatura' on page 8 undefined on inp
+ut line 258.
 
-LaTeX Warning: Hyper reference `duplicar_asignatura' on page 9 undefined on inp
-ut line 205.
+[8] [9] <./gestioncursos.png, id=231, 749.80125pt x 499.8675pt>
+File: ./gestioncursos.png Graphic file (type png)
 
-[9]
-Underfull \vbox (badness 3049) has occurred while \output is active []
+<use ./gestioncursos.png>
+Package pdftex.def Info: ./gestioncursos.png used on input line 397.
+(pdftex.def)             Requested size: 374.8997pt x 249.93314pt.
+ [10] [11 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/gestioncursos.p
+ng (PNG copy)>]
 
- [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Hyper reference `select_curso' on page 12 undefined on input lin
+e 472.
 
- [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[12]
 
- [12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Hyper reference `select_curso' on page 13 undefined on input lin
+e 513.
 
+
+LaTeX Warning: Hyper reference `select_curso' on page 13 undefined on input lin
+e 535.
+
+<./gestionplanificacion.png, id=277, 780.9175pt x 595.22375pt>
+File: ./gestionplanificacion.png Graphic file (type png)
+
+<use ./gestionplanificacion.png>
+Package pdftex.def Info: ./gestionplanificacion.png used on input line 558.
+(pdftex.def)             Requested size: 390.4578pt x 297.61115pt.
  [13]
 
 LaTeX Warning: Hyper reference `select_curso' on page 14 undefined on input lin
-e 346.
+e 571.
 
+[14 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/gestionplanificacion.
+png (PNG copy)>]
 
-LaTeX Warning: Hyper reference `duplicar_carga' on page 14 undefined on input l
-ine 360.
+LaTeX Warning: Hyper reference `duplicar_carga' on page 15 undefined on input l
+ine 585.
 
-[14]
 
 LaTeX Warning: Hyper reference `select_curso' on page 15 undefined on input lin
-e 388.
+e 613.
 
-
-Underfull \vbox (badness 1701) has occurred while \output is active []
-
- [15]
+[15]
 
 LaTeX Warning: Hyper reference `select_curso' on page 16 undefined on input lin
-e 429.
+e 652.
 
 
-Underfull \vbox (badness 2951) has occurred while \output is active []
+LaTeX Warning: Hyper reference `select_curso' on page 16 undefined on input lin
+e 686.
 
- [16]
+[16]
 
 LaTeX Warning: Hyper reference `select_curso' on page 17 undefined on input lin
-e 465.
+e 740.
 
+<./gestioncalendario.png, id=357, 706.64pt x 630.355pt>
+File: ./gestioncalendario.png Graphic file (type png)
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+<use ./gestioncalendario.png>
+Package pdftex.def Info: ./gestioncalendario.png used on input line 850.
+(pdftex.def)             Requested size: 353.31914pt x 315.17673pt.
  [17]
-Underfull \vbox (badness 1939) has occurred while \output is active []
 
- [18]
+LaTeX Warning: Hyper reference `select_curso' on page 18 undefined on input lin
+e 864.
+
+[18 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/gestioncalendario.png
+ (PNG copy)>]
 
 LaTeX Warning: Hyper reference `select_curso' on page 19 undefined on input lin
-e 531.
+e 896.
+
+
+LaTeX Warning: Hyper reference `select_curso' on page 19 undefined on input lin
+e 924.
 
 [19]
 
 LaTeX Warning: Hyper reference `select_curso' on page 20 undefined on input lin
-e 572.
+e 979.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Hyper reference `select_curso' on page 20 undefined on input lin
+e 998.
+
+<./gestionhorarios.png, id=404, 978.65625pt x 868.24374pt>
+File: ./gestionhorarios.png Graphic file (type png)
+
+<use ./gestionhorarios.png>
+Package pdftex.def Info: ./gestionhorarios.png used on input line 1015.
+(pdftex.def)             Requested size: 489.32693pt x 434.1208pt.
+
+Overfull \hbox (17.2957pt too wide) in paragraph at lines 1015--1016
+ [] 
+ []
+
+
+Underfull \vbox (badness 1389) has occurred while \output is active []
 
  [20]
-
-LaTeX Warning: Hyper reference `select_curso' on page 21 undefined on input lin
-e 594.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
+[21 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/gestionhorarios.png (
+PNG copy)>]
 
 LaTeX Warning: Hyper reference `select_curso' on page 22 undefined on input lin
-e 710.
+e 1029.
 
+[22] [23] [24] <./gestionaulas.png, id=491, 707.64375pt x 552.0625pt>
+File: ./gestionaulas.png Graphic file (type png)
 
-Underfull \vbox (badness 2744) has occurred while \output is active []
+<use ./gestionaulas.png>
+Package pdftex.def Info: ./gestionaulas.png used on input line 1242.
+(pdftex.def)             Requested size: 353.82101pt x 276.03056pt.
+ [25] [26 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/gestionaulas.pn
+g (PNG copy)>] [27]
+<./modeloconceptual.png, id=535, 764.8575pt x 691.58376pt>
+File: ./modeloconceptual.png Graphic file (type png)
 
- [22]
+<use ./modeloconceptual.png>
+Package pdftex.def Info: ./modeloconceptual.png used on input line 1351.
+(pdftex.def)             Requested size: 535.39659pt x 484.10533pt.
 
-LaTeX Warning: Hyper reference `select_curso' on page 23 undefined on input lin
-e 742.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23]
-
-LaTeX Warning: Hyper reference `select_curso' on page 24 undefined on input lin
-e 770.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24]
-
-LaTeX Warning: Hyper reference `select_curso' on page 25 undefined on input lin
-e 825.
+Overfull \hbox (63.36536pt too wide) in paragraph at lines 1351--1352
+ [] 
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
-
-LaTeX Warning: Hyper reference `select_curso' on page 26 undefined on input lin
-e 844.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26]
-Underfull \vbox (badness 2846) has occurred while \output is active []
-
- [27]
-Underfull \vbox (badness 1231) has occurred while \output is active []
 
  [28]
-[29]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
+ [29 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/modeloconceptual.png
+ (PNG copy)>] <./secuencia-reg-titulacion.png, id=550, 850.17625pt x 416.55624p
+t>
+File: ./secuencia-reg-titulacion.png Graphic file (type png)
+
+<use ./secuencia-reg-titulacion.png>
+Package pdftex.def Info: ./secuencia-reg-titulacion.png used on input line 1367
+.
+(pdftex.def)             Requested size: 425.08708pt x 208.2776pt.
+
+<./secuencia-reg-asignatura.png, id=551, 796.9775pt x 436.63126pt>
+File: ./secuencia-reg-asignatura.png Graphic file (type png)
+
+<use ./secuencia-reg-asignatura.png>
+Package pdftex.def Info: ./secuencia-reg-asignatura.png used on input line 1385
+.
+(pdftex.def)             Requested size: 398.48776pt x 218.3151pt.
+
+Underfull \vbox (badness 5091) has occurred while \output is active []
+
+ [30 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-reg-titula
+cion.png (PNG copy)>] <./secuencia-edit-asignatura.png, id=559, 813.0375pt x 77
+0.88pt>
+File: ./secuencia-edit-asignatura.png Graphic file (type png)
+
+<use ./secuencia-edit-asignatura.png>
+Package pdftex.def Info: ./secuencia-edit-asignatura.png used on input line 141
+0.
+(pdftex.def)             Requested size: 406.51776pt x 385.43906pt.
+
+Underfull \vbox (badness 1442) has occurred while \output is active []
+
+ [31 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-reg-asigna
+tura.png (PNG copy)>] <./secuencia-borrar-asignatura.png, id=568, 839.135pt x 6
+41.39626pt>
+File: ./secuencia-borrar-asignatura.png Graphic file (type png)
+
+<use ./secuencia-borrar-asignatura.png>
+Package pdftex.def Info: ./secuencia-borrar-asignatura.png used on input line 1
+427.
+(pdftex.def)             Requested size: 419.56647pt x 320.69734pt.
+ [32 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-edit-asign
+atura.png (PNG copy)>]
+<./secuencia-importar-asignatura.png, id=575, 863.225pt x 383.4325pt>
+File: ./secuencia-importar-asignatura.png Graphic file (type png)
+
+<use ./secuencia-importar-asignatura.png>
+Package pdftex.def Info: ./secuencia-importar-asignatura.png used on input line
+ 1436.
+(pdftex.def)             Requested size: 431.61145pt x 191.71577pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [33 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-borrar-asi
+gnatura.png (PNG copy)>]
+<./secuencia-crear-plandocente.png, id=581, 816.04875pt x 454.69875pt>
+File: ./secuencia-crear-plandocente.png Graphic file (type png)
 
- [32]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36]
-
-LaTeX Warning: Hyper reference `select_curso' on page 37 undefined on input lin
-e 1140.
-
+<use ./secuencia-crear-plandocente.png>
+Package pdftex.def Info: ./secuencia-crear-plandocente.png used on input line 1
+453.
+(pdftex.def)             Requested size: 408.02338pt x 227.34882pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
+ [34 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-importar-a
+signatura.png (PNG copy)>]
+<./secuencia-gen-informe.png, id=588, 800.9925pt x 368.37625pt>
+File: ./secuencia-gen-informe.png Graphic file (type png)
+
+<use ./secuencia-gen-informe.png>
+Package pdftex.def Info: ./secuencia-gen-informe.png used on input line 1470.
+(pdftex.def)             Requested size: 400.49527pt x 184.18767pt.
+
+<./secuencia-crear-evento.png, id=589, 882.29625pt x 372.39125pt>
+File: ./secuencia-crear-evento.png Graphic file (type png)
+
+<use ./secuencia-crear-evento.png>
+Package pdftex.def Info: ./secuencia-crear-evento.png used on input line 1478.
+(pdftex.def)             Requested size: 441.14705pt x 186.19516pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
+ [35 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-crear-plan
+docente.png (PNG copy)>] [36 <C:/gestiongrados/gestiongrados/doc/memoria/casos_
+uso/secuencia-gen-informe.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/m
+emoria/casos_uso/secuencia-crear-evento.png (PNG copy)>]
+<./secuencia-exportar-calendario.png, id=603, 904.37875pt x 430.60875pt>
+File: ./secuencia-exportar-calendario.png Graphic file (type png)
+
+<use ./secuencia-exportar-calendario.png>
+Package pdftex.def Info: ./secuencia-exportar-calendario.png used on input line
+ 1504.
+(pdftex.def)             Requested size: 452.18828pt x 215.30383pt.
+
+<./secuencia-seleccionar-grupo.png, id=604, 645.41125pt x 347.2975pt>
+File: ./secuencia-seleccionar-grupo.png Graphic file (type png)
+
+<use ./secuencia-seleccionar-grupo.png>
+Package pdftex.def Info: ./secuencia-seleccionar-grupo.png used on input line 1
+514.
+(pdftex.def)             Requested size: 322.70483pt x 173.64832pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [37 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-exportar-c
+alendario.png (PNG copy)>]
+<./secuencia-anadir-grupo.png, id=612, 645.41125pt x 302.12875pt>
+File: ./secuencia-anadir-grupo.png Graphic file (type png)
 
- [40]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<use ./secuencia-anadir-grupo.png>
+Package pdftex.def Info: ./secuencia-anadir-grupo.png used on input line 1532.
+(pdftex.def)             Requested size: 322.70483pt x 151.064pt.
 
- [41]
+<./secuencia-borrar-grupo.png, id=613, 651.43375pt x 339.2675pt>
+File: ./secuencia-borrar-grupo.png Graphic file (type png)
 
-LaTeX Warning: Hyper reference `select_curso' on page 42 undefined on input lin
-e 1265.
+<use ./secuencia-borrar-grupo.png>
+Package pdftex.def Info: ./secuencia-borrar-grupo.png used on input line 1541.
+(pdftex.def)             Requested size: 325.71606pt x 169.63333pt.
+ [38 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-selecciona
+r-grupo.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/s
+ecuencia-anadir-grupo.png (PNG copy)>]
+<./secuencia-ubicar-slot.png, id=621, 581.17125pt x 531.9875pt>
+File: ./secuencia-ubicar-slot.png Graphic file (type png)
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1304.
-[42]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1304.
- (C:\gestiongrados\gestiongrados\doc\memoria\casos_uso\casos_uso.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1304.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1304.
+<use ./secuencia-ubicar-slot.png>
+Package pdftex.def Info: ./secuencia-ubicar-slot.png used on input line 1550.
+(pdftex.def)             Requested size: 290.58492pt x 265.9931pt.
+
+Underfull \vbox (badness 1019) has occurred while \output is active []
+
+ [39 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-borrar-gru
+po.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuen
+cia-ubicar-slot.png (PNG copy)>]
+<./secuencia-editar-tipo.png, id=628, 617.30624pt x 418.56375pt>
+File: ./secuencia-editar-tipo.png Graphic file (type png)
+
+<use ./secuencia-editar-tipo.png>
+Package pdftex.def Info: ./secuencia-editar-tipo.png used on input line 1575.
+(pdftex.def)             Requested size: 308.65236pt x 209.28136pt.
+
+<./secuencia-comprobar-grupo.png, id=629, 646.415pt x 256.96pt>
+File: ./secuencia-comprobar-grupo.png Graphic file (type png)
+
+<use ./secuencia-comprobar-grupo.png>
+Package pdftex.def Info: ./secuencia-comprobar-grupo.png used on input line 159
+2.
+(pdftex.def)             Requested size: 323.20671pt x 128.47968pt.
+ [40 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-editar-tip
+o.png (PNG copy)>]
+<./secuencia-crear-aula.png, id=638, 600.2425pt x 307.1475pt>
+File: ./secuencia-crear-aula.png Graphic file (type png)
+
+<use ./secuencia-crear-aula.png>
+Package pdftex.def Info: ./secuencia-crear-aula.png used on input line 1602.
+(pdftex.def)             Requested size: 300.12051pt x 153.57336pt.
+
+<./secuencia-borrar-aula.png, id=639, 624.3325pt x 321.2pt>
+File: ./secuencia-borrar-aula.png Graphic file (type png)
+
+<use ./secuencia-borrar-aula.png>
+Package pdftex.def Info: ./secuencia-borrar-aula.png used on input line 1619.
+(pdftex.def)             Requested size: 312.16548pt x 160.59961pt.
+
+Underfull \vbox (badness 1163) has occurred while \output is active []
+
+ [41 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-comprobar-
+grupo.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/sec
+uencia-crear-aula.png (PNG copy)>]
+<./secuencia-editar-aula.png, id=647, 626.34pt x 323.2075pt>
+File: ./secuencia-editar-aula.png Graphic file (type png)
+
+<use ./secuencia-editar-aula.png>
+Package pdftex.def Info: ./secuencia-editar-aula.png used on input line 1636.
+(pdftex.def)             Requested size: 313.16922pt x 161.60335pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1671.
+ [42 <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuencia-borrar-aul
+a.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/casos_uso/secuenc
+ia-editar-aula.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1671.
+
+(C:\gestiongrados\gestiongrados\doc\memoria\casos_uso\casos_uso.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1671.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1671.
 
 Package rerunfilecheck Info: File `casos_uso.out' has not changed.
-(rerunfilecheck)             Checksum: 1385B9AE39774311D01E83983A12EC46;182.
+(rerunfilecheck)             Checksum: 64B79EF57A49BF43DFE8DFBA31CCC441;2143.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5894 strings out of 494045
- 82875 string characters out of 3145971
- 167959 words of memory out of 3000000
- 8845 multiletter control sequences out of 15000+200000
+ 7745 strings out of 494045
+ 115880 string characters out of 3145971
+ 211679 words of memory out of 3000000
+ 10574 multiletter control sequences out of 15000+200000
  9507 words of font info for 33 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 29i,6n,28p,307b,364s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,9n,38p,430b,529s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
@@ -677,9 +925,9 @@ rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on casos_uso.pdf (42 pages, 198936 bytes).
+Output written on casos_uso.pdf (42 pages, 526274 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 322 named destinations out of 1000 (max. 500000)
- 25 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 761 PDF objects out of 1000 (max. 8388607)
+ 390 named destinations out of 1000 (max. 500000)
+ 331 words of extra memory for PDF output out of 10000 (max. 10000000)
 
