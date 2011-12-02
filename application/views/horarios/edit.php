@@ -29,13 +29,12 @@
 
 <div id="check-horario"></div>
 <br/>
-<?= anchor('horarios/check_horario/' . $horario->id, "Hacer comprobación", 'class="button" id="check-button"'); ?>
 <div id="horario">
     
 </div>
-
+<p>
 <?= form_dropdown('ocupacion', $aulastotal) . anchor('horarios/ocupacion_aula/' . $horario->id_curso . '/', 'Ver ocupación del aula', 'id="link-ocupacion"') ?>
-
+</p>
 <div id="aulas">
     
 </div>

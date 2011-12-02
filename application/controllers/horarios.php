@@ -325,6 +325,7 @@ class Horarios extends MY_Controller {
                 ->where('h.id_curso = ?', $id_curso)
                 ->andWhere('h.num_semana = ?', $curso->num_semanas_teoria + 1)
                 ->andWhere('l.id_aula = ?', $id_aula)
+                ->andWhere('hora_inicial IS NOT NULL')
                 ->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
         unset($this->layout);
         echo json_encode($lineas_aulas);
@@ -424,7 +425,7 @@ class Horarios extends MY_Controller {
             }
             $horascongrupos = array($header, $suma, $horas_reales);
             $conjuntohoras[] = call_user_func_array('array_map', array_merge(array(NULL), $horascongrupos));
-            $asignaturas[] = Doctrine::getTable('Asignatura')->find($asignatura->id)->nombre;
+            $asignaturas[] = Doctrine::getTable('Asignatura')->find($asignatura->id_asignatura)->nombre;
             // $conjuntohoras[] = horas_asignatura($dias_totales, $dias_semanas_impares, $dias_semanas_pares, $asignatura->id_asignatura, $horario->id_curso, $id);
         }
         
@@ -473,13 +474,19 @@ class Horarios extends MY_Controller {
         }
 
         // Hora ocupada en el mismo aula
+        
         $query_aula = Doctrine_Query::create()
                 ->select('l.*, h.*')
                 ->from('LineaHorario l')
                 ->innerJoin('l.horario h')
-                ->where('l.hora_inicial >= ? AND l.hora_inicial < ?', array($linea->hora_inicial, $linea->hora_final))
-                ->orWhere('l.hora_final > ? AND l.hora_final <= ?', array($linea->hora_inicial, $linea->hora_final))
-                ->having('l.dia_semana = ? AND h.id_curso = ? AND l.id_aula = ? AND h.num_semana = ?', array($linea->dia_semana, $linea->horario->id_curso, $linea->id_aula, $linea->horario->num_semana));
+                ->where('l.dia_semana = ? AND h.id_curso = ? AND l.id_aula = ? AND h.num_semana = ?', array($linea->dia_semana, $linea->horario->id_curso, $linea->id_aula, $linea->horario->num_semana))
+                ->andWhere('((l.hora_inicial >= ? AND l.hora_inicial < ?) OR (l.hora_final > ? AND l.hora_final <= ?))', array($linea->hora_inicial, $linea->hora_final,$linea->hora_inicial, $linea->hora_final));
+        if($linea->id)
+        {
+            $query_aula->andWhere('id != ?', array($linea->id));
+        }
+                //->where('l.hora_inicial >= ? AND l.hora_inicial < ?', array($linea->hora_inicial, $linea->hora_final))
+                //->orWhere('l.hora_final > ? AND l.hora_final <= ?', array($linea->hora_inicial, $linea->hora_final))
 
         $lineas_aula = $query_aula->execute();
 
@@ -492,8 +499,8 @@ class Horarios extends MY_Controller {
 
         if (!$linea->isValid() or $lineas_aula->count() or !$success['success']) {
             $success['success'] = 0;
-
             $success['color'] = $linea->color;
+            if(!$linea->isValid()) $success['isvalid'] =1;
         } else {
             $linea->save();
         }

@@ -114,6 +114,7 @@ function resumen_asignatura($id_asignatura, $id_curso)
                         ->innerJoin('l.horario h')
                         ->where('l.id_actividad = ?', array($grupo->id_actividad))
                         ->andWhere('l.num_grupo_actividad = ?', array($grupo->num_grupo_actividad))
+                        ->andWhere('l.id_asignatura = ?', array($grupo->id_asignatura))
                         ->andWhere('h.num_semana = ?', array($i))
                         ->execute();
                 // Recorremos las líneas y acumulamos las horas en el día correspondiente
@@ -138,6 +139,7 @@ function resumen_asignatura($id_asignatura, $id_curso)
                 ->innerJoin('l.horario h')
                 ->where('l.id_actividad = ?', array($grupo->id_actividad))
                 ->andWhere('l.num_grupo_actividad = ?', array($grupo->num_grupo_actividad))
+                ->andWhere('l.id_asignatura = ?', array($grupo->id_asignatura))
                 ->andWhere('h.num_semana = ?', array($curso->num_semanas_teoria+1))
                 ->andWhere('l.hora_inicial IS NOT NULL')
                 ->execute();
@@ -147,9 +149,9 @@ function resumen_asignatura($id_asignatura, $id_curso)
             ->select('c.*')
             ->from('PlanActividad c')
             ->innerJoin('c.plandocente p')
-            ->where('p.id_asignatura = ?', array($lineahorario->id_asignatura))
+            ->where('p.id_asignatura = ?', array($grupo->id_asignatura))
             ->andWhere('p.id_curso = ?', array($id_curso))
-            ->andWhere('c.id_actividad = ?', array($lineahorario->id_actividad))
+            ->andWhere('c.id_actividad = ?', array($grupo->id_actividad))
             ->execute();
         $alternas = $planactividad->alternas;
         if($alternas){

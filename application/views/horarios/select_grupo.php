@@ -9,17 +9,11 @@
     <th>
         Añadir/Eliminar
     </th>
-    <th colspan="<?= $num_semanas_teoria +1 ?>">
+    <th colspan="<?= $num_semanas_teoria +2 ?>">
         Horarios Semestre 1
     </th>
-    <th colspan="<?= $num_semanas_teoria +1 ?>">
+    <th colspan="<?= $num_semanas_teoria +2 ?>">
         Horarios Semestre 2
-    </th>
-    <th>
-        Comprobación
-    </th>
-    <th>
-        Generar Informe
     </th>
     </tr>
     <? $ultimo_indice = 0; 
@@ -45,7 +39,11 @@
             <? else: ?>
                 <td>Horario tipo</td>
             <? endif; ?>
-            
+            <? if($curso['id_horario_sem1']): ?>
+                <td><?= anchor("horarios/check_grupo/{$curso['id_horario_sem1']}", "Comprobación") ?></td>
+            <? else: ?>
+                <td>Comprobación</td>
+            <? endif; ?>
             <? for($i = 0; $i < $num_semanas_teoria; $i++): ?>
                 <? if($curso['id_horario_sem2']): ?>
                     <td><?= anchor("horarios/edit_teoria/{$curso['id_horario_sem2']}/" . ($i+1), "Horario Semana " . ($i+1)) ?></td>
@@ -59,8 +57,11 @@
             <? else: ?>
                 <td>Horario tipo</td>
             <? endif; ?>
-            <td>Check</td>
-            <td>Informe</td>
+            <? if($curso['id_horario_sem2']): ?>
+                <td><?= anchor("horarios/check_grupo/{$curso['id_horario_sem2']}", "Comprobación") ?></td>
+            <? else: ?>
+                <td>Comprobación</td>
+            <? endif; ?>
         </tr>
     <? endforeach; ?>
 </table>

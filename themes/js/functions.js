@@ -421,7 +421,7 @@ var horarios = {
                     dia_semana: eventCalendar.start.getDay() - 1,
                     color: eventCalendar.color
                 };
-
+                
                     
                 var request = {
                     url: eventCalendar.save_url,
