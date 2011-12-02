@@ -1,4 +1,5 @@
 <?php echo form_open($action, '');?>
+<? print_r($this->input->post()); ?>
 <table>
     <tr>
         <td>Actividad</td>
@@ -17,13 +18,13 @@
         </label>
         </td>
         <td>
-        <?php echo form_input('horas[1]',''); //$result->horas[teoria]);?>
+        <?php echo form_input('horas[1]',set_value('horas[1]')); //$result->horas[teoria]);?>
         </td>
         <td>
-        <?php echo form_input('grupos[1]',''); //$result->grupos[teoria]);?>
+        <?php echo form_input('grupos[1]',set_value('grupos[1]')); //$result->grupos[teoria]);?>
         </td>
         <td>
-            <?= form_input('horas_semanales[1]','')// $result->horas_semanales[teoria]) ?>
+            <?= form_input('horas_semanales[1]',set_value('horas_semanales[1]'))// $result->horas_semanales[teoria]) ?>
         </td>
     </tr>
     <tr>

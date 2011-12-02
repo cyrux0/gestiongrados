@@ -24,6 +24,12 @@ class MY_Form_validation extends CI_Form_validation{
             return true;
         }
     }
+    
+    function is_natural($str)
+    {
+        return (bool) preg_match('/^[0-9]*$/', $str);
+    }
+    
     function alpha_ext($str){
         $str = strtolower($this->CI->config->item('charset')) != 'utf-8' ? utf8_encode($str) : $str;
                 $CI =& get_instance();

@@ -13,7 +13,7 @@
         <td><?= anchor('asignaturas/edit/' . $item->id, 'Editar', ''); ?></td>
     <? endif; ?>
     <? if(Current_User::logged_in(2)): ?>
-        <td><?= anchor('asignaturas/add_carga/' . $item->id . '/' . $id_curso, 'Añadir ficha'); ?></td>
+        <td><?= anchor('planesdocentes/add_carga/' . $item->id . '/' . $id_curso, 'Añadir ficha'); ?></td>
     <? endif; ?>
     <td><?= anchor('asignaturas/show/' . $item->id . '/' . $id_curso , 'Ver ficha actual', 'class="linkvercarga"') ?></td>
   </tr>

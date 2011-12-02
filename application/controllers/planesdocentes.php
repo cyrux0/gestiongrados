@@ -9,9 +9,24 @@ class PlanesDocentes extends MY_Controller{
     $this->layout = '';
     $this->alerts = '';
     $this->notices = '';
-    $this->_filter(array('create', 'edit', 'update', 'delete', 'load'), array($this, 'authenticate'), 2); // Sólo al planner 
+    $this->_filter(array('add_carga', 'create', 'edit', 'update', 'delete', 'load'), array($this, 'authenticate'), 2); // Sólo al planner 
   }
 
+    public function add_carga($id_asignatura, $id_curso = ''){
+        if(!$id_curso) redirect('cursos/select_curso/planesdocentes/add_carga/' . $id_asignatura );
+        $global = new PlanDocente;
+        $global->id_asignatura = $id_asignatura;
+        $global->id_curso = $id_curso;
+        $asignatura = $this->asignaturas_table->find($id_asignatura);
+        $action = 'planesdocentes/create/';
+        $data['data'] = array('result' => $global, 'action' => $action);
+        $data['nombre_asignatura'] = $asignatura->nombre;
+        $data['page_title'] = 'Añadiendo carga global';
+        $data['data']['curso_asignatura'] = $asignatura->curso;
+        $data['data']['cursos_totales'] = Doctrine::getTable('Titulacion')->find($asignatura->titulacion_id)->num_cursos;
+        $this->load->view('PlanDocente/add', $data);
+    }
+    
     public function create(){
         $global = new PlanDocente;
         $global->id_curso = $this->input->post('id_curso');
@@ -31,15 +46,18 @@ class PlanesDocentes extends MY_Controller{
             }
             
         }
-        
-        foreach($this->input->post('cursos_compartidos') as $curso)
+        if($this->input->post('cursos_compartidos'))
         {
-            $cursocompartido = new CursoCompartido;
-            $cursocompartido->num_curso_compartido = $curso['num_curso_compartido'];
-            $global->cursoscompartidos[] = $cursocompartido;
+            foreach($this->input->post('cursos_compartidos') as $curso)
+            {
+                $cursocompartido = new CursoCompartido;
+                $cursocompartido->num_curso_compartido = $curso['num_curso_compartido'];
+                $global->cursoscompartidos[] = $cursocompartido;
+            }
         }
-        if($this->_submit_validate()==FALSE){
-            $this->add_carga($this->input->post('asignatura_id'));
+        
+        if($this->_submit_validate()===FALSE){
+            $this->add_carga($this->input->post('id_asignatura'), $this->input->post('id_curso'));
         }else{
             $global->save();
             $this->notices = 'Asignatura añadida correctamente';
@@ -225,21 +243,9 @@ class PlanesDocentes extends MY_Controller{
     }
         
     private function _submit_validate(){
-        $this->form_validation->set_rules('horas_teoria', 'trim|is_natural');
-        $this->form_validation->set_rules('grupos_teoria', 'trim|is_natural');
-        $this->form_validation->set_rules('horas_problemas', 'trim|is_natural');
-        $this->form_validation->set_rules('grupos_problemas', 'trim|is_natural');
-        $this->form_validation->set_rules('horas_informatica', 'trim|is_natural');
-        $this->form_validation->set_rules('grupos_informatica', 'trim|is_natural');
-        $this->form_validation->set_rules('horas_lab', 'trim|is_natural');
-        $this->form_validation->set_rules('grupos_lab', 'trim|is_natural');
-        $this->form_validation->set_rules('horas_campo', 'trim|is_natural');
-        $this->form_validation->set_rules('grupos_campo', 'trim|is_natural');
-        $this->form_validation->set_rules('horas_semanales_teoria', 'trim|is_natural');
-        $this->form_validation->set_rules('horas_semanales_problemas', 'trim|is_natural');
-        $this->form_validation->set_rules('horas_semanales_informatica', 'trim|is_natural');
-        $this->form_validation->set_rules('horas_semanales_lab', 'trim|is_natural');
-        $this->form_validation->set_rules('horas_semanales_campo', 'trim|is_natural');
+        $this->form_validation->set_rules('horas[]', 'Horas', 'trim|is_natural');
+        $this->form_validation->set_rules('grupos[]', 'Grupos', 'trim|is_natural');
+        $this->form_validation->set_rules('horas_semanales[]', 'Horas Semanales', 'trim|is_natural');
         
         return $this->form_validation->run();
     }

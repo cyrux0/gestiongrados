@@ -87,20 +87,6 @@ class Asignaturas extends MY_Controller {
         redirect('titulaciones/show/' . $titulacion_id);
         }
 
-    public function add_carga($id_asignatura, $id_curso = ''){
-        if(!$id_curso) redirect('cursos/select_curso/asignaturas/add_carga/' . $id_asignatura );
-        $global = new PlanDocente;
-        $global->id_asignatura = $id_asignatura;
-        $global->id_curso = $id_curso;
-        $asignatura = $this->asignaturas_table->find($id_asignatura);
-        $action = 'planesdocentes/create/';
-        $data['data'] = array('result' => $global, 'action' => $action);
-        $data['nombre_asignatura'] = $asignatura->nombre;
-        $data['page_title'] = 'Añadiendo carga global';
-        $data['data']['curso_asignatura'] = $asignatura->curso;
-        $data['data']['cursos_totales'] = Doctrine::getTable('Titulacion')->find($asignatura->titulacion_id)->num_cursos;
-        $this->load->view('PlanDocente/add', $data);
-    }
 
     public function add_carga_from_file($id_asignatura, $id_curso = ''){
         if(!$id_curso) redirect('cursos/select_curso/asignaturas/add_carga_from_file/' . $id_asignatura );
