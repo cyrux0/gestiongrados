@@ -8,6 +8,7 @@ class Asignaturas extends MY_Controller {
         $this -> layout = '';
         $this->notices = '';
         $this->alerts = '';
+        $this->page_title = "Gestión de asignaturas";
         $this->modelObject = null;
         $this->_filter(array('add_to', 'create', 'edit', 'update', 'delete'), array($this, 'authenticate'), 1); // Sólo permitimos a un usuario de tipo administrador (1)
         $this->_filter(array('add_carga'), array($this, 'authenticate'), 2); // Sólo se lo permitimos al usuario de tipo planner (2)
@@ -40,11 +41,21 @@ class Asignaturas extends MY_Controller {
     public function show($id, $id_curso = ''){
         if(!$id_curso) redirect('cursos/select_curso/asignaturas/show/' . $id); //Arreglar esto, ya que select_curso solo coge los dos primeros parámetros, debería coger todos.
         $asignatura = $this->asignaturas_table->find($id);
-        $q = Doctrine_Query::create()->select('c.*')->from('PlanDocente c')->where('c.curso_id = ? AND c.asignatura_id = ?', array($id_curso, $id));
+        $q = Doctrine_Query::create()->select('c.*')->from('PlanDocente c')->where('c.id_curso = ? AND c.id_asignatura = ?', array($id_curso, $id));
         $resultado = $q->fetchArray();
         if($this->input->post('js'))
             unset($this->layout);
-        $this->load->view('asignaturas/show', array('carga' => (object) $resultado[0], 'asignatura' => $asignatura));
+        
+        if(count($resultado))
+        {
+            $ficha = $resultado[0];
+            $this->load->view('asignaturas/show', array('carga' => (object) $ficha, 'asignatura' => $asignatura));
+        }
+        else 
+        {
+            $this->load->view('asignaturas/sin_plan_docente', array('id_asignatura' => $id, 'id_curso' => $id_curso));
+        }
+        
     }
     
     public function edit($id) {

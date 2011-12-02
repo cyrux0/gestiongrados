@@ -17,7 +17,7 @@
     <script src="<?= site_url('themes/js/functions.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <script src="<?= site_url('themes/js/jquery.form.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <script src="<?= site_url('themes/js/accordion-plugin.js'); ?>" type="text/javascript" charset="utf-8"></script>
-    <title><?php if (isset($page_title)) echo $page_title; else echo 'El título de la web'; ?></title>
+    <title><?php if (isset($this->page_title)) echo $this->page_title . " | "; echo 'Universidad de Cádiz'; ?></title>
   </head>
   <body>
     <div id="header">
@@ -99,15 +99,16 @@
                   </ul>
               </li>
               <? endif; ?>
+              <? if(Current_User::logged_in(2)): ?>
               <li>
                   <a href="#">Calendario</a>
                   <ul class="acitem">
                       <li><?= anchor('cursos/select_curso/eventos/index', 'Ver calendario') ?></li> 
-                    <? if(Current_User::logged_in(2)): ?>
-                      <li><?= anchor('cursos/select_curso/eventos/add', 'Añadir Evento') ?></li>
-                    <? endif; ?>  
+                      <li><?= anchor('cursos/select_curso/eventos/add', 'Añadir Evento') ?></li>  
                   </ul>
               </li>
+              <? endif; ?>
+              <? if(Current_User::logged_in(2)): ?>
               <li>
                   <a href="#">Horarios</a>
                   <ul class="acitem">
@@ -116,6 +117,7 @@
                       </li>
                   </ul>
               </li>
+              <? endif; ?>
               <? if(Current_User::logged_in()): ?>
               <li>
                   <a href="#">Usuario</a>
@@ -125,7 +127,8 @@
                       </li>
                   </ul>
               </li>
-              <? endif; ?>  
+              <? endif; ?>
+              <? if(Current_User::logged_in()): ?>  
               <li>
                   <a href="#">Configuración</a>
                   <ul class="acitem">
@@ -133,6 +136,7 @@
                       <li><?= anchor('#', 'Opciones/reset') ?></li>
                   </ul>
               </li>
+              <? endif; ?>
           </ul>
       </div>
       <div id="login-form" title="Login">
