@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Formatter</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Formatter</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Formatter</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision$</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Formatter.php.html">/helpers/Doctrine/Formatter.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a>
+   |
+   --Doctrine_Formatter</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#convertBooleans" title="details" class="method-name">convertBooleans</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$item</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#escapePattern" title="details" class="method-name">escapePattern</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#fixIndexName" title="details" class="method-name">fixIndexName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$idx</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#fixSequenceName" title="details" class="method-name">fixSequenceName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sqn</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getForeignKeyName" title="details" class="method-name">getForeignKeyName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$fkey</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getIndexName" title="details" class="method-name">getIndexName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$idx</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getSequenceName" title="details" class="method-name">getSequenceName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sqn</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getTableName" title="details" class="method-name">getTableName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#quote" title="details" class="method-name">quote</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$input</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#quoteIdentifier" title="details" class="method-name">quoteIdentifier</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$checkOption</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#quoteMultipleIdentifier" title="details" class="method-name">quoteMultipleIdentifier</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$arr</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$checkOption</span> = <span class="var-default">true</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$conn">Doctrine_Connection_Module::$conn</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$moduleName">Doctrine_Connection_Module::$moduleName</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodconvertBooleans" id="convertBooleans"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">convertBooleans</span> (line <span class="line-number">74</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">convertBooleans  some drivers need the boolean values to be converted into integers  when using DQL API</p>
+<p class="description"><p>This method takes care of that conversion</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			convertBooleans
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$item</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$item</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodescapePattern" id="escapePattern"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">escapePattern</span> (line <span class="line-number">47</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Quotes pattern (% and _) characters in a string)</p>
+<p class="description"><p>EXPERIMENTAL</p><p>WARNING: this function is experimental and may change signature at  any time until labelled as non-experimental</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> quoted string</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			escapePattern
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$text</span><span class="var-description">: the input string to quote</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfixIndexName" id="fixIndexName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">fixIndexName</span> (line <span class="line-number">218</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes any formatting in an index name using the 'idxname_format' option</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> name of the index with possible formatting removed</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			fixIndexName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$idx</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$idx</span><span class="var-description">: string that containts name of anl index</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfixSequenceName" id="fixSequenceName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fixSequenceName</span> (line <span class="line-number">201</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes any formatting in an sequence name using the 'seqname_format' option</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> name of the sequence with possible formatting removed</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			fixSequenceName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sqn</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sqn</span><span class="var-description">: string that containts name of a potential sequence</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetForeignKeyName" id="getForeignKeyName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getForeignKeyName</span> (line <span class="line-number">258</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Formatting a foreign Key name</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> formatted foreign key name</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getForeignKeyName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$fkey</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fkey</span><span class="var-description">: name of the foreign key</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetIndexName" id="getIndexName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getIndexName</span> (line <span class="line-number">246</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">adds index name formatting to a index name</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> formatted index name</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getIndexName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$idx</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$idx</span><span class="var-description">: name of the index</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSequenceName" id="getSequenceName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSequenceName</span> (line <span class="line-number">234</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">adds sequence name formatting to a sequence name</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> formatted sequence name</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getSequenceName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sqn</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sqn</span><span class="var-description">: name of the sequence</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTableName" id="getTableName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTableName</span> (line <span class="line-number">270</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">adds table name formatting to a table name</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> formatted table name</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getTableName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: name of the table</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodquote" id="quote"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">quote</span> (line <span class="line-number">162</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">quote  quotes given input parameter</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quote
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$input</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$input</span><span class="var-description">: parameter to be quoted</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodquoteIdentifier" id="quoteIdentifier"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">quoteIdentifier</span> (line <span class="line-number">122</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Quote a string so it can be safely used as a table or column name</p>
+<p class="description"><p>Delimiting style depends on which database driver is being used.</p><p>NOTE: just because you CAN use delimited identifiers doesn't mean  you SHOULD use them.  In general, they end up causing way more  problems than they solve.</p><p>Portability is broken by using the following characters inside  delimited identifiers: <ul><li>backtick (<kbd>`</kbd>) -- due to MySQL</li><li>double quote (<kbd>&quot;</kbd>) -- due to Oracle</li><li>brackets (<kbd>[</kbd> or <kbd>]</kbd>) -- due to Access</li></ul>  Delimited identifiers are known to generally work correctly under  the following drivers: <ul><li>mssql</li><li>mysql</li><li>mysqli</li><li>oci8</li><li>pgsql</li><li>sqlite</li></ul>  InterBase doesn't seem to be able to use delimited identifiers  via PHP 4.  They work fine under PHP 5.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> quoted identifier string</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quoteIdentifier
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$checkOption</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: identifier name to be quoted</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$checkOption</span><span class="var-description">: check the 'quote_identifier' option</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodquoteMultipleIdentifier" id="quoteMultipleIdentifier"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">quoteMultipleIdentifier</span> (line <span class="line-number">145</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">quoteMultipleIdentifier  Quotes multiple identifier strings</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> quoted identifier string</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quoteMultipleIdentifier
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$arr</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$checkOption</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$arr</span><span class="var-description">: identifiers array to be quoted</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$checkOption</span><span class="var-description">: check the 'quote_identifier' option</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#method__construct">Doctrine_Connection_Module::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetConnection">Doctrine_Connection_Module::getConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetModuleName">Doctrine_Connection_Module::getModuleName()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:21 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

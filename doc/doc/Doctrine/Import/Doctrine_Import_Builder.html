@@ -1,0 +1,1659 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Import_Builder</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Import_Builder</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Import_Builder</p>
+<p class="description"><p>Import builder is responsible of building Doctrine_Record classes  based on a database schema.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Nicolas Bérard-Nault &lt;<a href="mailto:nicobn@php.net">nicobn@php.net</a>&gt;</li>
+				<li><span class="field">author:</span> Jukka Hassinen &lt;<a href="mailto:Jukka.Hassinen@BrainAlliance.com">Jukka.Hassinen@BrainAlliance.com</a>&gt;</li>
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Jonathan H. Wage &lt;<a href="mailto:jwage@mac.com">jwage@mac.com</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Import---Builder.php.html">/helpers/Doctrine/Import/Builder.php</a> (line <span class="field">39</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Builder/Doctrine_Builder.html">Doctrine_Builder</a>
+   |
+   --Doctrine_Import_Builder</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																																																																																												<div class="var-title">
+					static <span class="var-type">$_tpl</span>
+					<a href="#$_tpl" title="details" class="var-name">$_tpl</a>
+				</div>
+																				<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_baseClassesDirectory" title="details" class="var-name">$_baseClassesDirectory</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_baseClassName" title="details" class="var-name">$_baseClassName</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_baseClassPrefix" title="details" class="var-name">$_baseClassPrefix</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_baseTableClassName" title="details" class="var-name">$_baseTableClassName</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_classPrefix" title="details" class="var-name">$_classPrefix</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$_classPrefixFiles" title="details" class="var-name">$_classPrefixFiles</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_eolStyle" title="details" class="var-name">$_eolStyle</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$_generateBaseClasses" title="details" class="var-name">$_generateBaseClasses</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$_generateTableClasses" title="details" class="var-name">$_generateTableClasses</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_packagesFolderName" title="details" class="var-name">$_packagesFolderName</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_packagesPath" title="details" class="var-name">$_packagesPath</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_packagesPrefix" title="details" class="var-name">$_packagesPrefix</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_path" title="details" class="var-name">$_path</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$_pearStyle" title="details" class="var-name">$_pearStyle</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_phpDocEmail" title="details" class="var-name">$_phpDocEmail</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_phpDocName" title="details" class="var-name">$_phpDocName</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_phpDocPackage" title="details" class="var-name">$_phpDocPackage</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_phpDocSubpackage" title="details" class="var-name">$_phpDocSubpackage</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_suffix" title="details" class="var-name">$_suffix</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_tableClassFormat" title="details" class="var-name">$_tableClassFormat</a>
+				</div>
+																			</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#buildAccessors" title="details" class="method-name">buildAccessors</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#buildActAs" title="details" class="method-name">buildActAs</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$actAs</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#buildAttributes" title="details" class="method-name">buildAttributes</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$attributes</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$array</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#buildChecks" title="details" class="method-name">buildChecks</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$checks</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#buildColumns" title="details" class="method-name">buildColumns</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$columns</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$array</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#buildDefinition" title="details" class="method-name">buildDefinition</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#buildIndexes" title="details" class="method-name">buildIndexes</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$indexes</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$array</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#buildListeners" title="details" class="method-name">buildListeners</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$listeners</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#buildOptions" title="details" class="method-name">buildOptions</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$array</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#buildPhpDocs" title="details" class="method-name">buildPhpDocs</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void=</span>
+										<a href="#buildRecord" title="details" class="method-name">buildRecord</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$relations</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$indexes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$attributes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$templates</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$actAs</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#buildSetUp" title="details" class="method-name">buildSetUp</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$relations</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#buildTableClassDefinition" title="details" class="method-name">buildTableClassDefinition</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#buildTableDefinition" title="details" class="method-name">buildTableDefinition</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#buildToString" title="details" class="method-name">buildToString</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#generateBaseClasses" title="details" class="method-name">generateBaseClasses</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bool</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#generateTableClasses" title="details" class="method-name">generateTableClasses</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bool</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getTargetPath" title="details" class="method-name">getTargetPath</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#loadTemplate" title="details" class="method-name">loadTemplate</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setOption" title="details" class="method-name">setOption</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setOptions" title="details" class="method-name">setOptions</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTargetPath" title="details" class="method-name">setTargetPath</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#writeDefinition" title="details" class="method-name">writeDefinition</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$relations</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$indexes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$attributes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$templates</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$actAs</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#writeTableClassDefinition" title="details" class="method-name">writeTableClassDefinition</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$path</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_getBaseClassName" title="details" class="method-name">_getBaseClassName</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_getFileName" title="details" class="method-name">_getFileName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$originalClassName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$definition</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_tpl" id="$_tpl"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			static <span class="var-type">$_tpl</span>
+			<span class="var-name">$_tpl</span>
+						(line <span class="line-number">188</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_tpl</p>
+<p class="description"><p>Class template used for writing classes</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_baseClassesDirectory" id="$_baseClassesDirectory"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_baseClassesDirectory</span>
+			 = <span class="var-default"> 'generated'</span>			(line <span class="line-number">102</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Directory to put the generate base classes in</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_baseClassName" id="$_baseClassName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_baseClassName</span>
+			 = <span class="var-default"> 'Doctrine_Record'</span>			(line <span class="line-number">109</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Base class name for generated classes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_baseClassPrefix" id="$_baseClassPrefix"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_baseClassPrefix</span>
+			 = <span class="var-default"> 'Base'</span>			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prefix to use for generated base classes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_baseTableClassName" id="$_baseTableClassName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_baseTableClassName</span>
+			 = <span class="var-default"> 'Doctrine_Table'</span>			(line <span class="line-number">116</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Base table class name for generated classes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_classPrefix" id="$_classPrefix"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_classPrefix</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">130</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prefix to all generated classes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_classPrefixFiles" id="$_classPrefixFiles"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_classPrefixFiles</span>
+			 = <span class="var-default"> true</span>			(line <span class="line-number">137</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether to use the class prefix for the filenames too</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_eolStyle" id="$_eolStyle"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_eolStyle</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">151</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allows to force a line-ending style, by default PHP_EOL will be used</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_generateBaseClasses" id="$_generateBaseClasses"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_generateBaseClasses</span>
+			 = <span class="var-default"> true</span>			(line <span class="line-number">81</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Bool true/false for whether or not to generate base classes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_generateTableClasses" id="$_generateTableClasses"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_generateTableClasses</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Bool true/false for whether or not to generate child table classes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_packagesFolderName" id="$_packagesFolderName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_packagesFolderName</span>
+			 = <span class="var-default"> 'packages'</span>			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Name of folder to generate packages in</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_packagesPath" id="$_packagesPath"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_packagesPath</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Path to generate packages</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_packagesPrefix" id="$_packagesPrefix"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_packagesPrefix</span>
+			 = <span class="var-default"> 'Package'</span>			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class prefix for generated packages</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_path" id="$_path"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_path</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Path where to generated files</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_pearStyle" id="$_pearStyle"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_pearStyle</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">144</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether or not to generate PEAR style directories and files</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_phpDocEmail" id="$_phpDocEmail"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_phpDocEmail</span>
+			 = <span class="var-default"> '##EMAIL##'</span>			(line <span class="line-number">179</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Email of the author to use for the generated php docs</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_phpDocName" id="$_phpDocName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_phpDocName</span>
+			 = <span class="var-default"> '##NAME##'</span>			(line <span class="line-number">172</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Full name of the author to use for the generated php docs</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_phpDocPackage" id="$_phpDocPackage"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_phpDocPackage</span>
+			 = <span class="var-default"> '##PACKAGE##'</span>			(line <span class="line-number">158</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The package name to use for the generated php docs</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_phpDocSubpackage" id="$_phpDocSubpackage"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_phpDocSubpackage</span>
+			 = <span class="var-default"> '##SUBPACKAGE##'</span>			(line <span class="line-number">165</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The subpackage name to use for the generated php docs</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_suffix" id="$_suffix"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_suffix</span>
+			 = <span class="var-default"> '.php'</span>			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">File suffix to use when writing class definitions</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_tableClassFormat" id="$_tableClassFormat"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_tableClassFormat</span>
+			 = <span class="var-default"> '%sTable'</span>			(line <span class="line-number">123</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Format to use for generating the model table classes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">195</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">__construct</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodbuildAccessors" id="buildAccessors"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildAccessors</span> (line <span class="line-number">609</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			buildAccessors
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildActAs" id="buildActAs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildActAs</span> (line <span class="line-number">750</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">buildActAs: builds a complete actAs code. It supports hierarchy of plugins</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			buildActAs
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$actAs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$actAs</span><span class="var-description">: array of plugin definitions and options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildAttributes" id="buildAttributes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildAttributes</span> (line <span class="line-number">867</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">buildAttributes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			buildAttributes
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$attributes</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$array</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attributes</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildChecks" id="buildChecks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildChecks</span> (line <span class="line-number">511</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Build php code for record checks</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			buildChecks
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$checks</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$checks</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildColumns" id="buildColumns"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildColumns</span> (line <span class="line-number">526</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">buildColumns</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			buildColumns
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$columns</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$array</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$columns</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildDefinition" id="buildDefinition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildDefinition</span> (line <span class="line-number">958</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">buildDefinition</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			buildDefinition
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildIndexes" id="buildIndexes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildIndexes</span> (line <span class="line-number">920</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">buildIndexes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			buildIndexes
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$indexes</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$array</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$indexes</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildListeners" id="buildListeners"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildListeners</span> (line <span class="line-number">841</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Build php code for adding record listeners</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			buildListeners
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$listeners</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$listeners</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildOptions" id="buildOptions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildOptions</span> (line <span class="line-number">904</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">buildTableOptions</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			buildOptions
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$array</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildPhpDocs" id="buildPhpDocs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildPhpDocs</span> (line <span class="line-number">643</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			buildPhpDocs
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildRecord" id="buildRecord"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildRecord</span> (line <span class="line-number">1004</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">buildRecord</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void=</span>
+		<span class="method-name">
+			buildRecord
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$relations</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$indexes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$attributes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$templates</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$actAs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$columns</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$relations</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$indexes</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attributes</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$templates</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$actAs</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildSetUp" id="buildSetUp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildSetUp</span> (line <span class="line-number">403</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">buildSetUp</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			buildSetUp
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$relations</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$columns</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$relations</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildTableClassDefinition" id="buildTableClassDefinition"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildTableClassDefinition</span> (line <span class="line-number">1079</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			buildTableClassDefinition
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$definition</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildTableDefinition" id="buildTableDefinition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildTableDefinition</span> (line <span class="line-number">334</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			buildTableDefinition
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildToString" id="buildToString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildToString</span> (line <span class="line-number">939</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">buildToString</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			buildToString
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateBaseClasses" id="generateBaseClasses"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">generateBaseClasses</span> (line <span class="line-number">235</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">generateBaseClasses</p>
+<p class="description"><p>Specify whether or not to generate classes which extend from generated base classes</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			generateBaseClasses
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bool</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$bool</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateTableClasses" id="generateTableClasses"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">generateTableClasses</span> (line <span class="line-number">252</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">generateTableClasses</p>
+<p class="description"><p>Specify whether or not to generate children table classes</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			generateTableClasses
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bool</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$bool</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTargetPath" id="getTargetPath"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTargetPath</span> (line <span class="line-number">266</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getTargetPath</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the path where imported files are being generated</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getTargetPath
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodloadTemplate" id="loadTemplate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">loadTemplate</span> (line <span class="line-number">312</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">loadTemplate</p>
+<p class="description"><p>Loads the class template used for generating classes</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			loadTemplate
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetOption" id="setOption"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setOption</span> (line <span class="line-number">293</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setOption</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setOption
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOptions" id="setOptions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setOptions</span> (line <span class="line-number">277</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setOptions</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setOptions
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTargetPath" id="setTargetPath"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTargetPath</span> (line <span class="line-number">216</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setTargetPath</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTargetPath
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span><span class="var-description">: path   the path where imported files are being generated</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwriteDefinition" id="writeDefinition"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">writeDefinition</span> (line <span class="line-number">1191</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">writeDefinition</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			writeDefinition
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$relations</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$indexes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$attributes</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$templates</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$actAs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$columns</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$relations</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$indexes</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attributes</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$templates</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$actAs</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwriteTableClassDefinition" id="writeTableClassDefinition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">writeTableClassDefinition</span> (line <span class="line-number">1125</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">writeTableClassDefinition</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			writeTableClassDefinition
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$path</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$path</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getBaseClassName" id="_getBaseClassName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getBaseClassName</span> (line <span class="line-number">1074</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_getBaseClassName
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getFileName" id="_getFileName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getFileName</span> (line <span class="line-number">1164</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the file name of the class to be generated.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_getFileName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$originalClassName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$definition</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$originalClassName</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Builder/Doctrine_Builder.html">Doctrine_Builder</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Builder/Doctrine_Builder.html#methodvarExport">Doctrine_Builder::varExport()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:45 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Transaction_Mssql</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Transaction_Mssql</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Lukas Smith &lt;<a href="mailto:smith@pooteeweet.org">smith@pooteeweet.org</a>&gt; (PEAR MDB2 library)</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Transaction---Mssql.php.html">/helpers/Doctrine/Transaction/Mssql.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a>
+   |
+   --<a href="../../Doctrine/Transaction/Doctrine_Transaction.html">Doctrine_Transaction</a>
+      |
+      --Doctrine_Transaction_Mssql</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-consts">Constants</a>
+							
+															<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																				
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setIsolation" title="details" class="method-name">setIsolation</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$isolation</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_doBeginTransaction" title="details" class="method-name">_doBeginTransaction</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_doCommit" title="details" class="method-name">_doCommit</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_doRollback" title="details" class="method-name">_doRollback</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-consts">Constants</a>
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html">Doctrine_Transaction</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#var$invalid">Doctrine_Transaction::$invalid</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#var$savePoints">Doctrine_Transaction::$savePoints</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#var$_collections">Doctrine_Transaction::$_collections</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#var$_internalNestingLevel">Doctrine_Transaction::$_internalNestingLevel</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#var$_nestingLevel">Doctrine_Transaction::$_nestingLevel</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$conn">Doctrine_Connection_Module::$conn</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$moduleName">Doctrine_Connection_Module::$moduleName</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																			<a href="#sec-consts">Constants</a>
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodsetIsolation" id="setIsolation"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setIsolation</span> (line <span class="line-number">52</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the transacton isolation level.</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://msdn2.microsoft.com/en-us/library/ms173763.aspx">http://msdn2.microsoft.com/en-us/library/ms173763.aspx</a></li>
+				<li><span class="field">throws:</span> PDOException                         if something fails at the PDO level</li>
+				<li><span class="field">throws:</span> Doctrine_Transaction_Exception       if using unknown isolation level or unknown wait option</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setIsolation
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$isolation</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$isolation</span><span class="var-description">: standard isolation level (SQL-92)       portable modes:                   READ UNCOMMITTED (allows dirty reads)                   READ COMMITTED (prevents dirty reads)                   REPEATABLE READ (prevents nonrepeatable reads)                   SERIALIZABLE (prevents phantom reads)       mssql specific modes:                   SNAPSHOT</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodsetIsolation">Doctrine_Transaction::setIsolation()</a></dt>
+						<dd>setIsolation</dd>
+					</dl>
+			
+	</div>
+<a name="method_doBeginTransaction" id="_doBeginTransaction"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doBeginTransaction</span> (line <span class="line-number">88</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Begins a database transaction.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_doBeginTransaction
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#method_doBeginTransaction">Doctrine_Transaction::_doBeginTransaction()</a></dt>
+						<dd>Begins a database transaction.</dd>
+					</dl>
+			
+	</div>
+<a name="method_doCommit" id="_doCommit"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doCommit</span> (line <span class="line-number">80</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs the commit.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_doCommit
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#method_doCommit">Doctrine_Transaction::_doCommit()</a></dt>
+						<dd>Performs the commit.</dd>
+					</dl>
+			
+	</div>
+<a name="method_doRollback" id="_doRollback"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doRollback</span> (line <span class="line-number">72</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs the rollback.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_doRollback
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#method_doRollback">Doctrine_Transaction::_doRollback()</a></dt>
+						<dd>Performs the rollback.</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html">Doctrine_Transaction</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodaddCollection">Doctrine_Transaction::addCollection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodaddInvalid">Doctrine_Transaction::addInvalid()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodbeginInternalTransaction">Doctrine_Transaction::beginInternalTransaction()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodbeginTransaction">Doctrine_Transaction::beginTransaction()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodcommit">Doctrine_Transaction::commit()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodcreateSavePoint">Doctrine_Transaction::createSavePoint()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodgetInternalTransactionLevel">Doctrine_Transaction::getInternalTransactionLevel()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodgetInvalid">Doctrine_Transaction::getInvalid()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodgetIsolation">Doctrine_Transaction::getIsolation()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodgetState">Doctrine_Transaction::getState()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodgetTransactionLevel">Doctrine_Transaction::getTransactionLevel()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodreleaseSavePoint">Doctrine_Transaction::releaseSavePoint()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodrollback">Doctrine_Transaction::rollback()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodrollbackSavePoint">Doctrine_Transaction::rollbackSavePoint()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#methodsetIsolation">Doctrine_Transaction::setIsolation()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#method_doBeginTransaction">Doctrine_Transaction::_doBeginTransaction()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#method_doCommit">Doctrine_Transaction::_doCommit()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#method_doRollback">Doctrine_Transaction::_doRollback()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#method__construct">Doctrine_Connection_Module::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetConnection">Doctrine_Connection_Module::getConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetModuleName">Doctrine_Connection_Module::getModuleName()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-vars">Vars</a>
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html">Doctrine_Transaction</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#constSTATE_ACTIVE">Doctrine_Transaction::STATE_ACTIVE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#constSTATE_BUSY">Doctrine_Transaction::STATE_BUSY</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Transaction/Doctrine_Transaction.html#constSTATE_SLEEP">Doctrine_Transaction::STATE_SLEEP</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:44 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

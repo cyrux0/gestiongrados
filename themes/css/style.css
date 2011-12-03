@@ -30,6 +30,9 @@ a {
 }
 
 
+#main_content a.delete-button:hover{
+    background-color: transparent;
+}
 #main_content a:hover {
     background-color: #FF813C;
     color: #FFFFFF;
@@ -107,7 +110,17 @@ table.listaelems{
     color: #fff;
     height: 25px;
 }
+.listaelems .comprobacion-ok td{
+    background-color: #62fa00;
+}
 
+.listaelems .comprobacion-warning td{
+    background-color: #fadb00;
+}
+
+.listaelems .comprobacion-error td{
+    background-color: #ff452e;
+}
 .listaelems td{
     background-color: #CDE5F0;
     color: #123645;
@@ -291,4 +304,9 @@ h2.current{
     border-left-color: #ff3333;
     border-bottom-color: #ff3333;
     border-top-color: #ff3333;
+}
+
+a.delete-button{
+    display:block;
+    text-align: center;
 }

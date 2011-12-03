@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Cache_Driver</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Cache_Driver</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a></li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Abstract cache driver class</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Jonathan H. Wage &lt;<a href="mailto:jonwage@gmail.com">jonwage@gmail.com</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Cache---Driver.php.html">/helpers/Doctrine/Cache/Driver.php</a> (line <span class="field">34</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Cache/Doctrine_Cache_Apc.html">Doctrine_Cache_Apc</a></td>
+					<td>
+											APC Cache Driver
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Cache/Doctrine_Cache_Array.html">Doctrine_Cache_Array</a></td>
+					<td>
+											Array cache driver
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Cache/Doctrine_Cache_Db.html">Doctrine_Cache_Db</a></td>
+					<td>
+											Database cache driver
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Cache/Doctrine_Cache_Memcache.html">Doctrine_Cache_Memcache</a></td>
+					<td>
+											Memcache cache driver
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Cache/Doctrine_Cache_Xcache.html">Doctrine_Cache_Xcache</a></td>
+					<td>
+											Xcache cache driver
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_options" title="details" class="var-name">$_options</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																												
+												<div class="method-definition">
+											<span class="method-result">Doctrine_Cache_Driver</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$_options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#contains" title="details" class="method-name">contains</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#deleteAll" title="details" class="method-name">deleteAll</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#deleteByPrefix" title="details" class="method-name">deleteByPrefix</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$prefix</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#deleteByRegex" title="details" class="method-name">deleteByRegex</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$regex</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#deleteBySuffix" title="details" class="method-name">deleteBySuffix</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$suffix</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#fetch" title="details" class="method-name">fetch</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$testCacheValidity</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#getOption" title="details" class="method-name">getOption</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$option</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#save" title="details" class="method-name">save</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$lifeTime</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#setOption" title="details" class="method-name">setOption</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#_doContains" title="details" class="method-name">_doContains</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#_doDelete" title="details" class="method-name">_doDelete</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#_doFetch" title="details" class="method-name">_doFetch</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$testCacheValidity</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#_doSave" title="details" class="method-name">_doSave</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$lifeTime</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#_getCacheKeys" title="details" class="method-name">_getCacheKeys</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_getKey" title="details" class="method-name">_getKey</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_options" id="$_options"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_options</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">39</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> an array of options</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">46</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Configure cache driver with an array of options</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Doctrine_Cache_Driver</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$_options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$_options</span><span class="var-description">: an array of options</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Apc.html#method__construct">Doctrine_Cache_Apc::__construct()</a>
+								: constructor
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Db.html#method__construct">Doctrine_Cache_Db::__construct()</a>
+								: Configure Database cache driver. Specify instance of Doctrine_Connection  and tableName to store cache in
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Memcache.html#method__construct">Doctrine_Cache_Memcache::__construct()</a>
+								: constructor
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Xcache.html#method__construct">Doctrine_Cache_Xcache::__construct()</a>
+								: constructor
+							</li>
+				</ul>
+	</div>
+<a name="methodcontains" id="contains"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">contains</span> (line <span class="line-number">101</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Test if a cache record exists for the passed id</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> false (a cache is not available) or &quot;last modified&quot; timestamp (int) of the available cache record</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			contains
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html#methodcontains">Doctrine_Cache_Interface::contains()</a></dt>
+						<dd>Test if a cache record exists for the passed id</dd>
+					</dl>
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">delete</span> (line <span class="line-number">129</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove a cache record</p>
+<p class="description"><p>Note: This method accepts wildcards with the * character</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if no problem</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			delete
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html#methoddelete">Doctrine_Cache_Interface::delete()</a></dt>
+						<dd>Remove a cache record</dd>
+					</dl>
+			
+	</div>
+<a name="methoddeleteAll" id="deleteAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">deleteAll</span> (line <span class="line-number">208</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete all cache entries from the cache driver</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of deleted cache entries</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			deleteAll
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddeleteByPrefix" id="deleteByPrefix"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">deleteByPrefix</span> (line <span class="line-number">167</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete cache entries where the key has the passed prefix</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of deleted cache entries</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			deleteByPrefix
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$prefix</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$prefix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteByRegex" id="deleteByRegex"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">deleteByRegex</span> (line <span class="line-number">146</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete cache entries where the key matches a PHP regular expressions</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of deleted cache entries</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			deleteByRegex
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$regex</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$regex</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteBySuffix" id="deleteBySuffix"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">deleteBySuffix</span> (line <span class="line-number">188</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete cache entries where the key has the passed suffix</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of deleted cache entries</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			deleteBySuffix
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$suffix</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$suffix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetch" id="fetch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetch</span> (line <span class="line-number">89</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetch a cache record from this cache driver instance</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns either the cached data or false</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			fetch
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$testCacheValidity</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$testCacheValidity</span><span class="var-description">: if set to false, the cache validity won't be tested</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html#methodfetch">Doctrine_Cache_Interface::fetch()</a></dt>
+						<dd>Fetch a cache record from this cache driver instance</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetOption" id="getOption"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getOption</span> (line <span class="line-number">73</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get value of option</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> option value</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getOption
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$option</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$option</span><span class="var-description">: the option name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsave" id="save"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">save</span> (line <span class="line-number">115</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Save some string datas into a cache record</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if no problem</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			save
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$lifeTime</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: data to cache</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$lifeTime</span><span class="var-description">: if != false, set a specific lifetime for this cache record (null =&gt; infinite lifeTime)</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html#methodsave">Doctrine_Cache_Interface::save()</a></dt>
+						<dd>Save a cache record and add the key to the index of cached keys</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetOption" id="setOption"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setOption</span> (line <span class="line-number">58</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set option name and value</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE on success, FALSE on failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			setOption
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$option</span><span class="var-description">: the option name</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: option value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_doContains" id="_doContains"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doContains</span> (line <span class="line-number">259</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Test if a cache record exists for the passed id</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> false (a cache is not available) or &quot;last modified&quot; timestamp (int) of the available cache record</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			_doContains
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Apc.html#method_doContains">Doctrine_Cache_Apc::_doContains()</a>
+								: Test if a cache record exists for the passed id
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Array.html#method_doContains">Doctrine_Cache_Array::_doContains()</a>
+								: Test if a cache record exists for the passed id
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Db.html#method_doContains">Doctrine_Cache_Db::_doContains()</a>
+								: Test if a cache record exists for the passed id
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Memcache.html#method_doContains">Doctrine_Cache_Memcache::_doContains()</a>
+								: Test if a cache is available or not (for the given id)
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Xcache.html#method_doContains">Doctrine_Cache_Xcache::_doContains()</a>
+								: Test if a cache is available or not (for the given id)
+							</li>
+				</ul>
+	</div>
+<a name="method_doDelete" id="_doDelete"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doDelete</span> (line <span class="line-number">279</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::delete()</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if no problem</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			_doDelete
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Apc.html#method_doDelete">Doctrine_Cache_Apc::_doDelete()</a>
+								: Remove a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::delete()
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Array.html#method_doDelete">Doctrine_Cache_Array::_doDelete()</a>
+								: Remove a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::delete()
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Db.html#method_doDelete">Doctrine_Cache_Db::_doDelete()</a>
+								: Remove a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::delete()
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Memcache.html#method_doDelete">Doctrine_Cache_Memcache::_doDelete()</a>
+								: Remove a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::delete()
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Xcache.html#method_doDelete">Doctrine_Cache_Xcache::_doDelete()</a>
+								: Remove a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::delete()
+							</li>
+				</ul>
+	</div>
+<a name="method_doFetch" id="_doFetch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doFetch</span> (line <span class="line-number">251</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetch a cache record from this cache driver instance</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns either the cached data or false</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			_doFetch
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$testCacheValidity</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$testCacheValidity</span><span class="var-description">: if set to false, the cache validity won't be tested</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Apc.html#method_doFetch">Doctrine_Cache_Apc::_doFetch()</a>
+								: Fetch a cache record from this cache driver instance
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Array.html#method_doFetch">Doctrine_Cache_Array::_doFetch()</a>
+								: Fetch a cache record from this cache driver instance
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Db.html#method_doFetch">Doctrine_Cache_Db::_doFetch()</a>
+								: Fetch a cache record from this cache driver instance
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Memcache.html#method_doFetch">Doctrine_Cache_Memcache::_doFetch()</a>
+								: Test if a cache record exists for the passed id
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Xcache.html#method_doFetch">Doctrine_Cache_Xcache::_doFetch()</a>
+								: Test if a cache record exists for the passed id
+							</li>
+				</ul>
+	</div>
+<a name="method_doSave" id="_doSave"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doSave</span> (line <span class="line-number">270</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Save a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::save()</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if no problem</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			_doSave
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$lifeTime</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: data to cache</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$lifeTime</span><span class="var-description">: if != false, set a specific lifetime for this cache record (null =&gt; infinite lifeTime)</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Apc.html#method_doSave">Doctrine_Cache_Apc::_doSave()</a>
+								: Save a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::save()
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Array.html#method_doSave">Doctrine_Cache_Array::_doSave()</a>
+								: Save a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::save()
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Db.html#method_doSave">Doctrine_Cache_Db::_doSave()</a>
+								: Save a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::save()
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Memcache.html#method_doSave">Doctrine_Cache_Memcache::_doSave()</a>
+								: Save a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::save()
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Xcache.html#method_doSave">Doctrine_Cache_Xcache::_doSave()</a>
+								: Save a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::save()
+							</li>
+				</ul>
+	</div>
+<a name="method_getCacheKeys" id="_getCacheKeys"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getCacheKeys</span> (line <span class="line-number">242</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetch an array of all keys stored in cache</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns the array of cache keys</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_getCacheKeys
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Apc.html#method_getCacheKeys">Doctrine_Cache_Apc::_getCacheKeys()</a>
+								: Fetch an array of all keys stored in cache
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Array.html#method_getCacheKeys">Doctrine_Cache_Array::_getCacheKeys()</a>
+								: Fetch an array of all keys stored in cache
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Db.html#method_getCacheKeys">Doctrine_Cache_Db::_getCacheKeys()</a>
+								: Fetch an array of all keys stored in cache
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Memcache.html#method_getCacheKeys">Doctrine_Cache_Memcache::_getCacheKeys()</a>
+								: Fetch an array of all keys stored in cache
+							</li>
+					<li>
+				<a href="../../Doctrine/Cache/Doctrine_Cache_Xcache.html#method_getCacheKeys">Doctrine_Cache_Xcache::_getCacheKeys()</a>
+								: Fetch an array of all keys stored in cache
+							</li>
+				</ul>
+	</div>
+<a name="method_getKey" id="_getKey"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getKey</span> (line <span class="line-number">226</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the hash key passing its suffix</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Hash key to be used by drivers</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_getKey
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: The hash key suffix</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:07 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>phpDocumentor Parser Errors and Warnings</title>
+			<link rel="stylesheet" href="media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<a href="#Post-parsing">Post-parsing</a><br>
+<a href="#Abstract.php">Abstract.php</a><br>
+<a href="#Access.php">Access.php</a><br>
+<a href="#actividad.php">actividad.php</a><br>
+<a href="#add.php">add.php</a><br>
+<a href="#admin.php">admin.php</a><br>
+<a href="#AnsiColorFormatter.php">AnsiColorFormatter.php</a><br>
+<a href="#Apc.php">Apc.php</a><br>
+<a href="#Array.php">Array.php</a><br>
+<a href="#ArrayDriver.php">ArrayDriver.php</a><br>
+<a href="#ArrayHierarchyDriver.php">ArrayHierarchyDriver.php</a><br>
+<a href="#ArrayShallowDriver.php">ArrayShallowDriver.php</a><br>
+<a href="#asignar_aulas.php">asignar_aulas.php</a><br>
+<a href="#asignaturas.php">asignaturas.php</a><br>
+<a href="#AuditLog.php">AuditLog.php</a><br>
+<a href="#aula.php">aula.php</a><br>
+<a href="#aulaActividad.php">aulaActividad.php</a><br>
+<a href="#aulas.php">aulas.php</a><br>
+<a href="#autoload.php">autoload.php</a><br>
+<a href="#Builder.php">Builder.php</a><br>
+<a href="#calendar.php">calendar.php</a><br>
+<a href="#calendario.php">calendario.php</a><br>
+<a href="#calendar_helper.php">calendar_helper.php</a><br>
+<a href="#cargasemanal.php">cargasemanal.php</a><br>
+<a href="#Chain.php">Chain.php</a><br>
+<a href="#check.php">check.php</a><br>
+<a href="#Cli.php">Cli.php</a><br>
+<a href="#Collection.php">Collection.php</a><br>
+<a href="#Column.php">Column.php</a><br>
+<a href="#Common.php">Common.php</a><br>
+<a href="#Compiler.php">Compiler.php</a><br>
+<a href="#Complex.php">Complex.php</a><br>
+<a href="#config.php">config.php</a><br>
+<a href="#Configurable.php">Configurable.php</a><br>
+<a href="#configuracion_grupos.php">configuracion_grupos.php</a><br>
+<a href="#Connection.php">Connection.php</a><br>
+<a href="#constants.php">constants.php</a><br>
+<a href="#Core.php">Core.php</a><br>
+<a href="#current_user.php">current_user.php</a><br>
+<a href="#CursoCompartido.php">CursoCompartido.php</a><br>
+<a href="#cursos.php">cursos.php</a><br>
+<a href="#Data.php">Data.php</a><br>
+<a href="#database.php">database.php</a><br>
+<a href="#DataDict.php">DataDict.php</a><br>
+<a href="#Db.php">Db.php</a><br>
+<a href="#Db2.php">Db2.php</a><br>
+<a href="#default.php">default.php</a><br>
+<a href="#Doctrine.php">Doctrine.php</a><br>
+<a href="#doctrine_helper.php">doctrine_helper.php</a><br>
+<a href="#doctypes.php">doctypes.php</a><br>
+<a href="#Driver.php">Driver.php</a><br>
+<a href="#edit.php">edit.php</a><br>
+<a href="#Equal.php">Equal.php</a><br>
+<a href="#error_404.php">error_404.php</a><br>
+<a href="#error_db.php">error_db.php</a><br>
+<a href="#error_general.php">error_general.php</a><br>
+<a href="#error_php.php">error_php.php</a><br>
+<a href="#Event.php">Event.php</a><br>
+<a href="#EventListener.php">EventListener.php</a><br>
+<a href="#evento.php">evento.php</a><br>
+<a href="#eventos.php">eventos.php</a><br>
+<a href="#Exception.php">Exception.php</a><br>
+<a href="#Expandable.php">Expandable.php</a><br>
+<a href="#Export.php">Export.php</a><br>
+<a href="#Expression.php">Expression.php</a><br>
+<a href="#File.php">File.php</a><br>
+<a href="#foreign_chars.php">foreign_chars.php</a><br>
+<a href="#form.php">form.php</a><br>
+<a href="#Formatter.php">Formatter.php</a><br>
+<a href="#fpdf.php">fpdf.php</a><br>
+<a href="#from_file.php">from_file.php</a><br>
+<a href="#Graph.php">Graph.php</a><br>
+<a href="#Hook.php">Hook.php</a><br>
+<a href="#hooks.php">hooks.php</a><br>
+<a href="#horario.php">horario.php</a><br>
+<a href="#horarioReference.php">horarioReference.php</a><br>
+<a href="#horarios.php">horarios.php</a><br>
+<a href="#Hydrator.php">Hydrator.php</a><br>
+<a href="#I18n.php">I18n.php</a><br>
+<a href="#Import.php">Import.php</a><br>
+<a href="#importacion_csv_helper.php">importacion_csv_helper.php</a><br>
+<a href="#index.php">index.php</a><br>
+<a href="#Index.php">Index.php</a><br>
+<a href="#index_cargas.php">index_cargas.php</a><br>
+<a href="#Inflector.php">Inflector.php</a><br>
+<a href="#Injectable.php">Injectable.php</a><br>
+<a href="#Integer.php">Integer.php</a><br>
+<a href="#IntegrityMapper.php">IntegrityMapper.php</a><br>
+<a href="#Interface.php">Interface.php</a><br>
+<a href="#Iterator.php">Iterator.php</a><br>
+<a href="#Json.php">Json.php</a><br>
+<a href="#Lib.php">Lib.php</a><br>
+<a href="#lineahorario.php">lineahorario.php</a><br>
+<a href="#Listener.php">Listener.php</a><br>
+<a href="#Locator.php">Locator.php</a><br>
+<a href="#login.php">login.php</a><br>
+<a href="#logout.php">logout.php</a><br>
+<a href="#Memcache.php">Memcache.php</a><br>
+<a href="#Microtime.php">Microtime.php</a><br>
+<a href="#mimes.php">mimes.php</a><br>
+<a href="#Mock.php">Mock.php</a><br>
+<a href="#Module.php">Module.php</a><br>
+<a href="#Mssql.php">Mssql.php</a><br>
+<a href="#Mysql.php">Mysql.php</a><br>
+<a href="#MY_Controller.php">MY_Controller.php</a><br>
+<a href="#MY_form_helper.php">MY_form_helper.php</a><br>
+<a href="#MY_Form_validation.php">MY_Form_validation.php</a><br>
+<a href="#NoneDriver.php">NoneDriver.php</a><br>
+<a href="#Normal.php">Normal.php</a><br>
+<a href="#notice_and_alerts.php">notice_and_alerts.php</a><br>
+<a href="#Offset.php">Offset.php</a><br>
+<a href="#OnDemand.php">OnDemand.php</a><br>
+<a href="#Oracle.php">Oracle.php</a><br>
+<a href="#Parser.php">Parser.php</a><br>
+<a href="#PDF.php">PDF.php</a><br>
+<a href="#Pessimistic.php">Pessimistic.php</a><br>
+<a href="#Pgsql.php">Pgsql.php</a><br>
+<a href="#planactividad.php">planactividad.php</a><br>
+<a href="#plandocente.php">plandocente.php</a><br>
+<a href="#planesdocentes.php">planesdocentes.php</a><br>
+<a href="#Profiler.php">Profiler.php</a><br>
+<a href="#profiler.php">profiler.php</a><br>
+<a href="#RecordDriver.php">RecordDriver.php</a><br>
+<a href="#RecordHierarchyDriver.php">RecordHierarchyDriver.php</a><br>
+<a href="#Reporter.php">Reporter.php</a><br>
+<a href="#resumen_asignatura_helper.php">resumen_asignatura_helper.php</a><br>
+<a href="#routes.php">routes.php</a><br>
+<a href="#ScalarDriver.php">ScalarDriver.php</a><br>
+<a href="#Schema.php">Schema.php</a><br>
+<a href="#select_grupo.php">select_grupo.php</a><br>
+<a href="#sfYamlDumper.php">sfYamlDumper.php</a><br>
+<a href="#sfYamlInline.php">sfYamlInline.php</a><br>
+<a href="#sfYamlParser.php">sfYamlParser.php</a><br>
+<a href="#show.php">show.php</a><br>
+<a href="#SingleScalarDriver.php">SingleScalarDriver.php</a><br>
+<a href="#sin_plan_docente.php">sin_plan_docente.php</a><br>
+<a href="#smileys.php">smileys.php</a><br>
+<a href="#Sqlite.php">Sqlite.php</a><br>
+<a href="#Statement.php">Statement.php</a><br>
+<a href="#Table.php">Table.php</a><br>
+<a href="#titulaciones.php">titulaciones.php</a><br>
+<a href="#UnitOfWork.php">UnitOfWork.php</a><br>
+<a href="#upload_success.php">upload_success.php</a><br>
+<a href="#users.php">users.php</a><br>
+<a href="#user_agents.php">user_agents.php</a><br>
+<a href="#welcome.php">welcome.php</a><br>
+<a href="#welcome_message.php">welcome_message.php</a><br>
+<a href="#WordLike.php">WordLike.php</a><br>
+<a href="#Xcache.php">Xcache.php</a><br>
+<a href="#Xml.php">Xml.php</a><br>
+<a href="#Yield.php">Yield.php</a><br>
+<a href="#Yml.php">Yml.php</a><br>
+<a href="#_form.php">_form.php</a><br>
+<a href="#_titulacion.php">_titulacion.php</a><br>
+<a name="Post-parsing"></a>
+<h1>Post-parsing</h1>
+<h2>Warnings:</h2><br>
+<b>Warning</b> - Class Calendar parent CI_Controller not found<br>
+<b>Warning</b> - Class MY_Controller parent CI_Controller not found<br>
+<b>Warning</b> - Class MY_Form_validation parent CI_Form_validation not found<br>
+<b>Warning</b> - Class Admin parent CI_Controller not found<br>
+<a name="1318262187_migration.php"></a>
+<h1>1318262187_migration.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 5</b> - no @package tag was used in a DocBlock for class Migration<br>
+<b>Warning on line 15</b> - File "C:\gestiongrados\gestiongrados\application\migrations\1318262187_migration.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Abstract.php"></a>
+<h1>Abstract.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_Abstract", use another DocBlock to document the file<br>
+<b>Warning on line 561</b> - Unknown tag "@nodoc" used<br>
+<b>Warning on line 1410</b> - Unknown tag "@nodoc" used<br>
+<a name="Access.php"></a>
+<h1>Access.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Access", use another DocBlock to document the file<br>
+<a name="actividad.php"></a>
+<h1>actividad.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - no @package tag was used in a DocBlock for class Actividad<br>
+<b>Warning on line 28</b> - File "C:\gestiongrados\gestiongrados\application\models\actividad.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add.php"></a>
+<h1>add.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 0</b> - File "C:\gestiongrados\gestiongrados\application\views\cursos\add.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 0</b> - File "C:\gestiongrados\gestiongrados\application\views\eventos\add.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 0</b> - File "C:\gestiongrados\gestiongrados\application\views\titulaciones\add.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 1</b> - File "C:\gestiongrados\gestiongrados\application\views\PlanDocente\add.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 1</b> - File "C:\gestiongrados\gestiongrados\application\views\asignaturas\add.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 1</b> - File "C:\gestiongrados\gestiongrados\application\views\cargassemanales\add.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 18</b> - File "C:\gestiongrados\gestiongrados\application\views\aulas\add.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 30</b> - File "C:\gestiongrados\gestiongrados\application\views\users\add.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="admin.php"></a>
+<h1>admin.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Admin<br>
+<b>Warning on line 33</b> - File "C:\gestiongrados\gestiongrados\application\controllers\admin.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="AnsiColorFormatter.php"></a>
+<h1>AnsiColorFormatter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 43</b> - DocBlock would be page-level, but precedes class "Doctrine_Cli_AnsiColorFormatter", use another DocBlock to document the file<br>
+<a name="Apc.php"></a>
+<h1>Apc.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Cache_Apc", use another DocBlock to document the file<br>
+<a name="Array.php"></a>
+<h1>Array.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Cache_Array", use another DocBlock to document the file<br>
+<a name="ArrayDriver.php"></a>
+<h1>ArrayDriver.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_ArrayDriver", use another DocBlock to document the file<br>
+<a name="ArrayHierarchyDriver.php"></a>
+<h1>ArrayHierarchyDriver.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_ArrayHierarchyDriver", use another DocBlock to document the file<br>
+<a name="ArrayShallowDriver.php"></a>
+<h1>ArrayShallowDriver.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_ArrayShallowDriver", use another DocBlock to document the file<br>
+<a name="asignar_aulas.php"></a>
+<h1>asignar_aulas.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - File "C:\gestiongrados\gestiongrados\application\views\horarios\asignar_aulas.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="asignaturas.php"></a>
+<h1>asignaturas.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class Asignaturas<br>
+<b>Warning on line 108</b> - File "C:\gestiongrados\gestiongrados\application\controllers\asignaturas.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="AuditLog.php"></a>
+<h1>AuditLog.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_AuditLog", use another DocBlock to document the file<br>
+<a name="aula.php"></a>
+<h1>aula.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 13</b> - no @package tag was used in a DocBlock for class Aula<br>
+<b>Warning on line 26</b> - File "C:\gestiongrados\gestiongrados\application\models\aula.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="aulaActividad.php"></a>
+<h1>aulaActividad.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - no @package tag was used in a DocBlock for class AulaActividad<br>
+<b>Warning on line 26</b> - File "C:\gestiongrados\gestiongrados\application\models\aulaActividad.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="aulas.php"></a>
+<h1>aulas.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Aulas<br>
+<b>Warning on line 46</b> - File "C:\gestiongrados\gestiongrados\application\controllers\aulas.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="autoload.php"></a>
+<h1>autoload.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 115</b> - File "C:\gestiongrados\gestiongrados\application\config\autoload.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Builder.php"></a>
+<h1>Builder.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Builder", use another DocBlock to document the file<br>
+<b>Warning on line 39</b> - DocBlock would be page-level, but precedes class "Doctrine_Import_Builder", use another DocBlock to document the file<br>
+<h2>Errors:</h2><br>
+<b>Error on line 215</b> - "@return" tag was used without any parameters, illegal<br>
+<a name="calendar.php"></a>
+<h1>calendar.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Calendar<br>
+<b>Warning on line 24</b> - File "C:\gestiongrados\gestiongrados\application\controllers\calendar.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="calendario.php"></a>
+<h1>calendario.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 5</b> - no @package tag was used in a DocBlock for class Calendario<br>
+<b>Warning on line 24</b> - File "C:\gestiongrados\gestiongrados\application\models\calendario.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="calendar_helper.php"></a>
+<h1>calendar_helper.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 208</b> - File "C:\gestiongrados\gestiongrados\application\helpers\calendar_helper.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="cargasemanal.php"></a>
+<h1>cargasemanal.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 13</b> - no @package tag was used in a DocBlock for class CargaSemanal<br>
+<b>Warning on line 83</b> - File "C:\gestiongrados\gestiongrados\application\models\cargasemanal.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Chain.php"></a>
+<h1>Chain.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_EventListener_Chain", use another DocBlock to document the file<br>
+<a name="check.php"></a>
+<h1>check.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 9</b> - File "C:\gestiongrados\gestiongrados\application\views\horarios\check.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Cli.php"></a>
+<h1>Cli.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_Cli", use another DocBlock to document the file<br>
+<a name="Collection.php"></a>
+<h1>Collection.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Collection", use another DocBlock to document the file<br>
+<a name="Column.php"></a>
+<h1>Column.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Column", use another DocBlock to document the file<br>
+<a name="Common.php"></a>
+<h1>Common.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Common", use another DocBlock to document the file<br>
+<a name="Compiler.php"></a>
+<h1>Compiler.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Compiler", use another DocBlock to document the file<br>
+<a name="Complex.php"></a>
+<h1>Complex.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hook_Parser_Complex", use another DocBlock to document the file<br>
+<a name="config.php"></a>
+<h1>config.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 361</b> - File "C:\gestiongrados\gestiongrados\application\config\config.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Configurable.php"></a>
+<h1>Configurable.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Configurable", use another DocBlock to document the file<br>
+<a name="configuracion_grupos.php"></a>
+<h1>configuracion_grupos.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 13</b> - File "C:\gestiongrados\gestiongrados\application\views\horarios\configuracion_grupos.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Connection.php"></a>
+<h1>Connection.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 56</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection", use another DocBlock to document the file<br>
+<h2>Errors:</h2><br>
+<b>Error on line 514</b> - "@param" tag was used without any parameters, illegal<br>
+<a name="constants.php"></a>
+<h1>constants.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 40</b> - File "C:\gestiongrados\gestiongrados\application\config\constants.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Core.php"></a>
+<h1>Core.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Core", use another DocBlock to document the file<br>
+<a name="current_user.php"></a>
+<h1>current_user.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Current_User<br>
+<b>Warning on line 47</b> - File "C:\gestiongrados\gestiongrados\application\models\current_user.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="CursoCompartido.php"></a>
+<h1>CursoCompartido.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 13</b> - no @package tag was used in a DocBlock for class CursoCompartido<br>
+<b>Warning on line 27</b> - File "C:\gestiongrados\gestiongrados\application\models\CursoCompartido.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="cursos.php"></a>
+<h1>cursos.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Cursos<br>
+<b>Warning on line 117</b> - File "C:\gestiongrados\gestiongrados\application\controllers\cursos.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Data.php"></a>
+<h1>Data.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 36</b> - DocBlock would be page-level, but precedes class "Doctrine_Data", use another DocBlock to document the file<br>
+<a name="database.php"></a>
+<h1>database.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 61</b> - File "C:\gestiongrados\gestiongrados\application\config\database.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="DataDict.php"></a>
+<h1>DataDict.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_DataDict", use another DocBlock to document the file<br>
+<a name="Db.php"></a>
+<h1>Db.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Cache_Db", use another DocBlock to document the file<br>
+<a name="Db2.php"></a>
+<h1>Db2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Db2", use another DocBlock to document the file<br>
+<a name="default.php"></a>
+<h1>default.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 162</b> - File "C:\gestiongrados\gestiongrados\application\views\layouts\default.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Doctrine.php"></a>
+<h1>Doctrine.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 37</b> - File "C:\gestiongrados\gestiongrados\application\helpers\Doctrine.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="doctrine_helper.php"></a>
+<h1>doctrine_helper.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 32</b> - File "C:\gestiongrados\gestiongrados\application\helpers\doctrine_helper.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="doctypes.php"></a>
+<h1>doctypes.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 14</b> - File "C:\gestiongrados\gestiongrados\application\config\doctypes.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Driver.php"></a>
+<h1>Driver.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Expression_Driver", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Cache_Driver", use another DocBlock to document the file<br>
+<a name="edit.php"></a>
+<h1>edit.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 0</b> - File "C:\gestiongrados\gestiongrados\application\views\titulaciones\edit.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 0</b> - File "C:\gestiongrados\gestiongrados\application\views\cursos\edit.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 1</b> - File "C:\gestiongrados\gestiongrados\application\views\PlanDocente\edit.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 1</b> - File "C:\gestiongrados\gestiongrados\application\views\cargassemanales\edit.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 1</b> - File "C:\gestiongrados\gestiongrados\application\views\asignaturas\edit.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 42</b> - File "C:\gestiongrados\gestiongrados\application\views\horarios\edit.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Equal.php"></a>
+<h1>Equal.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hook_Equal", use another DocBlock to document the file<br>
+<a name="error_404.php"></a>
+<h1>error_404.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 61</b> - File "C:\gestiongrados\gestiongrados\application\errors\error_404.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="error_db.php"></a>
+<h1>error_db.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 61</b> - File "C:\gestiongrados\gestiongrados\application\errors\error_db.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="error_general.php"></a>
+<h1>error_general.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 61</b> - File "C:\gestiongrados\gestiongrados\application\errors\error_general.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="error_php.php"></a>
+<h1>error_php.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 9</b> - File "C:\gestiongrados\gestiongrados\application\errors\error_php.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Event.php"></a>
+<h1>Event.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Event", use another DocBlock to document the file<br>
+<a name="EventListener.php"></a>
+<h1>EventListener.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_EventListener", use another DocBlock to document the file<br>
+<a name="evento.php"></a>
+<h1>evento.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - no @package tag was used in a DocBlock for class Evento<br>
+<b>Warning on line 54</b> - File "C:\gestiongrados\gestiongrados\application\models\evento.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="eventos.php"></a>
+<h1>eventos.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Eventos<br>
+<b>Warning on line 112</b> - File "C:\gestiongrados\gestiongrados\application\controllers\eventos.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Exception.php"></a>
+<h1>Exception.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Adapter_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Data_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Cli_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_DataDict_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Collection_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Profiler_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_I18n_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Import_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Expression_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Import_Builder_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Export_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Compiler_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_EventListener_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Cache_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Mysql_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Mssql_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Sqlite_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - package default is already in category default, will now replace with category Locator<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Oracle_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 35</b> - no @package tag was used in a DocBlock for file C:\gestiongrados\gestiongrados\application\helpers\Doctrine\Locking\Exception.php<br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Pgsql_Exception", use another DocBlock to document the file<br>
+<b>Warning on line 35</b> - package Doctrine is already in category default, will now replace with category Locator<br>
+<a name="Expandable.php"></a>
+<h1>Expandable.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Collection_Iterator_Expandable", use another DocBlock to document the file<br>
+<a name="Export.php"></a>
+<h1>Export.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Data_Export", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Export", use another DocBlock to document the file<br>
+<a name="Expression.php"></a>
+<h1>Expression.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 36</b> - DocBlock would be page-level, but precedes class "Doctrine_Expression", use another DocBlock to document the file<br>
+<a name="File.php"></a>
+<h1>File.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_File", use another DocBlock to document the file<br>
+<a name="foreign_chars.php"></a>
+<h1>foreign_chars.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 63</b> - File "C:\gestiongrados\gestiongrados\application\config\foreign_chars.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="form.php"></a>
+<h1>form.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 13</b> - File "C:\gestiongrados\gestiongrados\application\views\login\form.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Formatter.php"></a>
+<h1>Formatter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Formatter", use another DocBlock to document the file<br>
+<b>Warning on line 43</b> - DocBlock would be page-level, but precedes class "Doctrine_Cli_Formatter", use another DocBlock to document the file<br>
+<a name="fpdf.php"></a>
+<h1>fpdf.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - no @package tag was used in a DocBlock for class FPDF<br>
+<b>Warning on line 1803</b> - File "C:\gestiongrados\gestiongrados\application\libraries\fpdf.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="from_file.php"></a>
+<h1>from_file.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 13</b> - File "C:\gestiongrados\gestiongrados\application\views\PlanDocente\from_file.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Graph.php"></a>
+<h1>Graph.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 36</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_Graph", use another DocBlock to document the file<br>
+<a name="Hook.php"></a>
+<h1>Hook.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hook", use another DocBlock to document the file<br>
+<a name="hooks.php"></a>
+<h1>hooks.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 20</b> - File "C:\gestiongrados\gestiongrados\application\config\hooks.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="horario.php"></a>
+<h1>horario.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 16</b> - no @package tag was used in a DocBlock for class Horario<br>
+<b>Warning on line 37</b> - File "C:\gestiongrados\gestiongrados\application\models\horario.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="horarioReference.php"></a>
+<h1>horarioReference.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class HorarioReference<br>
+<b>Warning on line 16</b> - File "C:\gestiongrados\gestiongrados\application\models\horarioReference.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="horarios.php"></a>
+<h1>horarios.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Horarios<br>
+<b>Warning on line 549</b> - File "C:\gestiongrados\gestiongrados\application\controllers\horarios.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Hydrator.php"></a>
+<h1>Hydrator.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator", use another DocBlock to document the file<br>
+<a name="I18n.php"></a>
+<h1>I18n.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_I18n", use another DocBlock to document the file<br>
+<a name="Import.php"></a>
+<h1>Import.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Data_Import", use another DocBlock to document the file<br>
+<b>Warning on line 37</b> - DocBlock would be page-level, but precedes class "Doctrine_Import", use another DocBlock to document the file<br>
+<h2>Errors:</h2><br>
+<b>Error on line 32</b> - DocBlock has multiple @package tags, illegal. ignoring additional tag "@package Data"<br>
+<a name="importacion_csv_helper.php"></a>
+<h1>importacion_csv_helper.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 192</b> - File "C:\gestiongrados\gestiongrados\application\helpers\importacion_csv_helper.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Index.php"></a>
+<h1>Index.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_File_Index", use another DocBlock to document the file<br>
+<a name="index.php"></a>
+<h1>index.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - File "C:\gestiongrados\gestiongrados\application\views\calendar\index.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 6</b> - File "C:\gestiongrados\gestiongrados\application\views\administracion\index.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 7</b> - File "C:\gestiongrados\gestiongrados\application\views\aulas\index.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 8</b> - File "C:\gestiongrados\gestiongrados\application\views\horarios\index.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 19</b> - File "C:\gestiongrados\gestiongrados\application\views\titulaciones\index.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 20</b> - File "C:\gestiongrados\gestiongrados\application\views\cursos\index.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 34</b> - File "C:\gestiongrados\gestiongrados\application\views\eventos\index.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="index_cargas.php"></a>
+<h1>index_cargas.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 11</b> - File "C:\gestiongrados\gestiongrados\application\views\titulaciones\index_cargas.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Inflector.php"></a>
+<h1>Inflector.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 38</b> - DocBlock would be page-level, but precedes class "Doctrine_Inflector", use another DocBlock to document the file<br>
+<a name="Injectable.php"></a>
+<h1>Injectable.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - no @package tag was used in a DocBlock for file C:\gestiongrados\gestiongrados\application\helpers\Doctrine\Locator\Injectable.php<br>
+<b>Warning on line 35</b> - package default is already in category Locator, will now replace with category default<br>
+<a name="Integer.php"></a>
+<h1>Integer.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hook_Integer", use another DocBlock to document the file<br>
+<a name="IntegrityMapper.php"></a>
+<h1>IntegrityMapper.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_IntegrityMapper", use another DocBlock to document the file<br>
+<a name="Interface.php"></a>
+<h1>Interface.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Adapter_Interface", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Adapter_Statement_Interface", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Cache_Interface", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_EventListener_Interface", use another DocBlock to document the file<br>
+<a name="Iterator.php"></a>
+<h1>Iterator.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Collection_Iterator", use another DocBlock to document the file<br>
+<a name="Lib.php"></a>
+<h1>Lib.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Lib", use another DocBlock to document the file<br>
+<b>Warning on line 162</b> - Unknown tag "@todo:" used<br>
+<h2>Errors:</h2><br>
+<b>Error on line 337</b> - "@return" tag was used without any parameters, illegal<br>
+<a name="lineahorario.php"></a>
+<h1>lineahorario.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 14</b> - no @package tag was used in a DocBlock for class LineaHorario<br>
+<b>Warning on line 38</b> - File "C:\gestiongrados\gestiongrados\application\models\lineahorario.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Listener.php"></a>
+<h1>Listener.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_AuditLog_Listener", use another DocBlock to document the file<br>
+<a name="Locator.php"></a>
+<h1>Locator.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - no @package tag was used in a DocBlock for file C:\gestiongrados\gestiongrados\application\helpers\Doctrine\Locator.php<br>
+<a name="login.php"></a>
+<h1>login.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Login<br>
+<b>Warning on line 25</b> - File "C:\gestiongrados\gestiongrados\application\controllers\login.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="logout.php"></a>
+<h1>logout.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Logout<br>
+<b>Warning on line 9</b> - File "C:\gestiongrados\gestiongrados\application\controllers\logout.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Memcache.php"></a>
+<h1>Memcache.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Cache_Memcache", use another DocBlock to document the file<br>
+<a name="Microtime.php"></a>
+<h1>Microtime.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_AuditLog_Listener_Microtime", use another DocBlock to document the file<br>
+<a name="mimes.php"></a>
+<h1>mimes.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 105</b> - File "C:\gestiongrados\gestiongrados\application\config\mimes.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Mock.php"></a>
+<h1>Mock.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Adapter_Statement_Mock", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Adapter_Mock", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Expression_Mock", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Mock", use another DocBlock to document the file<br>
+<a name="Module.php"></a>
+<h1>Module.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Module", use another DocBlock to document the file<br>
+<a name="Mssql.php"></a>
+<h1>Mssql.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Expression_Mssql", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Import_Mssql", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_DataDict_Mssql", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Mssql", use another DocBlock to document the file<br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_Export_Mssql", use another DocBlock to document the file<br>
+<a name="Mysql.php"></a>
+<h1>Mysql.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 32</b> - DocBlock would be page-level, but precedes class "Doctrine_Import_Mysql", use another DocBlock to document the file<br>
+<b>Warning on line 32</b> - DocBlock would be page-level, but precedes class "Doctrine_DataDict_Mysql", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Expression_Mysql", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Export_Mysql", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Mysql", use another DocBlock to document the file<br>
+<a name="MY_Controller.php"></a>
+<h1>MY_Controller.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class MY_Controller<br>
+<b>Warning on line 48</b> - File "C:\gestiongrados\gestiongrados\application\core\MY_Controller.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="MY_form_helper.php"></a>
+<h1>MY_form_helper.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 9</b> - File "C:\gestiongrados\gestiongrados\application\helpers\MY_form_helper.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="MY_Form_validation.php"></a>
+<h1>MY_Form_validation.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class MY_Form_validation<br>
+<b>Warning on line 38</b> - File "C:\gestiongrados\gestiongrados\application\libraries\MY_Form_validation.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="NoneDriver.php"></a>
+<h1>NoneDriver.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_NoneDriver", use another DocBlock to document the file<br>
+<a name="Normal.php"></a>
+<h1>Normal.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Collection_Iterator_Normal", use another DocBlock to document the file<br>
+<a name="notice_and_alerts.php"></a>
+<h1>notice_and_alerts.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 14</b> - File "C:\gestiongrados\gestiongrados\application\views\layouts\notice_and_alerts.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Offset.php"></a>
+<h1>Offset.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Collection_Iterator_Offset", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Collection_Offset", use another DocBlock to document the file<br>
+<a name="OnDemand.php"></a>
+<h1>OnDemand.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Collection_OnDemand", use another DocBlock to document the file<br>
+<a name="Oracle.php"></a>
+<h1>Oracle.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 31</b> - DocBlock would be page-level, but precedes class "Doctrine_DataDict_Oracle", use another DocBlock to document the file<br>
+<b>Warning on line 31</b> - DocBlock would be page-level, but precedes class "Doctrine_Import_Oracle", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Expression_Oracle", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Oracle", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Export_Oracle", use another DocBlock to document the file<br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_Adapter_Statement_Oracle", use another DocBlock to document the file<br>
+<b>Warning on line 36</b> - DocBlock would be page-level, but precedes class "Doctrine_Adapter_Oracle", use another DocBlock to document the file<br>
+<a name="Parser.php"></a>
+<h1>Parser.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hook_Parser", use another DocBlock to document the file<br>
+<a name="PDF.php"></a>
+<h1>PDF.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 4</b> - no @package tag was used in a DocBlock for class PDF<br>
+<b>Warning on line 37</b> - File "C:\gestiongrados\gestiongrados\application\libraries\PDF.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Pessimistic.php"></a>
+<h1>Pessimistic.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 37</b> - package Doctrine is already in category Locator, will now replace with category default<br>
+<a name="Pgsql.php"></a>
+<h1>Pgsql.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Expression_Pgsql", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_DataDict_Pgsql", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Import_Pgsql", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Pgsql", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Export_Pgsql", use another DocBlock to document the file<br>
+<a name="planactividad.php"></a>
+<h1>planactividad.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 11</b> - no @package tag was used in a DocBlock for class PlanActividad<br>
+<b>Warning on line 33</b> - File "C:\gestiongrados\gestiongrados\application\models\planactividad.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="plandocente.php"></a>
+<h1>plandocente.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - no @package tag was used in a DocBlock for class PlanDocente<br>
+<b>Warning on line 30</b> - File "C:\gestiongrados\gestiongrados\application\models\plandocente.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="planesdocentes.php"></a>
+<h1>planesdocentes.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class PlanesDocentes<br>
+<b>Warning on line 253</b> - File "C:\gestiongrados\gestiongrados\application\controllers\planesdocentes.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Profiler.php"></a>
+<h1>Profiler.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Profiler", use another DocBlock to document the file<br>
+<a name="profiler.php"></a>
+<h1>profiler.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 16</b> - File "C:\gestiongrados\gestiongrados\application\config\profiler.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="RecordDriver.php"></a>
+<h1>RecordDriver.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_RecordDriver", use another DocBlock to document the file<br>
+<a name="RecordHierarchyDriver.php"></a>
+<h1>RecordHierarchyDriver.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_RecordHierarchyDriver", use another DocBlock to document the file<br>
+<a name="Reporter.php"></a>
+<h1>Reporter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Export_Reporter", use another DocBlock to document the file<br>
+<a name="resumen_asignatura_helper.php"></a>
+<h1>resumen_asignatura_helper.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 160</b> - File "C:\gestiongrados\gestiongrados\application\helpers\resumen_asignatura_helper.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="routes.php"></a>
+<h1>routes.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 45</b> - File "C:\gestiongrados\gestiongrados\application\config\routes.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="ScalarDriver.php"></a>
+<h1>ScalarDriver.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_ScalarDriver", use another DocBlock to document the file<br>
+<a name="Schema.php"></a>
+<h1>Schema.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_Import_Schema", use another DocBlock to document the file<br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_Export_Schema", use another DocBlock to document the file<br>
+<a name="select_grupo.php"></a>
+<h1>select_grupo.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 66</b> - File "C:\gestiongrados\gestiongrados\application\views\horarios\select_grupo.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="sfYamlDumper.php"></a>
+<h1>sfYamlDumper.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 59</b> - File "C:\gestiongrados\gestiongrados\application\helpers\Doctrine\Parser\sfYaml\sfYamlDumper.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="sfYamlInline.php"></a>
+<h1>sfYamlInline.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 441</b> - File "C:\gestiongrados\gestiongrados\application\helpers\Doctrine\Parser\sfYaml\sfYamlInline.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="sfYamlParser.php"></a>
+<h1>sfYamlParser.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 621</b> - File "C:\gestiongrados\gestiongrados\application\helpers\Doctrine\Parser\sfYaml\sfYamlParser.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="show.php"></a>
+<h1>show.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "C:\gestiongrados\gestiongrados\application\views\titulaciones\show.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 23</b> - File "C:\gestiongrados\gestiongrados\application\views\asignaturas\show.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="SingleScalarDriver.php"></a>
+<h1>SingleScalarDriver.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hydrator_SingleScalarDriver", use another DocBlock to document the file<br>
+<a name="sin_plan_docente.php"></a>
+<h1>sin_plan_docente.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 7</b> - File "C:\gestiongrados\gestiongrados\application\views\asignaturas\sin_plan_docente.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="smileys.php"></a>
+<h1>smileys.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 65</b> - File "C:\gestiongrados\gestiongrados\application\config\smileys.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Sqlite.php"></a>
+<h1>Sqlite.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 32</b> - DocBlock would be page-level, but precedes class "Doctrine_Import_Sqlite", use another DocBlock to document the file<br>
+<b>Warning on line 32</b> - DocBlock would be page-level, but precedes class "Doctrine_DataDict_Sqlite", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Expression_Sqlite", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Export_Sqlite", use another DocBlock to document the file<br>
+<b>Warning on line 34</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Sqlite", use another DocBlock to document the file<br>
+<a name="Statement.php"></a>
+<h1>Statement.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Adapter_Statement", use another DocBlock to document the file<br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_Statement", use another DocBlock to document the file<br>
+<a name="Table.php"></a>
+<h1>Table.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 36</b> - @method magic tag does not have name, illegal. Ignoring tag "@method mixed findBy*(mixed $value) magic finders; @see __call()"<br>
+<b>Warning on line 36</b> - @method magic tag does not have name, illegal. Ignoring tag "@method mixed findOneBy*(mixed $value) magic finders; @see __call()"<br>
+<b>Warning on line 1488</b> - Unknown tag "@params" used<br>
+<a name="titulaciones.php"></a>
+<h1>titulaciones.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class Titulaciones<br>
+<b>Warning on line 140</b> - File "C:\gestiongrados\gestiongrados\application\controllers\titulaciones.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="UnitOfWork.php"></a>
+<h1>UnitOfWork.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 40</b> - DocBlock would be page-level, but precedes class "Doctrine_Connection_UnitOfWork", use another DocBlock to document the file<br>
+<a name="upload_success.php"></a>
+<h1>upload_success.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 0</b> - File "C:\gestiongrados\gestiongrados\application\views\PlanDocente\upload_success.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="users.php"></a>
+<h1>users.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class Users<br>
+<b>Warning on line 73</b> - File "C:\gestiongrados\gestiongrados\application\controllers\users.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_agents.php"></a>
+<h1>user_agents.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 177</b> - File "C:\gestiongrados\gestiongrados\application\config\user_agents.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="welcome.php"></a>
+<h1>welcome.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class Welcome<br>
+<b>Warning on line 27</b> - File "C:\gestiongrados\gestiongrados\application\controllers\welcome.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="welcome_message.php"></a>
+<h1>welcome_message.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 0</b> - File "C:\gestiongrados\gestiongrados\application\views\welcome_message.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="WordLike.php"></a>
+<h1>WordLike.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - DocBlock would be page-level, but precedes class "Doctrine_Hook_WordLike", use another DocBlock to document the file<br>
+<a name="Xcache.php"></a>
+<h1>Xcache.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - DocBlock would be page-level, but precedes class "Doctrine_Cache_Xcache", use another DocBlock to document the file<br>
+<a name="Yield.php"></a>
+<h1>Yield.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 9</b> - no @package tag was used in a DocBlock for class Yield<br>
+<b>Warning on line 47</b> - File "C:\gestiongrados\gestiongrados\application\hooks\Yield.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="_form.php"></a>
+<h1>_form.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "C:\gestiongrados\gestiongrados\application\views\cargassemanales\_form.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 23</b> - File "C:\gestiongrados\gestiongrados\application\views\titulaciones\_form.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 37</b> - File "C:\gestiongrados\gestiongrados\application\views\asignaturas\_form.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 38</b> - File "C:\gestiongrados\gestiongrados\application\views\eventos\_form.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 69</b> - File "C:\gestiongrados\gestiongrados\application\views\cursos\_form.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 118</b> - File "C:\gestiongrados\gestiongrados\application\views\PlanDocente\_form.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="_titulacion.php"></a>
+<h1>_titulacion.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 11</b> - File "C:\gestiongrados\gestiongrados\application\views\titulaciones\_titulacion.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Json.php"></a>
+<h1>Json.php</h1>
+<h2>Errors:</h2><br>
+<b>Error on line 45</b> - DocBlock has multiple @return tags, illegal. ignoring additional tag "@return void "<br>
+<a name="Xml.php"></a>
+<h1>Xml.php</h1>
+<h2>Errors:</h2><br>
+<b>Error on line 45</b> - DocBlock has multiple @return tags, illegal. ignoring additional tag "@return void "<br>
+<a name="Yml.php"></a>
+<h1>Yml.php</h1>
+<h2>Errors:</h2><br>
+<b>Error on line 45</b> - DocBlock has multiple @return tags, illegal. ignoring additional tag "@return void "<br>
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:09:31 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</body>
+</html>

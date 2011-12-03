@@ -21,7 +21,7 @@ class Aula extends Doctrine_Record{
     
     public function setUp(){
         parent::setUp();
-        $this->hasMany('LineaHorario as lineashorario', array('local' => 'id', 'foreign' => 'id_lineahorario'));
+        $this->hasMany('LineaHorario as lineashorario', array('local' => 'id', 'foreign' => 'id_aula'));
         $this->hasMany('Actividad as actividades', array('local' => 'id_aula', 'foreign' => 'id_actividad', 'refClass' => 'AulaActividad'));
     }
 }

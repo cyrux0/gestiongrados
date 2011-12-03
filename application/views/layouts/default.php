@@ -22,7 +22,7 @@
   <body>
     <div id="header">
       <!-- Cabecera con imagen y link a la página de inicio -->
-      <a id="logoUca" href="http://www.uca.es"><img alt="Universidad de Cádiz" src="<?= site_url('themes/img/logoEmpresa.gif') ?>" /></a>
+      <a id="logoUca" href="http://www.uca.es"><img alt="Universidad de Cádiz" src="<?= site_url('themes/css/img/logoEmpresa.gif') ?>" /></a>
       <div id="navegacionUca">
       	<ul id="enlacesUca">
       		<li>Inicio</li>
@@ -90,6 +90,18 @@
                           <?= anchor('cursos/index', 'Ver cursos') ?>
                       </li>
                   </ul>
+              </li>
+              <? endif; ?>
+              <? if(Current_User::logged_in(2)): ?>
+              <li>
+                  <?= anchor('#', 'Aulas') ?>
+                  <ul class="acitem">
+                      <li>
+                          <?= anchor('aulas/add', 'Crear aulas') ?>
+                          <?= anchor('aulas/index', 'Ver aulas') ?>
+                      </li>
+                  </ul>
+                      
               </li>
               <? endif; ?>
               <? if(Current_User::logged_in(2)): ?>

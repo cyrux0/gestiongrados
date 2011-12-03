@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Access</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Access</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li>ArrayAccess (internal interface)</li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Provides array access and property overload interface for Doctrine subclasses</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Access.php.html">/helpers/Doctrine/Access.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a>
+   |
+   --Doctrine_Access</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-vars">Vars</a>
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Collection/Doctrine_Collection.html">Doctrine_Collection</a></td>
+					<td>
+											Doctrine_Collection  Collection of Doctrine_Record objects.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Column/Doctrine_Column.html">Doctrine_Column</a></td>
+					<td>
+											Doctrine_Column  This class represents a database column
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/EventListener/Doctrine_EventListener_Chain.html">Doctrine_EventListener_Chain</a></td>
+					<td>
+											Doctrine_EventListener_Chain  this class represents a chain of different listeners,  useful for having multiple listeners listening the events at the same time
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Record/Doctrine_Record_Abstract.html">Doctrine_Record_Abstract</a></td>
+					<td>
+											Doctrine_Record_Abstract
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Record/Doctrine_Record_Listener_Chain.html">Doctrine_Record_Listener_Chain</a></td>
+					<td>
+											Doctrine_Record_Listener_Chain  this class represents a chain of different listeners,  useful for having multiple listeners listening the events at the same time
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Validator/Doctrine_Validator_ErrorStack.html">Doctrine_Validator_ErrorStack</a></td>
+					<td>
+											Doctrine_Validator_ErrorStack
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#add" title="details" class="method-name">add</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#contains" title="details" class="method-name">contains</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#get" title="details" class="method-name">get</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#offsetExists" title="details" class="method-name">offsetExists</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#offsetGet" title="details" class="method-name">offsetGet</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#offsetSet" title="details" class="method-name">offsetSet</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#offsetUnset" title="details" class="method-name">offsetUnset</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#remove" title="details" class="method-name">remove</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#set" title="details" class="method-name">set</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Access/Doctrine_Access.html">Doctrine_Access</a></span>
+										<a href="#setArray" title="details" class="method-name">setArray</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$array</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#__get" title="details" class="method-name">__get</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#__isset" title="details" class="method-name">__isset</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__set" title="details" class="method-name">__set</a>
+											(<span class="var-type">$name</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">$value</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__unset" title="details" class="method-name">__unset</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_locator">Doctrine_Locator_Injectable::$_locator</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_null">Doctrine_Locator_Injectable::$_null</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_resources">Doctrine_Locator_Injectable::$_resources</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodadd" id="add"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">add</span> (line <span class="line-number">199</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add the value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			add
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: The value to add</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Collection/Doctrine_Collection.html#methodadd">Doctrine_Collection::add()</a>
+								: Adds a record to collection
+							</li>
+					<li>
+				<a href="../../Doctrine/EventListener/Doctrine_EventListener_Chain.html#methodadd">Doctrine_EventListener_Chain::add()</a>
+								: add  adds a listener to the chain of listeners
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Doctrine_Record_Listener_Chain.html#methodadd">Doctrine_Record_Listener_Chain::add()</a>
+								: add  adds a listener to the chain of listeners
+							</li>
+					<li>
+				<a href="../../Doctrine/Validator/Doctrine_Validator_ErrorStack.html#methodadd">Doctrine_Validator_ErrorStack::add()</a>
+								: Adds an error to the stack.
+							</li>
+				</ul>
+	</div>
+<a name="methodcontains" id="contains"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">contains</span> (line <span class="line-number">188</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check if the specified offset exists</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if exists otherwise false</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			contains
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to check</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Collection/Doctrine_Collection.html#methodcontains">Doctrine_Collection::contains()</a>
+								: Whether or not this collection contains a specified element
+							</li>
+					<li>
+				<a href="../../Doctrine/Column/Doctrine_Column.html#methodcontains">Doctrine_Column::contains()</a>
+								: contains
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Doctrine_Record.html#methodcontains">Doctrine_Record::contains()</a>
+								: test whether a field (column, mapped value, related component, accessor) is accessible by @see get()
+							</li>
+					<li>
+				<a href="../../Doctrine/Validator/Doctrine_Validator_ErrorStack.html#methodcontains">Doctrine_Validator_ErrorStack::contains()</a>
+								: Check if a field has an error
+							</li>
+				</ul>
+	</div>
+<a name="methodget" id="get"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">get</span> (line <span class="line-number">165</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the element with the specified offset</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to return</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Collection/Doctrine_Collection.html#methodget">Doctrine_Collection::get()</a>
+								: Gets a record for given key
+							</li>
+					<li>
+				<a href="../../Doctrine/Column/Doctrine_Column.html#methodget">Doctrine_Column::get()</a>
+								: get
+							</li>
+					<li>
+				<a href="../../Doctrine/EventListener/Doctrine_EventListener_Chain.html#methodget">Doctrine_EventListener_Chain::get()</a>
+								: returns a Doctrine_EventListener on success  and null on failure
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Doctrine_Record.html#methodget">Doctrine_Record::get()</a>
+								: returns a value of a property or a related component
+							</li>
+					<li>
+				<a href="../../Doctrine/File/Doctrine_File.html#methodget">Doctrine_File::get()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template.html#methodget">Doctrine_Template::get()</a>
+								: get
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Doctrine_Record_Listener_Chain.html#methodget">Doctrine_Record_Listener_Chain::get()</a>
+								: returns a Doctrine_Record_Listener on success  and null on failure
+							</li>
+					<li>
+				<a href="../../Doctrine/Validator/Doctrine_Validator_ErrorStack.html#methodget">Doctrine_Validator_ErrorStack::get()</a>
+								: Get errors for field
+							</li>
+				</ul>
+	</div>
+<a name="methodoffsetExists" id="offsetExists"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetExists</span> (line <span class="line-number">103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check if an offset axists</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Whether or not this object contains $offset</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			offsetExists
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetExists</dt>
+					</dl>
+			
+	</div>
+<a name="methodoffsetGet" id="offsetGet"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetGet</span> (line <span class="line-number">115</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An alias of get()</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../../Doctrine/Access/Doctrine_Access.html#methodget">Doctrine_Access::get()</a>, <a href="../../Doctrine/Access/Doctrine_Access.html#method__get">Doctrine_Access::__get()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			offsetGet
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetGet</dt>
+					</dl>
+			
+	</div>
+<a name="methodoffsetSet" id="offsetSet"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetSet</span> (line <span class="line-number">128</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets $offset to $value</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../../Doctrine/Access/Doctrine_Access.html#methodset">Doctrine_Access::set()</a>, <a href="../../Doctrine/Access/Doctrine_Access.html#method__set">Doctrine_Access::__set()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			offsetSet
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetSet</dt>
+					</dl>
+			
+	</div>
+<a name="methodoffsetUnset" id="offsetUnset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetUnset</span> (line <span class="line-number">143</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Unset a given offset</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../../Doctrine/Access/Doctrine_Access.html#methodset">Doctrine_Access::set()</a>, <a href="../../Doctrine/Access/Doctrine_Access.html#methodoffsetSet">Doctrine_Access::offsetSet()</a>, <a href="../../Doctrine/Access/Doctrine_Access.html#method__set">Doctrine_Access::__set()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			offsetUnset
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetUnset</dt>
+					</dl>
+			
+	</div>
+<a name="methodremove" id="remove"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">remove</span> (line <span class="line-number">154</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove the element with the specified offset</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if removed otherwise false</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			remove
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to remove</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Collection/Doctrine_Collection.html#methodremove">Doctrine_Collection::remove()</a>
+								: Removes a specified collection element
+							</li>
+					<li>
+				<a href="../../Doctrine/Validator/Doctrine_Validator_ErrorStack.html#methodremove">Doctrine_Validator_ErrorStack::remove()</a>
+								: Removes all existing errors for the specified field from the stack.
+							</li>
+				</ul>
+	</div>
+<a name="methodset" id="set"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">set</span> (line <span class="line-number">177</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the offset to the value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			set
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to set</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: The value to set the offset to</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Collection/Doctrine_Collection.html#methodset">Doctrine_Collection::set()</a>
+								: Set a Doctrine_Record instance to the collection
+							</li>
+					<li>
+				<a href="../../Doctrine/Column/Doctrine_Column.html#methodset">Doctrine_Column::set()</a>
+								: set
+							</li>
+					<li>
+				<a href="../../Doctrine/EventListener/Doctrine_EventListener_Chain.html#methodset">Doctrine_EventListener_Chain::set()</a>
+								: set
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Doctrine_Record.html#methodset">Doctrine_Record::set()</a>
+								: alters mapped values, properties and related components.
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template.html#methodset">Doctrine_Template::set()</a>
+								: set
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Doctrine_Record_Listener_Chain.html#methodset">Doctrine_Record_Listener_Chain::set()</a>
+								: set
+							</li>
+					<li>
+				<a href="../../Doctrine/Validator/Doctrine_Validator_ErrorStack.html#methodset">Doctrine_Validator_ErrorStack::set()</a>
+								: Alias for add()
+							</li>
+				</ul>
+	</div>
+<a name="methodsetArray" id="setArray"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setArray</span> (line <span class="line-number">41</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set an entire aray to the data</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Access/Doctrine_Access.html">Doctrine_Access</a></span>
+		<span class="method-name">
+			setArray
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$array</span><span class="var-description">: An array of key =&gt; value pairs</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__get" id="__get"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get</span> (line <span class="line-number">70</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get key from data</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../../Doctrine/Access/Doctrine_Access.html#methodget">Doctrine_Access::get()</a>, <a href="../../Doctrine/Access/Doctrine_Access.html#methodoffsetGet">Doctrine_Access::offsetGet()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			__get
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Plugin/Doctrine_Record_Generator.html#method__get">Doctrine_Record_Generator::__get()</a>
+								: An alias for getOption
+							</li>
+				</ul>
+	</div>
+<a name="method__isset" id="__isset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__isset</span> (line <span class="line-number">81</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check if key exists in data</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> whether or not this object contains $name</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			__isset
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Plugin/Doctrine_Record_Generator.html#method__isset">Doctrine_Record_Generator::__isset()</a>
+								: __isset
+							</li>
+				</ul>
+	</div>
+<a name="method__set" id="__set"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__set</span> (line <span class="line-number">58</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set key and value to data</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../../Doctrine/Access/Doctrine_Access.html#methodset">Doctrine_Access::set()</a>, <a href="../../Doctrine/Access/Doctrine_Access.html#methodoffsetSet">Doctrine_Access::offsetSet()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__set
+		</span>
+					(<span class="var-type">$name</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">$value</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$name</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">$value</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__unset" id="__unset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__unset</span> (line <span class="line-number">92</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove key from data</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__unset
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Record/Doctrine_Record.html#method__unset">Doctrine_Record::__unset()</a>
+								: deletes a column or a related component.
+							</li>
+				</ul>
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodbind">Doctrine_Locator_Injectable::bind()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetLocator">Doctrine_Locator_Injectable::getLocator()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetNullObject">Doctrine_Locator_Injectable::getNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodinitNullObject">Doctrine_Locator_Injectable::initNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodlocate">Doctrine_Locator_Injectable::locate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodsetLocator">Doctrine_Locator_Injectable::setLocator()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:28 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

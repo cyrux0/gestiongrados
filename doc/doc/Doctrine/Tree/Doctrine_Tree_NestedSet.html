@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Tree_NestedSet</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Tree_NestedSet</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li><a href="../../Doctrine/Tree/Doctrine_Tree_Interface.html">Doctrine_Tree_Interface</a></li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Tree_NestedSet</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Joe Simms &lt;<a href="mailto:joe.simms@websites4.com">joe.simms@websites4.com</a>&gt;</li>
+				<li><span class="field">author:</span> Roman Borschel &lt;<a href="mailto:roman@code-factory.org">roman@code-factory.org</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Tree---NestedSet.php.html">/helpers/Doctrine/Tree/NestedSet.php</a> (line <span class="field">34</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Tree/Doctrine_Tree.html">Doctrine_Tree</a>
+   |
+   --Doctrine_Tree_NestedSet</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">Doctrine_Tree_NestedSet</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#createRoot" title="details" class="method-name">createRoot</a>
+											([<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#fetchBranch" title="details" class="method-name">fetchBranch</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$pk</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$hydrationMode</span> = <span class="var-default">null</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$fetchmode</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#fetchRoot" title="details" class="method-name">fetchRoot</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$rootId</span> = <span class="var-default">1</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#fetchRoots" title="details" class="method-name">fetchRoots</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#fetchTree" title="details" class="method-name">fetchTree</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$hydrationMode</span> = <span class="var-default">null</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$fetchmode</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getBaseAlias" title="details" class="method-name">getBaseAlias</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">unknown</span>
+										<a href="#getBaseQuery" title="details" class="method-name">getBaseQuery</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#resetBaseQuery" title="details" class="method-name">resetBaseQuery</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#returnQueryWithRootId" title="details" class="method-name">returnQueryWithRootId</a>
+											(<span class="var-type">object</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$rootId</span> = <span class="var-default">1</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$root_id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBaseQuery" title="details" class="method-name">setBaseQuery</a>
+											(<span class="var-type"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>&nbsp;<span class="var-name">$query</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTableDefinition" title="details" class="method-name">setTableDefinition</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Tree/Doctrine_Tree.html">Doctrine_Tree</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#var$options">Doctrine_Tree::$options</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#var$table">Doctrine_Tree::$table</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#var$_baseComponent">Doctrine_Tree::$_baseComponent</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">45</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">constructor, creates tree with reference to table and sets default root options</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Doctrine_Tree_NestedSet</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$table</span><span class="var-description">: instance of Doctrine_Table</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: options</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Tree/Doctrine_Tree.html#method__construct">Doctrine_Tree::__construct()</a></dt>
+						<dd>constructor, creates tree with reference to table and any options</dd>
+					</dl>
+			
+	</div>
+<a name="methodcreateRoot" id="createRoot"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">createRoot</span> (line <span class="line-number">87</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates root node from given record or from a new record.</p>
+<p class="description"><p>Note: When using a tree with multiple root nodes (hasManyRoots), you MUST pass in a  record to use as the root. This can either be a new/transient record that already has  the root id column set to some numeric value OR a persistent record. In the latter case  the records id will be assigned to the root id. You must use numeric columns for the id  and root id columns.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			createRoot
+		</span>
+					([<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$record</span><span class="var-description">: instance of Doctrine_Record</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Tree/Doctrine_Tree_Interface.html#methodcreateRoot">Doctrine_Tree_Interface::createRoot()</a></dt>
+						<dd>creates root node from given record or from a new record</dd>
+					</dl>
+			
+	</div>
+<a name="methodfetchBranch" id="fetchBranch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchBranch</span> (line <span class="line-number">200</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a branch of a tree.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The branch or FALSE if the branch could not be found.</li>
+				<li><span class="field">todo:</span> Only fetch the lft and rgt values of the initial record. more is not needed.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			fetchBranch
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$pk</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$hydrationMode</span> = <span class="var-default">null</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$fetchmode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$pk</span><span class="var-description">: primary key as used by table::find() to locate node to traverse tree from</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: Options.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$fetchmode</span><span class="var-description">: One of the Doctrine_Core::HYDRATE_* constants.</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$hydrationMode</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Tree/Doctrine_Tree_Interface.html#methodfetchBranch">Doctrine_Tree_Interface::fetchBranch()</a></dt>
+						<dd>optimised method that returns iterator for traversal of the tree from the given record primary key</dd>
+					</dl>
+			
+	</div>
+<a name="methodfetchRoot" id="fetchRoot"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchRoot</span> (line <span class="line-number">125</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a/the root node.</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Better $rootid = null and exception if $rootId == null &amp;&amp; hasManyRoots?        Fetching with id = 1 is too magical and cant work reliably anyway.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			fetchRoot
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$rootId</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$rootId</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Tree/Doctrine_Tree_Interface.html#methodfetchRoot">Doctrine_Tree_Interface::fetchRoot()</a></dt>
+						<dd>returns root node</dd>
+					</dl>
+			
+	</div>
+<a name="methodfetchRoots" id="fetchRoots"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchRoots</span> (line <span class="line-number">230</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches all root nodes. If the tree has only one root this is the same as  fetchRoot().</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The root nodes.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			fetchRoots
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodfetchTree" id="fetchTree"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchTree</span> (line <span class="line-number">158</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a tree.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The tree or FALSE if the tree could not be found.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			fetchTree
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$hydrationMode</span> = <span class="var-default">null</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$fetchmode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: Options</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$fetchmode</span><span class="var-description">: One of the Doctrine_Core::HYDRATE_* constants.</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$hydrationMode</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Tree/Doctrine_Tree_Interface.html#methodfetchTree">Doctrine_Tree_Interface::fetchTree()</a></dt>
+						<dd>optimised method to returns iterator for traversal of the entire tree from root</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetBaseAlias" id="getBaseAlias"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getBaseAlias</span> (line <span class="line-number">276</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enter description here...</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getBaseAlias
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetBaseQuery" id="getBaseQuery"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getBaseQuery</span> (line <span class="line-number">264</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enter description here...</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">unknown</span>
+		<span class="method-name">
+			getBaseQuery
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodresetBaseQuery" id="resetBaseQuery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">resetBaseQuery</span> (line <span class="line-number">313</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enter description here...</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			resetBaseQuery
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreturnQueryWithRootId" id="returnQueryWithRootId"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">returnQueryWithRootId</span> (line <span class="line-number">244</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns parsed query with root id where clause added if applicable</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			returnQueryWithRootId
+		</span>
+					(<span class="var-type">object</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$rootId</span> = <span class="var-default">1</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$root_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$query</span><span class="var-description">: Doctrine_Query</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$root_id</span><span class="var-description">: id of destination root</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$rootId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetBaseQuery" id="setBaseQuery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBaseQuery</span> (line <span class="line-number">299</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enter description here...</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBaseQuery
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>&nbsp;<span class="var-name">$query</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+				<span class="var-name">$query</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTableDefinition" id="setTableDefinition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTableDefinition</span> (line <span class="line-number">61</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">used to define table attributes required for the NestetSet implementation</p>
+<p class="description"><p>adds lft and rgt columns for corresponding left and right values</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTableDefinition
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Tree/Doctrine_Tree.html#methodsetTableDefinition">Doctrine_Tree::setTableDefinition()</a></dt>
+						<dd>Used to define table attributes required for the given implementation</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Tree/Doctrine_Tree.html">Doctrine_Tree</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#method__construct">Doctrine_Tree::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#methodfactory">Doctrine_Tree::factory()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#methodgetAttribute">Doctrine_Tree::getAttribute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#methodgetBaseComponent">Doctrine_Tree::getBaseComponent()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#methodsetAttribute">Doctrine_Tree::setAttribute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#methodsetTableDefinition">Doctrine_Tree::setTableDefinition()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Tree/Doctrine_Tree.html#methodsetUp">Doctrine_Tree::setUp()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:51 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

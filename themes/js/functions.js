@@ -678,7 +678,9 @@ $(document).ready(function(){
             divPicker.slideUp();
         });
     });
-
+    $('.delete-button').click(function(){
+        return confirm('Atención: esto dejará todos los slots de horario con aula asignada sin aula. ¿Estás seguro de que quieres hacerlo?');
+    });
     $('#side_bar h3').click(function(){
         $(this).next().slideToggle("fast");
         return false;

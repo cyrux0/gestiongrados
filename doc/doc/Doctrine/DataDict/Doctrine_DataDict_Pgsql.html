@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_DataDict_Pgsql</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_DataDict_Pgsql</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">author:</span> Paul Cooper &lt;<a href="mailto:pgc@ucecom.com">pgc@ucecom.com</a>&gt;</li>
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Lukas Smith &lt;<a href="mailto:smith@pooteeweet.org">smith@pooteeweet.org</a>&gt; (PEAR MDB2 library)</li>
+				<li><span class="field">version:</span> $Revision: 7641 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---DataDict---Pgsql.php.html">/helpers/Doctrine/DataDict/Pgsql.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a>
+   |
+   --<a href="../../Doctrine/DataDict/Doctrine_DataDict.html">Doctrine_DataDict</a>
+      |
+      --Doctrine_DataDict_Pgsql</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+												<div class="var-title">
+					static <span class="var-type">mixed</span>
+					<a href="#$reservedKeyWords" title="details" class="var-name">$reservedKeyWords</a>
+				</div>
+																							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																				
+												<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getIntegerDeclaration" title="details" class="method-name">getIntegerDeclaration</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$field</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getNativeDeclaration" title="details" class="method-name">getNativeDeclaration</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$field</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getPortableDeclaration" title="details" class="method-name">getPortableDeclaration</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$field</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#parseBoolean" title="details" class="method-name">parseBoolean</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$reservedKeyWords" id="$reservedKeyWords"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			static <span class="var-type">mixed</span>
+			<span class="var-name">$reservedKeyWords</span>
+			 = <span class="var-default">array(<br />                                        'abort',<br />                                        'absolute',<br />                                        'access',<br />                                        'action',<br />                                        'add',<br />                                        'after',<br />                                        'aggregate',<br />                                        'all',<br />                                        'alter',<br />                                        'analyse',<br />                                        'analyze',<br />                                        'and',<br />                                        'any',<br />                                        'as',<br />                                        'asc',<br />                                        'assertion',<br />                                        'assignment',<br />                                        'at',<br />                                        'authorization',<br />                                        'backward',<br />                                        'before',<br />                                        'begin',<br />                                        'between',<br />                                        'bigint',<br />                                        'binary',<br />                                        'bit',<br />                                        'boolean',<br />                                        'both',<br />                                        'by',<br />                                        'cache',<br />                                        'called',<br />                                        'cascade',<br />                                        'case',<br />                                        'cast',<br />                                        'chain',<br />                                        'char',<br />                                        'character',<br />                                        'characteristics',<br />                                        'check',<br />                                        'checkpoint',<br />                                        'class',<br />                                        'close',<br />                                        'cluster',<br />                                        'coalesce',<br />                                        'collate',<br />                                        'column',<br />                                        'comment',<br />                                        'commit',<br />                                        'committed',<br />                                        'constraint',<br />                                        'constraints',<br />                                        'conversion',<br />                                        'convert',<br />                                        'copy',<br />                                        'create',<br />                                        'createdb',<br />                                        'createuser',<br />                                        'cross',<br />                                        'current_date',<br />                                        'current_time',<br />                                        'current_timestamp',<br />                                        'current_user',<br />                                        'cursor',<br />                                        'cycle',<br />                                        'database',<br />                                        'day',<br />                                        'deallocate',<br />                                        'dec',<br />                                        'decimal',<br />                                        'declare',<br />                                        'default',<br />                                        'deferrable',<br />                                        'deferred',<br />                                        'definer',<br />                                        'delete',<br />                                        'delimiter',<br />                                        'delimiters',<br />                                        'desc',<br />                                        'distinct',<br />                                        'do',<br />                                        'domain',<br />                                        'double',<br />                                        'drop',<br />                                        'each',<br />                                        'else',<br />                                        'encoding',<br />                                        'encrypted',<br />                                        'end',<br />                                        'escape',<br />                                        'except',<br />                                        'exclusive',<br />                                        'execute',<br />                                        'exists',<br />                                        'explain',<br />                                        'external',<br />                                        'extract',<br />                                        'false',<br />                                        'fetch',<br />                                        'float',<br />                                        'for',<br />                                        'force',<br />                                        'foreign',<br />                                        'forward',<br />                                        'freeze',<br />                                        'from',<br />                                        'full',<br />                                        'function',<br />                                        'get',<br />                                        'global',<br />                                        'grant',<br />                                        'group',<br />                                        'handler',<br />                                        'having',<br />                                        'hour',<br />                                        'ilike',<br />                                        'immediate',<br />                                        'immutable',<br />                                        'implicit',<br />                                        'in',<br />                                        'increment',<br />                                        'index',<br />                                        'inherits',<br />                                        'initially',<br />                                        'inner',<br />                                        'inout',<br />                                        'input',<br />                                        'insensitive',<br />                                        'insert',<br />                                        'instead',<br />                                        'int',<br />                                        'integer',<br />                                        'intersect',<br />                                        'interval',<br />                                        'into',<br />                                        'invoker',<br />                                        'is',<br />                                        'isnull',<br />                                        'isolation',<br />                                        'join',<br />                                        'key',<br />                                        'lancompiler',<br />                                        'language',<br />                                        'leading',<br />                                        'left',<br />                                        'level',<br />                                        'like',<br />                                        'limit',<br />                                        'listen',<br />                                        'load',<br />                                        'local',<br />                                        'localtime',<br />                                        'localtimestamp',<br />                                        'location',<br />                                        'lock',<br />                                        'match',<br />                                        'maxvalue',<br />                                        'minute',<br />                                        'minvalue',<br />                                        'mode',<br />                                        'month',<br />                                        'move',<br />                                        'names',<br />                                        'national',<br />                                        'natural',<br />                                        'nchar',<br />                                        'new',<br />                                        'next',<br />                                        'no',<br />                                        'nocreatedb',<br />                                        'nocreateuser',<br />                                        'none',<br />                                        'not',<br />                                        'nothing',<br />                                        'notify',<br />                                        'notnull',<br />                                        'null',<br />                                        'nullif',<br />                                        'numeric',<br />                                        'of',<br />                                        'off',<br />                                        'offset',<br />                                        'oids',<br />                                        'old',<br />                                        'on',<br />                                        'only',<br />                                        'operator',<br />                                        'option',<br />                                        'or',<br />                                        'order',<br />                                        'out',<br />                                        'outer',<br />                                        'overlaps',<br />                                        'overlay',<br />                                        'owner',<br />                                        'partial',<br />                                        'password',<br />                                        'path',<br />                                        'pendant',<br />                                        'placing',<br />                                        'position',<br />                                        'precision',<br />                                        'prepare',<br />                                        'primary',<br />                                        'prior',<br />                                        'privileges',<br />                                        'procedural',<br />                                        'procedure',<br />                                        'read',<br />                                        'real',<br />                                        'recheck',<br />                                        'references',<br />                                        'reindex',<br />                                        'relative',<br />                                        'rename',<br />                                        'replace',<br />                                        'reset',<br />                                        'restrict',<br />                                        'returns',<br />                                        'revoke',<br />                                        'right',<br />                                        'rollback',<br />                                        'row',<br />                                        'rule',<br />                                        'schema',<br />                                        'scroll',<br />                                        'second',<br />                                        'security',<br />                                        'select',<br />                                        'sequence',<br />                                        'serializable',<br />                                        'session',<br />                                        'session_user',<br />                                        'set',<br />                                        'setof',<br />                                        'share',<br />                                        'show',<br />                                        'similar',<br />                                        'simple',<br />                                        'smallint',<br />                                        'some',<br />                                        'stable',<br />                                        'start',<br />                                        'statement',<br />                                        'statistics',<br />                                        'stdin',<br />                                        'stdout',<br />                                        'storage',<br />                                        'strict',<br />                                        'substring',<br />                                        'sysid',<br />                                        'table',<br />                                        'temp',<br />                                        'template',<br />                                        'temporary',<br />                                        'then',<br />                                        'time',<br />                                        'timestamp',<br />                                        'to',<br />                                        'toast',<br />                                        'trailing',<br />                                        'transaction',<br />                                        'treat',<br />                                        'trigger',<br />                                        'trim',<br />                                        'true',<br />                                        'truncate',<br />                                        'trusted',<br />                                        'type',<br />                                        'unencrypted',<br />                                        'union',<br />                                        'unique',<br />                                        'unknown',<br />                                        'unlisten',<br />                                        'until',<br />                                        'update',<br />                                        'usage',<br />                                        'user',<br />                                        'using',<br />                                        'vacuum',<br />                                        'valid',<br />                                        'validator',<br />                                        'values',<br />                                        'varchar',<br />                                        'varying',<br />                                        'verbose',<br />                                        'version',<br />                                        'view',<br />                                        'volatile',<br />                                        'when',<br />                                        'where',<br />                                        'with',<br />                                        'without',<br />                                        'work',<br />                                        'write',<br />                                        'year',<br />                                        'zone'<br />                                        )</span>			(line <span class="line-number">38</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$conn">Doctrine_Connection_Module::$conn</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$moduleName">Doctrine_Connection_Module::$moduleName</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodgetIntegerDeclaration" id="getIntegerDeclaration"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getIntegerDeclaration</span> (line <span class="line-number">639</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Obtain DBMS specific SQL code portion needed to declare an integer type  field to be used in statements like CREATE TABLE.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> DBMS specific SQL code portion that should be used to        declare the specified field.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getIntegerDeclaration
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: name the field to be declared.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$field</span><span class="var-description">: <p>associative array with the name of the properties        of the field being declared as array indexes. Currently, the types        of supported field properties are as follows:</p><p>unsigned            Boolean flag that indicates whether the field should be            declared as unsigned integer if possible.</p><p>default            Integer value to be used as default for this field.</p><p>notnull            Boolean flag that indicates whether this field is constrained            to not be set to null.</p></span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetNativeDeclaration" id="getNativeDeclaration"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getNativeDeclaration</span> (line <span class="line-number">360</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Obtain DBMS specific SQL code portion needed to declare an text type  field to be used in statements like CREATE TABLE.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> DBMS specific SQL code portion that should be used to       declare the specified field.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getNativeDeclaration
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$field</span><span class="var-description">: <p>associative array with the name of the properties       of the field being declared as array indexes. Currently, the types       of supported field properties are as follows:</p><p>length           Integer value that determines the maximum length of the text           field. If this argument is missing the field should be           declared to have the longest length allowed by the DBMS.</p><p>default           Text value to be used as default for this field.</p><p>notnull           Boolean flag that indicates whether this field is constrained           to not be set to null.</p></span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPortableDeclaration" id="getPortableDeclaration"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPortableDeclaration</span> (line <span class="line-number">445</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Maps a native array description of a field to a portable Doctrine datatype and length</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> containing the various possible types, length, sign, fixed</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getPortableDeclaration
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$field</span><span class="var-description">: native field description</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparseBoolean" id="parseBoolean"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">parseBoolean</span> (line <span class="line-number">682</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">parseBoolean  parses a literal boolean value and returns  proper sql equivalent</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> parsed boolean value</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			parseBoolean
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: boolean value to be parsed</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/DataDict/Doctrine_DataDict.html#methodparseBoolean">Doctrine_DataDict::parseBoolean()</a></dt>
+						<dd>parseBoolean  parses a literal boolean value and returns  proper sql equivalent</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/DataDict/Doctrine_DataDict.html">Doctrine_DataDict</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/DataDict/Doctrine_DataDict.html#methodparseBoolean">Doctrine_DataDict::parseBoolean()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#method__construct">Doctrine_Connection_Module::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetConnection">Doctrine_Connection_Module::getConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetModuleName">Doctrine_Connection_Module::getModuleName()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:09:02 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

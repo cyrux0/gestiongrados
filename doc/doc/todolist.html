@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Todo List</title>
+			<link rel="stylesheet" href="media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<div align="center"><h1>Todo List</h1></div>
+<h2>Doctrine</h2>
+<h3><a href="Doctrine/Transaction/Doctrine_Transaction.html#var$invalid">Doctrine_Transaction::$invalid</a></h3>
+<ul>
+    <li>What about a more verbose name? $invalidRecords?</li>
+</ul>
+<h3><a href="Doctrine/Record/Doctrine_Record.html#var$_modified">Doctrine_Record::$_modified</a></h3>
+<ul>
+    <li>Better name? $_modifiedFields?</li>
+</ul>
+<h3><a href="Doctrine/Query/_helpers---Doctrine---Query---Abstract.php.html">Abstract.php</a></h3>
+<ul>
+    <li>See <a href="Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></li>
+</ul>
+<h3><a href="Doctrine/Table/Doctrine_Table.html#methodaddRecord">Doctrine_Table::addRecord()</a></h3>
+<ul>
+    <li>Better name? registerRecord?</li>
+</ul>
+<h3><a href="Doctrine/Table/Doctrine_Table.html#methodbind">Doctrine_Table::bind()</a></h3>
+<ul>
+    <li>Name proposal: addRelation</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodbuildInheritanceJoinSql">Doctrine_Query::buildInheritanceJoinSql()</a></h3>
+<ul>
+    <li>DESCRIBE ME!</li>
+</ul>
+<h3><a href="Doctrine/Table/Doctrine_Table.html#methodclear">Doctrine_Table::clear()</a></h3>
+<ul>
+    <li>what about a more descriptive name? clearIdentityMap?</li>
+</ul>
+<h3><a href="Doctrine/Relation/Doctrine_Relation_Parser.html#methodcompleteDefinition">Doctrine_Relation_Parser::completeDefinition()</a></h3>
+<ul>
+    <li>Description: What does it mean to complete a definition? What is done (not how)?        Refactor (too long &amp; nesting level)</li>
+</ul>
+<h3><a href="Doctrine/Record/Doctrine_Record.html#methodcoreSetRelated">Doctrine_Record::coreSetRelated()</a></h3>
+<ul>
+    <li>Refactor. What about composite keys?</li>
+</ul>
+<h3><a href="Doctrine/Manager/Doctrine_Manager.html#methodcreateDatabases">Doctrine_Manager::createDatabases()</a></h3>
+<ul>
+    <li>package:dbal</li>
+</ul>
+<h3><a href="Doctrine/Node/Doctrine_Node_NestedSet.html#methoddelete">Doctrine_Node_NestedSet::delete()</a></h3>
+<ul>
+    <li>Delete more efficiently. Wrap in transaction if needed.</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></h3>
+<ul>
+    <li>Proposal: This class does far too much. It should have only 1 task: Collecting               the DQL query parts and the query parameters (the query state and caching options/methods               can remain here, too).               The actual SQL construction could be done by a separate object (Doctrine_Query_SqlBuilder?)               whose task it is to convert DQL into SQL.               Furthermore the SqlBuilder? can then use other objects (Doctrine_Query_Tokenizer?),               (Doctrine_Query_Parser(s)?) to accomplish his work. Doctrine_Query does not need               to know the tokenizer/parsers. There could be extending               implementations of SqlBuilder? that cover the specific SQL dialects.               This would release Doctrine_Connection and the Doctrine_Connection_xxx classes               from this tedious task.               This would also largely reduce the currently huge interface of Doctrine_Query(_Abstract)               and better hide all these transformation internals from the public Query API.</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></h3>
+<ul>
+    <li>See <a href="Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></li>
+</ul>
+<h3><a href="Doctrine/Relation/Doctrine_Relation_Parser.html">Doctrine_Relation_Parser</a></h3>
+<ul>
+    <li>Composite key support?</li>
+</ul>
+<h3><a href="Doctrine/Manager/Doctrine_Manager.html#methoddropDatabases">Doctrine_Manager::dropDatabases()</a></h3>
+<ul>
+    <li>package:dbal</li>
+</ul>
+<h3><a href="Doctrine/Tree/Doctrine_Tree_NestedSet.html#methodfetchBranch">Doctrine_Tree_NestedSet::fetchBranch()</a></h3>
+<ul>
+    <li>Only fetch the lft and rgt values of the initial record. more is not needed.</li>
+</ul>
+<h3><a href="Doctrine/Tree/Doctrine_Tree_NestedSet.html#methodfetchRoot">Doctrine_Tree_NestedSet::fetchRoot()</a></h3>
+<ul>
+    <li>Better $rootid = null and exception if $rootId == null &amp;&amp; hasManyRoots?        Fetching with id = 1 is too magical and cant work reliably anyway.</li>
+</ul>
+<h3><a href="Doctrine/Table/Doctrine_Table.html#methodfindBySql">Doctrine_Table::findBySql()</a></h3>
+<ul>
+    <li>This actually takes DQL, not SQL, but it requires column names        instead of field names. This should be fixed to use raw SQL instead.</li>
+</ul>
+<h3><a href="Doctrine/Table/Doctrine_Table.html#methodgetClassnameToReturn">Doctrine_Table::getClassnameToReturn()</a></h3>
+<ul>
+    <li>this function could use reflection to check the first time it runs  if the subclassing option is not set.</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodgetExpressionOwner">Doctrine_Query::getExpressionOwner()</a></h3>
+<ul>
+    <li>Description: What does it mean if a component is an 'owner' of an expression?        What kind of 'expression' are we talking about here?</li>
+</ul>
+<h3><a href="Doctrine/Record/Doctrine_Record.html#methodgetIncremented">Doctrine_Record::getIncremented()</a></h3>
+<ul>
+    <li>Better name?</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodgetLimitSubquery">Doctrine_Query::getLimitSubquery()</a></h3>
+<ul>
+    <li>A little refactor to make the method easier to understand &amp; maybe shorter?</li>
+</ul>
+<h3><a href="Doctrine/Record/Doctrine_Record.html#methodgetPrepared">Doctrine_Record::getPrepared()</a></h3>
+<ul>
+    <li>What about a little bit more expressive name? getPreparedData?</li>
+</ul>
+<h3><a href="Doctrine/Node/Doctrine_Node_NestedSet.html#methodinsertAsFirstChildOf">Doctrine_Node_NestedSet::insertAsFirstChildOf()</a></h3>
+<ul>
+    <li>Wrap in transaction</li>
+</ul>
+<h3><a href="Doctrine/Node/Doctrine_Node_NestedSet.html#methodinsertAsLastChildOf">Doctrine_Node_NestedSet::insertAsLastChildOf()</a></h3>
+<ul>
+    <li>Wrap in transaction</li>
+</ul>
+<h3><a href="Doctrine/Node/Doctrine_Node_NestedSet.html#methodinsertAsNextSiblingOf">Doctrine_Node_NestedSet::insertAsNextSiblingOf()</a></h3>
+<ul>
+    <li>Wrap in transaction</li>
+</ul>
+<h3><a href="Doctrine/Node/Doctrine_Node_NestedSet.html#methodinsertAsParentOf">Doctrine_Node_NestedSet::insertAsParentOf()</a></h3>
+<ul>
+    <li>Wrap in transaction</li>
+</ul>
+<h3><a href="Doctrine/Node/Doctrine_Node_NestedSet.html#methodinsertAsPrevSiblingOf">Doctrine_Node_NestedSet::insertAsPrevSiblingOf()</a></h3>
+<ul>
+    <li>Wrap in transaction</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodload">Doctrine_Query::load()</a></h3>
+<ul>
+    <li>Describe &amp; refactor... too long and nested.</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodloadRoot">Doctrine_Query::loadRoot()</a></h3>
+<ul>
+    <li>DESCRIBE ME!</li>
+    <li>this method is called only in Doctrine_Query class. Shouldn't be private or protected?</li>
+</ul>
+<h3><a href="Doctrine/Node/Doctrine_Node_NestedSet.html#methodmakeRoot">Doctrine_Node_NestedSet::makeRoot()</a></h3>
+<ul>
+    <li>Exception handling/wrapping</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodparseClause">Doctrine_Query::parseClause()</a></h3>
+<ul>
+    <li>Description: What is a 'dql clause' (and what not)?        Refactor: Too long &amp; nesting level</li>
+</ul>
+<h3><a href="Doctrine/Manager/Doctrine_Manager.html#methodparseDsn">Doctrine_Manager::parseDsn()</a></h3>
+<ul>
+    <li>package:dbal</li>
+</ul>
+<h3><a href="Doctrine/Manager/Doctrine_Manager.html#methodparsePdoDsn">Doctrine_Manager::parsePdoDsn()</a></h3>
+<ul>
+    <li>package:dbal</li>
+</ul>
+<h3><a href="Doctrine/Relation/_helpers---Doctrine---Relation---Parser.php.html">Parser.php</a></h3>
+<ul>
+    <li>Composite key support?</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodparseSelect">Doctrine_Query::parseSelect()</a></h3>
+<ul>
+    <li>Description: What information is extracted (and then stored)?</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodparseSelectField">Doctrine_Query::parseSelectField()</a></h3>
+<ul>
+    <li>Description: Explain what this method does. Is there a relation to parseSelect()?        This method is not used from any class or testcase in the Doctrine package.</li>
+</ul>
+<h3><a href="Doctrine/Cli/Doctrine_Cli.html#methodprepareArgs">Doctrine_Cli::prepareArgs()</a></h3>
+<ul>
+    <li>Continue refactoring for testing</li>
+</ul>
+<h3><a href="Doctrine/Cli/Doctrine_Cli.html#methodprintTasks">Doctrine_Cli::printTasks()</a></h3>
+<ul>
+    <li>Continue refactoring for testing</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodprocessPendingAggregates">Doctrine_Query::processPendingAggregates()</a></h3>
+<ul>
+    <li>Better description. i.e. What is a 'pending aggregate'? What does 'processed' mean?</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodprocessPendingFields">Doctrine_Query::processPendingFields()</a></h3>
+<ul>
+    <li>Description: What is a 'pending field' (and are there non-pending fields, too)?        What is 'processed'? (Meaning: What information is gathered &amp; stored away)</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query.html#methodprocessPendingSubqueries">Doctrine_Query::processPendingSubqueries()</a></h3>
+<ul>
+    <li>Better description. i.e. What is a 'pending subquery'? What does 'processed' mean?        (parsed? sql is constructed? some information is gathered?)</li>
+</ul>
+<h3><a href="Doctrine/Query/_helpers---Doctrine---Query.php.html">Query.php</a></h3>
+<ul>
+    <li>Proposal: This class does far too much. It should have only 1 task: Collecting               the DQL query parts and the query parameters (the query state and caching options/methods               can remain here, too).               The actual SQL construction could be done by a separate object (Doctrine_Query_SqlBuilder?)               whose task it is to convert DQL into SQL.               Furthermore the SqlBuilder? can then use other objects (Doctrine_Query_Tokenizer?),               (Doctrine_Query_Parser(s)?) to accomplish his work. Doctrine_Query does not need               to know the tokenizer/parsers. There could be extending               implementations of SqlBuilder? that cover the specific SQL dialects.               This would release Doctrine_Connection and the Doctrine_Connection_xxx classes               from this tedious task.               This would also largely reduce the currently huge interface of Doctrine_Query(_Abstract)               and better hide all these transformation internals from the public Query API.</li>
+</ul>
+<h3><a href="Doctrine/Transaction/Doctrine_Transaction.html#methodrollback">Doctrine_Transaction::rollback()</a></h3>
+<ul>
+    <li>Shouldnt this method only commit a rollback if the transactionLevel is 1        (STATE_ACTIVE)? Explanation: Otherwise a rollback that is triggered from inside doctrine        in an (emulated) nested transaction would lead to a complete database level        rollback even though the client code did not yet want to do that.        In other words: if the user starts a transaction doctrine shouldnt roll it back.        Doctrine should only roll back transactions started by doctrine. Thoughts?</li>
+</ul>
+<h3><a href="Doctrine/Cli/Doctrine_Cli.html#methodrun">Doctrine_Cli::run()</a></h3>
+<ul>
+    <li>Should know more about what we're attempting to run so feedback can be improved. Continue refactoring.</li>
+</ul>
+<h3><a href="Doctrine/Connection/Doctrine_Connection.html#methodsetAttribute">Doctrine_Connection::setAttribute()</a></h3>
+<ul>
+    <li>why check for &gt;= 100? has this any special meaning when creating  attributes?</li>
+</ul>
+<h3><a href="Doctrine/Hydrate/Doctrine_Hydrator_RecordDriver.html#methodsetLastElement">Doctrine_Hydrator_RecordDriver::setLastElement()</a></h3>
+<ul>
+    <li>Detailed documentation</li>
+</ul>
+<h3><a href="Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#method_getClassnameToReturn">Doctrine_Hydrator_Graph::_getClassnameToReturn()</a></h3>
+<ul>
+    <li>this function could use reflection to check the first time it runs  if the subclassing option is not set.</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query_Abstract.html#method_getParser">Doctrine_Query_Abstract::_getParser()</a></h3>
+<ul>
+    <li>Doc/Description: What is the parameter for? Which parsers are available?</li>
+</ul>
+<h3><a href="Doctrine/Query/Doctrine_Query_Abstract.html#method_processDqlQueryPart">Doctrine_Query_Abstract::_processDqlQueryPart()</a></h3>
+<ul>
+    <li>Better description. &quot;parses given query part&quot; ??? Then wheres the difference        between process/parseQueryPart? I suppose this does something different.</li>
+</ul>
+<h3><a href="Doctrine/Cli/Doctrine_Cli.html#method_run">Doctrine_Cli::_run()</a></h3>
+<ul>
+    <li>Continue refactoring for testing</li>
+</ul>
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:09:31 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</body>
+</html>

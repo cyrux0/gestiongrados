@@ -1,0 +1,1871 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Expression_Driver</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Expression_Driver</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Expression_Driver</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision$</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Expression---Driver.php.html">/helpers/Doctrine/Expression/Driver.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a>
+   |
+   --Doctrine_Expression_Driver</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-vars">Vars</a>
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Expression/Doctrine_Expression_Mock.html">Doctrine_Expression_Mock</a></td>
+					<td>
+											Doctrine_Expression_Mock  Mock driver that is used for testing purposes
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Expression/Doctrine_Expression_Mssql.html">Doctrine_Expression_Mssql</a></td>
+					<td>
+											Doctrine_Expression_Mssql
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Expression/Doctrine_Expression_Mysql.html">Doctrine_Expression_Mysql</a></td>
+					<td>
+											Doctrine_Expression_Mysql
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Expression/Doctrine_Expression_Oracle.html">Doctrine_Expression_Oracle</a></td>
+					<td>
+											Doctrine_Expression_Sqlite
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Expression/Doctrine_Expression_Pgsql.html">Doctrine_Expression_Pgsql</a></td>
+					<td>
+											Doctrine_Expression_Pgsql
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Expression/Doctrine_Expression_Sqlite.html">Doctrine_Expression_Sqlite</a></td>
+					<td>
+											Doctrine_Expression_Sqlite
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#acos" title="details" class="method-name">acos</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#add" title="details" class="method-name">add</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#avg" title="details" class="method-name">avg</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#between" title="details" class="method-name">between</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expression</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#coalesce" title="details" class="method-name">coalesce</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#concat" title="details" class="method-name">concat</a>
+											(<span class="var-type">string|array(string)</span>&nbsp;<span class="var-name">0</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#cos" title="details" class="method-name">cos</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#count" title="details" class="method-name">count</a>
+											(<span class="var-type">string|integer</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#div" title="details" class="method-name">div</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#eq" title="details" class="method-name">eq</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getIdentifier" title="details" class="method-name">getIdentifier</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getIdentifiers" title="details" class="method-name">getIdentifiers</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$columns</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#gt" title="details" class="method-name">gt</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#gte" title="details" class="method-name">gte</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#guid" title="details" class="method-name">guid</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#in" title="details" class="method-name">in</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string|array(string)</span>&nbsp;<span class="var-name">$values</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#isNotNull" title="details" class="method-name">isNotNull</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expression</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#isNull" title="details" class="method-name">isNull</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expression</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#length" title="details" class="method-name">length</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$expression1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$expression2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#locate" title="details" class="method-name">locate</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$substr</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#lower" title="details" class="method-name">lower</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#lt" title="details" class="method-name">lt</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#lte" title="details" class="method-name">lte</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#ltrim" title="details" class="method-name">ltrim</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#max" title="details" class="method-name">max</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#md5" title="details" class="method-name">md5</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#min" title="details" class="method-name">min</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#mod" title="details" class="method-name">mod</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expression1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$expression2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#mul" title="details" class="method-name">mul</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#neq" title="details" class="method-name">neq</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#not" title="details" class="method-name">not</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$expression</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#now" title="details" class="method-name">now</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#pi" title="details" class="method-name">pi</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#regexp" title="details" class="method-name">regexp</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#round" title="details" class="method-name">round</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$column</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$decimals</span> = <span class="var-default">0</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$expression1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$expression2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#rtrim" title="details" class="method-name">rtrim</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sin" title="details" class="method-name">sin</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#soundex" title="details" class="method-name">soundex</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#sub" title="details" class="method-name">sub</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#substring" title="details" class="method-name">substring</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$from</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$len</span> = <span class="var-default">null</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$position</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#sum" title="details" class="method-name">sum</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#trim" title="details" class="method-name">trim</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#upper" title="details" class="method-name">upper</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__call" title="details" class="method-name">__call</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$m</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$a</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$conn">Doctrine_Connection_Module::$conn</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$moduleName">Doctrine_Connection_Module::$moduleName</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodacos" id="acos"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">acos</span> (line <span class="line-number">585</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns arcus cosine SQL string</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			acos
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodadd" id="add"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">add</span> (line <span class="line-number">360</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to add values or expressions together.</p>
+<p class="description"><p>add() accepts an arbitrary number of parameters. Each parameter  must contain a value or an expression or an array with values or  expressions.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> an expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			add
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array(string)</span>
+				<span class="var-name">$args</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodavg" id="avg"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">avg</span> (line <span class="line-number">62</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the average value of a column</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> generated sql including an AVG aggregate function</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			avg
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: the column to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbetween" id="between"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">between</span> (line <span class="line-number">562</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns SQL that checks if an expression evaluates to a value between  two values.</p>
+<p class="description"><p>The parameter $expression is checked if it is between $value1 and $value2.</p><p>Note: There is a slight difference in the way BETWEEN works on some databases.  http://www.w3schools.com/sql/sql_between.asp. If you want complete database  independence you should avoid using between().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			between
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expression</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expression</span><span class="var-description">: the value to compare to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value1</span><span class="var-description">: the lower value to compare with</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value2</span><span class="var-description">: the higher value to compare with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcoalesce" id="coalesce"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">coalesce</span> (line <span class="line-number">627</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">coalesce</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			coalesce
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodconcat" id="concat"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">concat</span> (line <span class="line-number">307</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a series of strings concatinated</p>
+<p class="description"><p>concat() accepts an arbitrary number of parameters. Each parameter  must contain an expression or an array with expressions.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			concat
+		</span>
+					(<span class="var-type">string|array(string)</span>&nbsp;<span class="var-name">0</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array(string)</span>
+				<span class="var-name">0</span><span class="var-description">: strings that will be concatinated.</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Mssql.html#methodconcat">Doctrine_Expression_Mssql::concat()</a>
+								: Returns string to concatenate two or more string parameters
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Oracle.html#methodconcat">Doctrine_Expression_Oracle::concat()</a>
+								: Returns a series of strings concatinated
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Pgsql.html#methodconcat">Doctrine_Expression_Pgsql::concat()</a>
+								: PostgreSQLs CONCAT() function
+							</li>
+				</ul>
+	</div>
+<a name="methodcos" id="cos"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">cos</span> (line <span class="line-number">617</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">cos</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			cos
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcount" id="count"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">count</span> (line <span class="line-number">77</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of rows (without a NULL value) of a column</p>
+<p class="description"><p>If a '*' is used instead of a column the number of selected rows  is returned.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> generated sql including a COUNT aggregate function</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			count
+		</span>
+					(<span class="var-type">string|integer</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|integer</span>
+				<span class="var-name">$column</span><span class="var-description">: the column to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddiv" id="div"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">div</span> (line <span class="line-number">405</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to divide values or expressions by eachother.</p>
+<p class="description"><p>divide() accepts an arbitrary number of parameters. Each parameter  must contain a value or an expression or an array with values or  expressions.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> an expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			div
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array(string)</span>
+				<span class="var-name">$args</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodeq" id="eq"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">eq</span> (line <span class="line-number">417</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to check if two values are equal.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			eq
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value1</span><span class="var-description">: logical expression to compare</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value2</span><span class="var-description">: logical expression to compare with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetIdentifier" id="getIdentifier"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getIdentifier</span> (line <span class="line-number">35</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getIdentifier
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$column</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetIdentifiers" id="getIdentifiers"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getIdentifiers</span> (line <span class="line-number">40</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getIdentifiers
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$columns</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$columns</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgt" id="gt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">gt</span> (line <span class="line-number">445</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to check if one value is greater than another value.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			gt
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value1</span><span class="var-description">: logical expression to compare</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value2</span><span class="var-description">: logical expression to compare with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgte" id="gte"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">gte</span> (line <span class="line-number">460</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to check if one value is greater than or equal to  another value.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			gte
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value1</span><span class="var-description">: logical expression to compare</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value2</span><span class="var-description">: logical expression to compare with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodguid" id="guid"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">guid</span> (line <span class="line-number">575</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns global unique identifier</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> to get global unique identifier</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			guid
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Mssql.html#methodguid">Doctrine_Expression_Mssql::guid()</a>
+								: Returns global unique identifier
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Mysql.html#methodguid">Doctrine_Expression_Mysql::guid()</a>
+								: Returns global unique identifier
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Oracle.html#methodguid">Doctrine_Expression_Oracle::guid()</a>
+								: Returns global unique identifier
+							</li>
+				</ul>
+	</div>
+<a name="methodin" id="in"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">in</span> (line <span class="line-number">509</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to check if a value is one in a set of  given values..</p>
+<p class="description"><p>in() accepts an arbitrary number of parameters. The first parameter  must always specify the value that should be matched against. Successive  must contain a logical expression or an array with logical expressions.  These expressions will be matched against the first parameter.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			in
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string|array(string)</span>&nbsp;<span class="var-name">$values</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: the value that should be matched against</span>			</li>
+					<li>
+				<span class="var-type">string|array(string)</span>
+				<span class="var-name">$values</span><span class="var-description">: values that will be matched against $column</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisNotNull" id="isNotNull"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">isNotNull</span> (line <span class="line-number">541</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns SQL that checks if a expression is not null.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			isNotNull
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expression</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expression</span><span class="var-description">: the expression that should be compared to null</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisNull" id="isNull"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isNull</span> (line <span class="line-number">529</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns SQL that checks if a expression is null.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			isNull
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expression</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expression</span><span class="var-description">: the expression that should be compared to null</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlength" id="length"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">length</span> (line <span class="line-number">141</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the length of a text field.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			length
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$expression1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$expression2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expression1</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expression2</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$column</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Mssql.html#methodlength">Doctrine_Expression_Mssql::length()</a>
+								: Returns the length of a text field
+							</li>
+				</ul>
+	</div>
+<a name="methodlocate" id="locate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">locate</span> (line <span class="line-number">246</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">locate  returns the position of the first occurrence of substring $substr in string $str</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			locate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$substr</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$substr</span><span class="var-description">: literal string to find</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: literal string</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Pgsql.html#methodlocate">Doctrine_Expression_Pgsql::locate()</a>
+								: transform locate to position
+							</li>
+				</ul>
+	</div>
+<a name="methodlower" id="lower"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">lower</span> (line <span class="line-number">233</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lower  Returns the string $str with all characters changed to  lowercase according to the current character set mapping.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			lower
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: literal string or column name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlt" id="lt"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">lt</span> (line <span class="line-number">474</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to check if one value is less than another value.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			lt
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value1</span><span class="var-description">: logical expression to compare</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value2</span><span class="var-description">: logical expression to compare with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlte" id="lte"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">lte</span> (line <span class="line-number">489</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to check if one value is less than or equal to  another value.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			lte
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value1</span><span class="var-description">: logical expression to compare</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value2</span><span class="var-description">: logical expression to compare with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodltrim" id="ltrim"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">ltrim</span> (line <span class="line-number">207</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">ltrim  returns the string $str with leading space characters removed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			ltrim
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: literal string or column name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmax" id="max"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">max</span> (line <span class="line-number">89</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the highest value of a column</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> generated sql including a MAX aggregate function</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			max
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: the column to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmd5" id="md5"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">md5</span> (line <span class="line-number">128</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the md5 sum of a field.</p>
+<p class="description"><p>Note: Not SQL92, but common functionality</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			md5
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$column</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Pgsql.html#methodmd5">Doctrine_Expression_Pgsql::md5()</a>
+								: Returns the md5 sum of a field.
+							</li>
+				</ul>
+	</div>
+<a name="methodmin" id="min"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">min</span> (line <span class="line-number">101</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the lowest value of a column</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			min
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: the column to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmod" id="mod"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">mod</span> (line <span class="line-number">169</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the remainder of the division operation  $expression1 / $expression2.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			mod
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expression1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$expression2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expression1</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expression2</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmul" id="mul"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">mul</span> (line <span class="line-number">390</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to multiply values or expressions by eachother.</p>
+<p class="description"><p>multiply() accepts an arbitrary number of parameters. Each parameter  must contain a value or an expression or an array with values or  expressions.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> an expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			mul
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array(string)</span>
+				<span class="var-name">$args</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodneq" id="neq"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">neq</span> (line <span class="line-number">431</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to check if two values are unequal.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			neq
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value1</span><span class="var-description">: logical expression to compare</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value2</span><span class="var-description">: logical expression to compare with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnot" id="not"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">not</span> (line <span class="line-number">319</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL for a logical not.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> a logical expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			not
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$expression</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$expression</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnow" id="now"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">now</span> (line <span class="line-number">256</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current system date.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			now
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Mssql.html#methodnow">Doctrine_Expression_Mssql::now()</a>
+								: Return string to call a variable with the current timestamp inside an SQL statement
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Oracle.html#methodnow">Doctrine_Expression_Oracle::now()</a>
+								: Return string to call a variable with the current timestamp inside an SQL statement
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Pgsql.html#methodnow">Doctrine_Expression_Pgsql::now()</a>
+								: Returns the SQL string to return the current system date and time.
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Sqlite.html#methodnow">Doctrine_Expression_Sqlite::now()</a>
+								: Return string to call a variable with the current timestamp inside an SQL statement  There are three special variables for current date and time.
+							</li>
+				</ul>
+	</div>
+<a name="methodpi" id="pi"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">pi</span> (line <span class="line-number">606</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">pi</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			pi
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodregexp" id="regexp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">regexp</span> (line <span class="line-number">51</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">regexp  returns the regular expression operator</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			regexp
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Mysql.html#methodregexp">Doctrine_Expression_Mysql::regexp()</a>
+								: returns the regular expression operator
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Pgsql.html#methodregexp">Doctrine_Expression_Pgsql::regexp()</a>
+								: regexp
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Sqlite.html#methodregexp">Doctrine_Expression_Sqlite::regexp()</a>
+								: returns the regular expression operator
+							</li>
+				</ul>
+	</div>
+<a name="methodround" id="round"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">round</span> (line <span class="line-number">154</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rounds a numeric field to the number of decimals specified.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			round
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$column</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$decimals</span> = <span class="var-default">0</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$expression1</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$expression2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expression1</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expression2</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$column</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$decimals</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrtrim" id="rtrim"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">rtrim</span> (line <span class="line-number">195</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">rtrim  returns the string $str with proceeding space characters removed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			rtrim
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: literal string or column name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsin" id="sin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sin</span> (line <span class="line-number">596</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">sin</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sin
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsoundex" id="soundex"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">soundex</span> (line <span class="line-number">271</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">soundex  Returns a string to call a function to compute the  soundex encoding of a string</p>
+<p class="description"><p>The string &quot;?000&quot; is returned if the argument is NULL.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> SQL soundex function with given parameter</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			soundex
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Mysql.html#methodsoundex">Doctrine_Expression_Mysql::soundex()</a>
+								: Returns soundex from dbms
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Sqlite.html#methodsoundex">Doctrine_Expression_Sqlite::soundex()</a>
+								: soundex  Returns a string to call a function to compute the  soundex encoding of a string
+							</li>
+				</ul>
+	</div>
+<a name="methodsub" id="sub"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sub</span> (line <span class="line-number">375</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL to subtract values or expressions from eachother.</p>
+<p class="description"><p>subtract() accepts an arbitrary number of parameters. Each parameter  must contain a value or an expression or an array with values or  expressions.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> an expression</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			sub
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array(string)</span>
+				<span class="var-name">$args</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsubstring" id="substring"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">substring</span> (line <span class="line-number">288</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">return string to call a function to get a substring inside an SQL statement</p>
+<p class="description"><p>Note: Not SQL92, but common functionality.</p><p>SQLite only supports the 2 parameter variant of this function</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> SQL substring function with given parameters</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			substring
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$from</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$len</span> = <span class="var-default">null</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$position</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: an sql string literal or column name/alias</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$position</span><span class="var-description">: where to start the substring portion</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: the substring portion length</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$from</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$len</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Mssql.html#methodsubstring">Doctrine_Expression_Mssql::substring()</a>
+								: return string to call a function to get a substring inside an SQL statement
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Oracle.html#methodsubstring">Doctrine_Expression_Oracle::substring()</a>
+								: return string to call a function to get a substring inside an SQL statement
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Pgsql.html#methodsubstring">Doctrine_Expression_Pgsql::substring()</a>
+								: Returns part of a string.
+							</li>
+					<li>
+				<a href="../../Doctrine/Expression/Doctrine_Expression_Sqlite.html#methodsubstring">Doctrine_Expression_Sqlite::substring()</a>
+								: return string to call a function to get a substring inside an SQL statement
+							</li>
+				</ul>
+	</div>
+<a name="methodsum" id="sum"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sum</span> (line <span class="line-number">113</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the total sum of a column</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			sum
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: the column to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtrim" id="trim"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">trim</span> (line <span class="line-number">183</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">trim  returns the string $str with leading and proceeding space characters removed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			trim
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: literal string or column name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupper" id="upper"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">upper</span> (line <span class="line-number">220</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">upper  Returns the string $str with all characters changed to  uppercase according to the current character set mapping.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			upper
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: literal string or column name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__call" id="__call"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__call</span> (line <span class="line-number">639</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">__call</p>
+<p class="description"><p>for all native RDBMS functions the function name itself is returned</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__call
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$m</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$a</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$m</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$a</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#method__construct">Doctrine_Connection_Module::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetConnection">Doctrine_Connection_Module::getConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetModuleName">Doctrine_Connection_Module::getModuleName()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:06 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

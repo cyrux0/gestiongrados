@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Expression_Mysql</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Expression_Mysql</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Expression_Mysql</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Expression---Mysql.php.html">/helpers/Doctrine/Expression/Mysql.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a>
+   |
+   --<a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html">Doctrine_Expression_Driver</a>
+      |
+      --Doctrine_Expression_Mysql</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																				
+												<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#day" title="details" class="method-name">day</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#guid" title="details" class="method-name">guid</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#matchPattern" title="details" class="method-name">matchPattern</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$pattern</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$operator</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#month" title="details" class="method-name">month</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#random" title="details" class="method-name">random</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#regexp" title="details" class="method-name">regexp</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#soundex" title="details" class="method-name">soundex</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#year" title="details" class="method-name">year</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$conn">Doctrine_Connection_Module::$conn</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$moduleName">Doctrine_Connection_Module::$moduleName</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodday" id="day"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">day</span> (line <span class="line-number">144</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns day from dbms</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> to get day from dbms</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			day
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodguid" id="guid"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">guid</span> (line <span class="line-number">109</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns global unique identifier</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> to get global unique identifier</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			guid
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodguid">Doctrine_Expression_Driver::guid()</a></dt>
+						<dd>Returns global unique identifier</dd>
+					</dl>
+			
+	</div>
+<a name="methodmatchPattern" id="matchPattern"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">matchPattern</span> (line <span class="line-number">72</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">build a pattern matching string</p>
+<p class="description"><p>EXPERIMENTAL</p><p>WARNING: this function is experimental and may change signature at  any time until labelled as non-experimental</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> SQL pattern</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			matchPattern
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$pattern</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$operator</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$pattern</span><span class="var-description">: even keys are strings, odd are patterns (% and _)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$operator</span><span class="var-description">: optional pattern operator (LIKE, ILIKE and maybe others in the future)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: optional field name that is being matched against                   (might be required when emulating ILIKE)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmonth" id="month"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">month</span> (line <span class="line-number">132</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the month from dbms</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> to get month from dbms</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			month
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrandom" id="random"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">random</span> (line <span class="line-number">50</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">return string to call a function to get random value inside an SQL statement</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> to generate float between 0 and 1</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			random
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodregexp" id="regexp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">regexp</span> (line <span class="line-number">40</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns the regular expression operator</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			regexp
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodregexp">Doctrine_Expression_Driver::regexp()</a></dt>
+						<dd>regexp  returns the regular expression operator</dd>
+					</dl>
+			
+	</div>
+<a name="methodsoundex" id="soundex"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">soundex</span> (line <span class="line-number">156</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns soundex from dbms</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> to get soundex from dbms</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			soundex
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodsoundex">Doctrine_Expression_Driver::soundex()</a></dt>
+						<dd>soundex  Returns a string to call a function to compute the  soundex encoding of a string</dd>
+					</dl>
+			
+	</div>
+<a name="methodyear" id="year"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">year</span> (line <span class="line-number">120</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the year from dbms</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> to get year from dbms</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			year
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html">Doctrine_Expression_Driver</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodacos">Doctrine_Expression_Driver::acos()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodadd">Doctrine_Expression_Driver::add()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodavg">Doctrine_Expression_Driver::avg()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodbetween">Doctrine_Expression_Driver::between()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodcoalesce">Doctrine_Expression_Driver::coalesce()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodconcat">Doctrine_Expression_Driver::concat()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodcos">Doctrine_Expression_Driver::cos()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodcount">Doctrine_Expression_Driver::count()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methoddiv">Doctrine_Expression_Driver::div()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodeq">Doctrine_Expression_Driver::eq()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodgetIdentifier">Doctrine_Expression_Driver::getIdentifier()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodgetIdentifiers">Doctrine_Expression_Driver::getIdentifiers()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodgt">Doctrine_Expression_Driver::gt()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodgte">Doctrine_Expression_Driver::gte()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodguid">Doctrine_Expression_Driver::guid()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodin">Doctrine_Expression_Driver::in()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodisNotNull">Doctrine_Expression_Driver::isNotNull()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodisNull">Doctrine_Expression_Driver::isNull()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodlength">Doctrine_Expression_Driver::length()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodlocate">Doctrine_Expression_Driver::locate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodlower">Doctrine_Expression_Driver::lower()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodlt">Doctrine_Expression_Driver::lt()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodlte">Doctrine_Expression_Driver::lte()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodltrim">Doctrine_Expression_Driver::ltrim()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodmax">Doctrine_Expression_Driver::max()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodmd5">Doctrine_Expression_Driver::md5()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodmin">Doctrine_Expression_Driver::min()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodmod">Doctrine_Expression_Driver::mod()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodmul">Doctrine_Expression_Driver::mul()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodneq">Doctrine_Expression_Driver::neq()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodnot">Doctrine_Expression_Driver::not()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodnow">Doctrine_Expression_Driver::now()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodpi">Doctrine_Expression_Driver::pi()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodregexp">Doctrine_Expression_Driver::regexp()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodround">Doctrine_Expression_Driver::round()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodrtrim">Doctrine_Expression_Driver::rtrim()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodsin">Doctrine_Expression_Driver::sin()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodsoundex">Doctrine_Expression_Driver::soundex()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodsub">Doctrine_Expression_Driver::sub()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodsubstring">Doctrine_Expression_Driver::substring()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodsum">Doctrine_Expression_Driver::sum()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodtrim">Doctrine_Expression_Driver::trim()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#methodupper">Doctrine_Expression_Driver::upper()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html#method__call">Doctrine_Expression_Driver::__call()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#method__construct">Doctrine_Connection_Module::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetConnection">Doctrine_Connection_Module::getConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetModuleName">Doctrine_Connection_Module::getModuleName()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:47 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

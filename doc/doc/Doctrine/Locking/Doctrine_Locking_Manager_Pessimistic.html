@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Locking_Manager_Pessimistic</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Locking_Manager_Pessimistic</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Offline locking of records comes in handy where you need to make sure that  a time-consuming task on a record or many records, which is spread over several  page requests can't be interfered by other users.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Pierre Minnieur &lt;<a href="mailto:pm@pierre-minnieur.de">pm@pierre-minnieur.de</a>&gt;</li>
+				<li><span class="field">author:</span> Roman Borschel &lt;<a href="mailto:roman@code-factory.org">roman@code-factory.org</a>&gt;</li>
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Locking---Manager---Pessimistic.php.html">/helpers/Doctrine/Locking/Manager/Pessimistic.php</a> (line <span class="field">37</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																												
+												<div class="method-definition">
+											<span class="method-result">Doctrine_Locking_Manager_Pessimistic</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>&nbsp;<span class="var-name">$conn</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#getLock" title="details" class="method-name">getLock</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$userIdent</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#getLockOwner" title="details" class="method-name">getLockOwner</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$lockedRecord</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#releaseAgedLocks" title="details" class="method-name">releaseAgedLocks</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$age</span> = <span class="var-default">900</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$objectType</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userIdent</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#releaseLock" title="details" class="method-name">releaseLock</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$userIdent</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">59</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructs a new locking manager object</p>
+<p class="description"><p>When the CREATE_TABLES attribute of the connection on which the manager  is supposed to work on is set to true, the locking table is created.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Doctrine_Locking_Manager_Pessimistic</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>&nbsp;<span class="var-name">$conn</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+				<span class="var-name">$conn</span><span class="var-description">: The database connection to use</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLock" id="getLock"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLock</span> (line <span class="line-number">101</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Obtains a lock on a <a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE if the locking was successful, FALSE if another user                   holds a lock on this record</li>
+				<li><span class="field">throws:</span> Doctrine_Locking_Exception  If the locking failed due to database errors</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getLock
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$userIdent</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$record</span><span class="var-description">: The record that has to be locked</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$userIdent</span><span class="var-description">: A unique identifier of the locking user</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLockOwner" id="getLockOwner"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLockOwner</span> (line <span class="line-number">241</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the identifier that identifies the owner of the lock on the given  record.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The unique user identifier that identifies the owner of the lock.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getLockOwner
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$lockedRecord</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$lockedRecord</span><span class="var-description">: The record.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreleaseAgedLocks" id="releaseAgedLocks"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">releaseAgedLocks</span> (line <span class="line-number">259</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Releases locks older than a defined amount of seconds</p>
+<p class="description"><p>When called without parameters all locks older than 15 minutes are released.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of locks that have been released</li>
+				<li><span class="field">throws:</span> Doctrine_Locking_Exception If the release process failed due to database errors</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			releaseAgedLocks
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$age</span> = <span class="var-default">900</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$objectType</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userIdent</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$age</span><span class="var-description">: The maximum valid age of locks in seconds</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$objectType</span><span class="var-description">: The type of the object (component name)</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$userIdent</span><span class="var-description">: The unique identifier of the locking user</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreleaseLock" id="releaseLock"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">releaseLock</span> (line <span class="line-number">170</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Releases a lock on a <a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE if a lock was released, FALSE if no lock was released</li>
+				<li><span class="field">throws:</span> Doctrine_Locking_Exception If the release procedure failed due to database errors</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			releaseLock
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$userIdent</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$record</span><span class="var-description">: The record for which the lock has to be released</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$userIdent</span><span class="var-description">: The unique identifier of the locking user</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:59 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Relation_Association</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Relation_Association</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Relation_Association    this class takes care of association mapping                          (= many-to-many relationships, where the relationship is handled with an additional relational table                          which holds 2 foreign keys)</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Relation---Association.php.html">/helpers/Doctrine/Relation/Association.php</a> (line <span class="field">36</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Relation/Doctrine_Relation.html">Doctrine_Relation</a>
+   |
+   --Doctrine_Relation_Association</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-vars">Vars</a>
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-consts">Constants</a>
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Relation/Doctrine_Relation_Association_Self.html">Doctrine_Relation_Association_Self</a></td>
+					<td>
+											Doctrine_Relation_Association_Self
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Relation/Doctrine_Relation_Nest.html">Doctrine_Relation_Nest</a></td>
+					<td>
+											Doctrine_Relation_Association_Self
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-consts">Constants</a>
+							
+															<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																				
+												<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a>|<a href="../../Doctrine/Collection/Doctrine_Collection.html">Doctrine_Collection</a></span>
+										<a href="#fetchRelatedFor" title="details" class="method-name">fetchRelatedFor</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+										<a href="#getAssociationFactory" title="details" class="method-name">getAssociationFactory</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getAssociationTable" title="details" class="method-name">getAssociationTable</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getForeignRefColumnName" title="details" class="method-name">getForeignRefColumnName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getForeignRefFieldName" title="details" class="method-name">getForeignRefFieldName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getLocalRefColumnName" title="details" class="method-name">getLocalRefColumnName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getLocalRefFieldName" title="details" class="method-name">getLocalRefFieldName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getRelationDql" title="details" class="method-name">getRelationDql</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$count</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$context</span> = <span class="var-default">'record'</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-consts">Constants</a>
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Relation/Doctrine_Relation.html">Doctrine_Relation</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#var$definition">Doctrine_Relation::$definition</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#var$_isRefClass">Doctrine_Relation::$_isRefClass</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-vars">Vars</a>
+																			<a href="#sec-consts">Constants</a>
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodfetchRelatedFor" id="fetchRelatedFor"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchRelatedFor</span> (line <span class="line-number">126</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">fetchRelatedFor</p>
+<p class="description"><p>fetches a component related to given record</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a>|<a href="../../Doctrine/Collection/Doctrine_Collection.html">Doctrine_Collection</a></span>
+		<span class="method-name">
+			fetchRelatedFor
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$record</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodfetchRelatedFor">Doctrine_Relation::fetchRelatedFor()</a></dt>
+						<dd>fetchRelatedFor</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Relation/Doctrine_Relation_Association_Self.html#methodfetchRelatedFor">Doctrine_Relation_Association_Self::fetchRelatedFor()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Relation/Doctrine_Relation_Nest.html#methodfetchRelatedFor">Doctrine_Relation_Nest::fetchRelatedFor()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodgetAssociationFactory" id="getAssociationFactory"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAssociationFactory</span> (line <span class="line-number">41</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+		<span class="method-name">
+			getAssociationFactory
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetAssociationTable" id="getAssociationTable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAssociationTable</span> (line <span class="line-number">46</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAssociationTable
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetForeignRefColumnName" id="getForeignRefColumnName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getForeignRefColumnName</span> (line <span class="line-number">104</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getForeignRefColumnName</p>
+<p class="description"><p>returns the column name of the foreign reference column</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getForeignRefColumnName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetForeignRefFieldName" id="getForeignRefFieldName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getForeignRefFieldName</span> (line <span class="line-number">113</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getForeignRefFieldName</p>
+<p class="description"><p>returns the field name of the foreign reference column</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getForeignRefFieldName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLocalRefColumnName" id="getLocalRefColumnName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLocalRefColumnName</span> (line <span class="line-number">86</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getLocalRefColumnName</p>
+<p class="description"><p>returns the column name of the local reference column</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getLocalRefColumnName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLocalRefFieldName" id="getLocalRefFieldName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLocalRefFieldName</span> (line <span class="line-number">95</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getLocalRefFieldName</p>
+<p class="description"><p>returns the field name of the local reference column</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getLocalRefFieldName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRelationDql" id="getRelationDql"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRelationDql</span> (line <span class="line-number">57</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getRelationDql</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getRelationDql
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$count</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$context</span> = <span class="var-default">'record'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$count</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$context</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetRelationDql">Doctrine_Relation::getRelationDql()</a></dt>
+						<dd>getRelationDql</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Relation/Doctrine_Relation_Association_Self.html#methodgetRelationDql">Doctrine_Relation_Association_Self::getRelationDql()</a>
+								: getRelationDql
+							</li>
+				</ul>
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Relation/Doctrine_Relation.html">Doctrine_Relation</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#method__construct">Doctrine_Relation::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodfetchRelatedFor">Doctrine_Relation::fetchRelatedFor()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetAlias">Doctrine_Relation::getAlias()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetClass">Doctrine_Relation::getClass()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetForeign">Doctrine_Relation::getForeign()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetForeignColumnName">Doctrine_Relation::getForeignColumnName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetForeignFieldName">Doctrine_Relation::getForeignFieldName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetForeignKeyName">Doctrine_Relation::getForeignKeyName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetLocal">Doctrine_Relation::getLocal()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetLocalColumnName">Doctrine_Relation::getLocalColumnName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetLocalFieldName">Doctrine_Relation::getLocalFieldName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetOrderBy">Doctrine_Relation::getOrderBy()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetOrderByStatement">Doctrine_Relation::getOrderByStatement()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetRelationDql">Doctrine_Relation::getRelationDql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetTable">Doctrine_Relation::getTable()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodgetType">Doctrine_Relation::getType()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodhasConstraint">Doctrine_Relation::hasConstraint()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodisCascadeDelete">Doctrine_Relation::isCascadeDelete()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodisDeferrable">Doctrine_Relation::isDeferrable()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodisDeferred">Doctrine_Relation::isDeferred()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodisEqual">Doctrine_Relation::isEqual()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodisOneToOne">Doctrine_Relation::isOneToOne()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodisRefClass">Doctrine_Relation::isRefClass()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodoffsetExists">Doctrine_Relation::offsetExists()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodoffsetGet">Doctrine_Relation::offsetGet()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodoffsetSet">Doctrine_Relation::offsetSet()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodoffsetUnset">Doctrine_Relation::offsetUnset()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#methodtoArray">Doctrine_Relation::toArray()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#method__toString">Doctrine_Relation::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-vars">Vars</a>
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Relation/Doctrine_Relation.html">Doctrine_Relation</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#constMANY">Doctrine_Relation::MANY</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Relation/Doctrine_Relation.html#constONE">Doctrine_Relation::ONE</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:37 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

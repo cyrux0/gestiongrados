@@ -1,0 +1,5691 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Core</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Core</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The base core class of Doctrine</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Lukas Smith &lt;<a href="mailto:smith@pooteeweet.org">smith@pooteeweet.org</a>&gt; (PEAR MDB2 library)</li>
+				<li><span class="field">version:</span> $Revision: 6483 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Core.php.html">/helpers/Doctrine/Core.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Doctrine/Doctrine.html">Doctrine</a></td>
+					<td>
+											This class only exists for backwards compatability. All code was moved to  Doctrine_Core and this class extends Doctrine_Core
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_AUTOCOMMIT" title="details" class="const-name">ATTR_AUTOCOMMIT</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_AUTOLOAD_TABLE_CLASSES" title="details" class="const-name">ATTR_AUTOLOAD_TABLE_CLASSES</a> = 					<span class="var-type"> 160</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_AUTO_ACCESSOR_OVERRIDE" title="details" class="const-name">ATTR_AUTO_ACCESSOR_OVERRIDE</a> = 					<span class="var-type"> 165</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_AUTO_FREE_QUERY_OBJECTS" title="details" class="const-name">ATTR_AUTO_FREE_QUERY_OBJECTS</a> = 					<span class="var-type"> 166</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CACHE" title="details" class="const-name">ATTR_CACHE</a> = 					<span class="var-type"> 150</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CACHE_LIFESPAN" title="details" class="const-name">ATTR_CACHE_LIFESPAN</a> = 					<span class="var-type"> 151</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CASCADE_SAVES" title="details" class="const-name">ATTR_CASCADE_SAVES</a> = 					<span class="var-type"> 174</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CASE" title="details" class="const-name">ATTR_CASE</a> = 					<span class="var-type"> 8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CLIENT_VERSION" title="details" class="const-name">ATTR_CLIENT_VERSION</a> = 					<span class="var-type"> 5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CMPNAME_FORMAT" title="details" class="const-name">ATTR_CMPNAME_FORMAT</a> = 					<span class="var-type"> 118</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_COLLECTION_CLASS" title="details" class="const-name">ATTR_COLLECTION_CLASS</a> = 					<span class="var-type"> 175</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_COLL_KEY" title="details" class="const-name">ATTR_COLL_KEY</a> = 					<span class="var-type"> 108</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_COLL_LIMIT" title="details" class="const-name">ATTR_COLL_LIMIT</a> = 					<span class="var-type"> 123</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CONNECTION_STATUS" title="details" class="const-name">ATTR_CONNECTION_STATUS</a> = 					<span class="var-type"> 7</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CREATE_TABLES" title="details" class="const-name">ATTR_CREATE_TABLES</a> = 					<span class="var-type"> 122</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CURSOR" title="details" class="const-name">ATTR_CURSOR</a> = 					<span class="var-type"> 10</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_CURSOR_NAME" title="details" class="const-name">ATTR_CURSOR_NAME</a> = 					<span class="var-type"> 9</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DBNAME_FORMAT" title="details" class="const-name">ATTR_DBNAME_FORMAT</a> = 					<span class="var-type"> 117</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DECIMAL_PLACES" title="details" class="const-name">ATTR_DECIMAL_PLACES</a> = 					<span class="var-type"> 141</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEFAULT_COLUMN_OPTIONS" title="details" class="const-name">ATTR_DEFAULT_COLUMN_OPTIONS</a> = 					<span class="var-type"> 170</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEFAULT_IDENTIFIER_OPTIONS" title="details" class="const-name">ATTR_DEFAULT_IDENTIFIER_OPTIONS</a> = 					<span class="var-type"> 169</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEFAULT_PARAM_NAMESPACE" title="details" class="const-name">ATTR_DEFAULT_PARAM_NAMESPACE</a> = 					<span class="var-type"> 156</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEFAULT_SEQUENCE" title="details" class="const-name">ATTR_DEFAULT_SEQUENCE</a> = 					<span class="var-type"> 133</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEFAULT_TABLE_CHARSET" title="details" class="const-name">ATTR_DEFAULT_TABLE_CHARSET</a> = 					<span class="var-type"> 167</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEFAULT_TABLE_COLLATE" title="details" class="const-name">ATTR_DEFAULT_TABLE_COLLATE</a> = 					<span class="var-type"> 168</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEFAULT_TABLE_TYPE" title="details" class="const-name">ATTR_DEFAULT_TABLE_TYPE</a> = 					<span class="var-type"> 112</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEF_TABLESPACE" title="details" class="const-name">ATTR_DEF_TABLESPACE</a> = 					<span class="var-type"> 115</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEF_TEXT_LENGTH" title="details" class="const-name">ATTR_DEF_TEXT_LENGTH</a> = 					<span class="var-type"> 113</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DEF_VARCHAR_LENGTH" title="details" class="const-name">ATTR_DEF_VARCHAR_LENGTH</a> = 					<span class="var-type"> 114</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_DRIVER_NAME" title="details" class="const-name">ATTR_DRIVER_NAME</a> = 					<span class="var-type"> 16</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_EMULATE_DATABASE" title="details" class="const-name">ATTR_EMULATE_DATABASE</a> = 					<span class="var-type"> 116</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_ERRMODE" title="details" class="const-name">ATTR_ERRMODE</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_EXPORT" title="details" class="const-name">ATTR_EXPORT</a> = 					<span class="var-type"> 140</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_FETCHMODE" title="details" class="const-name">ATTR_FETCHMODE</a> = 					<span class="var-type"> 118</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_FETCH_CATALOG_NAMES" title="details" class="const-name">ATTR_FETCH_CATALOG_NAMES</a> = 					<span class="var-type"> 15</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_FETCH_TABLE_NAMES" title="details" class="const-name">ATTR_FETCH_TABLE_NAMES</a> = 					<span class="var-type"> 14</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_FIELD_CASE" title="details" class="const-name">ATTR_FIELD_CASE</a> = 					<span class="var-type"> 102</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_FKNAME_FORMAT" title="details" class="const-name">ATTR_FKNAME_FORMAT</a> = 					<span class="var-type"> 171</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_HYDRATE_OVERWRITE" title="details" class="const-name">ATTR_HYDRATE_OVERWRITE</a> = 					<span class="var-type"> 172</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_IDXNAME_FORMAT" title="details" class="const-name">ATTR_IDXNAME_FORMAT</a> = 					<span class="var-type"> 103</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_LISTENER" title="details" class="const-name">ATTR_LISTENER</a> = 					<span class="var-type"> 100</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_LOAD_REFERENCES" title="details" class="const-name">ATTR_LOAD_REFERENCES</a> = 					<span class="var-type"> 153</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_MAX_COLUMN_LEN" title="details" class="const-name">ATTR_MAX_COLUMN_LEN</a> = 					<span class="var-type"> 18</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_MAX_IDENTIFIER_LENGTH" title="details" class="const-name">ATTR_MAX_IDENTIFIER_LENGTH</a> = 					<span class="var-type"> 180</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_MODEL_CLASS_PREFIX" title="details" class="const-name">ATTR_MODEL_CLASS_PREFIX</a> = 					<span class="var-type"> 178</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_MODEL_LOADING" title="details" class="const-name">ATTR_MODEL_LOADING</a> = 					<span class="var-type"> 161</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_NAME_PREFIX" title="details" class="const-name">ATTR_NAME_PREFIX</a> = 					<span class="var-type"> 121</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_ORACLE_NULLS" title="details" class="const-name">ATTR_ORACLE_NULLS</a> = 					<span class="var-type"> 11</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_PERSISTENT" title="details" class="const-name">ATTR_PERSISTENT</a> = 					<span class="var-type"> 12</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_PORTABILITY" title="details" class="const-name">ATTR_PORTABILITY</a> = 					<span class="var-type"> 106</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_PREFETCH" title="details" class="const-name">ATTR_PREFETCH</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_QUERY_CACHE" title="details" class="const-name">ATTR_QUERY_CACHE</a> = 					<span class="var-type"> 157</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_QUERY_CACHE_LIFESPAN" title="details" class="const-name">ATTR_QUERY_CACHE_LIFESPAN</a> = 					<span class="var-type"> 158</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_QUERY_CLASS" title="details" class="const-name">ATTR_QUERY_CLASS</a> = 					<span class="var-type"> 173</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_QUERY_LIMIT" title="details" class="const-name">ATTR_QUERY_LIMIT</a> = 					<span class="var-type"> 109</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_QUOTE_IDENTIFIER" title="details" class="const-name">ATTR_QUOTE_IDENTIFIER</a> = 					<span class="var-type"> 101</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_RECORD_LISTENER" title="details" class="const-name">ATTR_RECORD_LISTENER</a> = 					<span class="var-type"> 154</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_RECURSIVE_MERGE_FIXTURES" title="details" class="const-name">ATTR_RECURSIVE_MERGE_FIXTURES</a> = 					<span class="var-type"> 162</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_RESULT_CACHE" title="details" class="const-name">ATTR_RESULT_CACHE</a> = 					<span class="var-type"> 150</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_RESULT_CACHE_LIFESPAN" title="details" class="const-name">ATTR_RESULT_CACHE_LIFESPAN</a> = 					<span class="var-type"> 151</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_SEQCOL_NAME" title="details" class="const-name">ATTR_SEQCOL_NAME</a> = 					<span class="var-type"> 105</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_SEQNAME_FORMAT" title="details" class="const-name">ATTR_SEQNAME_FORMAT</a> = 					<span class="var-type"> 104</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_SERVER_INFO" title="details" class="const-name">ATTR_SERVER_INFO</a> = 					<span class="var-type"> 6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_SERVER_VERSION" title="details" class="const-name">ATTR_SERVER_VERSION</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_STATEMENT_CLASS" title="details" class="const-name">ATTR_STATEMENT_CLASS</a> = 					<span class="var-type"> 13</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_STRINGIFY_FETCHES" title="details" class="const-name">ATTR_STRINGIFY_FETCHES</a> = 					<span class="var-type"> 17</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_TABLE_CLASS" title="details" class="const-name">ATTR_TABLE_CLASS</a> = 					<span class="var-type"> 176</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_TABLE_CLASS_FORMAT" title="details" class="const-name">ATTR_TABLE_CLASS_FORMAT</a> = 					<span class="var-type"> 179</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_TBLCLASS_FORMAT" title="details" class="const-name">ATTR_TBLCLASS_FORMAT</a> = 					<span class="var-type"> 119</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_TBLNAME_FORMAT" title="details" class="const-name">ATTR_TBLNAME_FORMAT</a> = 					<span class="var-type"> 120</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_THROW_EXCEPTIONS" title="details" class="const-name">ATTR_THROW_EXCEPTIONS</a> = 					<span class="var-type"> 155</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_TIMEOUT" title="details" class="const-name">ATTR_TIMEOUT</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_USE_DQL_CALLBACKS" title="details" class="const-name">ATTR_USE_DQL_CALLBACKS</a> = 					<span class="var-type"> 164</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_USE_NATIVE_ENUM" title="details" class="const-name">ATTR_USE_NATIVE_ENUM</a> = 					<span class="var-type"> 117</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_USE_NATIVE_SET" title="details" class="const-name">ATTR_USE_NATIVE_SET</a> = 					<span class="var-type"> 177</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ATTR_VALIDATE" title="details" class="const-name">ATTR_VALIDATE</a> = 					<span class="var-type"> 107</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#CASE_LOWER" title="details" class="const-name">CASE_LOWER</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#CASE_NATURAL" title="details" class="const-name">CASE_NATURAL</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#CASE_UPPER" title="details" class="const-name">CASE_UPPER</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#CURSOR_FWDONLY" title="details" class="const-name">CURSOR_FWDONLY</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#CURSOR_SCROLL" title="details" class="const-name">CURSOR_SCROLL</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR" title="details" class="const-name">ERR</a> = 					<span class="var-type"> -1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERRMODE_EXCEPTION" title="details" class="const-name">ERRMODE_EXCEPTION</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERRMODE_SILENT" title="details" class="const-name">ERRMODE_SILENT</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERRMODE_WARNING" title="details" class="const-name">ERRMODE_WARNING</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_ACCESS_VIOLATION" title="details" class="const-name">ERR_ACCESS_VIOLATION</a> = 					<span class="var-type"> -27</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_ALREADY_EXISTS" title="details" class="const-name">ERR_ALREADY_EXISTS</a> = 					<span class="var-type"> -5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_CANNOT_ALTER" title="details" class="const-name">ERR_CANNOT_ALTER</a> = 					<span class="var-type"> -31</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_CANNOT_CREATE" title="details" class="const-name">ERR_CANNOT_CREATE</a> = 					<span class="var-type"> -15</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_CANNOT_DELETE" title="details" class="const-name">ERR_CANNOT_DELETE</a> = 					<span class="var-type"> -16</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_CANNOT_DROP" title="details" class="const-name">ERR_CANNOT_DROP</a> = 					<span class="var-type"> -17</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_CANNOT_REPLACE" title="details" class="const-name">ERR_CANNOT_REPLACE</a> = 					<span class="var-type"> -28</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_CLASS_NAME" title="details" class="const-name">ERR_CLASS_NAME</a> = 					<span class="var-type"> -36</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_CONNECT_FAILED" title="details" class="const-name">ERR_CONNECT_FAILED</a> = 					<span class="var-type"> -24</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_CONSTRAINT" title="details" class="const-name">ERR_CONSTRAINT</a> = 					<span class="var-type"> -3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_CONSTRAINT_NOT_NULL" title="details" class="const-name">ERR_CONSTRAINT_NOT_NULL</a> = 					<span class="var-type"> -29</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_DEADLOCK" title="details" class="const-name">ERR_DEADLOCK</a> = 					<span class="var-type"> -30</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_DIVZERO" title="details" class="const-name">ERR_DIVZERO</a> = 					<span class="var-type"> -13</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_EXTENSION_NOT_FOUND" title="details" class="const-name">ERR_EXTENSION_NOT_FOUND</a> = 					<span class="var-type"> -25</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_INSUFFICIENT_DATA" title="details" class="const-name">ERR_INSUFFICIENT_DATA</a> = 					<span class="var-type"> -35</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_INVALID" title="details" class="const-name">ERR_INVALID</a> = 					<span class="var-type"> -8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_INVALID_DATE" title="details" class="const-name">ERR_INVALID_DATE</a> = 					<span class="var-type"> -12</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_INVALID_DSN" title="details" class="const-name">ERR_INVALID_DSN</a> = 					<span class="var-type"> -23</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_INVALID_NUMBER" title="details" class="const-name">ERR_INVALID_NUMBER</a> = 					<span class="var-type"> -11</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_LOADMODULE" title="details" class="const-name">ERR_LOADMODULE</a> = 					<span class="var-type"> -34</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_MANAGER" title="details" class="const-name">ERR_MANAGER</a> = 					<span class="var-type"> -32</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_MANAGER_PARSE" title="details" class="const-name">ERR_MANAGER_PARSE</a> = 					<span class="var-type"> -33</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_MISMATCH" title="details" class="const-name">ERR_MISMATCH</a> = 					<span class="var-type"> -7</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_NEED_MORE_DATA" title="details" class="const-name">ERR_NEED_MORE_DATA</a> = 					<span class="var-type"> -20</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_NODBSELECTED" title="details" class="const-name">ERR_NODBSELECTED</a> = 					<span class="var-type"> -14</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_NOSUCHDB" title="details" class="const-name">ERR_NOSUCHDB</a> = 					<span class="var-type"> -26</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_NOSUCHFIELD" title="details" class="const-name">ERR_NOSUCHFIELD</a> = 					<span class="var-type"> -19</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_NOSUCHTABLE" title="details" class="const-name">ERR_NOSUCHTABLE</a> = 					<span class="var-type"> -18</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_NOT_CAPABLE" title="details" class="const-name">ERR_NOT_CAPABLE</a> = 					<span class="var-type"> -9</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_NOT_FOUND" title="details" class="const-name">ERR_NOT_FOUND</a> = 					<span class="var-type"> -4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_NOT_LOCKED" title="details" class="const-name">ERR_NOT_LOCKED</a> = 					<span class="var-type"> -21</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_SYNTAX" title="details" class="const-name">ERR_SYNTAX</a> = 					<span class="var-type"> -2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_TRUNCATED" title="details" class="const-name">ERR_TRUNCATED</a> = 					<span class="var-type"> -10</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_UNSUPPORTED" title="details" class="const-name">ERR_UNSUPPORTED</a> = 					<span class="var-type"> -6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#ERR_VALUE_COUNT_ON_ROW" title="details" class="const-name">ERR_VALUE_COUNT_ON_ROW</a> = 					<span class="var-type"> -22</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#EXPORT_ALL" title="details" class="const-name">EXPORT_ALL</a> = 					<span class="var-type"> 7</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#EXPORT_CONSTRAINTS" title="details" class="const-name">EXPORT_CONSTRAINTS</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#EXPORT_NONE" title="details" class="const-name">EXPORT_NONE</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#EXPORT_PLUGINS" title="details" class="const-name">EXPORT_PLUGINS</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#EXPORT_TABLES" title="details" class="const-name">EXPORT_TABLES</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_ASSOC" title="details" class="const-name">FETCH_ASSOC</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_BOTH" title="details" class="const-name">FETCH_BOTH</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_BOUND" title="details" class="const-name">FETCH_BOUND</a> = 					<span class="var-type"> 6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_CLASS" title="details" class="const-name">FETCH_CLASS</a> = 					<span class="var-type"> 8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_CLASSTYPE" title="details" class="const-name">FETCH_CLASSTYPE</a> = 					<span class="var-type"> 262144</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_COLUMN" title="details" class="const-name">FETCH_COLUMN</a> = 					<span class="var-type"> 7</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_FUNC" title="details" class="const-name">FETCH_FUNC</a> = 					<span class="var-type"> 10</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_GROUP" title="details" class="const-name">FETCH_GROUP</a> = 					<span class="var-type"> 65536</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_INTO" title="details" class="const-name">FETCH_INTO</a> = 					<span class="var-type"> 9</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_LAZY" title="details" class="const-name">FETCH_LAZY</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_NAMED" title="details" class="const-name">FETCH_NAMED</a> = 					<span class="var-type"> 11</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_NUM" title="details" class="const-name">FETCH_NUM</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_OBJ" title="details" class="const-name">FETCH_OBJ</a> = 					<span class="var-type"> 5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_ORI_ABS" title="details" class="const-name">FETCH_ORI_ABS</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_ORI_FIRST" title="details" class="const-name">FETCH_ORI_FIRST</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_ORI_LAST" title="details" class="const-name">FETCH_ORI_LAST</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_ORI_NEXT" title="details" class="const-name">FETCH_ORI_NEXT</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_ORI_PRIOR" title="details" class="const-name">FETCH_ORI_PRIOR</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_ORI_REL" title="details" class="const-name">FETCH_ORI_REL</a> = 					<span class="var-type"> 5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_SERIALIZE" title="details" class="const-name">FETCH_SERIALIZE</a> = 					<span class="var-type"> 524288</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#FETCH_UNIQUE" title="details" class="const-name">FETCH_UNIQUE</a> = 					<span class="var-type"> 196608</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HYDRATE_ARRAY" title="details" class="const-name">HYDRATE_ARRAY</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HYDRATE_ARRAY_HIERARCHY" title="details" class="const-name">HYDRATE_ARRAY_HIERARCHY</a> = 					<span class="var-type"> 8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HYDRATE_ARRAY_SHALLOW" title="details" class="const-name">HYDRATE_ARRAY_SHALLOW</a> = 					<span class="var-type"> 10</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HYDRATE_NONE" title="details" class="const-name">HYDRATE_NONE</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HYDRATE_ON_DEMAND" title="details" class="const-name">HYDRATE_ON_DEMAND</a> = 					<span class="var-type"> 7</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HYDRATE_RECORD" title="details" class="const-name">HYDRATE_RECORD</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HYDRATE_RECORD_HIERARCHY" title="details" class="const-name">HYDRATE_RECORD_HIERARCHY</a> = 					<span class="var-type"> 9</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HYDRATE_SCALAR" title="details" class="const-name">HYDRATE_SCALAR</a> = 					<span class="var-type"> 5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#HYDRATE_SINGLE_SCALAR" title="details" class="const-name">HYDRATE_SINGLE_SCALAR</a> = 					<span class="var-type"> 6</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#IDENTIFIER_AUTOINC" title="details" class="const-name">IDENTIFIER_AUTOINC</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#IDENTIFIER_COMPOSITE" title="details" class="const-name">IDENTIFIER_COMPOSITE</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#IDENTIFIER_NATURAL" title="details" class="const-name">IDENTIFIER_NATURAL</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#IDENTIFIER_SEQUENCE" title="details" class="const-name">IDENTIFIER_SEQUENCE</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#LIMIT_RECORDS" title="details" class="const-name">LIMIT_RECORDS</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#LIMIT_ROWS" title="details" class="const-name">LIMIT_ROWS</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#LOCK_OPTIMISTIC" title="details" class="const-name">LOCK_OPTIMISTIC</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#LOCK_PESSIMISTIC" title="details" class="const-name">LOCK_PESSIMISTIC</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#MODEL_LOADING_AGGRESSIVE" title="details" class="const-name">MODEL_LOADING_AGGRESSIVE</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#MODEL_LOADING_CONSERVATIVE" title="details" class="const-name">MODEL_LOADING_CONSERVATIVE</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#MODEL_LOADING_PEAR" title="details" class="const-name">MODEL_LOADING_PEAR</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#NULL_EMPTY_STRING" title="details" class="const-name">NULL_EMPTY_STRING</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#NULL_NATURAL" title="details" class="const-name">NULL_NATURAL</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#NULL_TO_STRING" title="details" class="const-name">NULL_TO_STRING</a> = 					<span class="var-type"> NULL</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PARAM_BOOL" title="details" class="const-name">PARAM_BOOL</a> = 					<span class="var-type"> 5</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PARAM_INPUT_OUTPUT" title="details" class="const-name">PARAM_INPUT_OUTPUT</a> = 					<span class="var-type"> -2147483648</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PARAM_INT" title="details" class="const-name">PARAM_INT</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PARAM_LOB" title="details" class="const-name">PARAM_LOB</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PARAM_NULL" title="details" class="const-name">PARAM_NULL</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PARAM_STMT" title="details" class="const-name">PARAM_STMT</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PARAM_STR" title="details" class="const-name">PARAM_STR</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PORTABILITY_ALL" title="details" class="const-name">PORTABILITY_ALL</a> = 					<span class="var-type"> 63</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PORTABILITY_DELETE_COUNT" title="details" class="const-name">PORTABILITY_DELETE_COUNT</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PORTABILITY_EMPTY_TO_NULL" title="details" class="const-name">PORTABILITY_EMPTY_TO_NULL</a> = 					<span class="var-type"> 8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PORTABILITY_EXPR" title="details" class="const-name">PORTABILITY_EXPR</a> = 					<span class="var-type"> 32</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PORTABILITY_FIX_ASSOC_FIELD_NAMES" title="details" class="const-name">PORTABILITY_FIX_ASSOC_FIELD_NAMES</a> = 					<span class="var-type"> 16</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PORTABILITY_FIX_CASE" title="details" class="const-name">PORTABILITY_FIX_CASE</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PORTABILITY_NONE" title="details" class="const-name">PORTABILITY_NONE</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PORTABILITY_RTRIM" title="details" class="const-name">PORTABILITY_RTRIM</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#QUERY_LIMIT_RECORDS" title="details" class="const-name">QUERY_LIMIT_RECORDS</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#QUERY_LIMIT_ROWS" title="details" class="const-name">QUERY_LIMIT_ROWS</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#VALIDATE_ALL" title="details" class="const-name">VALIDATE_ALL</a> = 					<span class="var-type"> 7</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#VALIDATE_CONSTRAINTS" title="details" class="const-name">VALIDATE_CONSTRAINTS</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#VALIDATE_LENGTHS" title="details" class="const-name">VALIDATE_LENGTHS</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#VALIDATE_NONE" title="details" class="const-name">VALIDATE_NONE</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#VALIDATE_TYPES" title="details" class="const-name">VALIDATE_TYPES</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#VALIDATE_USER" title="details" class="const-name">VALIDATE_USER</a> = 					<span class="var-type"> 8</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#VERSION" title="details" class="const-name">VERSION</a> = 					<span class="var-type"> '1.2.4'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#autoload" title="details" class="method-name">autoload</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#compile" title="details" class="method-name">compile</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$target</span> = <span class="var-default">null</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$includedDrivers</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#createDatabases" title="details" class="method-name">createDatabases</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$specifiedConnections</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#createTablesFromArray" title="details" class="method-name">createTablesFromArray</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#createTablesFromModels" title="details" class="method-name">createTablesFromModels</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#debug" title="details" class="method-name">debug</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$bool</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#dropDatabases" title="details" class="method-name">dropDatabases</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$specifiedConnections</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void|string</span>
+										<a href="#dump" title="details" class="method-name">dump</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$var</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$output</span> = <span class="var-default">true</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$indent</span> = <span class="var-default">&quot;&quot;</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#dumpData" title="details" class="method-name">dumpData</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$individualFiles</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#extensionsAutoload" title="details" class="method-name">extensionsAutoload</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#filterInvalidModels" title="details" class="method-name">filterInvalidModels</a>
+											(<span class="var-type">classes</span>&nbsp;<span class="var-name">$classes</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#generateMigrationClass" title="details" class="method-name">generateMigrationClass</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#generateMigrationsFromDb" title="details" class="method-name">generateMigrationsFromDb</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#generateMigrationsFromDiff" title="details" class="method-name">generateMigrationsFromDiff</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$from</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$to</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#generateMigrationsFromModels" title="details" class="method-name">generateMigrationsFromModels</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$modelsPath</span> = <span class="var-default">null</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$modelLoading</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#generateModelsFromDb" title="details" class="method-name">generateModelsFromDb</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$connections</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#generateModelsFromYaml" title="details" class="method-name">generateModelsFromYaml</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#generateSqlFromArray" title="details" class="method-name">generateSqlFromArray</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#generateSqlFromModels" title="details" class="method-name">generateSqlFromModels</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#generateYamlFromDb" title="details" class="method-name">generateYamlFromDb</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$connections</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#generateYamlFromModels" title="details" class="method-name">generateYamlFromModels</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result"><a href="../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+										<a href="#getConnectionByTableName" title="details" class="method-name">getConnectionByTableName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getExtensionsPath" title="details" class="method-name">getExtensionsPath</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#getLoadedModelFiles" title="details" class="method-name">getLoadedModelFiles</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#getLoadedModels" title="details" class="method-name">getLoadedModels</a>
+											([<span class="var-type">classes</span>&nbsp;<span class="var-name">$classes</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#getModelsDirectory" title="details" class="method-name">getModelsDirectory</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getPath" title="details" class="method-name">getPath</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result"><a href="../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+										<a href="#getTable" title="details" class="method-name">getTable</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentName</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#initializeModels" title="details" class="method-name">initializeModels</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$models</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#isValidModelClass" title="details" class="method-name">isValidModelClass</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#loadData" title="details" class="method-name">loadData</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">null</span>
+										<a href="#loadModel" title="details" class="method-name">loadModel</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#loadModels" title="details" class="method-name">loadModels</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$modelLoading</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$classPrefix</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">bool</span>
+										<a href="#migrate" title="details" class="method-name">migrate</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#modelsAutoload" title="details" class="method-name">modelsAutoload</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setExtensionsPath" title="details" class="method-name">setExtensionsPath</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$extensionsPath</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setModelsDirectory" title="details" class="method-name">setModelsDirectory</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setPath" title="details" class="method-name">setPath</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+									</div>
+																
+																																																																																																																																																																																																																																																																																																																												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodautoload" id="autoload"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method autoload</span> (line <span class="line-number">1115</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">simple autoload function  returns true if the class was loaded, otherwise false</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			autoload
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcompile" id="compile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method compile</span> (line <span class="line-number">1103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Method for making a single file of most used doctrine runtime components  including the compiled file instead of multiple files (in worst  cases dozens of files) can improve performance by an order of magnitude</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Doctrine_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			compile
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$target</span> = <span class="var-default">null</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$includedDrivers</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$target</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$includedDrivers</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateDatabases" id="createDatabases"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method createDatabases</span> (line <span class="line-number">964</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates databases for connections</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			createDatabases
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$specifiedConnections</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$specifiedConnections</span><span class="var-description">: Array of connections you wish to create the database for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateTablesFromArray" id="createTablesFromArray"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method createTablesFromArray</span> (line <span class="line-number">908</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates database tables for the models in the supplied array</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			createTablesFromArray
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$array</span><span class="var-description">: An array of models to be exported</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateTablesFromModels" id="createTablesFromModels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method createTablesFromModels</span> (line <span class="line-number">897</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates database tables for the models in the specified directory</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			createTablesFromModels
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span><span class="var-description">: Directory containing your models</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddebug" id="debug"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method debug</span> (line <span class="line-number">534</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Turn on/off the debugging setting</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			debug
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$bool</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$bool</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddropDatabases" id="dropDatabases"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method dropDatabases</span> (line <span class="line-number">975</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Drops databases for connections</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			dropDatabases
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$specifiedConnections</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$specifiedConnections</span><span class="var-description">: Array of connections you wish to drop the database for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddump" id="dump"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method dump</span> (line <span class="line-number">1201</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">dumps a given variable</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void|string</span>
+		<span class="method-name">
+			dump
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$var</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$output</span> = <span class="var-default">true</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$indent</span> = <span class="var-default">&quot;&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$var</span><span class="var-description">: a variable of any type</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$output</span><span class="var-description">: whether to output the content</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$indent</span><span class="var-description">: indention string</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddumpData" id="dumpData"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method dumpData</span> (line <span class="line-number">987</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Dump data to a yaml fixtures file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			dumpData
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$individualFiles</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$yamlPath</span><span class="var-description">: Path to write the yaml data fixtures to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$individualFiles</span><span class="var-description">: Whether or not to dump data to individual fixtures files</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodextensionsAutoload" id="extensionsAutoload"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method extensionsAutoload</span> (line <span class="line-number">1171</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Load classes from the Doctrine extensions directory/path</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			extensionsAutoload
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfilterInvalidModels" id="filterInvalidModels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method filterInvalidModels</span> (line <span class="line-number">767</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Filter through an array of classes and return all the classes that are valid models.</p>
+<p class="description"><p>This will inflect the class, causing it to be loaded in to memory.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			filterInvalidModels
+		</span>
+					(<span class="var-type">classes</span>&nbsp;<span class="var-name">$classes</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">classes</span>
+				<span class="var-name">$classes</span><span class="var-description">: Array of classes to filter through, otherwise uses get_declared_classes()</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateMigrationClass" id="generateMigrationClass"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateMigrationClass</span> (line <span class="line-number">1030</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate new migration class skeleton</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			generateMigrationClass
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span><span class="var-description">: Name of the Migration class to generate</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$migrationsPath</span><span class="var-description">: Path to directory which contains your migration classes</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateMigrationsFromDb" id="generateMigrationsFromDb"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateMigrationsFromDb</span> (line <span class="line-number">1044</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate a set of migration classes from an existing database</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> new Doctrine_Migration_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			generateMigrationsFromDb
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$migrationsPath</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateMigrationsFromDiff" id="generateMigrationsFromDiff"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateMigrationsFromDiff</span> (line <span class="line-number">1075</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate a set of migration classes by generating differences between two sets  of schema information</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			generateMigrationsFromDiff
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$from</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$to</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$migrationsPath</span><span class="var-description">: Path to your Doctrine migration classes</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$from</span><span class="var-description">: From schema information</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$to</span><span class="var-description">: To schema information</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateMigrationsFromModels" id="generateMigrationsFromModels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateMigrationsFromModels</span> (line <span class="line-number">1059</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate a set of migration classes from an existing set of models</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			generateMigrationsFromModels
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$modelsPath</span> = <span class="var-default">null</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$modelLoading</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$migrationsPath</span><span class="var-description">: Path to your Doctrine migration classes</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$modelsPath</span><span class="var-description">: Path to your Doctrine model classes</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$modelLoading</span><span class="var-description">: Style of model loading to use for loading the models in order to generate migrations</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateModelsFromDb" id="generateModelsFromDb"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateModelsFromDb</span> (line <span class="line-number">841</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Method for importing existing schema to Doctrine_Record classes</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			generateModelsFromDb
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$connections</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span><span class="var-description">: Directory to write your models to</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$connections</span><span class="var-description">: Array of connection names to generate models for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: Array of options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateModelsFromYaml" id="generateModelsFromYaml"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateModelsFromYaml</span> (line <span class="line-number">883</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate a yaml schema file from an existing directory of models</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			generateModelsFromYaml
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$yamlPath</span><span class="var-description">: Path to your yaml schema files</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span><span class="var-description">: Directory to generate your models in</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: Array of options to pass to the schema importer</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateSqlFromArray" id="generateSqlFromArray"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateSqlFromArray</span> (line <span class="line-number">919</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate a array of sql for the passed array of models</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			generateSqlFromArray
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$array</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateSqlFromModels" id="generateSqlFromModels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateSqlFromModels</span> (line <span class="line-number">931</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate a sql string to create the tables from all loaded models  or the models found in the passed directory.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> String of sql queries. One query per line</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			generateSqlFromModels
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateYamlFromDb" id="generateYamlFromDb"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateYamlFromDb</span> (line <span class="line-number">855</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates models from database to temporary location then uses those models to generate a yaml schema file.</p>
+<p class="description"><p>This should probably be fixed. We should write something to generate a yaml schema file directly from the database.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			generateYamlFromDb
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$connections</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$yamlPath</span><span class="var-description">: Path to write oyur yaml schema file to</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$connections</span><span class="var-description">: Array of connection names to generate yaml for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: Array of options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateYamlFromModels" id="generateYamlFromModels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method generateYamlFromModels</span> (line <span class="line-number">951</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate yaml schema file for the models in the specified directory</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			generateYamlFromModels
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$yamlPath</span><span class="var-description">: Path to your yaml schema files</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span><span class="var-description">: Directory to generate your models in</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetConnectionByTableName" id="getConnectionByTableName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getConnectionByTableName</span> (line <span class="line-number">817</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the connection object for a table by the actual table name  FIXME: I think this method is flawed because a individual connections could have the same table name</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+		<span class="method-name">
+			getConnectionByTableName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetExtensionsPath" id="getExtensionsPath"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getExtensionsPath</span> (line <span class="line-number">584</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the path to load extension classes from</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getExtensionsPath
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLoadedModelFiles" id="getLoadedModelFiles"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getLoadedModelFiles</span> (line <span class="line-number">523</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of all the loaded models and the path where each of them exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getLoadedModelFiles
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLoadedModels" id="getLoadedModels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getLoadedModels</span> (line <span class="line-number">718</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get all the loaded models, you can provide an array of classes or it will use get_declared_classes()</p>
+<p class="description"><p>Will filter through an array of classes and return the Doctrine_Records out of them.  If you do not specify $classes it will return all of the currently loaded Doctrine_Records</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getLoadedModels
+		</span>
+					([<span class="var-type">classes</span>&nbsp;<span class="var-name">$classes</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">classes</span>
+				<span class="var-name">$classes</span><span class="var-description">: Array of classes to filter through, otherwise uses get_declared_classes()</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetModelsDirectory" id="getModelsDirectory"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getModelsDirectory</span> (line <span class="line-number">618</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the directory where your models are located for PEAR style naming  convention autoloading</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jonathan Wage</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getModelsDirectory
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPath" id="getPath"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getPath</span> (line <span class="line-number">559</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the root path to Doctrine</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPath
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTable" id="getTable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getTable</span> (line <span class="line-number">1088</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the Doctrine_Table object for the passed model</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+		<span class="method-name">
+			getTable
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$componentName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinitializeModels" id="initializeModels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method initializeModels</span> (line <span class="line-number">737</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Initialize all models so everything is present and loaded in to memory</p>
+<p class="description"><p>This will also inheritently initialize any model behaviors and add  the models generated by Doctrine generators and add them to the $models  array</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			initializeModels
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$models</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$models</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisValidModelClass" id="isValidModelClass"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method isValidModelClass</span> (line <span class="line-number">787</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if what is passed is a valid Doctrine_Record  Will load class in to memory in order to inflect it and find out information about the class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isValidModelClass
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: Can be a string named after the class, an instance of the class, or an instance of the class reflected</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodloadData" id="loadData"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method loadData</span> (line <span class="line-number">1002</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Load data from a yaml fixtures file.</p>
+<p class="description"><p>The output of dumpData can be fed to loadData</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			loadData
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$yamlPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$yamlPath</span><span class="var-description">: Path to your yaml data fixtures</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$append</span><span class="var-description">: Whether or not to append the data</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodloadModel" id="loadModel"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method loadModel</span> (line <span class="line-number">594</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Load an individual model name and path in to the model loading registry</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">null</span>
+		<span class="method-name">
+			loadModel
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$path</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodloadModels" id="loadModels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method loadModels</span> (line <span class="line-number">631</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Recursively load all models from a directory or array of directories</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			loadModels
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$modelLoading</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$classPrefix</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span><span class="var-description">: Path to directory of models or array of directory paths</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$modelLoading</span><span class="var-description">: Pass value of Doctrine_Core::ATTR_MODEL_LOADING to force a certain style of model loading                                   Allowed Doctrine_Core::MODEL_LOADING_AGGRESSIVE(default) or Doctrine_Core::MODEL_LOADING_CONSERVATIVE</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$classPrefix</span><span class="var-description">: The class prefix of the models to load. This is useful if the class name and file name are not the same</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmigrate" id="migrate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method migrate</span> (line <span class="line-number">1017</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Migrate database to specified $to version. Migrates from current to latest if you do not specify.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true</li>
+				<li><span class="field">throws:</span> new Doctrine_Migration_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			migrate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$migrationsPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$to</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$migrationsPath</span><span class="var-description">: Path to migrations directory which contains your migration classes</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$to</span><span class="var-description">: Version you wish to migrate to.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmodelsAutoload" id="modelsAutoload"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method modelsAutoload</span> (line <span class="line-number">1138</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			modelsAutoload
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetExtensionsPath" id="setExtensionsPath"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setExtensionsPath</span> (line <span class="line-number">574</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the path to autoload extension classes from</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setExtensionsPath
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$extensionsPath</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$extensionsPath</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetModelsDirectory" id="setModelsDirectory"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setModelsDirectory</span> (line <span class="line-number">606</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the directory where your models are located for PEAR style  naming convention autoloading.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setModelsDirectory
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPath" id="setPath"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setPath</span> (line <span class="line-number">549</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the path to your core Doctrine libraries</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setPath
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span><span class="var-description">: The path to your Doctrine libraries</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">513</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">__construct</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Doctrine_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constATTR_AUTOCOMMIT" id="ATTR_AUTOCOMMIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_AUTOCOMMIT</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">130</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">PDO derived attributes</p>
+	
+	
+</div>
+<a name="constATTR_AUTOLOAD_TABLE_CLASSES" id="ATTR_AUTOLOAD_TABLE_CLASSES"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_AUTOLOAD_TABLE_CLASSES</span>
+			 = <span class="const-default"> 160</span>
+			(line <span class="line-number">194</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_AUTO_ACCESSOR_OVERRIDE" id="ATTR_AUTO_ACCESSOR_OVERRIDE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_AUTO_ACCESSOR_OVERRIDE</span>
+			 = <span class="const-default"> 165</span>
+			(line <span class="line-number">198</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_AUTO_FREE_QUERY_OBJECTS" id="ATTR_AUTO_FREE_QUERY_OBJECTS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_AUTO_FREE_QUERY_OBJECTS</span>
+			 = <span class="const-default"> 166</span>
+			(line <span class="line-number">199</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CACHE" id="ATTR_CACHE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CACHE</span>
+			 = <span class="const-default"> 150</span>
+			(line <span class="line-number">184</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CACHE_LIFESPAN" id="ATTR_CACHE_LIFESPAN"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CACHE_LIFESPAN</span>
+			 = <span class="const-default"> 151</span>
+			(line <span class="line-number">186</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CASCADE_SAVES" id="ATTR_CASCADE_SAVES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CASCADE_SAVES</span>
+			 = <span class="const-default"> 174</span>
+			(line <span class="line-number">206</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CASE" id="ATTR_CASE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CASE</span>
+			 = <span class="const-default"> 8</span>
+			(line <span class="line-number">138</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CLIENT_VERSION" id="ATTR_CLIENT_VERSION"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CLIENT_VERSION</span>
+			 = <span class="const-default"> 5</span>
+			(line <span class="line-number">135</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CMPNAME_FORMAT" id="ATTR_CMPNAME_FORMAT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CMPNAME_FORMAT</span>
+			 = <span class="const-default"> 118</span>
+			(line <span class="line-number">159</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_COLLECTION_CLASS" id="ATTR_COLLECTION_CLASS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_COLLECTION_CLASS</span>
+			 = <span class="const-default"> 175</span>
+			(line <span class="line-number">207</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_COLL_KEY" id="ATTR_COLL_KEY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_COLL_KEY</span>
+			 = <span class="const-default"> 108</span>
+			(line <span class="line-number">169</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_COLL_LIMIT" id="ATTR_COLL_LIMIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_COLL_LIMIT</span>
+			 = <span class="const-default"> 123</span>
+			(line <span class="line-number">182</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CONNECTION_STATUS" id="ATTR_CONNECTION_STATUS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CONNECTION_STATUS</span>
+			 = <span class="const-default"> 7</span>
+			(line <span class="line-number">137</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CREATE_TABLES" id="ATTR_CREATE_TABLES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CREATE_TABLES</span>
+			 = <span class="const-default"> 122</span>
+			(line <span class="line-number">181</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CURSOR" id="ATTR_CURSOR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CURSOR</span>
+			 = <span class="const-default"> 10</span>
+			(line <span class="line-number">140</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_CURSOR_NAME" id="ATTR_CURSOR_NAME"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_CURSOR_NAME</span>
+			 = <span class="const-default"> 9</span>
+			(line <span class="line-number">139</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DBNAME_FORMAT" id="ATTR_DBNAME_FORMAT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DBNAME_FORMAT</span>
+			 = <span class="const-default"> 117</span>
+			(line <span class="line-number">160</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DECIMAL_PLACES" id="ATTR_DECIMAL_PLACES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DECIMAL_PLACES</span>
+			 = <span class="const-default"> 141</span>
+			(line <span class="line-number">165</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEFAULT_COLUMN_OPTIONS" id="ATTR_DEFAULT_COLUMN_OPTIONS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEFAULT_COLUMN_OPTIONS</span>
+			 = <span class="const-default"> 170</span>
+			(line <span class="line-number">203</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEFAULT_IDENTIFIER_OPTIONS" id="ATTR_DEFAULT_IDENTIFIER_OPTIONS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEFAULT_IDENTIFIER_OPTIONS</span>
+			 = <span class="const-default"> 169</span>
+			(line <span class="line-number">202</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEFAULT_PARAM_NAMESPACE" id="ATTR_DEFAULT_PARAM_NAMESPACE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEFAULT_PARAM_NAMESPACE</span>
+			 = <span class="const-default"> 156</span>
+			(line <span class="line-number">191</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEFAULT_SEQUENCE" id="ATTR_DEFAULT_SEQUENCE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEFAULT_SEQUENCE</span>
+			 = <span class="const-default"> 133</span>
+			(line <span class="line-number">177</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEFAULT_TABLE_CHARSET" id="ATTR_DEFAULT_TABLE_CHARSET"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEFAULT_TABLE_CHARSET</span>
+			 = <span class="const-default"> 167</span>
+			(line <span class="line-number">200</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEFAULT_TABLE_COLLATE" id="ATTR_DEFAULT_TABLE_COLLATE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEFAULT_TABLE_COLLATE</span>
+			 = <span class="const-default"> 168</span>
+			(line <span class="line-number">201</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEFAULT_TABLE_TYPE" id="ATTR_DEFAULT_TABLE_TYPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEFAULT_TABLE_TYPE</span>
+			 = <span class="const-default"> 112</span>
+			(line <span class="line-number">171</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEF_TABLESPACE" id="ATTR_DEF_TABLESPACE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEF_TABLESPACE</span>
+			 = <span class="const-default"> 115</span>
+			(line <span class="line-number">174</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEF_TEXT_LENGTH" id="ATTR_DEF_TEXT_LENGTH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEF_TEXT_LENGTH</span>
+			 = <span class="const-default"> 113</span>
+			(line <span class="line-number">172</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DEF_VARCHAR_LENGTH" id="ATTR_DEF_VARCHAR_LENGTH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DEF_VARCHAR_LENGTH</span>
+			 = <span class="const-default"> 114</span>
+			(line <span class="line-number">173</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_DRIVER_NAME" id="ATTR_DRIVER_NAME"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_DRIVER_NAME</span>
+			 = <span class="const-default"> 16</span>
+			(line <span class="line-number">146</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_EMULATE_DATABASE" id="ATTR_EMULATE_DATABASE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_EMULATE_DATABASE</span>
+			 = <span class="const-default"> 116</span>
+			(line <span class="line-number">175</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_ERRMODE" id="ATTR_ERRMODE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_ERRMODE</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">133</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_EXPORT" id="ATTR_EXPORT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_EXPORT</span>
+			 = <span class="const-default"> 140</span>
+			(line <span class="line-number">164</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_FETCHMODE" id="ATTR_FETCHMODE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_FETCHMODE</span>
+			 = <span class="const-default"> 118</span>
+			(line <span class="line-number">179</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_FETCH_CATALOG_NAMES" id="ATTR_FETCH_CATALOG_NAMES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_FETCH_CATALOG_NAMES</span>
+			 = <span class="const-default"> 15</span>
+			(line <span class="line-number">145</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_FETCH_TABLE_NAMES" id="ATTR_FETCH_TABLE_NAMES"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_FETCH_TABLE_NAMES</span>
+			 = <span class="const-default"> 14</span>
+			(line <span class="line-number">144</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_FIELD_CASE" id="ATTR_FIELD_CASE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_FIELD_CASE</span>
+			 = <span class="const-default"> 102</span>
+			(line <span class="line-number">155</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_FKNAME_FORMAT" id="ATTR_FKNAME_FORMAT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_FKNAME_FORMAT</span>
+			 = <span class="const-default"> 171</span>
+			(line <span class="line-number">163</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_HYDRATE_OVERWRITE" id="ATTR_HYDRATE_OVERWRITE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_HYDRATE_OVERWRITE</span>
+			 = <span class="const-default"> 172</span>
+			(line <span class="line-number">204</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_IDXNAME_FORMAT" id="ATTR_IDXNAME_FORMAT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_IDXNAME_FORMAT</span>
+			 = <span class="const-default"> 103</span>
+			(line <span class="line-number">156</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_LISTENER" id="ATTR_LISTENER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_LISTENER</span>
+			 = <span class="const-default"> 100</span>
+			(line <span class="line-number">153</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine constants</p>
+	
+	
+</div>
+<a name="constATTR_LOAD_REFERENCES" id="ATTR_LOAD_REFERENCES"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_LOAD_REFERENCES</span>
+			 = <span class="const-default"> 153</span>
+			(line <span class="line-number">188</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_MAX_COLUMN_LEN" id="ATTR_MAX_COLUMN_LEN"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_MAX_COLUMN_LEN</span>
+			 = <span class="const-default"> 18</span>
+			(line <span class="line-number">148</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_MAX_IDENTIFIER_LENGTH" id="ATTR_MAX_IDENTIFIER_LENGTH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_MAX_IDENTIFIER_LENGTH</span>
+			 = <span class="const-default"> 180</span>
+			(line <span class="line-number">212</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_MODEL_CLASS_PREFIX" id="ATTR_MODEL_CLASS_PREFIX"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_MODEL_CLASS_PREFIX</span>
+			 = <span class="const-default"> 178</span>
+			(line <span class="line-number">210</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_MODEL_LOADING" id="ATTR_MODEL_LOADING"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_MODEL_LOADING</span>
+			 = <span class="const-default"> 161</span>
+			(line <span class="line-number">195</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_NAME_PREFIX" id="ATTR_NAME_PREFIX"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_NAME_PREFIX</span>
+			 = <span class="const-default"> 121</span>
+			(line <span class="line-number">180</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_ORACLE_NULLS" id="ATTR_ORACLE_NULLS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_ORACLE_NULLS</span>
+			 = <span class="const-default"> 11</span>
+			(line <span class="line-number">141</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_PERSISTENT" id="ATTR_PERSISTENT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_PERSISTENT</span>
+			 = <span class="const-default"> 12</span>
+			(line <span class="line-number">142</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_PORTABILITY" id="ATTR_PORTABILITY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_PORTABILITY</span>
+			 = <span class="const-default"> 106</span>
+			(line <span class="line-number">167</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_PREFETCH" id="ATTR_PREFETCH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_PREFETCH</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">131</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_QUERY_CACHE" id="ATTR_QUERY_CACHE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_QUERY_CACHE</span>
+			 = <span class="const-default"> 157</span>
+			(line <span class="line-number">192</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_QUERY_CACHE_LIFESPAN" id="ATTR_QUERY_CACHE_LIFESPAN"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_QUERY_CACHE_LIFESPAN</span>
+			 = <span class="const-default"> 158</span>
+			(line <span class="line-number">193</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_QUERY_CLASS" id="ATTR_QUERY_CLASS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_QUERY_CLASS</span>
+			 = <span class="const-default"> 173</span>
+			(line <span class="line-number">205</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_QUERY_LIMIT" id="ATTR_QUERY_LIMIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_QUERY_LIMIT</span>
+			 = <span class="const-default"> 109</span>
+			(line <span class="line-number">170</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_QUOTE_IDENTIFIER" id="ATTR_QUOTE_IDENTIFIER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_QUOTE_IDENTIFIER</span>
+			 = <span class="const-default"> 101</span>
+			(line <span class="line-number">154</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_RECORD_LISTENER" id="ATTR_RECORD_LISTENER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_RECORD_LISTENER</span>
+			 = <span class="const-default"> 154</span>
+			(line <span class="line-number">189</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_RECURSIVE_MERGE_FIXTURES" id="ATTR_RECURSIVE_MERGE_FIXTURES"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_RECURSIVE_MERGE_FIXTURES</span>
+			 = <span class="const-default"> 162</span>
+			(line <span class="line-number">196</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_RESULT_CACHE" id="ATTR_RESULT_CACHE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_RESULT_CACHE</span>
+			 = <span class="const-default"> 150</span>
+			(line <span class="line-number">185</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_RESULT_CACHE_LIFESPAN" id="ATTR_RESULT_CACHE_LIFESPAN"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_RESULT_CACHE_LIFESPAN</span>
+			 = <span class="const-default"> 151</span>
+			(line <span class="line-number">187</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_SEQCOL_NAME" id="ATTR_SEQCOL_NAME"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_SEQCOL_NAME</span>
+			 = <span class="const-default"> 105</span>
+			(line <span class="line-number">158</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_SEQNAME_FORMAT" id="ATTR_SEQNAME_FORMAT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_SEQNAME_FORMAT</span>
+			 = <span class="const-default"> 104</span>
+			(line <span class="line-number">157</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_SERVER_INFO" id="ATTR_SERVER_INFO"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_SERVER_INFO</span>
+			 = <span class="const-default"> 6</span>
+			(line <span class="line-number">136</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_SERVER_VERSION" id="ATTR_SERVER_VERSION"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_SERVER_VERSION</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">134</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_STATEMENT_CLASS" id="ATTR_STATEMENT_CLASS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_STATEMENT_CLASS</span>
+			 = <span class="const-default"> 13</span>
+			(line <span class="line-number">143</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_STRINGIFY_FETCHES" id="ATTR_STRINGIFY_FETCHES"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_STRINGIFY_FETCHES</span>
+			 = <span class="const-default"> 17</span>
+			(line <span class="line-number">147</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_TABLE_CLASS" id="ATTR_TABLE_CLASS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_TABLE_CLASS</span>
+			 = <span class="const-default"> 176</span>
+			(line <span class="line-number">208</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_TABLE_CLASS_FORMAT" id="ATTR_TABLE_CLASS_FORMAT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_TABLE_CLASS_FORMAT</span>
+			 = <span class="const-default"> 179</span>
+			(line <span class="line-number">211</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_TBLCLASS_FORMAT" id="ATTR_TBLCLASS_FORMAT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_TBLCLASS_FORMAT</span>
+			 = <span class="const-default"> 119</span>
+			(line <span class="line-number">161</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_TBLNAME_FORMAT" id="ATTR_TBLNAME_FORMAT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_TBLNAME_FORMAT</span>
+			 = <span class="const-default"> 120</span>
+			(line <span class="line-number">162</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_THROW_EXCEPTIONS" id="ATTR_THROW_EXCEPTIONS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_THROW_EXCEPTIONS</span>
+			 = <span class="const-default"> 155</span>
+			(line <span class="line-number">190</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_TIMEOUT" id="ATTR_TIMEOUT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_TIMEOUT</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">132</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_USE_DQL_CALLBACKS" id="ATTR_USE_DQL_CALLBACKS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_USE_DQL_CALLBACKS</span>
+			 = <span class="const-default"> 164</span>
+			(line <span class="line-number">197</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_USE_NATIVE_ENUM" id="ATTR_USE_NATIVE_ENUM"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_USE_NATIVE_ENUM</span>
+			 = <span class="const-default"> 117</span>
+			(line <span class="line-number">176</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_USE_NATIVE_SET" id="ATTR_USE_NATIVE_SET"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_USE_NATIVE_SET</span>
+			 = <span class="const-default"> 177</span>
+			(line <span class="line-number">209</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constATTR_VALIDATE" id="ATTR_VALIDATE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ATTR_VALIDATE</span>
+			 = <span class="const-default"> 107</span>
+			(line <span class="line-number">168</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCASE_LOWER" id="CASE_LOWER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CASE_LOWER</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">PDO derived constants</p>
+	
+	
+</div>
+<a name="constCASE_NATURAL" id="CASE_NATURAL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CASE_NATURAL</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">84</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCASE_UPPER" id="CASE_UPPER"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CASE_UPPER</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">85</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCURSOR_FWDONLY" id="CURSOR_FWDONLY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CURSOR_FWDONLY</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">86</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constCURSOR_SCROLL" id="CURSOR_SCROLL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CURSOR_SCROLL</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR" id="ERR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR</span>
+			 = <span class="const-default"> -1</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">ERROR CONSTANTS</p>
+	
+	
+</div>
+<a name="constERRMODE_EXCEPTION" id="ERRMODE_EXCEPTION"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERRMODE_EXCEPTION</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERRMODE_SILENT" id="ERRMODE_SILENT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERRMODE_SILENT</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERRMODE_WARNING" id="ERRMODE_WARNING"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERRMODE_WARNING</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">90</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_ACCESS_VIOLATION" id="ERR_ACCESS_VIOLATION"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_ACCESS_VIOLATION</span>
+			 = <span class="const-default"> -27</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_ALREADY_EXISTS" id="ERR_ALREADY_EXISTS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_ALREADY_EXISTS</span>
+			 = <span class="const-default"> -5</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_CANNOT_ALTER" id="ERR_CANNOT_ALTER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_CANNOT_ALTER</span>
+			 = <span class="const-default"> -31</span>
+			(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_CANNOT_CREATE" id="ERR_CANNOT_CREATE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_CANNOT_CREATE</span>
+			 = <span class="const-default"> -15</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_CANNOT_DELETE" id="ERR_CANNOT_DELETE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_CANNOT_DELETE</span>
+			 = <span class="const-default"> -16</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_CANNOT_DROP" id="ERR_CANNOT_DROP"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_CANNOT_DROP</span>
+			 = <span class="const-default"> -17</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_CANNOT_REPLACE" id="ERR_CANNOT_REPLACE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_CANNOT_REPLACE</span>
+			 = <span class="const-default"> -28</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_CLASS_NAME" id="ERR_CLASS_NAME"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_CLASS_NAME</span>
+			 = <span class="const-default"> -36</span>
+			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_CONNECT_FAILED" id="ERR_CONNECT_FAILED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_CONNECT_FAILED</span>
+			 = <span class="const-default"> -24</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_CONSTRAINT" id="ERR_CONSTRAINT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_CONSTRAINT</span>
+			 = <span class="const-default"> -3</span>
+			(line <span class="line-number">45</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_CONSTRAINT_NOT_NULL" id="ERR_CONSTRAINT_NOT_NULL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_CONSTRAINT_NOT_NULL</span>
+			 = <span class="const-default"> -29</span>
+			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_DEADLOCK" id="ERR_DEADLOCK"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_DEADLOCK</span>
+			 = <span class="const-default"> -30</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_DIVZERO" id="ERR_DIVZERO"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_DIVZERO</span>
+			 = <span class="const-default"> -13</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_EXTENSION_NOT_FOUND" id="ERR_EXTENSION_NOT_FOUND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_EXTENSION_NOT_FOUND</span>
+			 = <span class="const-default"> -25</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_INSUFFICIENT_DATA" id="ERR_INSUFFICIENT_DATA"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_INSUFFICIENT_DATA</span>
+			 = <span class="const-default"> -35</span>
+			(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_INVALID" id="ERR_INVALID"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_INVALID</span>
+			 = <span class="const-default"> -8</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_INVALID_DATE" id="ERR_INVALID_DATE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_INVALID_DATE</span>
+			 = <span class="const-default"> -12</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_INVALID_DSN" id="ERR_INVALID_DSN"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_INVALID_DSN</span>
+			 = <span class="const-default"> -23</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_INVALID_NUMBER" id="ERR_INVALID_NUMBER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_INVALID_NUMBER</span>
+			 = <span class="const-default"> -11</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_LOADMODULE" id="ERR_LOADMODULE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_LOADMODULE</span>
+			 = <span class="const-default"> -34</span>
+			(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_MANAGER" id="ERR_MANAGER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_MANAGER</span>
+			 = <span class="const-default"> -32</span>
+			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_MANAGER_PARSE" id="ERR_MANAGER_PARSE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_MANAGER_PARSE</span>
+			 = <span class="const-default"> -33</span>
+			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_MISMATCH" id="ERR_MISMATCH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_MISMATCH</span>
+			 = <span class="const-default"> -7</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_NEED_MORE_DATA" id="ERR_NEED_MORE_DATA"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_NEED_MORE_DATA</span>
+			 = <span class="const-default"> -20</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_NODBSELECTED" id="ERR_NODBSELECTED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_NODBSELECTED</span>
+			 = <span class="const-default"> -14</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_NOSUCHDB" id="ERR_NOSUCHDB"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_NOSUCHDB</span>
+			 = <span class="const-default"> -26</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_NOSUCHFIELD" id="ERR_NOSUCHFIELD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_NOSUCHFIELD</span>
+			 = <span class="const-default"> -19</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_NOSUCHTABLE" id="ERR_NOSUCHTABLE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_NOSUCHTABLE</span>
+			 = <span class="const-default"> -18</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_NOT_CAPABLE" id="ERR_NOT_CAPABLE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_NOT_CAPABLE</span>
+			 = <span class="const-default"> -9</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_NOT_FOUND" id="ERR_NOT_FOUND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_NOT_FOUND</span>
+			 = <span class="const-default"> -4</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_NOT_LOCKED" id="ERR_NOT_LOCKED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_NOT_LOCKED</span>
+			 = <span class="const-default"> -21</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_SYNTAX" id="ERR_SYNTAX"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_SYNTAX</span>
+			 = <span class="const-default"> -2</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_TRUNCATED" id="ERR_TRUNCATED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_TRUNCATED</span>
+			 = <span class="const-default"> -10</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_UNSUPPORTED" id="ERR_UNSUPPORTED"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_UNSUPPORTED</span>
+			 = <span class="const-default"> -6</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constERR_VALUE_COUNT_ON_ROW" id="ERR_VALUE_COUNT_ON_ROW"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">ERR_VALUE_COUNT_ON_ROW</span>
+			 = <span class="const-default"> -22</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constEXPORT_ALL" id="EXPORT_ALL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">EXPORT_ALL</span>
+			 = <span class="const-default"> 7</span>
+			(line <span class="line-number">330</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">EXPORT_ALL</p>
+	
+	
+</div>
+<a name="constEXPORT_CONSTRAINTS" id="EXPORT_CONSTRAINTS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">EXPORT_CONSTRAINTS</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">320</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">EXPORT_CONSTRAINTS</p>
+	
+	
+</div>
+<a name="constEXPORT_NONE" id="EXPORT_NONE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">EXPORT_NONE</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">310</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">EXPORT_NONE</p>
+	
+	
+</div>
+<a name="constEXPORT_PLUGINS" id="EXPORT_PLUGINS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">EXPORT_PLUGINS</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">325</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">EXPORT_PLUGINS</p>
+	
+	
+</div>
+<a name="constEXPORT_TABLES" id="EXPORT_TABLES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">EXPORT_TABLES</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">315</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">EXPORT_TABLES</p>
+	
+	
+</div>
+<a name="constFETCH_ASSOC" id="FETCH_ASSOC"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_ASSOC</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_BOTH" id="FETCH_BOTH"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_BOTH</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">92</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_BOUND" id="FETCH_BOUND"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_BOUND</span>
+			 = <span class="const-default"> 6</span>
+			(line <span class="line-number">93</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_CLASS" id="FETCH_CLASS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_CLASS</span>
+			 = <span class="const-default"> 8</span>
+			(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_CLASSTYPE" id="FETCH_CLASSTYPE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_CLASSTYPE</span>
+			 = <span class="const-default"> 262144</span>
+			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_COLUMN" id="FETCH_COLUMN"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_COLUMN</span>
+			 = <span class="const-default"> 7</span>
+			(line <span class="line-number">96</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_FUNC" id="FETCH_FUNC"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_FUNC</span>
+			 = <span class="const-default"> 10</span>
+			(line <span class="line-number">97</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_GROUP" id="FETCH_GROUP"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_GROUP</span>
+			 = <span class="const-default"> 65536</span>
+			(line <span class="line-number">98</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_INTO" id="FETCH_INTO"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_INTO</span>
+			 = <span class="const-default"> 9</span>
+			(line <span class="line-number">99</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_LAZY" id="FETCH_LAZY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_LAZY</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_NAMED" id="FETCH_NAMED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_NAMED</span>
+			 = <span class="const-default"> 11</span>
+			(line <span class="line-number">101</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_NUM" id="FETCH_NUM"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_NUM</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">102</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_OBJ" id="FETCH_OBJ"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_OBJ</span>
+			 = <span class="const-default"> 5</span>
+			(line <span class="line-number">103</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_ORI_ABS" id="FETCH_ORI_ABS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_ORI_ABS</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">104</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_ORI_FIRST" id="FETCH_ORI_FIRST"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_ORI_FIRST</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">105</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_ORI_LAST" id="FETCH_ORI_LAST"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_ORI_LAST</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">106</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_ORI_NEXT" id="FETCH_ORI_NEXT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_ORI_NEXT</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">107</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_ORI_PRIOR" id="FETCH_ORI_PRIOR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_ORI_PRIOR</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">108</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_ORI_REL" id="FETCH_ORI_REL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_ORI_REL</span>
+			 = <span class="const-default"> 5</span>
+			(line <span class="line-number">109</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_SERIALIZE" id="FETCH_SERIALIZE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_SERIALIZE</span>
+			 = <span class="const-default"> 524288</span>
+			(line <span class="line-number">110</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constFETCH_UNIQUE" id="FETCH_UNIQUE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">FETCH_UNIQUE</span>
+			 = <span class="const-default"> 196608</span>
+			(line <span class="line-number">111</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constHYDRATE_ARRAY" id="HYDRATE_ARRAY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HYDRATE_ARRAY</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">344</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HYDRATE_ARRAY</p>
+	
+	
+</div>
+<a name="constHYDRATE_ARRAY_HIERARCHY" id="HYDRATE_ARRAY_HIERARCHY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HYDRATE_ARRAY_HIERARCHY</span>
+			 = <span class="const-default"> 8</span>
+			(line <span class="line-number">369</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HYDRATE_ARRAY_HIERARCHY</p>
+	
+	
+</div>
+<a name="constHYDRATE_ARRAY_SHALLOW" id="HYDRATE_ARRAY_SHALLOW"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HYDRATE_ARRAY_SHALLOW</span>
+			 = <span class="const-default"> 10</span>
+			(line <span class="line-number">379</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HYDRATE_ARRAY_SHALLOW</p>
+	
+	
+</div>
+<a name="constHYDRATE_NONE" id="HYDRATE_NONE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HYDRATE_NONE</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">349</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HYDRATE_NONE</p>
+	
+	
+</div>
+<a name="constHYDRATE_ON_DEMAND" id="HYDRATE_ON_DEMAND"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HYDRATE_ON_DEMAND</span>
+			 = <span class="const-default"> 7</span>
+			(line <span class="line-number">364</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HYDRATE_ON_DEMAND</p>
+	
+	
+</div>
+<a name="constHYDRATE_RECORD" id="HYDRATE_RECORD"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HYDRATE_RECORD</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">339</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HYDRATE_RECORD</p>
+	
+	
+</div>
+<a name="constHYDRATE_RECORD_HIERARCHY" id="HYDRATE_RECORD_HIERARCHY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HYDRATE_RECORD_HIERARCHY</span>
+			 = <span class="const-default"> 9</span>
+			(line <span class="line-number">374</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HYDRATE_RECORD_HIERARCHY</p>
+	
+	
+</div>
+<a name="constHYDRATE_SCALAR" id="HYDRATE_SCALAR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HYDRATE_SCALAR</span>
+			 = <span class="const-default"> 5</span>
+			(line <span class="line-number">354</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HYDRATE_SCALAR</p>
+	
+	
+</div>
+<a name="constHYDRATE_SINGLE_SCALAR" id="HYDRATE_SINGLE_SCALAR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">HYDRATE_SINGLE_SCALAR</span>
+			 = <span class="const-default"> 6</span>
+			(line <span class="line-number">359</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">HYDRATE_SINGLE_SCALAR</p>
+	
+	
+</div>
+<a name="constIDENTIFIER_AUTOINC" id="IDENTIFIER_AUTOINC"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">IDENTIFIER_AUTOINC</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">416</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">IDENTIFIER_AUTOINC</p>
+<p class="description"><p>constant for auto_increment identifier</p></p>
+	
+	
+</div>
+<a name="constIDENTIFIER_COMPOSITE" id="IDENTIFIER_COMPOSITE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">IDENTIFIER_COMPOSITE</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">437</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">IDENTIFIER_COMPOSITE</p>
+<p class="description"><p>constant for composite identifier</p></p>
+	
+	
+</div>
+<a name="constIDENTIFIER_NATURAL" id="IDENTIFIER_NATURAL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">IDENTIFIER_NATURAL</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">430</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">IDENTIFIER_NATURAL</p>
+<p class="description"><p>constant for normal identifier</p></p>
+	
+	
+</div>
+<a name="constIDENTIFIER_SEQUENCE" id="IDENTIFIER_SEQUENCE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">IDENTIFIER_SEQUENCE</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">423</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">IDENTIFIER_SEQUENCE</p>
+<p class="description"><p>constant for sequence identifier</p></p>
+	
+	
+</div>
+<a name="constLIMIT_RECORDS" id="LIMIT_RECORDS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LIMIT_RECORDS</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">227</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">constant for record limiting</p>
+	
+	
+</div>
+<a name="constLIMIT_ROWS" id="LIMIT_ROWS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LIMIT_ROWS</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">221</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">constant for row limiting</p>
+	
+	
+</div>
+<a name="constLOCK_OPTIMISTIC" id="LOCK_OPTIMISTIC"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LOCK_OPTIMISTIC</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">296</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mode for optimistic locking</p>
+	
+	
+</div>
+<a name="constLOCK_PESSIMISTIC" id="LOCK_PESSIMISTIC"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">LOCK_PESSIMISTIC</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">301</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mode for pessimistic locking</p>
+	
+	
+</div>
+<a name="constMODEL_LOADING_AGGRESSIVE" id="MODEL_LOADING_AGGRESSIVE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MODEL_LOADING_AGGRESSIVE</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">445</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">MODEL_LOADING_AGGRESSIVE</p>
+<p class="description"><p>Constant for agressive model loading  Will require_once() all found model files</p></p>
+	
+	
+</div>
+<a name="constMODEL_LOADING_CONSERVATIVE" id="MODEL_LOADING_CONSERVATIVE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MODEL_LOADING_CONSERVATIVE</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">454</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">MODEL_LOADING_CONSERVATIVE</p>
+<p class="description"><p>Constant for conservative model loading  Will not require_once() found model files inititally instead it will build an array  and reference it in autoload() when a class is needed it will require_once() it</p></p>
+	
+	
+</div>
+<a name="constMODEL_LOADING_PEAR" id="MODEL_LOADING_PEAR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MODEL_LOADING_PEAR</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">463</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">MODEL_LOADING_PEAR</p>
+<p class="description"><p>Constant for pear model loading  Will simply store the path passed to Doctrine_Core::loadModels()  and Doctrine_Core::autoload() will check there</p></p>
+	
+	
+</div>
+<a name="constNULL_EMPTY_STRING" id="NULL_EMPTY_STRING"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NULL_EMPTY_STRING</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">112</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constNULL_NATURAL" id="NULL_NATURAL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NULL_NATURAL</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">113</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constNULL_TO_STRING" id="NULL_TO_STRING"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">NULL_TO_STRING</span>
+			 = <span class="const-default"> NULL</span>
+			(line <span class="line-number">114</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPARAM_BOOL" id="PARAM_BOOL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PARAM_BOOL</span>
+			 = <span class="const-default"> 5</span>
+			(line <span class="line-number">115</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPARAM_INPUT_OUTPUT" id="PARAM_INPUT_OUTPUT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PARAM_INPUT_OUTPUT</span>
+			 = <span class="const-default"> -2147483648</span>
+			(line <span class="line-number">116</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPARAM_INT" id="PARAM_INT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PARAM_INT</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">117</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPARAM_LOB" id="PARAM_LOB"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PARAM_LOB</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">118</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPARAM_NULL" id="PARAM_NULL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PARAM_NULL</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">119</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPARAM_STMT" id="PARAM_STMT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PARAM_STMT</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">120</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPARAM_STR" id="PARAM_STR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PARAM_STR</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">121</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPORTABILITY_ALL" id="PORTABILITY_ALL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PORTABILITY_ALL</span>
+			 = <span class="const-default"> 63</span>
+			(line <span class="line-number">287</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Portability: turn on all portability features.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> self::ATTR_PORTABILITY</li>
+			</ul>
+	
+	
+</div>
+<a name="constPORTABILITY_DELETE_COUNT" id="PORTABILITY_DELETE_COUNT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PORTABILITY_DELETE_COUNT</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">262</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Portability: force reporting the number of rows deleted.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> self::ATTR_PORTABILITY</li>
+			</ul>
+	
+	
+</div>
+<a name="constPORTABILITY_EMPTY_TO_NULL" id="PORTABILITY_EMPTY_TO_NULL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PORTABILITY_EMPTY_TO_NULL</span>
+			 = <span class="const-default"> 8</span>
+			(line <span class="line-number">269</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Portability: convert empty values to null strings in data output by  query*() and fetch*().</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> self::ATTR_PORTABILITY</li>
+			</ul>
+	
+	
+</div>
+<a name="constPORTABILITY_EXPR" id="PORTABILITY_EXPR"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PORTABILITY_EXPR</span>
+			 = <span class="const-default"> 32</span>
+			(line <span class="line-number">281</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Portability: makes Doctrine_Expression throw exception for unportable RDBMS expressions</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> self::ATTR_PORTABILITY</li>
+			</ul>
+	
+	
+</div>
+<a name="constPORTABILITY_FIX_ASSOC_FIELD_NAMES" id="PORTABILITY_FIX_ASSOC_FIELD_NAMES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PORTABILITY_FIX_ASSOC_FIELD_NAMES</span>
+			 = <span class="const-default"> 16</span>
+			(line <span class="line-number">275</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Portability: removes database/table qualifiers from associative indexes</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> self::ATTR_PORTABILITY</li>
+			</ul>
+	
+	
+</div>
+<a name="constPORTABILITY_FIX_CASE" id="PORTABILITY_FIX_CASE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PORTABILITY_FIX_CASE</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">250</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Portability: convert names of tables and fields to case defined in the  &quot;field_case&quot; option when using the query*(), fetch*() methods.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> self::ATTR_PORTABILITY</li>
+			</ul>
+	
+	
+</div>
+<a name="constPORTABILITY_NONE" id="PORTABILITY_NONE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PORTABILITY_NONE</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">243</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Portability: turn off all portability features.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> self::ATTR_PORTABILITY</li>
+			</ul>
+	
+	
+</div>
+<a name="constPORTABILITY_RTRIM" id="PORTABILITY_RTRIM"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PORTABILITY_RTRIM</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">256</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Portability: right trim the data output by query*() and fetch*().</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> self::ATTR_PORTABILITY</li>
+			</ul>
+	
+	
+</div>
+<a name="constQUERY_LIMIT_RECORDS" id="QUERY_LIMIT_RECORDS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUERY_LIMIT_RECORDS</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">228</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constQUERY_LIMIT_ROWS" id="QUERY_LIMIT_ROWS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">QUERY_LIMIT_ROWS</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">222</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constVALIDATE_ALL" id="VALIDATE_ALL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">VALIDATE_ALL</span>
+			 = <span class="const-default"> 7</span>
+			(line <span class="line-number">404</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">VALIDATE_ALL</p>
+	
+	
+</div>
+<a name="constVALIDATE_CONSTRAINTS" id="VALIDATE_CONSTRAINTS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">VALIDATE_CONSTRAINTS</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">399</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">VALIDATE_CONSTRAINTS</p>
+	
+	
+</div>
+<a name="constVALIDATE_LENGTHS" id="VALIDATE_LENGTHS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">VALIDATE_LENGTHS</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">389</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">VALIDATE_LENGTHS</p>
+	
+	
+</div>
+<a name="constVALIDATE_NONE" id="VALIDATE_NONE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">VALIDATE_NONE</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">384</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">VALIDATION CONSTANTS</p>
+	
+	
+</div>
+<a name="constVALIDATE_TYPES" id="VALIDATE_TYPES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">VALIDATE_TYPES</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">394</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">VALIDATE_TYPES</p>
+	
+	
+</div>
+<a name="constVALIDATE_USER" id="VALIDATE_USER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">VALIDATE_USER</span>
+			 = <span class="const-default"> 8</span>
+			(line <span class="line-number">409</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">VALIDATE_USER</p>
+	
+	
+</div>
+<a name="constVERSION" id="VERSION"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">VERSION</span>
+			 = <span class="const-default"> '1.2.4'</span>
+			(line <span class="line-number">38</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">VERSION</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:58 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

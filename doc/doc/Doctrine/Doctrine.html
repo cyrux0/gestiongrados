@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-methods">Methods</a>
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">This class only exists for backwards compatability. All code was moved to  Doctrine_Core and this class extends Doctrine_Core</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Lukas Smith &lt;<a href="mailto:smith@pooteeweet.org">smith@pooteeweet.org</a>&gt; (PEAR MDB2 library)</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine.php.html">/helpers/Doctrine.php</a> (line <span class="field">36</span>)
+		</p>
+		
+				
+		<pre><a href="../Doctrine/Doctrine_Core.html">Doctrine_Core</a>
+   |
+   --Doctrine</pre>
+	
+			</div>
+</div>
+
+
+
+
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-consts">Constants</a>
+							
+										<span class="disabled">Methods</span>
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Doctrine/Doctrine_Core.html">Doctrine_Core</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#method__construct">Doctrine_Core::__construct()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodautoload">Doctrine_Core::autoload()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodcompile">Doctrine_Core::compile()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodcreateDatabases">Doctrine_Core::createDatabases()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodcreateTablesFromArray">Doctrine_Core::createTablesFromArray()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodcreateTablesFromModels">Doctrine_Core::createTablesFromModels()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methoddebug">Doctrine_Core::debug()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methoddropDatabases">Doctrine_Core::dropDatabases()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methoddump">Doctrine_Core::dump()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methoddumpData">Doctrine_Core::dumpData()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodextensionsAutoload">Doctrine_Core::extensionsAutoload()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodfilterInvalidModels">Doctrine_Core::filterInvalidModels()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateMigrationClass">Doctrine_Core::generateMigrationClass()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateMigrationsFromDb">Doctrine_Core::generateMigrationsFromDb()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateMigrationsFromDiff">Doctrine_Core::generateMigrationsFromDiff()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateMigrationsFromModels">Doctrine_Core::generateMigrationsFromModels()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateModelsFromDb">Doctrine_Core::generateModelsFromDb()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateModelsFromYaml">Doctrine_Core::generateModelsFromYaml()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateSqlFromArray">Doctrine_Core::generateSqlFromArray()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateSqlFromModels">Doctrine_Core::generateSqlFromModels()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateYamlFromDb">Doctrine_Core::generateYamlFromDb()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgenerateYamlFromModels">Doctrine_Core::generateYamlFromModels()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgetConnectionByTableName">Doctrine_Core::getConnectionByTableName()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgetExtensionsPath">Doctrine_Core::getExtensionsPath()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgetLoadedModelFiles">Doctrine_Core::getLoadedModelFiles()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgetLoadedModels">Doctrine_Core::getLoadedModels()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgetModelsDirectory">Doctrine_Core::getModelsDirectory()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgetPath">Doctrine_Core::getPath()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodgetTable">Doctrine_Core::getTable()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodinitializeModels">Doctrine_Core::initializeModels()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodisValidModelClass">Doctrine_Core::isValidModelClass()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodloadData">Doctrine_Core::loadData()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodloadModel">Doctrine_Core::loadModel()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodloadModels">Doctrine_Core::loadModels()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodmigrate">Doctrine_Core::migrate()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodmodelsAutoload">Doctrine_Core::modelsAutoload()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodsetExtensionsPath">Doctrine_Core::setExtensionsPath()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodsetModelsDirectory">Doctrine_Core::setModelsDirectory()</a></span><br>
+													<span class="method-name"><a href="../Doctrine/Doctrine_Core.html#methodsetPath">Doctrine_Core::setPath()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<span class="disabled">Constants</span>
+						
+			
+										| 
+									<a href="#sec-methods">Methods</a>
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Doctrine/Doctrine_Core.html">Doctrine_Core</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_AUTOCOMMIT">Doctrine_Core::ATTR_AUTOCOMMIT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_AUTOLOAD_TABLE_CLASSES">Doctrine_Core::ATTR_AUTOLOAD_TABLE_CLASSES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_AUTO_ACCESSOR_OVERRIDE">Doctrine_Core::ATTR_AUTO_ACCESSOR_OVERRIDE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_AUTO_FREE_QUERY_OBJECTS">Doctrine_Core::ATTR_AUTO_FREE_QUERY_OBJECTS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CACHE">Doctrine_Core::ATTR_CACHE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CACHE_LIFESPAN">Doctrine_Core::ATTR_CACHE_LIFESPAN</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CASCADE_SAVES">Doctrine_Core::ATTR_CASCADE_SAVES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CASE">Doctrine_Core::ATTR_CASE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CLIENT_VERSION">Doctrine_Core::ATTR_CLIENT_VERSION</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CMPNAME_FORMAT">Doctrine_Core::ATTR_CMPNAME_FORMAT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_COLLECTION_CLASS">Doctrine_Core::ATTR_COLLECTION_CLASS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_COLL_KEY">Doctrine_Core::ATTR_COLL_KEY</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_COLL_LIMIT">Doctrine_Core::ATTR_COLL_LIMIT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CONNECTION_STATUS">Doctrine_Core::ATTR_CONNECTION_STATUS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CREATE_TABLES">Doctrine_Core::ATTR_CREATE_TABLES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CURSOR">Doctrine_Core::ATTR_CURSOR</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_CURSOR_NAME">Doctrine_Core::ATTR_CURSOR_NAME</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DBNAME_FORMAT">Doctrine_Core::ATTR_DBNAME_FORMAT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DECIMAL_PLACES">Doctrine_Core::ATTR_DECIMAL_PLACES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEFAULT_COLUMN_OPTIONS">Doctrine_Core::ATTR_DEFAULT_COLUMN_OPTIONS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEFAULT_IDENTIFIER_OPTIONS">Doctrine_Core::ATTR_DEFAULT_IDENTIFIER_OPTIONS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEFAULT_PARAM_NAMESPACE">Doctrine_Core::ATTR_DEFAULT_PARAM_NAMESPACE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEFAULT_SEQUENCE">Doctrine_Core::ATTR_DEFAULT_SEQUENCE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEFAULT_TABLE_CHARSET">Doctrine_Core::ATTR_DEFAULT_TABLE_CHARSET</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEFAULT_TABLE_COLLATE">Doctrine_Core::ATTR_DEFAULT_TABLE_COLLATE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEFAULT_TABLE_TYPE">Doctrine_Core::ATTR_DEFAULT_TABLE_TYPE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEF_TABLESPACE">Doctrine_Core::ATTR_DEF_TABLESPACE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEF_TEXT_LENGTH">Doctrine_Core::ATTR_DEF_TEXT_LENGTH</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DEF_VARCHAR_LENGTH">Doctrine_Core::ATTR_DEF_VARCHAR_LENGTH</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_DRIVER_NAME">Doctrine_Core::ATTR_DRIVER_NAME</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_EMULATE_DATABASE">Doctrine_Core::ATTR_EMULATE_DATABASE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_ERRMODE">Doctrine_Core::ATTR_ERRMODE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_EXPORT">Doctrine_Core::ATTR_EXPORT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_FETCHMODE">Doctrine_Core::ATTR_FETCHMODE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_FETCH_CATALOG_NAMES">Doctrine_Core::ATTR_FETCH_CATALOG_NAMES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_FETCH_TABLE_NAMES">Doctrine_Core::ATTR_FETCH_TABLE_NAMES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_FIELD_CASE">Doctrine_Core::ATTR_FIELD_CASE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_FKNAME_FORMAT">Doctrine_Core::ATTR_FKNAME_FORMAT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_HYDRATE_OVERWRITE">Doctrine_Core::ATTR_HYDRATE_OVERWRITE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_IDXNAME_FORMAT">Doctrine_Core::ATTR_IDXNAME_FORMAT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_LISTENER">Doctrine_Core::ATTR_LISTENER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_LOAD_REFERENCES">Doctrine_Core::ATTR_LOAD_REFERENCES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_MAX_COLUMN_LEN">Doctrine_Core::ATTR_MAX_COLUMN_LEN</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_MAX_IDENTIFIER_LENGTH">Doctrine_Core::ATTR_MAX_IDENTIFIER_LENGTH</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_MODEL_CLASS_PREFIX">Doctrine_Core::ATTR_MODEL_CLASS_PREFIX</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_MODEL_LOADING">Doctrine_Core::ATTR_MODEL_LOADING</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_NAME_PREFIX">Doctrine_Core::ATTR_NAME_PREFIX</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_ORACLE_NULLS">Doctrine_Core::ATTR_ORACLE_NULLS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_PERSISTENT">Doctrine_Core::ATTR_PERSISTENT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_PORTABILITY">Doctrine_Core::ATTR_PORTABILITY</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_PREFETCH">Doctrine_Core::ATTR_PREFETCH</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_QUERY_CACHE">Doctrine_Core::ATTR_QUERY_CACHE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_QUERY_CACHE_LIFESPAN">Doctrine_Core::ATTR_QUERY_CACHE_LIFESPAN</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_QUERY_CLASS">Doctrine_Core::ATTR_QUERY_CLASS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_QUERY_LIMIT">Doctrine_Core::ATTR_QUERY_LIMIT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_QUOTE_IDENTIFIER">Doctrine_Core::ATTR_QUOTE_IDENTIFIER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_RECORD_LISTENER">Doctrine_Core::ATTR_RECORD_LISTENER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_RECURSIVE_MERGE_FIXTURES">Doctrine_Core::ATTR_RECURSIVE_MERGE_FIXTURES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_RESULT_CACHE">Doctrine_Core::ATTR_RESULT_CACHE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_RESULT_CACHE_LIFESPAN">Doctrine_Core::ATTR_RESULT_CACHE_LIFESPAN</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_SEQCOL_NAME">Doctrine_Core::ATTR_SEQCOL_NAME</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_SEQNAME_FORMAT">Doctrine_Core::ATTR_SEQNAME_FORMAT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_SERVER_INFO">Doctrine_Core::ATTR_SERVER_INFO</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_SERVER_VERSION">Doctrine_Core::ATTR_SERVER_VERSION</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_STATEMENT_CLASS">Doctrine_Core::ATTR_STATEMENT_CLASS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_STRINGIFY_FETCHES">Doctrine_Core::ATTR_STRINGIFY_FETCHES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_TABLE_CLASS">Doctrine_Core::ATTR_TABLE_CLASS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_TABLE_CLASS_FORMAT">Doctrine_Core::ATTR_TABLE_CLASS_FORMAT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_TBLCLASS_FORMAT">Doctrine_Core::ATTR_TBLCLASS_FORMAT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_TBLNAME_FORMAT">Doctrine_Core::ATTR_TBLNAME_FORMAT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_THROW_EXCEPTIONS">Doctrine_Core::ATTR_THROW_EXCEPTIONS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_TIMEOUT">Doctrine_Core::ATTR_TIMEOUT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_USE_DQL_CALLBACKS">Doctrine_Core::ATTR_USE_DQL_CALLBACKS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_USE_NATIVE_ENUM">Doctrine_Core::ATTR_USE_NATIVE_ENUM</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_USE_NATIVE_SET">Doctrine_Core::ATTR_USE_NATIVE_SET</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constATTR_VALIDATE">Doctrine_Core::ATTR_VALIDATE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constCASE_LOWER">Doctrine_Core::CASE_LOWER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constCASE_NATURAL">Doctrine_Core::CASE_NATURAL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constCASE_UPPER">Doctrine_Core::CASE_UPPER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constCURSOR_FWDONLY">Doctrine_Core::CURSOR_FWDONLY</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constCURSOR_SCROLL">Doctrine_Core::CURSOR_SCROLL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR">Doctrine_Core::ERR</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERRMODE_EXCEPTION">Doctrine_Core::ERRMODE_EXCEPTION</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERRMODE_SILENT">Doctrine_Core::ERRMODE_SILENT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERRMODE_WARNING">Doctrine_Core::ERRMODE_WARNING</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_ACCESS_VIOLATION">Doctrine_Core::ERR_ACCESS_VIOLATION</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_ALREADY_EXISTS">Doctrine_Core::ERR_ALREADY_EXISTS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_CANNOT_ALTER">Doctrine_Core::ERR_CANNOT_ALTER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_CANNOT_CREATE">Doctrine_Core::ERR_CANNOT_CREATE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_CANNOT_DELETE">Doctrine_Core::ERR_CANNOT_DELETE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_CANNOT_DROP">Doctrine_Core::ERR_CANNOT_DROP</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_CANNOT_REPLACE">Doctrine_Core::ERR_CANNOT_REPLACE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_CLASS_NAME">Doctrine_Core::ERR_CLASS_NAME</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_CONNECT_FAILED">Doctrine_Core::ERR_CONNECT_FAILED</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_CONSTRAINT">Doctrine_Core::ERR_CONSTRAINT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_CONSTRAINT_NOT_NULL">Doctrine_Core::ERR_CONSTRAINT_NOT_NULL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_DEADLOCK">Doctrine_Core::ERR_DEADLOCK</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_DIVZERO">Doctrine_Core::ERR_DIVZERO</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_EXTENSION_NOT_FOUND">Doctrine_Core::ERR_EXTENSION_NOT_FOUND</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_INSUFFICIENT_DATA">Doctrine_Core::ERR_INSUFFICIENT_DATA</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_INVALID">Doctrine_Core::ERR_INVALID</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_INVALID_DATE">Doctrine_Core::ERR_INVALID_DATE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_INVALID_DSN">Doctrine_Core::ERR_INVALID_DSN</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_INVALID_NUMBER">Doctrine_Core::ERR_INVALID_NUMBER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_LOADMODULE">Doctrine_Core::ERR_LOADMODULE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_MANAGER">Doctrine_Core::ERR_MANAGER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_MANAGER_PARSE">Doctrine_Core::ERR_MANAGER_PARSE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_MISMATCH">Doctrine_Core::ERR_MISMATCH</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_NEED_MORE_DATA">Doctrine_Core::ERR_NEED_MORE_DATA</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_NODBSELECTED">Doctrine_Core::ERR_NODBSELECTED</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_NOSUCHDB">Doctrine_Core::ERR_NOSUCHDB</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_NOSUCHFIELD">Doctrine_Core::ERR_NOSUCHFIELD</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_NOSUCHTABLE">Doctrine_Core::ERR_NOSUCHTABLE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_NOT_CAPABLE">Doctrine_Core::ERR_NOT_CAPABLE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_NOT_FOUND">Doctrine_Core::ERR_NOT_FOUND</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_NOT_LOCKED">Doctrine_Core::ERR_NOT_LOCKED</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_SYNTAX">Doctrine_Core::ERR_SYNTAX</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_TRUNCATED">Doctrine_Core::ERR_TRUNCATED</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_UNSUPPORTED">Doctrine_Core::ERR_UNSUPPORTED</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constERR_VALUE_COUNT_ON_ROW">Doctrine_Core::ERR_VALUE_COUNT_ON_ROW</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constEXPORT_ALL">Doctrine_Core::EXPORT_ALL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constEXPORT_CONSTRAINTS">Doctrine_Core::EXPORT_CONSTRAINTS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constEXPORT_NONE">Doctrine_Core::EXPORT_NONE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constEXPORT_PLUGINS">Doctrine_Core::EXPORT_PLUGINS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constEXPORT_TABLES">Doctrine_Core::EXPORT_TABLES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_ASSOC">Doctrine_Core::FETCH_ASSOC</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_BOTH">Doctrine_Core::FETCH_BOTH</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_BOUND">Doctrine_Core::FETCH_BOUND</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_CLASS">Doctrine_Core::FETCH_CLASS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_CLASSTYPE">Doctrine_Core::FETCH_CLASSTYPE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_COLUMN">Doctrine_Core::FETCH_COLUMN</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_FUNC">Doctrine_Core::FETCH_FUNC</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_GROUP">Doctrine_Core::FETCH_GROUP</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_INTO">Doctrine_Core::FETCH_INTO</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_LAZY">Doctrine_Core::FETCH_LAZY</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_NAMED">Doctrine_Core::FETCH_NAMED</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_NUM">Doctrine_Core::FETCH_NUM</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_OBJ">Doctrine_Core::FETCH_OBJ</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_ORI_ABS">Doctrine_Core::FETCH_ORI_ABS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_ORI_FIRST">Doctrine_Core::FETCH_ORI_FIRST</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_ORI_LAST">Doctrine_Core::FETCH_ORI_LAST</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_ORI_NEXT">Doctrine_Core::FETCH_ORI_NEXT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_ORI_PRIOR">Doctrine_Core::FETCH_ORI_PRIOR</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_ORI_REL">Doctrine_Core::FETCH_ORI_REL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_SERIALIZE">Doctrine_Core::FETCH_SERIALIZE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constFETCH_UNIQUE">Doctrine_Core::FETCH_UNIQUE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constHYDRATE_ARRAY">Doctrine_Core::HYDRATE_ARRAY</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constHYDRATE_ARRAY_HIERARCHY">Doctrine_Core::HYDRATE_ARRAY_HIERARCHY</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constHYDRATE_ARRAY_SHALLOW">Doctrine_Core::HYDRATE_ARRAY_SHALLOW</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constHYDRATE_NONE">Doctrine_Core::HYDRATE_NONE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constHYDRATE_ON_DEMAND">Doctrine_Core::HYDRATE_ON_DEMAND</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constHYDRATE_RECORD">Doctrine_Core::HYDRATE_RECORD</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constHYDRATE_RECORD_HIERARCHY">Doctrine_Core::HYDRATE_RECORD_HIERARCHY</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constHYDRATE_SCALAR">Doctrine_Core::HYDRATE_SCALAR</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constHYDRATE_SINGLE_SCALAR">Doctrine_Core::HYDRATE_SINGLE_SCALAR</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constIDENTIFIER_AUTOINC">Doctrine_Core::IDENTIFIER_AUTOINC</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constIDENTIFIER_COMPOSITE">Doctrine_Core::IDENTIFIER_COMPOSITE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constIDENTIFIER_NATURAL">Doctrine_Core::IDENTIFIER_NATURAL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constIDENTIFIER_SEQUENCE">Doctrine_Core::IDENTIFIER_SEQUENCE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constLIMIT_RECORDS">Doctrine_Core::LIMIT_RECORDS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constLIMIT_ROWS">Doctrine_Core::LIMIT_ROWS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constLOCK_OPTIMISTIC">Doctrine_Core::LOCK_OPTIMISTIC</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constLOCK_PESSIMISTIC">Doctrine_Core::LOCK_PESSIMISTIC</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constMODEL_LOADING_AGGRESSIVE">Doctrine_Core::MODEL_LOADING_AGGRESSIVE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constMODEL_LOADING_CONSERVATIVE">Doctrine_Core::MODEL_LOADING_CONSERVATIVE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constMODEL_LOADING_PEAR">Doctrine_Core::MODEL_LOADING_PEAR</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constNULL_EMPTY_STRING">Doctrine_Core::NULL_EMPTY_STRING</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constNULL_NATURAL">Doctrine_Core::NULL_NATURAL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constNULL_TO_STRING">Doctrine_Core::NULL_TO_STRING</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPARAM_BOOL">Doctrine_Core::PARAM_BOOL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPARAM_INPUT_OUTPUT">Doctrine_Core::PARAM_INPUT_OUTPUT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPARAM_INT">Doctrine_Core::PARAM_INT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPARAM_LOB">Doctrine_Core::PARAM_LOB</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPARAM_NULL">Doctrine_Core::PARAM_NULL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPARAM_STMT">Doctrine_Core::PARAM_STMT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPARAM_STR">Doctrine_Core::PARAM_STR</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPORTABILITY_ALL">Doctrine_Core::PORTABILITY_ALL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPORTABILITY_DELETE_COUNT">Doctrine_Core::PORTABILITY_DELETE_COUNT</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPORTABILITY_EMPTY_TO_NULL">Doctrine_Core::PORTABILITY_EMPTY_TO_NULL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPORTABILITY_EXPR">Doctrine_Core::PORTABILITY_EXPR</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPORTABILITY_FIX_ASSOC_FIELD_NAMES">Doctrine_Core::PORTABILITY_FIX_ASSOC_FIELD_NAMES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPORTABILITY_FIX_CASE">Doctrine_Core::PORTABILITY_FIX_CASE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPORTABILITY_NONE">Doctrine_Core::PORTABILITY_NONE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constPORTABILITY_RTRIM">Doctrine_Core::PORTABILITY_RTRIM</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constQUERY_LIMIT_RECORDS">Doctrine_Core::QUERY_LIMIT_RECORDS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constQUERY_LIMIT_ROWS">Doctrine_Core::QUERY_LIMIT_ROWS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constVALIDATE_ALL">Doctrine_Core::VALIDATE_ALL</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constVALIDATE_CONSTRAINTS">Doctrine_Core::VALIDATE_CONSTRAINTS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constVALIDATE_LENGTHS">Doctrine_Core::VALIDATE_LENGTHS</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constVALIDATE_NONE">Doctrine_Core::VALIDATE_NONE</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constVALIDATE_TYPES">Doctrine_Core::VALIDATE_TYPES</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constVALIDATE_USER">Doctrine_Core::VALIDATE_USER</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Doctrine/Doctrine_Core.html#constVERSION">Doctrine_Core::VERSION</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:06 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -63,6 +63,14 @@ function matriz_producto_calendario($id_curso, $semestre)
     return $matriz_producto;
 }
 
+
+/**
+ * Helper para calcular las horas de una asignatura en un curso, accede a los diferentes horarios y hace el cálculo.
+ * 
+ * @param integer $id_asignatura Identificador de la asignatura a la que se va a calcular el resumen.
+ * @param integer $id_curso Identificador del curso al que se va a calcular el resumen.
+ * @return array Devuelve un array de 3 arrays, uno con las cabeceras que indican los grupos, otro con la actividad y el grupo de cada columna y otro con las horas por semana.
+ */
 function resumen_asignatura($id_asignatura, $id_curso)
 {
     // Obtenemos los objetos asignatura y curso.
@@ -78,7 +86,8 @@ function resumen_asignatura($id_asignatura, $id_curso)
             ->select('l.id_actividad, l.num_grupo_actividad')
             ->from('LineaHorario l')
             ->innerJoin('l.horario h')
-            ->where('l.id_asignatura = ?', array($id_asignatura))
+            ->where('h.id_curso = ?', array($id_curso))
+            ->andWhere('l.id_asignatura = ?', array($id_asignatura))
             ->groupBy('l.id_actividad, l.num_grupo_actividad')
             ->orderBy('l.id_actividad, l.num_grupo_actividad');
     $grupos = $grupos_qry->execute();
@@ -112,10 +121,12 @@ function resumen_asignatura($id_asignatura, $id_curso)
                         ->select('l.slot_minimo, l.dia_semana')
                         ->from('LineaHorario l')
                         ->innerJoin('l.horario h')
-                        ->where('l.id_actividad = ?', array($grupo->id_actividad))
+                        ->where('h.id_curso = ?', array($id_curso))
+                        ->andWhere('l.id_actividad = ?', array($grupo->id_actividad))
                         ->andWhere('l.num_grupo_actividad = ?', array($grupo->num_grupo_actividad))
                         ->andWhere('l.id_asignatura = ?', array($grupo->id_asignatura))
                         ->andWhere('h.num_semana = ?', array($i))
+                        ->andWhere('l.hora_inicial IS NOT NULL')
                         ->execute();
                 // Recorremos las líneas y acumulamos las horas en el día correspondiente
                 foreach($lineas as $linea){
@@ -138,6 +149,7 @@ function resumen_asignatura($id_asignatura, $id_curso)
                 ->from('LineaHorario l')
                 ->innerJoin('l.horario h')
                 ->where('l.id_actividad = ?', array($grupo->id_actividad))
+                ->andWhere('h.id_curso = ?', array($id_curso))
                 ->andWhere('l.num_grupo_actividad = ?', array($grupo->num_grupo_actividad))
                 ->andWhere('l.id_asignatura = ?', array($grupo->id_asignatura))
                 ->andWhere('h.num_semana = ?', array($curso->num_semanas_teoria+1))
@@ -153,7 +165,7 @@ function resumen_asignatura($id_asignatura, $id_curso)
             ->andWhere('p.id_curso = ?', array($id_curso))
             ->andWhere('c.id_actividad = ?', array($grupo->id_actividad))
             ->execute();
-        $alternas = $planactividad->alternas;
+        $alternas = $planactividad[0]->alternas;
         if($alternas){
             $header[] = $actividad->descripcion . " " . $grupo->num_grupo_actividad*2-1;
             $header[] = $actividad->descripcion . " " . $grupo->num_grupo_actividad*2;

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Connection_Common</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Connection_Common</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">standard connection, the parent of pgsql, mysql and sqlite</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Connection---Common.php.html">/helpers/Doctrine/Connection/Common.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a>
+   |
+   --<a href="../../Doctrine/Configurable/Doctrine_Configurable.html">Doctrine_Configurable</a>
+      |
+      --<a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a>
+         |
+         --Doctrine_Connection_Common</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-vars">Vars</a>
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Connection/Doctrine_Connection_Db2.html">Doctrine_Connection_Db2</a></td>
+					<td>
+											Doctrine_Connection_Db2
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Connection/Doctrine_Connection_Mock.html">Doctrine_Connection_Mock</a></td>
+					<td>
+											Doctrine_Connection_Mysql
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html">Doctrine_Connection_Mssql</a></td>
+					<td>
+											Doctrine_Connection_Mssql
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Connection/Doctrine_Connection_Mysql.html">Doctrine_Connection_Mysql</a></td>
+					<td>
+											Doctrine_Connection_Mysql
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Connection/Doctrine_Connection_Oracle.html">Doctrine_Connection_Oracle</a></td>
+					<td>
+											Doctrine_Connection_Oracle
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Connection/Doctrine_Connection_Pgsql.html">Doctrine_Connection_Pgsql</a></td>
+					<td>
+											Doctrine_Connection_Pgsql
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Connection/Doctrine_Connection_Sqlite.html">Doctrine_Connection_Sqlite</a></td>
+					<td>
+											Doctrine_Connection_Sqlite
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#modifyLimitQuery" title="details" class="method-name">modifyLimitQuery</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">false</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isManip</span> = <span class="var-default">false</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$dbh">Doctrine_Connection::$dbh</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$driverName">Doctrine_Connection::$driverName</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$isConnected">Doctrine_Connection::$isConnected</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$options">Doctrine_Connection::$options</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$pendingAttributes">Doctrine_Connection::$pendingAttributes</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$properties">Doctrine_Connection::$properties</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$serverInfo">Doctrine_Connection::$serverInfo</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$supported">Doctrine_Connection::$supported</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$tables">Doctrine_Connection::$tables</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$_count">Doctrine_Connection::$_count</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$_name">Doctrine_Connection::$_name</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#var$_usedNames">Doctrine_Connection::$_usedNames</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html">Doctrine_Configurable</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#var$attributes">Doctrine_Configurable::$attributes</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#var$parent">Doctrine_Configurable::$parent</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#var$_impl">Doctrine_Configurable::$_impl</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#var$_params">Doctrine_Configurable::$_params</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_locator">Doctrine_Locator_Injectable::$_locator</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_null">Doctrine_Locator_Injectable::$_null</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_resources">Doctrine_Locator_Injectable::$_resources</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodmodifyLimitQuery" id="modifyLimitQuery"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">modifyLimitQuery</span> (line <span class="line-number">42</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds an driver-specific LIMIT clause to the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			modifyLimitQuery
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">false</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isManip</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$limit</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isManip</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodmodifyLimitQuery">Doctrine_Connection::modifyLimitQuery()</a></dt>
+						<dd>modifyLimitQuery</dd>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Db2.html#methodmodifyLimitQuery">Doctrine_Connection_Db2::modifyLimitQuery()</a>
+								: Adds an driver-specific LIMIT clause to the query
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html#methodmodifyLimitQuery">Doctrine_Connection_Mssql::modifyLimitQuery()</a>
+								: Adds an adapter-specific LIMIT clause to the SELECT statement.
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Oracle.html#methodmodifyLimitQuery">Doctrine_Connection_Oracle::modifyLimitQuery()</a>
+								: Adds an driver-specific LIMIT clause to the query
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Pgsql.html#methodmodifyLimitQuery">Doctrine_Connection_Pgsql::modifyLimitQuery()</a>
+								: Changes a query string for various DBMS specific reasons
+							</li>
+				</ul>
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#method__construct">Doctrine_Connection::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodaddTable">Doctrine_Connection::addTable()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodbeginInternalTransaction">Doctrine_Connection::beginInternalTransaction()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodbeginTransaction">Doctrine_Connection::beginTransaction()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodclear">Doctrine_Connection::clear()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodclose">Doctrine_Connection::close()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodcommit">Doctrine_Connection::commit()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodconnect">Doctrine_Connection::connect()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodconvertBooleans">Doctrine_Connection::convertBooleans()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodcount">Doctrine_Connection::count()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodcreate">Doctrine_Connection::create()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodcreateDatabase">Doctrine_Connection::createDatabase()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodcreateQuery">Doctrine_Connection::createQuery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methoddelete">Doctrine_Connection::delete()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methoddriverName">Doctrine_Connection::driverName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methoddropDatabase">Doctrine_Connection::dropDatabase()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methoderrorCode">Doctrine_Connection::errorCode()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methoderrorInfo">Doctrine_Connection::errorInfo()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodevictTables">Doctrine_Connection::evictTables()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodexec">Doctrine_Connection::exec()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodexecute">Doctrine_Connection::execute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodfetchAll">Doctrine_Connection::fetchAll()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodfetchArray">Doctrine_Connection::fetchArray()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodfetchAssoc">Doctrine_Connection::fetchAssoc()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodfetchBoth">Doctrine_Connection::fetchBoth()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodfetchColumn">Doctrine_Connection::fetchColumn()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodfetchOne">Doctrine_Connection::fetchOne()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodfetchRow">Doctrine_Connection::fetchRow()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodflush">Doctrine_Connection::flush()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgenerateUniqueIndexName">Doctrine_Connection::generateUniqueIndexName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgenerateUniqueRelationForeignKeyName">Doctrine_Connection::generateUniqueRelationForeignKeyName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetAttribute">Doctrine_Connection::getAttribute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetAvailableDrivers">Doctrine_Connection::getAvailableDrivers()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetDbh">Doctrine_Connection::getDbh()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetDriverName">Doctrine_Connection::getDriverName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetIterator">Doctrine_Connection::getIterator()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetManager">Doctrine_Connection::getManager()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetName">Doctrine_Connection::getName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetOption">Doctrine_Connection::getOption()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetOptions">Doctrine_Connection::getOptions()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetQueryCacheDriver">Doctrine_Connection::getQueryCacheDriver()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetResultCacheDriver">Doctrine_Connection::getResultCacheDriver()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetSupportedDrivers">Doctrine_Connection::getSupportedDrivers()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetTable">Doctrine_Connection::getTable()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetTables">Doctrine_Connection::getTables()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetTmpConnection">Doctrine_Connection::getTmpConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodgetTransactionLevel">Doctrine_Connection::getTransactionLevel()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodhasTable">Doctrine_Connection::hasTable()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodincrementQueryCount">Doctrine_Connection::incrementQueryCount()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodinsert">Doctrine_Connection::insert()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodisConnected">Doctrine_Connection::isConnected()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodlastInsertId">Doctrine_Connection::lastInsertId()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodmodifyLimitQuery">Doctrine_Connection::modifyLimitQuery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodmodifyLimitSubquery">Doctrine_Connection::modifyLimitSubquery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodprepare">Doctrine_Connection::prepare()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodquery">Doctrine_Connection::query()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodqueryOne">Doctrine_Connection::queryOne()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodquote">Doctrine_Connection::quote()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodquoteIdentifier">Doctrine_Connection::quoteIdentifier()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodquoteMultipleIdentifier">Doctrine_Connection::quoteMultipleIdentifier()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodreplace">Doctrine_Connection::replace()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodrethrowException">Doctrine_Connection::rethrowException()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodrollback">Doctrine_Connection::rollback()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodselect">Doctrine_Connection::select()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodserialize">Doctrine_Connection::serialize()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodsetAttribute">Doctrine_Connection::setAttribute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodsetDateFormat">Doctrine_Connection::setDateFormat()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodsetName">Doctrine_Connection::setName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodsetOption">Doctrine_Connection::setOption()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodstandaloneQuery">Doctrine_Connection::standaloneQuery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodsupports">Doctrine_Connection::supports()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodunserialize">Doctrine_Connection::unserialize()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodupdate">Doctrine_Connection::update()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#method_generateUniqueName">Doctrine_Connection::_generateUniqueName()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#method__get">Doctrine_Connection::__get()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection.html#method__toString">Doctrine_Connection::__toString()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html">Doctrine_Configurable</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodaddListener">Doctrine_Configurable::addListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodaddRecordListener">Doctrine_Configurable::addRecordListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetAttribute">Doctrine_Configurable::getAttribute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetAttributes">Doctrine_Configurable::getAttributes()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetCharset">Doctrine_Configurable::getCharset()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetCollate">Doctrine_Configurable::getCollate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetImpl">Doctrine_Configurable::getImpl()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetListener">Doctrine_Configurable::getListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetParam">Doctrine_Configurable::getParam()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetParamNamespaces">Doctrine_Configurable::getParamNamespaces()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetParams">Doctrine_Configurable::getParams()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetParent">Doctrine_Configurable::getParent()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetRecordListener">Doctrine_Configurable::getRecordListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodhasImpl">Doctrine_Configurable::hasImpl()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetAttribute">Doctrine_Configurable::setAttribute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetCharset">Doctrine_Configurable::setCharset()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetCollate">Doctrine_Configurable::setCollate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetEventListener">Doctrine_Configurable::setEventListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetImpl">Doctrine_Configurable::setImpl()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetListener">Doctrine_Configurable::setListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetParam">Doctrine_Configurable::setParam()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetParent">Doctrine_Configurable::setParent()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetRecordListener">Doctrine_Configurable::setRecordListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodunsetAttribute">Doctrine_Configurable::unsetAttribute()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodbind">Doctrine_Locator_Injectable::bind()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetLocator">Doctrine_Locator_Injectable::getLocator()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetNullObject">Doctrine_Locator_Injectable::getNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodinitNullObject">Doctrine_Locator_Injectable::initNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodlocate">Doctrine_Locator_Injectable::locate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodsetLocator">Doctrine_Locator_Injectable::setLocator()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:54 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

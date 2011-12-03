@@ -390,12 +390,26 @@ class Horarios extends MY_Controller {
         }
     }
 
+    /**
+     * Hace una comprobación del grupo al que pertenece un horario tipo, comprobando las horas planificadas estén asignadas.
+     * Muestra una tabla con las asignaturas y sus actividades dentro del grupo, junto con las horas planificadas y las horas asignadas en el horario.
+     * Muestra advertencias en las asignaturas en las que falten o sobren horas.
+     * 
+     * @param integer $id Identificador del horario tipo del grupo que se desea comprobar
+     * 
+     */
     public function check_grupo($id) {
         $horario = Doctrine::getTable('Horario')->find($id);
-        //if(count($horario->horariotipo)) redirect('404');
-        $prueba = count($horario->horariotipo);
+        //if(count($horario->horariotipo)) redirect('404');.
+        // Comprobamos si existe el horario y si es un horario tipo
+        if(!$horario)
+            redirect('404');
+        if(count($horario->horariotipo))
+            redirect('404');
+        
         //list($dias_totales, $dias_semanas_impares, $dias_semanas_pares) = horas_reales_impartidas($horario->id_curso, $horario->num_semana, $horario->semestre);
         
+        // Obtenemos las asignaturas del horario
         $lineas = Doctrine_Query::create()
                 ->select('l.id_asignatura')
                 ->from('LineaHorario l')
@@ -409,9 +423,13 @@ class Horarios extends MY_Controller {
         
         foreach($lineas as $asignatura)
         {
+            // De cada asignatura obtenemos el resumen, nos devuelve la cabecera, que serían los distintos grupos, un array que cada elemento indica el id de la actividad y el grupo de esa actividad
+            // y finalmente la matriz con las horas por cada semana
             list($header, $arraygrupos, $horas) = resumen_asignatura($asignatura->id_asignatura, $horario->id_curso);
             $i = 0;
+            // Se hace la suma total
             $suma = array_map('array_sum', $horas);
+            // De cada grupo obtenemos sus horas planificadas
             foreach($arraygrupos as $grupo){
                 $planactividad = Doctrine_Query::create()
                         ->select('c.*')
@@ -423,14 +441,17 @@ class Horarios extends MY_Controller {
                         ->execute();
                 $horas_reales[] = $planactividad->getFirst()->horas;
             }
-            $horascongrupos = array($header, $suma, $horas_reales);
+            // Hacemos una matriz conjunta con la cabecera suma y horas reales 
+            $horascongrupos = array($header, $horas_reales,  $suma);
+            // Trasponemos
             $conjuntohoras[] = call_user_func_array('array_map', array_merge(array(NULL), $horascongrupos));
+            // Y obtenemos los nombres de las asignaturas
             $asignaturas[] = Doctrine::getTable('Asignatura')->find($asignatura->id_asignatura)->nombre;
-            // $conjuntohoras[] = horas_asignatura($dias_totales, $dias_semanas_impares, $dias_semanas_pares, $asignatura->id_asignatura, $horario->id_curso, $id);
+            
         }
         
-        unset($this->layout);
-        
+        //unset($this->layout);
+        // Pasamos a la vista
         $this->load->view('horarios/check', array('horas' => $conjuntohoras, 'asignaturas' => $asignaturas));
     }
 

@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Export_Pgsql</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Export_Pgsql</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Export_Pgsql</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Lukas Smith &lt;<a href="mailto:smith@pooteeweet.org">smith@pooteeweet.org</a>&gt; (PEAR MDB2 library)</li>
+				<li><span class="field">version:</span> $Revision: 7680 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Export---Pgsql.php.html">/helpers/Doctrine/Export/Pgsql.php</a> (line <span class="field">34</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a>
+   |
+   --<a href="../../Doctrine/Export/Doctrine_Export.html">Doctrine_Export</a>
+      |
+      --Doctrine_Export_Pgsql</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$tmpConnectionDatabase" title="details" class="var-name">$tmpConnectionDatabase</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																												
+												<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#alterTable" title="details" class="method-name">alterTable</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$changes</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$check</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#alterTableSql" title="details" class="method-name">alterTableSql</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$changes</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$check</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#createDatabaseSql" title="details" class="method-name">createDatabaseSql</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#createIndexSql" title="details" class="method-name">createIndexSql</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#createSequenceSql" title="details" class="method-name">createSequenceSql</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$sequenceName</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$start</span> = <span class="var-default">1</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$seqName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">unknown</span>
+										<a href="#createTableSql" title="details" class="method-name">createTableSql</a>
+											(<span class="var-type">unknown_type</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fields</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#dropDatabaseSql" title="details" class="method-name">dropDatabaseSql</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#dropSequenceSql" title="details" class="method-name">dropSequenceSql</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sequenceName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getAdvancedForeignKeyOptions" title="details" class="method-name">getAdvancedForeignKeyOptions</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$tmpConnectionDatabase" id="$tmpConnectionDatabase"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$tmpConnectionDatabase</span>
+			 = <span class="var-default"> 'postgres'</span>			(line <span class="line-number">36</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Export/Doctrine_Export.html">Doctrine_Export</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Export/Doctrine_Export.html#var$valid_default_values">Doctrine_Export::$valid_default_values</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$conn">Doctrine_Connection_Module::$conn</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$moduleName">Doctrine_Connection_Module::$moduleName</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodalterTable" id="alterTable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">alterTable</span> (line <span class="line-number">274</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">alter an existing table</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Doctrine_Connection_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			alterTable
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$changes</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$check</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: name of the table that is intended to be changed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$changes</span><span class="var-description">: <p>associative array that contains the details of each type                              of change that is intended to be performed. The types of                              changes that are currently supported are defined as follows:</p><p>name</p><p>New name for the table.</p><p>add</p><p>Associative array with the names of fields to be added as                                  indexes of the array. The value of each entry of the array                                  should be set to another associative array with the properties                                  of the fields to be added. The properties of the fields should                                  be the same as defined by the Metabase parser.</p><p>remove</p><p>Associative array with the names of fields to be removed as indexes                                  of the array. Currently the values assigned to each entry are ignored.                                  An empty array should be used for future compatibility.</p><p>rename</p><p>Associative array with the names of fields to be renamed as indexes                                  of the array. The value of each entry of the array should be set to                                  another associative array with the entry named name with the new                                  field name and the entry named Declaration that is expected to contain                                  the portion of the field declaration already in DBMS specific SQL code                                  as it is used in the CREATE TABLE statement.</p><p>change</p><p>Associative array with the names of the fields to be changed as indexes                                  of the array. Keep in mind that if it is intended to change either the                                  name of a field and any other properties, the change array entries                                  should have the new names of the fields as array indexes.</p><p>The value of each entry of the array should be set to another associative                                  array with the properties of the fields to that are meant to be changed as                                  array entries. These entries should be assigned to the new values of the                                  respective properties. The properties of the fields should be the same                                  as defined by the Metabase parser.</p><p>Example                                 array(                                     'name' =&gt; 'userlist',                                     'add' =&gt; array(                                         'quota' =&gt; array(                                             'type' =&gt; 'integer',                                             'unsigned' =&gt; 1                                         )                                     ),                                     'remove' =&gt; array(                                         'file_limit' =&gt; array(),                                         'time_limit' =&gt; array()                                     ),                                     'change' =&gt; array(                                         'name' =&gt; array(                                             'length' =&gt; '20',                                             'definition' =&gt; array(                                                 'type' =&gt; 'text',                                                 'length' =&gt; 20,                                             ),                                         )                                     ),                                     'rename' =&gt; array(                                         'sex' =&gt; array(                                             'name' =&gt; 'gender',                                             'definition' =&gt; array(                                                 'type' =&gt; 'text',                                                 'length' =&gt; 1,                                                 'default' =&gt; 'M',                                             ),                                         )                                     )                                 )</p></span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$check</span><span class="var-description">: indicates whether the function should just check if the DBMS driver                              can perform the requested table alterations if the value is true or                              actually perform them otherwise.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Export/Doctrine_Export.html#methodalterTable">Doctrine_Export::alterTable()</a></dt>
+						<dd>alter an existing table  (this method is implemented by the drivers)</dd>
+					</dl>
+			
+	</div>
+<a name="methodalterTableSql" id="alterTableSql"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">alterTableSql</span> (line <span class="line-number">110</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">generates the sql for altering an existing table on postgresql</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../../Doctrine/Export/Doctrine_Export.html#methodalterTable">Doctrine_Export::alterTable()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			alterTableSql
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$changes</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$check</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: name of the table that is intended to be changed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$changes</span><span class="var-description">: associative array that contains the details of each type      *</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$check</span><span class="var-description">: indicates whether the function should just check if the DBMS driver                               can perform the requested table alterations if the value is true or                               actually perform them otherwise.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Export/Doctrine_Export.html#methodalterTableSql">Doctrine_Export::alterTableSql()</a></dt>
+						<dd>generates the sql for altering an existing table  (this method is implemented by the drivers)</dd>
+					</dl>
+			
+	</div>
+<a name="methodcreateDatabaseSql" id="createDatabaseSql"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">createDatabaseSql</span> (line <span class="line-number">44</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">createDatabaseSql</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			createDatabaseSql
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateDatabaseSql">Doctrine_Export::createDatabaseSql()</a></dt>
+						<dd>create a new database  (this method is implemented by the drivers)</dd>
+					</dl>
+			
+	</div>
+<a name="methodcreateIndexSql" id="createIndexSql"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">createIndexSql</span> (line <span class="line-number">385</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the stucture of a field into an array.</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateIndex">Doctrine_Export::createIndex()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			createIndexSql
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: name of the table on which the index is to be created</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: name of the index to be created</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span><span class="var-description">: associative array that defines properties of the index to be created.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateIndexSql">Doctrine_Export::createIndexSql()</a></dt>
+						<dd>Get the stucture of a field into an array</dd>
+					</dl>
+			
+	</div>
+<a name="methodcreateSequenceSql" id="createSequenceSql"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">createSequenceSql</span> (line <span class="line-number">297</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">return RDBMS specific create sequence statement</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Doctrine_Connection_Exception     if something fails at database level</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			createSequenceSql
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$sequenceName</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$start</span> = <span class="var-default">1</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$seqName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$seqName</span><span class="var-description">: name of the sequence to be created</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$start</span><span class="var-description">: start value of the sequence; default is 1</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: An associative array of table options:                           array(                               'comment' =&gt; 'Foo',                               'charset' =&gt; 'utf8',                               'collate' =&gt; 'utf8_unicode_ci',                           );</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$sequenceName</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateSequenceSql">Doctrine_Export::createSequenceSql()</a></dt>
+						<dd>return RDBMS specific create sequence statement  (this method is implemented by the drivers)</dd>
+					</dl>
+			
+	</div>
+<a name="methodcreateTableSql" id="createTableSql"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">createTableSql</span> (line <span class="line-number">323</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a table.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">unknown</span>
+		<span class="method-name">
+			createTableSql
+		</span>
+					(<span class="var-type">unknown_type</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fields</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">unknown_type</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$fields</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateTableSql">Doctrine_Export::createTableSql()</a></dt>
+						<dd>create a new table</dd>
+					</dl>
+			
+	</div>
+<a name="methoddropDatabaseSql" id="dropDatabaseSql"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">dropDatabaseSql</span> (line <span class="line-number">58</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">drop an existing database</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> PDOException</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			dropDatabaseSql
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: name of the database that should be dropped</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropDatabaseSql">Doctrine_Export::dropDatabaseSql()</a></dt>
+						<dd>drop an existing database  (this method is implemented by the drivers)</dd>
+					</dl>
+			
+	</div>
+<a name="methoddropSequenceSql" id="dropSequenceSql"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">dropSequenceSql</span> (line <span class="line-number">309</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">drop existing sequence</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			dropSequenceSql
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sequenceName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sequenceName</span><span class="var-description">: name of the sequence to be dropped</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropSequenceSql">Doctrine_Export::dropSequenceSql()</a></dt>
+						<dd>dropSequenceSql  drop existing sequence</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetAdvancedForeignKeyOptions" id="getAdvancedForeignKeyOptions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAdvancedForeignKeyOptions</span> (line <span class="line-number">74</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getAdvancedForeignKeyOptions  Return the FOREIGN KEY query section dealing with non-standard options  as MATCH, INITIALLY DEFERRED, ON UPDATE, ...</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getAdvancedForeignKeyOptions
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span><span class="var-description">: foreign key definition</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetAdvancedForeignKeyOptions">Doctrine_Export::getAdvancedForeignKeyOptions()</a></dt>
+						<dd>getAdvancedForeignKeyOptions  Return the FOREIGN KEY query section dealing with non-standard options  as MATCH, INITIALLY DEFERRED, ON UPDATE, ...</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Export/Doctrine_Export.html">Doctrine_Export</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodalterTable">Doctrine_Export::alterTable()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodalterTableSql">Doctrine_Export::alterTableSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateConstraint">Doctrine_Export::createConstraint()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateConstraintSql">Doctrine_Export::createConstraintSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateDatabase">Doctrine_Export::createDatabase()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateDatabaseSql">Doctrine_Export::createDatabaseSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateForeignKey">Doctrine_Export::createForeignKey()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateForeignKeySql">Doctrine_Export::createForeignKeySql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateIndex">Doctrine_Export::createIndex()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateIndexSql">Doctrine_Export::createIndexSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateSequence">Doctrine_Export::createSequence()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateSequenceSql">Doctrine_Export::createSequenceSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateTable">Doctrine_Export::createTable()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodcreateTableSql">Doctrine_Export::createTableSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropConstraint">Doctrine_Export::dropConstraint()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropDatabase">Doctrine_Export::dropDatabase()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropDatabaseSql">Doctrine_Export::dropDatabaseSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropForeignKey">Doctrine_Export::dropForeignKey()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropIndex">Doctrine_Export::dropIndex()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropIndexSql">Doctrine_Export::dropIndexSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropSequence">Doctrine_Export::dropSequence()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropSequenceSql">Doctrine_Export::dropSequenceSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropTable">Doctrine_Export::dropTable()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methoddropTableSql">Doctrine_Export::dropTableSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodexportClasses">Doctrine_Export::exportClasses()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodexportClassesSql">Doctrine_Export::exportClassesSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodexportGeneratorsSql">Doctrine_Export::exportGeneratorsSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodexportSchema">Doctrine_Export::exportSchema()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodexportSortedClassesSql">Doctrine_Export::exportSortedClassesSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodexportSql">Doctrine_Export::exportSql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodexportTable">Doctrine_Export::exportTable()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetAdvancedForeignKeyOptions">Doctrine_Export::getAdvancedForeignKeyOptions()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetAllGenerators">Doctrine_Export::getAllGenerators()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetCharsetFieldDeclaration">Doctrine_Export::getCharsetFieldDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetCheckDeclaration">Doctrine_Export::getCheckDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetCollationFieldDeclaration">Doctrine_Export::getCollationFieldDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetDeclaration">Doctrine_Export::getDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetDefaultFieldDeclaration">Doctrine_Export::getDefaultFieldDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetFieldDeclarationList">Doctrine_Export::getFieldDeclarationList()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetForeignKeyBaseDeclaration">Doctrine_Export::getForeignKeyBaseDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetForeignKeyDeclaration">Doctrine_Export::getForeignKeyDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetForeignKeyReferentialAction">Doctrine_Export::getForeignKeyReferentialAction()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetIndexDeclaration">Doctrine_Export::getIndexDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetIndexFieldDeclarationList">Doctrine_Export::getIndexFieldDeclarationList()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetNotNullFieldDeclaration">Doctrine_Export::getNotNullFieldDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetTemporaryTableQuery">Doctrine_Export::getTemporaryTableQuery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Export/Doctrine_Export.html#methodgetUniqueFieldDeclaration">Doctrine_Export::getUniqueFieldDeclaration()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#method__construct">Doctrine_Connection_Module::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetConnection">Doctrine_Connection_Module::getConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetModuleName">Doctrine_Connection_Module::getModuleName()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:59 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

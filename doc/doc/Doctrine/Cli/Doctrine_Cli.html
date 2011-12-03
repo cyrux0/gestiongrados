@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Cli</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Cli</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Command line interface class</p>
+<p class="description"><p>Interface for easily executing Doctrine_Task classes from a command line interface</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jonathan H. Wage &lt;<a href="mailto:jwage@mac.com">jwage@mac.com</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 2761 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Cli.php.html">/helpers/Doctrine/Cli.php</a> (line <span class="field">35</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#TASK_BASE_CLASS" title="details" class="const-name">TASK_BASE_CLASS</a> = 					<span class="var-type"> 'Doctrine_Task'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_scriptName" title="details" class="var-name">$_scriptName</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">Doctrine_Cli</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$config</span> = <span class="var-default">array()</span>], [<span class="var-type"><a href="../../Doctrine/Cli/Doctrine_Cli_Formatter.html">Doctrine_Cli_Formatter</a></span>&nbsp;<span class="var-name">$formatter</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#assembleArgumentList" title="details" class="method-name">assembleArgumentList</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$argumentsDescriptions</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$config</span>, <span class="var-type"><a href="../../Doctrine/Cli/Doctrine_Cli_Formatter.html">Doctrine_Cli_Formatter</a></span>&nbsp;<span class="var-name">$formatter</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#classIsTask" title="details" class="method-name">classIsTask</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Task/Doctrine_Task.html">object Doctrine_Task</a></span>
+										<a href="#createTaskInstance" title="details" class="method-name">createTaskInstance</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"><a href="../../Doctrine/Cli/Doctrine_Cli.html">Doctrine_Cli</a></span>&nbsp;<span class="var-name">$cli</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#executeTask" title="details" class="method-name">executeTask</a>
+											(<span class="var-type"><a href="../../Doctrine/Task/Doctrine_Task.html">Doctrine_Task</a></span>&nbsp;<span class="var-name">$task</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$preparedArguments</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#formatExceptionMessage" title="details" class="method-name">formatExceptionMessage</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$exception</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getConfig" title="details" class="method-name">getConfig</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#getConfigValue" title="details" class="method-name">getConfigValue</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Cli/Doctrine_Cli_Formatter.html">object Doctrine_Cli_Formatter</a></span>
+										<a href="#getFormatter" title="details" class="method-name">getFormatter</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getLoadedTasks" title="details" class="method-name">getLoadedTasks</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getRegisteredTasks" title="details" class="method-name">getRegisteredTasks</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Task/Doctrine_Task.html">object Doctrine_Task</a></span>
+										<a href="#getTaskInstance" title="details" class="method-name">getTaskInstance</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#hasConfigValue" title="details" class="method-name">hasConfigValue</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$strict</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#includeAndRegisterDoctrineTaskClasses" title="details" class="method-name">includeAndRegisterDoctrineTaskClasses</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$directories</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#includeAndRegisterTaskClasses" title="details" class="method-name">includeAndRegisterTaskClasses</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#includeDoctrineTaskClasses" title="details" class="method-name">includeDoctrineTaskClasses</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#loadTasks" title="details" class="method-name">loadTasks</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$directory</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#notify" title="details" class="method-name">notify</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$notification</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$style</span> = <span class="var-default">'HEADER'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#notifyException" title="details" class="method-name">notifyException</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$exception</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#prepareArgs" title="details" class="method-name">prepareArgs</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#printTasks" title="details" class="method-name">printTasks</a>
+											([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$taskName</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$full</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#registerIncludedTaskClasses" title="details" class="method-name">registerIncludedTaskClasses</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#registerTaskClass" title="details" class="method-name">registerTaskClass</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#run" title="details" class="method-name">run</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setConfig" title="details" class="method-name">setConfig</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setFormatter" title="details" class="method-name">setFormatter</a>
+											(<span class="var-type"><a href="../../Doctrine/Cli/Doctrine_Cli_Formatter.html">Doctrine_Cli_Formatter</a></span>&nbsp;<span class="var-name">$formatter</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setRegisteredTasks" title="details" class="method-name">setRegisteredTasks</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$registeredTask</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTaskInstance" title="details" class="method-name">setTaskInstance</a>
+											(<span class="var-type"><a href="../../Doctrine/Task/Doctrine_Task.html">Doctrine_Task</a></span>&nbsp;<span class="var-name">$task</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#taskClassIsRegistered" title="details" class="method-name">taskClassIsRegistered</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#taskNameIsRegistered" title="details" class="method-name">taskNameIsRegistered</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$taskName</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">&$className</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_getTaskClassFromArgs" title="details" class="method-name">_getTaskClassFromArgs</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_run" title="details" class="method-name">_run</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_scriptName" id="$_scriptName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_scriptName</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">77</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">__construct</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Doctrine_Cli</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$config</span> = <span class="var-default">array()</span>], [<span class="var-type"><a href="../../Doctrine/Cli/Doctrine_Cli_Formatter.html">Doctrine_Cli_Formatter</a></span>&nbsp;<span class="var-name">$formatter</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$config</span><span class="var-description">: [$config=array()]</span>			</li>
+					<li>
+				<span class="var-type">object|null</span>
+				<span class="var-name">$formatter</span><span class="var-description">: [$formatter=null] Doctrine_Cli_Formatter</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodassembleArgumentList" id="assembleArgumentList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">assembleArgumentList</span> (line <span class="line-number">611</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			assembleArgumentList
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$argumentsDescriptions</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$config</span>, <span class="var-type"><a href="../../Doctrine/Cli/Doctrine_Cli_Formatter.html">Doctrine_Cli_Formatter</a></span>&nbsp;<span class="var-name">$formatter</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$argumentsDescriptions</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$config</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$formatter</span><span class="var-description">: Doctrine_Cli_Formatter</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclassIsTask" id="classIsTask"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">classIsTask</span> (line <span class="line-number">359</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns TRUE if the specified class is a Task, or FALSE otherwise</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			classIsTask
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateTaskInstance" id="createTaskInstance"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">createTaskInstance</span> (line <span class="line-number">374</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates, and returns, a new instance of the specified Task class</p>
+<p class="description"><p>Displays a message, and returns FALSE, if there were problems instantiating the class</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Task/Doctrine_Task.html">object Doctrine_Task</a></span>
+		<span class="method-name">
+			createTaskInstance
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"><a href="../../Doctrine/Cli/Doctrine_Cli.html">Doctrine_Cli</a></span>&nbsp;<span class="var-name">$cli</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$cli</span><span class="var-description">: Doctrine_Cli</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodexecuteTask" id="executeTask"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">executeTask</span> (line <span class="line-number">508</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes the task with the specified _prepared_ arguments</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Doctrine_Cli_Exception If required arguments are missing</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			executeTask
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Task/Doctrine_Task.html">Doctrine_Task</a></span>&nbsp;<span class="var-name">$task</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$preparedArguments</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$task</span><span class="var-description">: Doctrine_Task</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$preparedArguments</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodformatExceptionMessage" id="formatExceptionMessage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">formatExceptionMessage</span> (line <span class="line-number">416</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Formats, and then returns, the message in the specified exception</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			formatExceptionMessage
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$exception</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Exception</span>
+				<span class="var-name">$exception</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetConfig" id="getConfig"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getConfig</span> (line <span class="line-number">95</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getConfig
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetConfigValue" id="getConfigValue"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getConfigValue</span> (line <span class="line-number">123</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the specified value from the config, or the default value, if specified</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> OutOfBoundsException If the element does not exist in the config</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getConfigValue
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFormatter" id="getFormatter"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFormatter</span> (line <span class="line-number">111</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Cli/Doctrine_Cli_Formatter.html">object Doctrine_Cli_Formatter</a></span>
+		<span class="method-name">
+			getFormatter
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLoadedTasks" id="getLoadedTasks"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLoadedTasks</span> (line <span class="line-number">675</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Old method retained for backwards compatibility</p>
+	<ul class="tags">
+				<li><span class="field">deprecated:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getLoadedTasks
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRegisteredTasks" id="getRegisteredTasks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRegisteredTasks</span> (line <span class="line-number">181</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array containing the registered tasks</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getRegisteredTasks
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTaskInstance" id="getTaskInstance"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTaskInstance</span> (line <span class="line-number">229</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Task/Doctrine_Task.html">object Doctrine_Task</a></span>
+		<span class="method-name">
+			getTaskInstance
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhasConfigValue" id="hasConfigValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasConfigValue</span> (line <span class="line-number">149</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns TRUE if the element in the config has the specified value, or FALSE otherwise</p>
+<p class="description"><p>If $value is not passed, this method will return TRUE if the specified element has _any_ value, or FALSE if the  element is not set</p><p>For strict checking, set $strict to TRUE - the default is FALSE</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			hasConfigValue
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$strict</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: [$value=null]</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$strict</span><span class="var-description">: [$strict=false]</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodincludeAndRegisterDoctrineTaskClasses" id="includeAndRegisterDoctrineTaskClasses"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">includeAndRegisterDoctrineTaskClasses</span> (line <span class="line-number">258</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Includes and registers Doctrine-style tasks from the specified directory / directories</p>
+<p class="description"><p>If no directory is given it looks in the default Doctrine/Task folder for the core tasks</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			includeAndRegisterDoctrineTaskClasses
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$directories</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$directories</span><span class="var-description">: [$directories=null] Can be a string path or array of paths</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodincludeAndRegisterTaskClasses" id="includeAndRegisterTaskClasses"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">includeAndRegisterTaskClasses</span> (line <span class="line-number">241</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Called by the constructor, this method includes and registers Doctrine core Tasks and then registers all other  loaded Task classes</p>
+<p class="description"><p>The second round of registering will pick-up loaded custom Tasks.  Methods are provided that will allow users to  register Tasks loaded after creating an instance of Doctrine_Cli.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			includeAndRegisterTaskClasses
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodincludeDoctrineTaskClasses" id="includeDoctrineTaskClasses"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">includeDoctrineTaskClasses</span> (line <span class="line-number">287</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Attempts to include Doctrine-style Task-classes from the specified directory - and nothing more besides</p>
+<p class="description"><p>Returns an array containing the names of Task classes included</p><p>This method effectively makes two assumptions: <ul><li>The directory contains only _Task_ class-files</li><li>The class files, and the class in each, follow the Doctrine naming conventions</li></ul>  This means that a file called &quot;Foo.php&quot;, say, will be expected to contain a Task class called  &quot;Doctrine_Task_Foo&quot;.  Hence the method's name, &quot;include*Doctrine*TaskClasses&quot;.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> InvalidArgumentException If the directory does not exist</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			includeDoctrineTaskClasses
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodloadTasks" id="loadTasks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">loadTasks</span> (line <span class="line-number">654</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Old method retained for backwards compatibility</p>
+	<ul class="tags">
+				<li><span class="field">deprecated:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			loadTasks
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$directory</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$directory</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnotify" id="notify"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">notify</span> (line <span class="line-number">400</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Notify the formatter of a message</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			notify
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$notification</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$style</span> = <span class="var-default">'HEADER'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$notification</span><span class="var-description">: The notification message</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$style</span><span class="var-description">: Style to format the notification with(INFO, ERROR)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnotifyException" id="notifyException"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">notifyException</span> (line <span class="line-number">436</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Notify the formatter of an exception</p>
+<p class="description"><p>N.B. This should really only be called by Doctrine_Cli::run().  Exceptions should be thrown when errors occur:  it's up to Doctrine_Cli::run() to determine how those exceptions are reported.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			notifyException
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$exception</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Exception</span>
+				<span class="var-name">$exception</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodprepareArgs" id="prepareArgs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">prepareArgs</span> (line <span class="line-number">527</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prepare the raw arguments for execution. Combines with the required and optional argument  list in order to determine a complete array of arguments for the task</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Array of prepared arguments</li>
+				<li><span class="field">todo:</span> Continue refactoring for testing</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			prepareArgs
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$args</span><span class="var-description">: Array of raw arguments</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodprintTasks" id="printTasks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">printTasks</span> (line <span class="line-number">573</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prints an index of all the available tasks in the CLI instance</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Continue refactoring for testing</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			printTasks
+		</span>
+					([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$taskName</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$full</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">$taskName</span><span class="var-description">: [$taskName=null]</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$full</span><span class="var-description">: [$full=false]</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregisterIncludedTaskClasses" id="registerIncludedTaskClasses"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">registerIncludedTaskClasses</span> (line <span class="line-number">384</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Registers all loaded classes - by default - or the specified loaded Task classes</p>
+<p class="description"><p>This method will skip registered task classes, so it can be safely called many times over</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			registerIncludedTaskClasses
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodregisterTaskClass" id="registerTaskClass"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">registerTaskClass</span> (line <span class="line-number">335</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Registers the specified _included_ task-class</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> DomainException If the class is not a Doctrine Task</li>
+				<li><span class="field">throws:</span> InvalidArgumentException If the class does not exist or the task-name is blank</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			registerTaskClass
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrun" id="run"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">run</span> (line <span class="line-number">449</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Public function to run the loaded task with the passed arguments</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Should know more about what we're attempting to run so feedback can be improved. Continue refactoring.</li>
+				<li><span class="field">throws:</span> Doctrine_Cli_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			run
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$args</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetConfig" id="setConfig"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setConfig</span> (line <span class="line-number">87</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setConfig
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$config</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetFormatter" id="setFormatter"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setFormatter</span> (line <span class="line-number">103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setFormatter
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Cli/Doctrine_Cli_Formatter.html">Doctrine_Cli_Formatter</a></span>&nbsp;<span class="var-name">$formatter</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$formatter</span><span class="var-description">: Doctrine_Cli_Formatter</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRegisteredTasks" id="setRegisteredTasks"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setRegisteredTasks</span> (line <span class="line-number">171</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the array of registered tasks</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRegisteredTasks
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$registeredTask</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$registeredTask</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTaskInstance" id="setTaskInstance"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTaskInstance</span> (line <span class="line-number">221</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTaskInstance
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Task/Doctrine_Task.html">Doctrine_Task</a></span>&nbsp;<span class="var-name">$task</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$task</span><span class="var-description">: Doctrine_Task</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtaskClassIsRegistered" id="taskClassIsRegistered"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">taskClassIsRegistered</span> (line <span class="line-number">192</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns TRUE if the specified Task-class is registered, or FALSE otherwise</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			taskClassIsRegistered
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$className</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$className</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtaskNameIsRegistered" id="taskNameIsRegistered"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">taskNameIsRegistered</span> (line <span class="line-number">206</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns TRUE if a task with the specified name is registered, or FALSE otherwise</p>
+<p class="description"><p>If a matching task is found, $className is set with the name of the implementing class</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			taskNameIsRegistered
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$taskName</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">&$className</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$taskName</span>			</li>
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">&$className</span><span class="var-description">: [&amp;$className=null]</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getTaskClassFromArgs" id="_getTaskClassFromArgs"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getTaskClassFromArgs</span> (line <span class="line-number">665</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Old method retained for backwards compatibility</p>
+	<ul class="tags">
+				<li><span class="field">deprecated:</span> </li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_getTaskClassFromArgs
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$args</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_run" id="_run"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_run</span> (line <span class="line-number">476</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Run the actual task execution with the passed arguments</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Continue refactoring for testing</li>
+				<li><span class="field">throws:</span> Doctrine_Cli_Exception If the requested task has not been registered or if required arguments are missing</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_run
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$args</span><span class="var-description">: Array of arguments for this task being executed</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constTASK_BASE_CLASS" id="TASK_BASE_CLASS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TASK_BASE_CLASS</span>
+			 = <span class="const-default"> 'Doctrine_Task'</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The name of the Doctrine Task base class</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:52 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

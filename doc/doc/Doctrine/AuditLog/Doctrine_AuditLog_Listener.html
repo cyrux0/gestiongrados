@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_AuditLog_Listener</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_AuditLog_Listener</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_AuditLog_Listener</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision$</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---AuditLog---Listener.php.html">/helpers/Doctrine/AuditLog/Listener.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Record/Doctrine_Record_Listener.html">Doctrine_Record_Listener</a>
+   |
+   --Doctrine_AuditLog_Listener</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/AuditLog/Doctrine_AuditLog_Listener_Microtime.html">Doctrine_AuditLog_Listener_Microtime</a></td>
+					<td>
+											Doctrine_AuditLog_Listener
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<span class="var-type"><a href="../../Doctrine/AuditLog/Doctrine_AuditLog.html">Doctrine_AuditLog</a></span>
+					<a href="#$_auditLog" title="details" class="var-name">$_auditLog</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../../Doctrine/AuditLog/Doctrine_AuditLog.html">Doctrine_AuditLog</a></span>&nbsp;<span class="var-name">$auditLog</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#postInsert" title="details" class="method-name">postInsert</a>
+											(<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>&nbsp;<span class="var-name">$event</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#preDelete" title="details" class="method-name">preDelete</a>
+											(<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>&nbsp;<span class="var-name">$event</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#preInsert" title="details" class="method-name">preInsert</a>
+											(<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>&nbsp;<span class="var-name">$event</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#preUpdate" title="details" class="method-name">preUpdate</a>
+											(<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>&nbsp;<span class="var-name">$event</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#_getInitialVersion" title="details" class="method-name">_getInitialVersion</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#_getNextVersion" title="details" class="method-name">_getNextVersion</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_auditLog" id="$_auditLog"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../../Doctrine/AuditLog/Doctrine_AuditLog.html">Doctrine_AuditLog</a></span>
+			<span class="var-name">$_auditLog</span>
+						(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Instance of Doctrine_Auditlog</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html">Doctrine_Record_Listener</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#var$_options">Doctrine_Record_Listener::$_options</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">48</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Instantiate AuditLog listener and set the Doctrine_AuditLog instance to the class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/AuditLog/Doctrine_AuditLog.html">Doctrine_AuditLog</a></span>&nbsp;<span class="var-name">$auditLog</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/AuditLog/Doctrine_AuditLog.html">Doctrine_AuditLog</a></span>
+				<span class="var-name">$auditLog</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/AuditLog/Doctrine_AuditLog_Listener_Microtime.html#method__construct">Doctrine_AuditLog_Listener_Microtime::__construct()</a>
+								: Instantiate AuditLog listener and set the Doctrine_AuditLog instance to the class
+							</li>
+				</ul>
+	</div>
+<a name="methodpostInsert" id="postInsert"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">postInsert</span> (line <span class="line-number">75</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Post insert event hook which creates the new version record  This will only insert a version record if the auditLog is enabled</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			postInsert
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>&nbsp;<span class="var-name">$event</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>
+				<span class="var-name">$event</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpostInsert">Doctrine_Record_Listener::postInsert()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodpreDelete" id="preDelete"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">preDelete</span> (line <span class="line-number">94</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Pre delete event hook deletes all related versions  This will only delete version records if the auditLog is enabled</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			preDelete
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>&nbsp;<span class="var-name">$event</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>
+				<span class="var-name">$event</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreDelete">Doctrine_Record_Listener::preDelete()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodpreInsert" id="preInsert"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">preInsert</span> (line <span class="line-number">59</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Pre insert event hook for incrementing version number</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			preInsert
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>&nbsp;<span class="var-name">$event</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>
+				<span class="var-name">$event</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreInsert">Doctrine_Record_Listener::preInsert()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodpreUpdate" id="preUpdate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">preUpdate</span> (line <span class="line-number">124</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Pre update event hook for inserting new version record  This will only insert a version record if the auditLog is enabled</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			preUpdate
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>&nbsp;<span class="var-name">$event</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Event/Doctrine_Event.html">Doctrine_Event</a></span>
+				<span class="var-name">$event</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreUpdate">Doctrine_Record_Listener::preUpdate()</a></dt>
+					</dl>
+			
+	</div>
+<a name="method_getInitialVersion" id="_getInitialVersion"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getInitialVersion</span> (line <span class="line-number">147</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the initial version number for the audit log</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			_getInitialVersion
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$record</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/AuditLog/Doctrine_AuditLog_Listener_Microtime.html#method_getInitialVersion">Doctrine_AuditLog_Listener_Microtime::_getInitialVersion()</a>
+								: Get the initial version number for the audit log
+							</li>
+				</ul>
+	</div>
+<a name="method_getNextVersion" id="_getNextVersion"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getNextVersion</span> (line <span class="line-number">158</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the next version number for the audit log</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			_getNextVersion
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$record</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/AuditLog/Doctrine_AuditLog_Listener_Microtime.html#method_getNextVersion">Doctrine_AuditLog_Listener_Microtime::_getNextVersion()</a>
+								: Get the next version number for the audit log
+							</li>
+				</ul>
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html">Doctrine_Record_Listener</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodgetOption">Doctrine_Record_Listener::getOption()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodgetOptions">Doctrine_Record_Listener::getOptions()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpostDelete">Doctrine_Record_Listener::postDelete()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpostHydrate">Doctrine_Record_Listener::postHydrate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpostInsert">Doctrine_Record_Listener::postInsert()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpostSave">Doctrine_Record_Listener::postSave()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpostSerialize">Doctrine_Record_Listener::postSerialize()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpostUnserialize">Doctrine_Record_Listener::postUnserialize()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpostUpdate">Doctrine_Record_Listener::postUpdate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpostValidate">Doctrine_Record_Listener::postValidate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreDelete">Doctrine_Record_Listener::preDelete()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreDqlDelete">Doctrine_Record_Listener::preDqlDelete()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreDqlSelect">Doctrine_Record_Listener::preDqlSelect()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreDqlUpdate">Doctrine_Record_Listener::preDqlUpdate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreHydrate">Doctrine_Record_Listener::preHydrate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreInsert">Doctrine_Record_Listener::preInsert()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreSave">Doctrine_Record_Listener::preSave()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreSerialize">Doctrine_Record_Listener::preSerialize()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreUnserialize">Doctrine_Record_Listener::preUnserialize()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreUpdate">Doctrine_Record_Listener::preUpdate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodpreValidate">Doctrine_Record_Listener::preValidate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Record/Doctrine_Record_Listener.html#methodsetOption">Doctrine_Record_Listener::setOption()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:39 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

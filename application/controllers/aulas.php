@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Controlador para la gestión de aulas
+ * 
+ * @author Daniel I. Salazar Recio
+ * @package Controller
+ */
 class Aulas extends MY_Controller
 {
     function __construct(){
@@ -7,6 +12,9 @@ class Aulas extends MY_Controller
         $this->layout = '';
     }
     
+    /**
+     * Crea un formulario para añadir un aula al sistema
+     */
     public function add(){
         $aula = new Aula;
         $tipos = Doctrine::getTable('Actividad')->findAll();
@@ -14,6 +22,9 @@ class Aulas extends MY_Controller
         $this->load->view('aulas/add', array('aula' => $aula, 'tipos' => $tipos));
     }
     
+    /**
+     * Crea un aula con los datos pasados por POST
+     */
     public function create(){
         $aula = new Aula;
         $aula->fromArray($this->input->post());
@@ -22,16 +33,37 @@ class Aulas extends MY_Controller
         
     }
     
+    /**
+     * Muestra un listado de todas las aulas en el sistema
+     */
     public function index(){
         $aulas = Doctrine::getTable('Aula')->findAll();
         $this->load->view('aulas/index', array('aulas' => $aulas));
     }
     
+    /**
+     * Borra un aula del sistema eliminando todas las asociaciones con ella en las líneas de horario.
+     * @param integer $id Identificador del aula a eliminar
+     */
     public function delete($id){
         $aula = Doctrine::getTable('Aula')->find($id);
+        Doctrine_Query::create()
+                ->delete('AulaActividad')
+                ->addWhere('id_aula = ?', array($id))
+                ->execute();
+        $aula->unlink('lineashorario');
+        $aula->save();
         $aula->delete();
+        redirect('aulas/index');
     }
     
+    /**
+     *
+     * @param integer $id Identificador del aula a exportar
+     * @param integer $id_curso Identificador del curso que se quiere exportar
+     * @param string $semestre Semestre que se quiere exportar
+     * @param integer $num_semana Número de la semana que se quiere exportar
+     */
     public function exportar_ocupacion($id, $id_curso, $semestre, $num_semana)
     {
         // Extraemos el aula de la bd

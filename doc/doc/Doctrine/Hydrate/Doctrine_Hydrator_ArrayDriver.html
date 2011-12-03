@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Hydrator_ArrayDriver</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Hydrator_ArrayDriver</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Builds result sets in to the object graph using php arrays</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision$</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Hydrator---ArrayDriver.php.html">/helpers/Doctrine/Hydrator/ArrayDriver.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a>
+   |
+   --<a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html">Doctrine_Hydrator_Abstract</a>
+      |
+      --<a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html">Doctrine_Hydrator_Graph</a>
+         |
+         --Doctrine_Hydrator_ArrayDriver</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-vars">Vars</a>
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_ArrayHierarchyDriver.html">Doctrine_Hydrator_ArrayHierarchyDriver</a></td>
+					<td>
+											Builds result sets in to the hierarchy graph using php arrays
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getElement" title="details" class="method-name">getElement</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$component</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getElementCollection" title="details" class="method-name">getElementCollection</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$component</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getLastKey" title="details" class="method-name">getLastKey</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$coll</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getNullPointer" title="details" class="method-name">getNullPointer</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#initRelated" title="details" class="method-name">initRelated</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$record</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$keyColumn</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#registerCollection" title="details" class="method-name">registerCollection</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$coll</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setLastElement" title="details" class="method-name">setLastElement</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$prev</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$coll</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$index</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$dqlAlias</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$oneToOne</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html">Doctrine_Hydrator_Graph</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#var$_tables">Doctrine_Hydrator_Graph::$_tables</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html">Doctrine_Hydrator_Abstract</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#var$_hydrationMode">Doctrine_Hydrator_Abstract::$_hydrationMode</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#var$_priorRow">Doctrine_Hydrator_Abstract::$_priorRow</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#var$_queryComponents">Doctrine_Hydrator_Abstract::$_queryComponents</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#var$_tableAliases">Doctrine_Hydrator_Abstract::$_tableAliases</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_locator">Doctrine_Locator_Injectable::$_locator</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_null">Doctrine_Locator_Injectable::$_null</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_resources">Doctrine_Locator_Injectable::$_resources</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodgetElement" id="getElement"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getElement</span> (line <span class="line-number">40</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getElement
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$component</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$data</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$component</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodgetElement">Doctrine_Hydrator_Graph::getElement()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodgetElementCollection" id="getElementCollection"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getElementCollection</span> (line <span class="line-number">35</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getElementCollection
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$component</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$component</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodgetElementCollection">Doctrine_Hydrator_Graph::getElementCollection()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodgetLastKey" id="getLastKey"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLastKey</span> (line <span class="line-number">63</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getLastKey
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$coll</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$coll</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodgetLastKey">Doctrine_Hydrator_Graph::getLastKey()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodgetNullPointer" id="getNullPointer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getNullPointer</span> (line <span class="line-number">58</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getNullPointer
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodgetNullPointer">Doctrine_Hydrator_Graph::getNullPointer()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodinitRelated" id="initRelated"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">initRelated</span> (line <span class="line-number">50</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			initRelated
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$record</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$keyColumn</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$record</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$keyColumn</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodinitRelated">Doctrine_Hydrator_Graph::initRelated()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodregisterCollection" id="registerCollection"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">registerCollection</span> (line <span class="line-number">45</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			registerCollection
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$coll</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$coll</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodregisterCollection">Doctrine_Hydrator_Graph::registerCollection()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodsetLastElement" id="setLastElement"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setLastElement</span> (line <span class="line-number">69</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setLastElement
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$prev</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$coll</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$index</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$dqlAlias</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$oneToOne</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$prev</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$coll</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$index</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$dqlAlias</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$oneToOne</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodsetLastElement">Doctrine_Hydrator_Graph::setLastElement()</a></dt>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html">Doctrine_Hydrator_Graph</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodflush">Doctrine_Hydrator_Graph::flush()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodgetElement">Doctrine_Hydrator_Graph::getElement()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodgetElementCollection">Doctrine_Hydrator_Graph::getElementCollection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodgetLastKey">Doctrine_Hydrator_Graph::getLastKey()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodgetNullPointer">Doctrine_Hydrator_Graph::getNullPointer()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodhydrateResultSet">Doctrine_Hydrator_Graph::hydrateResultSet()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodinitRelated">Doctrine_Hydrator_Graph::initRelated()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodregisterCollection">Doctrine_Hydrator_Graph::registerCollection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#methodsetLastElement">Doctrine_Hydrator_Graph::setLastElement()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#method_gatherRowData">Doctrine_Hydrator_Graph::_gatherRowData()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#method_getClassnameToReturn">Doctrine_Hydrator_Graph::_getClassnameToReturn()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Graph.html#method_getCustomIndexField">Doctrine_Hydrator_Graph::_getCustomIndexField()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html">Doctrine_Hydrator_Abstract</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#method__construct">Doctrine_Hydrator_Abstract::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#methodgetRootComponent">Doctrine_Hydrator_Abstract::getRootComponent()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#methodhydrateResultSet">Doctrine_Hydrator_Abstract::hydrateResultSet()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#methodonDemandReset">Doctrine_Hydrator_Abstract::onDemandReset()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#methodsetHydrationMode">Doctrine_Hydrator_Abstract::setHydrationMode()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#methodsetQueryComponents">Doctrine_Hydrator_Abstract::setQueryComponents()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#methodsetTableAliases">Doctrine_Hydrator_Abstract::setTableAliases()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html#method_isIgnoredName">Doctrine_Hydrator_Abstract::_isIgnoredName()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodbind">Doctrine_Locator_Injectable::bind()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetLocator">Doctrine_Locator_Injectable::getLocator()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetNullObject">Doctrine_Locator_Injectable::getNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodinitNullObject">Doctrine_Locator_Injectable::initNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodlocate">Doctrine_Locator_Injectable::locate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodsetLocator">Doctrine_Locator_Injectable::setLocator()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:34 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

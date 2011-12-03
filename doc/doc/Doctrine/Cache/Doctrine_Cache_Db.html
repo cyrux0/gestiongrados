@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Cache_Db</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Cache_Db</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Database cache driver</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Jonathan H. Wage &lt;<a href="mailto:jonwage@gmail.com">jonwage@gmail.com</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Cache---Db.php.html">/helpers/Doctrine/Cache/Db.php</a> (line <span class="field">34</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html">Doctrine_Cache_Driver</a>
+   |
+   --Doctrine_Cache_Db</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																												
+												<div class="method-definition">
+											<span class="method-result">Doctrine_Cache_Db</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$_options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#createTable" title="details" class="method-name">createTable</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+										<a href="#getConnection" title="details" class="method-name">getConnection</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#_doContains" title="details" class="method-name">_doContains</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#_doDelete" title="details" class="method-name">_doDelete</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#_doFetch" title="details" class="method-name">_doFetch</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$testCacheValidity</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#_doSave" title="details" class="method-name">_doSave</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$lifeTime</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$saveKey</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#_getCacheKeys" title="details" class="method-name">_getCacheKeys</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_hex2bin" title="details" class="method-name">_hex2bin</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$hex</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html">Doctrine_Cache_Driver</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#var$_options">Doctrine_Cache_Driver::$_options</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">42</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Configure Database cache driver. Specify instance of Doctrine_Connection  and tableName to store cache in</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Doctrine_Cache_Db</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$_options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$_options</span><span class="var-description">: an array of options</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method__construct">Doctrine_Cache_Driver::__construct()</a></dt>
+						<dd>Configure cache driver with an array of options</dd>
+					</dl>
+			
+	</div>
+<a name="methodcreateTable" id="createTable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">createTable</span> (line <span class="line-number">173</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create the cache table</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			createTable
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetConnection" id="getConnection"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getConnection</span> (line <span class="line-number">65</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the connection object associated with this cache driver</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+		<span class="method-name">
+			getConnection
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_doContains" id="_doContains"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doContains</span> (line <span class="line-number">101</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Test if a cache record exists for the passed id</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> false (a cache is not available) or &quot;last modified&quot; timestamp (int) of the available cache record</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			_doContains
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_doContains">Doctrine_Cache_Driver::_doContains()</a></dt>
+						<dd>Test if a cache record exists for the passed id</dd>
+					</dl>
+			
+	</div>
+<a name="method_doDelete" id="_doDelete"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doDelete</span> (line <span class="line-number">162</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Remove a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::delete()</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if no problem</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			_doDelete
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_doDelete">Doctrine_Cache_Driver::_doDelete()</a></dt>
+						<dd>Remove a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::delete()</dd>
+					</dl>
+			
+	</div>
+<a name="method_doFetch" id="_doFetch"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doFetch</span> (line <span class="line-number">77</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetch a cache record from this cache driver instance</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns either the cached data or false</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			_doFetch
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$testCacheValidity</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$testCacheValidity</span><span class="var-description">: if set to false, the cache validity won't be tested</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_doFetch">Doctrine_Cache_Driver::_doFetch()</a></dt>
+						<dd>Fetch a cache record from this cache driver instance</dd>
+					</dl>
+			
+	</div>
+<a name="method_doSave" id="_doSave"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_doSave</span> (line <span class="line-number">123</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Save a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::save()</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if no problem</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			_doSave
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$lifeTime</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$saveKey</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: cache id</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: data to cache</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$lifeTime</span><span class="var-description">: if != false, set a specific lifetime for this cache record (null =&gt; infinite lifeTime)</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$saveKey</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_doSave">Doctrine_Cache_Driver::_doSave()</a></dt>
+						<dd>Save a cache record directly. This method is implemented by the cache  drivers and used in Doctrine_Cache_Driver::save()</dd>
+					</dl>
+			
+	</div>
+<a name="method_getCacheKeys" id="_getCacheKeys"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getCacheKeys</span> (line <span class="line-number">222</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetch an array of all keys stored in cache</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns the array of cache keys</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_getCacheKeys
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_getCacheKeys">Doctrine_Cache_Driver::_getCacheKeys()</a></dt>
+						<dd>Fetch an array of all keys stored in cache</dd>
+					</dl>
+			
+	</div>
+<a name="method_hex2bin" id="_hex2bin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_hex2bin</span> (line <span class="line-number">204</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert hex data to binary data. If passed data is not hex then  it is returned as is.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_hex2bin
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$hex</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$hex</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html">Doctrine_Cache_Driver</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method__construct">Doctrine_Cache_Driver::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methodcontains">Doctrine_Cache_Driver::contains()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methoddelete">Doctrine_Cache_Driver::delete()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methoddeleteAll">Doctrine_Cache_Driver::deleteAll()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methoddeleteByPrefix">Doctrine_Cache_Driver::deleteByPrefix()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methoddeleteByRegex">Doctrine_Cache_Driver::deleteByRegex()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methoddeleteBySuffix">Doctrine_Cache_Driver::deleteBySuffix()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methodfetch">Doctrine_Cache_Driver::fetch()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methodgetOption">Doctrine_Cache_Driver::getOption()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methodsave">Doctrine_Cache_Driver::save()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#methodsetOption">Doctrine_Cache_Driver::setOption()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_doContains">Doctrine_Cache_Driver::_doContains()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_doDelete">Doctrine_Cache_Driver::_doDelete()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_doFetch">Doctrine_Cache_Driver::_doFetch()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_doSave">Doctrine_Cache_Driver::_doSave()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_getCacheKeys">Doctrine_Cache_Driver::_getCacheKeys()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Cache/Doctrine_Cache_Driver.html#method_getKey">Doctrine_Cache_Driver::_getKey()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:03 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

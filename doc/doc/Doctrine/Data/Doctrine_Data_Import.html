@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Data_Import</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Data_Import</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Data_Import</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jonathan H. Wage &lt;<a href="mailto:jwage@mac.com">jwage@mac.com</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 2552 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Data---Import.php.html">/helpers/Doctrine/Data/Import.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Data/Doctrine_Data.html">Doctrine_Data</a>
+   |
+   --Doctrine_Data_Import</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_importedObjects" title="details" class="var-name">$_importedObjects</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_rows" title="details" class="var-name">$_rows</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#doImport" title="details" class="method-name">doImport</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#doParsing" title="details" class="method-name">doParsing</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_buildNestedSetRows" title="details" class="method-name">_buildNestedSetRows</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_buildRows" title="details" class="method-name">_buildRows</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#_getImportedObject" title="details" class="method-name">_getImportedObject</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$rowKey</span>, <span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$relationName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$referringRowKey</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_getRowKeyPrefix" title="details" class="method-name">_getRowKeyPrefix</a>
+											(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#_hasNaturalNestedSetFormat" title="details" class="method-name">_hasNaturalNestedSetFormat</a>
+											(<span class="var-type">$className</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_loadData" title="details" class="method-name">_loadData</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$array</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_loadNestedSetData" title="details" class="method-name">_loadNestedSetData</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$model</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$nestedSetData</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$parent</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_processRow" title="details" class="method-name">_processRow</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$rowKey</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$row</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_importedObjects" id="$_importedObjects"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_importedObjects</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Array of imported objects for processing and saving</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_rows" id="$_rows"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_rows</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Array of the raw data parsed from yaml</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Data/Doctrine_Data.html">Doctrine_Data</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Data/Doctrine_Data.html#var$_directory">Doctrine_Data::$_directory</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Data/Doctrine_Data.html#var$_exportIndividualFiles">Doctrine_Data::$_exportIndividualFiles</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Data/Doctrine_Data.html#var$_format">Doctrine_Data::$_format</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Data/Doctrine_Data.html#var$_formats">Doctrine_Data::$_formats</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Data/Doctrine_Data.html#var$_models">Doctrine_Data::$_models</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">55</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Optionally pass the directory/path to the yaml for importing</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddoImport" id="doImport"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">doImport</span> (line <span class="line-number">110</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Do the importing of the data parsed from the fixtures</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			doImport
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$append</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddoParsing" id="doParsing"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">doParsing</span> (line <span class="line-number">67</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Do the parsing of the yaml files and return the final parsed array</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			doParsing
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_buildNestedSetRows" id="_buildNestedSetRows"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_buildNestedSetRows</span> (line <span class="line-number">162</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Build the rows for nested set models</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_buildNestedSetRows
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$data</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_buildRows" id="_buildRows"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_buildRows</span> (line <span class="line-number">126</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Recursively loop over all data fixtures and build the array of className rows</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_buildRows
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$data</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getImportedObject" id="_getImportedObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getImportedObject</span> (line <span class="line-number">184</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the unsaved object for a specified row key and validate that it is the valid object class  for the passed record and relation name</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Doctrine_Data_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			_getImportedObject
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$rowKey</span>, <span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$relationName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$referringRowKey</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$rowKey</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$relationName</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$referringRowKey</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getRowKeyPrefix" id="_getRowKeyPrefix"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getRowKeyPrefix</span> (line <span class="line-number">398</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the prefix to use when indexing an object from the supplied table.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_getRowKeyPrefix
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+				<span class="var-name">$table</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_hasNaturalNestedSetFormat" id="_hasNaturalNestedSetFormat"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_hasNaturalNestedSetFormat</span> (line <span class="line-number">272</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">NestedSet fixtures may come in a 'natural' format with nested children listed under a 'children'  key or in a raw, non-nested format with lft/rgt values.</p>
+<p class="description"><p>This method returns true if the given $data is a nested set in 'natural' form.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			_hasNaturalNestedSetFormat
+		</span>
+					(<span class="var-type">$className</span>&nbsp;<span class="var-name">$className</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$className</span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type">$data</span>
+				<span class="var-name">&$data</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_loadData" id="_loadData"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_loadData</span> (line <span class="line-number">293</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Perform the loading of the data from the passed array</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_loadData
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$array</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_loadNestedSetData" id="_loadNestedSetData"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_loadNestedSetData</span> (line <span class="line-number">361</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Load nested set data for models with nested set enabled</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_loadNestedSetData
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$model</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$nestedSetData</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$parent</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$model</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$nestedSetData</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$parent</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_processRow" id="_processRow"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_processRow</span> (line <span class="line-number">215</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Process a row and make all the appropriate relations between the imported data</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_processRow
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$rowKey</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$row</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$rowKey</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$row</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Data/Doctrine_Data.html">Doctrine_Data</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodexportData">Doctrine_Data::exportData()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodexportIndividualFiles">Doctrine_Data::exportIndividualFiles()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodgetDirectory">Doctrine_Data::getDirectory()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodgetFormat">Doctrine_Data::getFormat()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodgetFormats">Doctrine_Data::getFormats()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodgetModels">Doctrine_Data::getModels()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodimportData">Doctrine_Data::importData()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodisRelation">Doctrine_Data::isRelation()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodpurge">Doctrine_Data::purge()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodsetDirectory">Doctrine_Data::setDirectory()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodsetFormat">Doctrine_Data::setFormat()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Data/Doctrine_Data.html#methodsetModels">Doctrine_Data::setModels()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:32 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

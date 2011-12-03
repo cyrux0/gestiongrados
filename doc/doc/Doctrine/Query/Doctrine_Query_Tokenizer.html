@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Query_Tokenizer</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Query_Tokenizer</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Query_Tokenizer</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Guilherme Blanco &lt;<a href="mailto:guilhermeblanco@hotmail.com">guilhermeblanco@hotmail.com</a>&gt;</li>
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Stefan Klug &lt;<a href="mailto:stefan.klug@googlemail.com">stefan.klug@googlemail.com</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision$</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Query---Tokenizer.php.html">/helpers/Doctrine/Query/Tokenizer.php</a> (line <span class="field">35</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																												
+												<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#bracketExplode" title="details" class="method-name">bracketExplode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$d</span> = <span class="var-default">' '</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e1</span> = <span class="var-default">'('</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e2</span> = <span class="var-default">')'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#bracketTrim" title="details" class="method-name">bracketTrim</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$e1</span> = <span class="var-default">'('</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e2</span> = <span class="var-default">')'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#clauseExplode" title="details" class="method-name">clauseExplode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$d</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$e1</span> = <span class="var-default">'('</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e2</span> = <span class="var-default">')'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#quotedStringExplode" title="details" class="method-name">quotedStringExplode</a>
+											(<span class="var-type">$str</span>&nbsp;<span class="var-name">$str</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#quoteExplode" title="details" class="method-name">quoteExplode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$d</span> = <span class="var-default">' '</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#sqlExplode" title="details" class="method-name">sqlExplode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$d</span> = <span class="var-default">' '</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e1</span> = <span class="var-default">'('</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e2</span> = <span class="var-default">')'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#tokenizeQuery" title="details" class="method-name">tokenizeQuery</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodbracketExplode" id="bracketExplode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">bracketExplode</span> (line <span class="line-number">152</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Explodes a sql expression respecting bracket placement.</p>
+<p class="description"><p>This method transform a sql expression in an array of simple clauses,  while observing the parentheses precedence.</p><p>Note: bracketExplode always trims the returned pieces</p><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$str&nbsp;</span>=&nbsp;<span class="src-sym">(</span><span class="src-id">age&nbsp;</span>&lt;&nbsp;<span class="src-num">20&nbsp;</span><span class="src-key">AND&nbsp;</span><span class="src-id">age&nbsp;</span>&gt;&nbsp;<span class="src-num">18</span><span class="src-sym">)&nbsp;</span><span class="src-key">AND&nbsp;</span><span class="src-id">email&nbsp;LIKE&nbsp;</span><span class="src-str">'John@example.com'</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$clauses&nbsp;</span>=&nbsp;<span class="src-var">$tokenizer</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Tokenizer.html#methodbracketExplode">bracketExplode</a><span class="src-sym">(</span><span class="src-var">$str</span><span class="src-sym">,&nbsp;</span><span class="src-str">'&nbsp;AND&nbsp;'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'('</span><span class="src-sym">,&nbsp;</span><span class="src-str">')'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;array(&quot;(age&nbsp;&lt;&nbsp;20&nbsp;AND&nbsp;age&nbsp;&gt;&nbsp;18)&quot;,&nbsp;&quot;email&nbsp;LIKE&nbsp;'John@example.com'&quot;)</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			bracketExplode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$d</span> = <span class="var-default">' '</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e1</span> = <span class="var-default">'('</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e2</span> = <span class="var-default">')'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: String to be bracket exploded</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$d</span><span class="var-description">: Delimeter which explodes the string</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$e1</span><span class="var-description">: First bracket, usually '('</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$e2</span><span class="var-description">: Second bracket, usually ')'</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbracketTrim" id="bracketTrim"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">bracketTrim</span> (line <span class="line-number">122</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Trims brackets from string</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			bracketTrim
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$e1</span> = <span class="var-default">'('</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e2</span> = <span class="var-default">')'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: String to remove the brackets</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$e1</span><span class="var-description">: First bracket, usually '('</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$e2</span><span class="var-description">: Second bracket, usually ')'</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclauseExplode" id="clauseExplode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">clauseExplode</span> (line <span class="line-number">285</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Explodes a string into array using custom brackets and quote delimeters  Each array element is a array of length 2 where the first entry contains  the term, and the second entry contains the corresponding delimiter</p>
+<p class="description"><p>example:</p><p>parameters:      $str = &quot;(age &lt; 20 AND age &gt; 18) AND name LIKE 'John'+' Doe'&quot;      $d   = array(' ', '+')      $e1  = '('      $e2  = ')'</p><p>would return an array:      array(          array('(age &lt; 20 AND age &gt; 18)', ' '),          array('AND',  ' '),          array('name', ' '),          array('LIKE', ' '),          array('John', '+'),          array(' Doe', '')      );</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			clauseExplode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$d</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$e1</span> = <span class="var-default">'('</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e2</span> = <span class="var-default">')'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: String to be clause exploded</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$d</span><span class="var-description">: Delimeter which explodes the string</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$e1</span><span class="var-description">: First bracket, usually '('</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$e2</span><span class="var-description">: Second bracket, usually ')'</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodquotedStringExplode" id="quotedStringExplode"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">quotedStringExplode</span> (line <span class="line-number">513</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Explodes the given string by &lt;quoted words&gt;</p>
+<p class="description"><p>example:</p><p>paramters:      $str =&quot;'a' AND name = 'John O\'Connor'&quot;</p><p>returns      array(&quot;&quot;, &quot;'a'&quot;, &quot; AND name = &quot;, &quot;'John O\'Connor'&quot;)</p><p>Note the trailing empty string. In the result, all even elements are quoted strings.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			quotedStringExplode
+		</span>
+					(<span class="var-type">$str</span>&nbsp;<span class="var-name">$str</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$str</span>
+				<span class="var-name">$str</span><span class="var-description">: the string to split</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodquoteExplode" id="quoteExplode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">quoteExplode</span> (line <span class="line-number">191</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Explode quotes from string</p>
+<p class="description"><p>Note: quoteExplode always trims the returned pieces</p><p>example:</p><p>parameters:      $str = email LIKE 'John@example.com'      $d = ' LIKE '</p><p>would return an array:      array(&quot;email&quot;, &quot;LIKE&quot;, &quot;'John@example.com'&quot;)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			quoteExplode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$d</span> = <span class="var-default">' '</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: String to be quote exploded</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$d</span><span class="var-description">: Delimeter which explodes the string</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsqlExplode" id="sqlExplode"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sqlExplode</span> (line <span class="line-number">239</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Explodes a string into array using custom brackets and  quote delimeters</p>
+<p class="description"><p>Note: sqlExplode trims all returned parts</p><p>example:</p><p>parameters:      $str = &quot;(age &lt; 20 AND age &gt; 18) AND name LIKE 'John Doe'&quot;      $d   = ' '      $e1  = '('      $e2  = ')'</p><p>would return an array:      array(          '(age &lt; 20 AND age &gt; 18)',          'name',          'LIKE',          'John Doe'      );</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			sqlExplode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$d</span> = <span class="var-default">' '</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e1</span> = <span class="var-default">'('</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$e2</span> = <span class="var-default">')'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: String to be SQL exploded</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$d</span><span class="var-description">: Delimeter which explodes the string</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$e1</span><span class="var-description">: First bracket, usually '('</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$e2</span><span class="var-description">: Second bracket, usually ')'</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtokenizeQuery" id="tokenizeQuery"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">tokenizeQuery</span> (line <span class="line-number">59</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Splits the given dql query into an array where keys represent different  query part names and values are arrays splitted using sqlExplode method</p>
+<p class="description"><p>example:</p><p>parameter:      $query = &quot;SELECT u.* FROM User u WHERE u.name LIKE ?&quot;  returns:      array(          'select' =&gt; array('u.*'),          'from'   =&gt; array('User', 'u'),          'where'  =&gt; array('u.name', 'LIKE', '?')      );</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array containing the query string parts</li>
+				<li><span class="field">throws:</span> Doctrine_Query_Exception If some generic parsing error occurs</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			tokenizeQuery
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: DQL query</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:09:26 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

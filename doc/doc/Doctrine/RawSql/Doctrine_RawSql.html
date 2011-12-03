@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_RawSql</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_RawSql</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_RawSql</p>
+<p class="description"><p>Doctrine_RawSql is an implementation of Doctrine_Query_Abstract that skips the entire  DQL parsing procedure. The &quot;DQL&quot; that is passed to a RawSql query object for execution  is considered to be plain SQL and will be used &quot;as is&quot;. The only query part that is special  in a RawSql query is the SELECT part, which has a special syntax that provides Doctrine  with the necessary information to properly hydrate the query results.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---RawSql.php.html">/helpers/Doctrine/RawSql.php</a> (line <span class="field">39</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a>
+   |
+   --Doctrine_RawSql</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-consts">Constants</a>
+							
+															<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																												
+												<div class="method-definition">
+											<span class="method-result">Doctrine_RawSql</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>&nbsp;<span class="var-name">$connection</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html">Doctrine_Hydrator_Abstract</a></span>&nbsp;<span class="var-name">$hydrator</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/RawSql/Doctrine_RawSql.html">Doctrine_RawSql</a></span>
+										<a href="#addComponent" title="details" class="method-name">addComponent</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$componentName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#calculateResultCacheHash" title="details" class="method-name">calculateResultCacheHash</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clear" title="details" class="method-name">clear</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#count" title="details" class="method-name">count</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getCountSqlQuery" title="details" class="method-name">getCountSqlQuery</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getFields" title="details" class="method-name">getFields</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getSqlQuery" title="details" class="method-name">getSqlQuery</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/RawSql/Doctrine_RawSql.html">Doctrine_RawSql</a></span>
+										<a href="#parseDqlQuery" title="details" class="method-name">parseDqlQuery</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#parseDqlQueryPart" title="details" class="method-name">parseDqlQueryPart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryPartName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$queryPart</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_addDqlQueryPart" title="details" class="method-name">_addDqlQueryPart</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$queryPartName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$queryPart</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-consts">Constants</a>
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$disableLimitSubquery">Doctrine_Query_Abstract::$disableLimitSubquery</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_components">Doctrine_Query_Abstract::$_components</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_conn">Doctrine_Query_Abstract::$_conn</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_dqlParts">Doctrine_Query_Abstract::$_dqlParts</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_execParams">Doctrine_Query_Abstract::$_execParams</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_expireQueryCache">Doctrine_Query_Abstract::$_expireQueryCache</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_expireResultCache">Doctrine_Query_Abstract::$_expireResultCache</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_hydrator">Doctrine_Query_Abstract::$_hydrator</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_isLimitSubqueryUsed">Doctrine_Query_Abstract::$_isLimitSubqueryUsed</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_options">Doctrine_Query_Abstract::$_options</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_params">Doctrine_Query_Abstract::$_params</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_parser">Doctrine_Query_Abstract::$_parser</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_passedConn">Doctrine_Query_Abstract::$_passedConn</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_preQueried">Doctrine_Query_Abstract::$_preQueried</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_queryCache">Doctrine_Query_Abstract::$_queryCache</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_queryCacheTTL">Doctrine_Query_Abstract::$_queryCacheTTL</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_queryComponents">Doctrine_Query_Abstract::$_queryComponents</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_resultCache">Doctrine_Query_Abstract::$_resultCache</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_resultCacheHash">Doctrine_Query_Abstract::$_resultCacheHash</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_resultCacheTTL">Doctrine_Query_Abstract::$_resultCacheTTL</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_rootAlias">Doctrine_Query_Abstract::$_rootAlias</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_sqlParts">Doctrine_Query_Abstract::$_sqlParts</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_state">Doctrine_Query_Abstract::$_state</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_tableAliasMap">Doctrine_Query_Abstract::$_tableAliasMap</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_tableAliasSeeds">Doctrine_Query_Abstract::$_tableAliasSeeds</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_tokenizer">Doctrine_Query_Abstract::$_tokenizer</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_type">Doctrine_Query_Abstract::$_type</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#var$_view">Doctrine_Query_Abstract::$_view</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																			<a href="#sec-consts">Constants</a>
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">52</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor.</p>
+	
+	<div class="method-signature">
+		<span class="method-result">Doctrine_RawSql</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>&nbsp;<span class="var-name">$connection</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html">Doctrine_Hydrator_Abstract</a></span>&nbsp;<span class="var-name">$hydrator</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+				<span class="var-name">$connection</span><span class="var-description">: The connection object the query will use.</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html">Doctrine_Hydrator_Abstract</a></span>
+				<span class="var-name">$hydrator</span><span class="var-description">: The hydrator that will be used for generating result sets.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method__construct">Doctrine_Query_Abstract::__construct()</a></dt>
+						<dd>Constructor.</dd>
+					</dl>
+			
+	</div>
+<a name="methodaddComponent" id="addComponent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addComponent</span> (line <span class="line-number">383</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">addComponent</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/RawSql/Doctrine_RawSql.html">Doctrine_RawSql</a></span>
+		<span class="method-name">
+			addComponent
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$componentName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableAlias</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$componentName</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$path</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcalculateResultCacheHash" id="calculateResultCacheHash"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">calculateResultCacheHash</span> (line <span class="line-number">446</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">calculateResultCacheHash  calculate hash key for result cache</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the hash</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			calculateResultCacheHash
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodcalculateResultCacheHash">Doctrine_Query_Abstract::calculateResultCacheHash()</a></dt>
+						<dd>calculateResultCacheHash  calculate hash key for result cache</dd>
+					</dl>
+			
+	</div>
+<a name="methodclear" id="clear"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">clear</span> (line <span class="line-number">60</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clear
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodclear">Doctrine_Query_Abstract::clear()</a></dt>
+						<dd>Resets all the sql parts.</dd>
+					</dl>
+			
+	</div>
+<a name="methodcount" id="count"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">count</span> (line <span class="line-number">345</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">count  fetches the count of the query</p>
+<p class="description"><p>This method executes the main query without all the  selected fields, ORDER BY part, LIMIT part and OFFSET part.</p><p>This is an exact copy of the Dql Version</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the count of this query</li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Query/Doctrine_Query.html#methodcount">Doctrine_Query::count()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			count
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: an array of prepared statement parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCountSqlQuery" id="getCountSqlQuery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCountSqlQuery</span> (line <span class="line-number">295</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getCountQuery  builds the count query.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the built sql query</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getCountSqlQuery
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFields" id="getFields"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFields</span> (line <span class="line-number">371</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getFields  returns the fields associated with this parser</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> all the fields associated with this parser</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getFields
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSqlQuery" id="getSqlQuery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSqlQuery</span> (line <span class="line-number">190</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getSqlQuery  builds the sql query.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the built sql query</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getSqlQuery
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetSqlQuery">Doctrine_Query_Abstract::getSqlQuery()</a></dt>
+						<dd>Gets the SQL query that corresponds to this query object.</dd>
+					</dl>
+			
+	</div>
+<a name="methodparseDqlQuery" id="parseDqlQuery"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">parseDqlQuery</span> (line <span class="line-number">130</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">parseDqlQuery  parses an sql query and adds the parts to internal array.</p>
+<p class="description"><p>Overrides Doctrine_Query_Abstract::parseDqlQuery().  This implementation simply tokenizes the provided query string and uses them  as SQL parts right away.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/RawSql/Doctrine_RawSql.html">Doctrine_RawSql</a></span>
+		<span class="method-name">
+			parseDqlQuery
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: query to be parsed</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodparseDqlQuery">Doctrine_Query_Abstract::parseDqlQuery()</a></dt>
+						<dd>parseDqlQuery  parses a dql query</dd>
+					</dl>
+			
+	</div>
+<a name="methodparseDqlQueryPart" id="parseDqlQueryPart"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">parseDqlQueryPart</span> (line <span class="line-number">81</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">parseDqlQueryPart  parses given DQL query part. Overrides Doctrine_Query_Abstract::parseDqlQueryPart().</p>
+<p class="description"><p>This implementation does no parsing at all, except of the SELECT portion of the query  which is special in RawSql queries. The entire remaining parts are used &quot;as is&quot;, so  the user of the RawSql query is responsible for writing SQL that is portable between  different DBMS.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			parseDqlQueryPart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryPartName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$queryPart</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$queryPartName</span><span class="var-description">: the name of the query part</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$queryPart</span><span class="var-description">: query part to be parsed</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$append</span><span class="var-description">: whether or not to append the query part to its stack                                   if false is given, this method will overwrite                                   the given query part stack with $queryPart</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_addDqlQueryPart" id="_addDqlQueryPart"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_addDqlQueryPart</span> (line <span class="line-number">103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a DQL query part. Overrides Doctrine_Query_Abstract::_addDqlQueryPart().</p>
+<p class="description"><p>This implementation for RawSql parses the new parts right away, generating the SQL.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_addDqlQueryPart
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$queryPartName</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$queryPart</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$queryPartName</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$queryPart</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$append</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_addDqlQueryPart">Doctrine_Query_Abstract::_addDqlQueryPart()</a></dt>
+						<dd>Adds a DQL part to the internal parts collection.</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method__construct">Doctrine_Query_Abstract::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodaddFrom">Doctrine_Query_Abstract::addFrom()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodaddGroupBy">Doctrine_Query_Abstract::addGroupBy()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodaddHaving">Doctrine_Query_Abstract::addHaving()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodaddOrderBy">Doctrine_Query_Abstract::addOrderBy()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodaddSelect">Doctrine_Query_Abstract::addSelect()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodaddSqlQueryPart">Doctrine_Query_Abstract::addSqlQueryPart()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodaddSqlTableAlias">Doctrine_Query_Abstract::addSqlTableAlias()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodaddWhere">Doctrine_Query_Abstract::addWhere()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodandWhere">Doctrine_Query_Abstract::andWhere()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodandWhereIn">Doctrine_Query_Abstract::andWhereIn()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodandWhereNotIn">Doctrine_Query_Abstract::andWhereNotIn()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodcalculateQueryCacheHash">Doctrine_Query_Abstract::calculateQueryCacheHash()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodcalculateResultCacheHash">Doctrine_Query_Abstract::calculateResultCacheHash()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodclear">Doctrine_Query_Abstract::clear()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodclearResultCache">Doctrine_Query_Abstract::clearResultCache()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodcopySubqueryInfo">Doctrine_Query_Abstract::copySubqueryInfo()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methoddelete">Doctrine_Query_Abstract::delete()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methoddistinct">Doctrine_Query_Abstract::distinct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodexecute">Doctrine_Query_Abstract::execute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodexpireQueryCache">Doctrine_Query_Abstract::expireQueryCache()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodexpireResultCache">Doctrine_Query_Abstract::expireResultCache()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodfixArrayParameterValues">Doctrine_Query_Abstract::fixArrayParameterValues()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodforUpdate">Doctrine_Query_Abstract::forUpdate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodfree">Doctrine_Query_Abstract::free()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodfrom">Doctrine_Query_Abstract::from()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgenerateNewSqlTableAlias">Doctrine_Query_Abstract::generateNewSqlTableAlias()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgenerateSqlTableAlias">Doctrine_Query_Abstract::generateSqlTableAlias()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetCachedForm">Doctrine_Query_Abstract::getCachedForm()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetComponentAlias">Doctrine_Query_Abstract::getComponentAlias()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetConnection">Doctrine_Query_Abstract::getConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetCountQueryParams">Doctrine_Query_Abstract::getCountQueryParams()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetDisableLimitSubquery">Doctrine_Query_Abstract::getDisableLimitSubquery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetDql">Doctrine_Query_Abstract::getDql()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetFlattenedParams">Doctrine_Query_Abstract::getFlattenedParams()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetInheritanceCondition">Doctrine_Query_Abstract::getInheritanceCondition()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetInternalParams">Doctrine_Query_Abstract::getInternalParams()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetParams">Doctrine_Query_Abstract::getParams()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetQueryCacheDriver">Doctrine_Query_Abstract::getQueryCacheDriver()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetQueryCacheLifeSpan">Doctrine_Query_Abstract::getQueryCacheLifeSpan()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetQueryComponent">Doctrine_Query_Abstract::getQueryComponent()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetQueryComponents">Doctrine_Query_Abstract::getQueryComponents()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetResultCacheDriver">Doctrine_Query_Abstract::getResultCacheDriver()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetResultCacheHash">Doctrine_Query_Abstract::getResultCacheHash()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetResultCacheLifeSpan">Doctrine_Query_Abstract::getResultCacheLifeSpan()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetRoot">Doctrine_Query_Abstract::getRoot()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetRootAlias">Doctrine_Query_Abstract::getRootAlias()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetRootDeclaration">Doctrine_Query_Abstract::getRootDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetSqlParts">Doctrine_Query_Abstract::getSqlParts()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetSqlQuery">Doctrine_Query_Abstract::getSqlQuery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetSqlQueryPart">Doctrine_Query_Abstract::getSqlQueryPart()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetSqlTableAlias">Doctrine_Query_Abstract::getSqlTableAlias()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetSqlTableAliasSeed">Doctrine_Query_Abstract::getSqlTableAliasSeed()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetTableAliasMap">Doctrine_Query_Abstract::getTableAliasMap()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetType">Doctrine_Query_Abstract::getType()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgetView">Doctrine_Query_Abstract::getView()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgroupBy">Doctrine_Query_Abstract::groupBy()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodhasAliasDeclaration">Doctrine_Query_Abstract::hasAliasDeclaration()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodhasSqlTableAlias">Doctrine_Query_Abstract::hasSqlTableAlias()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodhaving">Doctrine_Query_Abstract::having()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodinnerJoin">Doctrine_Query_Abstract::innerJoin()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodisLimitSubqueryUsed">Doctrine_Query_Abstract::isLimitSubqueryUsed()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodleftJoin">Doctrine_Query_Abstract::leftJoin()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodlimit">Doctrine_Query_Abstract::limit()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodoffset">Doctrine_Query_Abstract::offset()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodorderBy">Doctrine_Query_Abstract::orderBy()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodorWhere">Doctrine_Query_Abstract::orWhere()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodorWhereIn">Doctrine_Query_Abstract::orWhereIn()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodorWhereNotIn">Doctrine_Query_Abstract::orWhereNotIn()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodparseDqlQuery">Doctrine_Query_Abstract::parseDqlQuery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodpreQuery">Doctrine_Query_Abstract::preQuery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodremoveDqlQueryPart">Doctrine_Query_Abstract::removeDqlQueryPart()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodremoveSqlQueryPart">Doctrine_Query_Abstract::removeSqlQueryPart()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodselect">Doctrine_Query_Abstract::select()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodset">Doctrine_Query_Abstract::set()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetConnection">Doctrine_Query_Abstract::setConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetDisableLimitSubquery">Doctrine_Query_Abstract::setDisableLimitSubquery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetHydrationMode">Doctrine_Query_Abstract::setHydrationMode()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetOption">Doctrine_Query_Abstract::setOption()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetParams">Doctrine_Query_Abstract::setParams()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetQueryCacheLifeSpan">Doctrine_Query_Abstract::setQueryCacheLifeSpan()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetResultCacheHash">Doctrine_Query_Abstract::setResultCacheHash()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetResultCacheLifeSpan">Doctrine_Query_Abstract::setResultCacheLifeSpan()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetSqlQueryPart">Doctrine_Query_Abstract::setSqlQueryPart()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodsetView">Doctrine_Query_Abstract::setView()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodupdate">Doctrine_Query_Abstract::update()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methoduseQueryCache">Doctrine_Query_Abstract::useQueryCache()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methoduseResultCache">Doctrine_Query_Abstract::useResultCache()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodwhere">Doctrine_Query_Abstract::where()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodwhereIn">Doctrine_Query_Abstract::whereIn()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodwhereNotIn">Doctrine_Query_Abstract::whereNotIn()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_addDqlQueryPart">Doctrine_Query_Abstract::_addDqlQueryPart()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_constructQueryFromCache">Doctrine_Query_Abstract::_constructQueryFromCache()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_execute">Doctrine_Query_Abstract::_execute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_getDqlCallback">Doctrine_Query_Abstract::_getDqlCallback()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_getDqlCallbackComponents">Doctrine_Query_Abstract::_getDqlCallbackComponents()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_getParser">Doctrine_Query_Abstract::_getParser()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_hasDqlQueryPart">Doctrine_Query_Abstract::_hasDqlQueryPart()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_preQuery">Doctrine_Query_Abstract::_preQuery()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_processDqlQueryPart">Doctrine_Query_Abstract::_processDqlQueryPart()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method_processWhereIn">Doctrine_Query_Abstract::_processWhereIn()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#method__toString">Doctrine_Query_Abstract::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-vars">Vars</a>
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constCREATE">Doctrine_Query_Abstract::CREATE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constDELETE">Doctrine_Query_Abstract::DELETE</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constINSERT">Doctrine_Query_Abstract::INSERT</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constSELECT">Doctrine_Query_Abstract::SELECT</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constSTATE_CLEAN">Doctrine_Query_Abstract::STATE_CLEAN</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constSTATE_DIRECT">Doctrine_Query_Abstract::STATE_DIRECT</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constSTATE_DIRTY">Doctrine_Query_Abstract::STATE_DIRTY</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constSTATE_LOCKED">Doctrine_Query_Abstract::STATE_LOCKED</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constUPDATE">Doctrine_Query_Abstract::UPDATE</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:09:08 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,1380 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Import</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Import</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">class Doctrine_Import  Main responsible of performing import operation. Delegates database schema  reading to a reader object and passes the result to a builder object which  builds a Doctrine data model.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jukka Hassinen &lt;<a href="mailto:Jukka.Hassinen@BrainAlliance.com">Jukka.Hassinen@BrainAlliance.com</a>&gt;</li>
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Import.php.html">/helpers/Doctrine/Import.php</a> (line <span class="field">37</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a>
+   |
+   --Doctrine_Import</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Import/Doctrine_Import_Mssql.html">Doctrine_Import_Mssql</a></td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Import/Doctrine_Import_Mysql.html">Doctrine_Import_Mysql</a></td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Import/Doctrine_Import_Oracle.html">Doctrine_Import_Oracle</a></td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html">Doctrine_Import_Pgsql</a></td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html">Doctrine_Import_Sqlite</a></td>
+					<td>
+											
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$sql" title="details" class="var-name">$sql</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#databaseExists" title="details" class="method-name">databaseExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$database</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#functionExists" title="details" class="method-name">functionExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$function</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#importSchema" title="details" class="method-name">importSchema</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$connections</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listDatabases" title="details" class="method-name">listDatabases</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listFunctions" title="details" class="method-name">listFunctions</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listSequences" title="details" class="method-name">listSequences</a>
+											([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listTableColumns" title="details" class="method-name">listTableColumns</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listTableConstraints" title="details" class="method-name">listTableConstraints</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listTableIndexes" title="details" class="method-name">listTableIndexes</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listTableRelations" title="details" class="method-name">listTableRelations</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listTables" title="details" class="method-name">listTables</a>
+											([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listTableTriggers" title="details" class="method-name">listTableTriggers</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listTableViews" title="details" class="method-name">listTableViews</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listTriggers" title="details" class="method-name">listTriggers</a>
+											([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listUsers" title="details" class="method-name">listUsers</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#listViews" title="details" class="method-name">listViews</a>
+											([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#sequenceExists" title="details" class="method-name">sequenceExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sequence</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#tableColumnExists" title="details" class="method-name">tableColumnExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#tableConstraintExists" title="details" class="method-name">tableConstraintExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$constraint</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#tableExists" title="details" class="method-name">tableExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#tableIndexExists" title="details" class="method-name">tableIndexExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$index</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#tableTriggerExists" title="details" class="method-name">tableTriggerExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$trigger</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#tableViewExists" title="details" class="method-name">tableViewExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$view</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#triggerExists" title="details" class="method-name">triggerExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$trigger</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#userExists" title="details" class="method-name">userExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#viewExists" title="details" class="method-name">viewExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$view</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$sql" id="$sql"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$sql</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">39</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mysql.html#var$sql">Doctrine_Import_Mysql::$sql</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html#var$sql">Doctrine_Import_Pgsql::$sql</a>
+							</li>
+				</ul>
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$conn">Doctrine_Connection_Module::$conn</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#var$moduleName">Doctrine_Connection_Module::$moduleName</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methoddatabaseExists" id="databaseExists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">databaseExists</span> (line <span class="line-number">220</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a database exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			databaseExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$database</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$database</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfunctionExists" id="functionExists"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">functionExists</span> (line <span class="line-number">231</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a function exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			functionExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$function</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$function</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodimportSchema" id="importSchema"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">importSchema</span> (line <span class="line-number">364</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">importSchema</p>
+<p class="description"><p>method for importing existing schema to Doctrine_Record classes</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the names of the imported classes</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			importSchema
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$connections</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$connections</span><span class="var-description">: Array of connection names to generate models for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlistDatabases" id="listDatabases"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">listDatabases</span> (line <span class="line-number">46</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists all databases</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listDatabases
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistDatabases">Doctrine_Import_Oracle::listDatabases()</a>
+								: lists all databases
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistDatabases">Doctrine_Import_Sqlite::listDatabases()</a>
+								: lists all databases
+							</li>
+				</ul>
+	</div>
+<a name="methodlistFunctions" id="listFunctions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">listFunctions</span> (line <span class="line-number">60</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists all availible database functions</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listFunctions
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistFunctions">Doctrine_Import_Oracle::listFunctions()</a>
+								: lists all availible database functions
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistFunctions">Doctrine_Import_Sqlite::listFunctions()</a>
+								: lists all availible database functions
+							</li>
+				</ul>
+	</div>
+<a name="methodlistSequences" id="listSequences"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">listSequences</span> (line <span class="line-number">86</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists all database sequences</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listSequences
+		</span>
+					([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">$database</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mssql.html#methodlistSequences">Doctrine_Import_Mssql::listSequences()</a>
+								: lists all database sequences
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mysql.html#methodlistSequences">Doctrine_Import_Mysql::listSequences()</a>
+								: lists all database sequences
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistSequences">Doctrine_Import_Oracle::listSequences()</a>
+								: lists all database sequences
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistSequences">Doctrine_Import_Sqlite::listSequences()</a>
+								: lists all database sequences
+							</li>
+				</ul>
+	</div>
+<a name="methodlistTableColumns" id="listTableColumns"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">listTableColumns</span> (line <span class="line-number">136</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists table constraints</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listTableColumns
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mssql.html#methodlistTableColumns">Doctrine_Import_Mssql::listTableColumns()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mysql.html#methodlistTableColumns">Doctrine_Import_Mysql::listTableColumns()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistTableColumns">Doctrine_Import_Oracle::listTableColumns()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html#methodlistTableColumns">Doctrine_Import_Pgsql::listTableColumns()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistTableColumns">Doctrine_Import_Sqlite::listTableColumns()</a>
+								: lists table constraints
+							</li>
+				</ul>
+	</div>
+<a name="methodlistTableConstraints" id="listTableConstraints"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">listTableConstraints</span> (line <span class="line-number">101</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists table constraints</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listTableConstraints
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mysql.html#methodlistTableConstraints">Doctrine_Import_Mysql::listTableConstraints()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistTableConstraints">Doctrine_Import_Oracle::listTableConstraints()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html#methodlistTableConstraints">Doctrine_Import_Pgsql::listTableConstraints()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistTableConstraints">Doctrine_Import_Sqlite::listTableConstraints()</a>
+								: lists table constraints
+							</li>
+				</ul>
+	</div>
+<a name="methodlistTableIndexes" id="listTableIndexes"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">listTableIndexes</span> (line <span class="line-number">147</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists table constraints</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listTableIndexes
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mssql.html#methodlistTableIndexes">Doctrine_Import_Mssql::listTableIndexes()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mysql.html#methodlistTableIndexes">Doctrine_Import_Mysql::listTableIndexes()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistTableIndexes">Doctrine_Import_Oracle::listTableIndexes()</a>
+								: lists table constraints
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html#methodlistTableIndexes">Doctrine_Import_Pgsql::listTableIndexes()</a>
+								: list all indexes in a table
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistTableIndexes">Doctrine_Import_Sqlite::listTableIndexes()</a>
+								: lists table constraints
+							</li>
+				</ul>
+	</div>
+<a name="methodlistTableRelations" id="listTableRelations"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">listTableRelations</span> (line <span class="line-number">125</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists table relations</p>
+<p class="description"><p>Expects an array of this format to be returned with all the relationships in it where the key is  the name of the foreign table, and the value is an array containing the local and foreign column  name</p><p>Array  (    [groups] =&gt; Array      (         [local] =&gt; group_id         [foreign] =&gt; id      )  )</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listTableRelations
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mssql.html#methodlistTableRelations">Doctrine_Import_Mssql::listTableRelations()</a>
+								: lists table relations
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mysql.html#methodlistTableRelations">Doctrine_Import_Mysql::listTableRelations()</a>
+								: lists table relations
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistTableRelations">Doctrine_Import_Oracle::listTableRelations()</a>
+								: list table relations
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html#methodlistTableRelations">Doctrine_Import_Pgsql::listTableRelations()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodlistTables" id="listTables"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">listTables</span> (line <span class="line-number">158</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists tables</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listTables
+		</span>
+					([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">$database</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mssql.html#methodlistTables">Doctrine_Import_Mssql::listTables()</a>
+								: lists tables
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mysql.html#methodlistTables">Doctrine_Import_Mysql::listTables()</a>
+								: lists tables
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistTables">Doctrine_Import_Oracle::listTables()</a>
+								: lists tables
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html#methodlistTables">Doctrine_Import_Pgsql::listTables()</a>
+								: lists tables
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistTables">Doctrine_Import_Sqlite::listTables()</a>
+								: lists tables
+							</li>
+				</ul>
+	</div>
+<a name="methodlistTableTriggers" id="listTableTriggers"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">listTableTriggers</span> (line <span class="line-number">169</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists table triggers</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listTableTriggers
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mssql.html#methodlistTableTriggers">Doctrine_Import_Mssql::listTableTriggers()</a>
+								: lists table triggers
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistTableTriggers">Doctrine_Import_Oracle::listTableTriggers()</a>
+								: lists table triggers
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html#methodlistTableTriggers">Doctrine_Import_Pgsql::listTableTriggers()</a>
+								: lists table triggers
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistTableTriggers">Doctrine_Import_Sqlite::listTableTriggers()</a>
+								: lists table triggers
+							</li>
+				</ul>
+	</div>
+<a name="methodlistTableViews" id="listTableViews"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">listTableViews</span> (line <span class="line-number">180</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists table views</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listTableViews
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mssql.html#methodlistTableViews">Doctrine_Import_Mssql::listTableViews()</a>
+								: lists table views
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistTableViews">Doctrine_Import_Oracle::listTableViews()</a>
+								: lists table views
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html#methodlistTableViews">Doctrine_Import_Pgsql::listTableViews()</a>
+								: list the views in the database that reference a given table
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistTableViews">Doctrine_Import_Sqlite::listTableViews()</a>
+								: lists table views
+							</li>
+				</ul>
+	</div>
+<a name="methodlistTriggers" id="listTriggers"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">listTriggers</span> (line <span class="line-number">75</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists all database triggers</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listTriggers
+		</span>
+					([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">$database</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mssql.html#methodlistTriggers">Doctrine_Import_Mssql::listTriggers()</a>
+								: lists all triggers
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistTriggers">Doctrine_Import_Oracle::listTriggers()</a>
+								: lists all database triggers
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Pgsql.html#methodlistTriggers">Doctrine_Import_Pgsql::listTriggers()</a>
+								: lists all database triggers
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistTriggers">Doctrine_Import_Sqlite::listTriggers()</a>
+								: lists all database triggers
+							</li>
+				</ul>
+	</div>
+<a name="methodlistUsers" id="listUsers"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">listUsers</span> (line <span class="line-number">190</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists database users</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listUsers
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistUsers">Doctrine_Import_Oracle::listUsers()</a>
+								: lists database users
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistUsers">Doctrine_Import_Sqlite::listUsers()</a>
+								: lists database users
+							</li>
+				</ul>
+	</div>
+<a name="methodlistViews" id="listViews"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">listViews</span> (line <span class="line-number">205</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lists database views</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			listViews
+		</span>
+					([<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">$database</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mssql.html#methodlistViews">Doctrine_Import_Mssql::listViews()</a>
+								: lists database views
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Mysql.html#methodlistViews">Doctrine_Import_Mysql::listViews()</a>
+								: lists database views
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Oracle.html#methodlistViews">Doctrine_Import_Oracle::listViews()</a>
+								: lists database views
+							</li>
+					<li>
+				<a href="../../Doctrine/Import/Doctrine_Import_Sqlite.html#methodlistViews">Doctrine_Import_Sqlite::listViews()</a>
+								: lists database views
+							</li>
+				</ul>
+	</div>
+<a name="methodsequenceExists" id="sequenceExists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">sequenceExists</span> (line <span class="line-number">255</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a sequence exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			sequenceExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sequence</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sequence</span>			</li>
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">$database</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtableColumnExists" id="tableColumnExists"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">tableColumnExists</span> (line <span class="line-number">279</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a table column exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			tableColumnExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtableConstraintExists" id="tableConstraintExists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">tableConstraintExists</span> (line <span class="line-number">267</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a table constraint exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			tableConstraintExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$constraint</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$constraint</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtableExists" id="tableExists"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">tableExists</span> (line <span class="line-number">303</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a table exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			tableExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span>			</li>
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">$database</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtableIndexExists" id="tableIndexExists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">tableIndexExists</span> (line <span class="line-number">291</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a table index exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			tableIndexExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$index</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$index</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtableTriggerExists" id="tableTriggerExists"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">tableTriggerExists</span> (line <span class="line-number">315</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a table trigger exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			tableTriggerExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$trigger</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$trigger</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtableViewExists" id="tableViewExists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">tableViewExists</span> (line <span class="line-number">327</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a table view exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			tableViewExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$view</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$view</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: database table name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtriggerExists" id="triggerExists"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">triggerExists</span> (line <span class="line-number">243</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a trigger exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			triggerExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$trigger</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$trigger</span>			</li>
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">$database</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduserExists" id="userExists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">userExists</span> (line <span class="line-number">338</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a user exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			userExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$user</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodviewExists" id="viewExists"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">viewExists</span> (line <span class="line-number">350</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">checks if a view exists</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			viewExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$view</span>, [<span class="var-type">string|null</span>&nbsp;<span class="var-name">$database</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$view</span>			</li>
+					<li>
+				<span class="var-type">string|null</span>
+				<span class="var-name">$database</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#method__construct">Doctrine_Connection_Module::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetConnection">Doctrine_Connection_Module::getConnection()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html#methodgetModuleName">Doctrine_Connection_Module::getModuleName()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:31 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

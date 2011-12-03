@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Record_Abstract</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Record_Abstract</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Record_Abstract</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision$</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Record---Abstract.php.html">/helpers/Doctrine/Record/Abstract.php</a> (line <span class="field">33</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a>
+   |
+   --<a href="../../Doctrine/Access/Doctrine_Access.html">Doctrine_Access</a>
+      |
+      --Doctrine_Record_Abstract</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></td>
+					<td>
+											Doctrine_Record  All record classes should inherit this super class
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Plugin/Doctrine_Record_Generator.html">Doctrine_Record_Generator</a></td>
+					<td>
+											Doctrine_Record_Generator
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Template/Doctrine_Template.html">Doctrine_Template</a></td>
+					<td>
+											Base abstract class for defining templates which are the base of all behaviors that can be attached  to your Doctrine models
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_table" title="details" class="var-name">$_table</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#actAs" title="details" class="method-name">actAs</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$tpl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#addListener" title="details" class="method-name">addListener</a>
+											(<span class="var-type"><a href="../../Doctrine/EventListener/Doctrine_EventListener_Interface.html">Doctrine_EventListener_Interface</a>|<a href="../../Doctrine/Overloadable/Doctrine_Overloadable.html">Doctrine_Overloadable</a></span>&nbsp;<span class="var-name">$listener</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#attribute" title="details" class="method-name">attribute</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$attr</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#bindQueryParts" title="details" class="method-name">bindQueryParts</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$queryParts</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#check" title="details" class="method-name">check</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$constraint</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/EventListener/Doctrine_EventListener_Interface.html">Doctrine_EventListener_Interface</a>|<a href="../../Doctrine/Overloadable/Doctrine_Overloadable.html">Doctrine_Overloadable</a></span>
+										<a href="#getListener" title="details" class="method-name">getListener</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+										<a href="#getTable" title="details" class="method-name">getTable</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#hasColumn" title="details" class="method-name">hasColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#hasColumns" title="details" class="method-name">hasColumns</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$definitions</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#hasMany" title="details" class="method-name">hasMany</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#hasOne" title="details" class="method-name">hasOne</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#index" title="details" class="method-name">index</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#loadGenerator" title="details" class="method-name">loadGenerator</a>
+											(<span class="var-type"><a href="../../Doctrine/Plugin/Doctrine_Record_Generator.html">Doctrine_Record_Generator</a></span>&nbsp;<span class="var-name">$generator</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#option" title="details" class="method-name">option</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setAttribute" title="details" class="method-name">setAttribute</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$attr</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setColumnOption" title="details" class="method-name">setColumnOption</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$columnName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setColumnOptions" title="details" class="method-name">setColumnOptions</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$columnName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$validators</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setInheritanceMap" title="details" class="method-name">setInheritanceMap</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$map</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#setListener" title="details" class="method-name">setListener</a>
+											(<span class="var-type"><a href="../../Doctrine/EventListener/Doctrine_EventListener_Interface.html">Doctrine_EventListener_Interface</a>|<a href="../../Doctrine/Overloadable/Doctrine_Overloadable.html">Doctrine_Overloadable</a></span>&nbsp;<span class="var-name">$listener</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setSubclasses" title="details" class="method-name">setSubclasses</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$map</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTableDefinition" title="details" class="method-name">setTableDefinition</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTableName" title="details" class="method-name">setTableName</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setUp" title="details" class="method-name">setUp</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#unique" title="details" class="method-name">unique</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$fields</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$createUniqueIndex</span> = <span class="var-default">true</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$_table" id="$_table"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_table</span>
+						(line <span class="line-number">38</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_locator">Doctrine_Locator_Injectable::$_locator</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_null">Doctrine_Locator_Injectable::$_null</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_resources">Doctrine_Locator_Injectable::$_resources</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodactAs" id="actAs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">actAs</span> (line <span class="line-number">349</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads the given plugin.</p>
+<p class="description"><p>This method loads a behavior in the record. It will add the behavior  also to the record table if it.  It is tipically called in @see setUp().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object; provides a fluent interface.</li>
+				<li><span class="field">throws:</span> Doctrine_Record_Exception    if $tpl is neither an instance of Doctrine_Template subclass or a valid class name, that could be instantiated.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			actAs
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$tpl</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$tpl</span><span class="var-description">: if an object, must be a subclass of Doctrine_Template.                           If a string, Doctrine will try to instantiate an object of the classes Doctrine_Template_$tpl and subsequently $tpl, using also autoloading capabilities if defined.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: argument to pass to the template constructor if $tpl is a class name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddListener" id="addListener"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addListener</span> (line <span class="line-number">67</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">addListener</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			addListener
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/EventListener/Doctrine_EventListener_Interface.html">Doctrine_EventListener_Interface</a>|<a href="../../Doctrine/Overloadable/Doctrine_Overloadable.html">Doctrine_Overloadable</a></span>&nbsp;<span class="var-name">$listener</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/EventListener/Doctrine_EventListener_Interface.html">Doctrine_EventListener_Interface</a>|<a href="../../Doctrine/Overloadable/Doctrine_Overloadable.html">Doctrine_Overloadable</a></span>
+				<span class="var-name">$listener</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodattribute" id="attribute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">attribute</span> (line <span class="line-number">182</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">attribute  sets or retrieves an option</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> Doctrine_Core::ATTR_* constants   availible attributes</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			attribute
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$attr</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$attr</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbindQueryParts" id="bindQueryParts"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">bindQueryParts</span> (line <span class="line-number">322</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">bindQueryParts  binds query parts to given component</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			bindQueryParts
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$queryParts</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$queryParts</span><span class="var-description">: an array of pre-bound query parts</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheck" id="check"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">check</span> (line <span class="line-number">388</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a check constraint.</p>
+<p class="description"><p>This method will add a CHECK constraint to the record table.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			check
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$constraint</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$constraint</span><span class="var-description">: either a SQL constraint portion or an array of CHECK constraints. If array, all values will be added as constraint</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: optional constraint name. Not used if $constraint is an array.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetListener" id="getListener"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getListener</span> (line <span class="line-number">79</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getListener</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/EventListener/Doctrine_EventListener_Interface.html">Doctrine_EventListener_Interface</a>|<a href="../../Doctrine/Overloadable/Doctrine_Overloadable.html">Doctrine_Overloadable</a></span>
+		<span class="method-name">
+			getListener
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTable" id="getTable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTable</span> (line <span class="line-number">56</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getTable  returns the associated table object</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the associated table object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+		<span class="method-name">
+			getTable
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Record/Doctrine_Record.html#methodgetTable">Doctrine_Record::getTable()</a>
+								: returns the table object for this record.
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template.html#methodgetTable">Doctrine_Template::getTable()</a>
+								: returns the associated table object
+							</li>
+				</ul>
+	</div>
+<a name="methodhasColumn" id="hasColumn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasColumn</span> (line <span class="line-number">260</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a column definition</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			hasColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasColumns" id="hasColumns"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasColumns</span> (line <span class="line-number">271</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set multiple column definitions at once</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			hasColumns
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$definitions</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definitions</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasMany" id="hasMany"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasMany</span> (line <span class="line-number">244</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Binds One-to-Many / Many-to-Many aggregate relation</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">see:</span> Doctrine_Relation::_$definition</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			hasMany
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$componentName</span><span class="var-description">: the name of the related component</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$options</span><span class="var-description">: relation options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasOne" id="hasOne"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasOne</span> (line <span class="line-number">229</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Binds One-to-One aggregate relation</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">see:</span> Doctrine_Relation::_$definition</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			hasOne
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$componentName</span><span class="var-description">: the name of the related component</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$options</span><span class="var-description">: relation options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodindex" id="index"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">index</span> (line <span class="line-number">107</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">index</p>
+<p class="description"><p>defines or retrieves an index  if the second parameter is set this method defines an index  if not this method retrieves index named $name</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			index
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$definition</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: the name of the index</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$definition</span><span class="var-description">: the definition array</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodloadGenerator" id="loadGenerator"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">loadGenerator</span> (line <span class="line-number">329</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			loadGenerator
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Plugin/Doctrine_Record_Generator.html">Doctrine_Record_Generator</a></span>&nbsp;<span class="var-name">$generator</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Plugin/Doctrine_Record_Generator.html">Doctrine_Record_Generator</a></span>
+				<span class="var-name">$generator</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodoption" id="option"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">option</span> (line <span class="line-number">206</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">option  sets or retrieves an option</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> Doctrine_Table::$options    availible options</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			option
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$name</span><span class="var-description">: the name of the option</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: options value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetAttribute" id="setAttribute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setAttribute</span> (line <span class="line-number">133</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setAttribute
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$attr</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$attr</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetColumnOption" id="setColumnOption"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setColumnOption</span> (line <span class="line-number">310</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set an individual column option</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setColumnOption
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$columnName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$columnName</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$option</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetColumnOptions" id="setColumnOptions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setColumnOptions</span> (line <span class="line-number">297</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Customize the array of options for a column or multiple columns. First  argument can be a single field/column name or an array of them. The second  argument is an array of options.</p>
+<p class="description"><p>[php]      public function setTableDefinition()      {          parent::setTableDefinition();          $this-&gt;setColumnOptions('username', array(              'unique' =&gt; true          ));      }</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setColumnOptions
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$options</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$columnName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$validators</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$columnName</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$validators</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetInheritanceMap" id="setInheritanceMap"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setInheritanceMap</span> (line <span class="line-number">143</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setInheritanceMap
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$map</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$map</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetListener" id="setListener"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setListener</span> (line <span class="line-number">90</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setListener</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			setListener
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/EventListener/Doctrine_EventListener_Interface.html">Doctrine_EventListener_Interface</a>|<a href="../../Doctrine/Overloadable/Doctrine_Overloadable.html">Doctrine_Overloadable</a></span>&nbsp;<span class="var-name">$listener</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/EventListener/Doctrine_EventListener_Interface.html">Doctrine_EventListener_Interface</a>|<a href="../../Doctrine/Overloadable/Doctrine_Overloadable.html">Doctrine_Overloadable</a></span>
+				<span class="var-name">$listener</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSubclasses" id="setSubclasses"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setSubclasses</span> (line <span class="line-number">148</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setSubclasses
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$map</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$map</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTableDefinition" id="setTableDefinition"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTableDefinition</span> (line <span class="line-number">40</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTableDefinition
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/File/Doctrine_File.html#methodsetTableDefinition">Doctrine_File::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/File/Doctrine_File_Index.html#methodsetTableDefinition">Doctrine_File_Index::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Actividad.html#methodsetTableDefinition">Actividad::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/Asignatura.html#methodsetTableDefinition">Asignatura::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Aula.html#methodsetTableDefinition">Aula::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/AulaActividad.html#methodsetTableDefinition">AulaActividad::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/BaseCiSessions.html#methodsetTableDefinition">BaseCiSessions::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Calendario.html#methodsetTableDefinition">Calendario::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/CargaSemanal.html#methodsetTableDefinition">CargaSemanal::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/CiSessions.html#methodsetTableDefinition">CiSessions::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/Curso.html#methodsetTableDefinition">Curso::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/CursoCompartido.html#methodsetTableDefinition">CursoCompartido::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Evento.html#methodsetTableDefinition">Evento::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Horario.html#methodsetTableDefinition">Horario::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/HorarioReference.html#methodsetTableDefinition">HorarioReference::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/LineaHorario.html#methodsetTableDefinition">LineaHorario::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/PlanActividad.html#methodsetTableDefinition">PlanActividad::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/PlanDocente.html#methodsetTableDefinition">PlanDocente::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/Titulacion.html#methodsetTableDefinition">Titulacion::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/User.html#methodsetTableDefinition">User::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/AuditLog/Doctrine_AuditLog.html#methodsetTableDefinition">Doctrine_AuditLog::setTableDefinition()</a>
+								: Set the table definition for the audit log table
+							</li>
+					<li>
+				<a href="../../Doctrine/I18n/Doctrine_I18n.html#methodsetTableDefinition">Doctrine_I18n::setTableDefinition()</a>
+								: buildDefinition
+							</li>
+					<li>
+				<a href="../../Doctrine/Search/Doctrine_Search.html#methodsetTableDefinition">Doctrine_Search::setTableDefinition()</a>
+								: buildDefinition
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template.html#methodsetTableDefinition">Doctrine_Template::setTableDefinition()</a>
+								: Blank method for template table definition
+							</li>
+					<li>
+				<a href="../../Doctrine/Search/Doctrine_Search_Record.html#methodsetTableDefinition">Doctrine_Search_Record::setTableDefinition()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template_Geographical.html#methodsetTableDefinition">Doctrine_Template_Geographical::setTableDefinition()</a>
+								: Set table definition for Geographical behavior
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template_NestedSet.html#methodsetTableDefinition">Doctrine_Template_NestedSet::setTableDefinition()</a>
+								: Call set table definition for the NestedSet behavior
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template_Sluggable.html#methodsetTableDefinition">Doctrine_Template_Sluggable::setTableDefinition()</a>
+								: Set table definition for Sluggable behavior
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template_SoftDelete.html#methodsetTableDefinition">Doctrine_Template_SoftDelete::setTableDefinition()</a>
+								: Set table definition for SoftDelete behavior
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template_Timestampable.html#methodsetTableDefinition">Doctrine_Template_Timestampable::setTableDefinition()</a>
+								: Set table definition for Timestampable behavior
+							</li>
+				</ul>
+	</div>
+<a name="methodsetTableName" id="setTableName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTableName</span> (line <span class="line-number">138</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTableName
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tableName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetUp" id="setUp"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setUp</span> (line <span class="line-number">45</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setUp
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Record/Doctrine_Record.html#methodsetUp">Doctrine_Record::setUp()</a>
+								: setUp  this method is used for setting up relations and attributes  it should be implemented by child classes
+							</li>
+					<li>
+				<a href="../../Doctrine/File/Doctrine_File.html#methodsetUp">Doctrine_File::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/File/Doctrine_File_Index.html#methodsetUp">Doctrine_File_Index::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Actividad.html#methodsetUp">Actividad::setUp()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/Asignatura.html#methodsetUp">Asignatura::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Aula.html#methodsetUp">Aula::setUp()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/BaseCiSessions.html#methodsetUp">BaseCiSessions::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/CargaSemanal.html#methodsetUp">CargaSemanal::setUp()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/CiSessions.html#methodsetUp">CiSessions::setUp()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/Curso.html#methodsetUp">Curso::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/CursoCompartido.html#methodsetUp">CursoCompartido::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Evento.html#methodsetUp">Evento::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/Horario.html#methodsetUp">Horario::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/LineaHorario.html#methodsetUp">LineaHorario::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/PlanActividad.html#methodsetUp">PlanActividad::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Record/PlanDocente.html#methodsetUp">PlanDocente::setUp()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/Titulacion.html#methodsetUp">Titulacion::setUp()</a>
+							</li>
+					<li>
+				<a href="../../--PACKAGE--/--SUBPACKAGE--/User.html#methodsetUp">User::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template.html#methodsetUp">Doctrine_Template::setUp()</a>
+								: Blank method for template setup
+							</li>
+					<li>
+				<a href="../../Doctrine/Search/Doctrine_Search_Record.html#methodsetUp">Doctrine_Search_Record::setUp()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template_I18n.html#methodsetUp">Doctrine_Template_I18n::setUp()</a>
+								: Initialize the I18n plugin for the template
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template_NestedSet.html#methodsetUp">Doctrine_Template_NestedSet::setUp()</a>
+								: Set up NestedSet template
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template_Searchable.html#methodsetUp">Doctrine_Template_Searchable::setUp()</a>
+								: Setup the Searchable template behavior
+							</li>
+					<li>
+				<a href="../../Doctrine/Template/Doctrine_Template_Versionable.html#methodsetUp">Doctrine_Template_Versionable::setUp()</a>
+								: Setup the Versionable behavior for the template
+							</li>
+				</ul>
+	</div>
+<a name="methodunique" id="unique"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">unique</span> (line <span class="line-number">128</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines a n-uple of fields that must be unique for every record.</p>
+<p class="description"><p>This method Will automatically add UNIQUE index definition  and validate the values on save. The UNIQUE index is not created in the  database until you use @see export().</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			unique
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$fields</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$createUniqueIndex</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$fields</span><span class="var-description">: values are fieldnames</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: array of options for unique validator</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$createUniqueIndex</span><span class="var-description">: Whether or not to create a unique index in the database</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Access/Doctrine_Access.html">Doctrine_Access</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodadd">Doctrine_Access::add()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodcontains">Doctrine_Access::contains()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodget">Doctrine_Access::get()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodoffsetExists">Doctrine_Access::offsetExists()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodoffsetGet">Doctrine_Access::offsetGet()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodoffsetSet">Doctrine_Access::offsetSet()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodoffsetUnset">Doctrine_Access::offsetUnset()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodremove">Doctrine_Access::remove()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodset">Doctrine_Access::set()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#methodsetArray">Doctrine_Access::setArray()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#method__get">Doctrine_Access::__get()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#method__isset">Doctrine_Access::__isset()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#method__set">Doctrine_Access::__set()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Access/Doctrine_Access.html#method__unset">Doctrine_Access::__unset()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodbind">Doctrine_Locator_Injectable::bind()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetLocator">Doctrine_Locator_Injectable::getLocator()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetNullObject">Doctrine_Locator_Injectable::getNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodinitNullObject">Doctrine_Locator_Injectable::initNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodlocate">Doctrine_Locator_Injectable::locate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodsetLocator">Doctrine_Locator_Injectable::setLocator()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:26 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

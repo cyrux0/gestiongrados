@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Node_NestedSet</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Node_NestedSet</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li><a href="../../Doctrine/Node/Doctrine_Node_Interface.html">Doctrine_Node_Interface</a></li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Node_NestedSet</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Joe Simms &lt;<a href="mailto:joe.simms@websites4.com">joe.simms@websites4.com</a>&gt;</li>
+				<li><span class="field">author:</span> Roman Borschel &lt;<a href="mailto:roman@code-factory.org">roman@code-factory.org</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Node---NestedSet.php.html">/helpers/Doctrine/Node/NestedSet.php</a> (line <span class="field">34</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Node/Doctrine_Node.html">Doctrine_Node</a>
+   |
+   --Doctrine_Node_NestedSet</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addChild" title="details" class="method-name">addChild</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#detach" title="details" class="method-name">detach</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#getAncestors" title="details" class="method-name">getAncestors</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$depth</span> = <span class="var-default">null</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$deth</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#getChildren" title="details" class="method-name">getChildren</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#getDescendants" title="details" class="method-name">getDescendants</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$depth</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNode</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#getFirstChild" title="details" class="method-name">getFirstChild</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#getLastChild" title="details" class="method-name">getLastChild</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getLeftValue" title="details" class="method-name">getLeftValue</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getLevel" title="details" class="method-name">getLevel</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#getNextSibling" title="details" class="method-name">getNextSibling</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getNumberChildren" title="details" class="method-name">getNumberChildren</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getNumberDescendants" title="details" class="method-name">getNumberDescendants</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#getParent" title="details" class="method-name">getParent</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getPath" title="details" class="method-name">getPath</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$seperator</span> = <span class="var-default">' &gt; '</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeRecord</span> = <span class="var-default">false</span>], <span class="var-type">bool</span>&nbsp;<span class="var-name">$includeNode</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#getPrevSibling" title="details" class="method-name">getPrevSibling</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#getRightValue" title="details" class="method-name">getRightValue</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getRootValue" title="details" class="method-name">getRootValue</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getSiblings" title="details" class="method-name">getSiblings</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeNode</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#hasChildren" title="details" class="method-name">hasChildren</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#hasNextSibling" title="details" class="method-name">hasNextSibling</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#hasParent" title="details" class="method-name">hasParent</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#hasPrevSibling" title="details" class="method-name">hasPrevSibling</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#insertAsFirstChildOf" title="details" class="method-name">insertAsFirstChildOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#insertAsLastChildOf" title="details" class="method-name">insertAsLastChildOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#insertAsNextSiblingOf" title="details" class="method-name">insertAsNextSiblingOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#insertAsParentOf" title="details" class="method-name">insertAsParentOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#insertAsPrevSiblingOf" title="details" class="method-name">insertAsPrevSiblingOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#isAncestorOf" title="details" class="method-name">isAncestorOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$subj</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#isDescendantOf" title="details" class="method-name">isDescendantOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$subj</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#isDescendantOfOrEqualTo" title="details" class="method-name">isDescendantOfOrEqualTo</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$subj</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#isEqualTo" title="details" class="method-name">isEqualTo</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$subj</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#isLeaf" title="details" class="method-name">isLeaf</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#isRoot" title="details" class="method-name">isRoot</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#isValidNode" title="details" class="method-name">isValidNode</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$record</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#makeRoot" title="details" class="method-name">makeRoot</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$newRootId</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#moveAsFirstChildOf" title="details" class="method-name">moveAsFirstChildOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#moveAsLastChildOf" title="details" class="method-name">moveAsLastChildOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#moveAsNextSiblingOf" title="details" class="method-name">moveAsNextSiblingOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#moveAsPrevSiblingOf" title="details" class="method-name">moveAsPrevSiblingOf</a>
+											(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setLeftValue" title="details" class="method-name">setLeftValue</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$lft</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setRightValue" title="details" class="method-name">setRightValue</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$rgt</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setRootValue" title="details" class="method-name">setRootValue</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Node/Doctrine_Node.html">Doctrine_Node</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Node/Doctrine_Node.html#var$iteratorOptions">Doctrine_Node::$iteratorOptions</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Node/Doctrine_Node.html#var$iteratorType">Doctrine_Node::$iteratorType</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Node/Doctrine_Node.html#var$options">Doctrine_Node::$options</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Node/Doctrine_Node.html#var$record">Doctrine_Node::$record</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Node/Doctrine_Node.html#var$_tree">Doctrine_Node::$_tree</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodaddChild" id="addChild"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addChild</span> (line <span class="line-number">851</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">adds node as last child of record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addChild
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$record</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$record</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodaddChild">Doctrine_Node_Interface::addChild()</a></dt>
+						<dd>adds node as last child of record</dd>
+					</dl>
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">delete</span> (line <span class="line-number">955</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">deletes node and it's descendants</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Delete more efficiently. Wrap in transaction if needed.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			delete
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methoddelete">Doctrine_Node_Interface::delete()</a></dt>
+						<dd>deletes node and it's descendants</dd>
+					</dl>
+			
+	</div>
+<a name="methoddetach" id="detach"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">detach</span> (line <span class="line-number">945</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Detaches the node from the tree by invalidating it's lft &amp; rgt values  (they're set to 0).</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			detach
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetAncestors" id="getAncestors"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAncestors</span> (line <span class="line-number">276</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets ancestors for node</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The ancestors of the node or FALSE if the node has no ancestors (this                 basically means it's a root node).</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getAncestors
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$depth</span> = <span class="var-default">null</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$deth</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$deth</span><span class="var-description">: The depth 'upstairs'.</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$depth</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetAncestors">Doctrine_Node_Interface::getAncestors()</a></dt>
+						<dd>gets ancestors for node</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetChildren" id="getChildren"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getChildren</span> (line <span class="line-number">205</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets children for node (direct descendants only)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The children of the node or FALSE if the node has no children.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getChildren
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetChildren">Doctrine_Node_Interface::getChildren()</a></dt>
+						<dd>gets children for node (direct descendants only)</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetDescendants" id="getDescendants"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDescendants</span> (line <span class="line-number">215</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets descendants for node (direct descendants only)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The descendants of the node or FALSE if the node has no descendants.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getDescendants
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$depth</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNode</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$depth</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNode</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetDescendants">Doctrine_Node_Interface::getDescendants()</a></dt>
+						<dd>gets descendants for node (direct descendants only)</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetFirstChild" id="getFirstChild"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFirstChild</span> (line <span class="line-number">153</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets record of first child or empty record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			getFirstChild
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetFirstChild">Doctrine_Node_Interface::getFirstChild()</a></dt>
+						<dd>gets record of first child or empty record</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetLastChild" id="getLastChild"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLastChild</span> (line <span class="line-number">179</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets record of last child or empty record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			getLastChild
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetLastChild">Doctrine_Node_Interface::getLastChild()</a></dt>
+						<dd>gets record of last child or empty record</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetLeftValue" id="getLeftValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLeftValue</span> (line <span class="line-number">1139</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets record's left value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getLeftValue
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLevel" id="getLevel"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLevel</span> (line <span class="line-number">1179</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets level (depth) of node in the tree</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getLevel
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetLevel">Doctrine_Node_Interface::getLevel()</a></dt>
+						<dd>gets level (depth) of node in the tree</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetNextSibling" id="getNextSibling"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getNextSibling</span> (line <span class="line-number">107</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets record of next sibling or empty record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			getNextSibling
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetNextSibling">Doctrine_Node_Interface::getNextSibling()</a></dt>
+						<dd>gets record of next sibling or empty record</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetNumberChildren" id="getNumberChildren"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getNumberChildren</span> (line <span class="line-number">321</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets number of children (direct descendants)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getNumberChildren
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetNumberChildren">Doctrine_Node_Interface::getNumberChildren()</a></dt>
+						<dd>gets number of children (direct descendants)</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetNumberDescendants" id="getNumberDescendants"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getNumberDescendants</span> (line <span class="line-number">332</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets number of descendants (children and their children)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getNumberDescendants
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetNumberDescendants">Doctrine_Node_Interface::getNumberDescendants()</a></dt>
+						<dd>gets number of descendants (children and their children)</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetParent" id="getParent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getParent</span> (line <span class="line-number">246</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets record of parent or empty record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			getParent
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetParent">Doctrine_Node_Interface::getParent()</a></dt>
+						<dd>gets record of parent or empty record</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetPath" id="getPath"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPath</span> (line <span class="line-number">300</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets path to node from root, uses record::toString() method to get node names</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> string representation of path</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPath
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$seperator</span> = <span class="var-default">' &gt; '</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeRecord</span> = <span class="var-default">false</span>], <span class="var-type">bool</span>&nbsp;<span class="var-name">$includeNode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$seperator</span><span class="var-description">: path seperator</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$includeNode</span><span class="var-description">: whether or not to include node at end of path</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeRecord</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetPath">Doctrine_Node_Interface::getPath()</a></dt>
+						<dd>gets path to node from root, uses record::toString() method to get node names</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetPrevSibling" id="getPrevSibling"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPrevSibling</span> (line <span class="line-number">81</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets record of prev sibling or empty record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			getPrevSibling
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetPrevSibling">Doctrine_Node_Interface::getPrevSibling()</a></dt>
+						<dd>gets record of prev sibling or empty record</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetRightValue" id="getRightValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRightValue</span> (line <span class="line-number">1159</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets record's right value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			getRightValue
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRootValue" id="getRootValue"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRootValue</span> (line <span class="line-number">1200</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">get records root id value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRootValue
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSiblings" id="getSiblings"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSiblings</span> (line <span class="line-number">133</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">gets siblings for node</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> array of sibling Doctrine_Record objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getSiblings
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeNode</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNode</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodgetSiblings">Doctrine_Node_Interface::getSiblings()</a></dt>
+						<dd>gets siblings for node</dd>
+					</dl>
+			
+	</div>
+<a name="methodhasChildren" id="hasChildren"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasChildren</span> (line <span class="line-number">61</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">test if node has children</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			hasChildren
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodhasChildren">Doctrine_Node_Interface::hasChildren()</a></dt>
+						<dd>test if node has children</dd>
+					</dl>
+			
+	</div>
+<a name="methodhasNextSibling" id="hasNextSibling"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasNextSibling</span> (line <span class="line-number">51</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">test if node has next sibling</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			hasNextSibling
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodhasNextSibling">Doctrine_Node_Interface::hasNextSibling()</a></dt>
+						<dd>test if node has next sibling</dd>
+					</dl>
+			
+	</div>
+<a name="methodhasParent" id="hasParent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasParent</span> (line <span class="line-number">71</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">test if node has parent</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			hasParent
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodhasParent">Doctrine_Node_Interface::hasParent()</a></dt>
+						<dd>test if node has parent</dd>
+					</dl>
+			
+	</div>
+<a name="methodhasPrevSibling" id="hasPrevSibling"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasPrevSibling</span> (line <span class="line-number">41</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">test if node has previous sibling</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			hasPrevSibling
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodhasPrevSibling">Doctrine_Node_Interface::hasPrevSibling()</a></dt>
+						<dd>test if node has previous sibling</dd>
+					</dl>
+			
+	</div>
+<a name="methodinsertAsFirstChildOf" id="insertAsFirstChildOf"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">insertAsFirstChildOf</span> (line <span class="line-number">497</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">inserts node as first child of dest record</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Wrap in transaction</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			insertAsFirstChildOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$dest</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodinsertAsFirstChildOf">Doctrine_Node_Interface::insertAsFirstChildOf()</a></dt>
+						<dd>inserts node as first child of dest record</dd>
+					</dl>
+			
+	</div>
+<a name="methodinsertAsLastChildOf" id="insertAsLastChildOf"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">insertAsLastChildOf</span> (line <span class="line-number">543</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">inserts node as last child of dest record</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Wrap in transaction</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			insertAsLastChildOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$dest</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodinsertAsLastChildOf">Doctrine_Node_Interface::insertAsLastChildOf()</a></dt>
+						<dd>inserts node as first child of dest record</dd>
+					</dl>
+			
+	</div>
+<a name="methodinsertAsNextSiblingOf" id="insertAsNextSiblingOf"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">insertAsNextSiblingOf</span> (line <span class="line-number">452</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">inserts node as next sibling of dest record</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Wrap in transaction</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			insertAsNextSiblingOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$dest</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodinsertAsNextSiblingOf">Doctrine_Node_Interface::insertAsNextSiblingOf()</a></dt>
+						<dd>inserts node as next sibling of dest record</dd>
+					</dl>
+			
+	</div>
+<a name="methodinsertAsParentOf" id="insertAsParentOf"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">insertAsParentOf</span> (line <span class="line-number">343</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">inserts node as parent of dest record</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Wrap in transaction</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			insertAsParentOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$dest</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodinsertAsParentOf">Doctrine_Node_Interface::insertAsParentOf()</a></dt>
+						<dd>inserts node as parent of dest record</dd>
+					</dl>
+			
+	</div>
+<a name="methodinsertAsPrevSiblingOf" id="insertAsPrevSiblingOf"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">insertAsPrevSiblingOf</span> (line <span class="line-number">406</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">inserts node as previous sibling of dest record</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Wrap in transaction</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			insertAsPrevSiblingOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$dest</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodinsertAsPrevSiblingOf">Doctrine_Node_Interface::insertAsPrevSiblingOf()</a></dt>
+						<dd>inserts node as previous sibling of dest record</dd>
+					</dl>
+			
+	</div>
+<a name="methodisAncestorOf" id="isAncestorOf"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isAncestorOf</span> (line <span class="line-number">918</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">determines if node is ancestor of subject node</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			isAncestorOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$subj</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$subj</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisDescendantOf" id="isDescendantOf"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">isDescendantOf</span> (line <span class="line-number">894</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">determines if node is child of subject node</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			isDescendantOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$subj</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$subj</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodisDescendantOf">Doctrine_Node_Interface::isDescendantOf()</a></dt>
+						<dd>determines if node is child of subject node</dd>
+					</dl>
+			
+	</div>
+<a name="methodisDescendantOfOrEqualTo" id="isDescendantOfOrEqualTo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isDescendantOfOrEqualTo</span> (line <span class="line-number">906</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">determines if node is child of or sibling to subject node</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			isDescendantOfOrEqualTo
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$subj</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$subj</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodisDescendantOfOrEqualTo">Doctrine_Node_Interface::isDescendantOfOrEqualTo()</a></dt>
+						<dd>determines if node is child of or sibling to subject node</dd>
+					</dl>
+			
+	</div>
+<a name="methodisEqualTo" id="isEqualTo"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">isEqualTo</span> (line <span class="line-number">881</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">determines if node is equal to subject node</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			isEqualTo
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$subj</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$subj</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodisEqualTo">Doctrine_Node_Interface::isEqualTo()</a></dt>
+						<dd>determines if node is equal to subject node</dd>
+					</dl>
+			
+	</div>
+<a name="methodisLeaf" id="isLeaf"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isLeaf</span> (line <span class="line-number">861</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">determines if node is leaf</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			isLeaf
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodisLeaf">Doctrine_Node_Interface::isLeaf()</a></dt>
+						<dd>determines if node is leaf</dd>
+					</dl>
+			
+	</div>
+<a name="methodisRoot" id="isRoot"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">isRoot</span> (line <span class="line-number">871</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">determines if node is root</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			isRoot
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodisRoot">Doctrine_Node_Interface::isRoot()</a></dt>
+						<dd>determines if node is root</dd>
+					</dl>
+			
+	</div>
+<a name="methodisValidNode" id="isValidNode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isValidNode</span> (line <span class="line-number">930</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">determines if node is valid</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			isValidNode
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$record</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$record</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodisValidNode">Doctrine_Node_Interface::isValidNode()</a></dt>
+						<dd>determines if node is valid</dd>
+					</dl>
+			
+	</div>
+<a name="methodmakeRoot" id="makeRoot"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">makeRoot</span> (line <span class="line-number">791</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Makes this node a root node. Only used in multiple-root trees.</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Exception handling/wrapping</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			makeRoot
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$newRootId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$newRootId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmoveAsFirstChildOf" id="moveAsFirstChildOf"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">moveAsFirstChildOf</span> (line <span class="line-number">734</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">moves node as first child of dest record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			moveAsFirstChildOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$dest</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodmoveAsFirstChildOf">Doctrine_Node_Interface::moveAsFirstChildOf()</a></dt>
+						<dd>moves node as first child of dest record</dd>
+					</dl>
+			
+	</div>
+<a name="methodmoveAsLastChildOf" id="moveAsLastChildOf"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">moveAsLastChildOf</span> (line <span class="line-number">762</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">moves node as last child of dest record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			moveAsLastChildOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$dest</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodmoveAsLastChildOf">Doctrine_Node_Interface::moveAsLastChildOf()</a></dt>
+						<dd>moves node as last child of dest record</dd>
+					</dl>
+			
+	</div>
+<a name="methodmoveAsNextSiblingOf" id="moveAsNextSiblingOf"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">moveAsNextSiblingOf</span> (line <span class="line-number">706</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">moves node as next sibling of dest record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			moveAsNextSiblingOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$dest</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodmoveAsNextSiblingOf">Doctrine_Node_Interface::moveAsNextSiblingOf()</a></dt>
+						<dd>moves node as next sibling of dest record</dd>
+					</dl>
+			
+	</div>
+<a name="methodmoveAsPrevSiblingOf" id="moveAsPrevSiblingOf"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">moveAsPrevSiblingOf</span> (line <span class="line-number">678</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">moves node as prev sibling of dest record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			moveAsPrevSiblingOf
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>&nbsp;<span class="var-name">$dest</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+				<span class="var-name">$dest</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../../Doctrine/Node/Doctrine_Node_Interface.html#methodmoveAsPrevSiblingOf">Doctrine_Node_Interface::moveAsPrevSiblingOf()</a></dt>
+						<dd>moves node as prev sibling of dest record</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetLeftValue" id="setLeftValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setLeftValue</span> (line <span class="line-number">1149</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">sets record's left value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setLeftValue
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$lft</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$lft</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRightValue" id="setRightValue"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setRightValue</span> (line <span class="line-number">1169</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">sets record's right value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRightValue
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$rgt</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$rgt</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRootValue" id="setRootValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setRootValue</span> (line <span class="line-number">1213</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">sets records root id value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRootValue
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Node/Doctrine_Node.html">Doctrine_Node</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Node/Doctrine_Node.html#method__construct">Doctrine_Node::__construct()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Node/Doctrine_Node.html#methodfactory">Doctrine_Node::factory()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Node/Doctrine_Node.html#methodgetIterator">Doctrine_Node::getIterator()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Node/Doctrine_Node.html#methodgetRecord">Doctrine_Node::getRecord()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Node/Doctrine_Node.html#methodsetIteratorOptions">Doctrine_Node::setIteratorOptions()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Node/Doctrine_Node.html#methodsetIteratorType">Doctrine_Node::setIteratorType()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Node/Doctrine_Node.html#methodsetRecord">Doctrine_Node::setRecord()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Node/Doctrine_Node.html#methodtraverse">Doctrine_Node::traverse()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:08:51 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,4763 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Query_Abstract</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Query_Abstract</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Query_Abstract</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">version:</span> $Revision: 1393 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">todo:</span> See <a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Query---Abstract.php.html">/helpers/Doctrine/Query/Abstract.php</a> (line <span class="field">34</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></td>
+					<td>
+											Doctrine_Query  A Doctrine_Query object represents a DQL query. It is used to query databases for  data in an object-oriented fashion. A DQL query understands relations and inheritance  and is dbms independant.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/RawSql/Doctrine_RawSql.html">Doctrine_RawSql</a></td>
+					<td>
+											Doctrine_RawSql
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#CREATE" title="details" class="const-name">CREATE</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DELETE" title="details" class="const-name">DELETE</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#INSERT" title="details" class="const-name">INSERT</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#SELECT" title="details" class="const-name">SELECT</a> = 					<span class="var-type"> 0</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STATE_CLEAN" title="details" class="const-name">STATE_CLEAN</a> = 					<span class="var-type"> 1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STATE_DIRECT" title="details" class="const-name">STATE_DIRECT</a> = 					<span class="var-type"> 3</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STATE_DIRTY" title="details" class="const-name">STATE_DIRTY</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STATE_LOCKED" title="details" class="const-name">STATE_LOCKED</a> = 					<span class="var-type"> 4</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#UPDATE" title="details" class="const-name">UPDATE</a> = 					<span class="var-type"> 2</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																																																																																																																																																																<div class="var-title">
+					<span class="var-type">bool</span>
+					<a href="#$disableLimitSubquery" title="details" class="var-name">$disableLimitSubquery</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_components" title="details" class="var-name">$_components</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+					<a href="#$_conn" title="details" class="var-name">$_conn</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_dqlParts" title="details" class="var-name">$_dqlParts</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_execParams" title="details" class="var-name">$_execParams</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_expireQueryCache" title="details" class="var-name">$_expireQueryCache</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$_expireResultCache" title="details" class="var-name">$_expireResultCache</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator.html">Doctrine_Hydrator</a></span>
+					<a href="#$_hydrator" title="details" class="var-name">$_hydrator</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$_isLimitSubqueryUsed" title="details" class="var-name">$_isLimitSubqueryUsed</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_options" title="details" class="var-name">$_options</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_params" title="details" class="var-name">$_params</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type"><a href="../../Doctrine/Query/Doctrine_Query_Parser.html">Doctrine_Query_Parser</a></span>
+					<a href="#$_parser" title="details" class="var-name">$_parser</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">bool</span>
+					<a href="#$_passedConn" title="details" class="var-name">$_passedConn</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">bool</span>
+					<a href="#$_preQueried" title="details" class="var-name">$_preQueried</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a></span>
+					<a href="#$_queryCache" title="details" class="var-name">$_queryCache</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_queryCacheTTL" title="details" class="var-name">$_queryCacheTTL</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_queryComponents" title="details" class="var-name">$_queryComponents</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a></span>
+					<a href="#$_resultCache" title="details" class="var-name">$_resultCache</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_resultCacheHash" title="details" class="var-name">$_resultCacheHash</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_resultCacheTTL" title="details" class="var-name">$_resultCacheTTL</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_rootAlias" title="details" class="var-name">$_rootAlias</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_sqlParts" title="details" class="var-name">$_sqlParts</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_state" title="details" class="var-name">$_state</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_tableAliasMap" title="details" class="var-name">$_tableAliasMap</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_tableAliasSeeds" title="details" class="var-name">$_tableAliasSeeds</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type"><a href="../../Doctrine/Query/Doctrine_Query_Tokenizer.html">Doctrine_Query_Tokenizer</a></span>
+					<a href="#$_tokenizer" title="details" class="var-name">$_tokenizer</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">integer</span>
+					<a href="#$_type" title="details" class="var-name">$_type</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type"><a href="../../Doctrine/View/Doctrine_View.html">Doctrine_View</a></span>
+					<a href="#$_view" title="details" class="var-name">$_view</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">Doctrine_Query_Abstract</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>&nbsp;<span class="var-name">$connection</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html">Doctrine_Hydrator_Abstract</a></span>&nbsp;<span class="var-name">$hydrator</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#addFrom" title="details" class="method-name">addFrom</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$from</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#addGroupBy" title="details" class="method-name">addGroupBy</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$groupby</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#addHaving" title="details" class="method-name">addHaving</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$having</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#addOrderBy" title="details" class="method-name">addOrderBy</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$orderby</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#addSelect" title="details" class="method-name">addSelect</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$select</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#addSqlQueryPart" title="details" class="method-name">addSqlQueryPart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$part</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></span>
+										<a href="#addSqlTableAlias" title="details" class="method-name">addSqlTableAlias</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$sqlTableAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#addWhere" title="details" class="method-name">addWhere</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$where</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#andWhere" title="details" class="method-name">andWhere</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$where</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#andWhereIn" title="details" class="method-name">andWhereIn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$not</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#andWhereNotIn" title="details" class="method-name">andWhereNotIn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#calculateQueryCacheHash" title="details" class="method-name">calculateQueryCacheHash</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#calculateResultCacheHash" title="details" class="method-name">calculateResultCacheHash</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clear" title="details" class="method-name">clear</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clearResultCache" title="details" class="method-name">clearResultCache</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#copySubqueryInfo" title="details" class="method-name">copySubqueryInfo</a>
+											(<span class="var-type"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></span>&nbsp;<span class="var-name">$query</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#distinct" title="details" class="method-name">distinct</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Collection/Doctrine_Collection.html">Doctrine_Collection</a></span>
+										<a href="#execute" title="details" class="method-name">execute</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$hydrationMode</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#expireQueryCache" title="details" class="method-name">expireQueryCache</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$expire</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#expireResultCache" title="details" class="method-name">expireResultCache</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$expire</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#fixArrayParameterValues" title="details" class="method-name">fixArrayParameterValues</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#forUpdate" title="details" class="method-name">forUpdate</a>
+											([<span class="var-type">bool</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#free" title="details" class="method-name">free</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#from" title="details" class="method-name">from</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$from</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#generateNewSqlTableAlias" title="details" class="method-name">generateNewSqlTableAlias</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$oldAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#generateSqlTableAlias" title="details" class="method-name">generateSqlTableAlias</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getCachedForm" title="details" class="method-name">getCachedForm</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$customComponent</span> = <span class="var-default">null</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$resultSet</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getComponentAlias" title="details" class="method-name">getComponentAlias</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sqlTableAlias</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+										<a href="#getConnection" title="details" class="method-name">getConnection</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getCountQueryParams" title="details" class="method-name">getCountQueryParams</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#getDisableLimitSubquery" title="details" class="method-name">getDisableLimitSubquery</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getDql" title="details" class="method-name">getDql</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getFlattenedParams" title="details" class="method-name">getFlattenedParams</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getInheritanceCondition" title="details" class="method-name">getInheritanceCondition</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$componentAlias</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getInternalParams" title="details" class="method-name">getInternalParams</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getParams" title="details" class="method-name">getParams</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|boolean|null</span>
+										<a href="#getQueryCacheDriver" title="details" class="method-name">getQueryCacheDriver</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getQueryCacheLifeSpan" title="details" class="method-name">getQueryCacheLifeSpan</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getQueryComponent" title="details" class="method-name">getQueryComponent</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getQueryComponents" title="details" class="method-name">getQueryComponents</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|boolean|null</span>
+										<a href="#getResultCacheDriver" title="details" class="method-name">getResultCacheDriver</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getResultCacheHash" title="details" class="method-name">getResultCacheHash</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getResultCacheLifeSpan" title="details" class="method-name">getResultCacheLifeSpan</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+										<a href="#getRoot" title="details" class="method-name">getRoot</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getRootAlias" title="details" class="method-name">getRootAlias</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getRootDeclaration" title="details" class="method-name">getRootDeclaration</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getSqlParts" title="details" class="method-name">getSqlParts</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSqlQuery" title="details" class="method-name">getSqlQuery</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#getSqlQueryPart" title="details" class="method-name">getSqlQueryPart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$part</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getSqlTableAlias" title="details" class="method-name">getSqlTableAlias</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getSqlTableAliasSeed" title="details" class="method-name">getSqlTableAliasSeed</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$sqlTableAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getTableAliasMap" title="details" class="method-name">getTableAliasMap</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getType" title="details" class="method-name">getType</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/View/Doctrine_View.html">Doctrine_View</a></span>
+										<a href="#getView" title="details" class="method-name">getView</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#groupBy" title="details" class="method-name">groupBy</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$groupby</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#hasAliasDeclaration" title="details" class="method-name">hasAliasDeclaration</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#hasSqlTableAlias" title="details" class="method-name">hasSqlTableAlias</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$sqlTableAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#having" title="details" class="method-name">having</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$having</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#innerJoin" title="details" class="method-name">innerJoin</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$join</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isLimitSubqueryUsed" title="details" class="method-name">isLimitSubqueryUsed</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#leftJoin" title="details" class="method-name">leftJoin</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$join</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#limit" title="details" class="method-name">limit</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#offset" title="details" class="method-name">offset</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#orderBy" title="details" class="method-name">orderBy</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$orderby</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#orWhere" title="details" class="method-name">orWhere</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$where</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#orWhereIn" title="details" class="method-name">orWhereIn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$not</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#orWhereNotIn" title="details" class="method-name">orWhereNotIn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></span>
+										<a href="#parseDqlQuery" title="details" class="method-name">parseDqlQuery</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#preQuery" title="details" class="method-name">preQuery</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#removeDqlQueryPart" title="details" class="method-name">removeDqlQueryPart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#removeSqlQueryPart" title="details" class="method-name">removeSqlQueryPart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#select" title="details" class="method-name">select</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$select</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#set" title="details" class="method-name">set</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$update</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setConnection" title="details" class="method-name">setConnection</a>
+											(<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>&nbsp;<span class="var-name">$connection</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setDisableLimitSubquery" title="details" class="method-name">setDisableLimitSubquery</a>
+											(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$disableLimitSubquery</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setHydrationMode" title="details" class="method-name">setHydrationMode</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$hydrationMode</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#setOption" title="details" class="method-name">setOption</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setParams" title="details" class="method-name">setParams</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#setQueryCacheLifeSpan" title="details" class="method-name">setQueryCacheLifeSpan</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeToLive</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setResultCacheHash" title="details" class="method-name">setResultCacheHash</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$resultCacheHash</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#setResultCacheLifeSpan" title="details" class="method-name">setResultCacheLifeSpan</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeToLive</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#setSqlQueryPart" title="details" class="method-name">setSqlQueryPart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$part</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setView" title="details" class="method-name">setView</a>
+											(<span class="var-type"><a href="../../Doctrine/View/Doctrine_View.html">Doctrine_View</a></span>&nbsp;<span class="var-name">$view</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#update" title="details" class="method-name">update</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">null</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$update</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#useQueryCache" title="details" class="method-name">useQueryCache</a>
+											([<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|bool</span>&nbsp;<span class="var-name">$driver</span> = <span class="var-default">true</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeToLive</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#useResultCache" title="details" class="method-name">useResultCache</a>
+											([<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|bool</span>&nbsp;<span class="var-name">$driver</span> = <span class="var-default">true</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeToLive</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$resultCacheHash</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#where" title="details" class="method-name">where</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$where</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$join</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#whereIn" title="details" class="method-name">whereIn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$not</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#whereNotIn" title="details" class="method-name">whereNotIn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_addDqlQueryPart" title="details" class="method-name">_addDqlQueryPart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryPartName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$queryPart</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#_constructQueryFromCache" title="details" class="method-name">_constructQueryFromCache</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$cached</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">PDOStatement</span>
+										<a href="#_execute" title="details" class="method-name">_execute</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#_getDqlCallback" title="details" class="method-name">_getDqlCallback</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#_getDqlCallbackComponents" title="details" class="method-name">_getDqlCallbackComponents</a>
+											([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query_Part.html">Doctrine_Query_Part</a></span>
+										<a href="#_getParser" title="details" class="method-name">_getParser</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#_hasDqlQueryPart" title="details" class="method-name">_hasDqlQueryPart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryPartName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_preQuery" title="details" class="method-name">_preQuery</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#_processDqlQueryPart" title="details" class="method-name">_processDqlQueryPart</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryPartName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$queryParts</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_processWhereIn" title="details" class="method-name">_processWhereIn</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$not</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#__toString" title="details" class="method-name">__toString</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$disableLimitSubquery" id="$disableLimitSubquery"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">bool</span>
+			<span class="var-name">$disableLimitSubquery</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">271</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fix for http://www.doctrine-project.org/jira/browse/DC-701</p>
+	<ul class="tags">
+				<li><span class="field">var:</span> Boolean variable for whether the limitSubquery method of accessing tables via a many relationship should be used.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_components" id="$_components"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_components</span>
+						(line <span class="line-number">259</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> components used in the DQL statement</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_conn" id="$_conn"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+			<span class="var-name">$_conn</span>
+						(line <span class="line-number">145</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The connection used by this query object.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_dqlParts" id="$_dqlParts"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_dqlParts</span>
+			 = <span class="var-default">array(<br />                            'from'      =&gt; array(),'select'=&gt;array(),'forUpdate'=&gt;false,'set'=&gt;array(),'join'=&gt;array(),'where'=&gt;array(),'groupby'=&gt;array(),'having'=&gt;array(),'orderby'=&gt;array(),'limit'=&gt;array(),'offset'=&gt;array(),)</span>			(line <span class="line-number">173</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> an array containing all DQL query parts; @see Doctrine_Query::getDqlPart()</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_execParams" id="$_execParams"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_execParams</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">114</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The parameters passed to connection statement</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_expireQueryCache" id="$_expireQueryCache"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_expireQueryCache</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">138</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_expireResultCache" id="$_expireResultCache"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_expireResultCache</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">131</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> A boolean value that indicates whether or not                                    expire the result cache.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_hydrator" id="$_hydrator"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator.html">Doctrine_Hydrator</a></span>
+			<span class="var-name">$_hydrator</span>
+						(line <span class="line-number">225</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The hydrator object used to hydrate query results.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_isLimitSubqueryUsed" id="$_isLimitSubqueryUsed"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_isLimitSubqueryUsed</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">254</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_options" id="$_options"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_options</span>
+			 = <span class="var-default">array(<br />        'hydrationMode'      =&gt; Doctrine_Core::HYDRATE_RECORD<br />    )</span>			(line <span class="line-number">247</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> an array of options</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_params" id="$_params"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_params</span>
+			 = <span class="var-default">array('exec' =&gt; array(),'join'=&gt;array(),'where'=&gt;array(),'set'=&gt;array(),'having'=&gt;array())</span>			(line <span class="line-number">105</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The parameters of this query.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_parser" id="$_parser"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../../Doctrine/Query/Doctrine_Query_Parser.html">Doctrine_Query_Parser</a></span>
+			<span class="var-name">$_parser</span>
+						(line <span class="line-number">235</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The parser that is used for query parsing.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_passedConn" id="$_passedConn"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">bool</span>
+			<span class="var-name">$_passedConn</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">150</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> Whether or not a connection was passed to this query object to use</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_preQueried" id="$_preQueried"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">bool</span>
+			<span class="var-name">$_preQueried</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">264</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> Boolean variable for whether or not the preQuery process has been executed</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_queryCache" id="$_queryCache"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a></span>
+			<span class="var-name">$_queryCache</span>
+						(line <span class="line-number">137</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The cache driver used for caching queries.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_queryCacheTTL" id="$_queryCacheTTL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_queryCacheTTL</span>
+						(line <span class="line-number">139</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_queryComponents" id="$_queryComponents"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_queryComponents</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">206</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> <p>Two dimensional array containing the components of this query,                                 informations about their relations and other related information.                                 The components are constructed during query parsing.</p><p>Keys are component aliases and values the following:</p><p>table               table object associated with given alias</p><p>relation            the relation object owned by the parent</p><p>parent              the alias of the parent</p><p>agg                 the aggregates of this component</p><p>map                 the name of the column / aggregate value this                               component is mapped to a collection</p></li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_resultCache" id="$_resultCache"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a></span>
+			<span class="var-name">$_resultCache</span>
+						(line <span class="line-number">120</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The cache driver used for caching result sets.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_resultCacheHash" id="$_resultCacheHash"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_resultCacheHash</span>
+						(line <span class="line-number">125</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> Key to use for result cache entry in the cache driver</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_resultCacheTTL" id="$_resultCacheTTL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_resultCacheTTL</span>
+						(line <span class="line-number">132</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_rootAlias" id="$_rootAlias"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_rootAlias</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">213</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Stores the root DQL alias</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_sqlParts" id="$_sqlParts"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_sqlParts</span>
+			 = <span class="var-default">array(<br />            'select'    =&gt; array(),'distinct'=&gt;false,'forUpdate'=&gt;false,'from'=&gt;array(),'set'=&gt;array(),'join'=&gt;array(),'where'=&gt;array(),'groupby'=&gt;array(),'having'=&gt;array(),'orderby'=&gt;array(),'limit'=&gt;false,'offset'=&gt;false,)</span>			(line <span class="line-number">155</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The SQL query string parts. Filled during the DQL parsing process.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_state" id="$_state"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_state</span>
+			 = <span class="var-default"> Doctrine_Query::STATE_CLEAN</span>			(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The current state of this query.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_tableAliasMap" id="$_tableAliasMap"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_tableAliasMap</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">90</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> Table alias map. Keys are SQL aliases and values DQL aliases.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_tableAliasSeeds" id="$_tableAliasSeeds"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_tableAliasSeeds</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">242</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> A simple array keys representing table aliases and values                                       table alias seeds. The seeds are used for generating short table                                       aliases.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_tokenizer" id="$_tokenizer"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../../Doctrine/Query/Doctrine_Query_Tokenizer.html">Doctrine_Query_Tokenizer</a></span>
+			<span class="var-name">$_tokenizer</span>
+						(line <span class="line-number">230</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The tokenizer that is used during the query parsing process.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_type" id="$_type"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_type</span>
+			 = <span class="var-default"> self::SELECT</span>			(line <span class="line-number">220</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> the query type</li>
+				<li><span class="field">see:</span> Doctrine_Query::* constants</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_view" id="$_view"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type"><a href="../../Doctrine/View/Doctrine_View.html">Doctrine_View</a></span>
+			<span class="var-name">$_view</span>
+						(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> The view object used by this query, if any.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">279</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Doctrine_Query_Abstract</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>&nbsp;<span class="var-name">$connection</span> = <span class="var-default">null</span>], [<span class="var-type"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html">Doctrine_Hydrator_Abstract</a></span>&nbsp;<span class="var-name">$hydrator</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+				<span class="var-name">$connection</span><span class="var-description">: The connection object the query will use.</span>			</li>
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Hydrate/Doctrine_Hydrator_Abstract.html">Doctrine_Hydrator_Abstract</a></span>
+				<span class="var-name">$hydrator</span><span class="var-description">: The hydrator that will be used for generating result sets.</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/RawSql/Doctrine_RawSql.html#method__construct">Doctrine_RawSql::__construct()</a>
+								: Constructor.
+							</li>
+				</ul>
+	</div>
+<a name="methodaddFrom" id="addFrom"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addFrom</span> (line <span class="line-number">1279</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">addFrom  adds fields to the FROM part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			addFrom
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$from</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$from</span><span class="var-description">: Query FROM part</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddGroupBy" id="addGroupBy"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addGroupBy</span> (line <span class="line-number">1486</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds fields to the GROUP BY part of the query.</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodgroupBy">groupBy</a><span class="src-sym">(</span><span class="src-str">'u.id'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			addGroupBy
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$groupby</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$groupby</span><span class="var-description">: Query GROUP BY part</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddHaving" id="addHaving"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addHaving</span> (line <span class="line-number">1504</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds conditions to the HAVING part of the query.</p>
+<p class="description"><p>This methods add HAVING clauses. These clauses are used to narrow the  results by operating on aggregated values.  <div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodhaving">having</a><span class="src-sym">(</span><span class="src-str">'num_phonenumbers&nbsp;&gt;&nbsp;?'</span><span class="src-sym">,&nbsp;</span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			addHaving
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$having</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$having</span><span class="var-description">: Query HAVING part</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: an array of parameters or a simple scalar</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddOrderBy" id="addOrderBy"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addOrderBy</span> (line <span class="line-number">1521</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">addOrderBy  adds fields to the ORDER BY part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			addOrderBy
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$orderby</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$orderby</span><span class="var-description">: Query ORDER BY part</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddSelect" id="addSelect"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addSelect</span> (line <span class="line-number">1253</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds fields or aliased functions.</p>
+<p class="description"><p>This method adds fields or dbms functions to the SELECT query part.  <div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$query</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodaddSelect">addSelect</a><span class="src-sym">(</span><span class="src-str">'COUNT(p.id)&nbsp;as&nbsp;num_phonenumbers'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			addSelect
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$select</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$select</span><span class="var-description">: Query SELECT part</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddSqlQueryPart" id="addSqlQueryPart"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addSqlQueryPart</span> (line <span class="line-number">433</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">addSqlQueryPart  adds an SQL query part to the SQL query part array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">throws:</span> Doctrine_Query_Exception   if trying to add unknown query part</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			addSqlQueryPart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$part</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: the name of the query part to be added</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$part</span><span class="var-description">: query part string</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddSqlTableAlias" id="addSqlTableAlias"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addSqlTableAlias</span> (line <span class="line-number">1266</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">addSqlTableAlias  adds an SQL table alias and associates it a component alias</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></span>
+		<span class="method-name">
+			addSqlTableAlias
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$sqlTableAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$componentAlias</span><span class="var-description">: the alias for the query component associated with given tableAlias</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableAlias</span><span class="var-description">: the table alias to be added</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$sqlTableAlias</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddWhere" id="addWhere"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addWhere</span> (line <span class="line-number">1288</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Alias for @see andWhere().</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			addWhere
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$where</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$where</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodandWhere" id="andWhere"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">andWhere</span> (line <span class="line-number">1303</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds conditions to the WHERE part of the query.</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodandWhere">andWhere</a><span class="src-sym">(</span><span class="src-str">'u.birthDate&nbsp;&gt;&nbsp;?'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'1975-01-01'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			andWhere
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$where</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$where</span><span class="var-description">: Query WHERE part</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: An array of parameters or a simple scalar</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodandWhereIn" id="andWhereIn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">andWhereIn</span> (line <span class="line-number">1367</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds IN condition to the query WHERE part</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodwhereIn">whereIn</a><span class="src-sym">(</span><span class="src-str">'u.id'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-num">10</span><span class="src-sym">,&nbsp;</span><span class="src-num">23</span><span class="src-sym">,&nbsp;</span><span class="src-num">44</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			andWhereIn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$not</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expr</span><span class="var-description">: The operand of the IN</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: An array of parameters or a simple scalar</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$not</span><span class="var-description">: Whether or not to use NOT in front of IN. Defaults to false (simple IN clause)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodandWhereNotIn" id="andWhereNotIn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">andWhereNotIn</span> (line <span class="line-number">1460</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds NOT IN condition to the query WHERE part  Alias for @see whereNotIn().</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			andWhereNotIn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expr</span><span class="var-description">: The operand of the NOT IN</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: An array of parameters or a simple scalar</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcalculateQueryCacheHash" id="calculateQueryCacheHash"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">calculateQueryCacheHash</span> (line <span class="line-number">874</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">calculateQueryCacheHash  calculate hash key for query cache</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the hash</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			calculateQueryCacheHash
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcalculateResultCacheHash" id="calculateResultCacheHash"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">calculateResultCacheHash</span> (line <span class="line-number">888</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">calculateResultCacheHash  calculate hash key for result cache</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the hash</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			calculateResultCacheHash
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/RawSql/Doctrine_RawSql.html#methodcalculateResultCacheHash">Doctrine_RawSql::calculateResultCacheHash()</a>
+								: calculateResultCacheHash  calculate hash key for result cache
+							</li>
+				</ul>
+	</div>
+<a name="methodclear" id="clear"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">clear</span> (line <span class="line-number">1778</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resets all the sql parts.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clear
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Query/Doctrine_Query.html#methodclear">Doctrine_Query::clear()</a>
+								: Clears all the sql parts.
+							</li>
+					<li>
+				<a href="../../Doctrine/RawSql/Doctrine_RawSql.html#methodclear">Doctrine_RawSql::clear()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodclearResultCache" id="clearResultCache"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">clearResultCache</span> (line <span class="line-number">1880</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clear the result cache entry for this query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clearResultCache
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcopySubqueryInfo" id="copySubqueryInfo"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">copySubqueryInfo</span> (line <span class="line-number">767</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">copySubqueryInfo  copy aliases from another Hydrate object</p>
+<p class="description"><p>this method is needed by DQL subqueries which need the aliases  of the parent query</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			copySubqueryInfo
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></span>&nbsp;<span class="var-name">$query</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Doctrine_Hydrate</span>
+				<span class="var-name">$query</span><span class="var-description">: the query object from which the                                   aliases are copied from</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">delete</span> (line <span class="line-number">1578</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">delete  sets the query type to DELETE</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			delete
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$from</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddistinct" id="distinct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">distinct</span> (line <span class="line-number">1553</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">distinct  Makes the query SELECT DISTINCT.</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methoddistinct">distinct</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			distinct
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$flag</span><span class="var-description">: Whether or not the SELECT is DISTINCT (default true).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodexecute" id="execute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">execute</span> (line <span class="line-number">997</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">execute  executes the query and populates the data set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the root collection</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Collection/Doctrine_Collection.html">Doctrine_Collection</a></span>
+		<span class="method-name">
+			execute
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$hydrationMode</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$hydrationMode</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodexpireQueryCache" id="expireQueryCache"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">expireQueryCache</span> (line <span class="line-number">1927</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">expireQueryCache</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			expireQueryCache
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$expire</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$expire</span><span class="var-description">: whether or not to force cache expiration</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodexpireResultCache" id="expireResultCache"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">expireResultCache</span> (line <span class="line-number">1915</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">expireCache</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			expireResultCache
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$expire</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$expire</span><span class="var-description">: whether or not to force cache expiration</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfixArrayParameterValues" id="fixArrayParameterValues"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fixArrayParameterValues</span> (line <span class="line-number">562</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			fixArrayParameterValues
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodforUpdate" id="forUpdate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">forUpdate</span> (line <span class="line-number">1566</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">forUpdate  Makes the query SELECT FOR UPDATE.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			forUpdate
+		</span>
+					([<span class="var-type">bool</span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$flag</span><span class="var-description">: Whether or not the SELECT is FOR UPDATE (default true).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfree" id="free"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">free</span> (line <span class="line-number">1057</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Blank template method free(). Override to be used to free query object memory</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			free
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Query/Doctrine_Query.html#methodfree">Doctrine_Query::free()</a>
+								: Frees the resources used by the query object. It especially breaks a  cyclic reference between the query object and it's parsers. This enables  PHP's current GC to reclaim the memory.
+							</li>
+				</ul>
+	</div>
+<a name="methodfrom" id="from"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">from</span> (line <span class="line-number">1640</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">from</p>
+<p class="description"><p>sets the FROM part of the query  <div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodfrom">from</a><span class="src-sym">(</span><span class="src-str">'User&nbsp;u'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			from
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$from</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$from</span><span class="var-description">: Query FROM part</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateNewSqlTableAlias" id="generateNewSqlTableAlias"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">generateNewSqlTableAlias</span> (line <span class="line-number">693</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">generateNewSqlTableAlias  generates a new alias from given table alias</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the created table alias</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			generateNewSqlTableAlias
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$oldAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableAlias</span><span class="var-description">: table alias from which to generate the new alias from</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$oldAlias</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateSqlTableAlias" id="generateSqlTableAlias"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">generateSqlTableAlias</span> (line <span class="line-number">829</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">generateSqlTableAlias  generates a table alias from given table name and associates  it with given component alias</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the generated table alias</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			generateSqlTableAlias
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$componentAlias</span><span class="var-description">: the component alias to be associated with generated table alias</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span><span class="var-description">: the table name from which to generate the table alias</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCachedForm" id="getCachedForm"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCachedForm</span> (line <span class="line-number">1215</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getCachedForm  returns the cached form of this query for given resultSet</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> serialized string representation of this query</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getCachedForm
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$customComponent</span> = <span class="var-default">null</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$resultSet</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$resultSet</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$customComponent</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetComponentAlias" id="getComponentAlias"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getComponentAlias</span> (line <span class="line-number">859</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getComponentAlias  get component alias associated with given table alias</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> component alias</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getComponentAlias
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sqlTableAlias</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sqlTableAlias</span><span class="var-description">: the SQL table alias that identifies the component alias</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetConnection" id="getConnection"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getConnection</span> (line <span class="line-number">2020</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getConnection</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+		<span class="method-name">
+			getConnection
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetCountQueryParams" id="getCountQueryParams"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCountQueryParams</span> (line <span class="line-number">544</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getCountQueryParams  Retrieves the parameters for count query</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Parameters array</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getCountQueryParams
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetDisableLimitSubquery" id="getDisableLimitSubquery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDisableLimitSubquery</span> (line <span class="line-number">2156</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the disableLimitSubquery property.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			getDisableLimitSubquery
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetDql" id="getDql"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDql</span> (line <span class="line-number">355</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getDql  returns the DQL query that is represented by this query object.</p>
+<p class="description"><p>the query is built from $_dqlParts</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the DQL query</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getDql
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFlattenedParams" id="getFlattenedParams"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFlattenedParams</span> (line <span class="line-number">509</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get flattened array of parameters for query.</p>
+<p class="description"><p>Used internally and used to pass flat array of params to the database.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getFlattenedParams
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetInheritanceCondition" id="getInheritanceCondition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getInheritanceCondition</span> (line <span class="line-number">625</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the inheritance condition for the passed componentAlias  If no component alias is specified it defaults to the root component</p>
+<p class="description"><p>This function is used to append a SQL condition to models which have inheritance mapping  The condition is applied to the FROM component in the WHERE, but the condition is applied to  JOINS in the ON condition and not the WHERE</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> SQL condition string</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getInheritanceCondition
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$componentAlias</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$componentAlias</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetInternalParams" id="getInternalParams"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getInternalParams</span> (line <span class="line-number">523</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getInternalParams</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getInternalParams
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetParams" id="getParams"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getParams</span> (line <span class="line-number">497</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get raw array of parameters for query and all parts.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getParams
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetQueryCacheDriver" id="getQueryCacheDriver"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getQueryCacheDriver</span> (line <span class="line-number">2006</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getQueryCacheDriver  returns the cache driver used for caching queries</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> cache driver</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|boolean|null</span>
+		<span class="method-name">
+			getQueryCacheDriver
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetQueryCacheLifeSpan" id="getQueryCacheLifeSpan"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getQueryCacheLifeSpan</span> (line <span class="line-number">1980</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the life span of the query cache the Query object is using.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The life span in seconds.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getQueryCacheLifeSpan
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetQueryComponent" id="getQueryComponent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getQueryComponent</span> (line <span class="line-number">747</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getQueryComponent  get the declaration for given component alias</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the alias declaration</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getQueryComponent
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$componentAlias</span><span class="var-description">: the component alias the retrieve the declaration from</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetQueryComponents" id="getQueryComponents"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getQueryComponents</span> (line <span class="line-number">1805</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the components of this query.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getQueryComponents
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetResultCacheDriver" id="getResultCacheDriver"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getResultCacheDriver</span> (line <span class="line-number">1991</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getResultCacheDriver  returns the cache driver used for caching result sets</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> cache driver</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|boolean|null</span>
+		<span class="method-name">
+			getResultCacheDriver
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetResultCacheHash" id="getResultCacheHash"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getResultCacheHash</span> (line <span class="line-number">904</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the result cache hash/key. Returns key set with useResultCache()  or generates a unique key from the query automatically.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getResultCacheHash
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetResultCacheLifeSpan" id="getResultCacheLifeSpan"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getResultCacheLifeSpan</span> (line <span class="line-number">1954</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the life span of the result cache in seconds.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getResultCacheLifeSpan
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRoot" id="getRoot"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRoot</span> (line <span class="line-number">809</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getRoot  returns the root component for this object</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> root components table</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+		<span class="method-name">
+			getRoot
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRootAlias" id="getRootAlias"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRootAlias</span> (line <span class="line-number">782</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getRootAlias  returns the alias of the root component</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getRootAlias
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRootDeclaration" id="getRootDeclaration"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRootDeclaration</span> (line <span class="line-number">797</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getRootDeclaration  returns the root declaration</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getRootDeclaration
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSqlParts" id="getSqlParts"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSqlParts</span> (line <span class="line-number">1815</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the SQL parts.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The parts</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getSqlParts
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSqlQuery" id="getSqlQuery"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSqlQuery</span> (line <span class="line-number">2128</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the SQL query that corresponds to this query object.</p>
+<p class="description"><p>The returned SQL syntax depends on the connection driver that is used  by this query object at the time of this method call.</p></p>
+	<ul class="tags">
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSqlQuery
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Query/Doctrine_Query.html#methodgetSqlQuery">Doctrine_Query::getSqlQuery()</a>
+								: builds the sql query from the given parameters and applies things such as  column aggregation inheritance and limit subqueries if needed
+							</li>
+					<li>
+				<a href="../../Doctrine/RawSql/Doctrine_RawSql.html#methodgetSqlQuery">Doctrine_RawSql::getSqlQuery()</a>
+								: getSqlQuery  builds the sql query.
+							</li>
+				</ul>
+	</div>
+<a name="methodgetSqlQueryPart" id="getSqlQueryPart"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSqlQueryPart</span> (line <span class="line-number">388</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getSqlQueryPart  gets an SQL query part from the SQL query part array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">throws:</span> Doctrine_Query_Exception   if trying to set unknown query part</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getSqlQueryPart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$part</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: the name of the query part to be set</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$part</span><span class="var-description">: query part string</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSqlTableAlias" id="getSqlTableAlias"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSqlTableAlias</span> (line <span class="line-number">671</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getSqlTableAlias  some database such as Oracle need the identifier lengths to be &lt; ~30 chars  hence Doctrine creates as short identifier aliases as possible</p>
+<p class="description"><p>this method is used for the creation of short table aliases, its also  smart enough to check if an alias already exists for given component (componentAlias)</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the generated / fetched short alias</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getSqlTableAlias
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$componentAlias</span><span class="var-description">: the alias for the query component to search table alias for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span><span class="var-description">: the table name from which the table alias is being created</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSqlTableAliasSeed" id="getSqlTableAliasSeed"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSqlTableAliasSeed</span> (line <span class="line-number">720</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getSqlTableAliasSeed  returns the alias seed for given table alias</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> table alias seed</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getSqlTableAliasSeed
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$sqlTableAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableAlias</span><span class="var-description">: table alias that identifies the alias seed</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$sqlTableAlias</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTableAliasMap" id="getTableAliasMap"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTableAliasMap</span> (line <span class="line-number">342</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getTableAliasMap  returns all table aliases</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> table aliases as an array</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getTableAliasMap
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetType" id="getType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getType</span> (line <span class="line-number">1834</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getType</p>
+<p class="description"><p>returns the type of this query object  by default the type is Doctrine_Query_Abstract::SELECT but if update() or delete()  are being called the type is Doctrine_Query_Abstract::UPDATE and Doctrine_Query_Abstract::DELETE,  respectively</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> return the query type</li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constDELETE">Doctrine_Query_Abstract::DELETE</a></li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constUPDATE">Doctrine_Query_Abstract::UPDATE</a></li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#constSELECT">Doctrine_Query_Abstract::SELECT</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getType
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetView" id="getView"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getView</span> (line <span class="line-number">600</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getView  returns the view associated with this query object (if any)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the view associated with this query object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/View/Doctrine_View.html">Doctrine_View</a></span>
+		<span class="method-name">
+			getView
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgroupBy" id="groupBy"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">groupBy</span> (line <span class="line-number">1688</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">groupBy  sets the GROUP BY part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			groupBy
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$groupby</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$groupby</span><span class="var-description">: Query GROUP BY part</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasAliasDeclaration" id="hasAliasDeclaration"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasAliasDeclaration</span> (line <span class="line-number">735</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">hasAliasDeclaration  whether or not this object has a declaration for given component alias</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			hasAliasDeclaration
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$componentAlias</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$componentAlias</span><span class="var-description">: the component alias the retrieve the declaration from</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasSqlTableAlias" id="hasSqlTableAlias"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasSqlTableAlias</span> (line <span class="line-number">331</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">hasSqlTableAlias  whether or not this object has given tableAlias</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if this object has given alias, otherwise false</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			hasSqlTableAlias
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$sqlTableAlias</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tableAlias</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableAlias</span><span class="var-description">: the table alias to be checked</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$sqlTableAlias</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhaving" id="having"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">having</span> (line <span class="line-number">1722</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">having  sets the HAVING part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			having
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$having</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$having</span><span class="var-description">: Query HAVING part</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: an array of parameters or a simple scalar</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinnerJoin" id="innerJoin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">innerJoin</span> (line <span class="line-number">1652</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">innerJoin  appends an INNER JOIN to the FROM part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			innerJoin
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$join</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$join</span><span class="var-description">: Query INNER JOIN</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisLimitSubqueryUsed" id="isLimitSubqueryUsed"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isLimitSubqueryUsed</span> (line <span class="line-number">610</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">limitSubqueryUsed</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isLimitSubqueryUsed
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodleftJoin" id="leftJoin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">leftJoin</span> (line <span class="line-number">1670</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">leftJoin  appends a LEFT JOIN to the FROM part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			leftJoin
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$join</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$join</span><span class="var-description">: Query LEFT JOIN</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlimit" id="limit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">limit</span> (line <span class="line-number">1756</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">limit  sets the Query query limit</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			limit
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$limit</span><span class="var-description">: limit to be used for limiting the query results</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodoffset" id="offset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">offset</span> (line <span class="line-number">1768</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">offset  sets the Query query offset</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			offset
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$offset</span><span class="var-description">: offset to be used for paginating the query</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodorderBy" id="orderBy"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">orderBy</span> (line <span class="line-number">1744</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the ORDER BY part of the query.</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodorderBy">orderBy</a><span class="src-sym">(</span><span class="src-str">'u.name'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$query</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodorderBy">orderBy</a><span class="src-sym">(</span><span class="src-str">'u.birthDate&nbsp;DESC'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			orderBy
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$orderby</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$orderby</span><span class="var-description">: Query ORDER BY part</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodorWhere" id="orWhere"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">orWhere</span> (line <span class="line-number">1328</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds conditions to the WHERE part of the query</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodorWhere">orWhere</a><span class="src-sym">(</span><span class="src-str">'u.role&nbsp;=&nbsp;?'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'admin'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			orWhere
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$where</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$where</span><span class="var-description">: Query WHERE part</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: An array of parameters or a simple scalar</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodorWhereIn" id="orWhereIn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">orWhereIn</span> (line <span class="line-number">1394</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds IN condition to the query WHERE part, appending it with an OR operator.</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodorWhereIn">orWhereIn</a><span class="src-sym">(</span><span class="src-str">'u.id'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-num">10</span><span class="src-sym">,&nbsp;</span><span class="src-num">23</span><span class="src-sym">))</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodorWhereIn">orWhereIn</a><span class="src-sym">(</span><span class="src-str">'u.id'</span><span class="src-sym">,&nbsp;</span><span class="src-num">44</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;will&nbsp;select&nbsp;all&nbsp;record&nbsp;with&nbsp;id&nbsp;equal&nbsp;to&nbsp;10,&nbsp;23&nbsp;or&nbsp;44</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			orWhereIn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$not</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expr</span><span class="var-description">: The operand of the IN</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: An array of parameters or a simple scalar</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$not</span><span class="var-description">: Whether or not to use NOT in front of IN</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodorWhereNotIn" id="orWhereNotIn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">orWhereNotIn</span> (line <span class="line-number">1472</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds NOT IN condition to the query WHERE part</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			orWhereNotIn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expr</span><span class="var-description">: The operand of the NOT IN</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: An array of parameters or a simple scalar</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparseDqlQuery" id="parseDqlQuery"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">parseDqlQuery</span> (line <span class="line-number">2137</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">parseDqlQuery  parses a dql query</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html">Doctrine_Query_Abstract</a></span>
+		<span class="method-name">
+			parseDqlQuery
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: query to be parsed</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Query/Doctrine_Query.html#methodparseDqlQuery">Doctrine_Query::parseDqlQuery()</a>
+								: DQL PARSER
+							</li>
+					<li>
+				<a href="../../Doctrine/RawSql/Doctrine_RawSql.html#methodparseDqlQuery">Doctrine_RawSql::parseDqlQuery()</a>
+								: parseDqlQuery  parses an sql query and adds the parts to internal array.
+							</li>
+				</ul>
+	</div>
+<a name="methodpreQuery" id="preQuery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">preQuery</span> (line <span class="line-number">1163</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Blank hook methods which can be implemented in Doctrine_Query child classes</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			preQuery
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodremoveDqlQueryPart" id="removeDqlQueryPart"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">removeDqlQueryPart</span> (line <span class="line-number">477</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">removeDqlQueryPart  removes a dql query part from the dql query part array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">throws:</span> Doctrine_Query_Exception   if trying to remove unknown query part</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			removeDqlQueryPart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: the name of the query part to be removed</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveSqlQueryPart" id="removeSqlQueryPart"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">removeSqlQueryPart</span> (line <span class="line-number">454</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">removeSqlQueryPart  removes a query part from the query part array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">throws:</span> Doctrine_Query_Exception   if trying to remove unknown query part</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			removeSqlQueryPart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: the name of the query part to be removed</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodselect" id="select"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">select</span> (line <span class="line-number">1533</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">select  sets the SELECT part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			select
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$select</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$select</span><span class="var-description">: Query SELECT part</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodset" id="set"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">set</span> (line <span class="line-number">1610</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">set  sets the SET part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			set
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">null</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$update</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$update</span><span class="var-description">: Query UPDATE part</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$key</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$value</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetConnection" id="setConnection"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setConnection</span> (line <span class="line-number">303</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the connection this query object should use</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setConnection
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>&nbsp;<span class="var-name">$connection</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Connection/Doctrine_Connection.html">Doctrine_Connection</a></span>
+				<span class="var-name">$connection</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetDisableLimitSubquery" id="setDisableLimitSubquery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setDisableLimitSubquery</span> (line <span class="line-number">2167</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allows you to set the disableLimitSubquery property -- setting this to true will  restrict the query object from using the limit sub query method of tranversing many relationships.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setDisableLimitSubquery
+		</span>
+					(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$disableLimitSubquery</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$disableLimitSubquery</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetHydrationMode" id="setHydrationMode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setHydrationMode</span> (line <span class="line-number">1796</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setHydrationMode
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$hydrationMode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$hydrationMode</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOption" id="setOption"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setOption</span> (line <span class="line-number">316</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setOption</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			setOption
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: option name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: option value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetParams" id="setParams"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setParams</span> (line <span class="line-number">533</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setParams</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setParams
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetQueryCacheLifeSpan" id="setQueryCacheLifeSpan"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setQueryCacheLifeSpan</span> (line <span class="line-number">1965</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setQueryCacheLifeSpan</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			setQueryCacheLifeSpan
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeToLive</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeToLive</span><span class="var-description">: how long the cache entry is valid</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetResultCacheHash" id="setResultCacheHash"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setResultCacheHash</span> (line <span class="line-number">1868</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the result cache hash to be used for storing the results in the cache driver</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setResultCacheHash
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$resultCacheHash</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$resultCacheHash</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetResultCacheLifeSpan" id="setResultCacheLifeSpan"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setResultCacheLifeSpan</span> (line <span class="line-number">1939</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setResultCacheLifeSpan</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			setResultCacheLifeSpan
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeToLive</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeToLive</span><span class="var-description">: how long the cache entry is valid (in seconds)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSqlQueryPart" id="setSqlQueryPart"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setSqlQueryPart</span> (line <span class="line-number">405</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setSqlQueryPart  sets an SQL query part in the SQL query part array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">throws:</span> Doctrine_Query_Exception   if trying to set unknown query part</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			setSqlQueryPart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$part</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: the name of the query part to be set</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$part</span><span class="var-description">: query part string</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetView" id="setView"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setView</span> (line <span class="line-number">589</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setView  sets a database view this query object uses  this method should only be called internally by doctrine</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setView
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/View/Doctrine_View.html">Doctrine_View</a></span>&nbsp;<span class="var-name">$view</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/View/Doctrine_View.html">Doctrine_View</a></span>
+				<span class="var-name">$view</span><span class="var-description">: database view</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdate" id="update"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">update</span> (line <span class="line-number">1594</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">update  sets the UPDATE part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			update
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$from</span> = <span class="var-default">null</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$update</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$update</span><span class="var-description">: Query UPDATE part</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$from</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduseQueryCache" id="useQueryCache"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">useQueryCache</span> (line <span class="line-number">1895</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">useQueryCache</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			useQueryCache
+		</span>
+					([<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|bool</span>&nbsp;<span class="var-name">$driver</span> = <span class="var-default">true</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeToLive</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|bool</span>
+				<span class="var-name">$driver</span><span class="var-description">: cache driver</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeToLive</span><span class="var-description">: how long the cache entry is valid</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoduseResultCache" id="useResultCache"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">useResultCache</span> (line <span class="line-number">1847</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">useResultCache</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			useResultCache
+		</span>
+					([<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|bool</span>&nbsp;<span class="var-name">$driver</span> = <span class="var-default">true</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeToLive</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$resultCacheHash</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a>|bool</span>
+				<span class="var-name">$driver</span><span class="var-description">: cache driver</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeToLive</span><span class="var-description">: how long the cache entry is valid</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$resultCacheHash</span><span class="var-description">: The key to use for storing the queries result cache entry</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwhere" id="where"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">where</span> (line <span class="line-number">1701</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">where  sets the WHERE part of the query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			where
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$where</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$join</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$join</span><span class="var-description">: Query WHERE part</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: an array of parameters or a simple scalar</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$where</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwhereIn" id="whereIn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">whereIn</span> (line <span class="line-number">1351</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds IN condition to the query WHERE part. Alias to @see andWhereIn().</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			whereIn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$not</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expr</span><span class="var-description">: the operand of the IN</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: an array of parameters or a simple scalar</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$not</span><span class="var-description">: whether or not to use NOT in front of IN</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwhereNotIn" id="whereNotIn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">whereNotIn</span> (line <span class="line-number">1447</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds NOT IN condition to the query WHERE part.</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$q</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Query/Doctrine_Query_Abstract.html#methodwhereNotIn">whereNotIn</a><span class="src-sym">(</span><span class="src-str">'u.id'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-num">10</span><span class="src-sym">,&nbsp;</span><span class="src-num">20</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-comm">//&nbsp;will&nbsp;exclude&nbsp;users&nbsp;with&nbsp;id&nbsp;10&nbsp;and&nbsp;20&nbsp;from&nbsp;the&nbsp;select</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			whereNotIn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$expr</span><span class="var-description">: the operand of the NOT IN</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$params</span><span class="var-description">: an array of parameters or a simple scalar</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_addDqlQueryPart" id="_addDqlQueryPart"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_addDqlQueryPart</span> (line <span class="line-number">2050</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a DQL part to the internal parts collection.</p>
+<p class="description"><p>This method add the part specified to the array named by $queryPartName.  Most part names support multiple parts addition.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $_dqlParts;</li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Query/Doctrine_Query.html#methodgetDqlPart">Doctrine_Query::getDqlPart()</a></li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_addDqlQueryPart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryPartName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$queryPart</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$queryPartName</span><span class="var-description">: The name of the query part.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$queryPart</span><span class="var-description">: The actual query part to add.</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$append</span><span class="var-description">: Whether to append $queryPart to already existing                                parts under the same $queryPartName. Defaults to FALSE                                (previously added parts with the same name get overridden).</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/RawSql/Doctrine_RawSql.html#method_addDqlQueryPart">Doctrine_RawSql::_addDqlQueryPart()</a>
+								: Adds a DQL query part. Overrides Doctrine_Query_Abstract::_addDqlQueryPart().
+							</li>
+				</ul>
+	</div>
+<a name="method_constructQueryFromCache" id="_constructQueryFromCache"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_constructQueryFromCache</span> (line <span class="line-number">1175</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructs the query from the cached form.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The custom component that was cached together with the essential                 query data. This can be either a result set (result caching)                 or an SQL query string (query caching).</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_constructQueryFromCache
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$cached</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$cached</span><span class="var-description">: The cached query, in a serialized form.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_execute" id="_execute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_execute</span> (line <span class="line-number">919</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_execute</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The executed PDOStatement.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">PDOStatement</span>
+		<span class="method-name">
+			_execute
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getDqlCallback" id="_getDqlCallback"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getDqlCallback</span> (line <span class="line-number">1066</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the dql call back for this query</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_getDqlCallback
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method_getDqlCallbackComponents" id="_getDqlCallbackComponents"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getDqlCallbackComponents</span> (line <span class="line-number">1136</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of components to execute the query callbacks for</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			_getDqlCallbackComponents
+		</span>
+					([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_getParser" id="_getParser"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_getParser</span> (line <span class="line-number">2104</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_getParser  parser lazy-loader</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> Doc/Description: What is the parameter for? Which parsers are available?</li>
+				<li><span class="field">throws:</span> Doctrine_Query_Exception     if unknown parser name given</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query_Part.html">Doctrine_Query_Part</a></span>
+		<span class="method-name">
+			_getParser
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_hasDqlQueryPart" id="_hasDqlQueryPart"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_hasDqlQueryPart</span> (line <span class="line-number">2031</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if there's at least one DQL part defined to the internal parts collection.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			_hasDqlQueryPart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryPartName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$queryPartName</span><span class="var-description">: The name of the query part.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_preQuery" id="_preQuery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_preQuery</span> (line <span class="line-number">1101</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Pre query method which invokes the pre*Query() methods on the model instance or any attached  record listeners</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_preQuery
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_processDqlQueryPart" id="_processDqlQueryPart"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_processDqlQueryPart</span> (line <span class="line-number">2077</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">_processDqlQueryPart  parses given query part</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> this object</li>
+				<li><span class="field">todo:</span> Better description. &quot;parses given query part&quot; ??? Then wheres the difference        between process/parseQueryPart? I suppose this does something different.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			_processDqlQueryPart
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$queryPartName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$queryParts</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$queryPartName</span><span class="var-description">: the name of the query part</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$queryParts</span><span class="var-description">: an array containing the query part data</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_processWhereIn" id="_processWhereIn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_processWhereIn</span> (line <span class="line-number">1411</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_processWhereIn
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$expr</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$not</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$expr</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$params</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$not</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__toString" id="__toString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__toString</span> (line <span class="line-number">2146</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">toString magic call  this method is automatically called when Doctrine_Query object is trying to be used as a string  So, it it converted into its DQL correspondant</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> DQL string</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			__toString
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constCREATE" id="CREATE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">CREATE</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">constant for CREATE queries</p>
+	
+	
+</div>
+<a name="constDELETE" id="DELETE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DELETE</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">constant for DELETE queries</p>
+	
+	
+</div>
+<a name="constINSERT" id="INSERT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">INSERT</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">constant for INSERT queries</p>
+	
+	
+</div>
+<a name="constSELECT" id="SELECT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">SELECT</span>
+			 = <span class="const-default"> 0</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">constant for SELECT queries</p>
+	
+	
+</div>
+<a name="constSTATE_CLEAN" id="STATE_CLEAN"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STATE_CLEAN</span>
+			 = <span class="const-default"> 1</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A query object is in CLEAN state when it has NO unparsed/unprocessed DQL parts.</p>
+	
+	
+</div>
+<a name="constSTATE_DIRECT" id="STATE_DIRECT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STATE_DIRECT</span>
+			 = <span class="const-default"> 3</span>
+			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A query is in DIRECT state when ... ?</p>
+	
+	
+</div>
+<a name="constSTATE_DIRTY" id="STATE_DIRTY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STATE_DIRTY</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A query object is in state DIRTY when it has DQL parts that have not yet been  parsed/processed.</p>
+	
+	
+</div>
+<a name="constSTATE_LOCKED" id="STATE_LOCKED"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STATE_LOCKED</span>
+			 = <span class="const-default"> 4</span>
+			(line <span class="line-number">85</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A query object is on LOCKED state when ... ?</p>
+	
+	
+</div>
+<a name="constUPDATE" id="UPDATE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">UPDATE</span>
+			 = <span class="const-default"> 2</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">constant for UPDATE queries</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:27 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

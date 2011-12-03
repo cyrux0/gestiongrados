@@ -1,0 +1,3423 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Doctrine_Connection</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Doctrine_Connection</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li>Countable (internal interface)</li><li>IteratorAggregate (internal interface)</li><li>Serializable (internal interface)</li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Doctrine_Connection</p>
+<p class="description"><p>A wrapper layer on top of PDO / Doctrine_Adapter</p><p>Doctrine_Connection is the heart of any Doctrine based application.</p><p><ol><li>Event listeners
+    An easy to use, pluggable eventlistener architecture. Aspects such as
+    logging, query profiling and caching can be easily implemented through
+    the use of these listeners</li></ol>  2. Lazy-connecting     Creating an instance of Doctrine_Connection does not connect     to database. Connecting to database is only invoked when actually needed     (for example when query() is being called)</p><p>3. Convenience methods     Doctrine_Connection provides many convenience methods such as fetchAll(), fetchOne() etc.</p><p>4. Modular structure     Higher level functionality such as schema importing, exporting, sequence handling etc.     is divided into modules. For a full list of connection modules see     Doctrine_Connection::$_modules</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Konsta Vesterinen &lt;<a href="mailto:kvesteri@cc.hut.fi">kvesteri@cc.hut.fi</a>&gt;</li>
+				<li><span class="field">author:</span> Lukas Smith &lt;<a href="mailto:smith@pooteeweet.org">smith@pooteeweet.org</a>&gt; (MDB2 library)</li>
+				<li><span class="field">version:</span> $Revision: 7490 $</li>
+				<li><span class="field">link:</span> www.doctrine-project.org</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">since:</span> 1.0</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_helpers---Doctrine---Connection.php.html">/helpers/Doctrine/Connection.php</a> (line <span class="field">56</span>)
+		</p>
+		
+				
+		<pre><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a>
+   |
+   --<a href="../../Doctrine/Configurable/Doctrine_Configurable.html">Doctrine_Configurable</a>
+      |
+      --Doctrine_Connection</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../../Doctrine/Connection/Doctrine_Connection_Common.html">Doctrine_Connection_Common</a></td>
+					<td>
+											standard connection, the parent of pgsql, mysql and sqlite
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																																<div class="var-title">
+					<span class="var-type">$dbh</span>
+					<a href="#$dbh" title="details" class="var-name">$dbh</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$driverName" title="details" class="var-name">$driverName</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">boolean</span>
+					<a href="#$isConnected" title="details" class="var-name">$isConnected</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$options" title="details" class="var-name">$options</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$pendingAttributes" title="details" class="var-name">$pendingAttributes</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$properties" title="details" class="var-name">$properties</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$serverInfo" title="details" class="var-name">$serverInfo</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$supported" title="details" class="var-name">$supported</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$tables" title="details" class="var-name">$tables</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$_count" title="details" class="var-name">$_count</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$_name" title="details" class="var-name">$_name</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$_usedNames" title="details" class="var-name">$_usedNames</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																												<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#getAvailableDrivers" title="details" class="method-name">getAvailableDrivers</a>
+										()
+									</div>
+																																																																																								<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#getSupportedDrivers" title="details" class="method-name">getSupportedDrivers</a>
+										()
+									</div>
+																																																																																																																																																																																																																																																																																
+												<div class="method-definition">
+											<span class="method-result">Doctrine_Connection</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../../Doctrine/Manager/Doctrine_Manager.html">Doctrine_Manager</a></span>&nbsp;<span class="var-name">$manager</span>, <span class="var-type">PDO|<a href="../../Doctrine/Adapter/Doctrine_Adapter_Interface.html">Doctrine_Adapter_Interface</a></span>&nbsp;<span class="var-name">$adapter</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$user</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$pass</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#addTable" title="details" class="method-name">addTable</a>
+											(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#beginInternalTransaction" title="details" class="method-name">beginInternalTransaction</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$savepoint</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#beginTransaction" title="details" class="method-name">beginTransaction</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$savepoint</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clear" title="details" class="method-name">clear</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#close" title="details" class="method-name">close</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#commit" title="details" class="method-name">commit</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$savepoint</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#connect" title="details" class="method-name">connect</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#convertBooleans" title="details" class="method-name">convertBooleans</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$item</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#count" title="details" class="method-name">count</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+										<a href="#create" title="details" class="method-name">create</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#createDatabase" title="details" class="method-name">createDatabase</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+										<a href="#createQuery" title="details" class="method-name">createQuery</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+											(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$identifier</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#driverName" title="details" class="method-name">driverName</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#dropDatabase" title="details" class="method-name">dropDatabase</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#errorCode" title="details" class="method-name">errorCode</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#errorInfo" title="details" class="method-name">errorInfo</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#evictTables" title="details" class="method-name">evictTables</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#exec" title="details" class="method-name">exec</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">PDOStatement|<a href="../../Doctrine/Adapter/Doctrine_Adapter_Statement.html">Doctrine_Adapter_Statement</a></span>
+										<a href="#execute" title="details" class="method-name">execute</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#fetchAll" title="details" class="method-name">fetchAll</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#fetchArray" title="details" class="method-name">fetchArray</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#fetchAssoc" title="details" class="method-name">fetchAssoc</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#fetchBoth" title="details" class="method-name">fetchBoth</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#fetchColumn" title="details" class="method-name">fetchColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$colnum</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#fetchOne" title="details" class="method-name">fetchOne</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$colnum</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#fetchRow" title="details" class="method-name">fetchRow</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#flush" title="details" class="method-name">flush</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#generateUniqueIndexName" title="details" class="method-name">generateUniqueIndexName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fields</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#generateUniqueRelationForeignKeyName" title="details" class="method-name">generateUniqueRelationForeignKeyName</a>
+											(<span class="var-type"><a href="../../Doctrine/Relation/Doctrine_Relation.html">Doctrine_Relation</a></span>&nbsp;<span class="var-name">$relation</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#getAttribute" title="details" class="method-name">getAttribute</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$attribute</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">PDO</span>
+										<a href="#getDbh" title="details" class="method-name">getDbh</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getDriverName" title="details" class="method-name">getDriverName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">ArrayIterator</span>
+										<a href="#getIterator" title="details" class="method-name">getIterator</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Manager/Doctrine_Manager.html">Doctrine_Manager</a></span>
+										<a href="#getManager" title="details" class="method-name">getManager</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getName" title="details" class="method-name">getName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getOption" title="details" class="method-name">getOption</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$option</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getOptions" title="details" class="method-name">getOptions</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a></span>
+										<a href="#getQueryCacheDriver" title="details" class="method-name">getQueryCacheDriver</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a></span>
+										<a href="#getResultCacheDriver" title="details" class="method-name">getResultCacheDriver</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+										<a href="#getTable" title="details" class="method-name">getTable</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getTables" title="details" class="method-name">getTables</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTmpConnection" title="details" class="method-name">getTmpConnection</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$info</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getTransactionLevel" title="details" class="method-name">getTransactionLevel</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#hasTable" title="details" class="method-name">hasTable</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#incrementQueryCount" title="details" class="method-name">incrementQueryCount</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#insert" title="details" class="method-name">insert</a>
+											(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fields</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isConnected" title="details" class="method-name">isConnected</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#lastInsertId" title="details" class="method-name">lastInsertId</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#modifyLimitQuery" title="details" class="method-name">modifyLimitQuery</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isManip</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#modifyLimitSubquery" title="details" class="method-name">modifyLimitSubquery</a>
+											(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$rootTable</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isManip</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#prepare" title="details" class="method-name">prepare</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Collection/Doctrine_Collection.html">Doctrine_Collection</a></span>
+										<a href="#query" title="details" class="method-name">query</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$hydrationMode</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a>|false</span>
+										<a href="#queryOne" title="details" class="method-name">queryOne</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#quote" title="details" class="method-name">quote</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$input</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#quoteIdentifier" title="details" class="method-name">quoteIdentifier</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$checkOption</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#quoteMultipleIdentifier" title="details" class="method-name">quoteMultipleIdentifier</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$arr</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$checkOption</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#replace" title="details" class="method-name">replace</a>
+											(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$keys</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#rethrowException" title="details" class="method-name">rethrowException</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$invoker</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$query</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#rollback" title="details" class="method-name">rollback</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$savepoint</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Connection/Doctrine_Connection_Statement.html">Doctrine_Connection_Statement</a></span>
+										<a href="#select" title="details" class="method-name">select</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">0</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#serialize" title="details" class="method-name">serialize</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#setAttribute" title="details" class="method-name">setAttribute</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$attribute</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setDateFormat" title="details" class="method-name">setDateFormat</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setName" title="details" class="method-name">setName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setOption" title="details" class="method-name">setOption</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">PDOStatement|<a href="../../Doctrine/Adapter/Doctrine_Adapter_Statement.html">Doctrine_Adapter_Statement</a></span>
+										<a href="#standaloneQuery" title="details" class="method-name">standaloneQuery</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#supports" title="details" class="method-name">supports</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$feature</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#unserialize" title="details" class="method-name">unserialize</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$serialized</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#update" title="details" class="method-name">update</a>
+											(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$identifier</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_generateUniqueName" title="details" class="method-name">_generateUniqueName</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$type</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$parts</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'%s'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$maxLength</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span>
+										<a href="#__get" title="details" class="method-name">__get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#__toString" title="details" class="method-name">__toString</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$dbh" id="$dbh"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">$dbh</span>
+			<span class="var-name">$dbh</span>
+						(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> the database handler</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$driverName" id="$driverName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$driverName</span>
+						(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The name of this connection driver.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mock.html#var$driverName">Doctrine_Connection_Mock::$driverName</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html#var$driverName">Doctrine_Connection_Mssql::$driverName</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mysql.html#var$driverName">Doctrine_Connection_Mysql::$driverName</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Oracle.html#var$driverName">Doctrine_Connection_Oracle::$driverName</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Pgsql.html#var$driverName">Doctrine_Connection_Pgsql::$driverName</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Sqlite.html#var$driverName">Doctrine_Connection_Sqlite::$driverName</a>
+							</li>
+				</ul>
+		
+
+</div>
+<a name="var$isConnected" id="$isConnected"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$isConnected</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> whether or not a connection has been established</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$options" id="$options"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$options</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">164</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$pendingAttributes" id="$pendingAttributes"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$pendingAttributes</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">102</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> An array of pending attributes. When setting attributes                                           no connection is needed. When connected all the pending                                           attributes are passed to the underlying adapter (usually PDO) instance.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$properties" id="$properties"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$properties</span>
+			 = <span class="var-default">array('sql_comments'        =&gt; array(array('start' =&gt; '--', 'end' =&gt; &quot;\n&quot;, 'escape' =&gt; false),array('start'=&gt;'/*','end'=&gt;'*/','escape'=&gt;false)),'identifier_quoting'=&gt;array('start'=&gt;'&quot;','end'=&gt;'&quot;','escape'=&gt;'&quot;'),'string_quoting'=&gt;array('start'=&gt;&quot;'&quot;,'end'=&gt;&quot;'&quot;,'escape'=&gt;false,'escape_pattern'=&gt;false),'wildcards'=&gt;array('%','_'),'varchar_max_length'=&gt;255,'sql_file_delimiter'=&gt;&quot;;\n&quot;,'max_identifier_length'=&gt;64,)</span>			(line <span class="line-number">146</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> an array of connection properties</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$serverInfo" id="$serverInfo"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$serverInfo</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">162</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$supported" id="$supported"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$supported</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">95</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> an array containing all features this driver supports,                                           keys representing feature names and values as                                           one of the following (true, false, 'emulated')</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$tables" id="$tables"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$tables</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> an array containing all the initialized Doctrine_Table objects                                           keys representing Doctrine_Table component names and values as Doctrine_Table objects</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_count" id="$_count"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_count</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number">176</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_name" id="$_name"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_name</span>
+						(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">$_name</p>
+<p class="description"><p>Name of the connection</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_usedNames" id="$_usedNames"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$_usedNames</span>
+			 = <span class="var-default">array(<br />            'foreign_keys' =&gt; array(),'indexes'=&gt;array())</span>			(line <span class="line-number">181</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">var:</span> array of foreign key names that have been used</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html">Doctrine_Configurable</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#var$attributes">Doctrine_Configurable::$attributes</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#var$parent">Doctrine_Configurable::$parent</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#var$_impl">Doctrine_Configurable::$_impl</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#var$_params">Doctrine_Configurable::$_params</a></span><br>
+							</span>
+											</blockquote> 
+									<p>Inherited from <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_locator">Doctrine_Locator_Injectable::$_locator</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_null">Doctrine_Locator_Injectable::$_null</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#var$_resources">Doctrine_Locator_Injectable::$_resources</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetAvailableDrivers" id="getAvailableDrivers"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getAvailableDrivers</span> (line <span class="line-number">309</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns an array of available PDO drivers</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAvailableDrivers
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSupportedDrivers" id="getSupportedDrivers"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getSupportedDrivers</span> (line <span class="line-number">319</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of supported drivers by Doctrine</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getSupportedDrivers
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">192</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">the constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Doctrine_Connection</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Manager/Doctrine_Manager.html">Doctrine_Manager</a></span>&nbsp;<span class="var-name">$manager</span>, <span class="var-type">PDO|<a href="../../Doctrine/Adapter/Doctrine_Adapter_Interface.html">Doctrine_Adapter_Interface</a></span>&nbsp;<span class="var-name">$adapter</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$user</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$pass</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Manager/Doctrine_Manager.html">Doctrine_Manager</a></span>
+				<span class="var-name">$manager</span><span class="var-description">: the manager object</span>			</li>
+					<li>
+				<span class="var-type">PDO|<a href="../../Doctrine/Adapter/Doctrine_Adapter_Interface.html">Doctrine_Adapter_Interface</a></span>
+				<span class="var-name">$adapter</span><span class="var-description">: database driver</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$user</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$pass</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mock.html#method__construct">Doctrine_Connection_Mock::__construct()</a>
+								: the constructor
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html#method__construct">Doctrine_Connection_Mssql::__construct()</a>
+								: the constructor
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mysql.html#method__construct">Doctrine_Connection_Mysql::__construct()</a>
+								: the constructor
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Oracle.html#method__construct">Doctrine_Connection_Oracle::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Pgsql.html#method__construct">Doctrine_Connection_Pgsql::__construct()</a>
+								: the constructor
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Sqlite.html#method__construct">Doctrine_Connection_Sqlite::__construct()</a>
+								: the constructor
+							</li>
+				</ul>
+	</div>
+<a name="methodaddTable" id="addTable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addTable</span> (line <span class="line-number">1176</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">addTable  adds a Doctrine_Table object into connection registry</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			addTable
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$table</span>
+				<span class="var-name">$table</span><span class="var-description">: a Doctrine_Table object to be added into registry</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbeginInternalTransaction" id="beginInternalTransaction"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">beginInternalTransaction</span> (line <span class="line-number">1375</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			beginInternalTransaction
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$savepoint</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$savepoint</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbeginTransaction" id="beginTransaction"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">beginTransaction</span> (line <span class="line-number">1370</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">beginTransaction  Start a transaction or set a savepoint.</p>
+<p class="description"><p>if trying to set a savepoint and there is no active transaction  a new transaction is being started</p><p>Listeners: onPreTransactionBegin, onTransactionBegin</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> current transaction nesting level</li>
+				<li><span class="field">throws:</span> Doctrine_Transaction_Exception   if the transaction fails at database level</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			beginTransaction
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$savepoint</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$savepoint</span><span class="var-description">: name of a savepoint to set</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclear" id="clear"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">clear</span> (line <span class="line-number">1236</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">clear  clears all repositories</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clear
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodclose" id="close"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">close</span> (line <span class="line-number">1262</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">close  closes the connection</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			close
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcommit" id="commit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">commit</span> (line <span class="line-number">1393</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">commit  Commit the database changes done during a transaction that is in  progress or release a savepoint. This function may only be called when  auto-committing is disabled, otherwise it will fail.</p>
+<p class="description"><p>Listeners: onPreTransactionCommit, onTransactionCommit</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> false if commit couldn't be performed, true otherwise</li>
+				<li><span class="field">throws:</span> Doctrine_Validator_Exception     if the transaction fails due to record validations</li>
+				<li><span class="field">throws:</span> Doctrine_Transaction_Exception   if the transaction fails at PDO level</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			commit
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$savepoint</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$savepoint</span><span class="var-description">: name of a savepoint to release</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodconnect" id="connect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">connect</span> (line <span class="line-number">453</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">connect  connects into database</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			connect
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mysql.html#methodconnect">Doctrine_Connection_Mysql::connect()</a>
+								: Overrides connect Method, to add specific attributes  PDO emulate prepares is required to avoid bugs on mysql &lt; 5.1  when trying to prepare DROP DATABASE or CREATE DATABASE statements
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Sqlite.html#methodconnect">Doctrine_Connection_Sqlite::connect()</a>
+								: initializes database functions missing in sqlite
+							</li>
+				</ul>
+	</div>
+<a name="methodconvertBooleans" id="convertBooleans"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">convertBooleans</span> (line <span class="line-number">762</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">convertBooleans  some drivers need the boolean values to be converted into integers  when using DQL API</p>
+<p class="description"><p>This method takes care of that conversion</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			convertBooleans
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$item</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$item</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Pgsql.html#methodconvertBooleans">Doctrine_Connection_Pgsql::convertBooleans()</a>
+								: convertBoolean  some drivers need the boolean values to be converted into integers  when using DQL API
+							</li>
+				</ul>
+	</div>
+<a name="methodcount" id="count"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">count</span> (line <span class="line-number">1164</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns the count of initialized table objects</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			count
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Countable::count</dt>
+					</dl>
+			
+	</div>
+<a name="methodcreate" id="create"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">create</span> (line <span class="line-number">1195</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">create  creates a record</p>
+<p class="description"><p>create                       creates a record</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Doctrine_Record object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a></span>
+		<span class="method-name">
+			create
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: component name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateDatabase" id="createDatabase"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">createDatabase</span> (line <span class="line-number">1424</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">createDatabase</p>
+<p class="description"><p>Issue create database command for this instance of Doctrine_Connection</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Doctrine_Exception catched in case of failure</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			createDatabase
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Sqlite.html#methodcreateDatabase">Doctrine_Connection_Sqlite::createDatabase()</a>
+								: createDatabase
+							</li>
+				</ul>
+	</div>
+<a name="methodcreateQuery" id="createQuery"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">createQuery</span> (line <span class="line-number">1205</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a new Doctrine_Query object that operates on this connection.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></span>
+		<span class="method-name">
+			createQuery
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">delete</span> (line <span class="line-number">606</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">deletes table row(s) matching the specified identifier</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of affected rows</li>
+				<li><span class="field">throws:</span> Doctrine_Connection_Exception    if something went wrong at the database level</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			delete
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$identifier</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: The table to delete data from</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$identifier</span><span class="var-description">: An associateve array containing identifier column-value pairs.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddriverName" id="driverName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">driverName</span> (line <span class="line-number">515</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">converts given driver name</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			driverName
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddropDatabase" id="dropDatabase"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">dropDatabase</span> (line <span class="line-number">1457</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">dropDatabase</p>
+<p class="description"><p>Issue drop database command for this instance of Doctrine_Connection</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> success string. Doctrine_Exception if operation failed</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			dropDatabase
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Sqlite.html#methoddropDatabase">Doctrine_Connection_Sqlite::dropDatabase()</a>
+								: dropDatabase
+							</li>
+				</ul>
+	</div>
+<a name="methoderrorCode" id="errorCode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">errorCode</span> (line <span class="line-number">1292</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">errorCode  Fetch the SQLSTATE associated with the last operation on the database handle</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			errorCode
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoderrorInfo" id="errorInfo"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">errorInfo</span> (line <span class="line-number">1305</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">errorInfo  Fetch extended error information associated with the last operation on the database handle</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			errorInfo
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodevictTables" id="evictTables"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">evictTables</span> (line <span class="line-number">1250</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">evictTables  evicts all tables</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			evictTables
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodexec" id="exec"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">exec</span> (line <span class="line-number">1035</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">exec</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			exec
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: sql query</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: query parameters</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html#methodexec">Doctrine_Connection_Mssql::exec()</a>
+								: execute
+							</li>
+				</ul>
+	</div>
+<a name="methodexecute" id="execute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">execute</span> (line <span class="line-number">999</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">execute</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">PDOStatement|<a href="../../Doctrine/Adapter/Doctrine_Adapter_Statement.html">Doctrine_Adapter_Statement</a></span>
+		<span class="method-name">
+			execute
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: sql query</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: query parameters</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html#methodexecute">Doctrine_Connection_Mssql::execute()</a>
+								: execute
+							</li>
+				</ul>
+	</div>
+<a name="methodfetchAll" id="fetchAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchAll</span> (line <span class="line-number">798</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">fetchAll</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			fetchAll
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$statement</span><span class="var-description">: sql query to be executed</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: prepared statement params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetchArray" id="fetchArray"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchArray</span> (line <span class="line-number">835</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">fetchArray</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			fetchArray
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$statement</span><span class="var-description">: sql query to be executed</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: prepared statement params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetchAssoc" id="fetchAssoc"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchAssoc</span> (line <span class="line-number">860</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">fetchAssoc</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			fetchAssoc
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$statement</span><span class="var-description">: sql query to be executed</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: prepared statement params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetchBoth" id="fetchBoth"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchBoth</span> (line <span class="line-number">872</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">fetchBoth</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			fetchBoth
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$statement</span><span class="var-description">: sql query to be executed</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: prepared statement params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetchColumn" id="fetchColumn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchColumn</span> (line <span class="line-number">848</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">fetchColumn</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			fetchColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$colnum</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$statement</span><span class="var-description">: sql query to be executed</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: prepared statement params</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$colnum</span><span class="var-description">: 0-indexed column number to retrieve</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetchOne" id="fetchOne"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchOne</span> (line <span class="line-number">811</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">fetchOne</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			fetchOne
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$colnum</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$statement</span><span class="var-description">: sql query to be executed</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: prepared statement params</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$colnum</span><span class="var-description">: 0-indexed column number to retrieve</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfetchRow" id="fetchRow"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetchRow</span> (line <span class="line-number">823</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">fetchRow</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			fetchRow
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$statement</span><span class="var-description">: sql query to be executed</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: prepared statement params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodflush" id="flush"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">flush</span> (line <span class="line-number">1218</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">flush  saves all the records from all tables  this operation is isolated using a transaction</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> PDOException         if something went wrong at database level</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			flush
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgenerateUniqueIndexName" id="generateUniqueIndexName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">generateUniqueIndexName</span> (line <span class="line-number">1612</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get/generate unique index name for a table name and set of fields</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The name of the generated index</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			generateUniqueIndexName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tableName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$fields</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tableName</span><span class="var-description">: The name of the table the index exists</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$fields</span><span class="var-description">: The fields that makes up the index</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgenerateUniqueRelationForeignKeyName" id="generateUniqueRelationForeignKeyName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">generateUniqueRelationForeignKeyName</span> (line <span class="line-number">1591</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get/generate a unique foreign key name for a relationship</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			generateUniqueRelationForeignKeyName
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Relation/Doctrine_Relation.html">Doctrine_Relation</a></span>&nbsp;<span class="var-name">$relation</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Relation/Doctrine_Relation.html">Doctrine_Relation</a></span>
+				<span class="var-name">$relation</span><span class="var-description">: Relation object to generate the foreign key name for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetAttribute" id="getAttribute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAttribute</span> (line <span class="line-number">281</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getAttribute  retrieves a database connection attribute</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getAttribute
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$attribute</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$attribute</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetAttribute">Doctrine_Configurable::getAttribute()</a></dt>
+						<dd>returns the value of an attribute</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetDbh" id="getDbh"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDbh</span> (line <span class="line-number">440</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns the database handler of which this connection uses</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the database handler</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">PDO</span>
+		<span class="method-name">
+			getDbh
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetDriverName" id="getDriverName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDriverName</span> (line <span class="line-number">381</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getDriverName</p>
+<p class="description"><p>Gets the name of the instance driver</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getDriverName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetIterator" id="getIterator"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getIterator</span> (line <span class="line-number">1154</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns an iterator that iterators through all  initialized table objects</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-key">foreach&nbsp;</span><span class="src-sym">(</span><span class="src-var">$conn&nbsp;</span><span class="src-key">as&nbsp;</span><span class="src-var">$index&nbsp;</span>=&gt;&nbsp;<span class="src-var">$table</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<span class="src-var">$table</span><span class="src-sym">;&nbsp;&nbsp;</span><span class="src-comm">//&nbsp;get&nbsp;a&nbsp;string&nbsp;representation&nbsp;of&nbsp;each&nbsp;table&nbsp;object</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-sym">}</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> SPL ArrayIterator object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">ArrayIterator</span>
+		<span class="method-name">
+			getIterator
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>IteratorAggregate::getIterator</dt>
+					</dl>
+			
+	</div>
+<a name="methodgetManager" id="getManager"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getManager</span> (line <span class="line-number">430</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns the manager that created this connection</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Manager/Doctrine_Manager.html">Doctrine_Manager</a></span>
+		<span class="method-name">
+			getManager
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetName" id="getName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getName</span> (line <span class="line-number">356</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getName  returns the name of this driver</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the name of this driver</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOption" id="getOption"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getOption</span> (line <span class="line-number">254</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getOption</p>
+<p class="description"><p>Retrieves option</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getOption
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$option</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$option</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetOptions" id="getOptions"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getOptions</span> (line <span class="line-number">241</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getOptions</p>
+<p class="description"><p>Get array of all options</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getOptions
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetQueryCacheDriver" id="getQueryCacheDriver"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getQueryCacheDriver</span> (line <span class="line-number">1331</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getQueryCacheDriver</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a></span>
+		<span class="method-name">
+			getQueryCacheDriver
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetResultCacheDriver" id="getResultCacheDriver"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getResultCacheDriver</span> (line <span class="line-number">1317</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getResultCacheDriver</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Cache/Doctrine_Cache_Interface.html">Doctrine_Cache_Interface</a></span>
+		<span class="method-name">
+			getResultCacheDriver
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTable" id="getTable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTable</span> (line <span class="line-number">1113</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns a table object for given component name</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+		<span class="method-name">
+			getTable
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: component name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTables" id="getTables"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTables</span> (line <span class="line-number">1137</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns an array of all initialized tables</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getTables
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetTmpConnection" id="getTmpConnection"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTmpConnection</span> (line <span class="line-number">1496</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">getTmpConnection</p>
+<p class="description"><p>Create a temporary connection to the database with the user credentials.  This is so the user can make a connection to a db server. Some dbms allow  connections with no database, but some do not. In that case we have a table  which is always guaranteed to exist. Mysql: 'mysql', PostgreSQL: 'postgres', etc.  This value is set in the Doctrine_Export_{DRIVER} classes if required</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTmpConnection
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$info</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$info</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Oracle.html#methodgetTmpConnection">Doctrine_Connection_Oracle::getTmpConnection()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodgetTransactionLevel" id="getTransactionLevel"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTransactionLevel</span> (line <span class="line-number">1281</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">get the current transaction nesting level</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getTransactionLevel
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhasTable" id="hasTable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">hasTable</span> (line <span class="line-number">1102</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">hasTable  whether or not this connection has table $name initialized</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			hasTable
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodincrementQueryCount" id="incrementQueryCount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">incrementQueryCount</span> (line <span class="line-number">505</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			incrementQueryCount
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodinsert" id="insert"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">insert</span> (line <span class="line-number">664</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Inserts a table row with specified data.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the number of affected rows. Boolean false if empty value array was given,</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			insert
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fields</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+				<span class="var-name">$table</span><span class="var-description">: The table to insert data into.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$values</span><span class="var-description">: An associative array containing column-value pairs.                                   Values can be strings or Doctrine_Expression instances.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$fields</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html#methodinsert">Doctrine_Connection_Mssql::insert()</a>
+								: Inserts a table row with specified data.
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Pgsql.html#methodinsert">Doctrine_Connection_Pgsql::insert()</a>
+								: Inserts a table row with specified data.
+							</li>
+				</ul>
+	</div>
+<a name="methodisConnected" id="isConnected"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isConnected</span> (line <span class="line-number">229</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check wherther the connection to the database has been made yet</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isConnected
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodlastInsertId" id="lastInsertId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">lastInsertId</span> (line <span class="line-number">1352</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">lastInsertId</p>
+<p class="description"><p>Returns the ID of the last inserted row, or the last value from a sequence object,  depending on the underlying driver.</p><p>Note: This method may not return a meaningful or consistent result across different drivers,  because the underlying database may not even support the notion of auto-increment fields or sequences.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			lastInsertId
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: name of the table into which a new row was inserted</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: name of the field into which a new row was inserted</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmodifyLimitQuery" id="modifyLimitQuery"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">modifyLimitQuery</span> (line <span class="line-number">1531</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">modifyLimitQuery</p>
+<p class="description"><p>Some dbms require specific functionality for this. Check the other connection adapters for examples</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			modifyLimitQuery
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isManip</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$query</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$limit</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$offset</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isManip</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Common.html#methodmodifyLimitQuery">Doctrine_Connection_Common::modifyLimitQuery()</a>
+								: Adds an driver-specific LIMIT clause to the query
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Db2.html#methodmodifyLimitQuery">Doctrine_Connection_Db2::modifyLimitQuery()</a>
+								: Adds an driver-specific LIMIT clause to the query
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html#methodmodifyLimitQuery">Doctrine_Connection_Mssql::modifyLimitQuery()</a>
+								: Adds an adapter-specific LIMIT clause to the SELECT statement.
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Oracle.html#methodmodifyLimitQuery">Doctrine_Connection_Oracle::modifyLimitQuery()</a>
+								: Adds an driver-specific LIMIT clause to the query
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Pgsql.html#methodmodifyLimitQuery">Doctrine_Connection_Pgsql::modifyLimitQuery()</a>
+								: Changes a query string for various DBMS specific reasons
+							</li>
+				</ul>
+	</div>
+<a name="methodmodifyLimitSubquery" id="modifyLimitSubquery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">modifyLimitSubquery</span> (line <span class="line-number">1542</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates dbms specific LIMIT/OFFSET SQL for the subqueries that are used in the  context of the limit-subquery algorithm.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			modifyLimitSubquery
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$rootTable</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isManip</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+				<span class="var-name">$rootTable</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$query</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$limit</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$offset</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isManip</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html#methodmodifyLimitSubquery">Doctrine_Connection_Mssql::modifyLimitSubquery()</a>
+								: Creates dbms specific LIMIT/OFFSET SQL for the subqueries that are used in the  context of the limit-subquery algorithm.
+							</li>
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Oracle.html#methodmodifyLimitSubquery">Doctrine_Connection_Oracle::modifyLimitSubquery()</a>
+								: Creates the SQL for Oracle that can be used in the subquery for the limit-subquery  algorithm.
+							</li>
+				</ul>
+	</div>
+<a name="methodprepare" id="prepare"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">prepare</span> (line <span class="line-number">908</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">prepare</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			prepare
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$statement</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$statement</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodquery" id="query"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">query</span> (line <span class="line-number">894</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">query  queries the database using Doctrine Query Language  returns a collection of Doctrine_Record objects</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$users&nbsp;</span>=&nbsp;<span class="src-var">$conn</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodquery">query</a><span class="src-sym">(</span><span class="src-str">'SELECT&nbsp;u.*&nbsp;FROM&nbsp;User&nbsp;u'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$users&nbsp;</span>=&nbsp;<span class="src-var">$conn</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodquery">query</a><span class="src-sym">(</span><span class="src-str">'SELECT&nbsp;u.*&nbsp;FROM&nbsp;User&nbsp;u&nbsp;WHERE&nbsp;u.name&nbsp;LIKE&nbsp;?'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'someone'</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Collection of Doctrine_Record objects</li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Collection/Doctrine_Collection.html">Doctrine_Collection</a></span>
+		<span class="method-name">
+			query
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$hydrationMode</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: DQL query</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: query parameters</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$hydrationMode</span><span class="var-description">: Doctrine_Core::HYDRATE_ARRAY or Doctrine_Core::HYDRATE_RECORD</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodqueryOne" id="queryOne"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">queryOne</span> (line <span class="line-number">951</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">query  queries the database using Doctrine Query Language and returns  the first record found</p>
+<p class="description"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-var">$user&nbsp;</span>=&nbsp;<span class="src-var">$conn</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodqueryOne">queryOne</a><span class="src-sym">(</span><span class="src-str">'SELECT&nbsp;u.*&nbsp;FROM&nbsp;User&nbsp;u&nbsp;WHERE&nbsp;u.id&nbsp;=&nbsp;?'</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-num">1</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-var">$user&nbsp;</span>=&nbsp;<span class="src-var">$conn</span><span class="src-sym">-&gt;</span><a href="../../Doctrine/Connection/Doctrine_Connection.html#methodqueryOne">queryOne</a><span class="src-sym">(</span><span class="src-str">'SELECT&nbsp;u.*&nbsp;FROM&nbsp;User&nbsp;u&nbsp;WHERE&nbsp;u.name&nbsp;LIKE&nbsp;?&nbsp;AND&nbsp;u.password&nbsp;=&nbsp;?'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'someone'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'password'</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Doctrine_Record object on success,                                   boolean false on failure</li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Query/Doctrine_Query.html">Doctrine_Query</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Record/Doctrine_Record.html">Doctrine_Record</a>|false</span>
+		<span class="method-name">
+			queryOne
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: DQL query</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodquote" id="quote"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">quote</span> (line <span class="line-number">775</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">quote  quotes given input parameter</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quote
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$input</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$input</span><span class="var-description">: parameter to be quoted</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Oracle.html#methodquote">Doctrine_Connection_Oracle::quote()</a>
+								: Override quote behaviour for boolean to fix issues with quoting of  boolean values.
+							</li>
+				</ul>
+	</div>
+<a name="methodquoteIdentifier" id="quoteIdentifier"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">quoteIdentifier</span> (line <span class="line-number">722</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Quote a string so it can be safely used as a table or column name</p>
+<p class="description"><p>Delimiting style depends on which database driver is being used.</p><p>NOTE: just because you CAN use delimited identifiers doesn't mean  you SHOULD use them.  In general, they end up causing way more  problems than they solve.</p><p>Portability is broken by using the following characters inside  delimited identifiers: <ul><li>backtick (<kbd>`</kbd>) -- due to MySQL</li><li>double quote (<kbd>&quot;</kbd>) -- due to Oracle</li><li>brackets (<kbd>[</kbd> or <kbd>]</kbd>) -- due to Access</li></ul>  Delimited identifiers are known to generally work correctly under  the following drivers: <ul><li>mssql</li><li>mysql</li><li>mysqli</li><li>oci8</li><li>pgsql</li><li>sqlite</li></ul>  InterBase doesn't seem to be able to use delimited identifiers  via PHP 4.  They work fine under PHP 5.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> quoted identifier string</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quoteIdentifier
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$checkOption</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: identifier name to be quoted</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$checkOption</span><span class="var-description">: check the 'quote_identifier' option</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mssql.html#methodquoteIdentifier">Doctrine_Connection_Mssql::quoteIdentifier()</a>
+								: quoteIdentifier  Quote a string so it can be safely used as a table / column name
+							</li>
+				</ul>
+	</div>
+<a name="methodquoteMultipleIdentifier" id="quoteMultipleIdentifier"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">quoteMultipleIdentifier</span> (line <span class="line-number">743</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">quoteMultipleIdentifier  Quotes multiple identifier strings</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> quoted identifier string</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			quoteMultipleIdentifier
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$arr</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$checkOption</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$arr</span><span class="var-description">: identifiers array to be quoted</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$checkOption</span><span class="var-description">: check the 'quote_identifier' option</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreplace" id="replace"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">replace</span> (line <span class="line-number">566</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Execute a SQL REPLACE query. A REPLACE query is identical to a INSERT  query, except that if there is already a row in the table with the same  key field values, the REPLACE query just updates its values instead of  inserting a new row.</p>
+<p class="description"><p>The REPLACE type of query does not make part of the SQL standards. Since  practically only MySQL and SQLIte implement it natively, this type of  query isemulated through this method for other DBMS using standard types  of queries inside a transaction to assure the atomicity of the operation.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Doctrine_Connection_Exception        if this driver doesn't support replace</li>
+				<li><span class="field">throws:</span> PDOException                         if something fails at PDO level @ return integer                              number of rows affected</li>
+				<li><span class="field">throws:</span> Doctrine_Connection_Exception        if some of the key values was null</li>
+				<li><span class="field">throws:</span> Doctrine_Connection_Exception        if there were no key fields</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			replace
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$keys</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$keys</span><span class="var-description">: <p>an array containing all key fields (primary key fields                           or unique index fields) for this table</p><p>the uniqueness of a row will be determined according to                           the provided key fields</p><p>this method will fail if no key fields are specified</p></span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: name of the table on which the REPLACE query will                           be executed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$fields</span><span class="var-description">: <p>an associative array that describes the fields and the                           values that will be inserted or updated in the specified table. The                           indexes of the array are the names of all the fields of the table.</p><p>The values of the array are values to be assigned to the specified field.</p></span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Mysql.html#methodreplace">Doctrine_Connection_Mysql::replace()</a>
+								: Execute a SQL REPLACE query. A REPLACE query is identical to a INSERT  query, except that if there is already a row in the table with the same  key field values, the REPLACE query just updates its values instead of  inserting a new row.
+							</li>
+				</ul>
+	</div>
+<a name="methodrethrowException" id="rethrowException"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">rethrowException</span> (line <span class="line-number">1069</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">rethrowException</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Doctrine_Connection_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			rethrowException
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$e</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$invoker</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$query</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">Exception</span>
+				<span class="var-name">$e</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$invoker</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$query</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrollback" id="rollback"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">rollback</span> (line <span class="line-number">1412</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">rollback</p>
+<p class="description"><p>Cancel any database changes done during a transaction or since a specific  savepoint that is in progress. This function may only be called when  auto-committing is disabled, otherwise it will fail. Therefore, a new  transaction is implicitly started after canceling the pending changes.</p><p>this method can be listened with onPreTransactionRollback and onTransactionRollback  eventlistener methods</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> false if rollback couldn't be performed, true otherwise</li>
+				<li><span class="field">throws:</span> Doctrine_Transaction_Exception   if the rollback operation fails at database level</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			rollback
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$savepoint</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$savepoint</span><span class="var-description">: name of a savepoint to rollback to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodselect" id="select"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">select</span> (line <span class="line-number">971</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">queries the database with limit and offset  added to the query and returns a Doctrine_Connection_Statement object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Connection/Doctrine_Connection_Statement.html">Doctrine_Connection_Statement</a></span>
+		<span class="method-name">
+			select
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">0</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$limit</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$offset</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodserialize" id="serialize"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">serialize</span> (line <span class="line-number">1562</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Serialize. Remove database connection(pdo) since it cannot be serialized</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			serialize
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Serializable::serialize</dt>
+					</dl>
+			
+	</div>
+<a name="methodsetAttribute" id="setAttribute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setAttribute</span> (line <span class="line-number">335</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setAttribute  sets an attribute</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> why check for &gt;= 100? has this any special meaning when creating  attributes?</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			setAttribute
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$attribute</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$attribute</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetAttribute">Doctrine_Configurable::setAttribute()</a></dt>
+						<dd>setAttribute  sets a given attribute</dd>
+					</dl>
+			
+	</div>
+<a name="methodsetDateFormat" id="setDateFormat"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setDateFormat</span> (line <span class="line-number">787</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the date/time format for the current connection</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setDateFormat
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: time format</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Doctrine/Connection/Doctrine_Connection_Oracle.html#methodsetDateFormat">Doctrine_Connection_Oracle::setDateFormat()</a>
+								: Sets up the date/time format
+							</li>
+				</ul>
+	</div>
+<a name="methodsetName" id="setName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setName</span> (line <span class="line-number">369</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setName</p>
+<p class="description"><p>Sets the name of the connection</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOption" id="setOption"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setOption</span> (line <span class="line-number">269</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">setOption</p>
+<p class="description"><p>Set option value</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setOption
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$option</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodstandaloneQuery" id="standaloneQuery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">standaloneQuery</span> (line <span class="line-number">987</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">standaloneQuery</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">PDOStatement|<a href="../../Doctrine/Adapter/Doctrine_Adapter_Statement.html">Doctrine_Adapter_Statement</a></span>
+		<span class="method-name">
+			standaloneQuery
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: sql query</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsupports" id="supports"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">supports</span> (line <span class="line-number">525</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">supports</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> whether or not this drivers supports given feature</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			supports
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$feature</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$feature</span><span class="var-description">: the name of the feature</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodunserialize" id="unserialize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">unserialize</span> (line <span class="line-number">1576</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Unserialize. Recreate connection from serialized content</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			unserialize
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$serialized</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$serialized</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Serializable::unserialize</dt>
+					</dl>
+			
+	</div>
+<a name="methodupdate" id="update"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">update</span> (line <span class="line-number">630</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates table row(s) with specified data.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the number of affected rows. Boolean false if empty value array was given,</li>
+				<li><span class="field">throws:</span> Doctrine_Connection_Exception    if something went wrong at the database level</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			update
+		</span>
+					(<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$fields</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$identifier</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Doctrine/Table/Doctrine_Table.html">Doctrine_Table</a></span>
+				<span class="var-name">$table</span><span class="var-description">: The table to insert data into</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$values</span><span class="var-description">: An associative array containing column-value pairs.                                   Values can be strings or Doctrine_Expression instances.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$fields</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$identifier</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_generateUniqueName" id="_generateUniqueName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_generateUniqueName</span> (line <span class="line-number">1623</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_generateUniqueName
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$type</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$parts</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'%s'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$maxLength</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$type</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$parts</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$key</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$format</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$maxLength</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__get" id="__get"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get</span> (line <span class="line-number">399</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">__get  lazy loads given module and returns it</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> connection module</li>
+				<li><span class="field">see:</span> Doctrine_Connection::$modules       all availible modules</li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/DataDict/Doctrine_DataDict.html">Doctrine_DataDict</a></li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Transaction/Doctrine_Transaction.html">Doctrine_Transaction</a></li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Export/Doctrine_Export.html">Doctrine_Export</a></li>
+				<li><span class="field">see:</span> <a href="../../Doctrine/Expression/Doctrine_Expression_Driver.html">Doctrine_Expression_Driver</a></li>
+				<li><span class="field">throws:</span> Doctrine_Connection_Exception    if trying to get an unknown module</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Doctrine/Connection/Doctrine_Connection_Module.html">Doctrine_Connection_Module</a></span>
+		<span class="method-name">
+			__get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: the name of the module to get</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__toString" id="__toString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__toString</span> (line <span class="line-number">1552</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns a string representation of this object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			__toString
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html">Doctrine_Configurable</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodaddListener">Doctrine_Configurable::addListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodaddRecordListener">Doctrine_Configurable::addRecordListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetAttribute">Doctrine_Configurable::getAttribute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetAttributes">Doctrine_Configurable::getAttributes()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetCharset">Doctrine_Configurable::getCharset()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetCollate">Doctrine_Configurable::getCollate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetImpl">Doctrine_Configurable::getImpl()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetListener">Doctrine_Configurable::getListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetParam">Doctrine_Configurable::getParam()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetParamNamespaces">Doctrine_Configurable::getParamNamespaces()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetParams">Doctrine_Configurable::getParams()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetParent">Doctrine_Configurable::getParent()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodgetRecordListener">Doctrine_Configurable::getRecordListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodhasImpl">Doctrine_Configurable::hasImpl()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetAttribute">Doctrine_Configurable::setAttribute()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetCharset">Doctrine_Configurable::setCharset()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetCollate">Doctrine_Configurable::setCollate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetEventListener">Doctrine_Configurable::setEventListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetImpl">Doctrine_Configurable::setImpl()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetListener">Doctrine_Configurable::setListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetParam">Doctrine_Configurable::setParam()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetParent">Doctrine_Configurable::setParent()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodsetRecordListener">Doctrine_Configurable::setRecordListener()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Configurable/Doctrine_Configurable.html#methodunsetAttribute">Doctrine_Configurable::unsetAttribute()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html">Doctrine_Locator_Injectable</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodbind">Doctrine_Locator_Injectable::bind()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetLocator">Doctrine_Locator_Injectable::getLocator()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodgetNullObject">Doctrine_Locator_Injectable::getNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodinitNullObject">Doctrine_Locator_Injectable::initNullObject()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodlocate">Doctrine_Locator_Injectable::locate()</a></span><br>
+													<span class="method-name"><a href="../../Doctrine/Doctrine_Locator/Doctrine_Locator_Injectable.html#methodsetLocator">Doctrine_Locator_Injectable::setLocator()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 03 Dec 2011 13:07:57 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>
