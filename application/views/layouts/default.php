@@ -107,7 +107,8 @@
               <? if(Current_User::logged_in(2)): ?>
               <li><?= anchor('#', 'Planificación Docente') ?>
                   <ul class="acitem">
-                      <li><?= anchor('cursos/select_curso/titulaciones/index_cargas', 'Añadir Cargas') ?></li>
+                      <li><?= anchor('cursos/select_curso/titulaciones/index_cargas', 'Añadir Plan Docente') ?></li>
+                      <li><?= anchor('titulaciones/show_planificacion', 'Ver Planificación') ?></li>
                   </ul>
               </li>
               <? endif; ?>
@@ -126,6 +127,9 @@
                   <ul class="acitem">
                       <li>
                           <?= anchor('horarios/select_grupo', 'Grupos y horarios') ?>
+                      </li>
+                      <li>
+                          <?= anchor('titulaciones/show_informes', 'Informes de asignatura') ?>
                       </li>
                   </ul>
               </li>

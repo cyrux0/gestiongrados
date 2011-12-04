@@ -41,15 +41,14 @@ class Asignaturas extends MY_Controller {
     public function show($id, $id_curso = ''){
         if(!$id_curso) redirect('cursos/select_curso/asignaturas/show/' . $id); //Arreglar esto, ya que select_curso solo coge los dos primeros parámetros, debería coger todos.
         $asignatura = $this->asignaturas_table->find($id);
-        $q = Doctrine_Query::create()->select('c.*')->from('PlanDocente c')->where('c.id_curso = ? AND c.id_asignatura = ?', array($id_curso, $id));
-        $resultado = $q->fetchArray();
+        $q = Doctrine_Query::create()->select('c.*, p.*, a.descripcion')->from('PlanActividad p')->innerJoin('p.plandocente c')->innerJoin('p.actividad a')->where('c.id_curso = ? AND c.id_asignatura = ?', array($id_curso, $id));
+        $resultado = $q->execute();
         if($this->input->post('js'))
             unset($this->layout);
         
         if(count($resultado))
         {
-            $ficha = $resultado[0];
-            $this->load->view('asignaturas/show', array('carga' => (object) $ficha, 'asignatura' => $asignatura));
+            $this->load->view('asignaturas/show', array('cargas' => $resultado, 'asignatura' => $asignatura));
         }
         else 
         {

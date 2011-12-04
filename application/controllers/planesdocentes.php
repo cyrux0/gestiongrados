@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Clase para la gestión de los planes docentes
+ * 
+ * @package Controller
+ */
 class PlanesDocentes extends MY_Controller{
   function __construct(){
     parent::__construct();
@@ -12,7 +17,13 @@ class PlanesDocentes extends MY_Controller{
     $this->_filter(array('add_carga', 'create', 'edit', 'update', 'delete', 'load'), array($this, 'authenticate'), 2); // Sólo al planner 
   }
 
-    public function add_carga($id_asignatura, $id_curso = ''){
+   /**
+    * Acción para mostrar el formulario de añadir una carga
+    * 
+    * @param integer $id_asignatura Identificador de la asignatura
+    * @param integer $id_curso Identificador del curso
+    */
+   public function add_carga($id_asignatura, $id_curso = ''){
         if(!$id_curso) redirect('cursos/select_curso/planesdocentes/add_carga/' . $id_asignatura );
         $global = new PlanDocente;
         $global->id_asignatura = $id_asignatura;
@@ -26,6 +37,7 @@ class PlanesDocentes extends MY_Controller{
         $data['data']['cursos_totales'] = Doctrine::getTable('Titulacion')->find($asignatura->titulacion_id)->num_cursos;
         $this->load->view('PlanDocente/add', $data);
     }
+    
     
     public function create(){
         $global = new PlanDocente;
@@ -138,110 +150,38 @@ class PlanesDocentes extends MY_Controller{
         $this->load->view('PlanDocente/from_file', array('error' => ''));
     }
     
-    
-    public function informe_asignatura($id_asignatura, $id_curso)
+    /**
+     * Acción para generar informe de múltiples asignaturas pasadas por POST
+     * 
+     * @param integer $id_curso Identificador del curso
+     */
+    public function informe_asignatura($id_curso)
     {
         $this->load->helper('resumen_asignatura_helper');
-        $asignatura = Doctrine::getTable('Asignatura')->find($id_asignatura);
+        
         $this->load->helper('calendar_helper');
-        // Obtenemos un array header con las cabeceras y otra array donde cada elemento es un array con las horas de cada semana de ese grupo.
-        list($header, $arraygrupos, $horas) = resumen_asignatura($id_asignatura, $id_curso);
+        $this->load->library('FPDF');
         
-        $horas_traspuesta = call_user_func_array('array_map',array_merge(array(NULL),$horas));
-        $this->load->library('fpdf');
-        
-        // Creación de pdf y título
         define('FPDF_FONTPATH', $this->config->item('fonts_path'));
-        unset($this->layout);
-        $this->load->library('fpdf');
+        $this->load->library('FPDF');
         $pdf = new FPDF('P', 'mm', 'A4');
-        $pdf->AddPage();
-        $pdf->SetFont('Helvetica', 'BU', 25);
-        $pdf->Cell(0, 0, 'Informe de asignatura', 0, 1);
-        $pdf->Ln(10);
-        $pdf->SetFont('Helvetica', 'B', 15);
-        $nombre_titulacion = utf8_decode($asignatura->Titulacion->nombre);
-        $nombre_asignatura = utf8_decode($asignatura->nombre);
-        $pdf->Cell(0, 0, $nombre_titulacion, 0, 1);
-        $pdf->Ln(7);
-        $pdf->Cell(0, 0,'    '. $nombre_asignatura, 0, 1);
-        $pdf->Ln(10);
-        
-        // Aquí debemos rellenar la planificación docente
-        $planactividad = Doctrine_Query::create()
-            ->select('c.*')
-            ->from('PlanActividad c')
-            ->innerJoin('c.plandocente p')
-            ->where('p.id_asignatura = ?', array($id_asignatura))
-            ->andWhere('p.id_curso = ?', array($id_curso))
-            ->orderBy('c.id')
-            ->execute();
-        
-        $pdf->SetFillColor(192,192,192);
-        $pdf->SetTextColor(0);
-        $pdf->SetDrawColor(0,0,0);
-        $pdf->SetLineWidth(.3);
-        $pdf->SetFont('','B');
-        
-        $anchototal = 40;
-        // ancho, alto, texto, borde, linea de comienzo, align
-        $pdf->Cell(40, 7, '', 1, 0, 'L');
-        
-        foreach($planactividad as $actividad)
+        foreach($this->input->post('seleccionada') as $id_asignatura)
         {
-            $act_element = Doctrine::getTable('Actividad')->find($actividad->id_actividad);
-            $pdf->Cell(25, 7, $act_element->identificador, 1, 0, 'L');
-            
-            $anchototal += 25;
+            $asignatura = Doctrine::getTable('Asignatura')->find($id_asignatura);            
+            // Obtenemos un array header con las cabeceras y otra array donde cada elemento es un array con las horas de cada semana de ese grupo.
+            list($header, $arraygrupos, $horas) = resumen_asignatura($id_asignatura, $id_curso);
+            $nombre_titulacion = utf8_decode($asignatura->Titulacion->nombre);
+            $nombre_asignatura = utf8_decode($asignatura->nombre);
+            $pdf = generar_pdf($nombre_titulacion, $nombre_asignatura, $id_asignatura, $id_curso, $header, $arraygrupos, $horas, $pdf);    
         }
-        $pdf->Ln();
-        $pdf->Cell(40, 7, 'Planificado', 1, 0, 'L');
-        $pdf->SetFont('');
-        foreach($planactividad as $actividad)
-        {
-            $pdf->Cell(25, 7, $actividad->horas, 1, 0, 'L');
-        }
-        
-        $pdf->Ln(20);
-
-        // Cabecera
-        $anchototal = 0;
-        $pdf->Cell(15, 7, 'Sem.', 1, 0, 'C', true);
-        for($i=0;$i<count($header);$i++){
-            $element = utf8_decode($header[$i]);
-            $pdf->Cell(35,7, $element,1,0,'C',true);
-            $anchototal += 35;
-        }
-        $pdf->Ln();
-        // Restauración de colores y fuentes
-        $pdf->SetFillColor(224,235,255);
-        $pdf->SetTextColor(0);
-        $pdf->SetFont('');
-        // Datos
-        $fill = false;
-        
-        foreach($horas_traspuesta as $key => $row)
-        {
-            $pdf->Cell(15, 6, $key+1, 'LR', 0, 'L', $fill);
-            foreach($row as $hora)
-            {
-                $pdf->Cell(35,6,$hora,'LR',0,'L',$fill);
-            }
-            $pdf->Ln();
-            $fill = !$fill;
-        }
-        
-        $pdf->Cell(15, 6, 'Total: ', 'LRT', 0, 'L', $fill);
-        foreach($horas as $hora){
-            $suma = array_sum($hora);
-            $pdf->Cell(35, 6, $suma, 'LRT', 0, 'L', $fill);
-        }
-        $pdf->Ln();
-        // Línea de cierre
-        $pdf->Cell($anchototal+15,0,'','T');
+        unset($this->layout);
         $pdf->Output();
     }
         
+    /**
+     * Hace las validaciones del formulario de añadir planes docentes
+     * @return Boolean
+     */
     private function _submit_validate(){
         $this->form_validation->set_rules('horas[]', 'Horas', 'trim|is_natural');
         $this->form_validation->set_rules('grupos[]', 'Grupos', 'trim|is_natural');

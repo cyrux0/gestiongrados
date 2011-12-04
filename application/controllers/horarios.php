@@ -555,9 +555,17 @@ class Horarios extends MY_Controller {
         $matriz = $curso->getMatrizHorario('id_horario', $id_horario, $horario->semestre, $horario->num_semana);
         $this->load->helper('importacion_csv_helper');
         exportador_csv('./application/downloads/temp.csv', $matriz);
-        $data = file_get_contents('./application/downloads/temp.csv');
+        $data = "Horario tipo \n" . file_get_contents('./application/downloads/temp.csv');
+        foreach($horario->horarioteoria as $horario_teoria)
+        {
+            $matriz = $curso->getMatrizHorario('id_horario', $horario_teoria->id, $horario_teoria->semestre, $horario_teoria->num_semana);
+            exportador_csv('./application/downloads/temp.csv', $matriz);
+            $data .= "\nSemana " . $horario_teoria->num_semana . "\n";
+            $data .= file_get_contents('./application/downloads/temp.csv');
+        }
         $name = 'horario.csv';
         $this->load->helper('download');
         force_download($name, $data);
+        
     }
 }

@@ -219,3 +219,109 @@ function resumen_asignatura($id_asignatura, $id_curso)
     
     return array($header, $arraygrupos, $matriz_info);
 }
+
+/**
+ * Función para generar una página del informe en pdf de una asignatura
+ * @param string $nombre_titulacion Nombre de la titulación
+ * @param string $nombre_asignatura Nombre de la asignatura
+ * @param integer $id_asignatura Identificador de la asignatura
+ * @param integer $id_curso Identificador del curso
+ * @param array $header Cabecera con los grupos
+ * @param array $array_grupos Array con identificador de cada grupo y cada actividad
+ * @param array $horas Array con las horas por semana
+ * @param mixed $pdf Objeto pdf ya inicializado
+ * @return mixed Objeto pdf con la página añadida 
+ */
+function generar_pdf($nombre_titulacion, $nombre_asignatura, $id_asignatura, $id_curso, $header, $array_grupos, $horas, $pdf = null)
+{
+    $horas_traspuesta = call_user_func_array('array_map',array_merge(array(NULL),$horas));
+    $CI = & get_instance();
+        
+    // Creación de pdf y título
+    $pdf->AddPage();
+    $pdf->SetFont('Helvetica', 'BU', 25);
+    $pdf->Cell(0, 0, 'Informe de asignatura', 0, 1);
+    $pdf->Ln(10);
+    $pdf->SetFont('Helvetica', 'B', 15);
+
+    $pdf->Cell(0, 0, $nombre_titulacion, 0, 1);
+    $pdf->Ln(7);
+    $pdf->Cell(0, 0,'    '. $nombre_asignatura, 0, 1);
+    $pdf->Ln(10);
+
+    // Aquí debemos rellenar la planificación docente
+    $planactividad = Doctrine_Query::create()
+        ->select('c.*')
+        ->from('PlanActividad c')
+        ->innerJoin('c.plandocente p')
+        ->where('p.id_asignatura = ?', array($id_asignatura))
+        ->andWhere('p.id_curso = ?', array($id_curso))
+        ->orderBy('c.id')
+        ->execute();
+
+    $pdf->SetFillColor(192,192,192);
+    $pdf->SetTextColor(0);
+    $pdf->SetDrawColor(0,0,0);
+    $pdf->SetLineWidth(.3);
+    $pdf->SetFont('','B');
+
+    $anchototal = 40;
+    // ancho, alto, texto, borde, linea de comienzo, align
+    $pdf->Cell(40, 7, '', 1, 0, 'L');
+
+    foreach($planactividad as $actividad)
+    {
+        $act_element = Doctrine::getTable('Actividad')->find($actividad->id_actividad);
+        $pdf->Cell(25, 7, $act_element->identificador, 1, 0, 'L');
+
+        $anchototal += 25;
+    }
+    $pdf->Ln();
+    $pdf->Cell(40, 7, 'Planificado', 1, 0, 'L');
+    $pdf->SetFont('');
+    foreach($planactividad as $actividad)
+    {
+        $pdf->Cell(25, 7, $actividad->horas, 1, 0, 'L');
+    }
+
+    $pdf->Ln(20);
+
+    // Cabecera
+    $anchototal = 0;
+    $anchocelda = 10;
+    $pdf->Cell(15, 7, 'Sem.', 1, 0, 'C', true);
+    for($i=0;$i<count($array_grupos);$i++){
+        $act_element = Doctrine::getTable('Actividad')->find($array_grupos[$i][0]);
+        $element = $act_element->identificador . $array_grupos[$i][1];
+        $pdf->Cell($anchocelda,7, $element,1,0,'C',true);
+        $anchototal += $anchocelda;
+    }
+    $pdf->Ln();
+    // Restauración de colores y fuentes
+    $pdf->SetFillColor(224,235,255);
+    $pdf->SetTextColor(0);
+    $pdf->SetFont('');
+    // Datos
+    $fill = false;
+
+    foreach($horas_traspuesta as $key => $row)
+    {
+        $pdf->Cell(15, 6, $key+1, 'LR', 0, 'L', $fill);
+        foreach($row as $hora)
+        {
+            $pdf->Cell($anchocelda,6,$hora,'LR',0,'L',$fill);
+        }
+        $pdf->Ln();
+        $fill = !$fill;
+    }
+
+    $pdf->Cell(15, 6, 'Total: ', 'LRT', 0, 'L', $fill);
+    foreach($horas as $hora){
+        $suma = array_sum($hora);
+        $pdf->Cell($anchocelda, 6, $suma, 'LRT', 0, 'L', $fill);
+    }
+    $pdf->Ln();
+    // Línea de cierre
+    $pdf->Cell($anchototal+15,0,'','T');
+    return $pdf;
+}

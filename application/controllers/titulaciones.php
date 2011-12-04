@@ -28,6 +28,17 @@ class Titulaciones extends MY_Controller {
         }
     }
 
+    public function show_informes($id_curso, $id_titulacion)
+    {
+        if(!isset($id_curso)) redirect('cursos/select_curso/titulaciones/show_informes/');
+        if(!isset($id_titulacion)) redirect('titulaciones/select_titulacion/titulaciones/show_informes/'. $id_curso);
+        
+        $data['asignaturas'] = $this->asignaturas_table->findByTitulacion_id($id_titulacion);
+        $data['id_curso'] = $id_curso;
+        $this -> load -> view('titulaciones/show_informes', $data);
+    }
+    
+    
     public function add() {
         //Mostramos vista
         $titulacion = new Titulacion();
@@ -112,6 +123,52 @@ class Titulaciones extends MY_Controller {
         $this -> load -> view('titulaciones/show', $data);
     }
     
+    public function show_planificacion($id_curso, $id_titulacion)
+    {
+        if(!isset($id_curso)) redirect('cursos/select_curso/titulaciones/show_planificacion/');
+        if(!isset($id_titulacion)) redirect('titulaciones/select_titulacion/titulaciones/show_planificacion/' . $id_curso);
+        
+        $titulacion = Doctrine::getTable('Titulacion')->find($id_titulacion);
+        $salida_total = $titulacion->getPlanificacion($id_curso);
+        
+        $this->load->view('titulaciones/show_planificacion', array('salida' => $salida_total));
+    }
+    
+    public function exportar_planificacion($id_curso, $id_titulacion)
+    {
+        if(!isset($id_curso)) redirect('cursos/select_curso/titulaciones/exportar_planificacion/');
+        if(!isset($id_titulacion)) redirect('titulaciones/select_titulacion/titulaciones/exportar_planificacion/' . $id_curso);
+        
+        $titulacion = Doctrine::getTable('Titulacion')->find($id_titulacion);
+        $salida_total = $titulacion->getPlanificacion($id_curso);
+        $headers = array('Asignatura', 
+            'Horas teoría', 'Grupos Teoría', 'Horas semanales teoría',
+            'Horas laboratorio', 'Grupos laboratorio', 'Horas semanales laboratorio',
+            'Horas problemas', 'Grupos problemas', 'Horas semanales problemas',
+            'Horas informática', 'Grupos informática', 'Horas semanales informática',
+            'Horas prácticas de campo', 'Grupos prácticas de campo', 'Horas semanales prácticas de campo',
+            );
+
+        $salida_final = array();
+        foreach($salida_total as $linea)
+        {
+            $linea_array[0] = $linea[0];
+            for($i = 1; $i<5 ; $i++)
+            {
+                $linea_array[1+3*($i-1)] = isset($linea[$i])? $linea[$i][0] : '';
+                $linea_array[2+3*($i-1)] = isset($linea[$i])? $linea[$i][1] : '';
+                $linea_array[3+3*($i-1)] = isset($linea[$i])? $linea[$i][2] : '';
+            }
+            $salida_final[] = $linea_array;
+        }
+        array_unshift($salida_final, $headers);
+        $this->load->helper('importacion_csv_helper');
+        exportador_csv('./application/downloads/temp.csv', $salida_final);
+        $data = file_get_contents('./application/downloads/temp.csv');
+        $name = 'planificacion.csv';
+        $this->load->helper('download');
+        force_download($name, $data);
+    }
     public function index_cargas($id_curso){
         if(!$id_curso) redirect('cursos/select_curso/titulaciones/index_cargas');
         $titulaciones = $this -> titulaciones_table -> findAll();

@@ -64,6 +64,29 @@ class Titulacion extends Doctrine_Record
                              ));
   }
 
+  public function getPlanificacion($id_curso)
+  {
+        $asignaturas = $this->asignaturas;
+        $salida_total = array();
+        foreach($asignaturas as $asignatura)
+        {
+            $q = Doctrine_Query::create()->select('c.*, p.*, a.descripcion')
+                    ->from('PlanActividad p')
+                    ->innerJoin('p.plandocente c')
+                    ->innerJoin('p.actividad a')
+                    ->where('c.id_curso = ? AND c.id_asignatura = ?', array($id_curso, $asignatura->id));
+            $resultado = $q->execute();
+            $salida = array();
+            $salida[0] =  $asignatura->nombre;
+            foreach($resultado as $actividad)
+            {
+                $salida[$actividad->id_actividad] = array($actividad->horas, $actividad->grupos, $actividad->horas_semanales);
+            }
+            $salida_total[] = $salida;
+      }
+      
+      return $salida_total;
+  }
   
   public function setUp()
   {

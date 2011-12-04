@@ -99,6 +99,15 @@ class Curso extends Doctrine_Record {
         $this -> hasMany('Evento as eventos', array('local' => 'id', 'foreign' => 'curso_id', 'onDelete' => 'CASCADE'));
     }
 
+    /**
+     * Método que devuelve la información en forma de matriz de la asignación de asignaturas en un horario o aula.
+     * 
+     * @param string $filtro Atributo por el que se filtrará, debería ser id_horario o id_aula
+     * @param integer $valor_filtro Valor que tomará el atributo anterior
+     * @param string $semestre Semestre para el que se quiere obtener la matriz
+     * @param integer $num_semana Semana para la que se quiere obtener la matriz
+     * @return array Array con las horas colocadas en su sitio 
+     */
     public function getMatrizHorario($filtro, $valor_filtro, $semestre, $num_semana)
     {
         $hora_inicial = $this->hora_inicial;
@@ -117,7 +126,7 @@ class Curso extends Doctrine_Record {
         foreach(range(0, 4) as $dia_semana)
         {
             $lineas = Doctrine_Query::create()
-                    ->select('l.*, a.abreviatura, c.identificador, c.alternas')
+                    ->select('l.*, a.abreviatura, c.identificador, c.id')
                     ->from('LineaHorario l')
                     ->innerJoin('l.asignatura a')
                     ->innerJoin('l.actividad c')
@@ -134,9 +143,17 @@ class Curso extends Doctrine_Record {
                 $hora_inicial_linea = date_create_from_format('H:i:s', $linea->hora_inicial);
                 $hora_final_linea = date_create_from_format('H:i:s', $linea->hora_final);
                 $slot_linea = $linea->slot_minimo*60;
+                $alternas = Doctrine_Query::create()
+                        ->select('l.alternas, p.id')
+                        ->from('PlanActividad l')
+                        ->innerJoin('l.plandocente p')
+                        ->where('p.id_asignatura = ?', array($linea->id_asignatura))
+                        ->andWhere('p.id_curso = ?', $this->id)
+                        ->andWhere('l.id_actividad = ?', array($linea->actividad->id))
+                        ->execute();
                 
-                if($linea->actividad->alternas)
-                    $nombre = $linea->asignatura->abreviatura . " " . $linea->actividad->identificador . $linea->num_grupo_actividad*2-1 . "-" . $linea->actividad->identificador . $linea->num_grupo_actividad*2;
+                if($alternas[0]->alternas)
+                    $nombre = $linea->asignatura->abreviatura . " " . $linea->actividad->identificador . ($linea->num_grupo_actividad*2-1) . "-" . $linea->actividad->identificador . ($linea->num_grupo_actividad*2);
                 else
                     $nombre = $linea->asignatura->abreviatura . " " . $linea->actividad->identificador . $linea->num_grupo_actividad;
                 
