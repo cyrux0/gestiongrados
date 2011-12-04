@@ -272,16 +272,16 @@ function generar_pdf($nombre_titulacion, $nombre_asignatura, $id_asignatura, $id
     foreach($planactividad as $actividad)
     {
         $act_element = Doctrine::getTable('Actividad')->find($actividad->id_actividad);
-        $pdf->Cell(25, 7, $act_element->identificador, 1, 0, 'L');
+        $pdf->Cell(25, 7, $act_element->identificador, 1, 0, 'C');
 
         $anchototal += 25;
     }
     $pdf->Ln();
-    $pdf->Cell(40, 7, 'Planificado', 1, 0, 'L');
+    $pdf->Cell(40, 7, 'Planificado', 1, 0, 'C');
     $pdf->SetFont('');
     foreach($planactividad as $actividad)
     {
-        $pdf->Cell(25, 7, $actividad->horas, 1, 0, 'L');
+        $pdf->Cell(25, 7, $actividad->horas, 1, 0, 'C');
     }
 
     $pdf->Ln(20);
@@ -306,19 +306,19 @@ function generar_pdf($nombre_titulacion, $nombre_asignatura, $id_asignatura, $id
 
     foreach($horas_traspuesta as $key => $row)
     {
-        $pdf->Cell(15, 6, $key+1, 'LR', 0, 'L', $fill);
+        $pdf->Cell(15, 6, $key+1, 'LR', 0, 'C', $fill);
         foreach($row as $hora)
         {
-            $pdf->Cell($anchocelda,6,$hora,'LR',0,'L',$fill);
+            $pdf->Cell($anchocelda,6,$hora,'LR',0,'C',$fill);
         }
         $pdf->Ln();
         $fill = !$fill;
     }
 
-    $pdf->Cell(15, 6, 'Total: ', 'LRT', 0, 'L', $fill);
+    $pdf->Cell(15, 6, 'Total: ', 'LRT', 0, 'C', $fill);
     foreach($horas as $hora){
         $suma = array_sum($hora);
-        $pdf->Cell($anchocelda, 6, $suma, 'LRT', 0, 'L', $fill);
+        $pdf->Cell($anchocelda, 6, $suma, 'LRT', 0, 'C', $fill);
     }
     $pdf->Ln();
     // Línea de cierre
