@@ -319,14 +319,22 @@ class Horarios extends MY_Controller {
     public function ocupacion_aula($id_curso, $id_aula) {
         $curso = Doctrine::getTable('Curso')->find($id_curso);
         $lineas_aulas = Doctrine_Query::create()
-                ->select('l.id, l.hora_inicial, l.hora_final, l.dia_semana')
+                ->select('l.id, l.num_grupo_actividad, l.hora_inicial, l.hora_final, l.dia_semana, a.abreviatura, c.identificador')
                 ->from('LineaHorario l')
                 ->innerJoin('l.horario h')
+                ->innerJoin('l.asignatura a')
+                ->innerJoin('l.actividad c')
                 ->where('h.id_curso = ?', $id_curso)
                 ->andWhere('h.num_semana = ?', $curso->num_semanas_teoria + 1)
                 ->andWhere('l.id_aula = ?', $id_aula)
                 ->andWhere('hora_inicial IS NOT NULL')
                 ->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
+        
+        foreach($lineas_aulas as &$linea)
+        {
+            $linea['nombre_asignatura'] =  $linea['asignatura']['abreviatura'] . " (" . $linea['actividad']['identificador'] . $linea['num_grupo_actividad'] . ") ";
+        }
+        
         unset($this->layout);
         echo json_encode($lineas_aulas);
     }

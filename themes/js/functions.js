@@ -388,6 +388,8 @@ var horarios = {
         }
             
         var fullcalendar = $("#horario").fullCalendar({
+            timeFormat: {agenda: 'H:mm'},
+            axisFormat: 'H:mm',
             events: savedEvents,
             theme: true,
             weekends: false,
@@ -604,12 +606,14 @@ aulas = {
                     dia_semana = eval(savedEvents[i].dia_semana);
                     savedEvents[i].start = new Date(1950, 0, 2 + dia_semana, hora_inicial[0], hora_inicial[1]);
                     savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
-                    savedEvents[i].title = "-";
+                    savedEvents[i].title = savedEvents[i].nombre_asignatura;
                     savedEvents[i].allDay = false;
                 }
             	
                 $('#aulas').html('');
                 $('#aulas').fullCalendar({
+                    timeFormat: {agenda: 'H:mm'},
+                    axisFormat: 'H:mm',
                     events: savedEvents,
                     theme: true,
                     weekends: false,
