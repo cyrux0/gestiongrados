@@ -131,7 +131,7 @@ class Titulaciones extends MY_Controller {
         $titulacion = Doctrine::getTable('Titulacion')->find($id_titulacion);
         $salida_total = $titulacion->getPlanificacion($id_curso);
         
-        $this->load->view('titulaciones/show_planificacion', array('salida' => $salida_total));
+        $this->load->view('titulaciones/show_planificacion', array('salida' => $salida_total, 'id_curso' => $id_curso, 'id_titulacion' => $id_titulacion));
     }
     
     public function exportar_planificacion($id_curso, $id_titulacion)
