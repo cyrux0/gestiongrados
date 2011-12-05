@@ -9,6 +9,7 @@
     <?php echo link_tag('themes/js/fullcalendar-1.5.1/fullcalendar/fullcalendar.css'); ?>
     <?php echo link_tag('themes/js/accordion-style.css'); ?>
     <?php echo link_tag('themes/js/farbtastic.css'); ?>
+    <?php echo link_tag(array('href' => 'themes/css/print_style.css','media' => "print", 'rel' => 'stylesheet', 'type' => 'text/css')); ?>
     <script src="<?= site_url('themes/js/jquery-1.6.3.min.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <script src="<?= site_url('themes/js/jquery-ui-1.8.14.custom.min.js'); ?>" type="text/javascript" charset="utf-8"></script>
     <script src="<?= site_url('themes/js/jquery.ui.datepicker-es.js'); ?>" type="text/javascript" charset="utf-8"></script>
