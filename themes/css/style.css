@@ -29,7 +29,22 @@ a {
     text-decoration:none;
 }
 
+#main_content a.button{
+    background: url("http://www.uca.es/input_background.gif") repeat-x scroll 0 0 White;
+    height: auto;
+    width: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: solid 1px black;
+    color: black;
+    border-style: inset;
+    margin-left: 3px;
+}
 
+#main_content a.button:hover{
+    color:black;
+    	background-color: transparent;
+}
 #main_content a.delete-button:hover{
     background-color: transparent;
 }
@@ -59,6 +74,7 @@ a {
 #header a:hover {
 	background-color: transparent;
 }
+
 
 #header #user_bar {
     float: right;
@@ -165,6 +181,7 @@ table.listaelems{
 #main form .field label{
     min-width: 230px;
 }
+
 
 input[type="submit"]{
     background: url("http://www.uca.es/input_background.gif") repeat-x scroll 0 0 White;

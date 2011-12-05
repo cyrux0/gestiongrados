@@ -234,6 +234,16 @@ function resumen_asignatura($id_asignatura, $id_curso)
  */
 function generar_pdf($nombre_titulacion, $nombre_asignatura, $id_asignatura, $id_curso, $header, $array_grupos, $horas, $pdf = null)
 {
+    
+    foreach($horas as $key => &$columna)
+    {
+        $keys = array_keys($columna);
+        for($i = 0; $i<$keys[0]; $i++)
+        {
+            $columna[$i] = 0;
+        }
+        ksort($columna);
+    }
     $horas_traspuesta = call_user_func_array('array_map',array_merge(array(NULL),$horas));
     $CI = & get_instance();
         
@@ -288,7 +298,7 @@ function generar_pdf($nombre_titulacion, $nombre_asignatura, $id_asignatura, $id
 
     // Cabecera
     $anchototal = 0;
-    $anchocelda = 10;
+    $anchocelda = 12;
     $pdf->Cell(15, 7, 'Sem.', 1, 0, 'C', true);
     for($i=0;$i<count($array_grupos);$i++){
         $act_element = Doctrine::getTable('Actividad')->find($array_grupos[$i][0]);

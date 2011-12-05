@@ -22,7 +22,14 @@
     <? endforeach; ?>
     </table>
 </div>
-
+<div style="clear:both;margin-bottom:10px"> </div>
+<div>
+    <? if($horario_tipo): ?>
+        <? foreach(range(1, $num_semanas_teoria) as $i): ?>
+            <?= anchor("horarios/edit_teoria/$horario->id/$i", "Editar semana $i", 'class="button"') ?>
+        <? endforeach;?>
+    <? endif;?>
+</div>
 <div id="asignaturas-guardadas" style="display:none">
     <?= json_encode($asignaturas_asignadas) ?>
 </div>
@@ -33,7 +40,7 @@
     
 </div>
 <p>
-<?= form_dropdown('ocupacion', $aulastotal) . anchor('horarios/ocupacion_aula/' . $horario->id_curso . '/', 'Ver ocupación del aula', 'id="link-ocupacion"') ?>
+<?= form_dropdown('ocupacion', $aulastotal) . anchor('horarios/ocupacion_aula/' . $horario->id_curso . '/', 'Ver ocupación del aula', 'id="link-ocupacion" class="button"') ?>
 </p>
 <div id="aulas">
     

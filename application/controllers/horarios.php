@@ -227,7 +227,6 @@ class Horarios extends MY_Controller {
     public function edit($id) {
 
         $horario = Doctrine::getTable("Horario")->find($id);
-
         $asignaturas_por_asignar = array();
         $asignaturas_asignadas = array();
 
@@ -312,8 +311,13 @@ class Horarios extends MY_Controller {
         foreach ($aulas as $aula) {
             $aulas_total[$aula->id] = $aula->nombre;
         }
-
-        $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas, 'aulastotal' => $aulas_total));
+        
+        $tipo = false;
+        if($horario->num_semana == ($horario->curso->num_semanas_teoria + 1)){
+            $tipo = true;
+        }
+        
+        $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas, 'aulastotal' => $aulas_total, 'horario_tipo' => $tipo, 'num_semanas_teoria' => $horario->curso->num_semanas_teoria));
     }
 
     public function ocupacion_aula($id_curso, $id_aula) {
