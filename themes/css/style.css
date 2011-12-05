@@ -333,4 +333,19 @@ a.delete-button{
 
 .exportar-button{
     text-align: right;
+    
 }
+
+#print-button{
+    text-align: right;
+    float:right;
+}
+
+#print-button img{
+    height:18px;
+}
+
+#main_content #print-button a:hover{
+    background-color:transparent;
+}
+

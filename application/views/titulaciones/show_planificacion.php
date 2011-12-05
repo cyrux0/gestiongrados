@@ -1,4 +1,4 @@
-<div class="exportar-button">
+<div class="no-print exportar-button">
     <a class="img-anchor" href="<?= site_url("titulaciones/exportar_planificacion/$id_curso/$id_titulacion") ?>"><img src="<?= site_url('themes/css/img/csv.png') ?>" alt="exportar" /></a>
 </div>
 <table class="listaelems">

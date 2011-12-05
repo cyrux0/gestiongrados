@@ -37,6 +37,7 @@
      <!-- </div>-->
     </div>
     <div id="main">
+
       <!--
       <div id="side_bar">
           <h3>Titulaciones</h3>
@@ -167,9 +168,14 @@
           </fieldset>
       </div>
         <div id="main_content">
+ 
         <?
             $this->load->view('layouts/notice_and_alerts');
         ?>
+       <div id="print-button" class="no-print">
+            <a href="javascript:window.print()"><img src="<?= site_url('themes/css/img/print.png') ?>" /></a>
+        </div>
+            <div style="clear:both"></div>
         {yield}
       </div>
     </div>
