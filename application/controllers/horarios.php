@@ -317,7 +317,19 @@ class Horarios extends MY_Controller {
             $tipo = true;
         }
         
-        $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas, 'aulastotal' => $aulas_total, 'horario_tipo' => $tipo, 'num_semanas_teoria' => $horario->curso->num_semanas_teoria));
+        $lineas_asignaturas = Doctrine_Query::create()
+                ->select('l.id_asignatura, a.nombre')
+                ->from('LineaHorario l')
+                ->innerJoin('l.asignatura a')
+                ->where('l.id_horario = ?', array($horario->id))
+                ->groupBy('l.id_asignatura')
+                ->execute();
+        $array_asignaturas = array();
+        foreach($lineas_asignaturas as $linea)
+        {
+            $array_asignaturas[$linea->id_asignatura] = $linea->asignatura->nombre;
+        }
+        $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas, 'aulastotal' => $aulas_total, 'horario_tipo' => $tipo, 'num_semanas_teoria' => $horario->curso->num_semanas_teoria, 'array_asignaturas' => $array_asignaturas));
     }
 
     public function ocupacion_aula($id_curso, $id_aula) {
@@ -579,5 +591,20 @@ class Horarios extends MY_Controller {
         $this->load->helper('download');
         force_download($name, $data);
         
+    }
+    
+    public function add_extra_slot()
+    {
+        $id_horario = $this->input->post('id_horario');
+        $id_asignatura = $this->input->post('asignatura');
+        $horario = Doctrine::getTable('Horario')->find($id_horario);
+        $linea = new LineaHorario;
+        $linea->id_horario = $id_horario;
+        $linea->id_asignatura = $id_asignatura;
+        $linea->id_actividad = 1;
+        $linea->num_grupo_actividad = $horario->num_grupo_titulacion;
+        $linea->slot_minimo = $horario->curso->slot_minimo/60;
+        $linea->save();
+        redirect("horarios/edit/$id_horario");
     }
 }

@@ -1,3 +1,20 @@
+<div>
+    <? if($horario_tipo): ?>
+        <? foreach(range(1, $num_semanas_teoria) as $i): ?>
+            <?= anchor("horarios/edit_teoria/$horario->id/$i", "Editar semana $i", 'class="button"') ?>
+        <? endforeach;?>
+    <? else: ?>
+        <?= form_open('horarios/add_extra_slot'); ?>
+        <?= form_hidden('id_horario', $horario->id) ?>
+        <?= form_dropdown('asignatura', $array_asignaturas) ?>
+        <div class="actions">
+            <?= form_submit('submit', 'Añadir slot extra'); ?>
+        </div>
+        <?=form_close();?>
+    <? endif;?>
+</div>
+<div style="clear:both;margin-bottom:10px"> </div>
+
 <div id="asignaturas">
     <table class="listaelems">
     <? foreach($asignaturas_por_asignar as $lineahorario): ?>
@@ -22,14 +39,7 @@
     <? endforeach; ?>
     </table>
 </div>
-<div style="clear:both;margin-bottom:10px"> </div>
-<div>
-    <? if($horario_tipo): ?>
-        <? foreach(range(1, $num_semanas_teoria) as $i): ?>
-            <?= anchor("horarios/edit_teoria/$horario->id/$i", "Editar semana $i", 'class="button"') ?>
-        <? endforeach;?>
-    <? endif;?>
-</div>
+
 <div id="asignaturas-guardadas" style="display:none">
     <?= json_encode($asignaturas_asignadas) ?>
 </div>

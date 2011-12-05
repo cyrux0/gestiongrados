@@ -78,7 +78,7 @@ class Curso extends Doctrine_Record {
         $this -> hasColumn('num_semanas_semestre2', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'primary' => false, 'notnull' => true, 'autoincrement' => false, 'notblank' => true, 'default' => 0));
         $this -> hasColumn('horas_por_credito', 'integer', 4, array('type' => 'integer', 'length' => 4, 'fixed' => false, 'unsigned' => false, 'primary' => false, 'notnull' => true, 'notblank' => true, 'autoincrement' => false, ));
         //Esto habría que cambiarlo, no me gusta en integer
-        $this -> hasColumn('slot_minimo', 'time', null, array('type' => 'time', 'primary' => false, 'notnull' => true, 'autoincrement' => false, 'default' => '01:00', 'unsigned' => false));
+        $this -> hasColumn('slot_minimo', 'integer', null, array('type' => 'integer', 'primary' => false, 'notnull' => true, 'autoincrement' => false, 'default' => '30', 'unsigned' => false));
         $this -> hasColumn('hora_inicial', 'time', null, array('type' => 'time', 'primary' => false, 'notnull' => true, 'autoincrement' => false, 'default' => '09:00', 'unsigned' => false));
         $this -> hasColumn('hora_final', 'time', null, array('type' => 'time', 'primary' => false, 'notnull' => true, 'autoincrement' => false, 'default' => '22:00', 'unsigned' => false));
         $this -> hasColumn('inicio_semestre1', 'date', null, array('notblank', 'unsigned' => false));
