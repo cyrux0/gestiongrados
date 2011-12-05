@@ -330,3 +330,7 @@ a.delete-button{
     display:block;
     text-align: center;
 }
+
+.exportar-button{
+    text-align: right;
+}
