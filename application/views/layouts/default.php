@@ -22,16 +22,9 @@
   </head>
   <body>
     <div id="header">
+        <div id="uca"><div id="uca2"><a id="logoUca" href="http://www.uca.es"><img alt="Universidad de Cádiz" src="<?= site_url('themes/css/img/uca.jpg') ?>" /></a></div></div>
       <!-- Cabecera con imagen y link a la página de inicio -->
-      <a id="logoUca" href="http://www.uca.es"><img alt="Universidad de Cádiz" src="<?= site_url('themes/css/img/logoEmpresa.gif') ?>" /></a>
-      <div id="navegacionUca">
-      	<ul id="enlacesUca">
-      		<li>Inicio</li>
-      		<li>Intranet</li>
-      		<li>Imprimir</li>
-      		<li>Mapa web</li>
-      	</ul>
-      </div>
+      <div id="esi"><img alt="Escuela Superior de Ingenieria" src="<?= site_url('themes/css/img/esi.png') ?>" /></div>
       <!--<div id="user_bar">-->
 	<!-- Aquí irían los links del panel de usuario -->
      <!-- </div>-->
@@ -59,19 +52,18 @@
           <? if(!Current_User::logged_in())
                echo anchor('#', 'Login', 'id="login-button"');
              else
-               echo "Bienvenido: <em>" . Current_User::user()->username . "</em> " . anchor('logout', 'Logout');
+               echo "Bienvenido: <em>" . Current_User::user()->nombre . "</em> " . anchor('logout', 'Logout');
           ?>  
     </div>
       
       <div id="side_bar2">
           <ul class="menu collapsible">
               <li><?= anchor('#', 'Inicio') ?></li>
+              <? if(Current_User::logged_in(1)): ?>
               <li><?= anchor('#', 'Titulaciones') ?>
                   <ul class="acitem">
                       <li><?= anchor('titulaciones/index', 'Ver titulaciones') ?></li>
-                      <? if(Current_User::logged_in(1)): ?>
                           <li><?= anchor('titulaciones/add', 'Añadir titulaciones') ?></li>
-                      <? endif; ?>
                   </ul>
               </li>
               <li><?= anchor('#', 'Asignaturas') ?>
@@ -81,7 +73,6 @@
                       </li>
                   </ul>
               </li>
-              <? if(Current_User::logged_in(1)): ?>
               <li>
                   <?= anchor('#', 'Cursos') ?>
                   <ul class="acitem">
@@ -93,8 +84,6 @@
                       </li>
                   </ul>
               </li>
-              <? endif; ?>
-              <? if(Current_User::logged_in(2)): ?>
               <li>
                   <?= anchor('#', 'Aulas') ?>
                   <ul class="acitem">
@@ -106,15 +95,17 @@
                       
               </li>
               <? endif; ?>
-              <? if(Current_User::logged_in(2)): ?>
+              <? if(Current_User::logged_in(2) or Current_User::logged_in(1)): ?>
               <li><?= anchor('#', 'Planificación Docente') ?>
                   <ul class="acitem">
-                      <li><?= anchor('cursos/select_curso/titulaciones/index_cargas', 'Añadir Plan Docente') ?></li>
+                      <? if(Current_User::logged_in(1)): ?>
+                        <li><?= anchor('cursos/select_curso/titulaciones/index_cargas', 'Añadir Plan Docente') ?></li>
+                      <? endif; ?>
                       <li><?= anchor('titulaciones/show_planificacion', 'Ver Planificación') ?></li>
                   </ul>
               </li>
               <? endif; ?>
-              <? if(Current_User::logged_in(2)): ?>
+              <? if(Current_User::logged_in(1)): ?>
               <li>
                   <a href="#">Calendario</a>
                   <ul class="acitem">
@@ -123,7 +114,7 @@
                   </ul>
               </li>
               <? endif; ?>
-              <? if(Current_User::logged_in(2)): ?>
+              <? if(Current_User::logged_in(1)): ?>
               <li>
                   <a href="#">Horarios</a>
                   <ul class="acitem">
@@ -140,13 +131,18 @@
               <li>
                   <a href="#">Usuario</a>
                   <ul class="acitem">
+                      <? if(Current_User::logged_in(0)): ?>
+                          <li>
+                              <?= anchor('users/add', 'Añadir usuarios') ?>
+                          </li>
+                      <? endif; ?>
                       <li>
                           <?= anchor('users/edit', 'Cambiar contraseña/email') ?>
                       </li>
                   </ul>
               </li>
               <? endif; ?>
-              <? if(Current_User::logged_in()): ?>  
+              <? if(Current_User::logged_in(0)): ?>  
               <li>
                   <a href="#">Configuración</a>
                   <ul class="acitem">
@@ -160,8 +156,8 @@
       <div id="login-form" title="Login">
           <fieldset>
               <?= form_open('login/submit') ?>
-                  <label for="username">Usuario:</label>
-                  <input name="username" type="text" class="text ui-widget-content ui-corner-all"/>
+                  <label for="email">Email:</label>
+                  <input name="email" type="text" class="text ui-widget-content ui-corner-all"/>
                   <label for="password">Password:</label>
                   <input type="password" name="password" class="text ui-widget-content ui-corner-all" />
                 <?= form_close() ?>

@@ -21,6 +21,6 @@ class Login extends MY_Controller{
     }
     
     function _authenticate(){
-        return Current_User::login($this->input->post('username'), $this->input->post('password'));
+        return Current_User::login($this->input->post('email'), $this->input->post('password'));
     }
 }

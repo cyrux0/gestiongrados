@@ -10,6 +10,7 @@ class Aulas extends MY_Controller
     function __construct(){
         parent::__construct();
         $this->layout = '';
+        $this->_filter(array('add', 'create', 'index', 'exportar_ocupacion', 'delete'), array($this, 'authenticate'), 1);
     }
     
     /**

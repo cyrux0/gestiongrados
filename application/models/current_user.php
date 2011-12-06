@@ -24,8 +24,8 @@ class Current_User{
         return self::$user;
     }
     
-    public static function login($username, $password){
-        if($u = Doctrine::getTable('User')->findOneByUsername($username) and $u->isAuthenticated($password)){
+    public static function login($email, $password){
+        if($u = Doctrine::getTable('User')->findOneByEmail($email) and $u->isAuthenticated($password)){
             self::$user = $u;
             $CI =& get_instance();
             $CI->session->set_userdata('user_id', $u->id);
@@ -37,7 +37,7 @@ class Current_User{
     
     public static function logged_in($security_level = -1){
         $u = self::user();
-        return ($u and ($security_level == -1 or $u->security_level >= $security_level) ) ? TRUE : FALSE;
+        return ($u and ($security_level == -1 or $u->level == $security_level) ) ? TRUE : FALSE;
     }
     
     

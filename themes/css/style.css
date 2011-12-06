@@ -57,12 +57,13 @@ a {
 }
 
 
-#header, #main, #footer {
+#main, #footer {
     width: 80%;
     min-width: 800px;
 }
 
 #header{
+    width:100%;
     font-family:"Myriad Web Pro",Helvetica,Arial,sans-serif;
     letter-spacing: 1px;
     border-bottom: 5px solid #333333;
@@ -196,8 +197,6 @@ input[type="submit"]{
 }
 
 #logoUca{
-	display: inline;
-	float:left;
 	width:80%;
 	height:125px;
 }
@@ -348,4 +347,19 @@ a.delete-button{
 #main_content #print-button a:hover{
     background-color:transparent;
 }
+#uca{
+    background-image: url('img/fondoUca.jpg');      
+}
+#uca2{
+    margin: 0 auto;
 
+    height:63px;
+    width:80%;
+    display:block;
+    text-align: right;
+}
+
+#esi{
+    width:80%;
+    text-align: left;
+}

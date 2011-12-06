@@ -10,8 +10,8 @@ class Asignaturas extends MY_Controller {
         $this->alerts = '';
         $this->page_title = "Gestión de asignaturas";
         $this->modelObject = null;
-        $this->_filter(array('add_to', 'create', 'edit', 'update', 'delete'), array($this, 'authenticate'), 1); // Sólo permitimos a un usuario de tipo administrador (1)
-        $this->_filter(array('add_carga'), array($this, 'authenticate'), 2); // Sólo se lo permitimos al usuario de tipo planner (2)
+        $this->_filter(array('add_to', 'create', 'edit', 'update', 'delete'), array($this, 'authenticate'), 1); // Sólo permitimos a un usuario de tipo planificador (1)
+        $this->_filter(array('add_carga', 'show', 'add_carga_from_file'), array($this, 'authenticate'), 1); // Sólo se lo permitimos al usuario de tipo planificador (2)
     }
 
     public function add_to($id) {

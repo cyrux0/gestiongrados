@@ -1,12 +1,3 @@
-User:
-    Admin:
-        username: Administrador
-        password: 123456
-        security_level: 1
-    Planner:
-        username: planner
-        password: 123456
-        security_level: 2
 Titulacion:
     Informatica:
         codigo: 1714
@@ -18,6 +9,15 @@ Titulacion:
         nombre: Grado en Ingeniería Industrial
         creditos: 215
         num_cursos: 4
+User:
+    Admin:
+        email: administrador@uca.es
+        DNI: 77777777W
+        password: 123456
+        level: 1
+        nombre: Admin
+        apellidos: Admin
+        id_titulacion: 1
 Asignatura:
     ADA1:
         codigo: 123
@@ -55,7 +55,7 @@ Curso:
         num_semanas_semestre1: 15
         num_semanas_semestre2: 15
         horas_por_credito: 10
-        slot_minimo: 01:00
+        slot_minimo: 30
         hora_inicial: 09:00
         hora_final: 22:00
         inicio_semestre1: "2011-09-22"

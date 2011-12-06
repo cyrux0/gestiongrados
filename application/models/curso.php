@@ -132,6 +132,7 @@ class Curso extends Doctrine_Record {
                     ->innerJoin('l.actividad c')
                     ->innerJoin('l.horario h')
                     ->where("l.$filtro = ?", array($valor_filtro))
+                    ->andWhere('h.id_curso = ?', array($this->id))
                     ->andWhere('l.dia_semana = ?', array($dia_semana))
                     ->andWhere('l.hora_inicial IS NOT NULL')
                     ->andWhere('h.num_semana = ?', array($num_semana))

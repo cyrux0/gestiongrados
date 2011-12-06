@@ -6,6 +6,7 @@ class Horarios extends MY_Controller {
         parent::__construct();
         $this->layout = '';
         $this->load->helper('resumen_asignatura_helper');
+        $this->_filter(array('select_grupo', 'crear_grupos', 'add_grupo', 'asignar_aulas', 'guardar_aulas', 'edit', 'edit_teoria', 'check_grupo', 'save_line', 'delete', 'delete_line', 'ocupacion_aula', 'exportar', 'add_extra_slot'), array($this, 'authenticate'), 1);
     }
 
     public function index() {
@@ -102,7 +103,7 @@ class Horarios extends MY_Controller {
 
     public function add_grupo($id_titulacion, $id_curso, $curso_titulacion, $num_grupo) {
         $curso = Doctrine::getTable('Curso')->find($id_curso);
-
+        $slot_minimo = $curso->slot_minimo / 60;
         $horario_semestre1 = new Horario;
         $horario_semestre1->id_curso = $id_curso;
         $horario_semestre1->id_titulacion = $id_titulacion;
@@ -138,13 +139,13 @@ class Horarios extends MY_Controller {
                 $grupos_totales_teoria = $planactividad->grupos; // Esto habría que sacarlo de otro sitio pero de momento se deja ahí.
             }
         }
-
+        
         foreach ($asignaturas as $asignatura) {
             foreach ($asignatura->PlanesDocentes[0]->planactividades as $planactividad) {
                 if ($planactividad->id_actividad == 1) { // Teoría
-                    for ($i = 0; $i < $planactividad->horas_semanales; $i += 0.5) {
+                    for ($i = 0; $i < $planactividad->horas_semanales; $i += $slot_minimo) {
                         $linea_horario = new LineaHorario;
-                        $linea_horario->slot_minimo = 0.5;
+                        $linea_horario->slot_minimo = $slot_minimo;
                         $linea_horario->id_asignatura = $asignatura->id;
                         $linea_horario->id_actividad = $planactividad->id_actividad;
                         $linea_horario->num_grupo_actividad = $num_grupo;
@@ -329,10 +330,10 @@ class Horarios extends MY_Controller {
         {
             $array_asignaturas[$linea->id_asignatura] = $linea->asignatura->nombre;
         }
-        $this->load->view('horarios/edit', array('horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas, 'aulastotal' => $aulas_total, 'horario_tipo' => $tipo, 'num_semanas_teoria' => $horario->curso->num_semanas_teoria, 'array_asignaturas' => $array_asignaturas));
+        $this->load->view('horarios/edit', array('slot_minimo' => $horario->curso->slot_minimo, 'horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas, 'aulastotal' => $aulas_total, 'horario_tipo' => $tipo, 'num_semanas_teoria' => $horario->curso->num_semanas_teoria, 'array_asignaturas' => $array_asignaturas));
     }
 
-    public function ocupacion_aula($id_curso, $id_aula) {
+    public function ocupacion_aula($id_curso, $semestre, $num_semana, $id_aula) {
         $curso = Doctrine::getTable('Curso')->find($id_curso);
         $lineas_aulas = Doctrine_Query::create()
                 ->select('l.id, l.num_grupo_actividad, l.hora_inicial, l.hora_final, l.dia_semana, a.abreviatura, c.identificador')
@@ -341,9 +342,10 @@ class Horarios extends MY_Controller {
                 ->innerJoin('l.asignatura a')
                 ->innerJoin('l.actividad c')
                 ->where('h.id_curso = ?', $id_curso)
-                ->andWhere('h.num_semana = ?', $curso->num_semanas_teoria + 1)
+                ->andWhere('h.num_semana = ?', $num_semana)
                 ->andWhere('l.id_aula = ?', $id_aula)
                 ->andWhere('hora_inicial IS NOT NULL')
+                ->andWhere('h.semestre = ? ', array($semestre))
                 ->execute(array(), Doctrine_Core::HYDRATE_ARRAY);
         
         foreach($lineas_aulas as &$linea)
@@ -355,6 +357,18 @@ class Horarios extends MY_Controller {
         echo json_encode($lineas_aulas);
     }
 
+    public function exportar_ocupacion($id_curso, $semestre, $num_semana, $id_aula)
+    {
+        $curso = Doctrine::getTable('Curso')->find($id_curso);
+        $matriz = $curso->getMatrizHorario('id_aula', $id_aula, $semestre, $num_semana);
+        $this->load->helper('importacion_csv_helper');
+        exportador_csv('./application/downloads/temp.csv', $matriz);
+        $data = file_get_contents('./application/downloads/temp.csv');
+        $name = 'aula.csv';
+        $this->load->helper('download');
+        force_download($name, $data);
+    }
+    
     public function edit_teoria($id_tipo, $num_semana) {
         $horario = Doctrine::getTable("Horario")->find($id_tipo);
 
@@ -368,7 +382,7 @@ class Horarios extends MY_Controller {
                 ->execute();
 
         // Obtenemos las fechas de la semana correspondiente al horario (lunes, fecha de comienzo de curso y fecha de fin de curso
-        list($fecha_inicial, $fecha_lunes, $fecha_final) = dias_iniciales($horario->id_curso, $horario->num_semana, $horario->semestre);
+        list($fecha_inicial, $fecha_lunes, $fecha_final) = dias_iniciales($horario->id_curso, $num_semana, $horario->semestre);
 
         // Nos aseguramos que el número de la semana esté comprendido entre 0 y las semanas de teoría
         if ($horario->curso->num_semanas_teoria > 0 and $num_semana <= $horario->curso->num_semanas_teoria and $num_semana > 0) {
@@ -545,7 +559,7 @@ class Horarios extends MY_Controller {
         if (!$linea->isValid() or $lineas_aula->count() or !$success['success']) {
             $success['success'] = 0;
             $success['color'] = $linea->color;
-            if(!$linea->isValid()) $success['isvalid'] =1;
+            if(!$linea->isValid()){ $success['isvalid'] =1; $success['validations'] = $linea->getErrorStackAsString();}
         } else {
             $linea->save();
         }
@@ -606,5 +620,57 @@ class Horarios extends MY_Controller {
         $linea->slot_minimo = $horario->curso->slot_minimo/60;
         $linea->save();
         redirect("horarios/edit/$id_horario");
+    }
+    
+    public function visualizacion_asignaturas($id_curso, $id_titulacion)
+    {
+        $asignaturas = Doctrine_Query::create()
+                ->select('l.id_asignatura, a.nombre, a.curso, a.semestre')
+                ->from('LineaHorario l')
+                ->innerJoin('l.asignatura a')
+                ->innerJoin('l.horario h')
+                ->where('h.id_titulacion = ?', array($id_titulacion))
+                ->andWhere('h.id_curso = ?', array($id_curso))
+                ->groupBy('l.id_asignatura')
+                ->orderBy('a.curso, a.semestre')
+                ->execute();
+            
+        $array_asignaturas = array();
+        foreach($asignaturas as $asignatura)
+        {
+            $grupos = Doctrine_Query::create()
+                    ->select('c.grupos')
+                    ->from('PlanActividad c')
+                    ->innerJoin('c.plandocente p')
+                    ->where('p.id_curso = ?', array($id_curso))
+                    ->andWhere('p.id_asignatura = ?', array($asignatura->id_asignatura))
+                    ->andWhere('c.id_actividad = ?', array(1))
+                    ->execute();
+            
+            $array_asignaturas[] = array('id_asignatura' => $asignatura->id_asignatura, 
+                                            'nombre' => $asignatura->asignatura->nombre, 
+                                            'curso' => $asignatura->asignatura->curso, 
+                                            'semestre' => $asignatura->asignatura->semestre,
+                                             'grupos' => $grupos[0]->grupos);
+        }
+        
+        $this->load->view('visualizacion/lista_asignaturas', array('asignaturas' => $array_asignaturas, 'id_curso' => $id_curso, 'id_titulacion' => $id_titulacion));
+    }
+    
+    public function visualizacion_mostrar_grupos()
+    {
+        $id_curso = $this->input->post('id_curso');
+        $id_titulacion = $this->input->post('id_titulacion');
+        $seleccionadas = $this->input->post('seleccionada');
+        $asignaturas = $this->input->post('asignaturas');
+        $seleccionadas = array_keys($seleccionadas);
+        $array_asignaturas[] = array();
+        foreach($seleccionadas as $id_asignatura)
+        {
+            
+            $fila = array('id' => $id_asignatura);
+            $fila['grupos'] = array(0,0,0,0,0);
+            ;
+        }
     }
 }

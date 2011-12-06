@@ -1,6 +1,8 @@
-<div class="no-print exportar-button">
-    <a class="img-anchor" href="<?= site_url("titulaciones/exportar_planificacion/$id_curso/$id_titulacion") ?>"><img src="<?= site_url('themes/css/img/csv.png') ?>" alt="exportar" /></a>
-</div>
+<? if(Current_User::logged_in(1)): ?>
+    <div class="no-print exportar-button">
+        <a class="img-anchor" href="<?= site_url("titulaciones/exportar_planificacion/$id_curso/$id_titulacion") ?>"><img src="<?= site_url('themes/css/img/csv.png') ?>" alt="exportar" /></a>
+    </div>
+<? endif; ?>
 <table class="listaelems">
     <tr><th>Asignatura</th><th colspan="2">Teoría</th><th colspan="2">Laboratorio</th><th colspan="2">Problemas</th><th colspan="2">Informática</th><th colspan="2">Prácticas de campo</th></tr>
     <tr><th></th><th>Horas</th><th>Nº grupos</th><th>Horas</th><th>Nº grupos</th><th>Horas</th><th>Nº grupos</th><th>Horas</th><th>Nº grupos</th><th>Horas</th><th>Nº grupos</th></tr>

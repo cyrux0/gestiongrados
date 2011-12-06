@@ -24,19 +24,6 @@ class User extends Doctrine_Record {
                         'primary' => true, 
                         'autoincrement' => true 
                         ));
-
-        $this->hasColumn('username', 'string', 16, array(
-					    'type' => 'string',
-					    'length' => 18,
-				        'minlength' => 4,
-					    'fixed' => false,
-					    'unsigned' => false,
-					    'primary' => false,
-		      		    'notnull' => true,
-					    'autoincrement' => false,
-					    'unique' => true
-					    ));
-
         $this->hasColumn('password', 'string', 255, array(
 					    'type' => 'string',
 					    'fixed' => false,
@@ -45,17 +32,64 @@ class User extends Doctrine_Record {
 		      		    'notnull' => true,
 					    'autoincrement' => false
 					    ));
-
-        $this->hasColumn('security_level', 'integer', 4, array(
+        $this->hasColumn('nombre', 'string', 50, array(
+					    'type' => 'string',
+					    'length' => 50,
+				        'minlength' => 4,
+					    'fixed' => false,
+					    'unsigned' => false,
+					    'primary' => false,
+                                            'notnull' => true,
+					    'autoincrement' => false,
+					    ));
+        $this->hasColumn('apellidos', 'string', 50, array(
+					    'type' => 'string',
+					    'length' => 50,
+				        'minlength' => 4,
+					    'fixed' => false,
+					    'unsigned' => false,
+					    'primary' => false,
+                                            'notnull' => true,
+					    'autoincrement' => false,
+					    ));
+        $this->hasColumn('DNI', 'string', 9, array(
+					    'type' => 'string',
+					    'length' => 9,
+				        'minlength' => 9,
+					    'fixed' => false,
+					    'unsigned' => false,
+					    'primary' => false,
+                                            'notnull' => true,
+					    'autoincrement' => false,
+                                            'unique' => true
+					    ));
+        $this->hasColumn('email', 'string', 30, array(
+					    'type' => 'string',
+					    'length' => 30,
+				        'minlength' => 5,
+					    'fixed' => false,
+					    'unsigned' => false,
+					    'primary' => false,
+                                            'notnull' => true,
+					    'autoincrement' => false,
+                                            'unique' => true
+					    ));
+        $this->hasColumn('id_titulacion', 'integer', 4, array('type' => 'integer', 
+                        'length' => 4, 
+                        'fixed' => false, 
+                        'unsigned' => false
+                        ));
+        $this->hasColumn('level', 'integer', 4, array(
                         'notnull' => true, 
-                        'default' => 0, 
-                        'range' => array(0, 2)
+                        'default' => 0,
+                        'range' => array(0, 3)
                         ));
 
     }
 
     public function setUp() {
         parent::setUp();
+        $this->hasOne('Titulacion as titulacion', array('local' => 'id_titulacion', 'foreign' => 'id'));
     }
     
     public function setPassword($password){

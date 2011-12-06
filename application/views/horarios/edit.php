@@ -46,11 +46,12 @@
 
 <div id="check-horario"></div>
 <br/>
-<div id="horario">
+<div id="horario" data-slot="<?= $slot_minimo?>">
     
 </div>
 <p>
-<?= form_dropdown('ocupacion', $aulastotal) . anchor('horarios/ocupacion_aula/' . $horario->id_curso . '/', 'Ver ocupación del aula', 'id="link-ocupacion" class="button"') ?>
+<?= form_dropdown('ocupacion', $aulastotal) . anchor("horarios/ocupacion_aula/$horario->id_curso/$horario->semestre/$horario->num_semana" , 'Ver ocupación del aula', 'id="link-ocupacion" class="button"') ?>
+    <a href="<?= site_url("horarios/exportar_ocupacion/$horario->id_curso/$horario->semestre/$horario->num_semana") ?>" class="img-anchor" id="link-exportar-ocupacion"><img src="<?= site_url('themes/css/img/csv.png') ?>" /></a>
 </p>
 <div id="aulas">
     

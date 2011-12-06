@@ -7,12 +7,20 @@ class Users extends MY_Controller {
         $this->layout = '';
         $this->notices = '';
         $this->alerts = '';
-        $this->_filter(array('add', 'create', 'edit', 'update', 'delete'), array($this, 'authenticate'), 1); // Sólo admins
+        $this->_filter(array('add', 'create', 'delete'), array($this, 'authenticate'), 0); // Sólo admins
    }
 
     function add(){
         $user = new User;
-        $this->load->view('users/add', array('user' => $user, 'action' => 'users/create'));
+        $titulaciones = Doctrine::getTable('Titulacion')->findAll();
+        $array_titulaciones = array();
+        
+        foreach($titulaciones as $titulacion)
+        {
+            $array_titulaciones[$titulacion->id] = $titulacion->nombre;
+        }
+        
+        $this->load->view('users/add', array('user' => $user, 'titulaciones' => $array_titulaciones, 'action' => 'users/create'));
     }
     
     function create(){
@@ -64,9 +72,10 @@ class Users extends MY_Controller {
     }
     
     private function _submit_validate(){
-        $this->form_validation->set_rules('username', 'Username', 'required|minlength[4]|maxlength[16]|alpha_numeric|unique[User.username]');
-        $this->form_validation->set_rules('password', 'Password', 'required|minlength[5]|maxlength[25]');
-        $this->form_validation->set_rules('passconf', 'Confirm Password', 'required|matches[password]');
+        $this->form_validation->set_rules('email', 'Email', 'required|minlength[4]|maxlength[16]|alpha_numeric|unique[User.email]');
+        $this->form_validation->set_rules('nombre', 'Nombre', 'required|minlength[4]|maxlength[50]|alpha_ext');
+        $this->form_validation->set_rules('apellidos', 'Apellidos', 'required|minlength[4]|maxlength[50]|alpha_ext');
+        $this->form_validation->set_rules('DNI', 'DNI', 'required|exact_length[9]');
         return $this->form_validation->run();
     }
 }

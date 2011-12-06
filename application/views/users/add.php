@@ -6,25 +6,35 @@
 </div>
 
 <div class="field">
-    <label for="password">Password:</label>
-    <?= form_password('password', '') ?>
+    <label for="titulacion">Titulación:</label>
+    <?= form_dropdown('titulacion', $titulaciones) ?>
 </div>
-
 <div class="field">
-    <label for="password">Confirmación de password:</label>
-    <?= form_password('passconf', ''); ?>
+    <label for="nombre">Nombre:</label>
+    <?= form_input('nombre', set_value('nombre', '')) ?>
 </div>
-
 <div class="field">
-    <label for="admin">Administrador:</label>
-    <?= form_checkbox('admin', '1', set_value('admin', $user->admin)) ?>
+    <label for="apellidos">Apellidos:</label>
+    <?= form_input('apellidos', set_value('apellidos', '')) ?>
 </div>
-
 <div class="field">
-    <label for="planner">Planificador:</label>
-    <?= form_checkbox('planner', '1', set_value('planner', $user->planner)) ?>
+    <label for="DNI">DNI:</label>
+    <?= form_input('DNI', set_value('DNI', '')) ?>
 </div>
-
+<div class="field">
+    <label for="email">Email (@uca.es):</label>
+    <?= form_input('email', set_value('email', '')) ?>
+</div>
+<div class="field">
+    <label for="level">Administrador:</label>
+    <?= form_radio('level', '0', set_radio('level', '0', TRUE)) ?>
+    <label for="level">Planificador:</label>
+    <?= form_radio('level', '1', set_radio('level', '1')) ?>
+    <label for="level">Profesor:</label>
+    <?= form_radio('level', '2', set_radio('level', '2')) ?>
+    <label for="level">Alumno:</label>
+    <?= form_radio('level', '3', set_radio('level', '3')) ?>
+</div>
 <div class="actions">
     <?= form_submit('submit', 'Enviar') ?>
 </div>

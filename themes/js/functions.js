@@ -357,6 +357,8 @@ var calendar = {
 var horarios = {
     
     initialize: function(){
+        var slot_minimo = $('#horario').data('slot');
+        
         $("#asignaturas div.external-event").each(function(){
 
             var events = eval($(this).find(".hidden-info").text());
@@ -388,6 +390,7 @@ var horarios = {
         }
             
         var fullcalendar = $("#horario").fullCalendar({
+            slotMinutes: slot_minimo,
             timeFormat: {agenda: 'H:mm'},
             axisFormat: 'H:mm',
             events: savedEvents,
@@ -442,7 +445,7 @@ var horarios = {
                 
             drop: function(date, allDay){
 
-                var events = $(this).data('events');
+                var events =  $(this).data('events');
                 var aula = $('#select-subject-' + events[0].id).val();
                 var color = $('#color-subject-' + events[0].id).val();
                 var originalObject = events.shift();
@@ -534,7 +537,6 @@ var horarios = {
                 $("#asignaturas div.external-event#subject-" + copiedEventObject.id).attr("id", "subject-" + events[0].id);
             }
         }else{
-            var events = $(this).data('events');
             events.unshift(originalEvent);
         }
     },
@@ -594,11 +596,16 @@ var horarios = {
 
 aulas = {
     initialize: function(){
+        var slot_minimo = $('#horario').data('slot');
+        $('#link-exportar-ocupacion').click(function(event){
+            event.preventDefault();
+            var href = $(this).attr('href') + '/' + $('select[name="ocupacion"]').val();
+            window.location = href;
+        });
         $('#link-ocupacion').click(function(event){
             event.preventDefault();
             var href = $(this).attr('href') + '/' + $('select[name="ocupacion"]').val();
             $.getJSON(href, function(data){
-            	
                 savedEvents = data;
                 for(var i in savedEvents){
                     hora_inicial = savedEvents[i].hora_inicial.split(":");
@@ -612,6 +619,7 @@ aulas = {
             	
                 $('#aulas').html('');
                 $('#aulas').fullCalendar({
+                    slotMinutes: slot_minimo,
                     timeFormat: {agenda: 'H:mm'},
                     axisFormat: 'H:mm',
                     events: savedEvents,
