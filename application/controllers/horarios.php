@@ -661,16 +661,103 @@ class Horarios extends MY_Controller {
     {
         $id_curso = $this->input->post('id_curso');
         $id_titulacion = $this->input->post('id_titulacion');
+        $curso = Doctrine::getTable('Curso')->find($id_curso);
+        // Array con las asignaturas seleccionadas
         $seleccionadas = $this->input->post('seleccionada');
-        $asignaturas = $this->input->post('asignaturas');
+        // Array con los grupos seleccionados
+        $asignaturas = $this->input->post('asignatura');
+        // Array con el número de grupos por curso // CAMBIAR COGIENDO EL PRIMER PLANACTIVIDAD DE TEORIA QUE SE ENCUENTRE EN LA TITULACIÓN EN ESE CURSO
+        $grupos_teoria = $this->input->post('total_grupos_teoria'); 
         $seleccionadas = array_keys($seleccionadas);
-        $array_asignaturas[] = array();
+        $array_asignaturas = array();
+        // Hay que hacer lo de las semanas
+        
         foreach($seleccionadas as $id_asignatura)
         {
-            
+            $asignatura = Doctrine::getTable('Asignatura')->find($id_asignatura);
+            $grupos = Doctrine_Query::create()
+                    ->select('c.id_actividad, c.grupos')
+                    ->from('PlanActividad c')
+                    ->innerJoin('c.plandocente p')
+                    ->where('p.id_curso = ?', array($id_curso))
+                    ->andWhere('p.id_asignatura = ?', array($id_asignatura))
+                    ->andWhere('c.id_actividad != ?', array(1))
+                    ->groupBy('c.id_actividad')
+                    ->orderBy('c.id_actividad')
+                    ->execute();
             $fila = array('id' => $id_asignatura);
-            $fila['grupos'] = array(0,0,0,0,0);
-            ;
+            $fila['grupos'] = array(2 => array(), 3 => array(), 4 => array(), 5 => array());
+            $fila['nombre'] = $asignatura->nombre;
+            $fila['grupo_teoria'] = $asignaturas[$id_asignatura];
+            foreach($grupos as $grupo)
+            {
+                $grupo_teoria = $asignaturas[$id_asignatura];
+                $total_grupos_teoria = Doctrine_Query::create()
+                        ->select('c.grupos')
+                        ->from('PlanActividad c')
+                        ->innerJoin('c.plandocente p')
+                        ->innerJoin('p.Asignatura a')
+                        ->where('p.id_curso = ?', array($id_curso))
+                        ->andWhere('a.titulacion_id = ?', array($id_titulacion))
+                        ->andWhere('c.id_actividad = 1')
+                        ->fetchOne()->grupos;
+                
+                $num_grupos_correspondientes = floor($grupo->grupos/$total_grupos_teoria);
+                $ultimo_grupo = $num_grupos_correspondientes*($grupo_teoria);
+
+                if($restantes = ($total_grupos_teoria - $ultimo_grupo) < $num_grupos_correspondientes){
+                    $num_grupos_correspondientes += $restantes;
+                    $ultimo_grupo += $restantes;
+                }
+                $fila['grupos'][$grupo->id_actividad] = range($num_grupos_correspondientes*($grupo_teoria - 1) + 1, $ultimo_grupo);
+            }
+           
+            $array_asignaturas[] = $fila;
         }
+        
+        $semanas = array_combine(range(1, $curso->num_semanas_teoria), range(1, $curso->num_semanas_teoria));
+        $semanas[] = "Semana tipo";
+        
+        
+        $this->load->view('visualizacion/mostrar_grupos', array('semanas' => $semanas, 'asignaturas' => $array_asignaturas, 'id_curso' => $id_curso, 'id_titulacion' => $id_titulacion, 'grupos_seleccionados' => $asignaturas));
+    }
+    
+    public function visualizacion_mostrar_horario()
+    {
+        $id_curso = $this->input->post('id_curso');
+        $curso = Doctrine::getTable('Curso')->find($id_curso);
+        $id_titulacion = $this->input->post('id_titulacion');
+        $array_lineas = array();
+        foreach($this->input->post('grupos_seleccionados') as $id_asignatura => $grupos)
+        {
+            foreach($grupos as $id_actividad => $numeros_grupos)
+            {
+                // Faltaría meter las líneas de teoría
+                foreach($numeros_grupos as $grupo)
+                {
+                    $lineas = Doctrine_Query::create()
+                            ->select('l.*, a.*, c.*')
+                            ->from('LineaHorario l')
+                            ->innerJoin('l.horario h')
+                            ->innerJoin('l.asignatura a')
+                            ->innerJoin('l.actividad c')
+                            ->where('h.id_curso = ?', array($id_curso))
+                            ->andWhere('h.id_titulacion = ?', array($id_titulacion))
+                            ->andWhere('l.id_actividad = ?', array($id_actividad))
+                            ->andWhere('l.num_grupo_actividad = ?', array($grupo))
+                            ->andWhere('l.hora_inicial IS NOT NULL')
+                            ->andWhere('h.num_semana = ?', array($this->input->post('num_semana')))
+                            ->execute();
+                    foreach($lineas as $linea)
+                    {
+                        $array_linea = $linea->toArray();
+                        $array_linea['nombre_asignatura'] = $linea->asignatura->abreviatura . " (" . $linea->actividad->identificador . $linea->num_grupo_actividad . " ) ";
+                        $array_lineas[] = $array_linea;
+                    }
+                }
+            }
+        }
+        $this->load->view('horarios/visualizacion_horario', array('slot_minimo' => $curso->slot_minimo, 'asignaturas_asignadas' => json_encode($array_lineas)));
+        // Recoger aquí las asignaturas buscar líneas, ir guardándolas en array y pasar a edit. Poner en la vista una clase para la que el horario no sea editable.
     }
 }

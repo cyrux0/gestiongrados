@@ -388,7 +388,7 @@ var horarios = {
                 
             }
         }
-            
+        var visualizacion = !$('#horario').hasClass('visualizacion');
         var fullcalendar = $("#horario").fullCalendar({
             slotMinutes: slot_minimo,
             timeFormat: {agenda: 'H:mm'},
@@ -406,7 +406,7 @@ var horarios = {
             columnFormat: {
                 week: 'ddd'
             },
-            editable: true,
+            editable: visualizacion,
             disableResizing: true,
             droppable: true,
             allDaySlot: false,
