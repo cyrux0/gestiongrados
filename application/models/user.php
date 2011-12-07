@@ -84,7 +84,7 @@ class User extends Doctrine_Record {
                         'default' => 0,
                         'range' => array(0, 3)
                         ));
-
+        
     }
 
     public function setUp() {
@@ -102,6 +102,29 @@ class User extends Doctrine_Record {
     
     protected function encrypt($password){
         return md5($password);
+    }
+    
+    public function generate_password()
+    {
+        $lenght = 8;
+        $pass = chr(rand(0, 1) ? ($x = rand(65, 90)) : ($x = rand(97, 122)));
+        for ($i = 1; $i < $lenght; $i++) {
+            $camino = rand(0, 2);
+            switch ($camino) {
+                case 0: $x = rand(65, 90);
+                    break;
+                case 1: $x = rand(97, 122);
+                    break;
+                case 2: $x = rand(48, 57);
+                    break;
+                default: $x = rand(48, 57);
+                    break;
+            }
+
+            $pass = $pass . chr($x);
+        }
+        $this->setPassword($pass);
+        return $pass;
     }
 }/* Fin del archivo user.php */
 

@@ -100,6 +100,7 @@
                   <ul class="acitem">
                       <? if(Current_User::logged_in(1)): ?>
                         <li><?= anchor('cursos/select_curso/titulaciones/index_cargas', 'Añadir Plan Docente') ?></li>
+                        <li><?= anchor('planesdocentes/make_upload', 'Importar CSV') ?></li>
                       <? endif; ?>
                       <li><?= anchor('titulaciones/show_planificacion', 'Ver Planificación') ?></li>
                   </ul>
@@ -114,16 +115,23 @@
                   </ul>
               </li>
               <? endif; ?>
-              <? if(Current_User::logged_in(1)): ?>
+              <? if(Current_User::logged_in(1) or Current_User::logged_in(4)): ?>
               <li>
                   <a href="#">Horarios</a>
                   <ul class="acitem">
-                      <li>
-                          <?= anchor('horarios/select_grupo', 'Grupos y horarios') ?>
-                      </li>
-                      <li>
-                          <?= anchor('titulaciones/show_informes', 'Informes de asignatura') ?>
-                      </li>
+                      <? if(Current_User::logged_in(1)): ?>
+                          <li>
+                              <?= anchor('horarios/select_grupo', 'Grupos y horarios') ?>
+                          </li>
+                          <li>
+                              <?= anchor('titulaciones/show_informes', 'Informes de asignatura') ?>
+                          </li>
+                      <? endif; ?>
+                      <? if(Current_User::logged_in(4)): ?>
+                          <li>
+                              <?= anchor('horarios/visualizacion_asignaturas', 'Ver horario') ?>
+                          </li>
+                      <? endif; ?>
                   </ul>
               </li>
               <? endif; ?>
@@ -142,12 +150,12 @@
                   </ul>
               </li>
               <? endif; ?>
-              <? if(Current_User::logged_in(0)): ?>  
+              <? if(Current_User::logged_in(1)): ?>  
               <li>
                   <a href="#">Configuración</a>
                   <ul class="acitem">
-                      <li><?= anchor('#', 'Usuarios y grupos') ?></li>
-                      <li><?= anchor('#', 'Opciones/reset') ?></li>
+                      <li><?= anchor('admin/backup', 'Backup de la BD') ?></li>
+                      <li><?= anchor('admin/restaurar_backup', 'Restaurar backup') ?></li>
                   </ul>
               </li>
               <? endif; ?>

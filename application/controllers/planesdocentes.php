@@ -147,7 +147,7 @@ class PlanesDocentes extends MY_Controller{
     }
     
     public function make_upload(){
-        $this->load->view('PlanDocente/from_file', array('error' => ''));
+        $this->load->view('PlanDocente/from_file', array('action' => 'planesdocentes/upload_file'));
     }
     
     /**

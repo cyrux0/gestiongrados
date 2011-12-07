@@ -7,7 +7,7 @@ class Users extends MY_Controller {
         $this->layout = '';
         $this->notices = '';
         $this->alerts = '';
-        $this->_filter(array('add', 'create', 'delete'), array($this, 'authenticate'), 0); // Sólo admins
+        $this->_filter(array('delete'), array($this, 'authenticate'), 0); // Sólo admins
    }
 
     function add(){
@@ -23,6 +23,7 @@ class Users extends MY_Controller {
         $this->load->view('users/add', array('user' => $user, 'titulaciones' => $array_titulaciones, 'action' => 'users/create'));
     }
     
+    
     function create(){
         $user = new User;
 
@@ -32,13 +33,41 @@ class Users extends MY_Controller {
             $this->add();
         }
          */
+        $password = $user->generate_password();
         
-         if($this->_submit_validate() == FALSE){
+        if($this->_submit_validate() == FALSE){
             $this->add();
             return; 
         }else{
-            $user->save();
-            redirect('welcome');
+            $this->load->library('phpmailer');
+            $mail = new PHPMailer;
+            $mail->SMTPAuth = true;
+            $mail->Username = "danielsalazarrecio@gmail.com";
+            $mail->Password = "T1tGoGvl4c10n";
+            $mail->Host = "smtp.gmail.com";
+            $mail->Mailer = "mail";
+            $mail->SMTPSecure = "ssl";
+            $mail->Port = 25;
+            $mail->From = 'info@uca.es';
+            $mail->Encoding = "utf-8";
+            $mail->FromName = 'Aplicación para la gestión de la planificación docente de la ESI (UCA)';
+            $mail->AddAddress($user->email);
+            $mail->IsHTML(true);
+            $mail->Subject = 'Password para aplicación de gestión de grados';
+            $mail->Body = "
+            <p>
+            El password para tu cuenta en la aplicación de gestión de grados de la ESI es: $password
+            Debes iniciar sesión con tu cuenta de email y el password indicado aquí. Para iniciar sesión ve a:
+                    <a href=\"". site_url('login') . "\" >Login</a>
+            </p>
+            ";
+            if($mail->send()){
+                $user->save();
+                redirect('welcome');
+            }else{
+                echo "email not sended";
+            }
+            
         }
     }
     
@@ -72,7 +101,7 @@ class Users extends MY_Controller {
     }
     
     private function _submit_validate(){
-        $this->form_validation->set_rules('email', 'Email', 'required|minlength[4]|maxlength[16]|alpha_numeric|unique[User.email]');
+        $this->form_validation->set_rules('email', 'Email', 'required|minlength[4]|maxlength[16]');
         $this->form_validation->set_rules('nombre', 'Nombre', 'required|minlength[4]|maxlength[50]|alpha_ext');
         $this->form_validation->set_rules('apellidos', 'Apellidos', 'required|minlength[4]|maxlength[50]|alpha_ext');
         $this->form_validation->set_rules('DNI', 'DNI', 'required|exact_length[9]');

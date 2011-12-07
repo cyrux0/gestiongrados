@@ -624,6 +624,8 @@ class Horarios extends MY_Controller {
     
     public function visualizacion_asignaturas($id_curso, $id_titulacion)
     {
+        if(!isset($id_curso)) redirect('cursos/select_curso/horarios/visualizacion_asignaturas');
+        if(!isset($id_titulacion)) redirect('horarios/visualizacion_asignaturas/' . $id_curso . '/' . Current_User::user()->id_titulacion);
         $asignaturas = Doctrine_Query::create()
                 ->select('l.id_asignatura, a.nombre, a.curso, a.semestre')
                 ->from('LineaHorario l')

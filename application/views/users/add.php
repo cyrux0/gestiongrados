@@ -1,13 +1,7 @@
 <?= form_open($action) ?>
-
-<div class="field">
-<label for="login">Login:</label>
-<?= form_input('username',set_value('login', $user->username)) ?>
-</div>
-
 <div class="field">
     <label for="titulacion">Titulación:</label>
-    <?= form_dropdown('titulacion', $titulaciones) ?>
+    <?= form_dropdown('id_titulacion', $titulaciones) ?>
 </div>
 <div class="field">
     <label for="nombre">Nombre:</label>
@@ -25,6 +19,7 @@
     <label for="email">Email (@uca.es):</label>
     <?= form_input('email', set_value('email', '')) ?>
 </div>
+<? if(Current_User::logged_in(0)): ?>
 <div class="field">
     <label for="level">Administrador:</label>
     <?= form_radio('level', '0', set_radio('level', '0', TRUE)) ?>
@@ -35,6 +30,8 @@
     <label for="level">Alumno:</label>
     <?= form_radio('level', '3', set_radio('level', '3')) ?>
 </div>
+<? endif; ?>
+
 <div class="actions">
     <?= form_submit('submit', 'Enviar') ?>
 </div>

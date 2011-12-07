@@ -5,7 +5,7 @@
 <? endforeach ?>
 
 </ul>
-
+<a href="<?= site_url("eventos/export_calendar/$id_curso") ?>" class="img-anchor" id="link-exportar-ocupacion"><img src="<?= site_url('themes/css/img/csv.png') ?>" /></a>
 <div id="calendar_eventos_index">
 <?= site_url('eventos/fetch_events/' . $this->uri->segment(3)) ?>
 </div>

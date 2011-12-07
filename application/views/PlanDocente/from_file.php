@@ -1,7 +1,9 @@
+<? if(isset($error)): ?>
 <div class="errors">
     <?= $error; ?>
 </div>
-<?= form_open_multipart('planesdocentes/upload_file') ?>
+<? endif; ?>
+<?= form_open_multipart($action) ?>
 <div class="field">
     <label for="userfile">Archivo:</label><br/><br/>
     <input type="file" name="userfile" />
