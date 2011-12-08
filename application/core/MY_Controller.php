@@ -17,6 +17,7 @@ class MY_Controller extends CI_Controller{
     }    
     protected function access_denied(){
         $this->session->sess_destroy();
+        session_destroy();
         $this->session->set_userdata('prevurl', current_url());
         $this->session->set_flashdata('notices', 'Access denied, please log in to continue.');
         $this->session->keep_flashdata('notices');
