@@ -1,22 +1,9 @@
-
-
-<ul class="listaelems" id="listatitulaciones">
-    <? $enlace = isset($action)? $action:'titulaciones/show'; ?>
+<table class="listaelems" id="listatitulaciones">
+    <tr><th>Nombre</th><th>Ver asignaturas</th><th>Añadir asignaturas</th><th>Borrar</th></tr>
     <? foreach($titulaciones as $item): ?>
-        <? $pretags = '<li><span>';
-           $posttags = '</span>'; 
-           if(Current_User::logged_in(1)){
-                $posttags .= '<span>' . anchor('asignaturas/add_to/' . $item->id, '+') . '</span>' . anchor('titulaciones/delete/' . $item->id, 'X') . '</li>';
-           }
-         ?>
-        <? $this->load->view('titulaciones/_titulacion.php', array('item' => $item, 'pretags' => $pretags, 'posttags' => $posttags, 'enlace' => $enlace)) ?>
-    <!--<li>
-      <span><a href="#"><?= $item->nombre ?></a></span>
-      <?= anchor('asignaturas/add_to/' . $item->id, '+'); ?>
-    
-    </li> -->
+    <tr><td><?= $item->nombre ?></td><td><?= anchor('titulaciones/show/'.$item->id . '/' . (isset($id_curso)?$id_curso:''), 'Ver Asignaturas') ?></td><td><?= anchor('asignaturas/add_to/' . $item->id, '+') ?></td><td><?=anchor('titulaciones/delete/' . $item->id, 'X') ?></td></tr>    
     <? endforeach; ?>
-</ul>
-<? if(Current_User::logged_in(1)): ?>
-<?= anchor('titulaciones/add', 'Añadir una nueva titulación', 'id="linknewtitulacion"'); ?>
-<? endif; ?>
+</table>
+
+<?= anchor('titulaciones/add', 'Añadir una nueva titulación'); ?>
+

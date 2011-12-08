@@ -65,14 +65,14 @@ class Titulaciones extends MY_Controller {
             }
         }else{
             $titulacion -> save();
-            $pretags = '<li><span>';
-            $posttags = '</span><span>' . anchor('asignaturas/add_to/' . $titulacion->id, '+') . '</span>' . anchor('titulaciones/delete/' . $titulacion->id, 'X') . '</li>';
+            $pretags = '<tr><td>';
+            $posttags = '</td><span>' . anchor('asignaturas/add_to/' . $titulacion->id, '+') . '</span>' . anchor('titulaciones/delete/' . $titulacion->id, 'X') . '</li>';
             $this->notices = 'Titulación añadida correctamente';
             if($this -> input -> post('remote') == "true") {
                 unset($this -> layout);
                 $this->output->set_content_type('application/json');
                 $response['success'] = 1;
-                $response['view'] = $this->load->view('titulaciones/_titulacion', array('item' => $titulacion, 'pretags' => $pretags, 'posttags' => $posttags, 'enlace' => 'titulaciones/show/'), TRUE);
+                $response['view'] = $this->load->view('titulaciones/_titulacion', array('item' => $titulacion), TRUE);
                 $response['messages'] = $this->load->view('layouts/notice_and_alerts', null, TRUE);
                 $this->output->set_output(json_encode($response));
             } else {
@@ -111,8 +111,8 @@ class Titulaciones extends MY_Controller {
         }
     }
 
-    public function show($id, $id_curso = '') {
-        if(!$id_curso) redirect('cursos/select_curso/titulaciones/show/' . $id);
+    public function show($id, $id_curso) {
+        if(!isset($id_curso)) redirect('cursos/select_curso/titulaciones/show/' . $id);
         $data['asignaturas'] = $this->asignaturas_table->findByTitulacion_id($id);
         $data['titulacion'] = $this->titulaciones_table->find($id);
         $data['page_title'] = 'INDEX ASIGNATURAS';
@@ -176,7 +176,7 @@ class Titulaciones extends MY_Controller {
         $data['titulaciones'] = $titulaciones;
         $data['page_title'] = 'Planificación docente';
         $data['id_curso'] = $id_curso;
-        $this->load->view('titulaciones/index_cargas', $data);
+        $this->load->view('titulaciones/index', $data);
     }
     
     private function _submit_validate(){
@@ -191,7 +191,7 @@ class Titulaciones extends MY_Controller {
     public function select_titulacion(){
         list($controller, $action, $route) = explode('/', $this->uri->uri_string(), 3);
         $titulaciones = $this->titulaciones_table->findAll();
-        $this->load->view('titulaciones/index', array('titulaciones' => $titulaciones, 'action' => $route));
+        $this->load->view('titulaciones/select_titulacion', array('titulaciones' => $titulaciones, 'action' => $route));
     }
 }
 

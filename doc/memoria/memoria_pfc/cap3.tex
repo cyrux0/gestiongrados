@@ -1,0 +1,34 @@
+Este proyecto tiene la condición de {\em Software Libre}, por lo que en caso de necesitar ser ampliado, cualquier persona podria hacerlo. El proyecto es una aplicación nueva, no es continuación de otro proyecto.
+
+\section{Descripción}
+
+El proyecto consiste en una aplicación web, con distintos perfiles de usuario, en la que se llevará a cabo la configuración de la planificación docente de las distintas titulaciones de grado de la ESI. Como se ha dicho existirán varios perfiles de usuario, cada uno tendrá un cometido.
+
+\section{Perfiles de usuario}
+
+A continuación se expondrán los diferentes perfiles detallando a que funcionalidad tendrá acceso cada uno.
+
+\subsection{Perfil Administrador}
+
+El administrador solo tendrá acceso a la gestión de usuarios y a la creación de copias de seguridad de la base de datos. Por tanto el administrador podra crear nuevos usuarios con los perfiles que considere necesarios.
+
+\subsection{Perfil Planificador}
+Es el perfil que tiene acceso a más funcionalidades del sistema, llevará a cabo la gestión de titulaciones, asignaturas, planificación docente, calendario, aulas y horarios, realizando la configuración de todo. Es el perfil principal de la aplicación.
+
+\subsection{Perfil Profesor}
+Únicamente tendrá acceso a la visualización de la planificación docente de una titulación concreta.
+
+\subsection{Perfil Alumno}
+El alumno solo tendrá acceso a la visualización de los horarios. Podrá configurar un horario con las asignaturas y grupos pertenecientes a su titulación, generando un horario únicamente con las asignaturas que el quiera consultar.
+
+\section{Interfaz de usuario}
+La interfaz será algo simple, visualizada en un navegador web, con un menú principal en el que se tendrá acceso a las diferentes funcionalidades, estando ocultas las que no pertenezcan al perfil del usuario.
+
+\section{Software}
+Al ser una aplicación web, ésta será multiplataforma, pudiendo funcionar sobre cualquier navegador actual, ya que cumple los estándares de la W3C.\\
+
+Como lenguaje de servidor la aplicación utiliza PHP, se toma la decisión de utilizarlo por la amplia documentación que hay disponible, además de la multitud de librerías que existen para simplificar su utilización. Además se ha utilizado el framework MVC CodeIgniter, que simplifica muchas tareas que de implementarlas únicamente con PHP sin la ayuda de ninguna librería se harían muy tediosas.\\
+
+Para las vistas se ha utilizado XHTML y CSS, por su facilidad para estructurar los documentos y darles un estilo adecuado.\\
+
+En la parte de los datos se ha usado MySQL como SGBD, utilizando Doctrine como un ORM para abstraer el uso de la base de datos dentro de la aplicación.
