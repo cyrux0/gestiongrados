@@ -16,14 +16,4 @@ Joaquín~Ataz López.
 \newblock
   \url{ftp://ftp.dante.de/tex-archive/info/spanish/guia-atx/guia-atx.pdf}.
 
-\bibitem{website:latex-wikibooks}
-Wikibooks.
-\newblock {The Book of LaTeX}.
-\newblock \url{http://en.wikibooks.org/wiki/LaTeX}.
-
-\bibitem{mitt04}
-Frank~Mittelbach y~Michel~Goossens.
-\newblock {\em The LaTeX Companion}.
-\newblock Addison-Wesley, 2004.
-
 \end{thebibliography}

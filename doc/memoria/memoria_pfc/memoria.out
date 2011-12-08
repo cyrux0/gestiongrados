@@ -23,41 +23,58 @@
 \BOOKMARK [0][-]{chapter.4}{An\341lisis}{}% 23
 \BOOKMARK [1][-]{section.4.1}{Metodolog\355a de desarrollo}{chapter.4}% 24
 \BOOKMARK [1][-]{section.4.2}{Especificaci\363n de requisitos del sistema}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.2.1}{Gesti\363n de titulaciones}{section.4.2}% 26
-\BOOKMARK [1][-]{section.4.3}{Modelo conceptual de datos}{chapter.4}% 27
-\BOOKMARK [2][-]{subsection.4.3.1}{Diagrama de clases conceptuales}{section.4.3}% 28
-\BOOKMARK [1][-]{section.4.4}{Modelo de comportamiento del sistema}{chapter.4}% 29
-\BOOKMARK [2][-]{subsection.4.4.1}{Caso de uso: Registrar titulaci\363n}{section.4.4}% 30
-\BOOKMARK [2][-]{subsection.4.4.2}{Caso de uso: Registrar asignatura}{section.4.4}% 31
-\BOOKMARK [2][-]{subsection.4.4.3}{Caso de uso: Editar asignatura}{section.4.4}% 32
-\BOOKMARK [2][-]{subsection.4.4.4}{Caso de uso: Borrar asignatura}{section.4.4}% 33
-\BOOKMARK [2][-]{subsection.4.4.5}{Caso de uso: Importar asignatura}{section.4.4}% 34
-\BOOKMARK [2][-]{subsection.4.4.6}{Caso de uso: Crear plan docente}{section.4.4}% 35
-\BOOKMARK [2][-]{subsection.4.4.7}{Caso de uso: Generar informe de asignatura}{section.4.4}% 36
-\BOOKMARK [2][-]{subsection.4.4.8}{Caso de uso: A\361adir evento al calendario}{section.4.4}% 37
-\BOOKMARK [2][-]{subsection.4.4.9}{Caso de uso: Exportar calendario}{section.4.4}% 38
-\BOOKMARK [2][-]{subsection.4.4.10}{Caso de uso: Seleccionar grupos de teor\355a}{section.4.4}% 39
-\BOOKMARK [2][-]{subsection.4.4.11}{Caso de uso: A\361adir grupo de teor\355a}{section.4.4}% 40
-\BOOKMARK [2][-]{subsection.4.4.12}{Caso de uso: Eliminar grupo de teor\355a}{section.4.4}% 41
-\BOOKMARK [2][-]{subsection.4.4.13}{Caso de uso: Ubicar slot de horario}{section.4.4}% 42
-\BOOKMARK [2][-]{subsection.4.4.14}{Caso de uso: Editar horario tipo}{section.4.4}% 43
-\BOOKMARK [2][-]{subsection.4.4.15}{Caso de uso: Comprobar grupo de teor\355a}{section.4.4}% 44
-\BOOKMARK [2][-]{subsection.4.4.16}{Caso de uso: Crear aula}{section.4.4}% 45
-\BOOKMARK [2][-]{subsection.4.4.17}{Caso de uso: Borrar aula}{section.4.4}% 46
-\BOOKMARK [2][-]{subsection.4.4.18}{Caso de uso: Editar aula}{section.4.4}% 47
-\BOOKMARK [0][-]{figure.caption.95}{Bibliografia y referencias}{}% 48
-\BOOKMARK [0][-]{chapter*.96}{Software usado}{}% 49
-\BOOKMARK [0][-]{figure.caption.103}{Instalaci\363n de LaTeX}{}% 50
-\BOOKMARK [0][-]{section*.106}{GNU Free Documentation License}{}% 51
-\BOOKMARK [1][-]{section*.107}{1. APPLICABILITY AND DEFINITIONS}{section*.106}% 52
-\BOOKMARK [1][-]{section*.108}{2. VERBATIM COPYING}{section*.106}% 53
-\BOOKMARK [1][-]{section*.109}{3. COPYING IN QUANTITY}{section*.106}% 54
-\BOOKMARK [1][-]{section*.110}{4. MODIFICATIONS}{section*.106}% 55
-\BOOKMARK [1][-]{section*.111}{5. COMBINING DOCUMENTS}{section*.106}% 56
-\BOOKMARK [1][-]{section*.112}{6. COLLECTIONS OF DOCUMENTS}{section*.106}% 57
-\BOOKMARK [1][-]{section*.113}{7. AGGREGATION WITH INDEPENDENT WORKS}{section*.106}% 58
-\BOOKMARK [1][-]{section*.114}{8. TRANSLATION}{section*.106}% 59
-\BOOKMARK [1][-]{section*.115}{9. TERMINATION}{section*.106}% 60
-\BOOKMARK [1][-]{section*.116}{10. FUTURE REVISIONS OF THIS LICENSE}{section*.106}% 61
-\BOOKMARK [1][-]{section*.117}{11. RELICENSING}{section*.106}% 62
-\BOOKMARK [1][-]{section*.118}{ADDENDUM: How to use this License for your documents}{section*.106}% 63
+\BOOKMARK [2][-]{subsection.4.2.1}{Gesti\363n de usuarios}{section.4.2}% 26
+\BOOKMARK [2][-]{subsection.4.2.2}{Gesti\363n de titulaciones}{section.4.2}% 27
+\BOOKMARK [1][-]{section.4.3}{Modelo conceptual de datos}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.3.1}{Diagrama de clases conceptuales}{section.4.3}% 29
+\BOOKMARK [1][-]{section.4.4}{Modelo de comportamiento del sistema}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.4.1}{Caso de uso: Registrar titulaci\363n}{section.4.4}% 31
+\BOOKMARK [2][-]{subsection.4.4.2}{Caso de uso: Registrar asignatura}{section.4.4}% 32
+\BOOKMARK [2][-]{subsection.4.4.3}{Caso de uso: Editar asignatura}{section.4.4}% 33
+\BOOKMARK [2][-]{subsection.4.4.4}{Caso de uso: Borrar asignatura}{section.4.4}% 34
+\BOOKMARK [2][-]{subsection.4.4.5}{Caso de uso: Importar asignatura}{section.4.4}% 35
+\BOOKMARK [2][-]{subsection.4.4.6}{Caso de uso: Crear plan docente}{section.4.4}% 36
+\BOOKMARK [2][-]{subsection.4.4.7}{Caso de uso: Generar informe de asignatura}{section.4.4}% 37
+\BOOKMARK [2][-]{subsection.4.4.8}{Caso de uso: A\361adir evento al calendario}{section.4.4}% 38
+\BOOKMARK [2][-]{subsection.4.4.9}{Caso de uso: Exportar calendario}{section.4.4}% 39
+\BOOKMARK [2][-]{subsection.4.4.10}{Caso de uso: Seleccionar grupos de teor\355a}{section.4.4}% 40
+\BOOKMARK [2][-]{subsection.4.4.11}{Caso de uso: A\361adir grupo de teor\355a}{section.4.4}% 41
+\BOOKMARK [2][-]{subsection.4.4.12}{Caso de uso: Eliminar grupo de teor\355a}{section.4.4}% 42
+\BOOKMARK [2][-]{subsection.4.4.13}{Caso de uso: Ubicar slot de horario}{section.4.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.14}{Caso de uso: Editar horario tipo}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.15}{Caso de uso: Comprobar grupo de teor\355a}{section.4.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.16}{Caso de uso: Crear aula}{section.4.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.17}{Caso de uso: Borrar aula}{section.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.18}{Caso de uso: Editar aula}{section.4.4}% 48
+\BOOKMARK [0][-]{chapter.5}{Dise\361o}{}% 49
+\BOOKMARK [1][-]{section.5.1}{Controladores}{chapter.5}% 50
+\BOOKMARK [2][-]{subsection.5.1.1}{Users}{section.5.1}% 51
+\BOOKMARK [2][-]{subsection.5.1.2}{Login}{section.5.1}% 52
+\BOOKMARK [2][-]{subsection.5.1.3}{Logout}{section.5.1}% 53
+\BOOKMARK [2][-]{subsection.5.1.4}{Admin}{section.5.1}% 54
+\BOOKMARK [2][-]{subsection.5.1.5}{Titulaciones}{section.5.1}% 55
+\BOOKMARK [2][-]{subsection.5.1.6}{Asignaturas}{section.5.1}% 56
+\BOOKMARK [2][-]{subsection.5.1.7}{Aulas}{section.5.1}% 57
+\BOOKMARK [2][-]{subsection.5.1.8}{Cursos}{section.5.1}% 58
+\BOOKMARK [2][-]{subsection.5.1.9}{Eventos}{section.5.1}% 59
+\BOOKMARK [2][-]{subsection.5.1.10}{Horarios}{section.5.1}% 60
+\BOOKMARK [2][-]{subsection.5.1.11}{PlanesDocentes}{section.5.1}% 61
+\BOOKMARK [1][-]{section.5.2}{Base de datos}{chapter.5}% 62
+\BOOKMARK [2][-]{subsection.5.2.1}{Modelo entidad-relaci\363n}{section.5.2}% 63
+\BOOKMARK [2][-]{subsection.5.2.2}{Tablas y atributos}{section.5.2}% 64
+\BOOKMARK [0][-]{table.5.34}{Bibliografia y referencias}{}% 65
+\BOOKMARK [0][-]{chapter*.101}{Software usado}{}% 66
+\BOOKMARK [0][-]{figure.caption.108}{Instalaci\363n de LaTeX}{}% 67
+\BOOKMARK [0][-]{section*.111}{GNU Free Documentation License}{}% 68
+\BOOKMARK [1][-]{section*.112}{1. APPLICABILITY AND DEFINITIONS}{section*.111}% 69
+\BOOKMARK [1][-]{section*.113}{2. VERBATIM COPYING}{section*.111}% 70
+\BOOKMARK [1][-]{section*.114}{3. COPYING IN QUANTITY}{section*.111}% 71
+\BOOKMARK [1][-]{section*.115}{4. MODIFICATIONS}{section*.111}% 72
+\BOOKMARK [1][-]{section*.116}{5. COMBINING DOCUMENTS}{section*.111}% 73
+\BOOKMARK [1][-]{section*.117}{6. COLLECTIONS OF DOCUMENTS}{section*.111}% 74
+\BOOKMARK [1][-]{section*.118}{7. AGGREGATION WITH INDEPENDENT WORKS}{section*.111}% 75
+\BOOKMARK [1][-]{section*.119}{8. TRANSLATION}{section*.111}% 76
+\BOOKMARK [1][-]{section*.120}{9. TERMINATION}{section*.111}% 77
+\BOOKMARK [1][-]{section*.121}{10. FUTURE REVISIONS OF THIS LICENSE}{section*.111}% 78
+\BOOKMARK [1][-]{section*.122}{11. RELICENSING}{section*.111}% 79
+\BOOKMARK [1][-]{section*.123}{ADDENDUM: How to use this License for your documents}{section*.111}% 80

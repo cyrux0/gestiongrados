@@ -1,0 +1,156 @@
+La fase de diseño consiste en aplicar una serie de técnicas para transformar los requisitos elicitados en la fase de análisis en una estructura detallada para el sistema de forma que se pueda implementar fácilmente a partir de ese diseño.\\
+
+Siguiendo los requisitos de la fase anterior, esta tarea es relativamente sencilla y debe resultar en una serie de diagramas y especificaciones que sirvan como guión y documentación a las personas que vayan a participar, ahora o en un futuro en el desarrollo del sistema.\\
+
+La aplicación se rige por el patrón arquitectónico MVC. La capa del modelo equivale al SGBD y al ORM, mientras el controlador es el responsable de hacer de intermediario entre vista y modelo, llevando la lógica de la aplicación. Las vistas serán los ficheros XHTML junto con sus estilos.
+
+\section{Controladores}
+
+A continuación, se comentarán las acciones más importantes que componen cada uno de los controladores. Normalmente cada controlador tiene asociado un modelo, y cada acción del controlador una vista.
+
+\subsection{Users}
+
+Controlador encargado de llevar toda la gestión de usuarios
+
+\begin{itemize}
+\item users::add() - Muestra el formulario de creación de un usuario.
+\item users::create() - Crea un usuario según los datos introducidos en el formulario.
+\item users::edit() - Muestra un formulario con los datos del usuario a editar sobre él para poder ser modificados.
+\item users::update() - Actualiza un usuario segun los datos introducidos.
+\item users::recuperar\_password() - Muestra el formulario para recuperar una contraseña.
+\item users::envio\_recuperar() - Envía y cambia la contraseña a un usuario por email a la dirección introducida en el formulario.
+\end{itemize}
+
+\subsection{Login}
+
+Controlador encargado de gestionar la identificación de usuarios en el sistema.
+
+\begin{itemize}
+\item login::index() - Muestra el formulario de solicitud de datos de acceso.
+\item login::submit() - Comprueba los datos introducidos en el formulario anterior e identifica al usuario si son correctos, sino recarga el formulario y lo indica.
+\end{itemize}
+
+\subsection{Logout}
+
+Controlador encargado de gestionar la salida de los usuarios del sistema
+
+\begin{itemize}
+\item logout::index() - Provoca la salida del usuario del sistema.
+\end{itemize}
+
+\subsection{Admin}
+
+Controlador encargado de algunas funciones de administración.
+
+\begin{itemize}
+\item admin::restaurar\_backup() - Muestra un formulario para cargar un archivo sql con una copia de seguridad de la base de datos, restaurando los datos que estuvieran en ese archivo.
+\item admin::restaurar() - Restaura la base de datos con el archivo cargado en el formulario anterior.
+\item admin::backup() - Permite la descarga de un backup del estado actual de la base de datos.
+\end{itemize}
+
+\subsection{Titulaciones}
+Controlador encargado de llevar a cabo toda la gestión de las titulaciones.
+
+\begin{itemize}
+\item titulaciones::index() - Muestra las titulaciones que hay creadas en el sistema.
+\item titulaciones::show\_informes() - Muestra un listado de las asignaturas de la titulación permitiendo generar un informe con las que se quieran seleccionar.
+\item titulaciones::add() - Muestra un formulario de creación de titulaciones.
+\item titulaciones::create() - Crea una titulación a partir de los datos introducidos en el formulario.
+\item titulaciones::edit() - Permite la edición de una titulación mostrando un formulario.
+\item titulaciones::update() - Actualiza los datos de una titulación existente.
+\item titulaciones::delete() - Borra una titulación del sistema.
+\item titulaciones::show() - Muestra las asignaturas de esa titulación.
+\item titulaciones::show\_planificacion() - Muestra una tabla con la planificación docente de una titulación, con una fila por asignatura.
+\item titulaciones::exportar\_planificacion() - Permite la descarga de un archivo csv con la planificación docente completa de todas las asignaturas de la titulación.
+\item titulaciones::select\_titulacion() - Muestra un listado de las titulaciones permitiendo enrutar hacia a otra acción que necesite seleccionar una titulación.
+\end{itemize}
+
+\subsection{Asignaturas}
+Controlador encargado de llevar a cabo toda la gestión de las asignaturas.
+
+\begin{itemize}
+\item asignaturas::show() - Muestra la planificación docente de una asignatura para un curso concreto.
+\item asignaturas::add\_to() - Añade una asignatura a una titulación dada mostrando un formulario.
+\item asignaturas::create() - Crea una asignatura siguiendo los datos introducidos en el formulario.
+\end{itemize}
+
+\subsection{Aulas}
+Controlador encargado de llevar a cabo la gestión de las aulas.
+
+\begin{itemize}
+\item aulas::add() - Muestra el formulario de creación de un aula.
+\item aulas::create() - Crea un aula a partir de los datos introducidos en el formulario.
+\item aulas::index() - Muestra un listado de todas las aulas.
+\item aulas::exportar\_ocupacion() - Exporta a un archivo csv la ocupación de un aula según los horarios de un curso concreto.
+\end{itemize}
+
+\subsection{Cursos}
+
+Controlador que lleva toda la gestión de los cursos.
+
+\begin{itemize}
+\item cursos::add() - Muestra el formulario para la creación de un curso nuevo.
+\item cursos::create() - Crea un curso con los datos introducidos.
+\item cursos::edit() - Muestra un formulario para editar un curso ya creado.
+\item cursos::update() - Actualiza un curso existente con los datos introducidos.
+\item cursos::delete() - Borra un curso existente.
+\item cursos::select\_curso() - Muestra un listado de los cursos permitiendo enrutar hacia a otra acción que necesite seleccionar uno.
+\end{itemize}
+
+\subsection{Eventos}
+
+Controlador encargado de la gestión del calendario.
+
+\begin{itemize}
+\item eventos::index() - Muestra el calendario del sistema permitiendo crear nuevos eventos sobre el.
+\item eventos::add() - Muestra un formulario para la creación de eventos.
+\item eventos::create() - Crea un evento con los datos introducidos en el formulario.
+\item eventos::delete() - Borra un evento existente.
+\item eventos::fetch\_events() - Función que devuelve en formato JSON los datos de los eventos del sistema para mostrarlos sobreimpresos en el calendario.
+\item eventos::export\_calendar() - Exporta y permite la descarga del calendario en formato csv.
+\end{itemize}
+
+\subsection{Horarios}
+
+Controlador encargado de la gestión de los horarios.
+
+\begin{itemize}
+\item horarios::select\_grupo() - Muestra los cursos de una titulación y sus grupos creados, con enlaces a los diferentes horarios.
+\item horarios::add\_grupo() - Añade un grupo a un curso de una titulación concreta.
+\item horarios::edit() - Muestra un horario editable permitiendo ubicar los diferentes slots de las asignaturas.
+\item horarios::ocupacion\_aula() - Muestra la ocupación de un aula concreta.
+\item horarios::exportar\_ocupacion() - Permite exportar y descargar un archivo csv con la ocupación de un aula.
+\item horarios::edit\_teoria() - Muestra y permite editar un horario de una semana que solo tiene asignaturas de teoría.
+\item horarios::check\_grupo() - Realiza la comprobación de las horas planificadas y asignadas en los horarios de un grupo de una titulación, mostrando el resultado.
+\item horarios::save\_line() - Guarda un slot de una asignatura en un horario concreto.
+\item horarios::delete() - Borra un horario.
+\item horarios::delete\_line() - Borra un slot de un horario, dejándolo sin asignar.
+\item horarios::exportar() - Permite exportar un horario concreto a csv permitiendo la descarga del archivo.
+\item horarios::add\_extra\_slot() - Permite añadir un slot extra de una asignatura en un horario de una semana de teoria.
+\item horarios::visualizacion\_asignaturas() - Permite a un alumno la visualización de un horario personalizado. Para ello esta función muestra un listado de las asignaturas disponibles permitiendo seleccionar las deseadas.
+\item horarios::visualizacion\_mostrar\_grupos() - Muestra las asignaturas seleccionadas en el paso anterior y permite seleccionar los grupos deseados.
+\item horarios::visualizacion\_mostrar\_horario() - Muestra el horario personalizado en los dos pasos anteriores.
+\end{itemize}
+
+
+\subsection{PlanesDocentes}
+
+Controlador encargado de la gestión de la planificación docente.
+
+\begin{itemize}
+\item planesdocentes::add\_carga() - Muestra un formulario para añadir la planificación docente de un curso a una asignatura.
+\item planesdocentes::create() - Crea en el sistema la planificación docente según los datos introducidos en el formulario.
+\item planesdocentes::edit() - Muestra un formulario para editar la planificación docente ya existente de una asignatura.
+\item planesdocentes::update() - Actualiza la planificación docente de una asignatura según los datos ya introducidos.
+\item planesdocentes::make\_upload() - Muestra un formulario para subir un archivo con un csv con la planificación docente de una o varias asignaturas.
+\item planesdocentes::upload\_file() - Parsea el fichero subido en el paso anterior y crea los planes docentes nuevos.
+\item planesdocentes::informe\_asignatura() - Genera un informe en pdf de una o varias asignaturas, permitiendo su descarga.
+\end{itemize}
+
+\section{Base de datos}
+Para el diseño de la base de datos en la que se guardarán los datos manejados por la aplicación se usará un modelo relacional. Se usará MySQL como sistema de gestión de base de datos. 
+\subsection{Modelo entidad-relación}
+
+\subsection{Tablas y atributos}
+
+\input{pfc_development.tex}

@@ -104,7 +104,7 @@ class PlanesDocentes extends MY_Controller{
             redirect('titulaciones/show/' . $global->Asignatura->titulacion_id);
         }
     }
-
+/*
     public function load($asignatura_id, $curso_id){
         $q = Doctrine_Query::create()->select('p.*')->from('PlanDocente p')->where('p.curso_id = ' . $curso_id . ' AND p.asignatura_id = ' . $asignatura_id)->setHydrationMode(Doctrine::HYDRATE_ARRAY);
         $result = $q->execute();
@@ -122,7 +122,7 @@ class PlanesDocentes extends MY_Controller{
         $data['options'] = $options;
         $this->load->view('PlanDocente/add', $data);
     }
-
+*/
     public function upload_file(){
 		$config['upload_path'] = './uploads/';
 		$config['allowed_types'] = 'csv|xls';

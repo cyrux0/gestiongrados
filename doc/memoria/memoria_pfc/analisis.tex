@@ -5,9 +5,108 @@ Para la realización del proyecto y su documentación se ha utilizado el {\em Ra
 \section{Especificación de requisitos del sistema}
 A continuación se enumeran los requisitos funcionales que se consideran fundamentales para el sistema. Éstos serán detallados utilizando casos de uso, describiendo tanto su escenario principal como sus posibles flujos alternativos. Además se detallará cada caso de uso con su diagrama de secuencia correspondiente.
 
+\subsection{Gestión de usuarios}
+\begin{figure}[H]
+\label{gestion-usuarios}
+\begin{center}
+\includegraphics[scale=0.5]{./gestionusuarios.png}
+\end{center}
+\caption{Diagrama de casos de uso de la gestión de usuarios}
+\end{figure}
+
+\subsubsection*{Caso de uso: Añadir usuario}
+\label{add_usuario}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para la creación de un usuario.
+\item{\bf Actores:} Administrador
+\item{\bf Precondiciones:} El administrador se ha identificado correctamente en el sistema.
+\item{\bf Postcondiciones:} Se crea un usuario con el perfil correspondiente.
+\item{\bf Escenario principal:}
+\begin{enumerate}
+\item El administrador introduce los datos del usuario y el nivel de privilegios.
+\item El sistema valida que los datos son correctos y no hay ningún usuario con el mismo email y DNI
+\item El sistema crea el usuario y envía por correo el password al usuario.
+\end{enumerate}
+\item{\bf Escenarios alternativos:}
+\begin{itemize}
+\item[2.a.] Alguno de los datos no es correcto.
+\begin{enumerate}
+\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+\end{enumerate}
+\item[2.b.] Ya existe algún usuario con el mismo email o DNI.
+\begin{enumerate}
+\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+\end{enumerate}
+\item[*.a.] En cualquier momento el administrador decide cancelar el proceso.
+\begin{enumerate}
+\item El caso de uso finaliza.
+\end{enumerate}
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Registro de alumno}
+\label{add_alumno}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para la creación de un alumno.
+\item{\bf Actores:} Alumno.
+\item{\bf Precondiciones:} No hay ningún usuario identificado en el sistema.
+\item{\bf Postcondiciones:} Se crea un usuario con el perfil de alumno.
+\item{\bf Escenario principal:}
+\begin{enumerate}
+\item El alumno introduce sus datos, DNI, titulación y email.
+\item El sistema valida que los datos son correctos y no hay ningún usuario con el mismo email y DNI.
+\item El sistema crea el usuario y envía por correo el password al usuario
+\end{enumerate}
+\item{\bf Escenarios alternativos:}
+\begin{itemize}
+\item[2.a.] Alguno de los datos no es correcto.
+\begin{enumerate}
+\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+\end{enumerate}
+\item[2.b.] Ya existe algún usuario con el mismo email o DNI.
+\begin{enumerate}
+\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+\end{enumerate}
+\item[*.a.] En cualquier momento el alumno decide cancelar el proceso.
+\begin{enumerate}
+\item El caso de uso finaliza.
+\end{enumerate}
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Caso de uso: Editar usuario}
+\label{editar_usuario}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para la edición de un usuario.
+\item{\bf Actores:} Usuario.
+\item{\bf Precondiciones:} El usuario que se intenta editar coincide con el identificado en el sistema o bien el usuario identificado es un administrador.
+\item{\bf Postcondiciones:} Se actualizan los datos del usuario.
+\item{\bf Escenario principal:}
+\begin{enumerate}
+\item El sistema muestra los datos actuales del usuario.
+\item El usuario modifica sus datos, DNI, titulación y email.
+\item El sistema valida que los datos son correctos y no hay ningún usuario con el mismo email y DNI.
+\item El sistema modifica el usuario.
+\end{enumerate}
+\item{\bf Escenarios alternativos:}
+\begin{itemize}
+\item[2.a.] Alguno de los datos no es correcto.
+\begin{enumerate}
+\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+\end{enumerate}
+\item[2.b.] Ya existe algún usuario con el mismo email o DNI.
+\begin{enumerate}
+\item El sistema indica el error y el caso de uso vuelve al paso anterior.
+\end{enumerate}
+\item[*.a.] En cualquier momento el usuario decide cancelar el proceso.
+\begin{enumerate}
+\item El caso de uso finaliza.
+\end{enumerate}
+\end{itemize}
+\end{itemize}
+
 
 \subsection{Gestión de titulaciones}
- Aquí va el diagrama de casos de uso de la gestión de titulaciones.
 
 \begin{figure}[H] 
   \label{gestion-titulaciones} 
@@ -20,8 +119,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \label{select_titulacion}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso abstracto incluído en otros casos de uso para seleccionar una titulación de una lista de disponibles.
-\item{\bf Actores:} Usuario
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se selecciona una titulación para su uso en otra finalidad.
 \item{\bf Escenario principal:}
 \begin{enumerate}
@@ -42,12 +141,12 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Registrar titulación}
 \begin{itemize}
 \item{\bf Descripción:} Registra una nueva titulación en el sistema.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} La titulación queda registrada.
 \item{\bf Escenario principal:}
 \begin{enumerate}
-\item El administrador introduce el código, el nombre y todos los demás datos de la titulación.
+\item El planificador introduce el código, el nombre y todos los demás datos de la titulación.
 \item El sistema comprueba que los datos cumplen el formato.
 \item El sistema confirma el alta de la titulación mostrando un mensaje.
 \end{enumerate}
@@ -65,7 +164,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}
-	\item[*a.] El administrador decide cancelar el registro en cualquier momento, el caso de uso termina. 
+	\item[*a.] El planificador decide cancelar el registro en cualquier momento, el caso de uso termina. 
 	\end{itemize}
 \end{itemize}
 
@@ -74,14 +173,14 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Editar titulación}
 \begin{itemize}
 \item{\bf Descripción:} Edita una titulación existente en el sistema modificando sus datos.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} La titulacion queda modificada en el sistema.
 \item{\bf Escenario principal:}
 \begin{enumerate}
 	\item Se realiza el caso de uso {\em\hyperref[select_titulacion]{Seleccionar titulación}}.
 	\item El sistema muestra sus datos actuales, permitiendo su edición.
-	\item El administrador modifica los datos.
+	\item El planificador modifica los datos.
 	\item El sistema comprueba que todos los datos son correctos.
 	\item El sistema muestra un mensaje indicando que la edición se ha completado.
 \end{enumerate}
@@ -99,7 +198,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 		\begin{enumerate}
 		\item El sitema indica el error y se vuelve al paso anterior.
 		\end{enumerate}
-	\item[*a.] En cualquier momento el administrador decide cancelar la edición, el caso de uso se da por terminado.
+	\item[*a.] En cualquier momento el planificador decide cancelar la edición, el caso de uso se da por terminado.
 	\end{itemize}
 \end{itemize}
 
@@ -109,24 +208,24 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 % Tomar este CU como ejemplo
 \begin{itemize}
 \item{\bf Descripción:} Borra una titulación del sistema.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} La titulación existe en el sistema.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} La titulación existe en el sistema. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} La titulación queda eliminada del sistema.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
 	\item Se realiza el caso de uso  {\em\hyperref[select_titulacion]{Seleccionar titulación}}.
 	\item El sistema muestra un diálogo de confirmación.
-	\item El administrador confirma que quiere eliminar la titulación del sistema.
+	\item El planificador confirma que quiere eliminar la titulación del sistema.
 	\item El sistema elimina la titulación.
 	\item El sistema muestra un mensaje confirmando que se ha eliminado la titulación.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-	\item[3.a.] El administrador selecciona que no desea eliminar la titulación.
+	\item[3.a.] El planificador selecciona que no desea eliminar la titulación.
 		\begin{enumerate}
 		\item El caso de uso se reinicia.
 		\end{enumerate}
-	\item[*a.] En cualquier momento el administrador decide cancelar la eliminación.
+	\item[*a.] En cualquier momento el planificador decide cancelar la eliminación.
 		\begin{enumerate}
 		\item El caso de uso se termina.
 		\end{enumerate}
@@ -138,13 +237,13 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Ver detalles de titulación}
 \begin{itemize}
 \item{\bf Descripción:} Muestra los datos de una titulación en detalle, así como sus asignaturas.
-\item{\bf Actores:} Usuario.
-\item{\bf Precondiciones:} La titulación existe en el sistema.
+\item{\bf Actores:} Planificador o profesor.
+\item{\bf Precondiciones:} La titulación existe en el sistema. El usuario identificado en el sistema es un planificador o un profesor.
 \item{\bf Postcondiciones:} Los datos de la titulación se muestran por pantalla.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
 	\item Se realiza el caso de uso {\em\hyperref[select_titulacion]{Seleccionar titulación}}.
-	\item El sistema muestra los datos de la titulación y un listado de sus asignaturas si las tiene.
+	\item El sistema muestra los datos de la titulación y un listado de sus asignaturas si las tiene, junto con su planificación docente.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
@@ -159,12 +258,12 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Importar titulación}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para importar titulaciones de forma masiva desde un archivo csv con un formato concreto.
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} El archivo tiene el formato correcto.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El archivo tiene el formato correcto. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se crean las titulaciones indicadas en el archivo.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
-	\item El administrador selecciona el archivo.
+	\item El planificador selecciona el archivo.
 	\item El sistema comprueba que cada línea tenga el formato correcto.
 	\item El sistema crea una titulación por cada línea con los datos indicados en el archivo.
 	\end{enumerate}
@@ -196,7 +295,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \label{select_asignatura}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso abstracto incluído por otros casos de uso para seleccionar una asignatura del listado de las que tiene disponibles una titulación concreta.
-\item{\bf Actores:} Usuario
+\item{\bf Actores:} Usuario.
 \item{\bf Precondiciones:} Ninguna.
 \item{\bf Postcondiciones:} Queda seleccionada una asignatura para algún fin concreto de otro caso de uso.
 \item{\bf Escenario principal:}
@@ -219,20 +318,20 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Registrar asignatura}
 \begin{itemize}
 \item{\bf Descripción:} Se da de alta una nueva asignatura en el sistema.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} Existe alguna titulación con la que asociar la asignatura.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} Existe alguna titulación con la que asociar la asignatura. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} La asignatura queda registrada en el sistema.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
  	\item Se realiza el caso de uso {\em\hyperref[select_titulacion]{Seleccionar titulación}}.
 	\item El sistema muestra un formulario para introducir los datos.
-	\item El administrador introduce el código, el nombre y todos los demás datos de la asignatura.
+	\item El planificador introduce el código, el nombre y todos los demás datos de la asignatura.
 	\item El sistema comprueba que todos los datos cumplen el formato requerido.
 	\item El sistema registra la asignatura y muestra un mensaje confirmándolo.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-	\item[3.a.] El administrador selecciona que desea tomar los datos de otra asignatura.
+	\item[3.a.] El planificador selecciona que desea tomar los datos de otra asignatura.
 		\begin{enumerate}
 		\item Se realiza el caso de uso {\em \hyperref[duplicar_asignatura]{Duplicar asignatura}}.
 		\end{enumerate}
@@ -248,7 +347,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}
-	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+	\item[*a.] En cualquier momento el planificador decide cancelar el proceso.
 		\begin{enumerate}
 		\item El caso de uso se cancela.
 		\end{enumerate}
@@ -260,14 +359,14 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Editar Asignatura}
 \begin{itemize}
 \item{\bf Descripción:} Se modifican los datos de una asignatura existente en el sistema.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} La asignatura queda modificada en el sistema.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
 	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
 	\item El sistema muestra los datos de la asignatura en un formato editable.
-	\item El administrador hace las modificaciones que considere necesarias.
+	\item El planificador hace las modificaciones que considere necesarias.
 	\item El sistema comprueba que los datos modificados cumplen el formato requerido.
 	\item El sistema guarda la asignatura y muestra un mensaje confirmándolo.
 	\end{enumerate}
@@ -285,7 +384,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}
-	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+	\item[*a.] En cualquier momento el planificador decide cancelar el proceso.
 		\begin{enumerate}
 		\item El caso de uso se cancela.
 		\end{enumerate}
@@ -297,23 +396,23 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Borrar asignatura}
 \begin{itemize}
 \item{\bf Descripción:} Se borra una asingatura del sistema.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} La asignatura queda eliminada del sistema.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
 	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
 	\item El sistema muestra un diálogo de confirmación.
-	\item El administrador confirma que desea borrar la asignatura.
+	\item El planificador confirma que desea borrar la asignatura.
 	\item El sistema borra la asignatura y muestra un mensaje confirmándolo.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-	\item[3.a.] El administrador selecciona que no desea eliminar la asignatura.
+	\item[3.a.] El planificador selecciona que no desea eliminar la asignatura.
 		\begin{enumerate}
 		\item El caso de uso se reinicia.
 		\end{enumerate}
-	\item[*a.] En cualquier momento el administrador decide cancelar la eliminación.
+	\item[*a.] En cualquier momento el planificador decide cancelar la eliminación.
 		\begin{enumerate}
 		\item El caso de uso se termina.
 		\end{enumerate}
@@ -326,7 +425,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \begin{itemize}
 \item{\bf Descripción:} Muestra los datos en detalle de una asignatura.
 \item{\bf Actores:} Usuario.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestran los datos de la asignatura por pantalla.
 \item{\bf Escenario principal:} 
 	\begin{enumerate}
@@ -335,7 +434,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+	\item[*a.] En cualquier momento el planificador decide cancelar el proceso.
 		\begin{enumerate}
 		\item El caso de uso se termina.
 		\end{enumerate}
@@ -346,12 +445,12 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Importar asignatura desde archivo}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para importar asignaturas de forma masiva desde un archivo csv con un formato concreto.
-\item{\bf Actores:} Administrador
+\item{\bf Actores:} planificador
 \item{\bf Precondiciones:} El archivo tiene el formato correcto.
 \item{\bf Postcondiciones:} Se crean las asignaturas indicadas en el archivo.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
-	\item El administrador selecciona el archivo.
+	\item El planificador selecciona el archivo.
 	\item El sistema comprueba que cada línea tenga el formato correcto.
 	\item El sistema crea una asignatura por cada línea con los datos indicados en el archivo.
 	\end{enumerate}
@@ -404,12 +503,12 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Registrar curso}
 \begin{itemize}
 \item{\bf Descripción:} Se da de alta en el sistema la configuración de un nuevo curso.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Queda registrado en el sistema el curso.
 \item{\bf Escenario principal:}
   \begin{enumerate}
-  \item El administrador introduce los datos de configuración del curso, incluyendo fecha de inicio y final de curso.
+  \item El planificador introduce los datos de configuración del curso, incluyendo fecha de inicio y final de curso.
   \item El sistema comprueba que los datos sean correctos.
   \item El sistema informa de que el curso ha sido registrado con éxito.
   \end{enumerate}
@@ -431,7 +530,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
     \begin{enumerate}
     \item El sistema indica el error y se vuelve al paso anterior.
     \end{enumerate}
-  \item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+  \item[*a.] En cualquier momento el planificador decide cancelar el proceso.
     \begin{enumerate}
     \item El caso de uso finaliza.
     \end{enumerate}
@@ -443,14 +542,14 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Editar curso}
 \begin{itemize}
 \item{\bf Descripción:} Se edita en el sistema la configuración de un curso.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Quedan registradas en el sistema las modificaciones realizadas.
 \item{\bf Escenario principal:}
   \begin{enumerate}
   \item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
   \item El sistema muestra los datos en forma editable.
-  \item El administrador modifica los datos de configuración del curso que considere necesarios.
+  \item El planificador modifica los datos de configuración del curso que considere necesarios.
   \item El sistema comprueba que los datos sean correctos.
   \item El sistema informa de que el curso ha sido registrado con éxito.
   \end{enumerate}
@@ -472,7 +571,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
     \begin{enumerate}
     \item El sistema indica el error y se vuelve al paso anterior.
     \end{enumerate}
-  \item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+  \item[*a.] En cualquier momento el planificador decide cancelar el proceso.
     \begin{enumerate}
     \item El caso de uso finaliza.
     \end{enumerate}
@@ -484,8 +583,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Consultar curso}
 \begin{itemize}
 \item{\bf Descripción:} Se consulta la configuración de un curso mostrandola por pantalla
-\item{\bf Actores:} Usuario.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestra por pantalla la configuración del curso seleccionado.
 \item{\bf Escenario principal:}
   \begin{enumerate}
@@ -494,7 +593,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
   \end{enumerate}
 \item{\bf Escenarios alternativos:}
   \begin{itemize}
-  \item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+  \item[*a.] En cualquier momento el planificador decide cancelar el proceso.
     \begin{enumerate}
     \item El caso de uso finaliza.
     \end{enumerate}
@@ -506,23 +605,23 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Borrar curso}
 \begin{itemize}
 \item{\bf Descripción:} Se elimina un curso registrado en el sistema.
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} Ninguna
+\item{\bf Actores:} Planificador
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} El curso seleccionado queda eliminado del sistema
 \item{\bf Escenario principal:}
 	\begin{enumerate}
 	\item Se realiza el caso de uso {\em \hyperref[select_curso]{Seleccionar curso}}.
 	\item El sistema muestra un diálogo pidiendo la confirmación del borrado.
-	\item El administrador selecciona que desea confirmar el borrado.
+	\item El planificador selecciona que desea confirmar el borrado.
 	\item El sistema muestra un mensaje confirmando el éxito en la operación.
 	\end{enumerate}
 \item{\bf Escenarios alternativos:}
 	\begin{itemize}
-		\item[3.a.] El administrador selecciona que no desea confirmar el borrado.
+		\item[3.a.] El planificador selecciona que no desea confirmar el borrado.
 		\begin{enumerate}
 			\item El caso de uso se reinicia.
 		\end{enumerate}
-		\item[*a.] En cualquier momento el administrador cancela el proceso.
+		\item[*a.] En cualquier momento el planificador cancela el proceso.
 		\begin{enumerate}
 			\item El caso de uso finaliza.
 		\end{enumerate}
@@ -541,8 +640,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Añadir plan docente}
 \begin{itemize}
 \item{\bf Descripción:} Se añaden los detalles del plan docente para una asignatura en un curso determinado.
-\item{\bf Actores:} Subdirector.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} El plan docente queda registrado en el sistema, asociado a una asignatura y un curso determinado.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -571,7 +670,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}	
-	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+	\item[*a.] En cualquier momento el planificador decide cancelar el proceso.
 		\begin{enumerate}
 		\item El caso de uso se termina.
 		\end{enumerate}
@@ -583,8 +682,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Editar plan docente}
 \begin{itemize}
 \item{\bf Descripción:} Se edita una carga de trabajo existente para un curso determinado.
-\item{\bf Actores:} Subdirector.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} La carga de trabajo queda modificada en el sistema.
 \item{\bf Pasos:}
 	\begin{enumerate}
@@ -610,7 +709,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 		\begin{enumerate}
 		\item El sistema indica el error y se vuelve al paso anterior.
 		\end{enumerate}	
-	\item[*a.] En cualquier momento el administrador decide cancelar el proceso.
+	\item[*a.] En cualquier momento el planificador decide cancelar el proceso.
 		\begin{enumerate}
 		\item El caso de uso se termina.
 		\end{enumerate}
@@ -622,8 +721,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Borrar plan docente}
 \begin{itemize}
 \item{\bf Descripción:} Se borra una carga de trabajo existente en el sistema asociada a un curso.
-\item{\bf Actores:} Subdirector.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} La carga de trabajo asociada a la asignatura y curso seleccionados queda. eliminada del sistema.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -656,8 +755,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Consultar plan docente}
 \begin{itemize}
 \item{\bf Descripción:} Se consulta la carga de trabajo de una asignatura para un curso determinado.
-\item{\bf Actores:} Usuario.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestran los datos al usuario por pantalla.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -685,8 +784,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Importar plan docente desde archivo}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para importar planes docentes de forma masiva desde un archivo csv con un formato concreto.
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} El archivo tiene el formato correcto.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El archivo tiene el formato correcto. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se crean los planes docentes indicados en el archivo.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -711,8 +810,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Generación de informe de asignatura}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para generar un informe de las horas asignadas a una asignatura.
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} La asignatura tiene un plan docente creado y asignadas horas en los horarios.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} La asignatura tiene un plan docente creado y asignadas horas en los horarios. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se genera un informe en pdf permitiendo su descarga.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -747,8 +846,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Añadir evento al calendario}
 \begin{itemize}
 \item{\bf Descripción:} Añade un evento de fechas al calendario, que puede ser una festividad o un período de vacaciones.
-\item{\bf Actores:} Subdirector.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} El evento queda registrado para el calendario de un curso concreto.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -779,8 +878,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Borrar evento del calendario}
 \begin{itemize}
 \item{\bf Descripción:} El usuario selecciona alguno de los eventos del calendario para eliminarlo y este queda eliminado del sistema.
-\item{\bf Actores:} Subdirector.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} El evento queda eliminado del calendario del curso concreto.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -807,8 +906,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Visualizar calendario completo}
 \begin{itemize}
 \item{\bf Descripción:} Se muestra un calendario completo con las fechas marcadas.
-\item{\bf Actores:} Usuario.
-\item{\bf Precondiciones:} Ninguna.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestra el calendario por pantalla.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -822,8 +921,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Ver detalle de evento del calendario}
 \begin{itemize}
 \item{\bf Descripción:} Se muestran los datos detallados de un evento del calendario
-\item{\bf Actores:} Usuario
-\item{\bf Precondiciones:} Hay eventos registrados en el sistema
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} Hay eventos registrados en el sistema. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestran los datos.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -841,8 +940,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Exportar calendario}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para exportar el calendario de un curso a un formato externo como csv o una hoja de cálculo.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} El curso existe y tiene eventos creados.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El curso existe y tiene eventos creados. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se exporta un archivo con un formato adecuado.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -865,15 +964,15 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 	\begin{center}
     \includegraphics[scale=0.5]{./gestionhorarios.png}
   \end{center}
-\caption{Diagrama de casos de uso de la gestión de titulaciones}
+\caption{Diagrama de casos de uso de la gestión de horarios}
 \end{figure}
 
 \subsubsection*{Caso de uso: Seleccionar grupos de teoría}
 \label{select_grupo}
 \begin{itemize}
 \item{\bf Descripción:} Se muestran los grupos de teoría de una titulación. Este caso de uso es incluido por más casos de uso.
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} Hay titulaciones y cursos creados.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} Hay titulaciones y cursos creados. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestra la información
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -891,8 +990,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \label{guardar_slot}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso abstracto que es incluído por otros casos de uso. Se utiliza para ubicar en un horario un slot de una actividad de una asignatura.
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} La asignatura existe y tiene asignadas horas en el plan docente para esa actividad.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} La asignatura existe y tiene asignadas horas en el plan docente para esa actividad. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} El slot de la actividad queda guardado en el horario.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -925,8 +1024,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Editar horario tipo}
 \begin{itemize}
 \item{\bf Descripción:} Se muestra el horario de un grupo de teoría en un formato editable.
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} Hay algún grupo creado para la titulación, semestre, curso y año académico.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} Hay algún grupo creado para la titulación, semestre, curso y año académico. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestran las asignaturas disponibles, permitiendo su edición. Se muestran tanto los slots de teoría como los de las demás actividades
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -958,8 +1057,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Editar horario de semana inicial (sólo teoría)}
 \begin{itemize}
 \item{\bf Descripción:} Se muestra para su edición el horario de un grupo de teoría en una semana en la que sólo se imparte teoría
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} Ya ha sido creado el grupo y editado el horario tipo correspondiente
+\item{\bf Actores:} Planificador. 
+\item{\bf Precondiciones:} Ya ha sido creado el grupo y editado el horario tipo correspondiente. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestra el horario con los slots de teoría del horario tipo ubicados en su sitio, salvo los que no sean posible por no ser día lectivo
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -992,8 +1091,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Añadir grupo de teoría}
 \begin{itemize}
 \item{\bf Descripción:} Se añade un grupo de teoría a un curso de una titulación para poder editar más adelante su horario
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} La titulación existe y tiene asignaturas con planes docentes creados para el curso actual.
+\item{\bf Actores:} Planificador. 
+\item{\bf Precondiciones:} La titulación existe y tiene asignaturas con planes docentes creados para el curso actual. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} El grupo se añade al curso correspondiente.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -1015,8 +1114,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Eliminar grupo de teoría}
 \begin{itemize}
 \item{\bf Descripción:} Se elimina un grupo de teoría de un curso de una titulación
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} Hay grupos creados para la titulación y curso.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} Hay grupos creados para la titulación y curso. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se elimina el grupo así como toda su información asociada (horarios, informes, etc).
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -1040,8 +1139,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Exportar horario}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para exportar un horario creado a un formato externo como csv o una hoja de cálculo.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} Existe un grupo creado y está creado el horario.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} Existe un grupo creado y está creado el horario. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se exporta un archivo con un formato adecuado.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -1067,8 +1166,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Comprobar grupo de teoría}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para comprobar que el número de horas introducidas en los horarios de un grupo coincide con lo indicado en el plan docente de cada asignatura.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} El grupo existe y tiene horarios creados.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El grupo existe y tiene horarios creados. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestra la comprobación indicando si faltan o sobran horas en las asignaturas y actividades.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -1097,8 +1196,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Crear aula}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para crear un aula a la que asignar slots de horario
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} Ninguna
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} El aula queda creada
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -1123,8 +1222,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Editar aula}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para editar los datos de un aula ya creada
-\item{\bf Actores:} Administrador
-\item{\bf Precondiciones:} El aula existe.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El aula existe. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} El aula queda guardada con los nuevos datos.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -1150,8 +1249,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Eliminar aula}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para eliminar un aula del sistema.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} El aula existe en el sistema.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El aula existe en el sistema. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} El aula queda eliminada del sistema y todas las referencias a ésta quedan borradas.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -1174,8 +1273,8 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \subsubsection*{Caso de uso: Ver ocupación de aula}
 \begin{itemize}
 \item{\bf Descripción:} Caso de uso para ver la ocupación actual de un aula según los horarios creados para el curso actual.
-\item{\bf Actores:} Administrador.
-\item{\bf Precondiciones:} El aula existe en el sistema.
+\item{\bf Actores:} Planificador.
+\item{\bf Precondiciones:} El aula existe en el sistema. El usuario identificado en el sistema es un planificador.
 \item{\bf Postcondiciones:} Se muestran todos los slots que están asignados a ese aula junto con su horario.
 \item{\bf Escenario principal:}
 	\begin{enumerate}
@@ -1192,6 +1291,27 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 	\end{itemize}
 \end{itemize}
 
+\subsubsection*{Caso de uso: Visualización de horario}
+\begin{itemize}
+\item{\bf Descripción:} Caso de uso para visualizar un horario por parte de un alumno personalizado con las asignaturas seleccionadas por él.
+\item{\bf Actores:} Alumno.
+\item{\bf Precondiciones:} El usuario identificado en el sistema es un alumno.
+\item{\bf Postcondiciones:} Se muestran todos los slots que ha seleccionado el alumno.
+\item{\bf Escenario principal:}
+	\begin{enumerate}
+	\item Se realiza el caso de uso {\em \hyperref[select_asignatura]{Seleccionar asignatura}}.
+	\item Se repite el paso anterior hasta seleccionar todas las asignaturas deseadas.
+	\item El sistema muestra un horario personalizado según las asignaturas elegidas.
+	\end{enumerate}
+\item{\bf Escenarios alternativos:}
+	\begin{itemize}
+		\item[*.a.] En cualquier momento el alumno decide cancelar el proceso.
+		\begin{enumerate}
+			\item El caso de uso finaliza.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
 \section{Modelo conceptual de datos}
 
 \subsection{Diagrama de clases conceptuales}
@@ -1199,7 +1319,7 @@ A continuación se enumeran los requisitos funcionales que se consideran fundame
 \begin{figure}[H] 
   \label{modelo-conceptual} 
 	\begin{center}
-    \includegraphics[scale=0.7]{./modeloconceptual.png}
+    \includegraphics[scale=0.5]{./modeloconceptual.png}
   \end{center}
 \caption{Diagrama del modelo conceptual de datos}
 \end{figure}

@@ -8,13 +8,7 @@ class Horarios extends MY_Controller {
         $this->load->helper('resumen_asignatura_helper');
         $this->_filter(array('select_grupo', 'crear_grupos', 'add_grupo', 'asignar_aulas', 'guardar_aulas', 'edit', 'edit_teoria', 'check_grupo', 'save_line', 'delete', 'delete_line', 'ocupacion_aula', 'exportar', 'add_extra_slot'), array($this, 'authenticate'), 1);
     }
-
-    public function index() {
-        $this->layout = '';
-
-        $this->load->view('horarios/index');
-    }
-
+    
     public function select_grupo($id_titulacion = '', $id_curso = '') {
         if (!$id_titulacion)
             redirect('titulaciones/select_titulacion/horarios/select_grupo/');
@@ -85,21 +79,6 @@ class Horarios extends MY_Controller {
         $this->load->view('horarios/select_grupo', array('cursos' => $cursos, 'id_titulacion' => $id_titulacion, 'id_curso' => $id_curso, 'num_semanas_teoria' => $num_semanas_teoria));
     }
 
-    public function crear_grupos($id_titulacion, $id_curso) {
-        $horarios = Doctrine_Query::create()
-                ->select('h.*')
-                ->from('Horario h')
-                ->where('h.id_titulacion = ?', $id_titulacion)
-                ->andWhere('h.id_curso = ?', $id_curso)
-                ->execute();
-
-        if (count($horarios))
-            redirect("horarios/select_grupo/$id_titulacion/$id_curso");
-
-        $titulacion = Doctrine::getTable('Titulacion')->find($id_titulacion);
-
-        $this->load->view('horarios/configuracion_grupos', array('titulacion' => $titulacion));
-    }
 
     public function add_grupo($id_titulacion, $id_curso, $curso_titulacion, $num_grupo) {
         $curso = Doctrine::getTable('Curso')->find($id_curso);
@@ -185,7 +164,7 @@ class Horarios extends MY_Controller {
 
         redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
     }
-
+/*
     public function asignar_aulas($id) {
         $lineas = Doctrine_Query::create()
                 ->select('l.id, l.id_actividad, l.num_grupo_actividad, l.id_aula, l.id_asignatura, a.nombre, l.id_horario')
@@ -208,10 +187,7 @@ class Horarios extends MY_Controller {
 
         foreach ($aulas as $key => $aula) {
             list($asignatura, $actividad, $grupo) = explode('/', $key, 3);
-            /* echo $asignatura . "\n";
-              echo $actividad . "\n";
-              echo $grupo . "\n";
-             */
+
             $query = Doctrine_Query::create()
                     ->update('LineaHorario')
                     ->set('id_aula', $aula)
@@ -224,7 +200,7 @@ class Horarios extends MY_Controller {
 
         redirect('horarios/edit/' . $this->input->post('id_horario'));
     }
-
+*/
     public function edit($id) {
 
         $horario = Doctrine::getTable("Horario")->find($id);
