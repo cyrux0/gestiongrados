@@ -1,0 +1,93 @@
+Actividad:
+  Actividad_1:
+    descripcion: Teoría
+    identificador: A
+  Actividad_2:
+    descripcion: Laboratorio
+    identificador: B
+  Actividad_3:
+    descripcion: Problemas
+    identificador: C
+  Actividad_4:
+    descripcion: Informática
+    identificador: D
+  Actividad_5:
+    descripcion: 'Prácticas de campo'
+    identificador: E
+Asignatura:
+  Asignatura_1:
+    codigo: '123'
+    nombre: 'Análisis y diseño de algoritmos I'
+    abreviatura: ADAI
+    creditos: '6'
+    materia: Algoritmia
+    departamento: 'Lenguajes y sistemas'
+    curso: '2'
+    semestre: primero
+    Titulacion: Titulacion_1
+  Asignatura_2:
+    codigo: '124'
+    nombre: 'Estructura de Datos I'
+    abreviatura: EDI
+    creditos: '6'
+    materia: Programación
+    departamento: 'Lenguajes y sistemas'
+    curso: '1'
+    semestre: segundo
+    Titulacion: Titulacion_1
+  Asignatura_3:
+    codigo: '122'
+    nombre: 'Fundamentos en Informática'
+    abreviatura: FI
+    creditos: '6'
+    materia: Porgramación
+    departamento: 'Lenguajes y sistemas'
+    curso: '1'
+    semestre: primero
+    Titulacion: Titulacion_2
+CiSessions:
+  CiSessions_c65cc6dfa6fbd950745caf6f46bbb93c:
+    session_id: c65cc6dfa6fbd950745caf6f46bbb93c
+    ip_address: 127.0.0.1
+    user_agent: 'Mozilla/5.0 (Windows NT 6.1; rv:8.0) Gecko/20100101 Firefox/8.0'
+    last_activity: '1323259383'
+    user_data: ''
+Curso:
+  Curso_1:
+    num_semanas_teoria: '3'
+    num_semanas_semestre1: '15'
+    num_semanas_semestre2: '15'
+    horas_por_credito: '10'
+    slot_minimo: '30'
+    hora_inicial: '09:00:00'
+    hora_final: '22:00:00'
+    inicio_semestre1: '2011-09-22'
+    fin_semestre1: '2012-01-10'
+    inicio_semestre2: '2012-02-03'
+    fin_semestre2: '2012-06-04'
+    inicio_examenes_enero: '2012-01-12'
+    fin_examenes_enero: '2012-02-01'
+    inicio_examenes_junio: '2012-06-05'
+    fin_examenes_junio: '2012-07-05'
+    inicio_examenes_sept: '2012-09-01'
+    fin_examenes_sept: '2012-09-20'
+Titulacion:
+  Titulacion_1:
+    codigo: '1714'
+    nombre: 'Grado en Ingeniería Informática'
+    creditos: '200'
+    num_cursos: '4'
+  Titulacion_2:
+    codigo: '1715'
+    nombre: 'Grado en Ingeniería Industrial'
+    creditos: '215'
+    num_cursos: '4'
+User:
+  User_1:
+    password: e10adc3949ba59abbe56e057f20f883e
+    nombre: Admin
+    apellidos: Admin
+    DNI: 77777777W
+    email: administrador@uca.es
+    titulacion: Titulacion_1
+    level: '1'
