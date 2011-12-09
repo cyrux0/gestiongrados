@@ -1,4 +1,4 @@
-<?php echo form_open('aulas/create'); ?>
+<?php echo form_open($action); ?>
 <div class="field">
   <label for="nombre">Nombre:</label>
   <input type="text" name="nombre" value="<?= set_value('nombre', $aula->nombre) ?>" />
@@ -7,7 +7,7 @@
 <div class="field">
     <?= form_label('Tipos:', 'tipo') ?>
     <? foreach($tipos as $tipo): ?>
-        <?= form_checkbox('actividades[]', $tipo->id) ?> <label class="checkbox_label"><?= $tipo->descripcion ?></label>
+        <?= form_checkbox('actividades[]', $tipo->id, $aula->actividades->contains($tipo->id));  ?> <label class="checkbox_label"><?= $tipo->descripcion ?></label>
     <? endforeach; ?>
 </div>
 

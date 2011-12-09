@@ -20,7 +20,7 @@ class Aulas extends MY_Controller
         $aula = new Aula;
         $tipos = Doctrine::getTable('Actividad')->findAll();
         
-        $this->load->view('aulas/add', array('aula' => $aula, 'tipos' => $tipos));
+        $this->load->view('aulas/add', array('aula' => $aula, 'tipos' => $tipos, 'action' => 'aulas/create'));
     }
     
     /**
@@ -31,6 +31,28 @@ class Aulas extends MY_Controller
         $aula->fromArray($this->input->post());
         $aula->save();
         redirect('aulas');
+        
+    }
+    
+    /**
+     * Muestra un formulario con los datos de un aula para editarla
+     * @param integer $id Identificador del aula a editar
+     */
+    public function edit($id)
+    {
+        $aula = Doctrine::getTable('Aula')->find($id);
+        $tipos = Doctrine::getTable('Actividad')->findAll();
+        if(!$aula) show_404();
+        
+        $this->load->view('aulas/add', array('aula' => $aula, 'tipos' => $tipos, 'action' => 'aulas/update/'.$id));
+    }
+    
+    public function update($id)
+    {
+        $aula = Doctrine::getTable('Aula')->find($id);
+        $aula->fromArray($this->input->post());
+        $aula->save();
+        redirect('aulas/index');
         
     }
     
