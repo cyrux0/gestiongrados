@@ -86,6 +86,41 @@ class Asignaturas extends MY_Controller {
         redirect('titulaciones/show/' . $titulacion_id);
     }
     
+    public function importar()
+    {
+        $data = array('action' => 'asignaturas/subir_archivo');
+        $this->load->view('PlanDocente/from_file', $data);
+    }
+    
+    public function subir_archivo()
+    {
+              $this->layout ='';
+        $config['upload_path'] = './application/upload/data/';
+        $config['allowed_types'] = '*';
+        $config['max_size']	= '100';
+
+        $this->load->library('upload', $config);
+        if(!$this->upload->do_upload()){
+            $error = array('error' => $this->upload->display_errors(), 'action' => 'asignaturas/subir_archivo');
+            $this->load->view('PlanDocente/from_file', $error);
+        }else{
+            $this->load->database();
+            $data = $this->upload->data();
+            $query_array = explode(";", file_get_contents($data['full_path']));
+            Doctrine_Manager::connection()->execute('SET FOREIGN_KEY_CHECKS = 0');
+            Doctrine::loadData($data['full_path'], true);
+            unlink($data['full_path']);
+        }
+    }
+    
+    public function exportar()
+    {
+        Doctrine::dumpData("./application/downloads/data/", true);
+        $this->load->helper('download');
+        $data = file_get_contents("application/downloads/data/Asignatura.yml");
+        force_download("asignaturas.yml", $data);
+    }
+    
     private function _submit_validate(){
         $this->form_validation->set_rules('codigo', 'Código', 'required|exact_length[3]|numeric');
         $this->form_validation->set_rules('nombre', 'Nombre', 'required|min_length[5]|max_length[200]|alpha_ext'); // Hay que crear la regla alpha_numeric_ext igual que la alpha_ext pero con números.

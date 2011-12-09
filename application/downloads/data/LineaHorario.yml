@@ -1,0 +1,210 @@
+LineaHorario:
+  LineaHorario_1:
+    horario: Horario_1
+    asignatura: Asignatura_7
+    hora_inicial: '10:30:00'
+    hora_final: '11:00:00'
+    dia_semana: '1'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_2:
+    horario: Horario_1
+    asignatura: Asignatura_7
+    hora_inicial: '11:00:00'
+    hora_final: '11:30:00'
+    dia_semana: '1'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_3:
+    horario: Horario_1
+    asignatura: Asignatura_7
+    hora_inicial: '11:00:00'
+    hora_final: '11:30:00'
+    dia_semana: '2'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_4:
+    horario: Horario_1
+    asignatura: Asignatura_7
+    hora_inicial: '12:00:00'
+    hora_final: '12:30:00'
+    dia_semana: '2'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_5:
+    horario: Horario_1
+    asignatura: Asignatura_7
+    hora_inicial: '11:30:00'
+    hora_final: '12:00:00'
+    dia_semana: '0'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_6:
+    horario: Horario_1
+    asignatura: Asignatura_7
+    hora_inicial: '12:00:00'
+    hora_final: '12:30:00'
+    dia_semana: '0'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_7:
+    horario: Horario_1
+    asignatura: Asignatura_7
+    hora_inicial: '11:30:00'
+    hora_final: '13:30:00'
+    dia_semana: '1'
+    actividad: Actividad_2
+    num_grupo_actividad: '1'
+    slot_minimo: '2.00'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_8:
+    horario: Horario_3
+    asignatura: Asignatura_7
+    hora_inicial: '11:00:00'
+    hora_final: '11:30:00'
+    dia_semana: '3'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_9:
+    horario: Horario_3
+    asignatura: Asignatura_7
+    hora_inicial: '12:00:00'
+    hora_final: '12:30:00'
+    dia_semana: '3'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_10:
+    horario: Horario_3
+    asignatura: Asignatura_7
+    hora_inicial: '13:30:00'
+    hora_final: '14:00:00'
+    dia_semana: '3'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_11:
+    horario: Horario_3
+    asignatura: Asignatura_7
+    hora_inicial: '12:00:00'
+    hora_final: '12:30:00'
+    dia_semana: '4'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_12:
+    horario: Horario_3
+    asignatura: Asignatura_7
+    hora_inicial: '11:30:00'
+    hora_final: '12:00:00'
+    dia_semana: '3'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_13:
+    horario: Horario_3
+    asignatura: Asignatura_7
+    hora_inicial: '09:30:00'
+    hora_final: '10:00:00'
+    dia_semana: '3'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_14:
+    horario: Horario_4
+    asignatura: Asignatura_7
+    hora_inicial: '10:30:00'
+    hora_final: '11:00:00'
+    dia_semana: '1'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_15:
+    horario: Horario_4
+    asignatura: Asignatura_7
+    hora_inicial: '11:00:00'
+    hora_final: '11:30:00'
+    dia_semana: '1'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_16:
+    horario: Horario_4
+    asignatura: Asignatura_7
+    hora_inicial: '11:00:00'
+    hora_final: '11:30:00'
+    dia_semana: '2'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_17:
+    horario: Horario_4
+    asignatura: Asignatura_7
+    hora_inicial: '12:00:00'
+    hora_final: '12:30:00'
+    dia_semana: '2'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_18:
+    horario: Horario_4
+    asignatura: Asignatura_7
+    hora_inicial: '11:30:00'
+    hora_final: '12:00:00'
+    dia_semana: '0'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1
+  LineaHorario_19:
+    horario: Horario_4
+    asignatura: Asignatura_7
+    hora_inicial: '12:00:00'
+    hora_final: '12:30:00'
+    dia_semana: '0'
+    actividad: Actividad_1
+    num_grupo_actividad: '1'
+    slot_minimo: '0.50'
+    color: '#123456'
+    aula: Aula_1

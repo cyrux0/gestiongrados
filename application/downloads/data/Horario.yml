@@ -1,0 +1,29 @@
+Horario:
+  Horario_1:
+    curso: Curso_1
+    titulacion: Titulacion_5
+    num_curso_titulacion: '2'
+    semestre: primero
+    num_grupo_titulacion: '1'
+    num_semana: '4'
+  Horario_2:
+    curso: Curso_1
+    titulacion: Titulacion_5
+    num_curso_titulacion: '2'
+    semestre: segundo
+    num_grupo_titulacion: '1'
+    num_semana: '4'
+  Horario_3:
+    curso: Curso_1
+    titulacion: Titulacion_5
+    num_curso_titulacion: '2'
+    semestre: primero
+    num_grupo_titulacion: '1'
+    num_semana: '1'
+  Horario_4:
+    curso: Curso_1
+    titulacion: Titulacion_5
+    num_curso_titulacion: '2'
+    semestre: primero
+    num_grupo_titulacion: '1'
+    num_semana: '3'

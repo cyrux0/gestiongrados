@@ -2,7 +2,7 @@
 <? $curso_actual = 1 ?>
 <?= form_hidden('id_curso', $id_curso)?>
 <?= form_hidden('id_titulacion', $id_titulacion) ?>
-<label for="num_semana">Semana a mostrar:</label><?= form_dropdown('num_semana', $semanas) ?>
+
 <table class="listaelems">
     <tr><th>Asignatura</th><th>Laboratorio</th><th>Problemas</th><th>Informática</th><th>Prácticas de campo</th></tr>
     <? foreach($asignaturas as $asignatura): ?>

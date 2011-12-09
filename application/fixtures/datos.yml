@@ -1,17 +1,22 @@
 Actividad:
   Actividad_1:
+    id: 1
     descripcion: Teoría
     identificador: A
   Actividad_2:
+    id: 3
     descripcion: Laboratorio
-    identificador: B
-  Actividad_3:
-    descripcion: Problemas
     identificador: C
+  Actividad_3:
+    id: 2
+    descripcion: Problemas
+    identificador: B
   Actividad_4:
+    id: 4
     descripcion: Informática
     identificador: D
   Actividad_5:
+    id: 5
     descripcion: 'Prácticas de campo'
     identificador: E
 Asignatura:
@@ -84,7 +89,7 @@ Titulacion:
     num_cursos: '4'
 User:
   User_1:
-    password: e10adc3949ba59abbe56e057f20f883e
+    password: 123456
     nombre: Admin
     apellidos: Admin
     DNI: 77777777W

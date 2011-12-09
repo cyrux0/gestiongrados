@@ -13,7 +13,7 @@
 class Actividad extends Doctrine_Record{
     public function setTableDefinition(){
         $this->setTableName('actividades');
-        $this->hasColumn('id', 'integer', null, array('type' => 'integer', 'primary' => true, 'autoincrement' => true));
+        $this->hasColumn('id', 'integer', null, array('type' => 'integer', 'primary' => true, 'autoincrement' => false));
         $this->hasColumn('descripcion', 'string', 100, array('length' => 100, 'fixed' => false, 'unsigned' => false));
         $this->hasColumn('identificador', 'string', 1, array('length' => 100, 'fixed' => false, 'unsigned' => false));
     }

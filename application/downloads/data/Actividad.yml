@@ -1,0 +1,16 @@
+Actividad:
+  Actividad_1:
+    descripcion: Teoría
+    identificador: A
+  Actividad_2:
+    descripcion: Laboratorio
+    identificador: B
+  Actividad_3:
+    descripcion: Problemas
+    identificador: C
+  Actividad_4:
+    descripcion: Informática
+    identificador: D
+  Actividad_5:
+    descripcion: 'Prácticas de campo'
+    identificador: E

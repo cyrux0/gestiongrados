@@ -388,7 +388,6 @@ var horarios = {
                 
             }
         }
-        var visualizacion = !$('#horario').hasClass('visualizacion');
         var fullcalendar = $("#horario").fullCalendar({
             slotMinutes: slot_minimo,
             timeFormat: {agenda: 'H:mm'},
@@ -406,7 +405,7 @@ var horarios = {
             columnFormat: {
                 week: 'ddd'
             },
-            editable: visualizacion,
+            editable: true,
             disableResizing: true,
             droppable: true,
             allDaySlot: false,
@@ -658,6 +657,68 @@ aulas = {
     }
 }
 
+var visualizacion ={
+    initialize: function(){
+        
+        $('.asignaturas-guardadas-visualizacion').each(function(){
+        
+            var savedEvents = eval($(this).text());
+
+            for(var i in savedEvents){
+                hora_inicial = savedEvents[i].hora_inicial.split(":");
+                hora_final = savedEvents[i].hora_final.split(":");
+                dia_semana = eval(savedEvents[i].dia_semana);
+                savedEvents[i].start = new Date(1950, 0, 2 + dia_semana, hora_inicial[0], hora_inicial[1]);
+                savedEvents[i].end = new Date(1950, 0, 2 + dia_semana, hora_final[0], hora_final[1]);
+                savedEvents[i].title = savedEvents[i].nombre_asignatura;
+                savedEvents[i].allDay = false;
+                if(savedEvents[i].evento_especial == "1"){
+                    savedEvents[i].editable = false;
+
+                }
+            }
+            
+            var semana = $(this).data("semana");
+            var slot_minimo = $('#horario-semana-' + semana).data('slot');
+             var fullcalendar = $("#horario-semana-" + semana).fullCalendar({
+            slotMinutes: slot_minimo,
+            timeFormat: {agenda: 'H:mm'},
+            axisFormat: 'H:mm',
+            events: savedEvents,
+            theme: true,
+            weekends: false,
+            header: {
+                left: 'title',
+                center: '',
+                right: ''
+            },
+            defaultView: 'agendaWeek',
+            titleFormat: false,
+            columnFormat: {
+                week: 'ddd'
+            },
+            editable: false,
+            disableResizing: true,
+            droppable: false,
+            allDaySlot: false,
+            minTime: 9,
+            maxTime: 22,
+            height: 400,
+            aspect_ratio: 1,
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
+            });
+            $('#horario-semana-' + semana).fullCalendar('gotoDate', 1950); // Mon, 2-ene-1950
+            // Nos vamos a ese año para no mostrar resaltada la fecha de hoy, luego da igual por que en teoría no se guarda la fecha, solo la hora. Luego claro en el PHP habrá que parsear sólo la hora.
+            // Para salvar los eventos en la BD llamamos a clientEvents y lo mandamos a una acción de un controlador.
+        });
+        
+        
+        
+    }
+}
+
+
 $(document).ready(function(){
     titulaciones.initialize();
     cursos.initialize();
@@ -667,6 +728,7 @@ $(document).ready(function(){
     calendar.initialize();
     horarios.initialize();
     aulas.initialize();
+    visualizacion.initialize();
     var icons = {
         header: "ui-icon-circle-arrow-e",
         headerSelected: "ui-icon-circle-arrow-s"

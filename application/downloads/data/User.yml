@@ -1,0 +1,33 @@
+User:
+  User_2:
+    password: e10adc3949ba59abbe56e057f20f883e
+    nombre: Admin
+    apellidos: Admin
+    DNI: 77777777W
+    email: planificador@uca.es
+    titulacion: Titulacion_5
+    level: '1'
+  User_3:
+    password: e10adc3949ba59abbe56e057f20f883e
+    nombre: Alumno
+    apellidos: Alumno
+    DNI: 77777771W
+    email: alumno@alum.uca.es
+    titulacion: Titulacion_5
+    level: '3'
+  User_11:
+    password: e10adc3949ba59abbe56e057f20f883e
+    nombre: admin
+    apellidos: admin
+    DNI: '123123345'
+    email: administrador@uca.es
+    titulacion: Titulacion_5
+    level: '0'
+  User_12:
+    password: e10adc3949ba59abbe56e057f20f883e
+    nombre: profesor
+    apellidos: profesor
+    DNI: 12852654Q
+    email: profesor@uca.es
+    titulacion: Titulacion_5
+    level: '2'

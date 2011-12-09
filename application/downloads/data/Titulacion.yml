@@ -1,0 +1,11 @@
+Titulacion:
+  Titulacion_5:
+    codigo: '1714'
+    nombre: 'Grado en Ingeniería Informática'
+    creditos: '200'
+    num_cursos: '4'
+  Titulacion_6:
+    codigo: '1715'
+    nombre: 'Grado en Ingeniería Industrial'
+    creditos: '215'
+    num_cursos: '4'

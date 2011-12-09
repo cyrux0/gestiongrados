@@ -4,6 +4,14 @@
             <?= anchor("horarios/edit_teoria/$horario->id/$i", "Editar semana $i", 'class="button"') ?>
         <? endforeach;?>
     <? else: ?>
+        <? $tipo_id = $horario->horariotipo[0]->id; ?>
+        <? foreach(range(1, $num_semanas_teoria) as $i): ?>
+            <? if($horario->num_semana != $i): ?>
+                
+                <?= anchor("horarios/edit_teoria/$tipo_id/$i", "Editar semana $i", 'class="button"') ?>
+            <? endif; ?>
+        <? endforeach;?>
+        <?= anchor("horarios/edit/$tipo_id/", "Editar semana tipo", 'class="button"') ?>
         <?= form_open('horarios/add_extra_slot'); ?>
         <?= form_hidden('id_horario', $horario->id) ?>
         <?= form_dropdown('asignatura', $array_asignaturas) ?>

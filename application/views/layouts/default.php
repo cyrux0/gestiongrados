@@ -71,6 +71,12 @@
                       <li>
                           <?= anchor('titulaciones/index', 'Asignaturas') ?>
                       </li>
+                      <li>
+                          <?= anchor('asignaturas/importar', 'Importar YML') ?>
+                      </li>
+                      <li>
+                          <?= anchor('asignaturas/exportar', 'Exportar YML') ?>
+                      </li>
                   </ul>
               </li>
               <li>
@@ -115,7 +121,7 @@
                   </ul>
               </li>
               <? endif; ?>
-              <? if(Current_User::logged_in(1) or Current_User::logged_in(3)): ?>
+              <? if(Current_User::logged_in(1) or Current_User::logged_in(2) or Current_User::logged_in(3)): ?>
               <li>
                   <a href="#">Horarios</a>
                   <ul class="acitem">
@@ -132,6 +138,11 @@
                               <?= anchor('horarios/visualizacion_asignaturas', 'Ver horario') ?>
                           </li>
                       <? endif; ?>
+                      <? if(Current_User::logged_in(2)): ?>
+                          <li>
+                              <?= anchor('horarios/visualizacion_asignaturas_profesor', 'Ver horario') ?>
+                          </li>
+                      <? endif; ?>
                   </ul>
               </li>
               <? endif; ?>
@@ -143,6 +154,9 @@
                           <li>
                               <?= anchor('users/add', 'Añadir usuarios') ?>
                           </li>
+                          <li>
+                              <?= anchor('users/index', 'Ver usuarios') ?>
+                          </li>
                       <? endif; ?>
                       <li>
                           <?= anchor('users/edit', 'Cambiar contraseña/email') ?>
@@ -150,7 +164,7 @@
                   </ul>
               </li>
               <? endif; ?>
-              <? if(Current_User::logged_in(1)): ?>  
+              <? if(Current_User::logged_in(0)): ?>  
               <li>
                   <a href="#">Configuración</a>
                   <ul class="acitem">

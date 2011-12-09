@@ -1,0 +1,43 @@
+AulaActividad:
+  AulaActividad_1_1:
+    Actividad: Actividad_1
+    Aula: Aula_1
+  AulaActividad_2_1:
+    Actividad: Actividad_2
+    Aula: Aula_1
+  AulaActividad_3_1:
+    Actividad: Actividad_3
+    Aula: Aula_1
+  AulaActividad_4_1:
+    Actividad: Actividad_4
+    Aula: Aula_1
+  AulaActividad_1_2:
+    Actividad: Actividad_1
+    Aula: Aula_2
+  AulaActividad_2_2:
+    Actividad: Actividad_2
+    Aula: Aula_2
+  AulaActividad_3_2:
+    Actividad: Actividad_3
+    Aula: Aula_2
+  AulaActividad_4_2:
+    Actividad: Actividad_4
+    Aula: Aula_2
+  AulaActividad_5_2:
+    Actividad: Actividad_5
+    Aula: Aula_2
+  AulaActividad_1_3:
+    Actividad: Actividad_1
+    Aula: Aula_3
+  AulaActividad_2_3:
+    Actividad: Actividad_2
+    Aula: Aula_3
+  AulaActividad_3_3:
+    Actividad: Actividad_3
+    Aula: Aula_3
+  AulaActividad_4_3:
+    Actividad: Actividad_4
+    Aula: Aula_3
+  AulaActividad_5_3:
+    Actividad: Actividad_5
+    Aula: Aula_3

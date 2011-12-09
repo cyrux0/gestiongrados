@@ -7,7 +7,7 @@ class Users extends MY_Controller {
         $this->layout = '';
         $this->notices = '';
         $this->alerts = '';
-        $this->_filter(array('index', 'delete'), array($this, 'authenticate'), 0); // Sólo admins
+        $this->_filter(array('admin_edit', 'index', 'delete'), array($this, 'authenticate'), 0); // Sólo admins
         //$this->_filter(array('edit'), array($this, 'authenticate'));
     }
 
@@ -76,6 +76,13 @@ class Users extends MY_Controller {
         }
     }
     
+    function admin_edit($id)
+    {
+        $user = Doctrine::getTable('User')->find($id);
+        if(!$user) show_404();
+        $this->load->view('users/add', array('user' => $user, 'action' => 'users/update/' . $user->id));
+    }
+    
     function edit(){
         $user = Current_User::user();
         if(!$user) redirect('/login');
@@ -90,7 +97,7 @@ class Users extends MY_Controller {
     }
     
     function update($id){
-        $user = Current_User::user();
+        $user = Doctrine::getTable('User')->find($id);
         $user->fromArray($this->input->post());
         
         /*if(!$user->isValid() or $this->input->post('password')!=$this->input->post('password_confirmation')){

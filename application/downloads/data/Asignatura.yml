@@ -1,0 +1,31 @@
+Asignatura:
+  Asignatura_7:
+    codigo: '123'
+    nombre: 'Análisis y diseño de algoritmos I'
+    abreviatura: ADAI
+    creditos: '6'
+    materia: Algoritmia
+    departamento: 'Lenguajes y sistemas'
+    curso: '2'
+    semestre: primero
+    Titulacion: Titulacion_5
+  Asignatura_8:
+    codigo: '124'
+    nombre: 'Estructura de Datos I'
+    abreviatura: EDI
+    creditos: '6'
+    materia: Programación
+    departamento: 'Lenguajes y sistemas'
+    curso: '1'
+    semestre: segundo
+    Titulacion: Titulacion_5
+  Asignatura_9:
+    codigo: '122'
+    nombre: 'Fundamentos en Informática'
+    abreviatura: FI
+    creditos: '6'
+    materia: Porgramación
+    departamento: 'Lenguajes y sistemas'
+    curso: '1'
+    semestre: primero
+    Titulacion: Titulacion_6

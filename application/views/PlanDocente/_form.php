@@ -29,8 +29,8 @@
     </tr>
     <tr>
         <td>
-        <label for="horas_lab">
-            Laboratorio:
+        <label for="horas_problemas">
+            Problemas:
         </label>
         </td>
         <td>
@@ -48,8 +48,8 @@
     </tr>
     <tr>
         <td>
-        <label for="horas_problemas">
-            Problemas:
+        <label for="horas_lab">
+            Laboratorio:
         </label>
         </td>
         <td>

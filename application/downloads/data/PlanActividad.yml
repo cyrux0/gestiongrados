@@ -1,0 +1,29 @@
+PlanActividad:
+  PlanActividad_1:
+    plandocente: PlanDocente_1
+    actividad: Actividad_1
+    horas: '40'
+    grupos: '3'
+    horas_semanales: '3'
+    alternas: '0'
+  PlanActividad_2:
+    plandocente: PlanDocente_1
+    actividad: Actividad_2
+    horas: '30'
+    grupos: '9'
+    horas_semanales: '2'
+    alternas: '1'
+  PlanActividad_3:
+    plandocente: PlanDocente_2
+    actividad: Actividad_1
+    horas: '25'
+    grupos: '3'
+    horas_semanales: '2'
+    alternas: '0'
+  PlanActividad_4:
+    plandocente: PlanDocente_2
+    actividad: Actividad_2
+    horas: '25'
+    grupos: '3'
+    horas_semanales: '2'
+    alternas: '0'

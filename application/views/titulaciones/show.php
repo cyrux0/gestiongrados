@@ -1,6 +1,6 @@
 <table class="listaelems">
   <tr>
-    <th>ID</th><th>NOMBRE</th><th>CRÉDITOS</th><th colspan="4">ACCIONES</th>
+      <th>ID</th><th>NOMBRE</th><th>CRÉDITOS</th><th>EDITAR</th><th>AÑADIR PLAN DOCENTE</th><th>VER PLAN DOCENTE</th><th>BORRAR</th>
   </tr>
   <?php 
   foreach($asignaturas as $item): ?>
@@ -8,14 +8,13 @@
     <td><?= $item->codigo ?></td>
     <td><?= $item->nombre ?></td>
     <td><?= $item->creditos ?></td>
-    <? if(Current_User::logged_in(1)): ?>
-        <td><?= anchor('asignaturas/delete/' . $item->id, 'Borrar', array('onclick'=>"return confirm('Estás seguro?')")); ?></td>
-        <td><?= anchor('asignaturas/edit/' . $item->id, 'Editar', ''); ?></td>
-    <? endif; ?>
-    <? if(Current_User::logged_in(1)): ?>
-        <td><?= anchor('planesdocentes/add_carga/' . $item->id . '/' . $id_curso, 'Añadir plan docente'); ?></td>
-    <? endif; ?>
-    <td><?= anchor('asignaturas/show/' . $item->id . '/' . $id_curso , 'Ver ficha actual', 'class="linkvercarga"') ?></td>
+    
+        <td><a href="<?= site_url('asignaturas/edit/' . $item->id) ?>" class="img-anchor"><img src="<?=site_url('themes/css/img/edit.png') ?>"/></a></td>
+        <td><a href="<?= site_url('planesdocentes/add_carga/' . $item->id . '/'. $id_curso) ?>" class="img-anchor" ><img src="<?=site_url('themes/css/img/add.png') ?>"/></a></td>
+    
+    <td><a href="<?= site_url('asignaturas/show/' . $item->id . '/'. $id_curso) ?>" class="img-anchor" ><img src="<?=site_url('themes/css/img/next.png') ?>" style="width:24px;"/></a></td>
+     <td><a href="<?= site_url('asignaturas/delete/' . $item->id) ?>" class="img-anchor" onclick="javascript:return confirm('¿Está seguro?')"><img style="width:24px" src="<?=site_url('themes/css/img/delete-icon.png') ?>"/></a></td>
+       
   </tr>
   <?php endforeach; ?>
 

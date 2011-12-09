@@ -635,6 +635,62 @@ class Horarios extends MY_Controller {
         $this->load->view('visualizacion/lista_asignaturas', array('asignaturas' => $array_asignaturas, 'id_curso' => $id_curso, 'id_titulacion' => $id_titulacion));
     }
     
+    public function visualizacion_asignaturas_profesor($id_curso)
+    {
+        if(!isset($id_curso)) redirect('cursos/select_curso/horarios/visualizacion_asignaturas_profesor');
+        
+        $asignaturas = Doctrine_Query::create()
+                ->select('l.id_asignatura, a.nombre, a.curso, a.semestre, t.nombre')
+                ->from('LineaHorario l')
+                ->innerJoin('l.asignatura a')
+                ->innerJoin('l.horario h')
+                ->innerJoin('a.Titulacion t')
+                ->andWhere('h.id_curso = ?', array($id_curso))
+                ->groupBy('l.id_asignatura')
+                ->orderBy('t.nombre, a.curso, a.semestre')
+                ->execute();
+        
+        $this->load->view('visualizacion/lista_asignaturas_profesor', array('asignaturas' => $asignaturas, 'id_curso' => $id_curso));
+    }
+    
+    public function visualizacion_horario_profesor()
+    {
+        $id_curso = $this->input->post('id_curso');
+        $seleccionadas = $this->input->post('seleccionada');
+        $seleccionadas = array_keys($seleccionadas);
+        $curso = Doctrine::getTable('Curso')->find($id_curso);
+        
+        $array_semanas = array();
+        foreach(range(1, $curso->num_semanas_teoria + 1) as $num_semana)
+        {
+
+            $array_lineas = array();
+            foreach($seleccionadas as $id_asignatura)
+            {
+                $lineas = Doctrine_Query::create()
+                                    ->select('l.*, a.*, c.*')
+                                    ->from('LineaHorario l')
+                                    ->innerJoin('l.horario h')
+                                    ->innerJoin('l.asignatura a')
+                                    ->innerJoin('l.actividad c')
+                                    ->where('h.id_curso = ?', array($id_curso))
+                                    ->andWhere('l.id_asignatura = ?', array($id_asignatura))
+                                    ->andWhere('l.hora_inicial IS NOT NULL')
+                                    ->andWhere('h.num_semana = ?', array($num_semana))
+                                    ->execute();
+                foreach($lineas as $linea)
+                {
+                    $array_linea = $linea->toArray();
+                    $array_linea['nombre_asignatura'] = $linea->asignatura->abreviatura . " (" . $linea->actividad->identificador . $linea->num_grupo_actividad . " ) ";
+                    $array_lineas[] = $array_linea;
+                }
+            }
+            $array_semanas[$num_semana] = json_encode($array_lineas);
+        }
+        $this->load->view('horarios/visualizacion_horario', array('slot_minimo' => $curso->slot_minimo, 'asignaturas_semanas' => $array_semanas, 'semana_tipo' => $curso->num_semanas_teoria +1));
+        
+    }
+    
     public function visualizacion_mostrar_grupos()
     {
         $id_curso = $this->input->post('id_curso');
@@ -705,37 +761,43 @@ class Horarios extends MY_Controller {
         $id_curso = $this->input->post('id_curso');
         $curso = Doctrine::getTable('Curso')->find($id_curso);
         $id_titulacion = $this->input->post('id_titulacion');
-        $array_lineas = array();
-        foreach($this->input->post('grupos_seleccionados') as $id_asignatura => $grupos)
+
+        $array_semanas = array();
+        foreach(range(1, $curso->num_semanas_teoria + 1) as $num_semana)
         {
-            foreach($grupos as $id_actividad => $numeros_grupos)
+            $array_lineas = array();
+            foreach($this->input->post('grupos_seleccionados') as $id_asignatura => $grupos)
             {
-                // Faltaría meter las líneas de teoría
-                foreach($numeros_grupos as $grupo)
+                foreach($grupos as $id_actividad => $numeros_grupos)
                 {
-                    $lineas = Doctrine_Query::create()
-                            ->select('l.*, a.*, c.*')
-                            ->from('LineaHorario l')
-                            ->innerJoin('l.horario h')
-                            ->innerJoin('l.asignatura a')
-                            ->innerJoin('l.actividad c')
-                            ->where('h.id_curso = ?', array($id_curso))
-                            ->andWhere('h.id_titulacion = ?', array($id_titulacion))
-                            ->andWhere('l.id_actividad = ?', array($id_actividad))
-                            ->andWhere('l.num_grupo_actividad = ?', array($grupo))
-                            ->andWhere('l.hora_inicial IS NOT NULL')
-                            ->andWhere('h.num_semana = ?', array($this->input->post('num_semana')))
-                            ->execute();
-                    foreach($lineas as $linea)
+                    // Faltaría meter las líneas de teoría
+                    foreach($numeros_grupos as $grupo)
                     {
-                        $array_linea = $linea->toArray();
-                        $array_linea['nombre_asignatura'] = $linea->asignatura->abreviatura . " (" . $linea->actividad->identificador . $linea->num_grupo_actividad . " ) ";
-                        $array_lineas[] = $array_linea;
+                        $lineas = Doctrine_Query::create()
+                                ->select('l.*, a.*, c.*')
+                                ->from('LineaHorario l')
+                                ->innerJoin('l.horario h')
+                                ->innerJoin('l.asignatura a')
+                                ->innerJoin('l.actividad c')
+                                ->where('h.id_curso = ?', array($id_curso))
+                                ->andWhere('h.id_titulacion = ?', array($id_titulacion))
+                                ->andWhere('l.id_actividad = ?', array($id_actividad))
+                                ->andWhere('l.num_grupo_actividad = ?', array($grupo))
+                                ->andWhere('l.hora_inicial IS NOT NULL')
+                                ->andWhere('h.num_semana = ?', array($num_semana))
+                                ->execute();
+                        foreach($lineas as $linea)
+                        {
+                            $array_linea = $linea->toArray();
+                            $array_linea['nombre_asignatura'] = $linea->asignatura->abreviatura . " (" . $linea->actividad->identificador . $linea->num_grupo_actividad . " ) ";
+                            $array_lineas[] = $array_linea;
+                        }
                     }
                 }
             }
+            $array_semanas[$num_semana] = json_encode($array_lineas);
         }
-        $this->load->view('horarios/visualizacion_horario', array('slot_minimo' => $curso->slot_minimo, 'asignaturas_asignadas' => json_encode($array_lineas)));
+        $this->load->view('horarios/visualizacion_horario', array('slot_minimo' => $curso->slot_minimo, 'asignaturas_semanas' => $array_semanas, 'semana_tipo' => $curso->num_semanas_teoria +1));
         // Recoger aquí las asignaturas buscar líneas, ir guardándolas en array y pasar a edit. Poner en la vista una clase para la que el horario no sea editable.
     }
 }
