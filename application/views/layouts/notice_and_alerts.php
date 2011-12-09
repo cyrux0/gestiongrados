@@ -6,7 +6,7 @@ if(isset($this->notices) and $this->notices != ''){
 }
 
 if(isset($this->alerts) and $this->alerts != ''){
-    echo '<p class="alert">' . $this->alerts . '</p>';
+    echo '<p class="errors">' . $this->alerts . '</p>';
 }
 if(validation_errors()){
     echo '<div class="errors">';

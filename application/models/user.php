@@ -77,11 +77,12 @@ class User extends Doctrine_Record {
         $this->hasColumn('id_titulacion', 'integer', 4, array('type' => 'integer', 
                         'length' => 4, 
                         'fixed' => false, 
-                        'unsigned' => false
+                        'unsigned' => false,
+                        'notnull' => false
                         ));
         $this->hasColumn('level', 'integer', 4, array(
                         'notnull' => true, 
-                        'default' => 0,
+                        'default' => 3,
                         'range' => array(0, 3)
                         ));
         

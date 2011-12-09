@@ -13,6 +13,7 @@ class Login extends MY_Controller{
         if($this->_authenticate()){
             redirect($url);
         }else{
+            $this->alerts = "Usuario o contraseña incorrecta";
             $this->index();
             return FALSE;
         }

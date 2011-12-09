@@ -115,7 +115,7 @@
                   </ul>
               </li>
               <? endif; ?>
-              <? if(Current_User::logged_in(1) or Current_User::logged_in(4)): ?>
+              <? if(Current_User::logged_in(1) or Current_User::logged_in(3)): ?>
               <li>
                   <a href="#">Horarios</a>
                   <ul class="acitem">
@@ -127,7 +127,7 @@
                               <?= anchor('titulaciones/show_informes', 'Informes de asignatura') ?>
                           </li>
                       <? endif; ?>
-                      <? if(Current_User::logged_in(4)): ?>
+                      <? if(Current_User::logged_in(3)): ?>
                           <li>
                               <?= anchor('horarios/visualizacion_asignaturas', 'Ver horario') ?>
                           </li>

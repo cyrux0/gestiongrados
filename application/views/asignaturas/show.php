@@ -1,5 +1,5 @@
 
-<h1>Carga de trabajo de la asignatura <?= $asignatura->nombre ?></h1>
+Plan docente de la asignatura <?= $asignatura->nombre ?>
 <table class="listaelems">
     <tr><th>Actividad</th><th>Horas</th><th>Horas semanales</th><th>Semanas alternas</th></tr>
     <? foreach($cargas as $plan): ?>

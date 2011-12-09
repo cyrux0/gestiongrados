@@ -7,10 +7,13 @@ class Users extends MY_Controller {
         $this->layout = '';
         $this->notices = '';
         $this->alerts = '';
-        $this->_filter(array('delete'), array($this, 'authenticate'), 0); // Sólo admins
-   }
+        $this->_filter(array('index', 'delete'), array($this, 'authenticate'), 0); // Sólo admins
+        //$this->_filter(array('edit'), array($this, 'authenticate'));
+    }
 
     function add(){
+        $u = Current_User::user();
+        if($u and $u->level != 0) redirect('/');
         $user = new User;
         $titulaciones = Doctrine::getTable('Titulacion')->findAll();
         $array_titulaciones = array();
@@ -33,13 +36,13 @@ class Users extends MY_Controller {
             $this->add();
         }
          */
-        $password = $user->generate_password();
-        
+        //$password = $user->generate_password();
+        $user->password = "123456";
         if($this->_submit_validate() == FALSE){
             $this->add();
             return; 
         }else{
-            $this->load->library('phpmailer');
+            /*$this->load->library('phpmailer');
             $mail = new PHPMailer;
             $mail->IsSMTP();
             $mail->SMTPAuth = true;
@@ -68,13 +71,22 @@ class Users extends MY_Controller {
             }else{
                 echo "email not sended";
             }
-            
+            */
+           $user->save();
         }
     }
     
     function edit(){
         $user = Current_User::user();
+        if(!$user) redirect('/login');
         $this->load->view('users/add', array('user' => $user, 'action' => 'users/update/' . $user->id));
+    }
+    
+    function index()
+    {
+        $users = Doctrine::getTable('User')->findAll();
+        
+        $this->load->view('users/index', array('users' => $users));
     }
     
     function update($id){
@@ -86,6 +98,7 @@ class Users extends MY_Controller {
             $this->add();
         }
          * */
+        $this->form_validation->set_rules('password', 'Password', 'required|matches[password_confirmation]');
          if($this->_submit_validate() == FALSE){
              $this->edit();
              return;
@@ -101,11 +114,14 @@ class Users extends MY_Controller {
         $user->delete();
     }
     
+    
+    
     private function _submit_validate(){
         $this->form_validation->set_rules('email', 'Email', 'required|minlength[4]|maxlength[16]');
         $this->form_validation->set_rules('nombre', 'Nombre', 'required|minlength[4]|maxlength[50]|alpha_ext');
         $this->form_validation->set_rules('apellidos', 'Apellidos', 'required|minlength[4]|maxlength[50]|alpha_ext');
         $this->form_validation->set_rules('DNI', 'DNI', 'required|exact_length[9]');
+        
         return $this->form_validation->run();
     }
 }

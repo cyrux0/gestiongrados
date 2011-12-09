@@ -42,7 +42,7 @@ class MY_Controller extends CI_Controller{
         
     }
     
-    protected function _filter($actions, $callback, $callback_args){
+    protected function _filter($actions, $callback, $callback_args = array()){
         if(in_array($this->router->method, $actions)){
             call_user_func($callback, $callback_args);
         }
