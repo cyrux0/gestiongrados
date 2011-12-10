@@ -212,7 +212,8 @@ class Horarios extends MY_Controller {
                 $array_linea_horario = $lineahorario->toArray();
                 $array_linea_horario['nombre_asignatura'] = $lineahorario->asignatura->abreviatura . " (" . $lineahorario->actividad->identificador . $lineahorario->num_grupo_actividad . " ) ";
                 $array_linea_horario['save_url'] = site_url("horarios/save_line/" . $lineahorario->id);
-                $asignaturas_por_asignar[$lineahorario->id_asignatura . $lineahorario->id_actividad . $lineahorario->num_grupo_actividad][] = $array_linea_horario;
+                $asignaturas_por_asignar[$lineahorario->id_asignatura][$lineahorario->id_asignatura . $lineahorario->id_actividad . $lineahorario->num_grupo_actividad][] = $array_linea_horario;
+                
             } else {
                 $array_linea_horario = $lineahorario->toArray();
                 $array_linea_horario['nombre_asignatura'] = $lineahorario->asignatura->abreviatura . " (" . $lineahorario->actividad->identificador . $lineahorario->num_grupo_actividad . " ) ";
@@ -243,7 +244,8 @@ class Horarios extends MY_Controller {
                 $array_linea_horario = $linea_compartida->toArray();
                 $array_linea_horario['nombre_asignatura'] = $linea_compartida->asignatura->abreviatura . " (" . $linea_compartida->actividad->identificador . $linea_compartida->num_grupo_actividad . " ) ";
                 $array_linea_horario['save_url'] = site_url("horarios/save_line/" . $linea_compartida->id);
-                $asignaturas_por_asignar[$linea_compartida->id_asignatura . $linea_compartida->id_actividad . $linea_compartida->num_grupo_actividad][] = $array_linea_horario;
+                $asignaturas_por_asignar[$linea_compartida->id_asignatura][$linea_compartida->id_asignatura . $linea_compartida->id_actividad . $linea_compartida->num_grupo_actividad][] = $array_linea_horario;
+               
             } else {
                 $array_linea_horario = $linea_compartida->toArray();
                 $array_linea_horario['nombre_asignatura'] = $linea_compartida->asignatura->abreviatura . " (" . $linea_compartida->actividad->identificador . $linea_compartida->num_grupo_actividad . " ) ";
@@ -302,11 +304,13 @@ class Horarios extends MY_Controller {
                 ->groupBy('l.id_asignatura')
                 ->execute();
         $array_asignaturas = array();
+        $array_asignaturas_abv = array();
         foreach($lineas_asignaturas as $linea)
         {
             $array_asignaturas[$linea->id_asignatura] = $linea->asignatura->nombre;
+            $array_asignaturas_abv[$linea->id_asignatura] = $linea->asignatura->abreviatura;
         }
-        $this->load->view('horarios/edit', array('slot_minimo' => $horario->curso->slot_minimo, 'horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas, 'aulastotal' => $aulas_total, 'horario_tipo' => $tipo, 'num_semanas_teoria' => $horario->curso->num_semanas_teoria, 'array_asignaturas' => $array_asignaturas));
+        $this->load->view('horarios/edit', array('slot_minimo' => $horario->curso->slot_minimo, 'horario' => $horario, 'asignaturas_por_asignar' => $asignaturas_por_asignar, 'asignaturas_asignadas' => $asignaturas_asignadas, 'aulas' => $array_aulas, 'aulastotal' => $aulas_total, 'horario_tipo' => $tipo, 'num_semanas_teoria' => $horario->curso->num_semanas_teoria, 'array_asignaturas' => $array_asignaturas, 'array_asignaturas_abv' => $array_asignaturas_abv));
     }
 
     public function ocupacion_aula($id_curso, $semestre, $num_semana, $id_aula) {

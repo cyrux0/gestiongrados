@@ -13,581 +13,299 @@
 %
 % Estructura: actividades
 %
- \begin{longtable}{|l|c|c|c|} 
+
+\subsubsection{Tabla actividades}
+
+En esta tabla se definen todas las actividades que tendrán las asignaturas, en principio son fijas y la tabla se utiliza simplemente para guardar los códigos por los que son identificadas en la universidad.
+
+ \begin{longtable}{|l|c|c|l|} 
  \caption{Estructura de la tabla actividades} \label{tab:actividades-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla actividades (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & bigint(20)  & No &  \\ \hline 
-descripcion & varchar(100) & No &  \\ \hline 
-identificador & varchar(1) & No &  \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & bigint(20)  & No & Identificador autoincremental de la tabla  \\ \hline 
+descripcion & varchar(100) & No & Nombre completo de la actividad \\ \hline 
+identificador & varchar(1) & No & Identificador alfabético de la actividad \\ \hline 
  \end{longtable}
 
-%
-% Estructura: actividades
-%
- \begin{longtable}{|l|c|c|c|} 
- \caption{Estructura de la tabla actividades} \label{tab:actividades-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla actividades (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & bigint(20)  & No &  \\ \hline 
-descripcion & varchar(100) & No &  \\ \hline 
-identificador & varchar(1) & No &  \\ \hline 
- \end{longtable}
+\subsubsection{Tabla asignaturas}
+
+En esta tabla se almacenan todas las asignaturas de la titulación, guardando además la clave foránea con la relación con titulaciones.
 
 %
 % Estructura: asignaturas
 %
- \begin{longtable}{|l|c|c|c|l|} 
+ \begin{longtable}{|l|c|c|l|l|} 
  \caption{Estructura de la tabla asignaturas} \label{tab:asignaturas-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla asignaturas (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-\textbf{codigo} & varchar(3) & No &  &  \\ \hline 
-nombre & varchar(200) & No &  &  \\ \hline 
-abreviatura & varchar(5) & No &  &  \\ \hline 
-creditos & int(11) & No &  &  \\ \hline 
-materia & varchar(100) & No &  &  \\ \hline 
-departamento & varchar(200) & No &  &  \\ \hline 
-curso & int(10)  & No &  &  \\ \hline 
-semestre & varchar(255) & No &  &  \\ \hline 
-titulacion\_id & int(11) & No &  & titulaciones (id) \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}  \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & No & Identificador autoincremental de la tabla\\ \hline 
+\textbf{codigo} & varchar(3) & No & Código utilizado por la Universidad para la asignatura\\ \hline 
+nombre & varchar(200) & No & Nombre completo de la asignatura \\ \hline 
+abreviatura & varchar(5) & No & Abreviatura de la asignatura \\ \hline 
+creditos & int(11) & No & Créditos que tiene la asignatura dentro de la titulación \\ \hline 
+materia & varchar(100) & No & Materia de la asignatura \\ \hline 
+departamento & varchar(200) & No & Departamento al que pertenece la asignatura \\ \hline 
+curso & int(10)  & No & Curso dentro de la titulación al que pertenece \\ \hline 
+semestre & varchar(255) & No & Semestre en el que se imparte la asignatura \\ \hline 
+titulacion\_id & int(11) & No & Clave foránea de la relación de la tabla con {\em titulaciones} \\ \hline 
  \end{longtable}
 
-%
-% Estructura: asignaturas
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla asignaturas} \label{tab:asignaturas-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla asignaturas (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-\textbf{codigo} & varchar(3) & No &  &  \\ \hline 
-nombre & varchar(200) & No &  &  \\ \hline 
-abreviatura & varchar(5) & No &  &  \\ \hline 
-creditos & int(11) & No &  &  \\ \hline 
-materia & varchar(100) & No &  &  \\ \hline 
-departamento & varchar(200) & No &  &  \\ \hline 
-curso & int(10)  & No &  &  \\ \hline 
-semestre & varchar(255) & No &  &  \\ \hline 
-titulacion\_id & int(11) & No &  & titulaciones (id) \\ \hline 
- \end{longtable}
+\subsubsection{Tabla aulaactividades}
 
+Esta es una tabla de asociación, sirve para relacionar la tabla aulas con la tabla actividades, y saber de esta forma que actividades se pueden impartir en cada aula.
 %
 % Estructura: aulaactividades
 %
- \begin{longtable}{|l|c|c|c|l|} 
+ \begin{longtable}{|l|c|c|l|l|} 
  \caption{Estructura de la tabla aulaactividades} \label{tab:aulaactividades-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}  \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla aulaactividades (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id\_actividad}} & bigint(20)  & No &  & actividades (id) \\ \hline 
-\textbf{\textit{id\_aula}} & bigint(20)  & No &  & aulas (id) \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}  \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id\_actividad}} & bigint(20)  & No & Clave foránea en la relación con actividades \\ \hline 
+\textbf{\textit{id\_aula}} & bigint(20)  & No &  Clave foránea en la relación con aulas \\ \hline 
  \end{longtable}
 
-%
-% Estructura: aulaactividades
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla aulaactividades} \label{tab:aulaactividades-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla aulaactividades (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id\_actividad}} & bigint(20)  & No &  & actividades (id) \\ \hline 
-\textbf{\textit{id\_aula}} & bigint(20)  & No &  & aulas (id) \\ \hline 
- \end{longtable}
+\subsubsection{Tabla aulas}
 
+Tabla para almacenar las aulas que se usarán en el sistema.
 %
 % Estructura: aulas
 %
- \begin{longtable}{|l|c|c|c|} 
+ \begin{longtable}{|l|c|c|l|} 
  \caption{Estructura de la tabla aulas} \label{tab:aulas-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla aulas (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & bigint(20)  & No &  \\ \hline 
-nombre & varchar(100) & No &  \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & bigint(20)  & No & Identificador autoincremental de la tabla \\ \hline 
+nombre & varchar(100) & No & Nombre del aula \\ \hline 
  \end{longtable}
 
-%
-% Estructura: aulas
-%
- \begin{longtable}{|l|c|c|c|} 
- \caption{Estructura de la tabla aulas} \label{tab:aulas-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla aulas (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & bigint(20)  & No &  \\ \hline 
-nombre & varchar(100) & No &  \\ \hline 
- \end{longtable}
+\subsubsection{Tabla ci\_sessions}
 
-%
-% Estructura: calendarios
-%
- \begin{longtable}{|l|c|c|c|} 
- \caption{Estructura de la tabla calendarios} \label{tab:calendarios-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla calendarios (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  \\ \hline 
-\textbf{codigo} & varchar(4) & No &  \\ \hline 
- \end{longtable}
-
-%
-% Estructura: calendarios
-%
- \begin{longtable}{|l|c|c|c|} 
- \caption{Estructura de la tabla calendarios} \label{tab:calendarios-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla calendarios (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  \\ \hline 
-\textbf{codigo} & varchar(4) & No &  \\ \hline 
- \end{longtable}
-
-%
-% Estructura: cargas_semanales
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla cargas\_semanales} \label{tab:cargas_semanales-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla cargas\_semanales (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-num\_semana & int(10)  & No &  &  \\ \hline 
-horas\_teoria & int(10)  & No &  &  \\ \hline 
-horas\_problemas & int(10)  & No &  &  \\ \hline 
-horas\_informatica & int(10)  & No &  &  \\ \hline 
-horas\_lab & int(10)  & No &  &  \\ \hline 
-horas\_campo & int(10)  & No &  &  \\ \hline 
-entrega\_trabajo & tinyint(1) & No &  &  \\ \hline 
-examen & tinyint(1) & No &  &  \\ \hline 
-plandocente\_id & int(11) & No &  & planesdocentes (id) \\ \hline 
- \end{longtable}
-
-%
-% Estructura: cargas_semanales
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla cargas\_semanales} \label{tab:cargas_semanales-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla cargas\_semanales (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-num\_semana & int(10)  & No &  &  \\ \hline 
-horas\_teoria & int(10)  & No &  &  \\ \hline 
-horas\_problemas & int(10)  & No &  &  \\ \hline 
-horas\_informatica & int(10)  & No &  &  \\ \hline 
-horas\_lab & int(10)  & No &  &  \\ \hline 
-horas\_campo & int(10)  & No &  &  \\ \hline 
-entrega\_trabajo & tinyint(1) & No &  &  \\ \hline 
-examen & tinyint(1) & No &  &  \\ \hline 
-plandocente\_id & int(11) & No &  & planesdocentes (id) \\ \hline 
- \end{longtable}
+Tabla utilizada por el framework para almacenar la información de las sesiones.
 
 %
 % Estructura: ci_sessions
 %
- \begin{longtable}{|l|c|c|c|} 
+ \begin{longtable}{|l|c|c|l|} 
  \caption{Estructura de la tabla ci\_sessions} \label{tab:ci_sessions-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla ci\_sessions (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{session\_id}} & varchar(40) & No &  \\ \hline 
-ip\_address & varchar(16) & No & 0 \\ \hline 
-user\_agent & varchar(120) & No &  \\ \hline 
-last\_activity & int(10)  & No & 0 \\ \hline 
-user\_data & text & Sí & NULL \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{session\_id}} & varchar(40) & No & Id autoincremental de la tabla \\ \hline 
+ip\_address & varchar(16) & No & Dirección IP de la sesión \\ \hline 
+user\_agent & varchar(120) & No & Agente de usuario de la sesión (Navegador, etc) \\ \hline 
+last\_activity & int(10)  & No & Valor de la última actividad \\ \hline 
+user\_data & text & Sí & Datos del usuario que deben ser almacenados \\ \hline 
  \end{longtable}
 
-%
-% Estructura: ci_sessions
-%
- \begin{longtable}{|l|c|c|c|} 
- \caption{Estructura de la tabla ci\_sessions} \label{tab:ci_sessions-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla ci\_sessions (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{session\_id}} & varchar(40) & No &  \\ \hline 
-ip\_address & varchar(16) & No & 0 \\ \hline 
-user\_agent & varchar(120) & No &  \\ \hline 
-last\_activity & int(10)  & No & 0 \\ \hline 
-user\_data & text & Sí & NULL \\ \hline 
- \end{longtable}
+\subsubsection{Tabla cursos}
 
+Tabla utilizada para almacenar toda la información de la configuración de un curso.
 %
 % Estructura: cursos
 %
- \begin{longtable}{|l|c|c|c|} 
+ \begin{longtable}{|l|c|c|l|} 
  \caption{Estructura de la tabla cursos} \label{tab:cursos-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla cursos (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  \\ \hline 
-num\_semanas\_teoria & int(11) & No &  \\ \hline 
-num\_semanas\_semestre1 & int(11) & No & 0 \\ \hline 
-num\_semanas\_semestre2 & int(11) & No & 0 \\ \hline 
-horas\_por\_credito & int(11) & No &  \\ \hline 
-slot\_minimo & bigint(20) & No & 30 \\ \hline 
-hora\_inicial & time & No & 09:00:00 \\ \hline 
-hora\_final & time & No & 22:00:00 \\ \hline 
-inicio\_semestre1 & date & No &  \\ \hline 
-fin\_semestre1 & date & No &  \\ \hline 
-inicio\_semestre2 & date & No &  \\ \hline 
-fin\_semestre2 & date & No &  \\ \hline 
-inicio\_examenes\_enero & date & No &  \\ \hline 
-fin\_examenes\_enero & date & No &  \\ \hline 
-inicio\_examenes\_junio & date & No &  \\ \hline 
-fin\_examenes\_junio & date & No &  \\ \hline 
-inicio\_examenes\_sept & date & No &  \\ \hline 
-fin\_examenes\_sept & date & No &  \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & No &  Id autoincremental de la tabla \\ \hline 
+num\_semanas\_teoria & int(11) & No & Número de semanas de solo horas de teoría del curso \\ \hline 
+num\_semanas\_semestre1 & int(11) & No & Número de semanas que tendrá el semestre 1 \\ \hline 
+num\_semanas\_semestre2 & int(11) & No & Número de semanas que tendrá el semestre 2 \\ \hline 
+horas\_por\_credito & int(11) & No & El número de horas que tendrá cada crédito de una asignatura \\ \hline 
+slot\_minimo & bigint(20) & No & Slot mínimo que tendrá una asignatura en un horario, en minutos \\ \hline 
+hora\_inicial & time & No & Hora inicial de los horarios de ese curso \\ \hline 
+hora\_final & time & No & Hora final de los horarios de ese curso \\ \hline 
+inicio\_semestre1 & date & No & Fecha de inicio del primer semestre \\ \hline 
+fin\_semestre1 & date & No & Fecha de finalización del primer semestre \\ \hline 
+inicio\_semestre2 & date & No & Fecha de inicio del segundo semestre \\ \hline 
+fin\_semestre2 & date & No & Fecha de finalización del segundo semestre \\ \hline 
+inicio\_examenes\_enero & date & No & Fecha de inicio de los exámenes de enero \\ \hline 
+fin\_examenes\_enero & date & No & Fecha de finalización de los exámenes de enero \\ \hline 
+inicio\_examenes\_junio & date & No & Fecha de inicio de los exámenes de junio \\ \hline 
+fin\_examenes\_junio & date & No & Fecha de finalización de los exámenes de junio \\ \hline 
+inicio\_examenes\_sept & date & No & Fecha de inicio de los exámenes de septiembre \\ \hline 
+fin\_examenes\_sept & date & No & Fecha de finalización de los exámenes de septiembre \\ \hline 
  \end{longtable}
 
-%
-% Estructura: cursos
-%
- \begin{longtable}{|l|c|c|c|} 
- \caption{Estructura de la tabla cursos} \label{tab:cursos-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla cursos (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  \\ \hline 
-num\_semanas\_teoria & int(11) & No &  \\ \hline 
-num\_semanas\_semestre1 & int(11) & No & 0 \\ \hline 
-num\_semanas\_semestre2 & int(11) & No & 0 \\ \hline 
-horas\_por\_credito & int(11) & No &  \\ \hline 
-slot\_minimo & bigint(20) & No & 30 \\ \hline 
-hora\_inicial & time & No & 09:00:00 \\ \hline 
-hora\_final & time & No & 22:00:00 \\ \hline 
-inicio\_semestre1 & date & No &  \\ \hline 
-fin\_semestre1 & date & No &  \\ \hline 
-inicio\_semestre2 & date & No &  \\ \hline 
-fin\_semestre2 & date & No &  \\ \hline 
-inicio\_examenes\_enero & date & No &  \\ \hline 
-fin\_examenes\_enero & date & No &  \\ \hline 
-inicio\_examenes\_junio & date & No &  \\ \hline 
-fin\_examenes\_junio & date & No &  \\ \hline 
-inicio\_examenes\_sept & date & No &  \\ \hline 
-fin\_examenes\_sept & date & No &  \\ \hline 
- \end{longtable}
-
+\subsubsection{Tabla cursos\_compartidos}
 %
 % Estructura: cursos_compartidos
 %
- \begin{longtable}{|l|c|c|c|l|} 
+ \begin{longtable}{|l|c|c|l|l|} 
  \caption{Estructura de la tabla cursos\_compartidos} \label{tab:cursos_compartidos-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}\\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla cursos\_compartidos (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id\_plandocente}} & int(11) & No &  & planesdocentes (id) \\ \hline 
-\textbf{\textit{num\_curso\_compartido}} & int(11) & No &  &  \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id\_plandocente}} & int(11) & No & Id autoincremental de la tabla \\ \hline 
+\textbf{\textit{num\_curso\_compartido}} & int(11) & No & Número del curso con el que se comparte el plan docente \\ \hline 
  \end{longtable}
 
-%
-% Estructura: cursos_compartidos
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla cursos\_compartidos} \label{tab:cursos_compartidos-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla cursos\_compartidos (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id\_plandocente}} & int(11) & No &  & planesdocentes (id) \\ \hline 
-\textbf{\textit{num\_curso\_compartido}} & int(11) & No &  &  \\ \hline 
- \end{longtable}
-
+\subsubsection{Tabla eventos}
+Tabla donde se almacenan los eventos de un curso para completar el calendario.
 %
 % Estructura: eventos
 %
- \begin{longtable}{|l|c|c|c|l|} 
+ \begin{longtable}{|l|c|c|l|l|} 
  \caption{Estructura de la tabla eventos} \label{tab:eventos-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}\\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla eventos (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-nombre\_evento & varchar(255) & No &  &  \\ \hline 
-tipo\_evento & varchar(255) & No &  &  \\ \hline 
-fecha\_individual & tinyint(1) & No &  &  \\ \hline 
-fecha\_inicial & date & No &  &  \\ \hline 
-fecha\_final & date & No &  &  \\ \hline 
-curso\_id & int(11) & No &  & cursos (id) \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}\\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & No & Id autoincremental de la tabla \\ \hline 
+nombre\_evento & varchar(255) & No & Nombre del evento\\ \hline 
+tipo\_evento & varchar(255) & No & Tipo de evento \\ \hline 
+fecha\_individual & tinyint(1) & No & Booleano para saber si el evento es una única fecha o un rango de ellas \\ \hline 
+fecha\_inicial & date & No & Fecha inicial del rango que compone el evento \\ \hline 
+fecha\_final & date & No & Fecha final del rango que compone el evento \\ \hline 
+curso\_id & int(11) & No & Id del curso al que pertenece (Clave foránea) \\ \hline 
  \end{longtable}
 
-%
-% Estructura: eventos
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla eventos} \label{tab:eventos-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla eventos (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-nombre\_evento & varchar(255) & No &  &  \\ \hline 
-tipo\_evento & varchar(255) & No &  &  \\ \hline 
-fecha\_individual & tinyint(1) & No &  &  \\ \hline 
-fecha\_inicial & date & No &  &  \\ \hline 
-fecha\_final & date & No &  &  \\ \hline 
-curso\_id & int(11) & No &  & cursos (id) \\ \hline 
- \end{longtable}
+\subsubsection{Tabla horarios}
+Tabla que almacena la información principal de un horario.
 
 %
 % Estructura: horarios
 %
- \begin{longtable}{|l|c|c|c|l|} 
+ \begin{longtable}{|l|c|c|l|l|} 
  \caption{Estructura de la tabla horarios} \label{tab:horarios-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla horarios (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-id\_curso & int(11) & No &  & cursos (id) \\ \hline 
-id\_titulacion & int(11) & No &  & titulaciones (id) \\ \hline 
-num\_curso\_titulacion & int(11) & No &  &  \\ \hline 
-semestre & varchar(255) & No &  &  \\ \hline 
-num\_grupo\_titulacion & int(11) & No &  &  \\ \hline 
-num\_semana & int(10)  & No &  &  \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}  \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & No & Identificador autoincremental de la tabla \\ \hline 
+id\_curso & int(11) & No & Identificador del curso al que pertenece (clave foránea) \\ \hline 
+id\_titulacion & int(11) & No & Identificador de la titulación a la que pertenece (clave foránea)\\ \hline 
+num\_curso\_titulacion & int(11) & No & Número del curso de la titulación al que pertenece el horario \\ \hline 
+semestre & varchar(255) & No & Semestre del horario\\ \hline 
+num\_grupo\_titulacion & int(11) & No & Grupo de teoría de la titulación\\ \hline 
+num\_semana & int(10)  & No & El número de la semana en el que se imparte \\ \hline 
  \end{longtable}
 
-%
-% Estructura: horarios
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla horarios} \label{tab:horarios-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla horarios (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-id\_curso & int(11) & No &  & cursos (id) \\ \hline 
-id\_titulacion & int(11) & No &  & titulaciones (id) \\ \hline 
-num\_curso\_titulacion & int(11) & No &  &  \\ \hline 
-semestre & varchar(255) & No &  &  \\ \hline 
-num\_grupo\_titulacion & int(11) & No &  &  \\ \hline 
-num\_semana & int(10)  & No &  &  \\ \hline 
- \end{longtable}
-
+\subsubsection{Tabla horario\_reference}
+Tabla de asociación de la tabla horarios consigo misma, para indicar las relaciones entre horarios tipo y horarios de semanas iniciales.
 %
 % Estructura: horario_reference
 %
- \begin{longtable}{|l|c|c|c|} 
+ \begin{longtable}{|l|c|c|l|} 
  \caption{Estructura de la tabla horario\_reference} \label{tab:horario_reference-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla horario\_reference (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id\_tipo}} & bigint(20)  & No &  \\ \hline 
-\textbf{\textit{id\_teoria}} & bigint(20)  & No &  \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id\_tipo}} & bigint(20)  & No & Id del horario con el rol de tipo en la relación \\ \hline 
+\textbf{\textit{id\_teoria}} & bigint(20)  & No & Id del horario con el rol de semana inicial \\ \hline 
  \end{longtable}
 
-%
-% Estructura: horario_reference
-%
- \begin{longtable}{|l|c|c|c|} 
- \caption{Estructura de la tabla horario\_reference} \label{tab:horario_reference-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla horario\_reference (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id\_tipo}} & bigint(20)  & No &  \\ \hline 
-\textbf{\textit{id\_teoria}} & bigint(20)  & No &  \\ \hline 
- \end{longtable}
+\subsubsection{Tabla lineashorarios}
+Tabla de los slots que componen un horario.
 
 %
 % Estructura: lineashorarios
 %
- \begin{longtable}{|l|c|c|c|l|} 
+ \begin{longtable}{|l|c|c|l|l|} 
  \caption{Estructura de la tabla lineashorarios} \label{tab:lineashorarios-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla lineashorarios (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-id\_horario & int(11) & No &  & horarios (id) \\ \hline 
-id\_asignatura & int(11) & No &  & asignaturas (id) \\ \hline 
-hora\_inicial & time & Sí & NULL &  \\ \hline 
-hora\_final & time & Sí & NULL &  \\ \hline 
-dia\_semana & tinyint(3)  & Sí & NULL &  \\ \hline 
-id\_actividad & bigint(20)  & Sí & NULL & actividades (id) \\ \hline 
-num\_grupo\_actividad & bigint(20)  & No &  &  \\ \hline 
-slot\_minimo & float(18,2) & No &  &  \\ \hline 
-color & varchar(7) & Sí & NULL &  \\ \hline 
-id\_aula & bigint(20)  & Sí & NULL & aulas (id) \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & No & Identificador autoincremental de la tabla \\ \hline 
+id\_horario & int(11) & No & Identificador del horario al que pertenece el slot (clave foránea) \\ \hline 
+id\_asignatura & int(11) & No & Identificador de la asignatura del slot (clave foránea) \\ \hline 
+hora\_inicial & time & Sí & Hora inicial en la que se imparte el slot \\ \hline 
+hora\_final & time & Sí & Hora de finalización del slot \\ \hline 
+dia\_semana & tinyint(3)  & Sí & Día de la semana (0-4/L-V) en el que se imparte \\ \hline 
+id\_actividad & bigint(20)  & Sí & Identificador de la actividad que indica el slot \\ \hline 
+num\_grupo\_actividad & bigint(20)  & No & Número del grupo de la actividad a la que pertenece \\ \hline 
+slot\_minimo & float(18,2) & No & Tamaño del slot del horario \\ \hline 
+color & varchar(7) & Sí & Color con el que aparecerá en el horario \\ \hline 
+id\_aula & bigint(20)  & Sí & Identificador del aula en el que se impartirá \\ \hline 
  \end{longtable}
 
-%
-% Estructura: lineashorarios
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla lineashorarios} \label{tab:lineashorarios-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla lineashorarios (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-id\_horario & int(11) & No &  & horarios (id) \\ \hline 
-id\_asignatura & int(11) & No &  & asignaturas (id) \\ \hline 
-hora\_inicial & time & Sí & NULL &  \\ \hline 
-hora\_final & time & Sí & NULL &  \\ \hline 
-dia\_semana & tinyint(3)  & Sí & NULL &  \\ \hline 
-id\_actividad & bigint(20)  & Sí & NULL & actividades (id) \\ \hline 
-num\_grupo\_actividad & bigint(20)  & No &  &  \\ \hline 
-slot\_minimo & float(18,2) & No &  &  \\ \hline 
-color & varchar(7) & Sí & NULL &  \\ \hline 
-id\_aula & bigint(20)  & Sí & NULL & aulas (id) \\ \hline 
- \end{longtable}
-
+\subsubsection{Tabla planactividades}
+Tabla que indica la planificación docente de una actividad.
 %
 % Estructura: planactividades
 %
- \begin{longtable}{|l|c|c|c|l|} 
+ \begin{longtable}{|l|c|c|l|l|} 
  \caption{Estructura de la tabla planactividades} \label{tab:planactividades-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla planactividades (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-id\_plandocente & int(11) & No &  & planesdocentes (id) \\ \hline 
-id\_actividad & bigint(20)  & No &  & actividades (id) \\ \hline 
-horas & int(10)  & No & 0 &  \\ \hline 
-grupos & int(10)  & No & 0 &  \\ \hline 
-horas\_semanales & int(10)  & No & 0 &  \\ \hline 
-alternas & tinyint(1) & Sí & NULL &  \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}  \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & No & Identificador autoincremental de la tabla \\ \hline 
+id\_plandocente & int(11) & No & Identificador del plan docente al que pertenece \\ \hline 
+id\_actividad & bigint(20)  & No &  Identificador de la actividad a la que pertenece \\ \hline 
+horas & int(10)  & No & Número de horas de la planificación para el curso \\ \hline 
+grupos & int(10)  & No & Número de grupos que tendrá la actividad \\ \hline 
+horas\_semanales & int(10)  & No & Número de horas semanales que se impartirán \\ \hline 
+alternas & tinyint(1) & Sí & Si se impartirá o no en semanas alternas \\ \hline 
  \end{longtable}
 
-%
-% Estructura: planactividades
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla planactividades} \label{tab:planactividades-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla planactividades (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-id\_plandocente & int(11) & No &  & planesdocentes (id) \\ \hline 
-id\_actividad & bigint(20)  & No &  & actividades (id) \\ \hline 
-horas & int(10)  & No & 0 &  \\ \hline 
-grupos & int(10)  & No & 0 &  \\ \hline 
-horas\_semanales & int(10)  & No & 0 &  \\ \hline 
-alternas & tinyint(1) & Sí & NULL &  \\ \hline 
- \end{longtable}
-
+\subsubsection{Tabla planesdocentes}
+Tabla que almacena la información de un plan docente de una asignatura.
 %
 % Estructura: planesdocentes
 %
- \begin{longtable}{|l|c|c|c|l|} 
+ \begin{longtable}{|l|c|c|l|l|} 
  \caption{Estructura de la tabla planesdocentes} \label{tab:planesdocentes-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}\\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla planesdocentes (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-id\_asignatura & int(11) & No &  & asignaturas (id) \\ \hline 
-id\_curso & int(11) & No &  & cursos (id) \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}\\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & No & Identificador autoincremental de la tabla \\ \hline 
+id\_asignatura & int(11) & No & Identificador de la asignatura a la que pertenece \\ \hline 
+id\_curso & int(11) & No & Identificador del curso al que pertenece \\ \hline 
  \end{longtable}
 
-%
-% Estructura: planesdocentes
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla planesdocentes} \label{tab:planesdocentes-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla planesdocentes (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-id\_asignatura & int(11) & No &  & asignaturas (id) \\ \hline 
-id\_curso & int(11) & No &  & cursos (id) \\ \hline 
- \end{longtable}
-
+\subsubsection{Tabla titulaciones}
+Tabla que almacena la información de una titulación.
 %
 % Estructura: titulaciones
 %
- \begin{longtable}{|l|c|c|c|} 
+ \begin{longtable}{|l|c|c|l|} 
  \caption{Estructura de la tabla titulaciones} \label{tab:titulaciones-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla titulaciones (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  \\ \hline 
-\textbf{codigo} & varchar(4) & No &  \\ \hline 
-\textbf{nombre} & varchar(200) & No &  \\ \hline 
-creditos & int(10)  & No &  \\ \hline 
-num\_cursos & int(10)  & No &  \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & No & Identificador autoincremental de la tabla \\ \hline 
+\textbf{codigo} & varchar(4) & No & Código de la titulación utilizado por la universidad \\ \hline 
+\textbf{nombre} & varchar(200) & No & Nombre de la titulación \\ \hline 
+creditos & int(10)  & No & Número de créditos totales \\ \hline 
+num\_cursos & int(10)  & No & Número de cursos que tendrá la titulación \\ \hline 
  \end{longtable}
 
-%
-% Estructura: titulaciones
-%
- \begin{longtable}{|l|c|c|c|} 
- \caption{Estructura de la tabla titulaciones} \label{tab:titulaciones-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla titulaciones (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  \\ \hline 
-\textbf{codigo} & varchar(4) & No &  \\ \hline 
-\textbf{nombre} & varchar(200) & No &  \\ \hline 
-creditos & int(10)  & No &  \\ \hline 
-num\_cursos & int(10)  & No &  \\ \hline 
- \end{longtable}
-
+\subsubsection{Tabla usuarios}
+Tabla que almacena la información de los usuarios del sistema.
 %
 % Estructura: users
 %
- \begin{longtable}{|l|c|c|c|l|} 
+ \begin{longtable}{|l|c|c|l|l|} 
  \caption{Estructura de la tabla users} \label{tab:users-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}} \\ \hline \hline
 \endfirsthead
  \caption{Estructura de la tabla users (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-password & varchar(255) & No &  &  \\ \hline 
-nombre & varchar(50) & No &  &  \\ \hline 
-apellidos & varchar(50) & No &  &  \\ \hline 
-\textbf{dni} & varchar(9) & No &  &  \\ \hline 
-\textbf{email} & varchar(30) & No &  &  \\ \hline 
-id\_titulacion & int(11) & No &  & titulaciones (id) \\ \hline 
-level & int(10)  & No & 0 &  \\ \hline 
+ \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Descripción}}  \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & No & Identificador autoincremental de la tabla \\ \hline 
+password & varchar(255) & No & Password codificado en md5 \\ \hline 
+nombre & varchar(50) & No & Nombre del usuario \\ \hline 
+apellidos & varchar(50) & No & Apellidos del usuario \\ \hline 
+\textbf{dni} & varchar(9) & No & DNI del usuario \\ \hline 
+\textbf{email} & varchar(30) & No & email del usuario \\ \hline 
+id\_titulacion & int(11) & No & Titulación a la que pertenece el alumno (si el usuario es alumno) \\ \hline 
+level & int(10)  & No & Nivel de privilegios del usuario 0:admin, 1:planificador, 2:profesor, 3:alumno \\ \hline 
  \end{longtable}
 
-%
-% Estructura: users
-%
- \begin{longtable}{|l|c|c|c|l|} 
- \caption{Estructura de la tabla users} \label{tab:users-structure} \\
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline
-\endfirsthead
- \caption{Estructura de la tabla users (continúa)} \\ 
- \hline \multicolumn{1}{|c|}{\textbf{Columna}} & \multicolumn{1}{|c|}{\textbf{Tipo}} & \multicolumn{1}{|c|}{\textbf{Nulo}} & \multicolumn{1}{|c|}{\textbf{Predeterminado}} & \multicolumn{1}{|c|}{\textbf{Enlaces a}} \\ \hline \hline \endhead \endfoot 
-\textbf{\textit{id}} & int(11) & No &  &  \\ \hline 
-password & varchar(255) & No &  &  \\ \hline 
-nombre & varchar(50) & No &  &  \\ \hline 
-apellidos & varchar(50) & No &  &  \\ \hline 
-\textbf{dni} & varchar(9) & No &  &  \\ \hline 
-\textbf{email} & varchar(30) & No &  &  \\ \hline 
-id\_titulacion & int(11) & No &  & titulaciones (id) \\ \hline 
-level & int(10)  & No & 0 &  \\ \hline 
- \end{longtable}
+

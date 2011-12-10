@@ -739,7 +739,7 @@ $(document).ready(function(){
         icons: icons,
         collapsible: true
     });*/
-    
+    $('#tabs').tabs();
     $('.td-color').each(function(){
         var divPicker = $(this).find('.colorpicker');
         var inputPicker = $(this).find('.inputcolor');

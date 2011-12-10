@@ -22,10 +22,23 @@
     <? endif;?>
 </div>
 <div style="clear:both;margin-bottom:10px"> </div>
+<? $i = 1; ?>
 
-<div id="asignaturas">
+<div id="tabs">
+    <ul>
+        <? foreach($array_asignaturas_abv as $asignatura): ?>
+        <li><a href="#tabs-<?= $i ?>"><?= $asignatura ?></a></li>
+        <? $i++; ?>
+        <? endforeach; ?>
+    </ul>
+    <? $i = 1; ?>
+<div id="asignaturas"> 
+    
+    <? foreach($asignaturas_por_asignar as $array_lineas): ?>
+    <div id="tabs-<?= $i ?>">
+        <? $i=$i+1; ?>
     <table class="listaelems">
-    <? foreach($asignaturas_por_asignar as $lineahorario): ?>
+    <? foreach($array_lineas as $lineahorario): ?>
         <tr>
             <td class="<?= "subject-" . $lineahorario[0]['id_actividad']; ?>">
                 <? $class = "external-event ui-draggable" ?>
@@ -45,7 +58,11 @@
             </td>
         </tr>
     <? endforeach; ?>
-    </table>
+        </table>
+    </div>
+    <? endforeach; ?>
+    
+</div> 
 </div>
 
 <div id="asignaturas-guardadas" style="display:none">
