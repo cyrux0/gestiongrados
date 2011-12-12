@@ -107,16 +107,25 @@
 \contentsline {subsection}{\numberline {6.4.1}Capa modelo}{65}{subsection.6.4.1}
 \contentsline {subsection}{\numberline {6.4.2}Capa controlador}{66}{subsection.6.4.2}
 \contentsline {subsection}{\numberline {6.4.3}Capa vista}{67}{subsection.6.4.3}
-\contentsline {chapter}{GNU Free Documentation License}{71}{section*.121}
-\contentsline {section}{1. APPLICABILITY AND DEFINITIONS}{71}{section*.122}
-\contentsline {section}{2. VERBATIM COPYING}{72}{section*.123}
-\contentsline {section}{3. COPYING IN QUANTITY}{72}{section*.124}
-\contentsline {section}{4. MODIFICATIONS}{73}{section*.125}
-\contentsline {section}{5. COMBINING DOCUMENTS}{74}{section*.126}
-\contentsline {section}{6. COLLECTIONS OF DOCUMENTS}{75}{section*.127}
-\contentsline {section}{7. AGGREGATION WITH INDEPENDENT WORKS}{75}{section*.128}
-\contentsline {section}{8. TRANSLATION}{75}{section*.129}
-\contentsline {section}{9. TERMINATION}{75}{section*.130}
-\contentsline {section}{10. FUTURE REVISIONS OF THIS LICENSE}{76}{section*.131}
-\contentsline {section}{11. RELICENSING}{76}{section*.132}
-\contentsline {section}{ADDENDUM: How to use this License for your documents}{76}{section*.133}
+\contentsline {chapter}{\numberline {7}Pruebas}{71}{chapter.7}
+\contentsline {section}{\numberline {7.1}Pruebas sobre los datos}{71}{section.7.1}
+\contentsline {section}{\numberline {7.2}Especificaci\IeC {\'o}n del dise\IeC {\~n}o de pruebas}{71}{section.7.2}
+\contentsline {section}{\numberline {7.3}Especificaci\IeC {\'o}n de los procedimientos de prueba}{72}{section.7.3}
+\contentsline {section}{\numberline {7.4}Documentaci\IeC {\'o}n de la ejecuci\IeC {\'o}n de las pruebas}{73}{section.7.4}
+\contentsline {section}{\numberline {7.5}Herramientas utilizadas para las pruebas}{73}{section.7.5}
+\contentsline {chapter}{\numberline {8}Conclusiones}{75}{chapter.8}
+\contentsline {section}{\numberline {8.1}Opini\IeC {\'o}n personal}{75}{section.8.1}
+\contentsline {section}{\numberline {8.2}Ampliaciones futuras}{75}{section.8.2}
+\contentsline {chapter}{GNU Free Documentation License}{77}{section*.121}
+\contentsline {section}{1. APPLICABILITY AND DEFINITIONS}{77}{section*.122}
+\contentsline {section}{2. VERBATIM COPYING}{78}{section*.123}
+\contentsline {section}{3. COPYING IN QUANTITY}{78}{section*.124}
+\contentsline {section}{4. MODIFICATIONS}{79}{section*.125}
+\contentsline {section}{5. COMBINING DOCUMENTS}{80}{section*.126}
+\contentsline {section}{6. COLLECTIONS OF DOCUMENTS}{81}{section*.127}
+\contentsline {section}{7. AGGREGATION WITH INDEPENDENT WORKS}{81}{section*.128}
+\contentsline {section}{8. TRANSLATION}{81}{section*.129}
+\contentsline {section}{9. TERMINATION}{81}{section*.130}
+\contentsline {section}{10. FUTURE REVISIONS OF THIS LICENSE}{82}{section*.131}
+\contentsline {section}{11. RELICENSING}{82}{section*.132}
+\contentsline {section}{ADDENDUM: How to use this License for your documents}{82}{section*.133}

@@ -1,0 +1,66 @@
+Es importante en un sistema como este, y cualquiera, que todo funcione correctamente, para ello es necesario hacer una serie de pruebas para verificar el correcto funcionamiento de la aplicación y que los requisitos se cumplen tal y como fueron especificados.\\
+
+\section{Pruebas sobre los datos}
+
+Para verificar el correcto funcionamiento de la aplicación se realizaron una serie de pruebas que consistieron en las siguientes:
+
+\begin{itemize}
+\item {\bf Pruebas de caja negra individual} . Cada vez que se desarrollaba una nueva clase se realizaban pruebas de caja negra, esto significa que lo único que se tiene en cuenta son los datos de entrada y la salida producida, ignorando lo que pasa internamente en el sistema.
+
+\item{\bf Pruebas de integración de subsistema} . Al terminar un subsistema se hace necesario probar que la interacción entre todos los elementos de éste es correcta. Estas pruebas nos permiten ver si el intercambio de datos entre Modelo, Vista y Controlador es correcto.
+
+\item{\bf Pruebas del sistema o de integración entre subsistemas} . Este tipo de pruebas se realizan sobre sistemas que trabajan de forma conjunta e intercambian información entre sí, se realizaron pruebas para comprobar que esta interacción fuera correcta. Estas pruebas fueron realizadas principalmente a la finalización del desarrollo.
+\end{itemize}
+
+
+\section{Especificación del diseño de pruebas}
+
+Hay dos fases temporales donde se han realizado las pruebas:
+
+\begin{itemize}
+\item {\bf Durante el desarrollo de la aplicación:} Esta etapa es la ideal para realizar las pruebas de clase individuales, ya que evitaremos propagar errores a fases posteriores. A medida que se iban desarrollando clases se iba comprobando su funcionalidad mediante la entrada de datos que cumplieran los requisitos de información especificados, así veríamos que salida daba la clase a esos datos para saber si el funcionamiento era el deseado o no, además de ver si los datos se estaban almacenando correctamente en la base de datos.
+
+\item {\bf Una vez finalizada la aplicación:} Este es el momento de comprobar que la interacción entre los distintos subsistemas de la aplicación es correcta. Además habría que comprobar la seguridad del sistema, es decir, que un usuario con un nivel de privilegios insuficiente no pudiera acceder a un subsistema que tuviera un acceso restringido a su rol.\\
+
+El proceso a seguir para realizar estas pruebas comenzó con la entrada con el usuario administrador a la aplicación, una vez logueado, procedimos a crear un usuario con rol planificador, para poder probar el grueso de subsistemas de la aplicación.\\
+
+Una vez iniciada la sesión con un usuario de rol planificador, procedimos a probar los subsistemas de titulaciones, asignaturas y cursos, ya que era necesario tener registrados algunos elementos de estas clases para probar los demás subsistemas.\\
+
+Después de dar de alta varias titulaciones y asignaturas, y un curso, se procedió a introducir planes docentes para esas asignaturas, de forma que tuvieramos horas asignadas para probar los horarios más adelante.\\
+
+A continuación, se probó el subsistema de gestión de calendarios, que es independiente de los planes docentes pero no del curso, se probó a introducir varios eventos, y a eliminar algunos.\\
+
+Se probó también la gestión de aulas, introduciendo algunas, eliminando y editando otras.\\
+
+Hecho todo esto se podía pasar a la parte de gestión de horarios, comprobando la creación de grupos, edición de horarios, y chequeo de horas asignadas. Además de comprobar una vez rellenados algunos horarios, la gestión de informes de asignatura, comprobando que se generaran correctamente con los datos introducidos en los horarios.\\
+
+Hecho todo esto también se hacía necesario probar la importación y exportación de los distintos elementos del sistema, como asignaturas, calendario o horarios.\\
+
+Todas estas pruebas correspondían al perfil de planificador, pero también había que probar el perfil de alumno y el de profesor. Ambos son muy similares, ya que pueden ver casi lo mismo. Principalmente pueden configurar un horario, seleccionando una serie de asignaturas y grupos, aunque en el caso del alumno había que verificar que sólo pudiera ver las asignaturas de su titulación. Además el profesor tenía una funcionalidad extra que consistía en visualizar la planificación docente de una titulación.\\
+
+Además también el rol administrador tiene su propia funcionalidad, que es la de crear usuarios, eliminarlos o editarlos, cosa que tuvo que ser probada también. 
+\end{itemize}
+\section{Especificación de los procedimientos de prueba}
+
+Se realizaron pruebas sobre sistema operativo GNU/Linux en la distribución {\em Ubuntu 11.04} y en Microsoft Windows 7 sobre los siguientes navegadores:
+\begin{itemize}
+\item Mozilla Firefox 8
+\item Internet Explorer 8
+\item Opera 11.60
+\item Google Chrome 15.0
+\end{itemize}
+
+Algunos problemas encontrados fueron con algunas propiedades de CSS y parte del código JavaScript, que principalmente en Internet Explorer no funcionaban correctamente, se pudieron solventar estos problemas con algunos parches encontrados.
+
+\section{Documentación de la ejecución de las pruebas}
+\begin{itemize}
+\item {\bf Histórico de pruebas:} Muchos errores encontrados durante las pruebas fueron provocados por algún error simple en el código, que en ocasiones eran difíciles de encontrar por aparecer mensajes de error con poca información. Este tipo de casos se daba especialmente en JavaScript, ya que seguir la ejecución del código era complicado debido a que su consola de errores apenas daba información. También con la librería Doctrine hubo algunos problemas ya que a pesar de que si que mostraba errores, estos eran treméndamente crípticos, siendo en ocasiones provocados simplemente por la falta de declaración de un campo en un modelo.
+\item {\bf Informe de incidentes ocurridos:} No hay incidencias que destacar. En cualquier caso, si se quisiera continuar el desarrollo, seria recomendable seguir usando el repositorio de Git, ya sea bien incorporándose al desarrollo, o bien haciendo un fork del repositorio, de forma que en caso de errores fuera posible volver a una versión anterior sin problema alguno.
+\end{itemize}
+
+\section{Herramientas utilizadas para las pruebas}
+
+Al principio del desarrollo para trazar la funcionalidad de las distintas acciones, nos veíamos obligados a usar {\em echos} de las variables, mostrando su valor por el navegador, siendo este método un poco engorroso. Usando NetBeans se descubre que trae incorporada una herramienta llamada {\em XDebug}, que conjuntamente con una extensión del navegador Firefox llamada {\em EasyXDebug} facilitaba mucho el desarrollo y las pruebas, ya que nos permitía incorporar puntos de ruptura en el código, en los que usando NetBeans podíamos comprobar el estado de las variables en ese momento, sin necesidad de utilizar los ya mencionados {\em echo}.\\
+
+Otra herramienta imprescindible para las pruebas en el desarrollo web es la extensión {\em FireBug}, de Mozilla Firefox que proporciona una consola de eventos de JavaScript, pudiendo además utilizar la funcionalidad de los puntos de ruptura en el código del cliente.
+

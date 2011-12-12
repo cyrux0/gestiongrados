@@ -207,5 +207,7 @@ La parte central del sistema es la gestión de horarios, para ello es necesaria 
 \caption{Captura de página de horarios}
 \end{figure}
 
-Tenemos tres partes diferenciadas en esta vista, un cuadro superior con las asignaturas aun no asignadas, 
+Tenemos tres partes diferenciadas en esta vista, un cuadro superior con las asignaturas aun no asignadas, que se podrán arrastrar al horario. Otra central con el horario de ese grupo, y otro bloque en la parte inferior en el que podemos ver la ocupación del aula que seleccionemos.\\
+
+A la hora de asignar los slots en el horario hay que tener en cuenta diversos factores, como por ejemplo si el aula está ocupada, o si las asignaturas son solapables, para ello cada vez que se arrastra una asignatura al horario se hace una comprobación mediante la llamada a un servicio, devolviendo el resultado y dependiendo de si es satisfactorio o no, dejar la asignatura en su lugar o deshacer el cambio. Para deshacer el cambio, la API del plugin FullCalendar proporciona una función para invertir el proceso de la última acción realizada, eso hace el trabajo algo más sencillo.
 
