@@ -65,8 +65,6 @@ class Titulaciones extends MY_Controller {
             }
         }else{
             $titulacion -> save();
-            $pretags = '<tr><td>';
-            $posttags = '</td><span>' . anchor('asignaturas/add_to/' . $titulacion->id, '+') . '</span>' . anchor('titulaciones/delete/' . $titulacion->id, 'X') . '</li>';
             $this->notices = 'Titulación añadida correctamente';
             if($this -> input -> post('remote') == "true") {
                 unset($this -> layout);
@@ -140,6 +138,7 @@ class Titulaciones extends MY_Controller {
         if(!isset($id_titulacion)) redirect('titulaciones/select_titulacion/titulaciones/exportar_planificacion/' . $id_curso);
         
         $titulacion = Doctrine::getTable('Titulacion')->find($id_titulacion);
+        // Obtenemos la planificación de la titulación
         $salida_total = $titulacion->getPlanificacion($id_curso);
         $headers = array('Asignatura', 
             'Horas teoría', 'Grupos Teoría', 'Horas semanales teoría',
@@ -149,19 +148,8 @@ class Titulaciones extends MY_Controller {
             'Horas prácticas de campo', 'Grupos prácticas de campo', 'Horas semanales prácticas de campo',
             );
 
-        $salida_final = array();
-        foreach($salida_total as $linea)
-        {
-            $linea_array[0] = $linea[0];
-            for($i = 1; $i<5 ; $i++)
-            {
-                $linea_array[1+3*($i-1)] = isset($linea[$i])? $linea[$i][0] : '';
-                $linea_array[2+3*($i-1)] = isset($linea[$i])? $linea[$i][1] : '';
-                $linea_array[3+3*($i-1)] = isset($linea[$i])? $linea[$i][2] : '';
-            }
-            $salida_final[] = $linea_array;
-        }
         array_unshift($salida_final, $headers);
+        
         $this->load->helper('importacion_csv_helper');
         exportador_csv('./application/downloads/temp.csv', $salida_final);
         $data = file_get_contents('./application/downloads/temp.csv');

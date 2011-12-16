@@ -70,6 +70,7 @@ class Titulacion extends Doctrine_Record
         $salida_total = array();
         foreach($asignaturas as $asignatura)
         {
+            // Por cada asignatura consultamos su planificación docente para el curso dado
             $q = Doctrine_Query::create()->select('c.*, p.*, a.descripcion')
                     ->from('PlanActividad p')
                     ->innerJoin('p.plandocente c')
@@ -78,13 +79,19 @@ class Titulacion extends Doctrine_Record
             $resultado = $q->execute();
             $salida = array();
             $salida[0] =  $asignatura->nombre;
+            // Vamos guardando en el vector salida una fila por actividad con el id dado
             foreach($resultado as $actividad)
             {
                 $salida[$actividad->id_actividad] = array($actividad->horas, $actividad->grupos, $actividad->horas_semanales);
             }
+            
+            foreach(range(1,5) as $i){
+                $salida[$i] = isset($salida[$i])? $salida[$i] : array(0,0,0);
+            }
+            // Guardamos en el vector final
             $salida_total[] = $salida;
       }
-      
+
       return $salida_total;
   }
   
