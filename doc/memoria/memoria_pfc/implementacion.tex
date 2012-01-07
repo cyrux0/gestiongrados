@@ -6,18 +6,18 @@ Durante la carrera hay muy poca formación en cuanto a desarrollo web se refiere
 
 PHP es un lenguaje fácil de aprender, dado que posee mucha similitud con lenguajes como C, que si han sido aprendidos durante la carrera.\\
 
-Tras comenzar el aprendizaje del lenguaje, surge el problema de que para hacer el desarrollo mínimamente organizado habría que implementar una serie de clases base que nos ayudaran con la implementación del sistema. Esto implica un trabajo tedioso que puede ahorrarse utilizando algún framework que nos proporcione herramientas que hagan mucho más fácil el trabajo. Es por ello que se decide utilizar CodeIgniter.
+Tras comenzar el aprendizaje del lenguaje, surge el problema de que para hacer el desarrollo mínimamente organizado habría que implementar una serie de clases base que nos ayudaran con la implementación del sistema. Esto implica un trabajo tedioso que puede ahorrarse utilizando algún framework que nos proporcione herramientas que hagan mucho más fácil el trabajo. Es por ello que se decide utilizar {\em CodeIgniter}.
 \\
 
-CodeIgniter es un framework escrito en PHP, basado en el patrón arquitectónico MVC, a diferencia de otros frameworks existentes para PHP, es una herramienta realmente ligera, poco intrusiva y que facilita muchísimo el trabajo. Para ello pone a disposición algunas librerías y helpers, aumentando notablemente la productividad del desarrollador. \\
+{\em CodeIgniter} es un framework escrito en PHP, basado en el patrón arquitectónico MVC, a diferencia de otros frameworks existentes para PHP, es una herramienta realmente ligera, poco intrusiva y que facilita muchísimo el trabajo. Para ello pone a disposición algunas librerías y helpers, aumentando notablemente la productividad del desarrollador. \\
 
-Otra gran ventaja de CodeIgniter es su documentación y su comunidad de desarrolladores, además de la Wiki en la que los usuarios van publicando plugins que pueden ser útiles para nuestro trabajo.\\
+Otra gran ventaja de {\em CodeIgniter} es su documentación y su comunidad de desarrolladores, además de la Wiki en la que los usuarios van publicando plugins que pueden ser útiles para nuestro trabajo.\\
 
-Uno de los problemas que encontramos con CodeIgniter es que a diferencia de otros frameworks MVC, no disponían de un ORM, es decir un sistema de persistencia que nos permitiera obtener elementos de la base de datos y transformarlos en objetos de nuestro sistema. Para ello se decide utilizar Doctrine, un ORM fácilmente integrable con CodeIgniter, y que nos permitía tener una base de datos virtual sobre nuestro sistema.\\
+Uno de los problemas que encontramos con {\em CodeIgniter} es que a diferencia de otros frameworks MVC, no disponían de un ORM, es decir un sistema de persistencia que nos permitiera obtener elementos de la base de datos y transformarlos en objetos de nuestro sistema. Para ello se decide utilizar {\em Doctrine}, un ORM fácilmente integrable con {\em CodeIgniter}, y que nos permitía tener una base de datos virtual sobre nuestro sistema.\\
 
 Pero la parte del servidor no es la única que hay que implementar, además necesitamos un lenguaje para las vistas. Para ello se elige XHTML, lenguaje de marcado ampliamente usado y recomendado por la W3C.\\
 
-Otro objetivo es tener una buena interacción con el usuario, para ello es necesario el uso de un lenguaje que pueda interactuar con el DOM y modificarlo sin necesidad de pasar por el servidor, para ello elegimos JavaScript, soportado por la inmensa mayoría de navegadores. Se hace necesario para mejorar la interacción, el uso de una librería que facilite el trabajo con este lenguaje, para ello elegimos jQuery, la librería de JavaScript más usada, con multitud de plugins y una documentación muy bien estructurada.\\
+Otro objetivo es tener una buena interacción con el usuario, para ello es necesario el uso de un lenguaje que pueda interactuar con el DOM y modificarlo sin necesidad de pasar por el servidor, para ello elegimos JavaScript, soportado por la inmensa mayoría de navegadores. Se hace necesario para mejorar la interacción, el uso de una librería que facilite el trabajo con este lenguaje, para ello elegimos {\em jQuery}, la librería de JavaScript más usada, con multitud de plugins y una documentación muy bien estructurada.\\
 
 \section{Extensiones y librerías}
 
@@ -25,9 +25,9 @@ El proyecto requiere la realización de algunas tareas complejas, como la genera
 
 \begin{itemize}
 
-\item {\bf FullCalendar} - Plugin para jQuery que permite mostrar un calendario interactivo, con una API a disposición del desarrollador para responder a multitud de eventos, lo que permite una máxima personalización.
-\item {\bf jQueryUI} - Plugin para jQuery con una gran variedad de widgets para mejorar la interacción con el usuario.
-\item {\bf Farbtastic} - Plugin para jQuery que nos permite integrar un selector de color en una página.
+\item {\bf FullCalendar} - Plugin para {\em jQuery} que permite mostrar un calendario interactivo, con una API a disposición del desarrollador para responder a multitud de eventos, lo que permite una máxima personalización.
+\item {\bf jQueryUI} - Plugin para {\em jQuery} con una gran variedad de widgets para mejorar la interacción con el usuario.
+\item {\bf Farbtastic} - Plugin para {\em jQuery} que nos permite integrar un selector de color en una página.
 \item {\bf FPDF} - Librería para PHP para la generación de documentos PDF.
 \item {\bf PHPMailer} - Librería para PHP que facilita el envío de correos electrónicos.
 \end{itemize}
@@ -36,19 +36,19 @@ El proyecto requiere la realización de algunas tareas complejas, como la genera
 
 Para el desarrollo del proyecto se hace necesario el uso de una serie de herramientas, como editores de código, sistemas de control de versiones, etc. A continuación se detallarán todas las herramientas usadas en este proyecto.\\
 
-La herramienta principal que se ha utilizado ha sido un IDE, en este caso NetBeans en su versión PHP. NetBeans es un entorno escrito en Java y pensado en un principio para desarrollar en este mismo lenguaje, pero conforme ha avanzado el tiempo se ha ido ampliando a más lenguajes, como por ejemplo PHP. La integración con este último es perfecta, proporcionando útiles herramientas como el autocompletado.\\
+La herramienta principal que se ha utilizado ha sido un IDE, en este caso {\em NetBeans} en su versión PHP. {\em NetBeans} es un entorno escrito en Java y pensado en un principio para desarrollar en este mismo lenguaje, pero conforme ha avanzado el tiempo se ha ido ampliando a más lenguajes, como por ejemplo PHP. La integración con este último es perfecta, proporcionando útiles herramientas como el autocompletado.\\
 
-Para la detección de errores se hace casi obligado el uso de un {\em debugger}, en este caso hemos usado XDebugger que viene integrado en NetBeans, permitiendo utilizar puntos de ruptura en el código para comprobar el estado del sistema en un momento dado.\\
+Para la detección de errores se hace casi obligado el uso de un {\em debugger}, en este caso hemos usado {\em XDebugger} que viene integrado en {\em NetBeans}, permitiendo utilizar puntos de ruptura en el código para comprobar el estado del sistema en un momento dado.\\
 
-Para el despliegue de la aplicación se ha utilizado un entorno compuesto por un servidor Apache, base de datos MySQL y el intérprete de PHP, todo ello sobre un sistema GNU/Linux.\\
+Para el despliegue de la aplicación se ha utilizado un entorno compuesto por un servidor {\em Apache}, base de datos {\em MySQL} y el intérprete de PHP, todo ello sobre un sistema GNU/Linux.\\
 
-Otra herramienta utilizada que facilita el trabajo enormemente ha sido {\bf Git}. Git es un sistema de control de versiones que facilita el desarrollo colaborativo y el mantenimiento de un software, versionando todos los cambios que se vayan produciendo en el código. Esto permite que si queremos volver a una versión anterior del sistema podamos hacerlo sin problema alguno, además de la creación de ramas de desarrollo, pudiendo fusionar ramas sin problema alguno.\\
+Otra herramienta utilizada que facilita el trabajo enormemente ha sido {\em Git}. {\em Git} es un sistema de control de versiones que facilita el desarrollo colaborativo y el mantenimiento de un software, versionando todos los cambios que se vayan produciendo en el código. Esto permite que si queremos volver a una versión anterior del sistema podamos hacerlo sin problema alguno, además de la creación de ramas de desarrollo, pudiendo fusionar ramas sin problema alguno.\\
 
 \section{Detalles de la implementación de la arquitectura del sistema}
 
 \subsection{Capa modelo}
 
-Como hemos dicho, se ha utilizado la librería Doctrine como ORM. Esta librería sustituye completamente a la capa modelo del MVC de CodeIgniter, para ello, cada tabla de la base de datos se corresponde con un modelo. Para construir un modelo definimos sus atributos en una clase, además de sus relaciones, de esta forma, Doctrine generará automáticamente las tablas de la base de datos a partir de los modelos, aplicando todas las reglas de integridad definidas.\\
+Como hemos dicho, se ha utilizado la librería Doctrine como ORM. Esta librería sustituye completamente a la capa modelo del MVC de {\em CodeIgniter}, para ello, cada tabla de la base de datos se corresponde con un modelo. Para construir un modelo definimos sus atributos en una clase, además de sus relaciones, de esta forma, {\em Doctrine} generará automáticamente las tablas de la base de datos a partir de los modelos, aplicando todas las reglas de integridad definidas.\\
 
 Un ejemplo de un modelo es el siguiente, que corresponde al de la tabla titulaciones:
 
@@ -209,5 +209,5 @@ La parte central del sistema es la gestión de horarios, para ello es necesaria 
 
 Tenemos tres partes diferenciadas en esta vista, un cuadro superior con las asignaturas aun no asignadas, que se podrán arrastrar al horario. Otra central con el horario de ese grupo, y otro bloque en la parte inferior en el que podemos ver la ocupación del aula que seleccionemos.\\
 
-A la hora de asignar los slots en el horario hay que tener en cuenta diversos factores, como por ejemplo si el aula está ocupada, o si las asignaturas son solapables, para ello cada vez que se arrastra una asignatura al horario se hace una comprobación mediante la llamada a un servicio, devolviendo el resultado y dependiendo de si es satisfactorio o no, dejar la asignatura en su lugar o deshacer el cambio. Para deshacer el cambio, la API del plugin FullCalendar proporciona una función para invertir el proceso de la última acción realizada, eso hace el trabajo algo más sencillo.
+A la hora de asignar los slots en el horario hay que tener en cuenta diversos factores, como por ejemplo si el aula está ocupada, o si las asignaturas son solapables, para ello cada vez que se arrastra una asignatura al horario se hace una comprobación mediante la llamada a un servicio, devolviendo el resultado y dependiendo de si es satisfactorio o no, dejar la asignatura en su lugar o deshacer el cambio. Para deshacer el cambio, la API del plugin {\em FullCalendar} proporciona una función para invertir el proceso de la última acción realizada, eso hace el trabajo algo más sencillo.
 

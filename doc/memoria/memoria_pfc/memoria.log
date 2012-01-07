@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.28)  12 DEC 2011 18:21
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.28)  7 JAN 2012 19:27
 entering extended mode
-**memoria.tex
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.tex
+**C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/memoria.tex
+(C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/memoria.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -623,7 +623,7 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 )
 \Gin@req@height=\dimen148
 \Gin@req@width=\dimen149
-))
+)
 (C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.sty
 (C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
 (C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
@@ -912,7 +912,7 @@ File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 (C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\li
 braries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
-)))
+))))
 (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\estilos\colores.sty)
 (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\estilos\comandos.sty
 \c@defin=\count147
@@ -1036,7 +1036,7 @@ Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
 (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\portada.tex
-<./imagenes/logo_uca.png, id=385, 468.75125pt x 602.25pt>
+<./imagenes/logo_uca.png, id=522, 468.75125pt x 602.25pt>
 File: ./imagenes/logo_uca.png Graphic file (type png)
 
 <use ./imagenes/logo_uca.png>
@@ -1084,19 +1084,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--29
 [3] [4
 
 ]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 36.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 38.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
 
  []
 
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 41.
+(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 42--52
-
- []
-
+(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang2.sty
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 56.
+)
 [5] [6
 
 ]
@@ -1116,20 +1128,19 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [7
 
-] [8])
+] [8]
+[9])
 \tf@toc=\write5
+ [10] (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.lof
+[11
 
-[9] [10
-
-] (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.lof)
+])
 \tf@lof=\write6
-
-[11] [12
-
-] (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.lot)
+ [12] (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.lot)
 \tf@lot=\write7
+[13
 
-[13] [14
+] [14
 
 ]
 Cap\'{\i }tulo 1.
@@ -1185,7 +1196,7 @@ l.28 \section
 <to be read again> 
                    \relax 
 l.33 \newpage
-              [4] <./imagenes/gantt1.PNG, id=678, 1063.72406pt x 498.36188pt>
+              [4] <./imagenes/gantt1.PNG, id=900, 1063.72406pt x 498.36188pt>
 File: ./imagenes/gantt1.PNG Graphic file (type png)
 
 <use ./imagenes/gantt1.PNG>
@@ -1196,7 +1207,7 @@ Overfull \vbox (0.79544pt too high) has occurred while \output is active []
 
 
 [5 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gantt1.PNG>
-] <./imagenes/gantt2.PNG, id=685, 1371.62437pt x 689.57625pt>
+] <./imagenes/gantt2.PNG, id=907, 1371.62437pt x 689.57625pt>
 File: ./imagenes/gantt2.PNG Graphic file (type png)
 
 <use ./imagenes/gantt2.PNG>
@@ -1232,7 +1243,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 ) [8]
 Cap\'{\i }tulo 4.
 (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\analisis.tex
-<./imagenes/./gestionusuarios.png, id=700, 613.29124pt x 603.25375pt>
+<./imagenes/./gestionusuarios.png, id=922, 613.29124pt x 603.25375pt>
 File: ./imagenes/./gestionusuarios.png Graphic file (type png)
 
 <use ./imagenes/./gestionusuarios.png>
@@ -1247,7 +1258,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 [10 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionusu
 arios.png (PNG copy)>] [11]
-<./imagenes/./gestiontitulaciones.png, id=733, 957.5775pt x 691.58376pt>
+<./imagenes/./gestiontitulaciones.png, id=955, 957.5775pt x 691.58376pt>
 File: ./imagenes/./gestiontitulaciones.png Graphic file (type png)
 
 <use ./imagenes/./gestiontitulaciones.png>
@@ -1261,7 +1272,7 @@ Overfull \hbox (25.81969pt too wide) in paragraph at lines 114--115
 
 [12 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestiontit
 ulaciones.png (PNG copy)>] [13] [14]
-<./imagenes/./gestionasignaturas.png, id=782, 930.47626pt x 739.76375pt>
+<./imagenes/./gestionasignaturas.png, id=1004, 930.47626pt x 739.76375pt>
 File: ./imagenes/./gestionasignaturas.png Graphic file (type png)
 
 <use ./imagenes/./gestionasignaturas.png>
@@ -1283,7 +1294,7 @@ gnaturas.png (PNG copy)>]
 LaTeX Warning: Hyper reference `duplicar_asignatura' on page 17 undefined on in
 put line 336.
 
-[17] [18] <./imagenes/./gestioncursos.png, id=846, 1017.8025pt x 594.22pt>
+[17] [18] <./imagenes/./gestioncursos.png, id=1068, 1017.8025pt x 594.22pt>
 File: ./imagenes/./gestioncursos.png Graphic file (type png)
 
 <use ./imagenes/./gestioncursos.png>
@@ -1314,7 +1325,7 @@ e 591.
 LaTeX Warning: Hyper reference `select_curso' on page 22 undefined on input lin
 e 613.
 
-<./imagenes/./gestionplanificacion.png, id=891, 889.3225pt x 703.62875pt>
+<./imagenes/./gestionplanificacion.png, id=1113, 889.3225pt x 703.62875pt>
 File: ./imagenes/./gestionplanificacion.png Graphic file (type png)
 
 <use ./imagenes/./gestionplanificacion.png>
@@ -1350,7 +1361,7 @@ e 764.
 LaTeX Warning: Hyper reference `select_curso' on page 26 undefined on input lin
 e 818.
 
-<./imagenes/./gestioncalendario.png, id=970, 1055.945pt x 726.715pt>
+<./imagenes/./gestioncalendario.png, id=1192, 1055.945pt x 726.715pt>
 File: ./imagenes/./gestioncalendario.png Graphic file (type png)
 
 <use ./imagenes/./gestioncalendario.png>
@@ -1386,7 +1397,7 @@ e 929.
 LaTeX Warning: Hyper reference `select_curso' on page 29 undefined on input lin
 e 948.
 
-<./imagenes/./gestionhorarios.png, id=1015, 946.53625pt x 771.88374pt>
+<./imagenes/./gestionhorarios.png, id=1237, 946.53625pt x 771.88374pt>
 File: ./imagenes/./gestionhorarios.png Graphic file (type png)
 
 <use ./imagenes/./gestionhorarios.png>
@@ -1408,7 +1419,7 @@ e 979.
 
 [30 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionhor
 arios.png (PNG copy)>] [31] [32] [33]
-<./imagenes/./gestionaulas.png, id=1102, 948.54375pt x 623.32875pt>
+<./imagenes/./gestionaulas.png, id=1324, 948.54375pt x 623.32875pt>
 File: ./imagenes/./gestionaulas.png Graphic file (type png)
 
 <use ./imagenes/./gestionaulas.png>
@@ -1422,7 +1433,7 @@ Overfull \hbox (21.30281pt too wide) in paragraph at lines 1192--1193
 
 [34] [35 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gesti
 onaulas.png (PNG copy)>] [36]
-<./imagenes/./modeloconceptual.png, id=1145, 913.4125pt x 825.0825pt>
+<./imagenes/./modeloconceptual.png, id=1367, 913.4125pt x 825.0825pt>
 File: ./imagenes/./modeloconceptual.png Graphic file (type png)
 
 <use ./imagenes/./modeloconceptual.png>
@@ -1435,7 +1446,7 @@ Overfull \hbox (3.73724pt too wide) in paragraph at lines 1322--1323
  []
 
 [37]
-<./imagenes/./secuencia-reg-titulacion.png, id=1161, 849.1725pt x 415.5525pt>
+<./imagenes/./secuencia-reg-titulacion.png, id=1383, 849.1725pt x 415.5525pt>
 File: ./imagenes/./secuencia-reg-titulacion.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-reg-titulacion.png>
@@ -1447,7 +1458,7 @@ Underfull \vbox (badness 3701) has occurred while \output is active []
 
  [38 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/modelocon
 ceptual.png (PNG copy)>]
-<./imagenes/./secuencia-reg-asignatura.png, id=1167, 795.97375pt x 434.62375pt>
+<./imagenes/./secuencia-reg-asignatura.png, id=1389, 795.97375pt x 434.62375pt>
 File: ./imagenes/./secuencia-reg-asignatura.png Graphic file (type png)
 <use ./imagenes/./secuencia-reg-asignatura.png>
 Package pdftex.def Info: ./imagenes/./secuencia-reg-asignatura.png used on inpu
@@ -1458,7 +1469,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
 -reg-titulacion.png (PNG copy)>]
-<./imagenes/./secuencia-edit-asignatura.png, id=1173, 814.04124pt x 769.87625pt
+<./imagenes/./secuencia-edit-asignatura.png, id=1395, 814.04124pt x 769.87625pt
 >
 File: ./imagenes/./secuencia-edit-asignatura.png Graphic file (type png)
  <use ./imagenes/./secuencia-edit-asignatura.png>
@@ -1470,7 +1481,7 @@ Underfull \vbox (badness 4303) has occurred while \output is active []
 
  [40 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
 -reg-asignatura.png (PNG copy)>]
-<./imagenes/./secuencia-borrar-asignatura.png, id=1180, 838.13126pt x 641.39626
+<./imagenes/./secuencia-borrar-asignatura.png, id=1402, 838.13126pt x 641.39626
 pt>
 File: ./imagenes/./secuencia-borrar-asignatura.png Graphic file (type png)
  <use ./imagenes/./secuencia-borrar-asignatura.png>
@@ -1482,7 +1493,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
 -edit-asignatura.png (PNG copy)>]
-<./imagenes/./secuencia-importar-asignatura.png, id=1186, 863.225pt x 381.425pt
+<./imagenes/./secuencia-importar-asignatura.png, id=1408, 863.225pt x 381.425pt
 >
 File: ./imagenes/./secuencia-importar-asignatura.png Graphic file (type png)
  <use ./imagenes/./secuencia-importar-asignatura.png>
@@ -1492,7 +1503,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-importar-asignatura.png used on
  [42 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
 -borrar-asignatura.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/
 memoria_pfc/imagenes/secuencia-importar-asignatura.png (PNG copy)>]
-<./imagenes/./secuencia-crear-plandocente.png, id=1191, 815.045pt x 453.695pt>
+<./imagenes/./secuencia-crear-plandocente.png, id=1413, 815.045pt x 453.695pt>
 File: ./imagenes/./secuencia-crear-plandocente.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-crear-plandocente.png>
@@ -1500,7 +1511,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-crear-plandocente.png used on i
 nput line 1424.
 (pdftex.def)             Requested size: 407.5215pt x 226.84694pt.
 
-<./imagenes/./secuencia-gen-informe.png, id=1192, 799.98875pt x 366.36874pt>
+<./imagenes/./secuencia-gen-informe.png, id=1414, 799.98875pt x 366.36874pt>
 File: ./imagenes/./secuencia-gen-informe.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-gen-informe.png>
@@ -1508,7 +1519,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-gen-informe.png used on input l
 ine 1441.
 (pdftex.def)             Requested size: 399.9934pt x 183.18391pt.
 
-<./imagenes/./secuencia-crear-evento.png, id=1193, 882.29625pt x 370.38374pt>
+<./imagenes/./secuencia-crear-evento.png, id=1415, 882.29625pt x 370.38374pt>
 File: ./imagenes/./secuencia-crear-evento.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-crear-evento.png>
@@ -1529,7 +1540,7 @@ E de Even-to con E.fecha_inicial = fe-cha_inicial, E.fecha_final
  []
 
 
-<./imagenes/./secuencia-exportar-calendario.png, id=1206, 905.3825pt x 429.605p
+<./imagenes/./secuencia-exportar-calendario.png, id=1428, 905.3825pt x 429.605p
 t>
 File: ./imagenes/./secuencia-exportar-calendario.png Graphic file (type png)
  <use ./imagenes/./secuencia-exportar-calendario.png>
@@ -1537,7 +1548,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-exportar-calendario.png used on
  input line 1475.
 (pdftex.def)             Requested size: 452.69014pt x 214.80197pt.
 
-<./imagenes/./secuencia-seleccionar-grupo.png, id=1207, 646.415pt x 347.2975pt>
+<./imagenes/./secuencia-seleccionar-grupo.png, id=1429, 646.415pt x 347.2975pt>
 File: ./imagenes/./secuencia-seleccionar-grupo.png Graphic file (type png)
 <use ./imagenes/./secuencia-seleccionar-grupo.png>
 Package pdftex.def Info: ./imagenes/./secuencia-seleccionar-grupo.png used on i
@@ -1546,7 +1557,7 @@ nput line 1485.
  [45 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
 -exportar-calendario.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memori
 a/memoria_pfc/imagenes/secuencia-seleccionar-grupo.png (PNG copy)>]
-<./imagenes/./secuencia-anadir-grupo.png, id=1213, 645.41125pt x 299.1175pt>
+<./imagenes/./secuencia-anadir-grupo.png, id=1435, 645.41125pt x 299.1175pt>
 File: ./imagenes/./secuencia-anadir-grupo.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-anadir-grupo.png>
@@ -1554,7 +1565,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-anadir-grupo.png used on input
 line 1503.
 (pdftex.def)             Requested size: 322.70483pt x 149.55838pt.
 
-<./imagenes/./secuencia-borrar-grupo.png, id=1214, 651.43375pt x 339.2675pt>
+<./imagenes/./secuencia-borrar-grupo.png, id=1436, 651.43375pt x 339.2675pt>
 File: ./imagenes/./secuencia-borrar-grupo.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-borrar-grupo.png>
@@ -1562,7 +1573,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-borrar-grupo.png used on input
 line 1512.
 (pdftex.def)             Requested size: 325.71606pt x 169.63333pt.
 
-<./imagenes/./secuencia-ubicar-slot.png, id=1215, 580.1675pt x 529.98pt>
+<./imagenes/./secuencia-ubicar-slot.png, id=1437, 580.1675pt x 529.98pt>
 File: ./imagenes/./secuencia-ubicar-slot.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-ubicar-slot.png>
@@ -1572,7 +1583,7 @@ ine 1521.
  [46 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
 -anadir-grupo.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/memor
 ia_pfc/imagenes/secuencia-borrar-grupo.png (PNG copy)>]
-<./imagenes/./secuencia-editar-tipo.png, id=1221, 617.30624pt x 418.56375pt>
+<./imagenes/./secuencia-editar-tipo.png, id=1443, 617.30624pt x 418.56375pt>
 File: ./imagenes/./secuencia-editar-tipo.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-editar-tipo.png>
@@ -1584,7 +1595,7 @@ Underfull \vbox (badness 1231) has occurred while \output is active []
 
  [47 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
 -ubicar-slot.png (PNG copy)>]
-<./imagenes/./secuencia-comprobar-grupo.png, id=1228, 645.41125pt x 256.96pt>
+<./imagenes/./secuencia-comprobar-grupo.png, id=1450, 645.41125pt x 256.96pt>
 File: ./imagenes/./secuencia-comprobar-grupo.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-comprobar-grupo.png>
@@ -1592,7 +1603,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-comprobar-grupo.png used on inp
 ut line 1563.
 (pdftex.def)             Requested size: 322.70483pt x 128.47968pt.
 
-<./imagenes/./secuencia-crear-aula.png, id=1229, 600.2425pt x 305.14pt>
+<./imagenes/./secuencia-crear-aula.png, id=1451, 600.2425pt x 305.14pt>
 File: ./imagenes/./secuencia-crear-aula.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-crear-aula.png>
@@ -1602,7 +1613,7 @@ ne 1573.
  [48 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
 -editar-tipo.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/memori
 a_pfc/imagenes/secuencia-comprobar-grupo.png (PNG copy)>]
-<./imagenes/./secuencia-borrar-aula.png, id=1235, 625.33624pt x 321.2pt>
+<./imagenes/./secuencia-borrar-aula.png, id=1457, 625.33624pt x 321.2pt>
 File: ./imagenes/./secuencia-borrar-aula.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-borrar-aula.png>
@@ -1612,7 +1623,7 @@ ine 1590.
  [49 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
 -crear-aula.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/memoria
 _pfc/imagenes/secuencia-borrar-aula.png (PNG copy)>]
-<./imagenes/./secuencia-editar-aula.png, id=1243, 626.34pt x 323.2075pt>
+<./imagenes/./secuencia-editar-aula.png, id=1465, 626.34pt x 323.2075pt>
 File: ./imagenes/./secuencia-editar-aula.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-editar-aula.png>
@@ -1635,7 +1646,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 [51
 
 ] [52] [53] [54]
-<./imagenes/./ER.png, id=1264, 2478.43588pt x 1771.32353pt>
+<./imagenes/./ER.png, id=1486, 2478.43588pt x 1771.32353pt>
 File: ./imagenes/./ER.png Graphic file (type png)
 
 <use ./imagenes/./ER.png>
@@ -1850,21 +1861,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang2.sty
-File: lstlang2.sty 2004/09/05 1.3 listings language file
-)
-LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 61.
-
 [65]
 Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-[66] <./imagenes/./layout.png, id=1410, 1214.28656pt x 437.38406pt>
+[66] <./imagenes/./layout.png, id=1631, 1214.28656pt x 437.38406pt>
 File: ./imagenes/./layout.png Graphic file (type png)
 
 <use ./imagenes/./layout.png>
@@ -1883,7 +1885,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
-<./imagenes/./index-titulaciones.png, id=1445, 853.68938pt x 504.38437pt>
+<./imagenes/./index-titulaciones.png, id=1666, 853.68938pt x 504.38437pt>
 File: ./imagenes/./index-titulaciones.png Graphic file (type png)
 
 <use ./imagenes/./index-titulaciones.png>
@@ -1898,7 +1900,7 @@ Overfull \hbox (33.6401pt too wide) in paragraph at lines 195--196
 [68 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/layout.png
 > <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/index-titula
 ciones.png>]
-<./imagenes/./edit-horario.png, id=1452, 874.01532pt x 691.08188pt>
+<./imagenes/./edit-horario.png, id=1673, 874.01532pt x 691.08188pt>
 File: ./imagenes/./edit-horario.png Graphic file (type png)
 
 <use ./imagenes/./edit-horario.png>
@@ -2008,27 +2010,403 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-) [76] (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.bbl
+) [76]
+Ap\'{e}ndice A.
+(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\herramientas.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
+ []
 
-) (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\fdl-1.3.tex [77
 
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--22
+
+ []
+
+[77
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+) [78]
+Ap\'{e}ndice B.
+(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\instalacion.tex
+[79
+
+] [80]) [81] [82
+
+]
+Ap\'{e}ndice C.
+(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\manual-usuario.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+<./imagenes/./manual-bienvenida.png, id=1755, 1014.03844pt x 271.0125pt>
+File: ./imagenes/./manual-bienvenida.png Graphic file (type png)
+
+<use ./imagenes/./manual-bienvenida.png>
+Package pdftex.def Info: ./imagenes/./manual-bienvenida.png used on input line 
+8.
+(pdftex.def)             Requested size: 405.60818pt x 108.40306pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+<./imagenes/./manual-ventana-login.png, id=1756, 287.57437pt x 244.66406pt>
+File: ./imagenes/./manual-ventana-login.png Graphic file (type png)
+
+<use ./imagenes/./manual-ventana-login.png>
+Package pdftex.def Info: ./imagenes/./manual-ventana-login.png used on input li
+ne 22.
+(pdftex.def)             Requested size: 215.68025pt x 183.49759pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [83 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-bi
+envenida.png>] <./imagenes/./menu-user-admin.png, id=1762, 161.10187pt x 124.96
+687pt>
+File: ./imagenes/./menu-user-admin.png Graphic file (type png)
+
+<use ./imagenes/./menu-user-admin.png>
+Package pdftex.def Info: ./imagenes/./menu-user-admin.png used on input line 37
+.
+(pdftex.def)             Requested size: 144.99033pt x 112.46915pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+
+ []
+
+<./imagenes/./manual-form-add-user.png, id=1763, 331.99031pt x 274.02374pt>
+File: ./imagenes/./manual-form-add-user.png Graphic file (type png)
+
+<use ./imagenes/./manual-form-add-user.png>
+Package pdftex.def Info: ./imagenes/./manual-form-add-user.png used on input li
+ne 53.
+(pdftex.def)             Requested size: 265.59259pt x 219.21928pt.
+ [84 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-ve
+ntana-login.png> <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagen
+es/menu-user-admin.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+<./imagenes/./manual-lista-users.png, id=1772, 245.41687pt x 196.48407pt>
+File: ./imagenes/./manual-lista-users.png Graphic file (type png)
+
+<use ./imagenes/./manual-lista-users.png>
+Package pdftex.def Info: ./imagenes/./manual-lista-users.png used on input line
+ 70.
+(pdftex.def)             Requested size: 196.33376pt x 157.18745pt.
+
+Underfull \vbox (badness 2359) has occurred while \output is active []
+
+ [85 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-fo
+rm-add-user.png> <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagen
+es/manual-lista-users.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+<./imagenes/./manual-form-add-titu.png, id=1782, 334.24875pt x 176.91093pt>
+File: ./imagenes/./manual-form-add-titu.png Graphic file (type png)
+
+<use ./imagenes/./manual-form-add-titu.png>
+Package pdftex.def Info: ./imagenes/./manual-form-add-titu.png used on input li
+ne 94.
+(pdftex.def)             Requested size: 267.39935pt x 141.52893pt.
+ [86 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-fo
+rm-add-titu.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+[87]
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+<./imagenes/./manual-add-plan.png, id=1802, 644.4075pt x 239.39438pt>
+File: ./imagenes/./manual-add-plan.png Graphic file (type png)
+
+<use ./imagenes/./manual-add-plan.png>
+Package pdftex.def Info: ./imagenes/./manual-add-plan.png used on input line 16
+0.
+(pdftex.def)             Requested size: 451.08218pt x 167.5749pt.
+ [88 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-ad
+d-plan.png>]
+<./imagenes/./manual-visualizacion-plan.png, id=1812, 718.93594pt x 209.28188pt
+>
+File: ./imagenes/./manual-visualizacion-plan.png Graphic file (type png)
+ <use ./imagenes/./manual-visualizacion-plan.png>
+Package pdftex.def Info: ./imagenes/./manual-visualizacion-plan.png used on inp
+ut line 177.
+(pdftex.def)             Requested size: 467.30283pt x 136.03159pt.
+
+Overfull \hbox (14.33493pt too wide) in paragraph at lines 177--178
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+
+LaTeX Warning: Hyper reference `manual_calculo_horas' on page 89 undefined on i
+nput line 190.
+
+<./imagenes/./manual-calendario.png, id=1813, 871.75688pt x 346.29375pt>
+File: ./imagenes/./manual-calendario.png Graphic file (type png)
+
+<use ./imagenes/./manual-calendario.png>
+Package pdftex.def Info: ./imagenes/./manual-calendario.png used on input line 
+197.
+(pdftex.def)             Requested size: 435.87738pt x 173.14644pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [89 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-vi
+sualizacion-plan.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+
+ []
+
+<./imagenes/./manual-seleccion-grupos.png, id=1820, 885.3075pt x 267.24844pt>
+File: ./imagenes/./manual-seleccion-grupos.png Graphic file (type png)
+
+<use ./imagenes/./manual-seleccion-grupos.png>
+Package pdftex.def Info: ./imagenes/./manual-seleccion-grupos.png used on input
+ line 216.
+(pdftex.def)             Requested size: 442.65266pt x 133.62389pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
+
+ []
+
+[90 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-cal
+endario.png> <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/m
+anual-seleccion-grupos.png>]
+<./imagenes/./manual-configuracion-horario.png, id=1828, 867.99281pt x 560.8453
+pt>
+File: ./imagenes/./manual-configuracion-horario.png Graphic file (type png)
+ <use ./imagenes/./manual-configuracion-horario.png>
+Package pdftex.def Info: ./imagenes/./manual-configuracion-horario.png used on 
+input line 229.
+(pdftex.def)             Requested size: 433.99535pt x 280.42197pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+[91 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-con
+figuracion-horario.png>]
+<./imagenes/./manual-informe.png, id=1836, 1091.57813pt x 702.37407pt>
+File: ./imagenes/./manual-informe.png Graphic file (type png)
+
+<use ./imagenes/./manual-informe.png>
+Package pdftex.def Info: ./imagenes/./manual-informe.png used on input line 254
+.
+(pdftex.def)             Requested size: 327.47597pt x 210.71384pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+
+ []
+
+
+Package caption Warning: \label without proper \caption on input line 175.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `manual-visualizacion-plan' on page 92 undefined on in
+put line 267.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+
+ []
+
+
+Underfull \vbox (badness 2591) has occurred while \output is active []
+
+ [92 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-in
+forme.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+
+ []
+
+<./imagenes/./alumno-seleccion-grupos.png, id=1846, 540.51938pt x 92.59593pt>
+File: ./imagenes/./alumno-seleccion-grupos.png Graphic file (type png)
+
+<use ./imagenes/./alumno-seleccion-grupos.png>
+Package pdftex.def Info: ./imagenes/./alumno-seleccion-grupos.png used on input
+ line 279.
+(pdftex.def)             Requested size: 378.36098pt x 64.8167pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+) [93 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/alumno-s
+eleccion-grupos.png>] [94
+
+]
+Ap\'{e}ndice D.
+
+(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\importacion-asignaturas
+.tex [95]) [96]
+Ap\'{e}ndice E.
+
+(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\importacion-plandocente
+.tex
+Overfull \hbox (66.06148pt too wide) in paragraph at lines 7--7
+[]\T1/pcr/m/n/10.95 id_asignatura, id_actividad, horas, horas_semanales, grupos
+, alternas, id_curso[] 
+ []
+
+
+Overfull \hbox (66.06148pt too wide) in paragraph at lines 19--19
+[]\T1/pcr/m/n/10.95 id_asignatura, id_actividad, horas, horas_semanales, grupos
+, alternas, id_curso[] 
+ []
+
+) [97
+
+] [98
+
+]
+Ap\'{e}ndice F.
+(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\informes.tex [99]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [100]
+<./imagenes/./horario-export.png, id=1881, 319.1925pt x 286.06876pt>
+File: ./imagenes/./horario-export.png Graphic file (type png)
+
+<use ./imagenes/./horario-export.png>
+Package pdftex.def Info: ./imagenes/./horario-export.png used on input line 135
+.
+(pdftex.def)             Requested size: 319.19171pt x 286.06805pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [101]
+[102 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/horario-e
+xport.png>] <./imagenes/./aula-export.png, id=1891, 338.01282pt x 394.47375pt>
+File: ./imagenes/./aula-export.png Graphic file (type png)
+
+<use ./imagenes/./aula-export.png>
+Package pdftex.def Info: ./imagenes/./aula-export.png used on input line 183.
+(pdftex.def)             Requested size: 338.01198pt x 394.47278pt.
+
+<./imagenes/./informe-pdf-asignatura.png, id=1892, 392.21532pt x 411.03563pt>
+File: ./imagenes/./informe-pdf-asignatura.png Graphic file (type png)
+
+<use ./imagenes/./informe-pdf-asignatura.png>
+Package pdftex.def Info: ./imagenes/./informe-pdf-asignatura.png used on input 
+line 195.
+(pdftex.def)             Requested size: 392.21436pt x 411.03462pt.
+
+Underfull \vbox (badness 2351) has occurred while \output is active []
+
+ [103 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/aula-exp
+ort.png>])
+[104 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/informe-p
+df-asignatura.png>]
+(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\bibliografia.tex
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[][]$\T1/pcr/m/n/10.95 http : / / osl2 . uca . es / wikiformacion / index . php
+ / LaTeX _ para _ Proyecto _$
+ []
+
+) (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\fdl-1.3.tex [105
 
 
 ]
-[78
+[106
 
-] [79] [80] [81] [82] [83] [84])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
- [85]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
+] [107] [108] [109] [110] [111] [112])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
+ [113]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
 
 (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: AEAFBE0255216145DD98FF6A3E709837;6987.
+(rerunfilecheck)             Checksum: 967A3C62ECADB6BDA97CF4AE46CB9EFD;9689.
 
 
 LaTeX Warning: There were undefined references.
@@ -2038,13 +2416,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 21569 strings out of 494045
- 367094 string characters out of 3145971
- 890746 words of memory out of 3000000
- 23704 multiletter control sequences out of 15000+200000
- 58756 words of font info for 71 fonts, out of 3000000 for 9000
+ 21910 strings out of 494045
+ 374711 string characters out of 3145971
+ 897048 words of memory out of 3000000
+ 23866 multiletter control sequences out of 15000+200000
+ 61073 words of font info for 74 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 61i,9n,57p,731b,3735s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,9n,57p,1121b,3000s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files (x8
@@ -2053,9 +2431,9 @@ Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files (x8
 type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
 times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on memoria.pdf (103 pages, 1191089 bytes).
+Output written on memoria.pdf (131 pages, 1529501 bytes).
 PDF statistics:
- 1697 PDF objects out of 1728 (max. 8388607)
- 695 named destinations out of 1000 (max. 500000)
- 943 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2158 PDF objects out of 2487 (max. 8388607)
+ 839 named destinations out of 1000 (max. 500000)
+ 1295 words of extra memory for PDF output out of 10000 (max. 10000000)
 

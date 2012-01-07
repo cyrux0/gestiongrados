@@ -9,7 +9,7 @@
 
 \section*{Agradecimientos}
 
-Me gustaria agradecer y/o dedicar este texto a ...
+Me gustaria dar las gracias a mi familia por haberme apoyado durante el desarrollo del proyecto en especial mis padres y mi hermano, así como a los compañeros de la carrera que me han ayudado con consejos y ánimos. También dar las gracias a mi tutor de proyecto Juan José Domínguez por los consejos y supervisión.
 
 \cleardoublepage
 
@@ -31,13 +31,33 @@ the section entitled "GNU Free Documentation License".\\
 
 \section*{Notación y formato}
 
-Aquí incluiremos los aspectos relevantes a la notación y el formato a
-lo largo del documento. Para simplificar podemos generar comandos
-nuevos que nos ayuden a ello, ver \texttt{comandos.sty} para más
-información. 
-
 Cuando nos refiramos a un programa en concreto, utilizaremos la
-notación: \\ \programa{emacs}.\\
+notación: \\ \programa{NetBeans}.\\
 
 Cuando nos refiramos a un comando, o función de un lenguaje, usaremos
-la notación: \\ \comando{quicksort}.\\
+la notación: \\ \comando{save}.\\
+
+Cuando nos refiramos a un comando o expresión en consola, usaremos la notación:
+\begin{lstlisting}[style=consola]
+	mysql > FLUSH PRIVILEGES
+\end{lstlisting}
+
+Cuando nos refiramos a fragmentos de código, usaremos la notación:
+\begin{lstlisting}[style=PHP]
+class Titulaciones extends MY_Controller 
+{
+
+    function __construct() {
+        parent::__construct();
+
+        $this->layout = '';
+        $this->notices = '';
+        $this->alerts = '';
+        $this->_filter(array('add', 'create', 
+			'delete', 'edit', 'update',
+			'show_informes', 'show', 
+			'exportar_planificacion'), 
+			array($this, 'authenticate'), 1); 
+	}
+}
+\end{lstlisting}

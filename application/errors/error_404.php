@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>404 Page Not Found</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>404 Página no encontrada</title>
 <style type="text/css">
 
 ::selection{ background-color: #E13300; color: white; }
@@ -55,8 +56,8 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+		<h1>404 Página no encontrada</h1>
+                <p>La página solicitada no existe</p>
 	</div>
 </body>
 </html>

@@ -1,34 +1,28 @@
-"Semestre 1"
-X,X,X,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-X,X,X
-"Semestre 2"
-X,X,X,X,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-X,X,X,X
+,L,M,X,J,V
+09:00,"ADAI C3",,,"pI A2","pI A2"
+09:30,"ADAI C3",,"ADAI C4","pI A2","pI A2"
+10:00,"ADAI C3",,"ADAI C4","ADAI C1",
+10:30,"ADAI C3","ADAI A1","ADAI C4","pI A2|ADAI C1",
+11:00,"ADAI A1","ADAI B1","ADAI C4","ADAI C1","ADAI B4"
+11:30,"pI B2","pI A2|ADAI B1",,"ADAI C1","ADAI B4"
+12:00,"pI B2","ADAI B1","ADAI B2",,"ADAI B4"
+12:30,"pI B2","ADAI B1","ADAI B2",,"ADAI B4"
+13:00,"pI B2","ADAI B1","ADAI B2","ADAI A2","ADAI B4"
+13:30,,"ADAI B1","ADAI B2",,"ADAI B4"
+14:00,,"ADAI A2","ADAI B2","ADAI B6",
+14:30,"ADAI B5",,"ADAI B2","ADAI B6","ADAI A2"
+15:00,"ADAI B5",,,"ADAI B6","ADAI A2"
+15:30,"ADAI B5",,,"ADAI B6","ADAI A2"
+16:00,"ADAI B5",,,"ADAI B6",
+16:30,"ADAI B5",,,"ADAI B6","ADAI A2"
+17:00,"ADAI B5",,,,
+17:30,,,,,
+18:00,,,,,
+18:30,,,,,
+19:00,,,,,
+19:30,,,,,
+20:00,,,,,
+20:30,,,,,
+21:00,,,,,
+21:30,,,,,
+22:00,,,,,

@@ -70,6 +70,7 @@ class Aulas extends MY_Controller
      */
     public function delete($id){
         $aula = Doctrine::getTable('Aula')->find($id);
+        if(!$aula) show_404();
         Doctrine_Query::create()
                 ->delete('AulaActividad')
                 ->addWhere('id_aula = ?', array($id))
@@ -91,6 +92,7 @@ class Aulas extends MY_Controller
     {
         // Extraemos el aula de la bd
         $curso = Doctrine::getTable('Curso')->find($id_curso);
+        if(!$curso) show_404();
         $ocupacion = $curso->getMatrizHorario('id_aula', $id, $semestre, $num_semana);
         $this->load->helper('importacion_csv_helper');
         $this->load->helper('download');

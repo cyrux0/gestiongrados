@@ -5,7 +5,7 @@ class Asignaturas extends MY_Controller {
         $this->asignaturas_table = Doctrine::getTable('Asignatura');
         $this->titulaciones_table = Doctrine::getTable('Titulacion');
         $this->cursos_table = Doctrine::getTable('Curso'); 
-        $this -> layout = '';
+        $this->layout = '';
         $this->notices = '';
         $this->alerts = '';
         $this->page_title = "Gestión de asignaturas";
@@ -16,6 +16,7 @@ class Asignaturas extends MY_Controller {
 
     public function add_to($id) {
         $titulacion = $this->titulaciones_table->find($id);
+        if(!$titulacion) show_404();
         $data['nombre_titulacion'] =  $titulacion->nombre;
         $asignatura = new Asignatura;
         $asignatura -> titulacion_id = $id;
@@ -41,6 +42,7 @@ class Asignaturas extends MY_Controller {
     public function show($id, $id_curso = ''){
         if(!$id_curso) redirect('cursos/select_curso/asignaturas/show/' . $id); //Arreglar esto, ya que select_curso solo coge los dos primeros parámetros, debería coger todos.
         $asignatura = $this->asignaturas_table->find($id);
+        if(!$asignatura) show_404();
         $q = Doctrine_Query::create()->select('c.*, p.*, a.descripcion')->from('PlanActividad p')->innerJoin('p.plandocente c')->innerJoin('p.actividad a')->where('c.id_curso = ? AND c.id_asignatura = ?', array($id_curso, $id));
         $resultado = $q->execute();
         if($this->input->post('js'))
@@ -59,6 +61,7 @@ class Asignaturas extends MY_Controller {
     
     public function edit($id) {
         $asignatura = $this -> asignaturas_table -> find($id);
+        if(!$asignatura) show_404();
         $action = 'asignaturas/update/' . $asignatura -> id;
         $data['data'] = array('result' => $asignatura, 'action' => $action, 'cursos' => range(1, $asignatura->Titulacion->num_cursos));
         $data['nombre_asignatura'] = $asignatura -> nombre;
@@ -81,6 +84,7 @@ class Asignaturas extends MY_Controller {
 
     public function delete($id) {
         $asignatura = $this -> asignaturas_table -> find($id);
+        if(!$asignatura) show_404();
         $titulacion_id = $asignatura -> titulacion_id;
         $asignatura -> delete();
         redirect('titulaciones/show/' . $titulacion_id);

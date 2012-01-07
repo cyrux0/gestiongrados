@@ -80,7 +80,7 @@
 \contentsline {subsection}{\numberline {5.1.8}Cursos}{53}{subsection.5.1.8}
 \contentsline {subsection}{\numberline {5.1.9}Eventos}{53}{subsection.5.1.9}
 \contentsline {subsection}{\numberline {5.1.10}Horarios}{54}{subsection.5.1.10}
-\contentsline {subsection}{\numberline {5.1.11}PlanesDocentes}{54}{subsection.5.1.11}
+\contentsline {subsection}{\numberline {5.1.11}PlanesDocentes}{55}{subsection.5.1.11}
 \contentsline {section}{\numberline {5.2}Base de datos}{55}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Modelo entidad-relaci\IeC {\'o}n}{57}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Tablas y atributos}{58}{subsection.5.2.2}
@@ -116,17 +116,69 @@
 \contentsline {chapter}{\numberline {8}Conclusiones}{75}{chapter.8}
 \contentsline {section}{\numberline {8.1}Opini\IeC {\'o}n personal}{75}{section.8.1}
 \contentsline {section}{\numberline {8.2}Ampliaciones futuras}{75}{section.8.2}
-\contentsline {chapter}{Bibliografia y referencias}{77}{section.8.2}
-\contentsline {chapter}{GNU Free Documentation License}{79}{section*.122}
-\contentsline {section}{1. APPLICABILITY AND DEFINITIONS}{79}{section*.123}
-\contentsline {section}{2. VERBATIM COPYING}{80}{section*.124}
-\contentsline {section}{3. COPYING IN QUANTITY}{80}{section*.125}
-\contentsline {section}{4. MODIFICATIONS}{81}{section*.126}
-\contentsline {section}{5. COMBINING DOCUMENTS}{82}{section*.127}
-\contentsline {section}{6. COLLECTIONS OF DOCUMENTS}{83}{section*.128}
-\contentsline {section}{7. AGGREGATION WITH INDEPENDENT WORKS}{83}{section*.129}
-\contentsline {section}{8. TRANSLATION}{83}{section*.130}
-\contentsline {section}{9. TERMINATION}{83}{section*.131}
-\contentsline {section}{10. FUTURE REVISIONS OF THIS LICENSE}{84}{section*.132}
-\contentsline {section}{11. RELICENSING}{84}{section*.133}
-\contentsline {section}{ADDENDUM: How to use this License for your documents}{84}{section*.134}
+\contentsline {chapter}{\numberline {A}Herramientas utilizadas}{77}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Lenguaje de programaci\IeC {\'o}n}{77}{section.Alph1.1}
+\contentsline {section}{\numberline {A.2}Entorno de desarrollo}{77}{section.Alph1.2}
+\contentsline {section}{\numberline {A.3}Herramienta UML}{77}{section.Alph1.3}
+\contentsline {section}{\numberline {A.4}Redacci\IeC {\'o}n de la memoria y resumen}{78}{section.Alph1.4}
+\contentsline {section}{\numberline {A.5}Ediciones r\IeC {\'a}pidas de c\IeC {\'o}digo}{78}{section.Alph1.5}
+\contentsline {section}{\numberline {A.6}Planificaci\IeC {\'o}n del proyecto}{78}{section.Alph1.6}
+\contentsline {chapter}{\numberline {B}Manual de instalaci\IeC {\'o}n}{79}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Prerrequisitos}{79}{section.Alph2.1}
+\contentsline {section}{\numberline {B.2}Instalaci\IeC {\'o}n de la aplicaci\IeC {\'o}n}{79}{section.Alph2.2}
+\contentsline {paragraph}{}{79}{section*.120}
+\contentsline {section}{\numberline {B.3}Puesta en funcionamiento}{79}{section.Alph2.3}
+\contentsline {chapter}{\numberline {C}Manual de usuario}{83}{appendix.Alph3}
+\contentsline {section}{\numberline {C.1}Bienvenida}{83}{section.Alph3.1}
+\contentsline {section}{\numberline {C.2}Perfil administrador}{83}{section.Alph3.2}
+\contentsline {subsection}{\numberline {C.2.1}Administraci\IeC {\'o}n de usuarios}{84}{subsection.Alph3.2.1}
+\contentsline {subsubsection}{A\IeC {\~n}adir usuario}{84}{section*.124}
+\contentsline {subsubsection}{Ver usuarios}{85}{section*.126}
+\contentsline {subsection}{\numberline {C.2.2}Apartado Configuraci\IeC {\'o}n}{86}{subsection.Alph3.2.2}
+\contentsline {section}{\numberline {C.3}Perfil planificador}{86}{section.Alph3.3}
+\contentsline {subsection}{\numberline {C.3.1}Administraci\IeC {\'o}n de usuarios}{86}{subsection.Alph3.3.1}
+\contentsline {subsection}{\numberline {C.3.2}Gesti\IeC {\'o}n de titulaciones}{86}{subsection.Alph3.3.2}
+\contentsline {subsubsection}{A\IeC {\~n}adir titulaciones}{86}{section*.129}
+\contentsline {subsubsection}{Editar titulaciones}{86}{section*.130}
+\contentsline {subsubsection}{Eliminar titulaciones}{87}{section*.131}
+\contentsline {subsubsection}{Ver asignaturas de una titulaci\IeC {\'o}n}{87}{section*.132}
+\contentsline {subsection}{\numberline {C.3.3}Gesti\IeC {\'o}n de asignaturas}{87}{subsection.Alph3.3.3}
+\contentsline {subsubsection}{A\IeC {\~n}adir asignatura}{87}{section*.133}
+\contentsline {subsubsection}{Resto de operaciones}{87}{section*.134}
+\contentsline {subsection}{\numberline {C.3.4}Gesti\IeC {\'o}n de cursos}{87}{subsection.Alph3.3.4}
+\contentsline {subsection}{\numberline {C.3.5}Gesti\IeC {\'o}n de aulas}{87}{subsection.Alph3.3.5}
+\contentsline {subsubsection}{Crear aula}{87}{section*.135}
+\contentsline {subsubsection}{Ver aulas}{88}{section*.136}
+\contentsline {subsection}{\numberline {C.3.6}Gesti\IeC {\'o}n de Planificaci\IeC {\'o}n Docente}{88}{subsection.Alph3.3.6}
+\contentsline {subsubsection}{A\IeC {\~n}adir plan docente}{88}{section*.137}
+\contentsline {subsubsection}{Importar plan docente}{88}{section*.139}
+\contentsline {subsubsection}{Ver planificaci\IeC {\'o}n}{89}{section*.140}
+\contentsline {subsection}{\numberline {C.3.7}Gesti\IeC {\'o}n del calendario}{89}{subsection.Alph3.3.7}
+\contentsline {subsection}{\numberline {C.3.8}Gesti\IeC {\'o}n de horarios}{90}{subsection.Alph3.3.8}
+\contentsline {subsubsection}{Configuraci\IeC {\'o}n de horarios}{90}{section*.143}
+\contentsline {subsubsection}{Exportar horarios}{91}{section*.146}
+\contentsline {subsubsection}{Comprobaci\IeC {\'o}n de horas impartidas}{92}{section*.147}
+\contentsline {subsubsection}{Informes de asignatura}{92}{section*.148}
+\contentsline {section}{\numberline {C.4}Perfil profesor}{92}{section.Alph3.4}
+\contentsline {section}{\numberline {C.5}Perfil alumno}{93}{section.Alph3.5}
+\contentsline {chapter}{\numberline {D}Importaci\IeC {\'o}n de asignaturas}{95}{appendix.Alph4}
+\contentsline {section}{\numberline {D.1}YAML}{95}{section.Alph4.1}
+\contentsline {chapter}{\numberline {E}Importaci\IeC {\'o}n de planes docentes}{97}{appendix.Alph5}
+\contentsline {chapter}{\numberline {F}Informes}{99}{appendix.Alph6}
+\contentsline {section}{\numberline {F.1}Horarios}{99}{section.Alph6.1}
+\contentsline {section}{\numberline {F.2}Ocupaci\IeC {\'o}n de aulas}{102}{section.Alph6.2}
+\contentsline {section}{\numberline {F.3}Informes de asignatura}{104}{section.Alph6.3}
+\contentsline {chapter}{Bibliografia y referencias}{105}{figure.caption.153}
+\contentsline {chapter}{GNU Free Documentation License}{107}{section*.156}
+\contentsline {section}{1. APPLICABILITY AND DEFINITIONS}{107}{section*.157}
+\contentsline {section}{2. VERBATIM COPYING}{108}{section*.158}
+\contentsline {section}{3. COPYING IN QUANTITY}{108}{section*.159}
+\contentsline {section}{4. MODIFICATIONS}{109}{section*.160}
+\contentsline {section}{5. COMBINING DOCUMENTS}{110}{section*.161}
+\contentsline {section}{6. COLLECTIONS OF DOCUMENTS}{111}{section*.162}
+\contentsline {section}{7. AGGREGATION WITH INDEPENDENT WORKS}{111}{section*.163}
+\contentsline {section}{8. TRANSLATION}{111}{section*.164}
+\contentsline {section}{9. TERMINATION}{111}{section*.165}
+\contentsline {section}{10. FUTURE REVISIONS OF THIS LICENSE}{112}{section*.166}
+\contentsline {section}{11. RELICENSING}{112}{section*.167}
+\contentsline {section}{ADDENDUM: How to use this License for your documents}{112}{section*.168}

@@ -22,16 +22,6 @@ class Horarios extends MY_Controller {
         $curso = Doctrine::getTable("Curso")->find($id_curso);
         $num_semanas_teoria = $curso->num_semanas_teoria;
 
-        // Esa consulta seguramente sea inútil
-        $horarios = Doctrine_Query::create()
-                ->select('h.*')
-                ->from('Horario h')
-                ->where('h.id_curso = ?', $id_curso)
-                ->andWhere('h.id_titulacion = ?', $id_titulacion)
-                ->orderBy('h.num_curso_titulacion, h.semestre, h.num_grupo_titulacion')
-                ->execute();
-
-
         // Creamos un array cursos que será el que pasemos a la vista
         $cursos = array();
         // Guardamos el número de cursos que será el tamaño del array anterior.

@@ -5,13 +5,14 @@ require_once APPPATH.'config/database.php';
 
 // Allow Doctrine to load Model classes automatically:
 spl_autoload_register( array('Doctrine', 'autoload') );
-
+$CI =& get_instance();
+$CI->load->database();
 // Load our database connections into Doctrine_Manager:
 $dsn = 'mysql' .
-'://' . 'userpfc' .
-':'   . 'pfcpass' .
-'@'   . 'localhost'.
-'/'   . 'pfc_development';
+'://' . $CI->db->username .
+':'   . $CI->db->password .
+'@'   . $CI->db->hostname .
+'/'   . $CI->db->database ;
 
 $conn = Doctrine_Manager::connection($dsn, 'default');
 $conn->setCharset('utf8');

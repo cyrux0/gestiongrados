@@ -82,6 +82,7 @@ class Titulaciones extends MY_Controller {
 
     public function delete($id) {
         $titulacion = $this -> titulaciones_table -> find($id);
+        if(!$titulacion) show_404();
         $titulacion -> asignaturas -> delete();
         $titulacion -> delete();
         redirect('titulaciones/index');
@@ -89,6 +90,7 @@ class Titulaciones extends MY_Controller {
 
     public function edit($id) {
         $titulacion = $this -> titulaciones_table -> find($id);
+        if(!$titulacion) show_404();
         $action = 'titulaciones/update/' . $id;
         $data['data'] = array('titulacion' => $titulacion, 'action' => $action);
         $data['page_title'] = 'EDIT TITULACIONES';
@@ -113,6 +115,7 @@ class Titulaciones extends MY_Controller {
         if(!isset($id_curso)) redirect('cursos/select_curso/titulaciones/show/' . $id);
         $data['asignaturas'] = $this->asignaturas_table->findByTitulacion_id($id);
         $data['titulacion'] = $this->titulaciones_table->find($id);
+        if(!$data['titulacion']) show_404();
         $data['page_title'] = 'INDEX ASIGNATURAS';
         $data['id_curso'] = $id_curso;
         if($this->input->post('js')){
@@ -127,6 +130,7 @@ class Titulaciones extends MY_Controller {
         if(!isset($id_titulacion)) redirect('titulaciones/select_titulacion/titulaciones/show_planificacion/' . $id_curso);
         
         $titulacion = Doctrine::getTable('Titulacion')->find($id_titulacion);
+        if(!$titulacion) show_404();
         $salida_total = $titulacion->getPlanificacion($id_curso);
         
         $this->load->view('titulaciones/show_planificacion', array('salida' => $salida_total, 'id_curso' => $id_curso, 'id_titulacion' => $id_titulacion));
@@ -138,6 +142,7 @@ class Titulaciones extends MY_Controller {
         if(!isset($id_titulacion)) redirect('titulaciones/select_titulacion/titulaciones/exportar_planificacion/' . $id_curso);
         
         $titulacion = Doctrine::getTable('Titulacion')->find($id_titulacion);
+        if(!$titulacion) show_404();
         // Obtenemos la planificación de la titulación
         $salida_total = $titulacion->getPlanificacion($id_curso);
         $headers = array('Asignatura', 

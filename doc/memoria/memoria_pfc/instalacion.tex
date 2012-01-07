@@ -1,37 +1,77 @@
-% -*-instalacion.tex-*-
-% Este fichero es parte de la plantilla LaTeX para
-% la realización de Proyectos Final de Carrera, protejido
-% bajo los términos de la licencia GFDL.
-% Para más información, la licencia completa viene incluida en el
-% fichero fdl-1.3.tex
+\section{Prerrequisitos}
 
-% Copyright (C) 2009 Pablo Recio Quijano 
+Para poder instalar la aplicación en un servidor debemos tener previamente instalados una serie de programas, disponibles tanto en Linux como en Windows. A continuación se enumeran estos paquetes necesarios para el funcionamiento:
 
-Veamos que tenemos que hacer para instalar \LaTeX{} con todas sus
-capacidades en un sistema basado en Debian, como Ubuntu.
-Primero hay que tener en cuenta que \LaTeX{} es relativamente pesado
-con respecto a otros compiladores. \\
+\begin{itemize}
 
-Nosotros vamos a utilizar la distribución de \LaTeX{} incluida en los
-repositorios de Ubuntu llamada \programa{texlive}. Si la buscas en
-tu gestor de paquetes, encontrarás infinidad de paquetes aparte
-del principal. Existen otras distribuciones como Te\TeX\\
+\item {\bf MySQL Server}: Es el sistema gestor de base de datos de la aplicación. En Linux se puede obtener de los repositorios, también se puede descargar de la página oficial:\\
+\href{http://dev.mysql.com/downloads/mysql/}{http://dev.mysql.com/downloads/mysql/}\\
+Es importante conocer la contraseña de root ya que será necesaria para crear la base de datos y el usuario al que será asociada la aplicación.
+\item {\bf PHP}: Debemos tener instalada una versión de PHP igual o superior a la 5.3, se puede descargar sin problemas de los repositorios, o bien de la página oficial.
+\item {\bf Apache httpd server}: También disponible tanto en la página oficial como en los repositorios.
+\end{itemize}
 
-Si instalas solo los básicos, es decir instalas \programa{texlive} y
-los programas necesarios para él, no podrás compilar este documento,
-ya que faltarian paquetes tales como \programa{supertabular} y
-varios. Por eso, si no tienes problema de espacio en el disco duro te
-recomiendo que instales el paquete \programa{texlive-full}, que
-instala \negrita{todos} los paquetes de \programa{texlive}, incluyendo
-documentación en todos los idiomas disponibles. Si buscas no tener
-problemas de dependencias, este es tu método.\\
+\section{Instalación de la aplicación}
+La aplicación se proporciona en un fichero .zip, así que solo habrá que descomprimirlo en una carpeta del servidor web, es importante saber la ruta desde la que se accede en el servidor, ya que habrá que configurar la aplicación apropiadamente más adelante.
+\paragraph{}
+Es importante no cambiar ningún fichero ni carpeta en la jerarquía de directorios de la aplicación, sino el funcionamiento podría alterarse. También es importante no borrar el fichero .htaccess disponible en la raíz de la aplicación.
 
+\section{Puesta en funcionamiento}
+Para que la aplicación funcione, necesita tener una base de datos creada, además del usuario con el que se conectará desde la aplicación. Para ello se deben seguir los pasos descritos a continuación:
+\begin{itemize}
+\item Lo primero que hay que hacer es acceder a {\em MySQL} con el usuario root, escribiendo desde el terminal lo siguiente:
 \begin{lstlisting}[style=consola]
-  sudo apt-get install texlive-full
+	mysql -u root -p
 \end{lstlisting}
+Y a continuación se nos pedirá la contraseña.
+\item El siguiente paso es crear la base de datos con el nombre ''gestiongrados'', para ello escribimos:
+\begin{lstlisting}[style=consola]
+	mysql > CREATE DATABASE gestiongrados;
+\end{lstlisting}
+\item Una vez creada la base de datos, hay que crear el usuario ''gestiongrados'', escribimos lo siguiente en la consola de {\em MySQL}:
+\begin{lstlisting}[style=consola]
+	mysql > GRANT CREATE, SELECT, INSERT, DELETE, UPDATE 
+	ON gestiongrados.* to 'gestiongrados'@'localhost' 
+	IDENTIFIED BY 'ges1234';
+\end{lstlisting}
+Nótese que se ha asignado el password ges1234, puede ser cambiado, pero deberá ser configurado en la aplicación más adelante.
+\item Aplicamos los cambios en la base de datos:
+\begin{lstlisting}[style=consola]
+	mysql > FLUSH PRIVILEGES
+\end{lstlisting}
+\end{itemize}
 
-En caso de querer ser un poco más concreto, en principio puedes
-trabajar con la más básica (\programa{texlive} y sus dependencias) y
-en función de los paquetes que te vayan faltando, los instalas.
+Ya tenemos la base de datos creada, pero ahora hay que modificar algunos parámetros de configuración en el fichero de configuración de la aplicación. Para ello abrimos el fichero './application/config/config.php'.\\
+Este fichero únicamente hace asignaciones en un array asociativo \$config, donde cada clave es un parámetro de configuración. Debemos hacer la siguiente modificación:
 
-% TO-DO: paquetes concretos e instalación en otros sistemas
+\begin{itemize}
+\item En primer lugar debemos modificar el valor de la clave ''base\_url'', que es el que contiene la url y ruta de la carpeta del servidor donde se ubica la aplicación, por ejemplo si el servidor es gestion.uca.es, y la ruta es /gestiongrados, el valor de la clave deberá ser:
+\begin{lstlisting}[style=PHP]
+$config['base_url'] = 'http://gestion.uca.es/gestiongrados';
+\end{lstlisting}
+\item No modificar ningún otro parámetro, ya que esto podría provocar un mal funcionamiento de la aplicación.
+\end{itemize}
+
+A continuación debemos ir al fichero './application/config/database.php' y hacer las siguientes modificaciones:
+\begin{itemize}
+\item Modificar el valor del hostname, que corresponderá al servidor donde estará ubicada la base de datos.
+\begin{lstlisting}[style=PHP]
+	$db['default']['hostname'] = 'localhost';
+\end{lstlisting}
+\item Modificar el nombre de usuario si se ha cambiado al crear la base de datos, sino dejar el que está ('gestiongrados'):
+\begin{lstlisting}[style=PHP]
+	$db['default']['username'] = 'gestiongrados';
+\end{lstlisting}
+\item Modificar el password si se ha modificado al crear el usuario en la base de datos, sino dejar el que está ('ges1234'):
+\begin{lstlisting}[style=PHP]
+	$db['default']['password'] = 'ges1234';
+\end{lstlisting}
+\item Modificar el nombre de la base de datos si se ha modificado al crearla, sino dejar el que está ('gestiongrados'):
+\begin{lstlisting}[style=PHP]
+	$db['default']['database'] = 'gestiongrados';
+\end{lstlisting}
+\item Dejar todos los demás parámetros tal cual están, sino se podría obtener un mal funcionamiento.
+\end{itemize}
+
+Una vez hecho esto, podremos finalizar la aplicación entrando en la ruta de instalación de la aplicación, que se encargará de crear la estructura de la base de datos además de un usuario administrador, al que podremos asignar una contraseña, para ello debemos escribir en el navegador la ruta base de la aplicación, seguido de "/install", pantalla en la que se nos pedirá una contraseña para finalizar la instalación de la aplicación, además de una dirección de correo electrónico que será la que se use para entrar en la aplicación. Una vez terminada la instalación, se nos indicará con un mensaje, y podremos empezar a trabajar con ella.
+
