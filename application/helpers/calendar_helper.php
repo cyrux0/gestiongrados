@@ -244,6 +244,14 @@ function generar_pdf($nombre_titulacion, $nombre_asignatura, $id_asignatura, $id
         }
         ksort($columna);
     }
+    if(empty($horas))
+    {
+        $asignatura = Doctrine::getTable("Asignatura")->find($id_asignatura);
+        $CI =& get_instance();
+        $CI->session->set_flashdata("alerts", "No hay datos suficientes para realizar el informe");
+        redirect("titulaciones/show_informes/" . $asignatura->titulacion_id . "/" . $id_curso);
+    }
+        
     $horas_traspuesta = call_user_func_array('array_map',array_merge(array(NULL),$horas));
     $CI = & get_instance();
         

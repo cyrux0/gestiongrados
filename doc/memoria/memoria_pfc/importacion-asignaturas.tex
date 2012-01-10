@@ -1,0 +1,42 @@
+En esta sección se explicará el formato que deben seguir los archivos de importación de asignaturas. Existen solo un formato posible para hacer la importación de las asignaturas, éste es YAML (YAML Ain't Markup Language). Es un lenguaje creado para escribir objetos de un lenguaje orientado a objetos en un archivo de texto, por ello parece el más adecuado para hacer la importación de las asignaturas.
+
+\section{YAML}
+
+Es un formato que destaca por su sencillez y claridad a la hora de construir el archivo, además de ser un formato recomendado para plasmar objetos de un lenguaje de programación en un archivo de texto.
+\\
+La construcción del archivo se hace de la siguiente forma, se comienza con una línea con el nombre de la clase que se va a importar, en este caso, Asignatura. Es importante que la primera letra esté en mayúsculas y la palabra en singular. Se sigue la palabra del caracter ':'. A continuación después de un salto de línea el siguiente nivel debe estar indentado, el siguiente paso es especificar un objeto concreto, se escribe una palabra como identificador, seguido de ':', y a continuación el siguiente nivel, que serían los atributos de la asignatura. Estos atributos deben estar indentados y se escribirá el nombre del atributo, seguido de ':', y del valor del atributo. Es importante conocer el valor del identificador de la titulación a la que se va a asociar, éste se puede consultar en el listado de titulaciones de la aplicación.
+\\
+Un ejemplo de un archivo seria el siguiente:
+\begin{verbatim}
+Asignatura:
+  Asignatura_7:
+    codigo: '123'
+    nombre: 'Análisis y diseño de algoritmos I'
+    abreviatura: ADAI
+    creditos: '6'
+    materia: Algoritmia
+    departamento: 'Lenguajes y sistemas'
+    curso: '2'
+    semestre: primero
+    titulacion_id: 5
+  Asignatura_8:
+    codigo: '124'
+    nombre: 'Estructura de Datos I'
+    abreviatura: EDI
+    creditos: '6'
+    materia: Programación
+    departamento: 'Lenguajes y sistemas'
+    curso: '1'
+    semestre: segundo
+    titulacion_id: 5
+  Asignatura_9:
+    codigo: '122'
+    nombre: 'Fundamentos en Informática'
+    abreviatura: FI
+    creditos: '6'
+    materia: Porgramación
+    departamento: 'Lenguajes y sistemas'
+    curso: '1'
+    semestre: primero
+    titulacion_id: 6
+\end{verbatim}

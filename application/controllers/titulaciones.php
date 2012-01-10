@@ -199,6 +199,8 @@ class Titulaciones extends MY_Controller {
     public function select_titulacion(){
         list($controller, $action, $route) = explode('/', $this->uri->uri_string(), 3);
         $titulaciones = $this->titulaciones_table->findAll();
+        $flash = $this->session->flashdata('alerts');
+        
         $this->load->view('titulaciones/select_titulacion', array('titulaciones' => $titulaciones, 'action' => $route));
     }
 }

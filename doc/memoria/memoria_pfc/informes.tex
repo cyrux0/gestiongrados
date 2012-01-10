@@ -1,0 +1,198 @@
+En este capítulo se mostrarán algunos de los informes que genera la aplicación, tanto en pdf como csv.
+
+\section{Horarios}
+
+Se puede exportar un horario completo a CSV, se muestran en el mismo archivo separados por saltos de línea los horarios pertenecientes a un grupo. Un ejemplo sería el siguiente:
+
+\begin{verbatim}
+Horario tipo 
+,L,M,X,J,V
+09:00,"ADAI C3",,,"pI A2","pI A2"
+09:30,"ADAI C3",,"ADAI C4","pI A2","pI A2"
+10:00,"ADAI C3",,"ADAI C4",,
+10:30,"ADAI C3",,"ADAI C4","pI A2",
+11:00,,,"ADAI C4",,"ADAI B4"
+11:30,"pI B2","pI A2",,,"ADAI B4"
+12:00,"pI B2",,,,"ADAI B4"
+12:30,"pI B2",,,,"ADAI B4"
+13:00,"pI B2",,,"ADAI A2","ADAI B4"
+13:30,,,,,"ADAI B4"
+14:00,,"ADAI A2",,"ADAI B6",
+14:30,"ADAI B5",,,"ADAI B6","ADAI A2"
+15:00,"ADAI B5",,,"ADAI B6","ADAI A2"
+15:30,"ADAI B5",,,"ADAI B6","ADAI A2"
+16:00,"ADAI B5",,,"ADAI B6",
+16:30,"ADAI B5",,,"ADAI B6","ADAI A2"
+17:00,"ADAI B5",,,,
+17:30,,,,,
+18:00,,,,,
+18:30,,,,,
+19:00,,,,,
+19:30,,,,,
+20:00,,,,,
+20:30,,,,,
+21:00,,,,,
+21:30,,,,,
+22:00,,,,,
+
+Semana 1
+,L,M,X,J,V
+09:00,,,,"pI A2","pI A2"
+09:30,,,,"pI A2","pI A2"
+10:00,,,,,
+10:30,,,,"pI A2",
+11:00,,,,,
+11:30,,,,,
+12:00,,,,,
+12:30,,,,,
+13:00,,,,"ADAI A2",
+13:30,,,,,
+14:00,,,,"ADAI A2",
+14:30,,,,,"ADAI A2"
+15:00,,,,,"ADAI A2"
+15:30,,,,"pI A2","ADAI A2"
+16:00,,,,,
+16:30,,,,,"ADAI A2"
+17:00,,,,,
+17:30,,,,,
+18:00,,,,,
+18:30,,,,,
+19:00,,,,,
+19:30,,,,,
+20:00,,,,,
+20:30,,,,,
+21:00,,,,,
+21:30,,,,,
+22:00,,,,,
+
+Semana 3
+,L,M,X,J,V
+09:00,,,,"pI A2","pI A2"
+09:30,,,,"pI A2","pI A2"
+10:00,,,,,
+10:30,,,,"pI A2",
+11:00,,,,,
+11:30,,"pI A2",,,
+12:00,,,,,
+12:30,,,,,
+13:00,,,,"ADAI A2",
+13:30,,,,,
+14:00,,"ADAI A2",,,
+14:30,,,,,"ADAI A2"
+15:00,,,,,"ADAI A2"
+15:30,,,,,"ADAI A2"
+16:00,,,,,
+16:30,,,,,"ADAI A2"
+17:00,,,,,
+17:30,,,,,
+18:00,,,,,
+18:30,,,,,
+19:00,,,,,
+19:30,,,,,
+20:00,,,,,
+20:30,,,,,
+21:00,,,,,
+21:30,,,,,
+22:00,,,,,
+
+Semana 2
+,L,M,X,J,V
+09:00,,,,"pI A2","pI A2"
+09:30,,,,"pI A2","pI A2"
+10:00,,,,,
+10:30,,,,"pI A2",
+11:00,,,,,
+11:30,,"pI A2",,,
+12:00,,,,,
+12:30,,,,,
+13:00,,,,"ADAI A2",
+13:30,,,,,
+14:00,,"ADAI A2",,,
+14:30,,,,,"ADAI A2"
+15:00,,,,,"ADAI A2"
+15:30,,,,,"ADAI A2"
+16:00,,,,,
+16:30,,,,,"ADAI A2"
+17:00,,,,,
+17:30,,,,,
+18:00,,,,,
+18:30,,,,,
+19:00,,,,,
+19:30,,,,,
+20:00,,,,,
+20:30,,,,,
+21:00,,,,,
+21:30,,,,,
+22:00,,,,,
+\end{verbatim}
+
+Esto puede parecer desordenado, pero si se abre con un programa de edición de hojas de cálculo, como por ejemplo {\em LibreOffice}, lo veremos de la siguiente manera:
+
+
+\begin{figure}[H] 
+  \label{informes-horario} 
+	\begin{center}
+    \includegraphics[scale=1]{./horario-export.png}
+  \end{center}
+\caption{Fragmento de un horario exportado abierto con LibreOffice Calc}
+\end{figure}
+
+Se puede observar el horario de forma bastante clara, y desde aquí podremos hacer las ediciones que veamos necesarias.
+
+\section{Ocupación de aulas}
+
+La ocupación de aulas se visualiza en un formato muy similar a la del horario ya que en realidad es un horario en sí mismo, pero filtrado por aula en lugar de un grupo de teoría de una titulación. La única diferencia es que solo veremos la ocupación de la semana que se haya exportado y no las tres en el mismo archivo como pasa con los horarios.
+\\
+Un ejemplo es el siguiente:
+\begin{verbatim}
+,L,M,X,J,V
+09:00,"ADAI C3",,,"pI A2","pI A2"
+09:30,"ADAI C3",,"ADAI C4","pI A2","pI A2"
+10:00,"ADAI C3",,"ADAI C4","ADAI C1",
+10:30,"ADAI C3","ADAI A1","ADAI C4","pI A2|ADAI C1",
+11:00,"ADAI A1","ADAI B1","ADAI C4","ADAI C1","ADAI B4"
+11:30,"pI B2","pI A2|ADAI B1",,"ADAI C1","ADAI B4"
+12:00,"pI B2","ADAI B1","ADAI B2",,"ADAI B4"
+12:30,"pI B2","ADAI B1","ADAI B2",,"ADAI B4"
+13:00,"pI B2","ADAI B1","ADAI B2","ADAI A2","ADAI B4"
+13:30,,"ADAI B1","ADAI B2",,"ADAI B4"
+14:00,,"ADAI A2","ADAI B2","ADAI B6",
+14:30,"ADAI B5",,"ADAI B2","ADAI B6","ADAI A2"
+15:00,"ADAI B5",,,"ADAI B6","ADAI A2"
+15:30,"ADAI B5",,,"ADAI B6","ADAI A2"
+16:00,"ADAI B5",,,"ADAI B6",
+16:30,"ADAI B5",,,"ADAI B6","ADAI A2"
+17:00,"ADAI B5",,,,
+17:30,,,,,
+18:00,,,,,
+18:30,,,,,
+19:00,,,,,
+19:30,,,,,
+20:00,,,,,
+20:30,,,,,
+21:00,,,,,
+21:30,,,,,
+22:00,,,,,
+\end{verbatim}
+
+Visualizado desde {\em LibreOffice Calc} se vería como en la siguiente imagen:
+
+\begin{figure}[H] 
+  \label{informes-ocupacion} 
+	\begin{center}
+    \includegraphics[scale=1]{./aula-export.png}
+  \end{center}
+\caption{Fragmento de la ocupación de un aula exportada abierta con LibreOffice Calc}
+\end{figure}
+
+\section{Informes de asignatura}
+ 
+Podemos hacer informes de asignaturas en PDF con las horas que se impartirán cada semana según los horarios, el PDF se visualizará como el de la siguiente imagen:
+
+\begin{figure}[H] 
+  \label{informes-asignatura} 
+	\begin{center}
+    \includegraphics[scale=1]{./informe-pdf-asignatura.png}
+  \end{center}
+\caption{Fragmento un informe PDF de una asignatura}
+\end{figure}

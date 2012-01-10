@@ -1,0 +1,19 @@
+En esta sección se explicará la forma de importar masivamente planes docentes desde un archivo CSV. Para ello a continuación se explicará el formato que deben seguir estos archivos.
+\\
+En primer lugar hay que escribir una cabecera con los atributos necesarios para construir un plan docente. Esta cabecera seria la siguiente:
+
+\begin{verbatim}
+id_asignatura, id_actividad, horas, horas_semanales, grupos, alternas, id_curso
+\end{verbatim}
+
+Esta sería la cabecera que debe estar en la primera línea del archivo, id\_asignatura corresponde al identificador en la base de datos de la asignatura a la que corresponde este plan docente, id\_actividad es el identificador de la actividad a la que pertenece esa línea del plan docente, este es un número que corresponde al orden en el que aparece la actividad en el formulario de creación de plan docente, es decir, 1 para teoría, 2 para problemas, 3 para laboratorio, 4 para informática y 5 para prácticas de campo. El atributo horas corresponde al número de horas totales que tendrá esa asignatura en esa actividad, horas\_semanales es el número de horas semanales de esa actividad, grupos el número total de grupos que tendrá la actividad, alternas será un valor binario, que indicará si la actividad se imparte en semanas alternas o no, es decir, 1 para sí, 0 para no. Finalmente id\_curso, corresponde al identificador de la base de datos del curso al que pertenece el plan.
+\\
+Un ejemplo del archivo seria el siguiente:
+
+\begin{verbatim}
+id_asignatura, id_actividad, horas, horas_semanales, grupos, alternas, id_curso
+2,1,40,3,3,0,1
+2,2,30,2,9,0,1
+3,2,30,2,9,0,1
+3,1,40,3,3,0,1
+\end{verbatim}

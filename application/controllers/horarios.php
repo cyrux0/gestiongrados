@@ -10,10 +10,15 @@ class Horarios extends MY_Controller {
     }
     
     public function select_grupo($id_titulacion = '', $id_curso = '') {
-        if (!$id_titulacion)
+        if (!$id_titulacion){
+            $this->session->keep_flashdata('alerts');
             redirect('titulaciones/select_titulacion/horarios/select_grupo/');
-        if (!$id_curso)
+        }
+            
+        if (!$id_curso){
+            $this->session->keep_flashdata('alerts');
             redirect('cursos/select_curso/horarios/select_grupo/' . $id_titulacion . '/');
+        }
 
         // Extraemos la titulación a la que se le asignarán los horarios
         $titulacion = Doctrine::getTable("Titulacion")->find($id_titulacion);
@@ -100,59 +105,68 @@ class Horarios extends MY_Controller {
 
 
         $asignaturas = $query_asignaturas->execute();
+        $asignaturas_totales = Doctrine::getTable('Asignatura')->findByTitulacion_idAndCurso($id_titulacion, $curso_titulacion);
+        if($asignaturas->count() and $asignaturas->count() == $asignaturas_totales->count())
+        {
 
-        $asignatura = $asignaturas[0];
+            $asignatura = $asignaturas[0];
 
-        foreach ($asignatura->PlanesDocentes[0]->planactividades as $planactividad) {
-            if ($planactividad->id_actividad == 1) {
-                $grupos_totales_teoria = $planactividad->grupos; // Esto habría que sacarlo de otro sitio pero de momento se deja ahí.
-            }
-        }
-        
-        foreach ($asignaturas as $asignatura) {
             foreach ($asignatura->PlanesDocentes[0]->planactividades as $planactividad) {
-                if ($planactividad->id_actividad == 1) { // Teoría
-                    for ($i = 0; $i < $planactividad->horas_semanales; $i += $slot_minimo) {
-                        $linea_horario = new LineaHorario;
-                        $linea_horario->slot_minimo = $slot_minimo;
-                        $linea_horario->id_asignatura = $asignatura->id;
-                        $linea_horario->id_actividad = $planactividad->id_actividad;
-                        $linea_horario->num_grupo_actividad = $num_grupo;
-                        if ($asignatura->semestre == "primero")
-                            $horario_semestre1->lineashorario[] = $linea_horario;
-                        else
-                            $horario_semestre2->lineashorario[] = $linea_horario;
-                    }
-                }else {
-                    // Se asigna el número de grupos de esta actividad que tiene la asignatura (Se divide entre 2 si son semanas alternas, ya que los grupos irán de dos en dos)
-                    $grupos = $planactividad->alternas? $planactividad->grupos / 2 : $planactividad->grupos;
-                    // Se calcula el número de grupos por asignar, para ello se usa esta fórmula.
-                    $por_asignar = ($grupos - floor($grupos / $grupos_totales_teoria) * ($num_grupo - 1));
-                    // Aquí se calculan los que están ya asignados.
-                    $asignados = $grupos - $por_asignar;
-                    // Se dividen los que quedan entre el número de grupos de teoría que quedan por llegar todavía.
-                    $grupos_corresp = floor($por_asignar / ($grupos_totales_teoria - $num_grupo + 1));
-                    
-                    // Por cada grupo correspondiente a este horario creamos una línea de horario y la asignamos al horario.
-                    for ($j = 0; $j < $grupos_corresp; $j++) {
-                        $linea_horario = new LineaHorario;
-                        $linea_horario->slot_minimo = $planactividad->horas_semanales;
-                        $linea_horario->id_asignatura = $asignatura->id;
-                        $linea_horario->id_actividad = $planactividad->id_actividad;
-                        $linea_horario->num_grupo_actividad = $asignados + $j + 1;
-                        if ($asignatura->semestre == "primero")
-                            $horario_semestre1->lineashorario[] = $linea_horario;
-                        else
-                            $horario_semestre2->lineashorario[] = $linea_horario;
+                if ($planactividad->id_actividad == 1) {
+                    $grupos_totales_teoria = $planactividad->grupos; // Esto habría que sacarlo de otro sitio pero de momento se deja ahí.
+                }
+            }
+
+            foreach ($asignaturas as $asignatura) {
+                foreach ($asignatura->PlanesDocentes[0]->planactividades as $planactividad) {
+                    if ($planactividad->id_actividad == 1) { // Teoría
+                        for ($i = 0; $i < $planactividad->horas_semanales; $i += $slot_minimo) {
+                            $linea_horario = new LineaHorario;
+                            $linea_horario->slot_minimo = $slot_minimo;
+                            $linea_horario->id_asignatura = $asignatura->id;
+                            $linea_horario->id_actividad = $planactividad->id_actividad;
+                            $linea_horario->num_grupo_actividad = $num_grupo;
+                            if ($asignatura->semestre == "primero")
+                                $horario_semestre1->lineashorario[] = $linea_horario;
+                            else
+                                $horario_semestre2->lineashorario[] = $linea_horario;
+                        }
+                    }else {
+                        // Se asigna el número de grupos de esta actividad que tiene la asignatura (Se divide entre 2 si son semanas alternas, ya que los grupos irán de dos en dos)
+                        $grupos = $planactividad->alternas? $planactividad->grupos / 2 : $planactividad->grupos;
+                        // Se calcula el número de grupos por asignar, para ello se usa esta fórmula.
+                        $por_asignar = ($grupos - floor($grupos / $grupos_totales_teoria) * ($num_grupo - 1));
+                        // Aquí se calculan los que están ya asignados.
+                        $asignados = $grupos - $por_asignar;
+                        // Se dividen los que quedan entre el número de grupos de teoría que quedan por llegar todavía.
+                        $grupos_corresp = floor($por_asignar / ($grupos_totales_teoria - $num_grupo + 1));
+
+                        // Por cada grupo correspondiente a este horario creamos una línea de horario y la asignamos al horario.
+                        for ($j = 0; $j < $grupos_corresp; $j++) {
+                            $linea_horario = new LineaHorario;
+                            $linea_horario->slot_minimo = $planactividad->horas_semanales;
+                            $linea_horario->id_asignatura = $asignatura->id;
+                            $linea_horario->id_actividad = $planactividad->id_actividad;
+                            $linea_horario->num_grupo_actividad = $asignados + $j + 1;
+                            if ($asignatura->semestre == "primero")
+                                $horario_semestre1->lineashorario[] = $linea_horario;
+                            else
+                                $horario_semestre2->lineashorario[] = $linea_horario;
+                        }
                     }
                 }
             }
+
+            $horario_semestre1->save();
+            $horario_semestre2->save();
+
+            redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
         }
-
-        $horario_semestre1->save();
-        $horario_semestre2->save();
-
-        redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
+        else
+        {
+            $this->session->set_flashdata('alerts', "Error: Falta algún plan docente necesario para crear el horario");
+            redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
+        }
     }
 /*
     public function asignar_aulas($id) {
@@ -341,60 +355,73 @@ class Horarios extends MY_Controller {
     
     public function edit_teoria($id_tipo, $num_semana) {
         $horario = Doctrine::getTable("Horario")->find($id_tipo);
+        if($horario)
+        {
+            // Obtenemos el horario correspondiente a partir del id del horario tipo (si es que se ha creado ya)
+            $query = Doctrine_Query::create()
+                    ->select('h.*')
+                    ->from('Horario h, horarioReference r')
+                    ->where('h.id = r.id_teoria')
+                    ->andWhere('r.id_tipo = ?', array($id_tipo))
+                    ->andWhere('h.num_semana = ?', array($num_semana))
+                    ->execute();
 
-        // Obtenemos el horario correspondiente a partir del id del horario tipo (si es que se ha creado ya)
-        $query = Doctrine_Query::create()
-                ->select('h.*')
-                ->from('Horario h, horarioReference r')
-                ->where('h.id = r.id_teoria')
-                ->andWhere('r.id_tipo = ?', array($id_tipo))
-                ->andWhere('h.num_semana = ?', array($num_semana))
-                ->execute();
+            // Obtenemos las fechas de la semana correspondiente al horario (lunes, fecha de comienzo de curso y fecha de fin de curso
+            list($fecha_inicial, $fecha_lunes, $fecha_final) = dias_iniciales($horario->id_curso, $num_semana, $horario->semestre);
 
-        // Obtenemos las fechas de la semana correspondiente al horario (lunes, fecha de comienzo de curso y fecha de fin de curso
-        list($fecha_inicial, $fecha_lunes, $fecha_final) = dias_iniciales($horario->id_curso, $num_semana, $horario->semestre);
+            // Nos aseguramos que el número de la semana esté comprendido entre 0 y las semanas de teoría
+            if ($horario->curso->num_semanas_teoria > 0 and $num_semana <= $horario->curso->num_semanas_teoria and $num_semana > 0) {
+                // Si no se ha creado aun el horario lo creamos
+                if (!$query->getFirst()) {
+                    $horario_teoria = new Horario;
+                    $horario_teoria->num_semana = $num_semana;
+                    $horario_teoria->id_curso = $horario->id_curso;
+                    $horario_teoria->id_titulacion = $horario->id_titulacion;
+                    $horario_teoria->num_curso_titulacion = $horario->num_curso_titulacion;
+                    $horario_teoria->semestre = $horario->semestre;
+                    $horario_teoria->num_grupo_titulacion = $horario->num_grupo_titulacion;
 
-        // Nos aseguramos que el número de la semana esté comprendido entre 0 y las semanas de teoría
-        if ($horario->curso->num_semanas_teoria > 0 and $num_semana <= $horario->curso->num_semanas_teoria and $num_semana > 0) {
-            // Si no se ha creado aun el horario lo creamos
-            if (!$query->getFirst()) {
-                $horario_teoria = new Horario;
-                $horario_teoria->num_semana = $num_semana;
-                $horario_teoria->id_curso = $horario->id_curso;
-                $horario_teoria->id_titulacion = $horario->id_titulacion;
-                $horario_teoria->num_curso_titulacion = $horario->num_curso_titulacion;
-                $horario_teoria->semestre = $horario->semestre;
-                $horario_teoria->num_grupo_titulacion = $horario->num_grupo_titulacion;
-
-                // Copiamos cada una de las líneas de horario de teoría en el nuevo horario
-                foreach ($horario->lineashorario as $lineahorario) {
-                    if ($lineahorario->id_actividad == 1) {
-                        $lineahorarioteoria = $lineahorario->copy();
-                        
-                        // Se comprueba que la fecha está disponible (han empezado las clases y no hay ninguna fiesta)
-                        if (comprobar_fecha_linea($fecha_inicial, $fecha_lunes, $lineahorarioteoria->dia_semana, $horario->id_curso)) {
-                            // En caso contrario ponemos los datos de la línea a null, lo que hará que aparezca sin colocar en el horario
-                            $lineahorarioteoria->hora_inicial = null;
-                            $lineahorarioteoria->hora_final = null;
-                            $lineahorarioteoria->dia_semana = null;
+                    // Copiamos cada una de las líneas de horario de teoría en el nuevo horario
+                    foreach ($horario->lineashorario as $lineahorario) {
+                        if($lineahorario->hora_inicial == null or $lineahorario->hora_final == null)
+                        {
+                            $this->session->set_flashdata("alerts", "Aun quedan horas por asignar en el horario tipo");
+                            redirect("horarios/select_grupo/" . $horario->id_titulacion . "/" . $horario->id_curso);
                         }
-                        // Cargamos la línea en el nuevo horario
-                        $horario_teoria->lineashorario[] = $lineahorarioteoria;
-                   }
+                        
+                        if ($lineahorario->id_actividad == 1) {
+                            $lineahorarioteoria = $lineahorario->copy();
+
+                            // Se comprueba que la fecha está disponible (han empezado las clases y no hay ninguna fiesta)
+                            if (comprobar_fecha_linea($fecha_inicial, $fecha_lunes, $lineahorarioteoria->dia_semana, $horario->id_curso)) {
+                                // En caso contrario ponemos los datos de la línea a null, lo que hará que aparezca sin colocar en el horario
+                                $lineahorarioteoria->hora_inicial = null;
+                                $lineahorarioteoria->hora_final = null;
+                                $lineahorarioteoria->dia_semana = null;
+                            }
+                            // Cargamos la línea en el nuevo horario
+                            $horario_teoria->lineashorario[] = $lineahorarioteoria;
+                       }
+                    }
+                    // Asociamos el nuevo horario a su horario tipo.
+                    $horario->horarioteoria[] = $horario_teoria;
+                    $horario_teoria->save();
+                    $horario->save();
+                    // Cargamos la vista de edición
+                    $this->edit($horario_teoria->id);
+                } else {
+                    // En caso de que ya esté creado el horario, simplemente cargamos la vista
+                    $this->edit($query->getFirst()->id);
                 }
-                // Asociamos el nuevo horario a su horario tipo.
-                $horario->horarioteoria[] = $horario_teoria;
-                $horario_teoria->save();
-                $horario->save();
-                // Cargamos la vista de edición
-                $this->edit($horario_teoria->id);
             } else {
-                // En caso de que ya esté creado el horario, simplemente cargamos la vista
-                $this->edit($query->getFirst()->id);
+                //Error
+                echo "Error: Incorrecto";
             }
-        } else {
-            //Error
-            echo "Error: Incorrecto";
+        }
+        else
+        {
+            $this->session->set_flashdata('alerts', "El horario tipo aun no ha sido creado");
+            redirect('horarios/select_grupo/');
         }
     }
 

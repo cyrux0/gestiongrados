@@ -1,0 +1,14 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdftex 2011.12.12)  7 JAN 2012 16:28
+entering extended mode
+**C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/estilos/comandos.sty
+(C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/estilos/comandos.sty
+! Undefined control sequence.
+l.9 \newcommand
+               {\Hrule}{\rule{\linewidth}{0.5mm}}
+? 
+! Emergency stop.
+l.9 \newcommand
+               {\Hrule}{\rule{\linewidth}{0.5mm}}
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!
