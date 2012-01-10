@@ -479,7 +479,7 @@ class Horarios extends MY_Controller {
         
         
         
-        $success = array('success' => 1);
+        $success = array('success' => 1, 'solapado' => 0, 'aula_ocupada' => 0);
 
         if($linea->horario->num_semana <= $linea->horario->curso->num_semanas_teoria){
             list($fecha_inicial, $fecha_lunes, $fecha_final) = dias_iniciales($linea->horario->id_curso, $linea->horario->num_semana, $linea->horario->semestre);
@@ -522,6 +522,8 @@ class Horarios extends MY_Controller {
         if (isset($lineas)) {
             if ($lineas->count()) {
                 $success['success'] = 0;
+                $success['solapado'] = 1;
+                
                 $success['count'] = $lineas->count();
             }
         }
@@ -530,6 +532,7 @@ class Horarios extends MY_Controller {
             $success['success'] = 0;
             $success['color'] = $linea->color;
             if(!$linea->isValid()){ $success['isvalid'] =1; $success['validations'] = $linea->getErrorStackAsString();}
+            if($lineas_aula->count()) $success['aula_ocupada'] = 1;
         } else {
             $linea->save();
         }

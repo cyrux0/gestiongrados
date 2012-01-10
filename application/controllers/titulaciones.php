@@ -113,8 +113,23 @@ class Titulaciones extends MY_Controller {
 
     public function show($id, $id_curso) {
         if(!isset($id_curso)) redirect('cursos/select_curso/titulaciones/show/' . $id);
-        $data['asignaturas'] = $this->asignaturas_table->findByTitulacion_id($id);
+        $asignaturas = $this->asignaturas_table->findByTitulacion_id($id);
         $data['titulacion'] = $this->titulaciones_table->find($id);
+        
+        $asignaturas_array = array();
+        foreach($asignaturas as &$asignatura)
+        {
+            $plan = Doctrine_Query::create()
+                    ->select('p.id')
+                    ->from('PlanDocente p')
+                    ->where('id_curso = ?', $id_curso)
+                    ->andWhere('id_asignatura = ?', $asignatura->id)
+                    ->execute();
+            $asignatura = $asignatura->toArray();
+            $asignatura['id_plandocente'] = $plan->count()? $plan[0]->id: 0;
+            $asignaturas_array[] = $asignatura;
+        }
+        $data['asignaturas'] = $asignaturas_array;
         if(!$data['titulacion']) show_404();
         $data['page_title'] = 'INDEX ASIGNATURAS';
         $data['id_curso'] = $id_curso;

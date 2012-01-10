@@ -59,7 +59,7 @@ class User extends Doctrine_Record {
 					    'fixed' => false,
 					    'unsigned' => false,
 					    'primary' => false,
-                                            'notnull' => true,
+                                            'notnull' => false,
 					    'autoincrement' => false,
                                             'unique' => true
 					    ));

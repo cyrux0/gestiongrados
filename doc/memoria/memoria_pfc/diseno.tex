@@ -2,7 +2,24 @@ La fase de diseño consiste en aplicar una serie de técnicas para transformar l
 
 Siguiendo los requisitos de la fase anterior, esta tarea es relativamente sencilla y debe resultar en una serie de diagramas y especificaciones que sirvan como guión y documentación a las personas que vayan a participar, ahora o en un futuro en el desarrollo del sistema.\\
 
-La aplicación se rige por el patrón arquitectónico MVC. La capa del modelo equivale al SGBD y al ORM, mientras el controlador es el responsable de hacer de intermediario entre vista y modelo, llevando la lógica de la aplicación. Las vistas serán los ficheros XHTML junto con sus estilos.
+\section{Arquitectura general}
+
+La aplicación se rige por el patrón arquitectónico MVC. Este patrón permite separar la lógica de la presentación, lo que hace que las páginas HTML contengan la mínima cantidad de scripts en PHP integrados en el código.
+\\
+El patrón se divide en tres capas bien diferenciadas:
+
+\begin{itemize}
+\item El modelo representa a las estructuras de datos. Las clases del modelo contienen funciones para modificar los datos, insertar y actualizar la base de datos. 
+\item La vista es la información presentada al usuario. Una vista normalmente es una página web que puede contener datos del modelo para mostrarlos al usuario.
+\item El controlador es un intermediario entre las dos capas anteriores y otros recursos que puedan ser necesarios. Se encarga de procesar las peticiones y generar la página web que será presentada al usuario.
+\end{itemize}
+
+Este patrón favorece la reutilización de código y la claridad.
+
+\section{Elección del framework}
+
+Hay diversos frameworks posibles dentro del lenguaje PHP. Uno de los principales objetivos que buscamos es que nos facilite la separación entre capas y que no sea demasiado intrusivo, además de que sea flexible y eficiente. Es por esto por lo que se decide elegir Codeigniter, ya que otros frameworks existentes, aunque pueden ofrecer más características, pueden también perjudicar la flexibilidad que nos da este framework además de tener una curva de dificultad más alta.
+
 
 \section{Controladores}
 

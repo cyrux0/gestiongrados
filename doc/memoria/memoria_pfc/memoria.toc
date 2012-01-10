@@ -69,21 +69,23 @@
 \contentsline {subsubsection}{Contrato de la operaci\IeC {\'o}n: seleccionar\_aula}{49}{section*.99}
 \contentsline {subsection}{\numberline {4.4.18}Caso de uso: Editar aula}{50}{subsection.4.4.18}
 \contentsline {chapter}{\numberline {5}Dise\IeC {\~n}o}{51}{chapter.5}
-\contentsline {section}{\numberline {5.1}Controladores}{51}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Users}{51}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Login}{52}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Logout}{52}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Admin}{52}{subsection.5.1.4}
-\contentsline {subsection}{\numberline {5.1.5}Titulaciones}{52}{subsection.5.1.5}
-\contentsline {subsection}{\numberline {5.1.6}Asignaturas}{53}{subsection.5.1.6}
-\contentsline {subsection}{\numberline {5.1.7}Aulas}{53}{subsection.5.1.7}
-\contentsline {subsection}{\numberline {5.1.8}Cursos}{53}{subsection.5.1.8}
-\contentsline {subsection}{\numberline {5.1.9}Eventos}{53}{subsection.5.1.9}
-\contentsline {subsection}{\numberline {5.1.10}Horarios}{54}{subsection.5.1.10}
-\contentsline {subsection}{\numberline {5.1.11}PlanesDocentes}{55}{subsection.5.1.11}
-\contentsline {section}{\numberline {5.2}Base de datos}{55}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Modelo entidad-relaci\IeC {\'o}n}{57}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Tablas y atributos}{58}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.1}Arquitectura general}{51}{section.5.1}
+\contentsline {section}{\numberline {5.2}Elecci\IeC {\'o}n del framework}{51}{section.5.2}
+\contentsline {section}{\numberline {5.3}Controladores}{52}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Users}{52}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Login}{52}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Logout}{52}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Admin}{52}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Titulaciones}{53}{subsection.5.3.5}
+\contentsline {subsection}{\numberline {5.3.6}Asignaturas}{53}{subsection.5.3.6}
+\contentsline {subsection}{\numberline {5.3.7}Aulas}{53}{subsection.5.3.7}
+\contentsline {subsection}{\numberline {5.3.8}Cursos}{54}{subsection.5.3.8}
+\contentsline {subsection}{\numberline {5.3.9}Eventos}{54}{subsection.5.3.9}
+\contentsline {subsection}{\numberline {5.3.10}Horarios}{54}{subsection.5.3.10}
+\contentsline {subsection}{\numberline {5.3.11}PlanesDocentes}{55}{subsection.5.3.11}
+\contentsline {section}{\numberline {5.4}Base de datos}{55}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Modelo entidad-relaci\IeC {\'o}n}{57}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Tablas y atributos}{58}{subsection.5.4.2}
 \contentsline {subsubsection}{Tabla actividades}{58}{section*.102}
 \contentsline {subsubsection}{Tabla asignaturas}{58}{section*.103}
 \contentsline {subsubsection}{Tabla aulaactividades}{58}{section*.104}

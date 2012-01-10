@@ -47,83 +47,85 @@
 \BOOKMARK [2][-]{subsection.4.4.17}{Caso de uso: Borrar aula}{section.4.4}% 47
 \BOOKMARK [2][-]{subsection.4.4.18}{Caso de uso: Editar aula}{section.4.4}% 48
 \BOOKMARK [0][-]{chapter.5}{Dise\361o}{}% 49
-\BOOKMARK [1][-]{section.5.1}{Controladores}{chapter.5}% 50
-\BOOKMARK [2][-]{subsection.5.1.1}{Users}{section.5.1}% 51
-\BOOKMARK [2][-]{subsection.5.1.2}{Login}{section.5.1}% 52
-\BOOKMARK [2][-]{subsection.5.1.3}{Logout}{section.5.1}% 53
-\BOOKMARK [2][-]{subsection.5.1.4}{Admin}{section.5.1}% 54
-\BOOKMARK [2][-]{subsection.5.1.5}{Titulaciones}{section.5.1}% 55
-\BOOKMARK [2][-]{subsection.5.1.6}{Asignaturas}{section.5.1}% 56
-\BOOKMARK [2][-]{subsection.5.1.7}{Aulas}{section.5.1}% 57
-\BOOKMARK [2][-]{subsection.5.1.8}{Cursos}{section.5.1}% 58
-\BOOKMARK [2][-]{subsection.5.1.9}{Eventos}{section.5.1}% 59
-\BOOKMARK [2][-]{subsection.5.1.10}{Horarios}{section.5.1}% 60
-\BOOKMARK [2][-]{subsection.5.1.11}{PlanesDocentes}{section.5.1}% 61
-\BOOKMARK [1][-]{section.5.2}{Base de datos}{chapter.5}% 62
-\BOOKMARK [2][-]{subsection.5.2.1}{Modelo entidad-relaci\363n}{section.5.2}% 63
-\BOOKMARK [2][-]{subsection.5.2.2}{Tablas y atributos}{section.5.2}% 64
-\BOOKMARK [0][-]{chapter.6}{Implementaci\363n}{}% 65
-\BOOKMARK [1][-]{section.6.1}{Lenguajes}{chapter.6}% 66
-\BOOKMARK [1][-]{section.6.2}{Extensiones y librer\355as}{chapter.6}% 67
-\BOOKMARK [1][-]{section.6.3}{Herramientas utilizadas}{chapter.6}% 68
-\BOOKMARK [1][-]{section.6.4}{Detalles de la implementaci\363n de la arquitectura del sistema}{chapter.6}% 69
-\BOOKMARK [2][-]{subsection.6.4.1}{Capa modelo}{section.6.4}% 70
-\BOOKMARK [2][-]{subsection.6.4.2}{Capa controlador}{section.6.4}% 71
-\BOOKMARK [2][-]{subsection.6.4.3}{Capa vista}{section.6.4}% 72
-\BOOKMARK [0][-]{chapter.7}{Pruebas}{}% 73
-\BOOKMARK [1][-]{section.7.1}{Pruebas sobre los datos}{chapter.7}% 74
-\BOOKMARK [1][-]{section.7.2}{Especificaci\363n del dise\361o de pruebas}{chapter.7}% 75
-\BOOKMARK [1][-]{section.7.3}{Especificaci\363n de los procedimientos de prueba}{chapter.7}% 76
-\BOOKMARK [1][-]{section.7.4}{Documentaci\363n de la ejecuci\363n de las pruebas}{chapter.7}% 77
-\BOOKMARK [1][-]{section.7.5}{Herramientas utilizadas para las pruebas}{chapter.7}% 78
-\BOOKMARK [0][-]{chapter.8}{Conclusiones}{}% 79
-\BOOKMARK [1][-]{section.8.1}{Opini\363n personal}{chapter.8}% 80
-\BOOKMARK [1][-]{section.8.2}{Ampliaciones futuras}{chapter.8}% 81
-\BOOKMARK [0][-]{appendix.Alph1}{Herramientas utilizadas}{}% 82
-\BOOKMARK [1][-]{section.Alph1.1}{Lenguaje de programaci\363n}{appendix.Alph1}% 83
-\BOOKMARK [1][-]{section.Alph1.2}{Entorno de desarrollo}{appendix.Alph1}% 84
-\BOOKMARK [1][-]{section.Alph1.3}{Herramienta UML}{appendix.Alph1}% 85
-\BOOKMARK [1][-]{section.Alph1.4}{Redacci\363n de la memoria y resumen}{appendix.Alph1}% 86
-\BOOKMARK [1][-]{section.Alph1.5}{Ediciones r\341pidas de c\363digo}{appendix.Alph1}% 87
-\BOOKMARK [1][-]{section.Alph1.6}{Planificaci\363n del proyecto}{appendix.Alph1}% 88
-\BOOKMARK [0][-]{appendix.Alph2}{Manual de instalaci\363n}{}% 89
-\BOOKMARK [1][-]{section.Alph2.1}{Prerrequisitos}{appendix.Alph2}% 90
-\BOOKMARK [1][-]{section.Alph2.2}{Instalaci\363n de la aplicaci\363n}{appendix.Alph2}% 91
-\BOOKMARK [1][-]{section.Alph2.3}{Puesta en funcionamiento}{appendix.Alph2}% 92
-\BOOKMARK [0][-]{appendix.Alph3}{Manual de usuario}{}% 93
-\BOOKMARK [1][-]{section.Alph3.1}{Bienvenida}{appendix.Alph3}% 94
-\BOOKMARK [1][-]{section.Alph3.2}{Perfil administrador}{appendix.Alph3}% 95
-\BOOKMARK [2][-]{subsection.Alph3.2.1}{Administraci\363n de usuarios}{section.Alph3.2}% 96
-\BOOKMARK [2][-]{subsection.Alph3.2.2}{Apartado Configuraci\363n}{section.Alph3.2}% 97
-\BOOKMARK [1][-]{section.Alph3.3}{Perfil planificador}{appendix.Alph3}% 98
-\BOOKMARK [2][-]{subsection.Alph3.3.1}{Administraci\363n de usuarios}{section.Alph3.3}% 99
-\BOOKMARK [2][-]{subsection.Alph3.3.2}{Gesti\363n de titulaciones}{section.Alph3.3}% 100
-\BOOKMARK [2][-]{subsection.Alph3.3.3}{Gesti\363n de asignaturas}{section.Alph3.3}% 101
-\BOOKMARK [2][-]{subsection.Alph3.3.4}{Gesti\363n de cursos}{section.Alph3.3}% 102
-\BOOKMARK [2][-]{subsection.Alph3.3.5}{Gesti\363n de aulas}{section.Alph3.3}% 103
-\BOOKMARK [2][-]{subsection.Alph3.3.6}{Gesti\363n de Planificaci\363n Docente}{section.Alph3.3}% 104
-\BOOKMARK [2][-]{subsection.Alph3.3.7}{Gesti\363n del calendario}{section.Alph3.3}% 105
-\BOOKMARK [2][-]{subsection.Alph3.3.8}{Gesti\363n de horarios}{section.Alph3.3}% 106
-\BOOKMARK [1][-]{section.Alph3.4}{Perfil profesor}{appendix.Alph3}% 107
-\BOOKMARK [1][-]{section.Alph3.5}{Perfil alumno}{appendix.Alph3}% 108
-\BOOKMARK [0][-]{appendix.Alph4}{Importaci\363n de asignaturas}{}% 109
-\BOOKMARK [1][-]{section.Alph4.1}{YAML}{appendix.Alph4}% 110
-\BOOKMARK [0][-]{appendix.Alph5}{Importaci\363n de planes docentes}{}% 111
-\BOOKMARK [0][-]{appendix.Alph6}{Informes}{}% 112
-\BOOKMARK [1][-]{section.Alph6.1}{Horarios}{appendix.Alph6}% 113
-\BOOKMARK [1][-]{section.Alph6.2}{Ocupaci\363n de aulas}{appendix.Alph6}% 114
-\BOOKMARK [1][-]{section.Alph6.3}{Informes de asignatura}{appendix.Alph6}% 115
-\BOOKMARK [0][-]{figure.caption.153}{Bibliografia y referencias}{}% 116
-\BOOKMARK [0][-]{section*.156}{GNU Free Documentation License}{}% 117
-\BOOKMARK [1][-]{section*.157}{1. APPLICABILITY AND DEFINITIONS}{section*.156}% 118
-\BOOKMARK [1][-]{section*.158}{2. VERBATIM COPYING}{section*.156}% 119
-\BOOKMARK [1][-]{section*.159}{3. COPYING IN QUANTITY}{section*.156}% 120
-\BOOKMARK [1][-]{section*.160}{4. MODIFICATIONS}{section*.156}% 121
-\BOOKMARK [1][-]{section*.161}{5. COMBINING DOCUMENTS}{section*.156}% 122
-\BOOKMARK [1][-]{section*.162}{6. COLLECTIONS OF DOCUMENTS}{section*.156}% 123
-\BOOKMARK [1][-]{section*.163}{7. AGGREGATION WITH INDEPENDENT WORKS}{section*.156}% 124
-\BOOKMARK [1][-]{section*.164}{8. TRANSLATION}{section*.156}% 125
-\BOOKMARK [1][-]{section*.165}{9. TERMINATION}{section*.156}% 126
-\BOOKMARK [1][-]{section*.166}{10. FUTURE REVISIONS OF THIS LICENSE}{section*.156}% 127
-\BOOKMARK [1][-]{section*.167}{11. RELICENSING}{section*.156}% 128
-\BOOKMARK [1][-]{section*.168}{ADDENDUM: How to use this License for your documents}{section*.156}% 129
+\BOOKMARK [1][-]{section.5.1}{Arquitectura general}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.2}{Elecci\363n del framework}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.3}{Controladores}{chapter.5}% 52
+\BOOKMARK [2][-]{subsection.5.3.1}{Users}{section.5.3}% 53
+\BOOKMARK [2][-]{subsection.5.3.2}{Login}{section.5.3}% 54
+\BOOKMARK [2][-]{subsection.5.3.3}{Logout}{section.5.3}% 55
+\BOOKMARK [2][-]{subsection.5.3.4}{Admin}{section.5.3}% 56
+\BOOKMARK [2][-]{subsection.5.3.5}{Titulaciones}{section.5.3}% 57
+\BOOKMARK [2][-]{subsection.5.3.6}{Asignaturas}{section.5.3}% 58
+\BOOKMARK [2][-]{subsection.5.3.7}{Aulas}{section.5.3}% 59
+\BOOKMARK [2][-]{subsection.5.3.8}{Cursos}{section.5.3}% 60
+\BOOKMARK [2][-]{subsection.5.3.9}{Eventos}{section.5.3}% 61
+\BOOKMARK [2][-]{subsection.5.3.10}{Horarios}{section.5.3}% 62
+\BOOKMARK [2][-]{subsection.5.3.11}{PlanesDocentes}{section.5.3}% 63
+\BOOKMARK [1][-]{section.5.4}{Base de datos}{chapter.5}% 64
+\BOOKMARK [2][-]{subsection.5.4.1}{Modelo entidad-relaci\363n}{section.5.4}% 65
+\BOOKMARK [2][-]{subsection.5.4.2}{Tablas y atributos}{section.5.4}% 66
+\BOOKMARK [0][-]{chapter.6}{Implementaci\363n}{}% 67
+\BOOKMARK [1][-]{section.6.1}{Lenguajes}{chapter.6}% 68
+\BOOKMARK [1][-]{section.6.2}{Extensiones y librer\355as}{chapter.6}% 69
+\BOOKMARK [1][-]{section.6.3}{Herramientas utilizadas}{chapter.6}% 70
+\BOOKMARK [1][-]{section.6.4}{Detalles de la implementaci\363n de la arquitectura del sistema}{chapter.6}% 71
+\BOOKMARK [2][-]{subsection.6.4.1}{Capa modelo}{section.6.4}% 72
+\BOOKMARK [2][-]{subsection.6.4.2}{Capa controlador}{section.6.4}% 73
+\BOOKMARK [2][-]{subsection.6.4.3}{Capa vista}{section.6.4}% 74
+\BOOKMARK [0][-]{chapter.7}{Pruebas}{}% 75
+\BOOKMARK [1][-]{section.7.1}{Pruebas sobre los datos}{chapter.7}% 76
+\BOOKMARK [1][-]{section.7.2}{Especificaci\363n del dise\361o de pruebas}{chapter.7}% 77
+\BOOKMARK [1][-]{section.7.3}{Especificaci\363n de los procedimientos de prueba}{chapter.7}% 78
+\BOOKMARK [1][-]{section.7.4}{Documentaci\363n de la ejecuci\363n de las pruebas}{chapter.7}% 79
+\BOOKMARK [1][-]{section.7.5}{Herramientas utilizadas para las pruebas}{chapter.7}% 80
+\BOOKMARK [0][-]{chapter.8}{Conclusiones}{}% 81
+\BOOKMARK [1][-]{section.8.1}{Opini\363n personal}{chapter.8}% 82
+\BOOKMARK [1][-]{section.8.2}{Ampliaciones futuras}{chapter.8}% 83
+\BOOKMARK [0][-]{appendix.Alph1}{Herramientas utilizadas}{}% 84
+\BOOKMARK [1][-]{section.Alph1.1}{Lenguaje de programaci\363n}{appendix.Alph1}% 85
+\BOOKMARK [1][-]{section.Alph1.2}{Entorno de desarrollo}{appendix.Alph1}% 86
+\BOOKMARK [1][-]{section.Alph1.3}{Herramienta UML}{appendix.Alph1}% 87
+\BOOKMARK [1][-]{section.Alph1.4}{Redacci\363n de la memoria y resumen}{appendix.Alph1}% 88
+\BOOKMARK [1][-]{section.Alph1.5}{Ediciones r\341pidas de c\363digo}{appendix.Alph1}% 89
+\BOOKMARK [1][-]{section.Alph1.6}{Planificaci\363n del proyecto}{appendix.Alph1}% 90
+\BOOKMARK [0][-]{appendix.Alph2}{Manual de instalaci\363n}{}% 91
+\BOOKMARK [1][-]{section.Alph2.1}{Prerrequisitos}{appendix.Alph2}% 92
+\BOOKMARK [1][-]{section.Alph2.2}{Instalaci\363n de la aplicaci\363n}{appendix.Alph2}% 93
+\BOOKMARK [1][-]{section.Alph2.3}{Puesta en funcionamiento}{appendix.Alph2}% 94
+\BOOKMARK [0][-]{appendix.Alph3}{Manual de usuario}{}% 95
+\BOOKMARK [1][-]{section.Alph3.1}{Bienvenida}{appendix.Alph3}% 96
+\BOOKMARK [1][-]{section.Alph3.2}{Perfil administrador}{appendix.Alph3}% 97
+\BOOKMARK [2][-]{subsection.Alph3.2.1}{Administraci\363n de usuarios}{section.Alph3.2}% 98
+\BOOKMARK [2][-]{subsection.Alph3.2.2}{Apartado Configuraci\363n}{section.Alph3.2}% 99
+\BOOKMARK [1][-]{section.Alph3.3}{Perfil planificador}{appendix.Alph3}% 100
+\BOOKMARK [2][-]{subsection.Alph3.3.1}{Administraci\363n de usuarios}{section.Alph3.3}% 101
+\BOOKMARK [2][-]{subsection.Alph3.3.2}{Gesti\363n de titulaciones}{section.Alph3.3}% 102
+\BOOKMARK [2][-]{subsection.Alph3.3.3}{Gesti\363n de asignaturas}{section.Alph3.3}% 103
+\BOOKMARK [2][-]{subsection.Alph3.3.4}{Gesti\363n de cursos}{section.Alph3.3}% 104
+\BOOKMARK [2][-]{subsection.Alph3.3.5}{Gesti\363n de aulas}{section.Alph3.3}% 105
+\BOOKMARK [2][-]{subsection.Alph3.3.6}{Gesti\363n de Planificaci\363n Docente}{section.Alph3.3}% 106
+\BOOKMARK [2][-]{subsection.Alph3.3.7}{Gesti\363n del calendario}{section.Alph3.3}% 107
+\BOOKMARK [2][-]{subsection.Alph3.3.8}{Gesti\363n de horarios}{section.Alph3.3}% 108
+\BOOKMARK [1][-]{section.Alph3.4}{Perfil profesor}{appendix.Alph3}% 109
+\BOOKMARK [1][-]{section.Alph3.5}{Perfil alumno}{appendix.Alph3}% 110
+\BOOKMARK [0][-]{appendix.Alph4}{Importaci\363n de asignaturas}{}% 111
+\BOOKMARK [1][-]{section.Alph4.1}{YAML}{appendix.Alph4}% 112
+\BOOKMARK [0][-]{appendix.Alph5}{Importaci\363n de planes docentes}{}% 113
+\BOOKMARK [0][-]{appendix.Alph6}{Informes}{}% 114
+\BOOKMARK [1][-]{section.Alph6.1}{Horarios}{appendix.Alph6}% 115
+\BOOKMARK [1][-]{section.Alph6.2}{Ocupaci\363n de aulas}{appendix.Alph6}% 116
+\BOOKMARK [1][-]{section.Alph6.3}{Informes de asignatura}{appendix.Alph6}% 117
+\BOOKMARK [0][-]{figure.caption.153}{Bibliografia y referencias}{}% 118
+\BOOKMARK [0][-]{section*.156}{GNU Free Documentation License}{}% 119
+\BOOKMARK [1][-]{section*.157}{1. APPLICABILITY AND DEFINITIONS}{section*.156}% 120
+\BOOKMARK [1][-]{section*.158}{2. VERBATIM COPYING}{section*.156}% 121
+\BOOKMARK [1][-]{section*.159}{3. COPYING IN QUANTITY}{section*.156}% 122
+\BOOKMARK [1][-]{section*.160}{4. MODIFICATIONS}{section*.156}% 123
+\BOOKMARK [1][-]{section*.161}{5. COMBINING DOCUMENTS}{section*.156}% 124
+\BOOKMARK [1][-]{section*.162}{6. COLLECTIONS OF DOCUMENTS}{section*.156}% 125
+\BOOKMARK [1][-]{section*.163}{7. AGGREGATION WITH INDEPENDENT WORKS}{section*.156}% 126
+\BOOKMARK [1][-]{section*.164}{8. TRANSLATION}{section*.156}% 127
+\BOOKMARK [1][-]{section*.165}{9. TERMINATION}{section*.156}% 128
+\BOOKMARK [1][-]{section*.166}{10. FUTURE REVISIONS OF THIS LICENSE}{section*.156}% 129
+\BOOKMARK [1][-]{section*.167}{11. RELICENSING}{section*.156}% 130
+\BOOKMARK [1][-]{section*.168}{ADDENDUM: How to use this License for your documents}{section*.156}% 131

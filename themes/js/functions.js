@@ -536,6 +536,12 @@ var horarios = {
                 $("#asignaturas div.external-event#subject-" + copiedEventObject.id).attr("id", "subject-" + events[0].id);
             }
         }else{
+            if(data.aula_ocupada == 1){
+                alert('El aula seleccionada está ocupada en ese horario');
+            }
+            if(data.solapado == 1){
+                alert("El slot se solapa con otro incompatible");
+            }
             events.unshift(originalEvent);
         }
     },

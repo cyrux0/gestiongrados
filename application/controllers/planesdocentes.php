@@ -25,17 +25,29 @@ class PlanesDocentes extends MY_Controller{
     */
    public function add_carga($id_asignatura, $id_curso = ''){
         if(!$id_curso) redirect('cursos/select_curso/planesdocentes/add_carga/' . $id_asignatura );
-        $global = new PlanDocente;
-        $global->id_asignatura = $id_asignatura;
-        $global->id_curso = $id_curso;
+        $query_plan = Doctrine_Query::create()
+                ->select('*')
+                ->from('PlanDocente p')
+                ->where('p.id_curso = ?', $id_curso)
+                ->andWhere('p.id_asignatura = ?', $id_asignatura)
+                ->execute();
         $asignatura = $this->asignaturas_table->find($id_asignatura);
-        $action = 'planesdocentes/create/';
-        $data['data'] = array('result' => $global, 'action' => $action);
-        $data['nombre_asignatura'] = $asignatura->nombre;
-        $data['page_title'] = 'Añadiendo carga global';
-        $data['data']['curso_asignatura'] = $asignatura->curso;
-        $data['data']['cursos_totales'] = Doctrine::getTable('Titulacion')->find($asignatura->titulacion_id)->num_cursos;
-        $this->load->view('PlanDocente/add', $data);
+        if($query_plan->count()){
+            $this->session->set_flashdata('alerts', 'Plan docente ya creado');
+            redirect('titulaciones/show/' . $asignatura->titulacion_id . "/" . $id_curso);
+        }else{
+            $global = new PlanDocente;
+            $global->id_asignatura = $id_asignatura;
+            $global->id_curso = $id_curso;
+
+            $action = 'planesdocentes/create/';
+            $data['data'] = array('result' => $global, 'action' => $action);
+            $data['nombre_asignatura'] = $asignatura->nombre;
+            $data['page_title'] = 'Añadiendo carga global';
+            $data['data']['curso_asignatura'] = $asignatura->curso;
+            $data['data']['cursos_totales'] = Doctrine::getTable('Titulacion')->find($asignatura->titulacion_id)->num_cursos;
+            $this->load->view('PlanDocente/add', $data);
+        }
     }
     
     
@@ -177,6 +189,15 @@ class PlanesDocentes extends MY_Controller{
         unset($this->layout);
         $pdf->Output();
     }
+    
+    public function delete($id)
+    {
+        $plan = Doctrine::getTable('PlanDocente')->find($id);
+        $plan->planactividades->delete();
+        $plan->cursoscompartidos->delete();
+        $plan->delete();
+    }
+    
         
     /**
      * Hace las validaciones del formulario de añadir planes docentes
@@ -189,6 +210,8 @@ class PlanesDocentes extends MY_Controller{
         
         return $this->form_validation->run();
     }
+    
+    
 }
 
 /* Fin del archivo planesdocentes.php */

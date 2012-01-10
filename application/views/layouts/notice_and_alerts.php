@@ -8,6 +8,9 @@ if(isset($this->notices) and $this->notices != ''){
 if(isset($this->alerts) and $this->alerts != ''){
     echo '<p class="errors">' . $this->alerts . '</p>';
 }
+if($this->session->flashdata('alerts')){
+    echo '<p class="errors">' . $this->session->flashdata('alerts') . '</p>';
+}
 if(validation_errors()){
     echo '<div class="errors">';
     echo validation_errors('<p class="alert">', '</p>');
