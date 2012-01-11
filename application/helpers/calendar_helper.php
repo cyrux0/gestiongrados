@@ -46,8 +46,8 @@ function matriz_producto_calendario($id_curso, $semestre)
         do {
             $dia_semana = $fecha_inicial_evento->format("w");
             $dia_semana = intval($dia_semana) - 1;
-            $interval = date_diff($fecha_inicial_evento, $fecha_lunes, true);
-            $numero_semana = floor(intval($interval->format('%d'))/7);
+            $difference = date_diff($fecha_inicial_evento, $fecha_lunes, true);
+            $numero_semana = floor(intval($difference->format('%a'))/7);
             // Si la diferencia es par, estamos en semana impar
             $matriz_producto[$numero_semana][$dia_semana] = 0;
             $fecha_inicial_evento->add($interval);
