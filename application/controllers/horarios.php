@@ -168,6 +168,24 @@ class Horarios extends MY_Controller {
             redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
         }
     }
+
+    public function delete_group($id_titulacion, $id_curso, $num_grupo, $num_curso)
+    {
+        $resultados = Doctrine_Query::create()
+            ->select('h.id')
+            ->from('Horario h')
+            ->where('h.id_curso = ?', $id_curso)
+            ->andWhere('h.id_titulacion = ?', $id_titulacion)
+            ->andWhere('h.num_grupo_titulacion = ?', $num_grupo)
+            ->andWhere('h.num_curso_titulacion = ?', $num_curso)
+            ->execute();
+            
+        foreach($resultados as $resultado)
+        {
+            $resultado->delete();
+        }
+    }
+
 /*
     public function asignar_aulas($id) {
         $lineas = Doctrine_Query::create()
