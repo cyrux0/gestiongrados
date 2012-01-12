@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.28)  8 JAN 2012 21:17
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.12)  12 JAN 2012 08:56
 entering extended mode
-**C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/memoria.tex
-(C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/memoria.tex
+**C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/memoria.tex
+(C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/memoria.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,9 +13,9 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\book.cls"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\bk11.clo"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk11.clo"
 File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -31,25 +31,25 @@ File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\estilos\estiloBase.sty
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\estilos\estiloBase.sty
 
 LaTeX Warning: You have requested package `./estilos/estiloBase',
                but the package provides `estiloBase'.
 
 Package: estiloBase 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -199,7 +199,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -230,7 +230,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -254,29 +254,29 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\spanish.ldf"
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\spanish.ldf"
 Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
@@ -289,32 +289,32 @@ Package babel Info: Making . an active character on input line 585.
 Package babel Info: Making < an active character on input line 630.
 Package babel Info: Making > an active character on input line 630.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2011/08/19 v6.82h Hypertext links for LaTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -352,28 +352,28 @@ Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
 Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
 )
 \@linkdim=\dimen104
 \Hy@linkcounter=\count92
 \Hy@pagecounter=\count93
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2011/08/19 v6.82h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count94
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 3932.
@@ -386,7 +386,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4291.
 \c@Hy@tempcnt=\count95
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
@@ -410,19 +410,19 @@ LaTeX Info: Redefining \pageref on input line 5804.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2011/08/19 v6.82h Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip43
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@cnth=\count102
 \Gm@cntv=\count103
@@ -437,8 +437,8 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutvoffset=\dimen114
 \Gm@dimlist=\toks18
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks19
 \symAMSa=\mathgroup4
@@ -446,10 +446,10 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2009/06/22 v3.00
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks20
 \thm@bodyfont=\toks21
@@ -461,24 +461,24 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip46
 \dth@everypar=\toks25
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip47
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks26
 \ex@=\dimen115
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen116
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count105
@@ -519,7 +519,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen124
 \extrarowheight=\dimen125
@@ -527,11 +527,11 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip50
 \backup@length=\skip51
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen126
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\supertabular\supertabular.s
-ty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\supertabular\supe
+rtabular.sty
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
 \c@tracingst=\count117
 \ST@wd=\dimen127
@@ -549,7 +549,9 @@ Package: supertabular 2004/02/20 v4.1e the supertabular environment
 \ST@toadd=\dimen136
 \ST@dimen=\dimen137
 \ST@pbox=\box28
-) (C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+)
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings
+.sty
 \lst@mode=\count118
 \lst@gtempboxa=\box29
 \lst@token=\toks32
@@ -563,21 +565,25 @@ Package: supertabular 2004/02/20 v4.1e the supertabular environment
 \lst@lineno=\count123
 \lst@maxwidth=\dimen141
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.
+sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count124
 \lst@skipnumbers=\count125
 \lst@framebox=\box30
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings
+.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.s
+ty
 Package: caption 2011/11/10 v3.2e Customizing captions (AR)
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.
+sty
 Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
 \captionmargin=\dimen142
 \captionmargin@=\dimen143
@@ -590,12 +596,11 @@ Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: supertabular package is loaded.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eurosym\eurosym.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\eurosym\eurosym.sty"
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box31
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count127
 \float@exts=\toks33
@@ -603,20 +608,20 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks34
 \@floatcapt=\box33
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\preprint\fullpage.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\preprint\fullpage
+.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip55
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
@@ -624,38 +629,44 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \Gin@req@height=\dimen148
 \Gin@req@width=\dimen149
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.sty
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-com
-mon.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer
+\tikz.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pg
+f.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgf
+rcs.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\p
+gfutil-common.tex
 \pgfutil@everybye=\toks35
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-lat
-ex.def
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\p
+gfutil-latex.def
 \pgfutil@abb=\box34
- (C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
+
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.code
-.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\p
+gfrcs.code.tex
 Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
 ))
 Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.sty
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pgfsys.sty
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys.co
-de.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pg
+fcore.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\p
+gfsys.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer
+\pgfsys.code.tex
 Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.cod
-e.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\p
+gfkeys.code.tex
 \pgfkeys@pathtoks=\toks36
 \pgfkeys@temptoks=\toks37
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeysfilt
-ered.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\p
+gfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks38
 ))
 \pgf@x=\dimen150
@@ -673,33 +684,33 @@ ered.code.tex
 \c@pgf@countc=\count130
 \c@pgf@countd=\count131
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cfg
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer
+\pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-pd
-ftex.def
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer
+\pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-co
-mmon-pdf.def
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer
+\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyssof
-tpath.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer
+\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
 \pgfsyssoftpath@smallbuffer@items=\count132
 \pgfsyssoftpath@bigbuffer@items=\count133
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyspro
-tocol.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer
+\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -714,18 +725,18 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore.co
-de.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcore.code.tex
 Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.tex
-
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathcalc.code
-.tex
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathutil.code
-.tex)
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser.co
-de.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+h.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hcalc.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hutil.code.tex)
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hparser.code.tex
 \pgfmath@dimen=\dimen158
 \pgfmath@count=\count134
 \pgfmath@box=\box35
@@ -733,28 +744,28 @@ de.tex
 \pgfmath@stack@operand=\toks40
 \pgfmath@stack@operation=\toks41
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions
-.code.tex
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions
-.basic.code.tex)
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions
-.trigonometric.code.tex)
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions
-.random.code.tex)
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions
-.comparison.code.tex)
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions
-.base.code.tex)
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions
-.round.code.tex)
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions
-.misc.code.tex)))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.cod
-e.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hfunctions.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hfunctions.basic.code.tex)
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hfunctions.trigonometric.code.tex)
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hfunctions.random.code.tex)
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hfunctions.comparison.code.tex)
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hfunctions.base.code.tex)
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hfunctions.round.code.tex)
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hfunctions.misc.code.tex)))
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmat
+hfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count135
 ))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepoi
-nts.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
 \pgf@picminx=\dimen159
 \pgf@picmaxx=\dimen160
@@ -771,118 +782,120 @@ File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
 \pgf@zx=\dimen171
 \pgf@zy=\dimen172
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepat
-hconstruct.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
 \pgf@path@lastx=\dimen173
 \pgf@path@lasty=\dimen174
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepat
-husage.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
 \pgf@shorten@end@additional=\dimen175
 \pgf@shorten@start@additional=\dimen176
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoresco
-pes.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box36
 \pgf@hbox=\box37
 \pgf@layerbox@main=\box38
 \pgf@picture@serial@count=\count136
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoregra
-phicstate.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
 \pgflinewidth=\dimen177
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretra
-nsformations.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
 \pgf@pt@x=\dimen178
 \pgf@pt@y=\dimen179
 \pgf@pt@temp=\dimen180
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorequi
-ck.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreobj
-ects.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepat
-hprocessing.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorearr
-ows.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoresha
-de.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen181
 \pgf@sys@shading@range@num=\count137
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreima
-ge.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreext
-ernal.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
 \pgfexternal@startupbox=\box39
 ))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorelay
-ers.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretra
-nsparency.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepat
-terns.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\
+pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 )))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleshap
-es.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgf
+moduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
 \pgfnodeparttextbox=\box40
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleplot
-.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgf
+moduleplot.code.tex
 File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-v
-ersion-0-65.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility
+\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen182
 \pgf@nodesepend=\dimen183
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-v
-ersion-1-18.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility
+\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 ))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgffor.sty
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfkeys.sty
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.cod
-e.tex))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor.code
-.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgf
+for.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgf
+keys.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\p
+gfkeys.code.tex))
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\p
+gffor.code.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
 \pgffor@iter=\dimen184
 \pgffor@skip=\dimen185
 \pgffor@stack=\toks42
 \pgffor@toks=\toks43
 ))
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\ti
-kz.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlay
+er\tikz\tikz.code.tex
 Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryp
-lothandlers.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\p
+gflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \pgf@plot@mark@count=\count138
 \pgfplotmarksize=\dimen186
@@ -900,8 +913,8 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikznumberofcurrentchild=\count141
 \tikz@fig@count=\count142
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulematr
-ix.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgf
+modulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 \pgfmatrixcurrentrow=\count143
 \pgfmatrixcurrentcolumn=\count144
@@ -909,16 +922,16 @@ File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 )
 \tikz@expandcount=\count146
 
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\li
-braries\tikzlibrarytopaths.code.tex
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlay
+er\tikz\libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 ))))
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\estilos\colores.sty)
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\estilos\comandos.sty
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\estilos\colores.sty)
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\estilos\comandos.sty
 \c@defin=\count147
 \savedwidth=\skip56
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip57
 \LTright=\skip58
@@ -936,7 +949,7 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count152
 \LT@p@ftn=\toks44
 )
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.aux
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\memoria.aux
 
 LaTeX Warning: Label `gannt' multiply defined.
 
@@ -956,10 +969,11 @@ LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 33.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.m
+kii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count153
 \scratchdimen=\dimen194
@@ -975,10 +989,10 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 \AtBeginShipoutBox=\box48
 Package hyperref Info: Link coloring ON on input line 33.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count159
@@ -987,8 +1001,8 @@ LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
 LaTeX Info: Redefining \nameref on input line 33.
 
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.out)
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.out)
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\memoria.out)
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\memoria.out)
 \@outlinefile=\write4
 
 *geometry* driver: auto-detecting
@@ -1029,14 +1043,15 @@ LaTeX Info: Redefining \nameref on input line 33.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\ltcaption.sty
+
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\ltcaption
+.sty
 Package: ltcaption 2011/09/12 v1.3 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-
-ABD: EveryShipout initializing macros
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\portada.tex
-<./imagenes/logo_uca.png, id=530, 468.75125pt x 602.25pt>
+ ABD: EveryShipout initializing macros
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\portada.tex
+<./imagenes/logo_uca.png, id=533, 468.75125pt x 602.25pt>
 File: ./imagenes/logo_uca.png Graphic file (type png)
 
 <use ./imagenes/logo_uca.png>
@@ -1049,11 +1064,11 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
  [1
 
 
-{C:/Users/Dani/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/gestiongr
-ados/gestiongrados/doc/memoria/memoria_pfc/imagenes/logo_uca.png>]) [2
+{C:/Users/daniel.salazar/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:
+/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/logo_uca.png>]) [2
 
 ]
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\primerahoja.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\primerahoja.tex
 File: ./imagenes/logo_uca.png Graphic file (type png)
 
 <use ./imagenes/logo_uca.png>
@@ -1062,7 +1077,7 @@ Package pdftex.def Info: ./imagenes/logo_uca.png used on input line 12.
 ) [3] [4
 
 ]
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\previo.tex [1
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\previo.tex [1
 
 ] [2
 
@@ -1089,7 +1104,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--36
  []
 
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 38.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 37--39
@@ -1100,44 +1115,48 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 41.
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1
+.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(C:\Users\Dani\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang2.sty
+(C:\Users\daniel.salazar\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang2
+.sty
 File: lstlang2.sty 2004/09/05 1.3 listings language file
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 56.
-)
-[5] [6
+) [5] [6
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 54.
- (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.toc
+
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\memoria.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [7
 
-] [8]
-[9])
+] [8] [9])
 \tf@toc=\write5
- [10] (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.lof
+
+[10] (C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\memoria.lof
 [11
 
 ])
 \tf@lof=\write6
- [12] (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.lot)
+ [12] (C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\memoria.lot)
 \tf@lot=\write7
+
 [13
 
 ] [14
@@ -1146,7 +1165,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 60.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\cap1.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\cap1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
@@ -1171,7 +1190,7 @@ l.31 \item {
 
 ]
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 35.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
@@ -1183,20 +1202,20 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 l.62 \chapter
              {Planificación} [2]
 Cap\'{\i }tulo 2.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\cap2.texpdfTeX warning 
-(ext4): destination with the same identifier (name{page.3}) has been already us
-ed, duplicate ignored
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\cap2.texpdfTeX warning (
+ext4): destination with the same identifier (name{page.3}) has been already use
+d, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 \section
-             {Pruebas} [3
+l.23 
+      [3
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.33 \newpage
-              [4] <./imagenes/gantt1.PNG, id=916, 1063.72406pt x 498.36188pt>
+              [4] <./imagenes/gantt1.PNG, id=927, 1063.72406pt x 498.36188pt>
 File: ./imagenes/gantt1.PNG Graphic file (type png)
 
 <use ./imagenes/gantt1.PNG>
@@ -1206,8 +1225,8 @@ Package pdftex.def Info: ./imagenes/gantt1.PNG used on input line 36.
 Overfull \vbox (0.79544pt too high) has occurred while \output is active []
 
 
-[5 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gantt1.PNG>
-] <./imagenes/gantt2.PNG, id=923, 1371.62437pt x 689.57625pt>
+[5 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gantt1.PNG>]
+<./imagenes/gantt2.PNG, id=934, 1371.62437pt x 689.57625pt>
 File: ./imagenes/gantt2.PNG Graphic file (type png)
 
 <use ./imagenes/gantt2.PNG>
@@ -1217,10 +1236,10 @@ Package pdftex.def Info: ./imagenes/gantt2.PNG used on input line 39.
 Overfull \vbox (48.3666pt too high) has occurred while \output is active []
 
 
-[6 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gantt2.PNG>
-])
+[6 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gantt2.PNG>]
+)
 Cap\'{\i }tulo 3.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\cap3.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\cap3.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 11.
  [7
@@ -1242,8 +1261,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
 ) [8]
 Cap\'{\i }tulo 4.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\analisis.tex
-<./imagenes/./gestionusuarios.png, id=940, 613.29124pt x 603.25375pt>
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\analisis.tex
+<./imagenes/./gestionusuarios.png, id=953, 613.29124pt x 603.25375pt>
 File: ./imagenes/./gestionusuarios.png Graphic file (type png)
 
 <use ./imagenes/./gestionusuarios.png>
@@ -1256,9 +1275,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [9
 
 ]
-[10 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionusu
-arios.png (PNG copy)>] [11]
-<./imagenes/./gestiontitulaciones.png, id=973, 957.5775pt x 691.58376pt>
+[10 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionusua
+rios.png (PNG copy)>] [11]
+<./imagenes/./gestiontitulaciones.png, id=986, 957.5775pt x 691.58376pt>
 File: ./imagenes/./gestiontitulaciones.png Graphic file (type png)
 
 <use ./imagenes/./gestiontitulaciones.png>
@@ -1270,9 +1289,9 @@ Overfull \hbox (25.81969pt too wide) in paragraph at lines 114--115
  [] 
  []
 
-[12 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestiontit
-ulaciones.png (PNG copy)>] [13] [14]
-<./imagenes/./gestionasignaturas.png, id=1022, 930.47626pt x 739.76375pt>
+[12 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestiontitu
+laciones.png (PNG copy)>] [13] [14]
+<./imagenes/./gestionasignaturas.png, id=1035, 930.47626pt x 739.76375pt>
 File: ./imagenes/./gestionasignaturas.png Graphic file (type png)
 
 <use ./imagenes/./gestionasignaturas.png>
@@ -1288,13 +1307,13 @@ Overfull \hbox (12.26909pt too wide) in paragraph at lines 290--291
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-[16 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionasi
-gnaturas.png (PNG copy)>]
+[16 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionasig
+naturas.png (PNG copy)>]
 
 LaTeX Warning: Hyper reference `duplicar_asignatura' on page 17 undefined on in
 put line 336.
 
-[17] [18] <./imagenes/./gestioncursos.png, id=1086, 1017.8025pt x 594.22pt>
+[17] [18] <./imagenes/./gestioncursos.png, id=1099, 1017.8025pt x 594.22pt>
 File: ./imagenes/./gestioncursos.png Graphic file (type png)
 
 <use ./imagenes/./gestioncursos.png>
@@ -1310,8 +1329,8 @@ Overfull \hbox (55.93211pt too wide) in paragraph at lines 475--476
 Underfull \vbox (badness 6284) has occurred while \output is active []
 
  [19]
-[20 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestioncur
-sos.png (PNG copy)>]
+[20 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestioncurs
+os.png (PNG copy)>]
 
 LaTeX Warning: Hyper reference `select_curso' on page 21 undefined on input lin
 e 550.
@@ -1325,7 +1344,7 @@ e 591.
 LaTeX Warning: Hyper reference `select_curso' on page 22 undefined on input lin
 e 613.
 
-<./imagenes/./gestionplanificacion.png, id=1131, 889.3225pt x 703.62875pt>
+<./imagenes/./gestionplanificacion.png, id=1144, 889.3225pt x 703.62875pt>
 File: ./imagenes/./gestionplanificacion.png Graphic file (type png)
 
 <use ./imagenes/./gestionplanificacion.png>
@@ -1337,8 +1356,8 @@ ne 636.
 LaTeX Warning: Hyper reference `select_curso' on page 23 undefined on input lin
 e 649.
 
-[23 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionpla
-nificacion.png (PNG copy)>]
+[23 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionplan
+ificacion.png (PNG copy)>]
 
 LaTeX Warning: Hyper reference `duplicar_carga' on page 24 undefined on input l
 ine 663.
@@ -1361,7 +1380,7 @@ e 764.
 LaTeX Warning: Hyper reference `select_curso' on page 26 undefined on input lin
 e 818.
 
-<./imagenes/./gestioncalendario.png, id=1210, 1055.945pt x 726.715pt>
+<./imagenes/./gestioncalendario.png, id=1223, 1055.945pt x 726.715pt>
 File: ./imagenes/./gestioncalendario.png Graphic file (type png)
 
 <use ./imagenes/./gestioncalendario.png>
@@ -1378,8 +1397,8 @@ Overfull \hbox (75.00331pt too wide) in paragraph at lines 840--841
 LaTeX Warning: Hyper reference `select_curso' on page 27 undefined on input lin
 e 854.
 
-[27 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestioncal
-endario.png (PNG copy)>]
+[27 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestioncale
+ndario.png (PNG copy)>]
 
 LaTeX Warning: Hyper reference `select_curso' on page 28 undefined on input lin
 e 886.
@@ -1397,7 +1416,7 @@ e 929.
 LaTeX Warning: Hyper reference `select_curso' on page 29 undefined on input lin
 e 948.
 
-<./imagenes/./gestionhorarios.png, id=1255, 946.53625pt x 771.88374pt>
+<./imagenes/./gestionhorarios.png, id=1268, 946.53625pt x 771.88374pt>
 File: ./imagenes/./gestionhorarios.png Graphic file (type png)
 
 <use ./imagenes/./gestionhorarios.png>
@@ -1417,9 +1436,9 @@ Underfull \vbox (badness 1264) has occurred while \output is active []
 LaTeX Warning: Hyper reference `select_curso' on page 30 undefined on input lin
 e 979.
 
-[30 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionhor
-arios.png (PNG copy)>] [31] [32] [33]
-<./imagenes/./gestionaulas.png, id=1342, 948.54375pt x 623.32875pt>
+[30 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestionhora
+rios.png (PNG copy)>] [31] [32] [33]
+<./imagenes/./gestionaulas.png, id=1355, 948.54375pt x 623.32875pt>
 File: ./imagenes/./gestionaulas.png Graphic file (type png)
 
 <use ./imagenes/./gestionaulas.png>
@@ -1431,9 +1450,9 @@ Overfull \hbox (21.30281pt too wide) in paragraph at lines 1192--1193
  [] 
  []
 
-[34] [35 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/gesti
-onaulas.png (PNG copy)>] [36]
-<./imagenes/./modeloconceptual.png, id=1385, 913.4125pt x 825.0825pt>
+[34] [35 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/gestio
+naulas.png (PNG copy)>] [36]
+<./imagenes/./modeloconceptual.png, id=1398, 913.4125pt x 825.0825pt>
 File: ./imagenes/./modeloconceptual.png Graphic file (type png)
 
 <use ./imagenes/./modeloconceptual.png>
@@ -1446,7 +1465,7 @@ Overfull \hbox (3.73724pt too wide) in paragraph at lines 1322--1323
  []
 
 [37]
-<./imagenes/./secuencia-reg-titulacion.png, id=1401, 849.1725pt x 415.5525pt>
+<./imagenes/./secuencia-reg-titulacion.png, id=1414, 849.1725pt x 415.5525pt>
 File: ./imagenes/./secuencia-reg-titulacion.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-reg-titulacion.png>
@@ -1456,9 +1475,9 @@ t line 1338.
 
 Underfull \vbox (badness 3701) has occurred while \output is active []
 
- [38 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/modelocon
-ceptual.png (PNG copy)>]
-<./imagenes/./secuencia-reg-asignatura.png, id=1407, 795.97375pt x 434.62375pt>
+ [38 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/modeloconc
+eptual.png (PNG copy)>]
+<./imagenes/./secuencia-reg-asignatura.png, id=1420, 795.97375pt x 434.62375pt>
 File: ./imagenes/./secuencia-reg-asignatura.png Graphic file (type png)
 <use ./imagenes/./secuencia-reg-asignatura.png>
 Package pdftex.def Info: ./imagenes/./secuencia-reg-asignatura.png used on inpu
@@ -1467,9 +1486,9 @@ t line 1356.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--reg-titulacion.png (PNG copy)>]
-<./imagenes/./secuencia-edit-asignatura.png, id=1413, 814.04124pt x 769.87625pt
+ [39 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+reg-titulacion.png (PNG copy)>]
+<./imagenes/./secuencia-edit-asignatura.png, id=1426, 814.04124pt x 769.87625pt
 >
 File: ./imagenes/./secuencia-edit-asignatura.png Graphic file (type png)
  <use ./imagenes/./secuencia-edit-asignatura.png>
@@ -1479,9 +1498,9 @@ ut line 1381.
 
 Underfull \vbox (badness 4303) has occurred while \output is active []
 
- [40 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--reg-asignatura.png (PNG copy)>]
-<./imagenes/./secuencia-borrar-asignatura.png, id=1420, 838.13126pt x 641.39626
+ [40 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+reg-asignatura.png (PNG copy)>]
+<./imagenes/./secuencia-borrar-asignatura.png, id=1433, 838.13126pt x 641.39626
 pt>
 File: ./imagenes/./secuencia-borrar-asignatura.png Graphic file (type png)
  <use ./imagenes/./secuencia-borrar-asignatura.png>
@@ -1491,19 +1510,19 @@ nput line 1398.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--edit-asignatura.png (PNG copy)>]
-<./imagenes/./secuencia-importar-asignatura.png, id=1426, 863.225pt x 381.425pt
+ [41 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+edit-asignatura.png (PNG copy)>]
+<./imagenes/./secuencia-importar-asignatura.png, id=1439, 863.225pt x 381.425pt
 >
 File: ./imagenes/./secuencia-importar-asignatura.png Graphic file (type png)
  <use ./imagenes/./secuencia-importar-asignatura.png>
 Package pdftex.def Info: ./imagenes/./secuencia-importar-asignatura.png used on
  input line 1407.
 (pdftex.def)             Requested size: 431.61145pt x 190.71202pt.
- [42 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--borrar-asignatura.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/
-memoria_pfc/imagenes/secuencia-importar-asignatura.png (PNG copy)>]
-<./imagenes/./secuencia-crear-plandocente.png, id=1431, 815.045pt x 453.695pt>
+ [42 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+borrar-asignatura.png (PNG copy)> <C:/xampp/htdocs/gestiongrados/doc/memoria/me
+moria_pfc/imagenes/secuencia-importar-asignatura.png (PNG copy)>]
+<./imagenes/./secuencia-crear-plandocente.png, id=1444, 815.045pt x 453.695pt>
 File: ./imagenes/./secuencia-crear-plandocente.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-crear-plandocente.png>
@@ -1511,7 +1530,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-crear-plandocente.png used on i
 nput line 1424.
 (pdftex.def)             Requested size: 407.5215pt x 226.84694pt.
 
-<./imagenes/./secuencia-gen-informe.png, id=1432, 799.98875pt x 366.36874pt>
+<./imagenes/./secuencia-gen-informe.png, id=1445, 799.98875pt x 366.36874pt>
 File: ./imagenes/./secuencia-gen-informe.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-gen-informe.png>
@@ -1519,7 +1538,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-gen-informe.png used on input l
 ine 1441.
 (pdftex.def)             Requested size: 399.9934pt x 183.18391pt.
 
-<./imagenes/./secuencia-crear-evento.png, id=1433, 882.29625pt x 370.38374pt>
+<./imagenes/./secuencia-crear-evento.png, id=1446, 882.29625pt x 370.38374pt>
 File: ./imagenes/./secuencia-crear-evento.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-crear-evento.png>
@@ -1529,18 +1548,18 @@ line 1449.
 
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
- [43 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--crear-plandocente.png (PNG copy)>] [44 <C:/gestiongrados/gestiongrados/doc/mem
-oria/memoria_pfc/imagenes/secuencia-gen-informe.png (PNG copy)> <C:/gestiongrad
-os/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-crear-evento.png (P
-NG copy)>]
+ [43 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+crear-plandocente.png (PNG copy)>] [44 <C:/xampp/htdocs/gestiongrados/doc/memor
+ia/memoria_pfc/imagenes/secuencia-gen-informe.png (PNG copy)> <C:/xampp/htdocs/
+gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-crear-evento.png (PNG 
+copy)>]
 Overfull \hbox (14.16705pt too wide) in paragraph at lines 1468--1469
 []\T1/ptm/b/n/10.95 Postcondiciones: \T1/ptm/m/n/10.95 Se crea una ins-tan-cia 
 E de Even-to con E.fecha_inicial = fe-cha_inicial, E.fecha_final
  []
 
 
-<./imagenes/./secuencia-exportar-calendario.png, id=1446, 905.3825pt x 429.605p
+<./imagenes/./secuencia-exportar-calendario.png, id=1459, 905.3825pt x 429.605p
 t>
 File: ./imagenes/./secuencia-exportar-calendario.png Graphic file (type png)
  <use ./imagenes/./secuencia-exportar-calendario.png>
@@ -1548,16 +1567,16 @@ Package pdftex.def Info: ./imagenes/./secuencia-exportar-calendario.png used on
  input line 1475.
 (pdftex.def)             Requested size: 452.69014pt x 214.80197pt.
 
-<./imagenes/./secuencia-seleccionar-grupo.png, id=1447, 646.415pt x 347.2975pt>
+<./imagenes/./secuencia-seleccionar-grupo.png, id=1460, 646.415pt x 347.2975pt>
 File: ./imagenes/./secuencia-seleccionar-grupo.png Graphic file (type png)
 <use ./imagenes/./secuencia-seleccionar-grupo.png>
 Package pdftex.def Info: ./imagenes/./secuencia-seleccionar-grupo.png used on i
 nput line 1485.
 (pdftex.def)             Requested size: 323.20671pt x 173.64832pt.
- [45 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--exportar-calendario.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memori
-a/memoria_pfc/imagenes/secuencia-seleccionar-grupo.png (PNG copy)>]
-<./imagenes/./secuencia-anadir-grupo.png, id=1453, 645.41125pt x 299.1175pt>
+ [45 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+exportar-calendario.png (PNG copy)> <C:/xampp/htdocs/gestiongrados/doc/memoria/
+memoria_pfc/imagenes/secuencia-seleccionar-grupo.png (PNG copy)>]
+<./imagenes/./secuencia-anadir-grupo.png, id=1466, 645.41125pt x 299.1175pt>
 File: ./imagenes/./secuencia-anadir-grupo.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-anadir-grupo.png>
@@ -1565,7 +1584,7 @@ Package pdftex.def Info: ./imagenes/./secuencia-anadir-grupo.png used on input
 line 1503.
 (pdftex.def)             Requested size: 322.70483pt x 149.55838pt.
 
-<./imagenes/./secuencia-borrar-grupo.png, id=1454, 651.43375pt x 339.2675pt>
+<./imagenes/./secuencia-borrar-grupo.png, id=1467, 651.43375pt x 339.2675pt>
 File: ./imagenes/./secuencia-borrar-grupo.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-borrar-grupo.png>
@@ -1573,17 +1592,17 @@ Package pdftex.def Info: ./imagenes/./secuencia-borrar-grupo.png used on input
 line 1512.
 (pdftex.def)             Requested size: 325.71606pt x 169.63333pt.
 
-<./imagenes/./secuencia-ubicar-slot.png, id=1455, 580.1675pt x 529.98pt>
+<./imagenes/./secuencia-ubicar-slot.png, id=1468, 580.1675pt x 529.98pt>
 File: ./imagenes/./secuencia-ubicar-slot.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-ubicar-slot.png>
 Package pdftex.def Info: ./imagenes/./secuencia-ubicar-slot.png used on input l
 ine 1521.
 (pdftex.def)             Requested size: 290.08302pt x 264.98933pt.
- [46 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--anadir-grupo.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/memor
-ia_pfc/imagenes/secuencia-borrar-grupo.png (PNG copy)>]
-<./imagenes/./secuencia-editar-tipo.png, id=1461, 617.30624pt x 418.56375pt>
+ [46 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+anadir-grupo.png (PNG copy)> <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria
+_pfc/imagenes/secuencia-borrar-grupo.png (PNG copy)>]
+<./imagenes/./secuencia-editar-tipo.png, id=1474, 617.30624pt x 418.56375pt>
 File: ./imagenes/./secuencia-editar-tipo.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-editar-tipo.png>
@@ -1593,9 +1612,9 @@ ine 1546.
 
 Underfull \vbox (badness 1231) has occurred while \output is active []
 
- [47 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--ubicar-slot.png (PNG copy)>]
-<./imagenes/./secuencia-comprobar-grupo.png, id=1468, 645.41125pt x 256.96pt>
+ [47 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+ubicar-slot.png (PNG copy)>]
+<./imagenes/./secuencia-comprobar-grupo.png, id=1481, 645.41125pt x 256.96pt>
 File: ./imagenes/./secuencia-comprobar-grupo.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-comprobar-grupo.png>
@@ -1603,37 +1622,37 @@ Package pdftex.def Info: ./imagenes/./secuencia-comprobar-grupo.png used on inp
 ut line 1563.
 (pdftex.def)             Requested size: 322.70483pt x 128.47968pt.
 
-<./imagenes/./secuencia-crear-aula.png, id=1469, 600.2425pt x 305.14pt>
+<./imagenes/./secuencia-crear-aula.png, id=1482, 600.2425pt x 305.14pt>
 File: ./imagenes/./secuencia-crear-aula.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-crear-aula.png>
 Package pdftex.def Info: ./imagenes/./secuencia-crear-aula.png used on input li
 ne 1573.
 (pdftex.def)             Requested size: 300.12051pt x 152.56961pt.
- [48 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--editar-tipo.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/memori
-a_pfc/imagenes/secuencia-comprobar-grupo.png (PNG copy)>]
-<./imagenes/./secuencia-borrar-aula.png, id=1475, 625.33624pt x 321.2pt>
+ [48 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+editar-tipo.png (PNG copy)> <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_
+pfc/imagenes/secuencia-comprobar-grupo.png (PNG copy)>]
+<./imagenes/./secuencia-borrar-aula.png, id=1488, 625.33624pt x 321.2pt>
 File: ./imagenes/./secuencia-borrar-aula.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-borrar-aula.png>
 Package pdftex.def Info: ./imagenes/./secuencia-borrar-aula.png used on input l
 ine 1590.
 (pdftex.def)             Requested size: 312.66736pt x 160.59961pt.
- [49 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
--crear-aula.png (PNG copy)> <C:/gestiongrados/gestiongrados/doc/memoria/memoria
-_pfc/imagenes/secuencia-borrar-aula.png (PNG copy)>]
-<./imagenes/./secuencia-editar-aula.png, id=1483, 626.34pt x 323.2075pt>
+ [49 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia-
+crear-aula.png (PNG copy)> <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_p
+fc/imagenes/secuencia-borrar-aula.png (PNG copy)>]
+<./imagenes/./secuencia-editar-aula.png, id=1496, 626.34pt x 323.2075pt>
 File: ./imagenes/./secuencia-editar-aula.png Graphic file (type png)
 
 <use ./imagenes/./secuencia-editar-aula.png>
 Package pdftex.def Info: ./imagenes/./secuencia-editar-aula.png used on input l
 ine 1607.
 (pdftex.def)             Requested size: 313.16922pt x 161.60335pt.
-) [50 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuenci
-a-editar-aula.png (PNG copy)>]
+) [50 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/secuencia
+-editar-aula.png (PNG copy)>]
 Cap\'{\i }tulo 5.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\diseno.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\diseno.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
@@ -1646,11 +1665,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 [51
 
 ] [52] [53] [54]
-<./imagenes/./ER.png, id=1504, 2478.43588pt x 1771.32353pt>
+<./imagenes/./ER.png, id=1517, 2478.43588pt x 1771.32353pt>
 File: ./imagenes/./ER.png Graphic file (type png)
 
 <use ./imagenes/./ER.png>
-Package pdftex.def Info: ./imagenes/./ER.png used on input line 170.
+Package pdftex.def Info: ./imagenes/./ER.png used on input line 173.
 (pdftex.def)             Requested size: 619.60747pt x 442.8298pt.
  [55]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1659,8 +1678,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Overfull \vbox (11.6987pt too high) has occurred while \output is active []
 
 
-[57 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/ER.png>]
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\pfc_development.tex
+[57 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/ER.png>]
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\pfc_development.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
 
@@ -1786,7 +1805,7 @@ Overfull \hbox (70.16035pt too wide) in alignment at lines 300--309
 
 )) [62]
 Cap\'{\i }tulo 6.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\implementacion.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\implementacion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
@@ -1863,7 +1882,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-[66] <./imagenes/./layout.png, id=1649, 1214.28656pt x 437.38406pt>
+[66] <./imagenes/./layout.png, id=1663, 1214.28656pt x 437.38406pt>
 File: ./imagenes/./layout.png Graphic file (type png)
 
 <use ./imagenes/./layout.png>
@@ -1882,7 +1901,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
-<./imagenes/./index-titulaciones.png, id=1684, 853.68938pt x 504.38437pt>
+<./imagenes/./index-titulaciones.png, id=1699, 853.68938pt x 504.38437pt>
 File: ./imagenes/./index-titulaciones.png Graphic file (type png)
 
 <use ./imagenes/./index-titulaciones.png>
@@ -1894,10 +1913,9 @@ Overfull \hbox (33.6401pt too wide) in paragraph at lines 195--196
  [] 
  []
 
-[68 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/layout.png
-> <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/index-titula
-ciones.png>]
-<./imagenes/./edit-horario.png, id=1691, 874.01532pt x 691.08188pt>
+[68 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/layout.png>
+ <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/index-titulaci
+ones.png>] <./imagenes/./edit-horario.png, id=1706, 874.01532pt x 691.08188pt>
 File: ./imagenes/./edit-horario.png Graphic file (type png)
 
 <use ./imagenes/./edit-horario.png>
@@ -1913,12 +1931,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
-) [69 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/edit-hor
-ario.png>] [70
+) [69 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/edit-hora
+rio.png>] [70
 
 ]
 Cap\'{\i }tulo 7.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\pruebas.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\pruebas.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
@@ -1977,7 +1995,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
 ]
 Cap\'{\i }tulo 8.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\conclusiones.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\conclusiones.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
@@ -2009,7 +2027,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
 ) [76]
 Ap\'{e}ndice A.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\herramientas.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\herramientas.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
@@ -2038,19 +2056,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
 ) [78]
 Ap\'{e}ndice B.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\instalacion.tex
-[79
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\instalacion.tex [79
 
-] [80]) [81] [82
+]
+[80]) [81] [82
 
 ]
 Ap\'{e}ndice C.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\manual-usuario.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\manual-usuario.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-<./imagenes/./manual-bienvenida.png, id=1773, 1014.03844pt x 271.0125pt>
+<./imagenes/./manual-bienvenida.png, id=1788, 1014.03844pt x 271.0125pt>
 File: ./imagenes/./manual-bienvenida.png Graphic file (type png)
 
 <use ./imagenes/./manual-bienvenida.png>
@@ -2062,7 +2080,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<./imagenes/./manual-ventana-login.png, id=1774, 287.57437pt x 244.66406pt>
+<./imagenes/./manual-ventana-login.png, id=1789, 287.57437pt x 244.66406pt>
 File: ./imagenes/./manual-ventana-login.png Graphic file (type png)
 
 <use ./imagenes/./manual-ventana-login.png>
@@ -2072,9 +2090,9 @@ ne 22.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [83 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-bi
-envenida.png>] <./imagenes/./menu-user-admin.png, id=1780, 161.10187pt x 124.96
-687pt>
+ [83 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-bie
+nvenida.png>] <./imagenes/./menu-user-admin.png, id=1795, 161.10187pt x 124.966
+87pt>
 File: ./imagenes/./menu-user-admin.png Graphic file (type png)
 
 <use ./imagenes/./menu-user-admin.png>
@@ -2091,16 +2109,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-<./imagenes/./manual-form-add-user.png, id=1781, 331.99031pt x 274.02374pt>
+<./imagenes/./manual-form-add-user.png, id=1796, 331.99031pt x 274.02374pt>
 File: ./imagenes/./manual-form-add-user.png Graphic file (type png)
 
 <use ./imagenes/./manual-form-add-user.png>
 Package pdftex.def Info: ./imagenes/./manual-form-add-user.png used on input li
 ne 53.
 (pdftex.def)             Requested size: 265.59259pt x 219.21928pt.
- [84 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-ve
-ntana-login.png> <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagen
-es/menu-user-admin.png>]
+ [84 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-ven
+tana-login.png> <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes
+/menu-user-admin.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
@@ -2115,7 +2133,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-<./imagenes/./manual-lista-users.png, id=1790, 245.41687pt x 196.48407pt>
+<./imagenes/./manual-lista-users.png, id=1805, 245.41687pt x 196.48407pt>
 File: ./imagenes/./manual-lista-users.png Graphic file (type png)
 
 <use ./imagenes/./manual-lista-users.png>
@@ -2125,22 +2143,22 @@ Package pdftex.def Info: ./imagenes/./manual-lista-users.png used on input line
 
 Underfull \vbox (badness 2359) has occurred while \output is active []
 
- [85 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-fo
-rm-add-user.png> <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagen
-es/manual-lista-users.png>]
+ [85 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-for
+m-add-user.png> <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes
+/manual-lista-users.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
-<./imagenes/./manual-form-add-titu.png, id=1800, 334.24875pt x 176.91093pt>
+<./imagenes/./manual-form-add-titu.png, id=1815, 334.24875pt x 176.91093pt>
 File: ./imagenes/./manual-form-add-titu.png Graphic file (type png)
 
 <use ./imagenes/./manual-form-add-titu.png>
 Package pdftex.def Info: ./imagenes/./manual-form-add-titu.png used on input li
 ne 94.
 (pdftex.def)             Requested size: 267.39935pt x 141.52893pt.
- [86 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-fo
-rm-add-titu.png>]
+ [86 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-for
+m-add-titu.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
@@ -2175,16 +2193,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
-<./imagenes/./manual-add-plan.png, id=1820, 644.4075pt x 239.39438pt>
+<./imagenes/./manual-add-plan.png, id=1835, 644.4075pt x 239.39438pt>
 File: ./imagenes/./manual-add-plan.png Graphic file (type png)
 
 <use ./imagenes/./manual-add-plan.png>
 Package pdftex.def Info: ./imagenes/./manual-add-plan.png used on input line 16
 0.
 (pdftex.def)             Requested size: 451.08218pt x 167.5749pt.
- [88 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-ad
-d-plan.png>]
-<./imagenes/./manual-visualizacion-plan.png, id=1830, 718.93594pt x 209.28188pt
+ [88 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-add
+-plan.png>]
+<./imagenes/./manual-visualizacion-plan.png, id=1845, 718.93594pt x 209.28188pt
 >
 File: ./imagenes/./manual-visualizacion-plan.png Graphic file (type png)
  <use ./imagenes/./manual-visualizacion-plan.png>
@@ -2215,7 +2233,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--189
 LaTeX Warning: Hyper reference `manual_calculo_horas' on page 89 undefined on i
 nput line 190.
 
-<./imagenes/./manual-calendario.png, id=1831, 871.75688pt x 346.29375pt>
+<./imagenes/./manual-calendario.png, id=1846, 871.75688pt x 346.29375pt>
 File: ./imagenes/./manual-calendario.png Graphic file (type png)
 
 <use ./imagenes/./manual-calendario.png>
@@ -2225,13 +2243,13 @@ Package pdftex.def Info: ./imagenes/./manual-calendario.png used on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [89 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-vi
-sualizacion-plan.png>]
+ [89 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-vis
+ualizacion-plan.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
-<./imagenes/./manual-seleccion-grupos.png, id=1838, 885.3075pt x 267.24844pt>
+<./imagenes/./manual-seleccion-grupos.png, id=1853, 885.3075pt x 267.24844pt>
 File: ./imagenes/./manual-seleccion-grupos.png Graphic file (type png)
 
 <use ./imagenes/./manual-seleccion-grupos.png>
@@ -2248,10 +2266,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 223--225
 
  []
 
-[90 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-cal
-endario.png> <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/m
-anual-seleccion-grupos.png>]
-<./imagenes/./manual-configuracion-horario.png, id=1846, 867.99281pt x 560.8453
+[90 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-cale
+ndario.png> <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/man
+ual-seleccion-grupos.png>]
+<./imagenes/./manual-configuracion-horario.png, id=1861, 867.99281pt x 560.8453
 pt>
 File: ./imagenes/./manual-configuracion-horario.png Graphic file (type png)
  <use ./imagenes/./manual-configuracion-horario.png>
@@ -2263,9 +2281,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
-[91 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-con
-figuracion-horario.png>]
-<./imagenes/./manual-informe.png, id=1854, 1091.57813pt x 702.37407pt>
+[91 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-conf
+iguracion-horario.png>]
+<./imagenes/./manual-informe.png, id=1869, 1091.57813pt x 702.37407pt>
 File: ./imagenes/./manual-informe.png Graphic file (type png)
 
 <use ./imagenes/./manual-informe.png>
@@ -2298,13 +2316,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
 Underfull \vbox (badness 2591) has occurred while \output is active []
 
- [92 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-in
-forme.png>]
+ [92 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/manual-inf
+orme.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 273--274
 
  []
 
-<./imagenes/./alumno-seleccion-grupos.png, id=1864, 540.51938pt x 92.59593pt>
+<./imagenes/./alumno-seleccion-grupos.png, id=1879, 540.51938pt x 92.59593pt>
 File: ./imagenes/./alumno-seleccion-grupos.png Graphic file (type png)
 
 <use ./imagenes/./alumno-seleccion-grupos.png>
@@ -2316,18 +2334,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
-) [93 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/alumno-s
-eleccion-grupos.png>] [94
+) [93 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/alumno-se
+leccion-grupos.png>] [94
 
 ]
 Ap\'{e}ndice D.
 
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\importacion-asignaturas
-.tex [95]) [96]
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\importacion-asignaturas.
+tex [95]) [96]
 Ap\'{e}ndice E.
 
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\importacion-plandocente
-.tex
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\importacion-plandocente.
+tex
 Overfull \hbox (66.06148pt too wide) in paragraph at lines 7--7
 []\T1/pcr/m/n/10.95 id_asignatura, id_actividad, horas, horas_semanales, grupos
 , alternas, id_curso[] 
@@ -2345,11 +2363,11 @@ Overfull \hbox (66.06148pt too wide) in paragraph at lines 19--19
 
 ]
 Ap\'{e}ndice F.
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\informes.tex [99]
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\informes.tex [99]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [100]
-<./imagenes/./horario-export.png, id=1899, 319.1925pt x 286.06876pt>
+<./imagenes/./horario-export.png, id=1914, 319.1925pt x 286.06876pt>
 File: ./imagenes/./horario-export.png Graphic file (type png)
 
 <use ./imagenes/./horario-export.png>
@@ -2360,15 +2378,15 @@ Package pdftex.def Info: ./imagenes/./horario-export.png used on input line 135
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [101]
-[102 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/horario-e
-xport.png>] <./imagenes/./aula-export.png, id=1909, 338.01282pt x 394.47375pt>
+[102 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/horario-ex
+port.png>] <./imagenes/./aula-export.png, id=1924, 338.01282pt x 394.47375pt>
 File: ./imagenes/./aula-export.png Graphic file (type png)
 
 <use ./imagenes/./aula-export.png>
 Package pdftex.def Info: ./imagenes/./aula-export.png used on input line 183.
 (pdftex.def)             Requested size: 338.01198pt x 394.47278pt.
 
-<./imagenes/./informe-pdf-asignatura.png, id=1910, 392.21532pt x 411.03563pt>
+<./imagenes/./informe-pdf-asignatura.png, id=1925, 392.21532pt x 411.03563pt>
 File: ./imagenes/./informe-pdf-asignatura.png Graphic file (type png)
 
 <use ./imagenes/./informe-pdf-asignatura.png>
@@ -2378,32 +2396,32 @@ line 195.
 
 Underfull \vbox (badness 2351) has occurred while \output is active []
 
- [103 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/aula-exp
-ort.png>])
-[104 <C:/gestiongrados/gestiongrados/doc/memoria/memoria_pfc/imagenes/informe-p
-df-asignatura.png>]
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\bibliografia.tex
+ [103 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/aula-expo
+rt.png>]
+[104 <C:/xampp/htdocs/gestiongrados/doc/memoria/memoria_pfc/imagenes/informe-pd
+f-asignatura.png>] [105]) [106]
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\bibliografia.tex
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 [][]$\T1/pcr/m/n/10.95 http : / / osl2 . uca . es / wikiformacion / index . php
  / LaTeX _ para _ Proyecto _$
  []
 
-) (C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\fdl-1.3.tex [105
+) (C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\fdl-1.3.tex [107
 
 
 ]
-[106
+[108
 
-] [107] [108] [109] [110] [111] [112])
+] [109] [110] [111] [112] [113] [114])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
- [113]
+ [115]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
 
-(C:\gestiongrados\gestiongrados\doc\memoria\memoria_pfc\memoria.aux)
+(C:\xampp\htdocs\gestiongrados\doc\memoria\memoria_pfc\memoria.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: B4D73C11A548CE87EA2AD01B42B17FA2;9832.
+(rerunfilecheck)             Checksum: 6FFDEA4B9E8091907ED09505D5F4CFED;9897.
 
 
 LaTeX Warning: There were undefined references.
@@ -2413,24 +2431,23 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 21935 strings out of 494045
- 374963 string characters out of 3145971
- 897102 words of memory out of 3000000
+ 21943 strings out of 494045
+ 375822 string characters out of 3148360
+ 897108 words of memory out of 3000000
  23878 multiletter control sequences out of 15000+200000
  65985 words of font info for 85 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 63i,9n,57p,1121b,3000s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
-times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on memoria.pdf (131 pages, 1533237 bytes).
+ 63i,9n,57p,1120b,3000s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
+b8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on memoria.pdf (133 pages, 1538453 bytes).
 PDF statistics:
- 2177 PDF objects out of 2487 (max. 8388607)
- 845 named destinations out of 1000 (max. 500000)
- 1311 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2203 PDF objects out of 2487 (max. 8388607)
+ 853 named destinations out of 1000 (max. 500000)
+ 1319 words of extra memory for PDF output out of 10000 (max. 10000000)
 
