@@ -159,6 +159,7 @@ function export_calendar_csv($id_curso)
     list($fecha_inicial_sem1, $fecha_lunes_sem1, $fecha_final_sem1 ) = dias_iniciales($id_curso, 1, "primero");
     $fecha_inicial_sem1 = $fecha_lunes_sem1;
     $mes_actual = $fecha_inicial_sem1->format('m');
+    fputcsv($file, array("Mes " . $fecha_inicial_sem1->format("n")));
     $interval = new DateInterval("P1D");
     foreach($matriz_semestre_1 as $num_semana => $array_semana)
     {
@@ -188,13 +189,33 @@ function export_calendar_csv($id_curso)
     }
     
     fputcsv($file, array('Semestre 2'), ',');
-
+    list($fecha_inicial_sem1, $fecha_lunes_sem1, $fecha_final_sem1 ) = dias_iniciales($id_curso, 1, "segundo");
+    $fecha_inicial_sem1 = $fecha_lunes_sem1;
+    $mes_actual = $fecha_inicial_sem1->format('m');
+    fputcsv($file, array("Mes " . $fecha_inicial_sem1->format("n")));
     foreach($matriz_semestre_2 as $num_semana => $array_semana)
     {
-        $array_cruz = array();
+$array_cruz = array();
+        $array_semana[] = 0;
+        $array_semana[] = 0;
         foreach($array_semana as $dia)
         {
-            $array_cruz[] = $dia ? '':'X';
+            $array_cruz[] = $dia ? $fecha_inicial_sem1->format('d'):'X';
+            $fecha_inicial_sem1->add($interval);
+            if($mes_actual != $fecha_inicial_sem1->format("m")){
+                $mes_actual = $fecha_inicial_sem1->format("m");
+                foreach(range($fecha_inicial_sem1->format("N"), 7) as $dia_semana)
+                {
+                    $array_cruz[] = "-";
+                }
+                fputcsv($file, $array_cruz, ",");
+                fputcsv($file, array("Mes " . $fecha_inicial_sem1->format("n")));
+                $array_cruz = array();
+                foreach(range(1, $fecha_inicial_sem1->format("N")-1) as $dia_semana)
+                {
+                    $array_cruz[] = "-";
+                }
+            }
         }
         fputcsv($file, $array_cruz, ',');
     }

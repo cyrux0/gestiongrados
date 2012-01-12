@@ -196,3 +196,71 @@ Podemos hacer informes de asignaturas en PDF con las horas que se impartirán ca
   \end{center}
 \caption{Fragmento un informe PDF de una asignatura}
 \end{figure}
+
+\section{Calendario}
+
+En la sección de eventos podemos hacer una exportación completa del calendario del curso al formato CSV. Debido a la dificultad por encontrar un formato adecuado, se ha optado por separar cada mes, y en cada casilla del fichero CSV, incluir un día del mes, con cada semana en cada línea.
+\\
+Para marcar los eventos, en lugar de poner el número del día, se marca la casilla con una X, también estarán marcados con una X, al no ser lectivos, los sábados y domingos, y los días previos o posteriores a inicio y final de curso respectivamente. 
+\\
+Se marcan con un guión las casillas sobrantes en cada mes que no corresponden con ningún día de ese mes.
+\\
+A continuación se puede ver un calendario con algunos eventos de prueba marcados para mostrar el formato en el que se exporta:
+
+\begin{verbatim}
+"Semestre 1"
+"Mes 9"
+X,X,X,22,23,X,X
+26,27,28,29,30,-,-
+"Mes 10"
+-,-,-,-,-,X,X
+03,04,05,06,07,X,X
+10,11,12,13,14,X,X
+17,18,19,20,21,X,X
+24,25,26,27,28,X,X
+31,-,-,-,-,-,-
+"Mes 11"
+-,01,02,03,04,X,X
+07,08,09,10,11,X,X
+14,15,16,X,18,X,X
+21,22,23,24,25,X,X
+28,29,30,-,-,-,-
+"Mes 12"
+-,-,-,01,02,X,X
+05,06,07,08,09,X,X
+12,13,14,15,16,X,X
+19,20,21,22,23,X,X
+26,27,28,29,30,X,-
+"Mes 1"
+-,-,-,-,-,-,X
+02,03,04,05,06,X,X
+X,X,X
+"Semestre 2"
+"Mes 2"
+X,14,15,16,17,X,X
+20,21,22,X,24,X,X
+X,X,X,-,-,-,-
+"Mes 3"
+-,-,-,01,02,X,X
+05,06,07,08,09,X,X
+12,13,14,15,16,X,X
+19,20,21,22,23,X,X
+26,27,28,29,30,X,-
+"Mes 4"
+-,-,-,-,-,-,X
+02,03,04,05,06,X,X
+09,10,11,12,13,X,X
+16,17,18,19,20,X,X
+23,24,25,26,27,X,X
+30,-,-,-,-,-,-
+"Mes 5"
+-,01,02,03,04,X,X
+07,08,09,X,11,X,X
+14,15,16,17,18,X,X
+21,22,23,24,25,X,X
+28,29,30,31,-,-,-
+"Mes 6"
+-,-,-,-,01,X,X
+04,05,06,07,08,X,X
+
+\end{verbatim}
