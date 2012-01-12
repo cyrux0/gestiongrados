@@ -116,51 +116,59 @@ class Horarios extends MY_Controller {
                     $grupos_totales_teoria = $planactividad->grupos; // Esto habría que sacarlo de otro sitio pero de momento se deja ahí.
                 }
             }
+            if($num_grupo > $grupos_totales_teoria)
+            {
+                $this->session->set_flashdata('alerts', 'Número máximo de grupos alcanzados');
+                redirect("horarios/select_grupo/$id_titulacion/$id_curso");
+            }
+            else
+            {
 
-            foreach ($asignaturas as $asignatura) {
-                foreach ($asignatura->PlanesDocentes[0]->planactividades as $planactividad) {
-                    if ($planactividad->id_actividad == 1) { // Teoría
-                        for ($i = 0; $i < $planactividad->horas_semanales; $i += $slot_minimo) {
-                            $linea_horario = new LineaHorario;
-                            $linea_horario->slot_minimo = $slot_minimo;
-                            $linea_horario->id_asignatura = $asignatura->id;
-                            $linea_horario->id_actividad = $planactividad->id_actividad;
-                            $linea_horario->num_grupo_actividad = $num_grupo;
-                            if ($asignatura->semestre == "primero")
-                                $horario_semestre1->lineashorario[] = $linea_horario;
-                            else
-                                $horario_semestre2->lineashorario[] = $linea_horario;
-                        }
-                    }else {
-                        // Se asigna el número de grupos de esta actividad que tiene la asignatura (Se divide entre 2 si son semanas alternas, ya que los grupos irán de dos en dos)
-                        $grupos = $planactividad->alternas? $planactividad->grupos / 2 : $planactividad->grupos;
-                        // Se calcula el número de grupos por asignar, para ello se usa esta fórmula.
-                        $por_asignar = ($grupos - floor($grupos / $grupos_totales_teoria) * ($num_grupo - 1));
-                        // Aquí se calculan los que están ya asignados.
-                        $asignados = $grupos - $por_asignar;
-                        // Se dividen los que quedan entre el número de grupos de teoría que quedan por llegar todavía.
-                        $grupos_corresp = floor($por_asignar / ($grupos_totales_teoria - $num_grupo + 1));
+                foreach ($asignaturas as $asignatura) {
+                    foreach ($asignatura->PlanesDocentes[0]->planactividades as $planactividad) {
+                        if ($planactividad->id_actividad == 1) { // Teoría
+                            for ($i = 0; $i < $planactividad->horas_semanales; $i += $slot_minimo) {
+                                $linea_horario = new LineaHorario;
+                                $linea_horario->slot_minimo = $slot_minimo;
+                                $linea_horario->id_asignatura = $asignatura->id;
+                                $linea_horario->id_actividad = $planactividad->id_actividad;
+                                $linea_horario->num_grupo_actividad = $num_grupo;
+                                if ($asignatura->semestre == "primero")
+                                    $horario_semestre1->lineashorario[] = $linea_horario;
+                                else
+                                    $horario_semestre2->lineashorario[] = $linea_horario;
+                            }
+                        }else {
+                            // Se asigna el número de grupos de esta actividad que tiene la asignatura (Se divide entre 2 si son semanas alternas, ya que los grupos irán de dos en dos)
+                            $grupos = $planactividad->alternas? $planactividad->grupos / 2 : $planactividad->grupos;
+                            // Se calcula el número de grupos por asignar, para ello se usa esta fórmula.
+                            $por_asignar = ($grupos - floor($grupos / $grupos_totales_teoria) * ($num_grupo - 1));
+                            // Aquí se calculan los que están ya asignados.
+                            $asignados = $grupos - $por_asignar;
+                            // Se dividen los que quedan entre el número de grupos de teoría que quedan por llegar todavía.
+                            $grupos_corresp = floor($por_asignar / ($grupos_totales_teoria - $num_grupo + 1));
 
-                        // Por cada grupo correspondiente a este horario creamos una línea de horario y la asignamos al horario.
-                        for ($j = 0; $j < $grupos_corresp; $j++) {
-                            $linea_horario = new LineaHorario;
-                            $linea_horario->slot_minimo = $planactividad->horas_semanales;
-                            $linea_horario->id_asignatura = $asignatura->id;
-                            $linea_horario->id_actividad = $planactividad->id_actividad;
-                            $linea_horario->num_grupo_actividad = $asignados + $j + 1;
-                            if ($asignatura->semestre == "primero")
-                                $horario_semestre1->lineashorario[] = $linea_horario;
-                            else
-                                $horario_semestre2->lineashorario[] = $linea_horario;
+                            // Por cada grupo correspondiente a este horario creamos una línea de horario y la asignamos al horario.
+                            for ($j = 0; $j < $grupos_corresp; $j++) {
+                                $linea_horario = new LineaHorario;
+                                $linea_horario->slot_minimo = $planactividad->horas_semanales;
+                                $linea_horario->id_asignatura = $asignatura->id;
+                                $linea_horario->id_actividad = $planactividad->id_actividad;
+                                $linea_horario->num_grupo_actividad = $asignados + $j + 1;
+                                if ($asignatura->semestre == "primero")
+                                    $horario_semestre1->lineashorario[] = $linea_horario;
+                                else
+                                    $horario_semestre2->lineashorario[] = $linea_horario;
+                            }
                         }
                     }
                 }
+
+                $horario_semestre1->save();
+                $horario_semestre2->save();
+
+                redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
             }
-
-            $horario_semestre1->save();
-            $horario_semestre2->save();
-
-            redirect('horarios/select_grupo/' . $id_titulacion . '/' . $id_curso);
         }
         else
         {
@@ -172,8 +180,9 @@ class Horarios extends MY_Controller {
     public function delete_group($id_titulacion, $id_curso, $num_grupo, $num_curso)
     {
         $resultados = Doctrine_Query::create()
-            ->select('h.id')
+            ->select('h.id, l.id')
             ->from('Horario h')
+            ->leftJoin('h.lineashorario l')
             ->where('h.id_curso = ?', $id_curso)
             ->andWhere('h.id_titulacion = ?', $id_titulacion)
             ->andWhere('h.num_grupo_titulacion = ?', $num_grupo)
@@ -182,8 +191,10 @@ class Horarios extends MY_Controller {
             
         foreach($resultados as $resultado)
         {
+            $resultado->lineashorario->delete();
             $resultado->delete();
         }
+        redirect("horarios/select_grupo/$id_titulacion/$id_curso");
     }
 
 /*

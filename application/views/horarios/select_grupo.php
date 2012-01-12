@@ -32,7 +32,13 @@
             ?>
             <td><?= $key + 1 ?></td>
             <td><?= $curso['num_grupos'] ?></td>
-            <td><?= anchor("horarios/add_grupo/" . $id_titulacion . "/" . $id_curso . "/" . $num_curso . "/" . $sig_grupo, "+") ?>/-</td>
+            <td><?= anchor("horarios/add_grupo/" . $id_titulacion . "/" . $id_curso . "/" . $num_curso . "/" . $sig_grupo, "+") ?>/
+                <? if($curso['num_grupos'] == 0): ?>
+                    -
+                <? else: ?>
+                    <?= anchor("horarios/delete_group/" . $id_titulacion . "/" . $id_curso . "/" . $curso['num_grupos'] . "/" . $num_curso, "-") ?>
+                <? endif; ?>
+            </td>
             <? for($i = 0; $i < $num_semanas_teoria; $i++): ?>
                 <? if($curso['id_horario_sem1']): ?>
                     <td><?= anchor("horarios/edit_teoria/{$curso['id_horario_sem1']}/" . ($i+1), "Horario Semana " . ($i+1)) ?></td>
