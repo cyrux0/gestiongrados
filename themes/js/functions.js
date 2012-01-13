@@ -434,6 +434,12 @@ var horarios = {
                     dataType: "json",
                     success: function(data){
                         if(!data.success){
+                            if(data.aula_ocupada == 1){
+                                alert('El aula seleccionada está ocupada en ese horario');
+                            }
+                            if(data.solapado == 1){
+                                alert("El slot se solapa con otro incompatible");
+                            }
                             revertFunc();
                         }
                     }

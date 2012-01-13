@@ -167,7 +167,7 @@ function resumen_asignatura($id_asignatura, $id_curso)
             ->execute();
         $alternas = $planactividad[0]->alternas;
         if($alternas){
-            $header[] = $actividad->descripcion . " " . $grupo->num_grupo_actividad*2-1;
+            $header[] = $actividad->descripcion . " " . ($grupo->num_grupo_actividad*2-1);
             $header[] = $actividad->descripcion . " " . $grupo->num_grupo_actividad*2;
         }else{
             $header[] = $actividad->descripcion . " " . $grupo->num_grupo_actividad;

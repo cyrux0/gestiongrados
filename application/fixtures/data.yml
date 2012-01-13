@@ -14,10 +14,23 @@ User:
         email: administrador@uca.es
         DNI: 77777777W
         password: 123456
-        level: 1
+        level: 0
         nombre: Admin
         apellidos: Admin
-        id_titulacion: 1
+    Planificador:
+        email: planificador@uca.es
+        DNI: 77777778W
+        password: 123456
+        level: 1
+        nombre: Planificador
+        apellidos: Planificador 
+    Profesor:
+        email: profesor@uca.es
+        DNI: 77777779W
+        password: 123456
+        level: 2
+        nombre: Profesor
+        apellidos: Profesor
 Asignatura:
     ADA1:
         codigo: 123
@@ -49,6 +62,66 @@ Asignatura:
         curso: 1
         semestre: primero
         Titulacion: Industriales
+    IP:
+        codigo: 928
+        nombre: Introducción a la programacion
+        abreviatura: IP
+        creditos: 6
+        materia: Programación
+        departamento: Lenguajes y sistemas
+        curso: 1
+        semestre: primero
+        Titulacion: Informatica
+    ADAII:
+        codigo: 125
+        nombre: Análisis y diseño de algoritmos II
+        abreviatura: ADAII
+        creditos: 6
+        materia: Algoritmia
+        departamento: Lenguajes y sistemas
+        curso: 2
+        semestre: segundo
+        Titulacion: Informatica
+    MP:
+        codigo: 126
+        nombre: Metodología de la programación
+        abreviatura: MP
+        creditos: 6
+        materia: Algoritmia
+        departamento: Lenguajes y sistemas
+        curso: 1
+        semestre: segundo
+        Titulacion: Informatica
+    FSD:
+        codigo: 127
+        nombre: Fundamentos de sistemas digitales
+        abreviatura: FSD
+        creditos: 6
+        materia: Algoritmia
+        departamento: Tecnología de computadores
+        curso: 1
+        semestre: primero
+        Titulacion: Informatica
+    SOI:
+        codigo: 128
+        nombre: Sistemas operativos I
+        abreviatura: SOI
+        creditos: 6
+        materia: Algoritmia
+        departamento: Lenguajes y sistemas
+        curso: 2
+        semestre: primero
+        Titulacion: Informatica
+    SOII:
+        codigo: 129
+        nombre: Sistemas operativos II
+        abreviatura: SOII
+        creditos: 6
+        materia: Algoritmia
+        departamento: Lenguajes y sistemas
+        curso: 2
+        semestre: segundo
+        Titulacion: Informatica
 Curso:
     2011:
         num_semanas_teoria: 3
@@ -70,18 +143,23 @@ Curso:
         fin_examenes_sept: "2012-09-20"
 Actividad:
     Teoria:
+        id: 1
         descripcion: Teoría
         identificador: A
     Laboratorio:
+        id: 3
         descripcion: Laboratorio
         identificador: B
     Problemas:
+        id: 2
         descripcion: Problemas
         identificador: C
     Infor:
+        id: 4
         descripcion: Informática
         identificador: D
     Campo:
+        id: 5
         descripcion: Prácticas de campo
         identificador: E
 

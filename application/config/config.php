@@ -14,8 +14,8 @@
 | path to your installation.
 |
 */
-//$config['base_url']	= 'http://dsalazar.no-ip.info/gestiongrados';
-$config['base_url']	= 'http://localhost/gestiongrados';
+$config['base_url']	= 'http://dsalazar.no-ip.info/gestiongrados';
+//$config['base_url']	= 'http://localhost/gestiongrados';
 /*
 |--------------------------------------------------------------------------
 | Index File
