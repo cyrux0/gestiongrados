@@ -21,7 +21,7 @@
     <label for="email">Email (@uca.es):</label>
     <?= form_input('email', set_value('email', $user->email)) ?>
 </div>
-<? $user = Current_User::user() ?>
+<? $current_user = Current_User::user() ?>
 <? if(Current_User::logged_in(0) and $user->level != 3 and $user->id != 1): ?>
 <div class="field">
     <label for="level">Administrador:</label>

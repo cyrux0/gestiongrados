@@ -1,5 +1,10 @@
 <?php
 class Asignaturas extends MY_Controller {
+    
+    /**
+     * Constructor del controlador asignaturas. Gestiona los permisos e inicializa algunos parámetros
+     * 
+     */
     function __construct() {
         parent::__construct();
         $this->asignaturas_table = Doctrine::getTable('Asignatura');
@@ -14,6 +19,10 @@ class Asignaturas extends MY_Controller {
         $this->_filter(array('add_carga', 'show', 'add_carga_from_file'), array($this, 'authenticate'), 1); // Sólo se lo permitimos al usuario de tipo planificador (2)
     }
 
+    /**
+     * Muestra un formulario para añadir una asignatura a una titulación.
+     * @param integer $id Identificador de la titulación.
+     */
     public function add_to($id) {
         $titulacion = $this->titulaciones_table->find($id);
         if(!$titulacion) show_404();
@@ -26,6 +35,9 @@ class Asignaturas extends MY_Controller {
         $this -> load -> view('asignaturas/add', $data);
     }
 
+    /**
+     * Recibe los parámetros del formulario y crea la asignatura.
+     */
     public function create(){
         $this->modelObject = new Asignatura;
         $this->modelObject->fromArray($this->input->post());
@@ -39,8 +51,13 @@ class Asignaturas extends MY_Controller {
         }
     }
 
+    /**
+     * Muestra la planificación docente de una asignatura.
+     * @param integer $id Identificador de la asignatura
+     * @param integer $id_curso Identificador del curso
+     */
     public function show($id, $id_curso = ''){
-        if(!$id_curso) redirect('cursos/select_curso/asignaturas/show/' . $id); //Arreglar esto, ya que select_curso solo coge los dos primeros parámetros, debería coger todos.
+        if(!$id_curso) redirect('cursos/select_curso/asignaturas/show/' . $id);
         $asignatura = $this->asignaturas_table->find($id);
         if(!$asignatura) show_404();
         $q = Doctrine_Query::create()->select('c.*, p.*, a.descripcion')->from('PlanActividad p')->innerJoin('p.plandocente c')->innerJoin('p.actividad a')->where('c.id_curso = ? AND c.id_asignatura = ?', array($id_curso, $id));
@@ -59,6 +76,10 @@ class Asignaturas extends MY_Controller {
         
     }
     
+    /**
+     * Muestra el formulario para editar la asignatura.
+     * @param integer $id Identificador de la asignatura.
+     */
     public function edit($id) {
         $asignatura = $this -> asignaturas_table -> find($id);
         if(!$asignatura) show_404();
@@ -69,6 +90,10 @@ class Asignaturas extends MY_Controller {
         $this -> load -> view('asignaturas/edit', $data);
     }
 
+    /**
+     * Recibe los parámetros del formulario de edición y actualiza la asignatura.
+     * @param integer $id Identificador de la asignatura a actualizar.
+     */
     public function update($id) {
         $this->modelObject = $this -> asignaturas_table -> find($id);
         $this->modelObject -> fromArray($this -> input -> post());
@@ -82,6 +107,10 @@ class Asignaturas extends MY_Controller {
         }
     }
 
+    /**
+     * Borra una asignatura del sistema.
+     * @param integer $id Identificador de la asignatura a borrar.
+     */
     public function delete($id) {
         $asignatura = $this -> asignaturas_table -> find($id);
         if(!$asignatura) show_404();
@@ -90,12 +119,18 @@ class Asignaturas extends MY_Controller {
         redirect('titulaciones/show/' . $titulacion_id);
     }
     
+    /**
+     * Muestra un formulario para subir un archivo con asignaturas.
+     */
     public function importar()
     {
         $data = array('action' => 'asignaturas/subir_archivo');
         $this->load->view('PlanDocente/from_file', $data);
     }
     
+    /**
+     * Recibe el archivo y actualiza las asignaturas.
+     */
     public function subir_archivo()
     {
               $this->layout ='';
@@ -117,6 +152,9 @@ class Asignaturas extends MY_Controller {
         }
     }
     
+    /**
+     * Exporta las asignaturas al formato YML y permite descargarlo.
+     */
     public function exportar()
     {
         Doctrine::dumpData("./application/downloads/data/", true);
@@ -125,6 +163,10 @@ class Asignaturas extends MY_Controller {
         force_download("asignaturas.yml", $data);
     }
     
+    /**
+     * Reglas para las validaciones.
+     * @return boolean Devuelve si la validación es correcta.
+     */
     private function _submit_validate(){
         $this->form_validation->set_rules('codigo', 'Código', 'required|exact_length[3]|numeric');
         $this->form_validation->set_rules('nombre', 'Nombre', 'required|min_length[5]|max_length[200]|alpha_ext'); // Hay que crear la regla alpha_numeric_ext igual que la alpha_ext pero con números.

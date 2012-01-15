@@ -25,6 +25,22 @@ class Install extends MY_Controller
             $user->save();
             Current_User::login("administrador@uca.es", "12345");
             $this->load->view('install/instalada');
+            $actividad = new Actividad();
+            $actividad->id = 1;
+            $actividad->descripcion = "Teoría";
+            $actividad->identificador = "A";
+            $actividad->id = 2;
+            $actividad->descripcion = "Problemas";
+            $actividad->identificador = "B";
+            $actividad->id = 3;
+            $actividad->descripcion = "Laboratorio";
+            $actividad->identificador = "C";
+            $actividad->id = 4;
+            $actividad->descripcion = "Informática";
+            $actividad->identificador = "D";
+            $actividad->id = 5;
+            $actividad->descripcion = "Prácticas de campo";
+            $actividad->identificador = "E";
         }
         
         $this->load->view('install/ya_instalada');

@@ -70,9 +70,10 @@ class PlanesDocentes extends MY_Controller{
             }
             
         }
-        if($this->input->post('cursos_compartidos'))
+        
+        if($this->input->post('cursoscompartidos'))
         {
-            foreach($this->input->post('cursos_compartidos') as $curso)
+            foreach($this->input->post('cursoscompartidos') as $curso)
             {
                 $cursocompartido = new CursoCompartido;
                 $cursocompartido->num_curso_compartido = $curso['num_curso_compartido'];
@@ -149,7 +150,7 @@ class PlanesDocentes extends MY_Controller{
             try{
                 $this->load->helper('importacion_csv_helper');
                 parse_csv_plandocente($data['full_path']);
-                $rows = $this->_parse_data($data['full_path'], true);
+                $rows = parse_csv_plandocente($data['full_path'], true);
                 $this->load->view('plandocente/upload_success', array('rows' => $rows));
             }catch(Exception $e){
                 $error = array('error' => $e->getMessage());
@@ -198,6 +199,29 @@ class PlanesDocentes extends MY_Controller{
         $plan->delete();
     }
     
+    public function compartir($id)
+    {
+        $plan_docente = Doctrine::getTable('PlanDocente')->find($id);
+        $this->load->view("PlanDocente/compartir", array('action' => "planesdocentes/crear_compartidas/$plan_docente->id", 'result' => $plan_docente, 'curso_asignatura' => $plan_docente->Asignatura->curso, 'cursos_totales' => $plan_docente->Asignatura->Titulacion->num_cursos));
+    }
+    
+    public function crear_compartidas($id)
+    {
+        if($this->input->post('cursoscompartidos'))
+        {
+            $plan_docente = Doctrine::getTable('PlanDocente')->find($id);
+            $x = $this->input->post();
+            foreach($this->input->post('cursoscompartidos') as $curso)
+            {
+                $cursocompartido = new CursoCompartido;
+                $cursocompartido->num_curso_compartido = $curso['num_curso_compartido'];
+                $plan_docente->cursoscompartidos[] = $cursocompartido;
+            }
+            $plan_docente->save();
+        }
+        
+        redirect("titulaciones/show");
+    }
         
     /**
      * Hace las validaciones del formulario de añadir planes docentes

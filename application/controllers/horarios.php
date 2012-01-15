@@ -565,7 +565,10 @@ class Horarios extends MY_Controller {
                 ->from('LineaHorario l')
                 ->innerJoin('l.horario h')
                 ->where('l.dia_semana = ? AND h.id_curso = ? AND l.id_aula = ? AND h.num_semana = ?', array($linea->dia_semana, $linea->horario->id_curso, $linea->id_aula, $linea->horario->num_semana))
-                ->andWhere('((l.hora_inicial >= ? AND l.hora_inicial < ?) OR (l.hora_final > ? AND l.hora_final <= ?))', array($linea->hora_inicial, $linea->hora_final,$linea->hora_inicial, $linea->hora_final));
+                ->andWhere('((l.hora_inicial >= ? AND l.hora_inicial < ?) OR (l.hora_final > ? AND l.hora_final <= ?)
+                    OR (l.hora_inicial <= ? AND l.hora_final > ?) OR (l.hora_inicial < ? AND l.hora_final >= ?))', 
+                        array($linea->hora_inicial, $linea->hora_final,$linea->hora_inicial, $linea->hora_final, 
+                            $linea->hora_inicial, $linea->hora_inicial, $linea->hora_final, $linea->hora_final));
         if($linea->id)
         {
             $query_aula->andWhere('id != ?', array($linea->id));
