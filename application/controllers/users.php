@@ -46,8 +46,6 @@ class Users extends MY_Controller {
             $mail = new PHPMailer;
             $mail->IsSMTP();
             $mail->SMTPAuth = true;
-            $mail->Username = "danielsalazarrecio@gmail.com";
-            $mail->Password = "T1tGoGvl4c10n";
             $mail->Host = "smtp.gmail.com";
             
             $mail->SMTPSecure = "ssl";
