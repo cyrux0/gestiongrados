@@ -54,11 +54,11 @@
         <h3>Índice</h3>
         <ul>
           <li>Introducción</li>
+		  <li>Motivaciones y justificación</li>
           <li>Antecedentes</li>
-          <li>Objetivos</li>
-          <li>Calendario</li>
-          <li>Desarrollo</li>
-		  <li>Funcionamiento de la aplicación</li>
+          <li>Descripción</li>
+		  <li>Planificación</li>
+		  <li>Implementación</li>
           <li>Herramientas</li>
           <li>Conclusiones y ampliaciones fututras</li>
           <li>Bibliografía</li>
@@ -69,7 +69,7 @@
 		<!-- Slide sección introducción -->
       <article>
         <h2>Introducción</h2>
-      </article
+      </article>
       
       <!-- Slide introducción  -->      
       <article>
@@ -77,9 +77,10 @@
 		<div class="build">
         <!--<div class="build" style="float:left; width: 800px; background-color:#EEEEEE; padding: 15px 15px 15px 15px; border-radius: 15px;">-->
           <p class="to-build">Herramienta de gestión para procesos de la Universidad</p>
-          <p class="to-build">Crecimiento de tecnologías web en software de gestión</p>
-		  <p class="to-build">Proyecto escalable</p> <!-- A objetivos? -->
-		  <p class="to-build">Adaptable a otras universidades o facultades</p> <!-- A objetivos? o incluso a conclusiones en ampliaciones futuras -->
+		  <p class="to-build">Sistema intuitivo para gestionar esos procesos</p>
+          <p class="to-build">Necesidad de almacenar la información de forma organizada</p>
+		  <p class="to-build">Proporcionar una forma de acceder a esa información</p>
+		  <p class="to-build">Trabajar desde cualquier lugar</p>
         </div>
       </article>
 
@@ -89,20 +90,40 @@
         <div class="build" style="margin-top: 0px">
             <h3 class="to-build">Objetivos</h3>
             <ul class="to-build" style="margin-top: 10px">
-              <li>Facilitar la labor de los coordinadores</li>
-			  <li>Software <b class="another-blue">intuitivo</b></li>
-			  <li><b class="another-blue">Automatización</b> de procesos</li>
-			  <li>Necesidad de <b class="another-blue">organización</b> de la información</li>
+			  <li>Gestión de <b class="another-blue">titulaciones.</b></li>
+			  <li>Gestión de <b class="another-blue">asignaturas.</b></li>
+			  <li>Gestión de <b class="another-blue">planificación docente.</b></li>
+			  <li>Gestión de <b class="another-blue">calendario.</b></li>
+			  <li>Gestión de <b class="another-blue">horarios.</b></li>
+			  <li>Gestión de <b class="another-blue">ocupación de las aulas.</b></li>
+			  <li>Generación de <b class="another-blue">informes.</b></li>
+			  <li>Gestión de <b class="another-blue">copias de seguridad.</b></li>
+			  <li><b class="another-blue">Automatización</b> de procesos.</li>
+			  
             </ul>        
-            <h3 class="to-build" style="margin-top: 50px">Motivaciones</h3>
+        </div>
+      </article>
+	  <article>
+        <h2>Motivaciones y justificación</h2>
+      </article>
+	  <article>
+		<h3>Motivaciones y justificación</h3>
             <ul class="to-build" style="margin-top: 10px">
               <li>Ampliar conocimientos sobre <b class="another-blue">desarrollo web</b>.</li>
 			  <li>Saber que la aplicación va a tener un <b class="another-blue">uso real</b>.</li>
               <li>Posibilidades futuras de la aplicación.</li>
+			  <li>Carencia de una aplicación de este tipo.</li>
             </ul>
-        </div>
+	  </article>
+      <article>
+        <h2>Antecedentes</h2>
       </article>
-
+		<article>
+			<h3>Antecedentes</h3>
+			<p>Hojas de cálculo con la planificación docente.</p>
+			<p>Hojas de cálculo con los horarios.</p>
+			<p>PDFs para mostrar el horario al alumno.</p>
+		</article>
       <!-- ############################################################# -->            
       <article>
         <h2>Descripción</h2>
@@ -120,7 +141,7 @@
 	<div class="build">
 	  <ul class="build">
 	    <li>Encargado de gestión de usuarios.</li>
-	    <li>Backups</li>
+	    <li>Gestión de copias de seguridad.</li>
 	  </ul>
 	</div>
       </article>
@@ -263,16 +284,129 @@
 	</ul>
       </article>
 
-      
+		<article>
+			<h3>Vistas</h3>
+			<p>Se decide usar XHTML al estar recomendado por la W3C y ser un estándar.</p>
+			<p class="to-build">Para mejorar la interacción se hace necesario el uso de un lenguaje de programación de cliente.</p>
+			<br/>
+			<h3 class="to-build">Javascript</h3>
+			<p class="to-build">Es el lenguaje más usado en el lado del cliente.</p>
+			<p class="to-build">Pocas alternativas (CoffeeScript, Dart).</p>
+			<p class="to-build">Problema: engorroso y hay que escribir mucho para conseguir lo que queremos.</p>
+		</article>
+		
+		<article>
+			<h3>Librerías de JavaScript</h3>
+			<p class="to-build">Una de las más utilizadas es jQuery.</p>
+			<p class="to-build">Se pueden aplicar multitud de efectos con muy pocas líneas.</p>
+			<p class="to-build">Utilización muy sencilla de peticiones AJAX.</p>
+			<br />
+			<h3 class="to-build">Plugin FullCalendar</h3>
+			<p class="to-build">Necesario para la interacción en la construcción de horarios y calendario.</p>
+			<p class="to-build">Es justo lo que necesitamos, plugin para programar eventos en un calendario.</p>
+			<p class="to-build">Capaz de recibir datos del servidor y plasmarlos en el horario/calendario.</p>
+		</article>
+		
+		<article>
+			<h3>Exportación/importación de datos</h3>
+			<p><b>Titulaciones y asignaturas:</b> Entidades simples, se utiliza YAML.</p>
+			<br />
+			<div class="to-build">
+				<h3>YAML</h3>
+				<p>Formato para representar objetos en texto plano (Serialización).</p>
+				<p>Formato leíble por una persona.</p>
+				<p>Soportado nativamente por Doctrine.</p>
+			</div>
+			
+		</article>
+		<article>
+			<h3>YAML</h3>
+			<pre class="prettyprint">
+					Asignatura:
+					    Asignatura_7:
+						        codigo: '123'
+						        nombre: 'Análisis y diseño de algoritmos I'
+						        abreviatura: ADAI
+						        creditos: '6'
+						        materia: Algoritmia
+						        departamento: 'Lenguajes y sistemas'
+						        curso: '2'
+						        semestre: primero
+						        id_titulacion: 1
+			</pre>
+		</article>
+		
+		<article>
+			<h3>Importación de planificación docente</h3>
+			<p>Entidades más complejas. Se utiliza CSV.</p>
+			<p>PHP tiene soporte nativo para CSV.</p>
+			<p>Editable con Excel o LibreOffice, o bien con un editor de texto plano.</p>
+			<p>Se parsean los archivos manualmente y se van creando los objetos.</p>
+			<br/>
+			<h3>Estructura</h3>
+			<pre class="prettyprint">
+id_asignatura, id_actividad, horas, horas_semanales, grupos, alternas, id_curso
+1,1,30,3,3,0,1
+			</pre>
+		</article>
+		
+		<article>
+			<h3>Generación de informes</h3>
+			<p>Dependiendo de la necesidad.</p>
+			<p class="to-build">Si hay necesidad de editarlos posteriormente, se usa CSV. Por ejemplo, exportación de horarios.</p>
+			<p class="to-build">Si no hay necesidad de editarlos, se usa PDF, mediante la librería FPDF. Por ejemplo, informes de asignatura.</p>
+			<p class="to-build"><b>FPDF:</b> Fácil de utilizar. Resultados vistosos con pocas líneas de código.</p>
+			
+		</article>
+		
+		<article>
+			<h3>Ejemplo de informe</h3>
+			<br/>
+			<img src="images/informepdf.png" style="width:50%" class="centered"/>
+		</article>
+	  <article>
+        <h2>Herramientas</h2>
+      </article>
+		<article>
+			<h3>Herramientas</h3>
+			<h4>Forja del proyecto</h4>
+			<p>Alojado en GitHub, usando el sistema de control de versiones Git.</p>
+			<p>Proyecto público.</p>
+			<h4>Documentación: PHPDoc</h4>
+			<p>Documentación legible del código. Al estilo JavaDoc.</p>
+			<p>Generable mediante cualquier IDE. Por ejemplo NetBeans.</p>
+			<p>El formato de salida es HTML.</p>
+		</article>
+	  <article>
+        <h2>Conclusiones y ampliaciones futuras</h2>
+      </article>
+		<article>
+			<h3>Conclusiones</h3>
+			<p>Los objetivos planteados al principio se han cumplido.</p>
+			<p>Se esperaba una menor duración.</p>
+			<p>Primera aplicación web desarrollada.</p>
+			<p>Primer proyecto de estas características en solitario.</p>
+			<br/>
+			<h3>Posibles ampliaciones</h3>
+			<p>Extenderlo a otras facultades o universidades.</p>
+			<p>Posibilidad de que un alumno proponga modificaciones a un horario.</p>
+			<p>Integración con LDAP de la UCA para el login de usuarios.</p>
+		</article>
       <article>
         <h2>Bibliografía</h2>
-      </article>    
-
+      </article>
       <!-- ############################################################# -->      
       <article>
+	  <h3>Bibliografía</h3>
         <ul style="margin-top: 20px; list-style-type: none; list-style-image:url(images/bullet_libro.png)">
           <li><b class="black">Codeigniter User Guide</b><br>
-            <a href="http://www.codeigniter.com/user_guide">http://www.codeigniter.com/user_guide</a></li>    
+            <a href="http://www.codeigniter.com/user_guide">http://www.codeigniter.com/user_guide</a></li>
+			<li><b class="black">Model View Controller</b><br>
+			<a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller</a></li>
+			<li><b class="black">Documentación jQuery</b><br>
+            <a href="http://docs.jquery.com">http://docs.jquery.com/</a></li>
+			<li><b class="black">Dessign Patterns</b><br>
+            Gamma, Erich y otros. Addison-Wesley, 1995</li>
         </ul>
       </article>
 
@@ -292,10 +426,6 @@
 
         <p class="centered" style="margin-top: 10px">
           ¿Preguntas?
-        </p>
-
-        <p class="centered">
-          <a href="http://oflute.googlecode.com/">oflute.googlecode.com</a>
         </p>
       </article>
 

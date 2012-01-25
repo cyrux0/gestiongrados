@@ -11,7 +11,7 @@ function parse_csv_plandocente($filename, $process = false){
         $fields[] = trim($field);
     $row = 2;
 
-    // fields = asignatura | actividad | horas(totales) | grupos | horas_semanales | alternas | id_curso
+    // fields = asignatura | actividad | horas(totales) | grupos | horas_semanales | alternas | id_curso | asignaturas_compartidas
     while(($data = fgetcsv($file, 0, ',')) != false){
         if(count($fields) != count($data)){
             throw new Exception("Error en la línea $row: número incorrecto de valores");
@@ -36,7 +36,17 @@ function parse_csv_plandocente($filename, $process = false){
 
                     throw new Exception("Error en la línea $row | " . $plandocente->getErrorStackAsString());
                 }else{    
-                    $plandocente->save();    
+                    $plandocente->save();
+                    if(isset($datarow['cursos_compartidos'])){
+                        $cursoscomp = explode("|",$datarow['cursos_compartidos'] );
+                        foreach($cursoscomp as $cursocomp)
+                        {
+                            $curso_compartido = new CursoCompartido();
+                            $curso_compartido->id_plandocente = $plandocente->id;
+                            $curso_compartido->num_curso_compartido = $cursocomp;
+                            $curso_compartido->save();
+                        }
+                    }
                 }
             }else{
                 $plandocente = $plandocente->getFirst();

@@ -197,6 +197,7 @@ class PlanesDocentes extends MY_Controller{
         $plan->planactividades->delete();
         $plan->cursoscompartidos->delete();
         $plan->delete();
+        redirect('titulaciones/show/');
     }
     
     public function compartir($id)
